@@ -1,0 +1,89 @@
+/**
+* Figureset Pattern
+* 
+* floated image with descriptive text
+*/
+
+.figureset, .figureset-right {
+    *zoom: 1; 
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: ".";
+      clear: both;
+      height: 0; 
+    }
+}
+
+/* {{{ Standard figureset - adaptable width for figure and description */
+.figureset-figure, .figureset-description {
+    display: table-cell;
+    vertical-align: top;
+}
+.figureset-figure {
+    width: 1%; /* ensure "shrink wrap" effect */
+    line-height: 0;
+}
+.figureset-description {
+    width: auto;
+    padding-left: 10px;
+
+    /**
+    * magical content expander
+    * pushes figureset-description to fill as much width of the figureset as possible
+    */
+    &:after {
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+        height: 0 !important;
+        line-height: 0;
+        font-size: 50px;
+        content: "M M M M M M M M M M M M M M M M M M M M ";
+        speak: none; /* STFU, screen readers. Don't read this. */
+    }
+}
+/* }}} */
+
+/* {{{ Right figureset (media on the right; adaptable width) */
+.figureset-right {
+    .figureset-description {
+    	padding: 0 10px 0 0;
+    }
+}
+/* }}} */
+
+
+/* {{{ Right side figure */
+.figureset-right {
+    .figureset-description {
+        padding-right: $spacing;
+        padding-left: 0;
+    }
+}
+/* }}} */
+
+/* {{{ Figuresets in NON-adaptable width for stupid browsers */
+.ie6 .figureset, .ie7 .figureset {
+		.figureset-figure, 
+    .figureset-description {
+			float: left;
+		}
+    .figureset-description {
+        min-width: 67%;
+        width: 67%;
+    } 
+}
+.ie6 .figureset-right, .ie7 .figureset-right {
+		.figureset-figure, 
+    .figureset-description {
+		float: right;
+	}
+    .figureset-description {
+		float: left;
+        min-width: 70%;
+        width: 70%;
+    } 
+}
+/* }}} */

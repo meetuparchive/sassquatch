@@ -1,0 +1,50 @@
+/**
+* Nametag Photo pattern 
+* 
+* a member photo with a caption in 
+* white text over a dark gradient
+*/
+
+$size: 180px;
+
+.nametag-photo {
+    width: $size;
+    height: $size;
+    background-size: cover;
+    background-position: center 20%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.nametag-photo-name {
+    // blueish-gray looks nice on photos
+    $grad_lead_in: $spacing*5;
+    $grad_0: rgba(22, 24, 27, 0);
+    $grad_1: rgba(22, 24, 27, 0.3);
+    $grad_2: rgba(22, 24, 27, 0.8);
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $grad_0), color-stop($grad_lead_in, $grad_1), color-stop(100%, $grad_2));
+    background: -webkit-linear-gradient(top, $grad_0, $grad_1 $grad_lead_in, $grad_2);
+    background: -moz-linear-gradient(top, $grad_0, $grad_1 $grad_lead_in, $grad_2);
+    background: -o-linear-gradient(top, $grad_0, $grad_1 $grad_lead_in, $grad_2);
+    background: -ms-linear-gradient(top, $grad_0, $grad_1 $grad_lead_in, $grad_2);
+    background: linear-gradient(top, $grad_0, $grad_1 $grad_lead_in, $grad_2);
+
+    @include experimental('box-sizing', 'border-box'); 
+    width: 100%;
+    display: block;
+    bottom: 0;
+    position: absolute;
+    color: #fff;
+    padding: ($grad_lead_in + $spacing) $spacing 0;
+    orphans: 2;
+    h1, h2, h3, h4, h5, h6{
+        color: #fff;
+    }
+}
+
+.ie7 .nametag-photo-name,
+.ie8 .nametag-photo-name {
+    /* ie adds an extra hex pair for the alpha channel */
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#80000000');
+}

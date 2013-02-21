@@ -1,0 +1,5 @@
+@function imgUrl($url) {
+	$img: unquote($url);
+	$thing: unquote("//secure.dev.meetup.com");
+	@return quote(#{$thing}$img);
+}

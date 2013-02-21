@@ -1,0 +1,31 @@
+/**
+* SASSQUATCH 
+* import all the framework includes
+*/
+
+/* {{{ base config */
+
+@import "../config/variables.scss";
+@import "../config/mixins.scss";
+
+/* }}} */
+
+/* {{{ defaults and resets for most block and inline els */ 
+
+@import "lib/defaults.scss";
+
+/* }}} */
+
+/* {{{ modifiers */ 
+
+@import "lib/forms.scss";
+@import "lib/tables.scss";
+@import "lib/modifiers.scss";
+@import "lib/lists.scss";
+
+/* }}} */
+
+/* {{{ import other frameworks components (from least specific selectors to most) */
+@import "lib/layout.scss";
+@import "lib/patterns.scss";
+/* }}} */

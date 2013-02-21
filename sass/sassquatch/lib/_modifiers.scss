@@ -1,0 +1,137 @@
+/* {{{ Typography modifiers */
+.debug {
+	outline: 1px dotted red;
+	background: pink;
+	color: #555;
+	font-family: Consolas, Monaco, monospace;
+    padding: $spacing/2;
+    &:before {
+        color: blue; 
+        content: "DEBUG: "; 
+    }
+}
+.leading-top { 
+	padding-top: $spacing; 
+}
+.leading-bottom { 
+	padding-bottom: $spacing; 
+}
+.leading-left { 
+	padding-left: $spacing; 
+}
+.leading-right { 
+	padding-right: $spacing; 
+}
+.leading-all {
+	padding: $spacing;
+}
+.margin-all{
+	margin:$spacing;
+}
+.margin-top { 
+	margin-top: $spacing; 
+}
+.margin-bottom { 
+	margin-bottom: $spacing; 
+}
+.margin-left { 
+	margin-left: $spacing; 
+}
+.margin-right { 
+	margin-right: $spacing; 
+}
+.margin-none {
+	margin: 0 !important;
+}
+.padding-left { 
+	padding-left: $spacing; 
+}
+.padding-right { 
+	padding-right: $spacing; 
+}
+.padding-none {
+	padding: 0 !important;
+}
+.align-right {
+	text-align: right;
+}
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
+}
+.img-align-middle{
+	vertical-align:middle;
+}
+.display-none {
+	display: none;
+}
+.hidden {
+	visibility: hidden;
+}
+.block {
+	display: block;
+}
+.inline {
+	display: inline;
+}
+.inline-block {
+	@include inlineblock();
+}
+.muted {
+	color: $C_text_less;
+}
+.muted-opacity{
+    // when over something that isn't just a white background
+    @include opacity(.8);
+}
+
+.bold {
+	font-weight: bold;
+}
+.italic {
+    font-style: oblique;
+}
+.caps {
+	text-transform: uppercase;
+}
+.small, small {
+	font-size: $baseFontSize - 2;
+}
+.big {
+    font-size: $bigFontSize; 
+}
+.opacity-quarter {
+    // what is this used for?
+	@include opacity(.25);
+}
+.border-none {
+	border-width: 0 !important;
+}
+// http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+.wrapNice {
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     // Non standard for webkit
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+}
+
+.ellipsize{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a.unlink{
+    &:link, &:visited{
+        color: $C_text;
+    }
+}
+

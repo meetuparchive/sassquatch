@@ -1,0 +1,166 @@
+/**
+* VARIABLES
+* Sass vars
+*/
+
+/* {{{ Type */
+$baseline: 16px;
+$baseFontSize: 12px;
+$bigFontSize: 18px;
+$bigBaseline: 24px;
+
+$h1FontSize: 32px;
+$h2FontSize: 26px;
+$h3FontSize: 20px;
+$h4FontSize: 16px;
+$h5FontSize: $baseFontSize;
+$h6FontSize: 11px;
+
+$baseFontStack: verdana, Arial, sans-serif;
+$headingFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$monoFontStack: Monaco, "Andale Mono", "Courier New", monospace;
+$uiControlFontStack: $headingFontStack;
+
+// Switch to Helvetica in near future 
+// $baseFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+/* }}} */
+
+/* {{{ Colors */
+
+/* {{{ Hex definitions ( define new ones sparingly ) */
+
+// gray - typically used for interface shading
+$C_gray_lightest: #f5f5f5;
+$C_gray_lighter: #eee;
+$C_gray: #ddd;
+
+// darkgray - typically used for text
+$C_darkgray_lightest: #888;
+$C_darkgray_lighter: #555;
+$C_darkgray: #333;
+
+// red - interface red, not the red *in* the logo 
+$C_red: #E9465C; 
+
+// darkblue - links and linked things
+$C_darkblue: #3987CB;
+
+// green - success and yes
+$C_green: #62AC75; 
+
+// blue - secondary accent color
+$C_blue: #86c6ee; 
+
+// pink - error shading for now
+$C_pink: #FBE1E3;
+
+// third party colors
+$C_facebook: #3B5998;
+$C_twitter: #33CCFF;
+$C_linkedin: #4875B4;
+$C_tumblr: #2B4964;
+$C_flickr: #FE0883;
+$C_foursquare: #8FD400;
+$C_googleplus: #C63D2D;
+$C_instagram: #4E433C;
+$C_reddit: #CEE3F8;
+
+/* }}} */
+
+
+/* {{{ Color aliases ( shouldn't be any hex codes here ) */
+
+// interface (bg)
+$C_line: $C_gray;
+$C_line_less: $C_gray_lighter;
+$C_shade: $C_gray_lightest;
+$C_accent: $C_red;
+
+// text
+$C_text_headline: $C_darkgray;
+$C_text: $C_darkgray_lighter;
+$C_text_less: $C_darkgray_lightest;
+$C_link: $C_darkblue;
+
+// RSVP status colors
+$C_rsvpGoing: $C_green;
+$C_rsvpWating: $C_blue;
+$C_rsvpNotGoing: $C_darkgray_lightest;
+
+// Errors
+$C_warnBg: $C_pink;
+$C_warnText: $C_red;
+
+// interface (nav)
+$C_buttonBg: lighten($C_shade, 10%);
+$C_buttonTint: lighten($C_buttonBg, 10%);
+$C_buttonShade: darken($C_buttonBg, 10%);
+$C_selectedBg: $C_link;
+$C_selectedTint: lighten($C_selectedBg, 5%);
+$C_selectedShade: #2264A0;
+
+/* }}} */
+
+
+/* {{{ Color inventory (what exists in old base) 
+
+// grayscale
+$C_lightestGray: #f7f7f7;
+$C_lightGraySaturated: #E9EBE5; 
+$C_mediumGray: #ccc; 
+$C_darkGray: #454545;
+$C_nearBlack: #333;
+
+// meetupy colors (reds)
+$C_logoRed: #Ce1126;
+$C_scarletRed: #E6304C; 
+$C_pink: #FBE1E3;
+
+// link colors 
+$C_linkBlue: #3987CB;
+$C_buttonBlue: #3F73A1;
+$C_navBlue: #B5D0F2;
+
+// RSVP status colors
+$C_rsvpGoing: #62AC75;
+$C_rsvpWating: #86c6ee;
+$C_rsvpNotGoing: #999;
+
+// Site status colors 
+$C_notifyBg: $C_navBlue;
+$C_notifyText: $C_buttonBlue;
+$C_successBg: #E0F4DA;
+$C_successText: #6EA835;
+$C_warnBg: $C_pink;
+$C_warnText: $C_logoRed;
+
+}}} */
+
+/* }}} */
+
+/* {{{ Layout */
+$defaultRadius: 4px;	
+$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
+$spacing: 12px;
+/* }}} */
+
+/* {{{ legacy (from crustybase) */
+$actionColor: #F1F3F1;
+$redTextColor: #E51937;
+$buttonColor: #F10044;
+$linkColor: #3987CB;
+$basePadding : 8px;
+
+/* _sponsoree.css and _sponsor_manage.scss */
+$urgent-color:#B53336;
+$BG_STATUS:#F1F2ED;
+$BG_BOLD: #2b6892;
+$BG_META: #F0F2EC;
+$BG_LIGHT: #F8F9F5;
+$COLOR_XLIGHT: #EEE;
+$COLOR_LIGHT: #CCC;
+$COLOR_MEDIUM: #666;
+/* }}} */
+

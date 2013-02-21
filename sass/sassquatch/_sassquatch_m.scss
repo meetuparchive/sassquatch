@@ -1,0 +1,41 @@
+/**
+* SASSQUATCH_M
+* contains sassquatch includes that define vars, mixins, base element and typography rules
+* some are direct sassquatch includes and some are mobile sassquatch includes
+*/
+
+//TODO make own variables for mobile
+@import "../config/variables.scss";
+@import "../config/variables_m.scss";
+
+@import "../config/mixins.scss";
+
+@mixin shaded($color: $C_shade) {
+	background:$color;
+}
+
+/* {{{ defaults and resets for most block and inline els, includes boilerplate */ 
+
+@import "lib/m/defaults_m.scss";
+
+/* }}} */
+
+
+@import "lib/forms.scss";
+@import "lib/tables.scss";
+
+@import "lib/modifiers.scss";
+@import "lib/m/modifiers_m.scss";
+
+@import "lib/lists.scss";
+@import "lib/m/lists_m.scss";
+
+/* {{{ import other frameworks components (from least specific selectors to most) */
+
+@import "lib/layout.scss";
+@import "lib/m/layout_m.scss";
+
+@import "lib/patterns.scss";
+
+/* }}} */
+

@@ -1,0 +1,76 @@
+/**
+* Popover 
+* core/skin for popover plugin
+* query/plug-in/bootstrap-popover.js
+*/
+
+$ARROW_WIDTH: 14px;
+$BORDER_COLOR: $C_text;
+
+@mixin popoverTop($arrowWidth: $ARROW_WIDTH, $color: $BORDER_COLOR, $innerOffset: 0) {
+    bottom: $innerOffset;
+    left: 50%;
+    margin-left: -$arrowWidth;
+    border-left: $arrowWidth solid transparent;
+    border-right: $arrowWidth solid transparent;
+    border-top: $arrowWidth solid $color;
+}
+@mixin popoverLeft($arrowWidth: $ARROW_WIDTH, $color: $BORDER_COLOR, $innerOffset: 0) {
+    top: 50%;
+    right: $innerOffset;
+    margin-top: -$arrowWidth;
+    border-top: $arrowWidth solid transparent;
+    border-bottom: $arrowWidth solid transparent;
+    border-left: $arrowWidth solid $color;
+}
+@mixin popoverBottom($arrowWidth: $ARROW_WIDTH, $color: $BORDER_COLOR, $innerOffset: 0) {
+    top: $innerOffset;
+    left: 50%;
+    margin-left: -$arrowWidth;
+    border-left: $arrowWidth solid transparent;
+    border-right: $arrowWidth solid transparent;
+    border-bottom: $arrowWidth solid $color;
+}
+@mixin popoverRight($arrowWidth: $ARROW_WIDTH, $color: $BORDER_COLOR, $innerOffset: 0) {
+    top: 50%;
+    left: $innerOffset;
+    margin-top: -$arrowWidth;
+    border-top: $arrowWidth solid transparent;
+    border-bottom: $arrowWidth solid transparent;
+    border-right: $arrowWidth solid $color;
+}
+
+.popover {
+    font-family: 'arial','helvetica','sans-serif';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    display: none;
+    padding: $ARROW_WIDTH;
+    &.top .arrow    { @include popoverTop(); }
+    &.right .arrow  { @include popoverRight(); }
+    &.bottom .arrow { @include popoverBottom(); }
+    &.left .arrow   { @include popoverLeft();  }
+    &.top .arrow-inner    { @include popoverTop($ARROW_WIDTH - 1, #fff, 2px); }
+    &.right .arrow-inner  { @include popoverRight($ARROW_WIDTH - 1, #fff, 2px); }
+    &.bottom .arrow-inner { @include popoverBottom($ARROW_WIDTH - 1, #fff, 2px); }
+    &.left .arrow-inner   { @include popoverLeft($ARROW_WIDTH - 1, #fff, 2px);  }
+    .arrow, .arrow-inner {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+}
+.popover-inner {
+    border: 1px solid $BORDER_COLOR;
+    background-color: #fff;
+    width: 240px;
+    min-height: 46px;
+    overflow: hidden;
+    @include round(5px);
+    @include box-shadow(rgba(0, 0, 0, .55) , 0px, 1px, 3px);
+}
+.popover-content {
+    padding: 12px;
+}

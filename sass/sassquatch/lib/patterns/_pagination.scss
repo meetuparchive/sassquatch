@@ -1,0 +1,56 @@
+/**
+* Pagination Pattern
+*/
+
+.nav-pagination {
+	list-style-type: none;
+	margin-bottom: $spacing;
+	@include clearfix;
+	padding: 0;
+	a {
+		font-family: $headingFontStack;
+		border: 1px solid $C_line;
+		border-left-width: 0;
+		padding: 0.4em 1em;
+		display: block;
+		background: #fff;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		-ms-box-shadow: none;
+		box-shadow: none;
+		&:hover {
+			background-color: $C_line_less;	
+		}
+		&[rel=prev]:before {
+			content: "\2190";
+			margin-right: 0.5em;
+		}
+		&[rel=next]:after {
+			content: "\2192";
+			margin-left: 0.5em;
+		}
+		&[rel=first]:before {
+			content: "\00AB";
+			margin-right: 0.5em;
+		}
+		&[rel=last]:after {
+			content: "\00BB";
+			margin-right: 0.5em;
+		}
+	}
+	li {
+		float: left;
+		&:first-child a {
+			border-left-width: 1px;
+			@include round-nw($defaultRadius);	
+			@include round-sw($defaultRadius);	
+		}
+		&:last-child a {
+			@include round-ne($defaultRadius);	
+			@include round-se($defaultRadius);	
+		}
+		&.selected a {
+			@include selectedNav;
+		}
+	}
+}

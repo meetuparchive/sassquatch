@@ -1,0 +1,315 @@
+/**
+* LAYOUT
+* oocss grids, modifier classes for layout
+*/
+
+/* {{{ OOCSS Grids (see https://github.com/stubbornella/oocss/wiki/grids) */
+.line:after,.line-gutters:after,.lastUnit:after{clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";speak:none;}
+.line,.line-gutters{*zoom:1;}
+.unit{float:left; min-height: 1px;}
+.size1of1{float:none;}
+.size1of2{width:50%;}
+.size1of3{width:33.33333%;}
+.size2of3{width:66.66666%;}
+.size1of4{width:25%;}
+.size3of4{width:75%;}
+.size1of5{width:20%;}
+.size2of5{width:40%;}
+.size3of5{width:60%;}
+.size4of5{width:80%;}
+.lastUnit{display:table-cell;float:none;width:auto;*display:block;*zoom:1;_position:relative;_left:-3px;_margin-right:-3px;}
+/* }}} end oocss grids */
+
+/* {{{ extra grid divisions for meetup (accomodates "divideby='7'" box:col type layouts)*/
+.size1of7{width:14.28571%;}
+.size2of7{width:28.57142%;}
+.size3of7{width:42.85713%;}
+.size4of7{width:57.14284%;}
+.size5of7{width:71.42855%;}
+.size6of7{width:85.71426%;}
+/* }}} */
+
+/* {{{ ---DEPRECATED--- gutter modifiers */
+.gutter-left {
+	margin-left: $baseline;
+}
+.gutter-right {
+	margin-right: $baseline;
+}
+/* }}} */
+
+/* {{{ Grid line with auto-gutters units (.line-gutters shares .line rules as defined above) */
+.line-gutters {
+    margin-bottom: $baseline;
+    margin-right: $baseline*-1; /* pull last child to the right to meet the right edge of the page */
+    .unit, .lastUnit {
+        padding-right: $baseline;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+/* }}} */
+
+/** {{{ Width Modifiers 
+* (arbitrary percentage of parent; outside grid system patterns)
+*/
+.span-25 { width: 25%; }
+.span-30 { width: 30%; }
+.span-50 { width: 50%; }
+.span-60 { width: 60%; }
+.span-75 { width: 75%; }
+.span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
+/* }}} */
+
+/* {{{ Box Styles */
+.doc-box {
+	@include round($defaultRadius);
+	background-color: #fff;
+	margin-bottom: $baseline;
+	border: 1px solid $C_gray;
+
+	/**
+	* round any first or last .doc-content elements inside of .doc-box
+	* allows the doc-content to be shaded without conflicting with .doc-box rounding
+	*/
+	
+	& > .doc-content:first-child{
+		@include round-nw($defaultRadius);
+		@include round-ne($defaultRadius);
+	}
+	& > .doc-content:last-child{
+		@include round-sw($defaultRadius);
+		@include round-se($defaultRadius);
+	}
+
+	/**
+	* doc-content elemenmts inside doc-box get a dividing border by default
+	* (override with .border-none if you need to)
+	*/ 
+	& .doc-content {
+		border-top: 1px solid $C_line;
+		&:first-child{
+			border-top: none;
+		}
+	}
+
+	/** 
+	* Vertical box divisions (when direct child is an OOCSS "line")
+	* allows the borders to span the full height of the .doc-box
+	*/
+	& > .line,
+	& > .line-gutters{ 
+		& > .unit{
+			float: none;
+			border-right: 1px solid #ddd;
+			display: table-cell;
+			vertical-align: top;
+		}
+		& > .lastUnit{
+			border-right: 0;
+			vertical-align: top;
+		}
+		
+
+
+		// magically correct rounded corners when in full-height columns 
+		.doc-content{
+			@include round(0);
+		}
+		.unit:first-child .doc-content{
+			&:first-child{
+				@include round-nw($defaultRadius);
+			}
+			&:last-child{
+				@include round-sw($defaultRadius);
+			}
+		}
+		.unit:last-child .doc-content,
+		.lastUnit .doc-content{
+			&:first-child{
+				@include round-ne($defaultRadius);
+			}
+			&:last-child{
+				@include round-se($defaultRadius);
+			}
+		}
+	}
+
+	/* see bug: 31893 */
+	&.D_box {
+		border: 0;
+	}
+}
+.ie6, .ie7{
+	.doc-box .line .unit,
+	.doc-box .line-gutters .unit{
+		float: left!important;
+	}
+}
+
+.doc-padding,	/* generic padding helper (does nothing else) */
+.doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
+.doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
+	padding: $baseline;
+	padding-bottom: $baseline * .25; 
+	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+}
+
+.suppress-hover-underline:hover {
+	text-decoration: none !important;
+}
+
+.doc-controls {
+	background: $C_gray;
+	padding-bottom: $baseline; 
+	margin-bottom: $spacing;
+}
+
+/**
+* footer used for dialogs, but could potentially be used elsewhere
+*/
+.doc-content.footer { 
+	background: $C_gray_lighter;
+	@include round(0, 0 $defaultRadius, $defaultRadius);
+}
+
+/* }}} */
+
+/* {{{ layout  modifiers */
+
+/* clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; 
+}
+* {
+  html .clearfix, &:first-child+html .clearfix {
+    zoom: 1; } }
+
+.clear-both {
+	clear: both;
+}
+
+.rounded-top {
+	@include round($defaultRadius,$defaultRadius,0,0);
+}
+.rounded-bottom {
+	@include round(0,0,$defaultRadius,$defaultRadius);
+}
+.rounded-all {
+	@include round($defaultRadius);
+}
+.rounded-right {
+	@include round(0,$defaultRadius,$defaultRadius,0);
+}
+.rounded-left {
+	@include round($defaultRadius,0,0,$defaultRadius);
+}
+/* }}} */
+
+/* {{{ doc-content types */
+
+/**
+* Notice
+* notification at the top of a .doc-box 
+* can be used to present optional actions for a user
+*/
+.doc-content-notice{
+	background: #ddd;
+	position: relative;
+}
+.close-me{ //close button for .doc-content-notice
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	display: block;
+	background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+	*cursor: hand;
+	@include opacity(.5);
+	&:hover{
+		@include opacity(1);
+	}
+} 
+
+/**
+* into/outof
+* heirarchy of doc-content elements signified by arrows in the borders
+*/
+$arrow-width: $baseline/2;
+.doc-content-into, .doc-content-outof{
+	position: relative;
+	&:before, &:after{
+		content: ' ';
+		position: absolute;
+		left: $baseline;
+		border-left: $arrow-width solid transparent;
+		border-right: $arrow-width solid transparent;
+		display: block;
+	}
+}
+.doc-content-outof{
+	&:before{
+		top: -1*($arrow-width+1);
+		border-bottom: $arrow-width solid #ddd;
+	}
+	&:after{
+		top: -1*$arrow-width;
+		border-bottom: $arrow-width solid #fff;
+	}
+}
+.doc-content-into{
+	&:before{
+		top: 0;
+		border-top: $arrow-width solid #ddd;
+	}
+	&:after{
+		top: -1px;
+		border-top: $arrow-width solid #fff;
+	}
+}
+
+/**
+* doc-content-big
+* for forms and content that have the main focus on a page (registration flow, for example)
+*/
+.doc-content-big {
+    border-top: 1px solid $C_line;
+    &:first-child{
+        border-top: none;
+    }
+	padding: $bigBaseline;
+    padding-bottom: $bigBaseline - $spacing;
+	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+
+  input, textarea, select, 
+    button, .button {
+        font-size: $bigFontSize;    
+    }
+    label, legend {
+        font-size: $bigFontSize - 2; 
+    }
+
+    label.small {
+      font-size:12px;
+    }
+
+    select {
+        height: $bigFontSize*2 - 2;
+        *height: auto;
+        line-height: $bigFontSize*2 - 2;
+    }
+    /*Don't want file inputs to be quite so huge, because it looks crazy.*/
+    input[type="file"] {
+      font-size:15px;
+    }
+}
+/* }}} */

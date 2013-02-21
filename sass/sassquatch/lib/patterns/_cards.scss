@@ -1,0 +1,26 @@
+.cardList{
+	padding: 0;
+	list-style: none;
+	vertical-align: top;
+	margin: 0 (-1*$baseline) 0 0;
+	font-size: 0; // inline-block whitespace spacing fix
+
+	& > li {
+        @include experimental('box-sizing', 'border-box');
+        border: 1px solid $C_line;
+        background: #fff;
+		font-size: $baseFontSize; // compensate for inline-block whitespace spacing fix
+		margin: 0 $spacing $spacing 0;
+		padding: 0;
+		@include inlineblock;
+		vertical-align: top;
+		width: 223px;
+		.doc-content{
+		    border-top: 1px solid $C_gray_lighter;
+			padding: $spacing $spacing 0;
+		}
+		.doc-content:first-child{
+			border-top: 0;		
+		}
+	}
+}

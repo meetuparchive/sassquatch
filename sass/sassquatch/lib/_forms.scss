@@ -1,0 +1,302 @@
+/**
+* FORMS
+* all form defaults and modifiers, to be included in foundation.scss
+*/
+
+/* {{{ first, some normalization */
+button, input, select, textarea {
+	vertical-align: baseline;
+	*vertical-align: middle;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+button, input {
+	line-height: normal;
+	*overflow: visible;
+}
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner {         
+	padding: 0 !important;         
+	border: 0 none !important;     
+}
+button, input[type=button], input[type=reset], input[type=submit] {
+	cursor: pointer;
+	*cursor: hand;
+	-webkit-appearance: button;
+}
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+/* }}} */
+
+fieldset { /* group like-fields together under headings (legends) with this! */
+	//background: $C_shade;
+	//border-bottom: 1px solid $C_line;
+	//border-top: 1px solid $C_line;
+	border-width: 0;
+	background: transparent;
+	padding: $spacing/2.5 0 0;
+	position: relative;
+	margin-top: 2.25em;
+	legend {
+		display: block;
+		font-size: $baseFontSize * 1.25;
+		line-height: 1; 
+		color: $C_text; 
+		*line-height: 1.5; /* IE7 */
+		margin-bottom: 0;
+		position: absolute;
+		top: -1em;
+		left: 0;
+	}
+}
+
+input, select, textarea {
+	font-family: $baseFontStack;
+	display: block;
+	line-height: $baseline;
+	padding: $baseline/4;
+	font-size: $baseFontSize;
+	width: auto;
+	margin-bottom: $spacing;
+	color: $C_text;
+	border: 1px solid $C_line;
+	@include round($defaultRadius/2);
+}
+
+
+/* start with horizontal, inline type 	s as default */
+label {
+	font-size: $baseFontSize * 1.25;
+	color: $C_text;
+	display: block;
+	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
+	&.small {
+		font-size: $baseFontSize;	
+	}
+}
+
+/* radios and checkboxes */
+input[type=checkbox], input[type=radio] {
+	font-size: $baseFontSize * 1.25;
+	display: inline;
+	cursor: pointer;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 3px;
+	*margin-top: 0; /* IE7 */
+	line-height: normal;
+	border: none;
+}
+
+select {
+	height: $baseline*1.75;
+	*height: auto;
+	line-height: $baseline*2;
+	*margin-top: 4px; /* IE7 - helps alignment with inline-style labels */
+}
+
+select[multiple] {
+	height: inherit;
+	background-color: #fff;
+}
+
+input[type=file] {
+	background-color: #fff;
+	padding: initial;
+	border: initial;
+	*height: auto;
+	*margin-top: 4px; /* IE7 - helps alignment with inline-style labels */
+}
+
+textarea {
+	height: auto;
+    width: 90%;
+}
+
+/**
+* Placeholder styles
+*/
+textarea::-webkit-input-placeholder, 
+input::-webkit-input-placeholder { color: #ccc; font-style: italic; }
+textarea:-moz-placeholder,
+input:-moz-placeholder           { color: #ccc; font-style: italic; }
+textarea:-ms-input-placeholder, 
+input:-ms-input-placeholder      { color: #ccc; font-style: italic; }
+
+/** 
+* Focus states
+* applies box shadow in normal state;
+* declares transition for any border & box shadow changes (set below in focus)
+*/
+input, textarea {
+	/*transition*/
+	-webkit-transition: border linear 0.1s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.1s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.1s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.1s, box-shadow linear 0.2s;
+	transition: border linear 0.1s, box-shadow linear 0.2s;
+
+	/*default state*/
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+
+	/*focus border & outline*/
+	&:focus {
+		outline: 0;	
+		border-color: $C_darkblue;
+		-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+		-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+		box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+	}
+}
+
+/* just let the image handle the presentation for type=image */
+[type="image"] {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    border-width: 0px;
+}
+
+/**
+* disabled state
+*/
+[disabled],
+[disabled="disabled"],
+.disabled {
+    opacity: 0.7;
+    color: $C_text_less;
+    cursor: auto !important;
+    &:focus {
+        border-color: $C_line;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+    }
+}
+[disabled],
+[disabled="disabled"],
+input.disabled { /*only change the background of inputs, not wrappers with .disabled class*/
+    background-color: $C_line_less;
+}
+
+/* {{{ Button defaults */
+
+input[type=submit], button, .button, .button-light {
+	@include button_color($C_gray, true);
+	@include button_personality;
+	display: inline-block;
+	text-decoration: none!important;
+	text-align: center;
+	zoom: 1;
+	color: #484848;
+	font-weight: bold;
+	font-family: helvetica, arial, sans-serif;
+	@include round($defaultRadius/2);
+	line-height: 1;
+	font-size: 16px;
+	padding: .5em 0.75em .4em;
+	vertical-align: middle;
+	height: auto;
+	width: auto;
+	margin-bottom: $spacing;
+    /* primary action variant */
+    &.primary {
+        color: #fff !important;
+        @include button_color($C_red);
+    }
+
+    &.small {
+        font-size: 12px;
+    }
+    &.small.inline {/* line it up with default input size */ 
+        position: relative; 
+        top: 4px;
+    }
+
+    &[disabled],
+    &[disabled="disabled"],
+    &.disabled {
+        @include button_disabled_color( $C_gray_lighter );
+        color: $C_text_less !important;
+        text-shadow: none !important;
+    }
+    &[disabled].primary,
+    &[disabled="disabled"].primary,
+    &.disabled.primary {
+        @include button_disabled_color( lighten(desaturate($C_red, 20%), 25%) );
+        color: $C_shade !important;
+        text-shadow: none !important;
+    }
+}
+
+/* generic "clickable" button */
+.button-light {
+    @include button_color(#fff, true);
+}
+/* }}} */
+
+/* {{{ Feedback/Error states */
+label.required:after {
+	margin-left: 0.75em;
+	content: "*";
+	color: $C_red; 
+}
+
+input.error, select.error, textarea.error {
+	background-color: $C_warnBg;
+	border-color: $C_warnText;
+	font-style: normal;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+
+.fieldError {
+    font-style: italic;
+}
+
+/* legacy support */
+.inlineErrorMsgs {
+    padding-left: 0;
+    li {
+        list-style: none;
+    }
+}
+/* }}} */
+
+/* {{{ char counter */
+.counter { /*new style*/
+    font-size: 10px;     
+    color: $C_text_less;
+}
+.counter,
+
+.limit-container { /*legacy char counter*/
+    margin-top: -1em; 
+}
+input.hasMaxLen, textarea.hasMaxLen {
+	margin-bottom: $spacing;
+}
+/* {{{ Form Modifiers */
+input.big,
+button.big,
+select.big,
+.button.big,
+input[type=submit].big {
+    font-size: $bigFontSize !important;
+}
+label.big,
+legend.big {
+    font-size: $bigFontSize - 2;
+    font-family: $headingFontStack;
+}
+select.big {
+    height: $bigFontSize*2 - 2;
+    *height: auto;
+    line-height: $bigFontSize*2 -2;
+}
+/* }}} */	

@@ -1,0 +1,54 @@
+/**
+* NAVBUTTONS
+* buttons uses for navigation purposes, not for taking actions and submitting stuff 
+* list filtering, for example
+*/
+
+//border
+$borderColor: darken($C_line, 10%);
+
+.nav-buttons {	
+	list-style-type: none;
+	margin-bottom: $baseline;
+	padding-left: 0;
+	line-height: 1.5;
+	@include clearfix;
+	li > a {
+		background-color: $C_buttonBg;
+		@include gradient($C_buttonTint, $C_buttonShade);
+		font-family: $headingFontStack;
+		border: 1px solid $borderColor;
+		border-left-color: #fff;
+		color: $C_text !important;
+		padding: 0.4em 1em;
+		display: block;
+
+		&:hover {
+			$lighter_base_color: lighten($C_buttonTint, 50%);
+			$darker: darken($C_buttonShade, 8%);
+			@include gradient($lighter_base_color, $darker);
+		}
+		&:active {
+			@include gradient(darken($C_buttonShade, 30%), darken($C_buttonTint, 15%));
+			@include box-shadow(mix(#000000, $C_buttonBg, 40%), 1px, 1px, 0, 0, true);
+		}
+	}
+	li {
+        padding-top: 0;
+		float: left;
+		&:first-child > a {
+			@include round-nw($defaultRadius/2);	
+			@include round-sw($defaultRadius/2);	
+			border-left-color: $borderColor;
+		}
+		&:last-child > a {
+			@include round-ne($defaultRadius/2);	
+			@include round-se($defaultRadius/2);	
+			border-right-width: 1px;
+		}
+		&.selected > a {
+			@include selectedNav;
+			border-left: 0;
+		}
+	}
+}

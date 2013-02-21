@@ -1,0 +1,25 @@
+ul.toolbar {
+	display: table;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	&.nested {
+		background-color: $C_gray_lightest;
+		border-top: 1px solid $C_line;
+	}
+	li {
+		padding: 4px 8px;
+		width: 1%;
+		display: table-cell;
+		vertical-align: middle;
+		&:first-child {
+			width: 99%;
+		}
+		&:last-child {
+			padding-right: 4px;
+		}
+		&.right {
+			float: right;
+		}
+	}
+}

@@ -1,0 +1,76 @@
+/**
+* Tooltip 
+* core/skin for tooltip plugin
+* jquery/plug-in/bootstrap-tooltip.js
+*/
+
+@mixin tipTop($arrowWidth: 5px, $color: #000) {
+    bottom: 0;
+    left: 50%;
+    margin-left: -$arrowWidth;
+    border-left: $arrowWidth solid transparent;
+    border-right: $arrowWidth solid transparent;
+    border-top: $arrowWidth solid $color;
+}
+@mixin tipLeft($arrowWidth: 5px, $color: #000) {
+    top: 50%;
+    right: 0;
+    margin-top: -$arrowWidth;
+    border-top: $arrowWidth solid transparent;
+    border-bottom: $arrowWidth solid transparent;
+    border-left: $arrowWidth solid $color;
+}
+@mixin tipBottom($arrowWidth: 5px, $color: #000) {
+    top: 0;
+    left: 50%;
+    margin-left: -$arrowWidth;
+    border-left: $arrowWidth solid transparent;
+    border-right: $arrowWidth solid transparent;
+    border-bottom: $arrowWidth solid $color;
+}
+@mixin tipRight($arrowWidth: 5px, $color: #000) {
+    top: 50%;
+    left: 0;
+    margin-top: -$arrowWidth;
+    border-top: $arrowWidth solid transparent;
+    border-bottom: $arrowWidth solid transparent;
+    border-right: $arrowWidth solid $color;
+}
+
+/* specific selector to avoid name collision with legacy tooltips */
+body > .tooltip {
+    position: absolute;
+    z-index: 11001;
+    display: block;
+    visibility: visible;
+    padding: 5px;
+    font-size: 11px;
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+    @include opacity(0);
+    &.in     { @include opacity(80); }
+    &.top    { margin-top:  -2px; }
+    &.right  { margin-left:  2px; }
+    &.bottom { margin-top:   2px; }
+    &.left   { margin-left: -2px; }
+    &.top .tooltip-arrow    { @include tipTop(); }
+    &.left .tooltip-arrow   { @include tipLeft(); }
+    &.bottom .tooltip-arrow { @include tipBottom(); }
+    &.right .tooltip-arrow  { @include tipRight(); }
+}
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    @include round(4px);
+}
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
