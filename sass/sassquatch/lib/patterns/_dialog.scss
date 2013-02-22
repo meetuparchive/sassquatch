@@ -45,7 +45,8 @@
 		height: 14px;
 		display: block;
 		text-indent: -9999px;
-		background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;
+        /* this dialog is not used in live - if we want to use this, we need to replace this img with a Red Label font icon */
+		/*background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;*/
 		@include opacity(.5);
 		&:hover{
 			@include opacity(1);

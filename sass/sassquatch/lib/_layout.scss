@@ -229,7 +229,8 @@
 	top: 12px;
 	right: 12px;
 	display: block;
-	background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;
+    /* not currently in use in live; we should replace with a Red Label font icon */
+	/*background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;*/
 	width: 14px;
 	height: 14px;
 	cursor: pointer;
