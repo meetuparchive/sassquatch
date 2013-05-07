@@ -30,6 +30,17 @@ You don't need to use Sass in order to use SassQuatch; We've included a [rake](h
 The CSS file will be built to `./components/css/sassquatch.css`.
 
 
+
+### Building a standalone CSS file
+
+You don't need to use Sass in order to use SassQuatch; We've included a [rake](https://github.com/jimweirich/rake) task to build a standalone CSS file from Sass source:
+
+	$ cd components/sassquatch
+	$ rake
+
+The CSS file will be built to `./components/sassquatch/sassquatch.css`.
+
+
 ## Documentation
 
 Docs are on the way!
