@@ -12,33 +12,24 @@ SassQuatch will be installed in `./components/sassquatch` unless you've customiz
 
 ## Usage
 
+### Using SassQuatch with plain CSS 
+
+This package contains a minified compiled CSS file for both mobile and desktop SassQuatch.
+
+    <!-- desktop -->
+    <link rel="stylesheet" href="components/sassquatch/desktop/sassquatch.css" />
+
+    ------------------------------------
+
+    <!-- mobile -->
+    <link rel="stylesheet" href="components/sassquatch/mobile/sassquatch_m.css" />
+
+
 ### Using SassQuatch with Sass
 
 You can import `sassquatch.scss` into your base Sass file:
 	
 	@import "compontents/sassquatch/scss/sassquatch.scss";
-
-
-
-### Building a standalone CSS file
-
-You don't need to use Sass in order to use SassQuatch; We've included a [rake](https://github.com/jimweirich/rake) task to build a standalone CSS file from Sass source:
-
-	$ cd components/sassquatch
-	$ rake
-
-The CSS file will be built to `./components/css/sassquatch.css`.
-
-
-
-### Building a standalone CSS file
-
-You don't need to use Sass in order to use SassQuatch; We've included a [rake](https://github.com/jimweirich/rake) task to build a standalone CSS file from Sass source:
-
-	$ cd components/sassquatch
-	$ rake
-
-The CSS file will be built to `./components/sassquatch/sassquatch.css`.
 
 
 ## Documentation
