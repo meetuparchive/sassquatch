@@ -27,9 +27,16 @@ This package contains a minified compiled CSS file for both mobile and desktop S
 
 ### Using SassQuatch with Sass
 
-You can import `sassquatch.scss` into your base Sass file:
+You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass file:
 	
-	@import "compontents/sassquatch/scss/sassquatch.scss";
+	/* desktop */
+	@import "compontents/sassquatch/desktop/sassquatch.scss";
+	
+	------------------------------------
+	
+	/* mobile */
+	@import "components/sassquatch/mobile/sassquatch_m.scss";
+
 
 
 ## Documentation
