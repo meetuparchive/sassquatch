@@ -1,0 +1,8 @@
+{
+    "name": "sassquatch",
+    "version": "1.0.1",
+    "main": [
+        "./build/sassquatch.css",
+        "./build/_sassquatch.scss"
+    ]
+}
