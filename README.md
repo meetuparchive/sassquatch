@@ -16,12 +16,12 @@ SassQuatch will be installed in `./components/sassquatch` unless you've customiz
 
 This package contains a minified compiled CSS file for both mobile and desktop SassQuatch.
 
-    <!-- desktop -->
+#### Desktop CSS
+
     <link rel="stylesheet" href="components/sassquatch/desktop/sassquatch.css" />
 
-    ------------------------------------
+#### Mobile CSS
 
-    <!-- mobile -->
     <link rel="stylesheet" href="components/sassquatch/mobile/sassquatch_m.css" />
 
 
@@ -29,12 +29,12 @@ This package contains a minified compiled CSS file for both mobile and desktop S
 
 You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass file:
 	
-	/* desktop */
-	@import "compontents/sassquatch/desktop/sassquatch.scss";
+#### Desktop Sass include
+
+	@import "compontents/sassquatch/desktop/sassquatch.scss";	
 	
-	------------------------------------
-	
-	/* mobile */
+#### Mobile Sass include
+
 	@import "components/sassquatch/mobile/sassquatch_m.scss";
 
 
