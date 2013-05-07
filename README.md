@@ -15,7 +15,7 @@ SassQuatch will be installed in `./components/sassquatch` unless you've customiz
 
 ## Usage
 
-### Using SassQuatch with plain CSS 
+### Using SassQuatch with CSS 
 
 This package contains a minified compiled CSS file for both mobile and desktop SassQuatch.
 
