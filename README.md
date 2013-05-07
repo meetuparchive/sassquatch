@@ -7,7 +7,7 @@ SassQuatch can be installed or updated via the [bower](https://github.com/twitte
 
 	$ bower install sassquatch
 
-SassQuatch will be installed in `./components/sassquatch`.
+SassQuatch will be installed in `./components/sassquatch` unless you've customized your bower install directory.
 
 
 ## Usage
