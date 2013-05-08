@@ -1,7 +1,9 @@
 {
     "name": "sassquatch",
     "version": "1.0.2",
+    "description": "CSS foundation and framework for Meetup",
     "main": [
         "./build/",
-    ]
+    ],
+    "license": "MIT"
 }
