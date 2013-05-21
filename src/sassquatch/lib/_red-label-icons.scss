@@ -1,0 +1,242 @@
+/* icons.scss
+ *
+ * Dictionary of icon styles for red-label.
+ * Assumes that body font sizing is reset to 62.5% (10px),
+ *   and that ems are used.
+ *
+ */
+
+
+$PATH: imgUrl('/style/font/RedLabel/');
+$FILE_NAME: $PATH + "RedLabel-Regular";
+
+
+/*  Em-based spacing, here's how this works:
+ *  Assumes that 1em = default font size. I found that 3px @ a font
+ *    size of 16px seemd to look appropriate, and that ratio
+ *    scaled up to 64px. 
+ *  Since it seemed to hold for all font sizes, we can essentially
+ *    pass in 1em globally, and these icons will always be vertically
+ *    centered and have an optically sufficient L/R padding.
+ *  This ratio that gets passed in is 0.1875em.
+ *  Nifty!
+ */
+@mixin icon_default_spacing($pad) {
+    padding-left: $pad;
+    padding-right: $pad;
+    vertical-align: -2/3 * $pad;
+}
+
+/*  This declaration is a hybrid of the Font Squirrel and Chris Coyier 
+ *  declarations. And note, this has to use variable interpolation in order
+ *  for this to work properly with older versions of IE, which need the 
+ *  quotes in the URL statement for the fonts to be loaded.
+ *
+ *  See also: http://css-tricks.com/snippets/css/using-font-face/
+ */
+@font-face {
+    font-family: 'RedLabel';
+    font-weight: normal;
+    font-style: normal;
+    src: url('#{$FILE_NAME + '.eot'}');  /* IE9 Compat Modes */
+    src: url('#{$FILE_NAME + '.eot?#iefix'}') format('embedded-opentype'),   /* IE6-IE8 */
+         url('#{$FILE_NAME + '.woff'}') format('woff'),  /* Modern Browsers */
+         url('#{$FILE_NAME + '.ttf'}') format('truetype'),  /* Safari, Android, iOS */
+         url('#{$FILE_NAME + '.svg#RedLabel'}') format('svg');  /* Legacy iOS, Legacy Blackberry */
+}
+
+[class^='icon-'] {
+    font-family: 'RedLabel';
+    font-style: normal;
+    line-height: 1em;
+    display: inline-block;
+
+    /*  See the @mixin at top for details on how/why this works.  */
+    @include icon_default_spacing(0.1875em);
+
+    /*  APPEARANCE HACKS
+     * 
+     *  `font-smooth` is not currently supported, but ostensibly part of 
+     *      CSS3 spec.
+     *  `-webkit-font-smoothing` can enhance webfont sharpness in
+     *      webkit browsers--which makes icon fonts less blurry.
+     *
+     *  Since these appearance attrs are not supported in IE, Opera,
+     *      or Firefox at the current time, another hack that will
+     *      actually work (with tuning) is to use a 
+     *
+     *      `transform: scale(0.99, 1.001)`
+     *
+     *  Or something along those lines, which can be used to sharpen
+     *      blurry pixels at the cost of performance--which doesn't
+     *      seem worth it for now.
+     *
+     */
+    -webkit-font-smoothing: antialiased;
+    font-smooth: antialiased; 
+}
+
+
+
+
+/*  ACCESSIBILITY
+ * 
+ *  Assuming that a browser does not support :after, or we want to
+ *  put translation information in a different file, the 
+ *  `screen-reader-text` class can put a caption associated with
+ *  an icon off screen.
+ *  
+ *  Instead of the 9999em hack, this uses the Kellum Method for performance:
+ *  http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+ *
+ */
+.screen-reader-text,
+[class^='icon-']:after {
+    position: absolute;
+    left: -9999em;
+
+    /*  Kellum method is superior; just need to make it work. */
+    /* text-indent: 100%; */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+}
+
+
+
+
+/*  ICON SIZE PRESETS
+ *
+ *  red label was designed with a 4px scaling grid in mind so that
+ *  it can scale up and down nicely.
+ *  You're welcome to use the icons inline with whatever font size,
+ *  but they'll probably look best at one of these sizes, used
+ *  like so:
+ *
+ *  <i class="icon-s icon-user"></i>
+ *
+ */
+
+.icon-s { 
+    font-size: 16px; 
+}
+.icon-m  { 
+    font-size: 24px;
+}
+.icon-l  { 
+    font-size: 32px;
+}
+.icon-xl { 
+    font-size: 64px; 
+}
+
+
+
+
+
+/*  ICON DICTIONARY
+ *  
+ *  Currently supported icons. The full dictionary for future
+ *      expansion is here: 
+ *
+ *  https://docs.google.com/a/meetup.com/spreadsheet/ccc?key=0AsxzEW3cE_a7dGI3V3NzWUVjejRaRTloSVhxWldkMnc#gid=0
+ */
+
+@mixin icon($class_name, $unicode, $caption) {
+    .icon-#{$class_name} {
+        &:before { content: $unicode; }
+        &:after  { content: $caption + ' Icon'; }
+    }
+}
+
+
+/*  Brand  */
+@include icon('mup-logo', '\E001', 'Meetup Logo');
+@include icon('mup-sticker-mini', '\E002', 'Mini Meetup Sticker');
+@include icon('mup-sticker', '\E003', 'Meetup Sticker');
+@include icon('mup-wordmark', '\E006', 'Meetup Wordmark');
+
+/*  Time  */
+@include icon('calendar', '\E021', 'Calendar');
+@include icon('clock', '\E025', 'Clock');
+
+/*  Location  */
+@include icon('pin', '\E041', 'Location Pin');
+@include icon('dotted-map', '\E042', 'Map with dotted path');
+@include icon('ios-location', '\E045', 'IOS Location Caret');
+@include icon('hollow-ios-location', '\E046', 'Hollow IOS Location Caret');
+@include icon('android-location', '\E047', 'Android Location Caret');
+@include icon('hollow-android-location', '\E048', 'Hollow Android Location Caret');
+
+/*  Navigation  */
+@include icon('menu', '\E061', 'Menu');
+@include icon('search', '\E063', 'Search');
+@include icon('settings', '\E064', 'Settings');
+@include icon('log-out', '\E065', 'Log out');
+@include icon('android-options', '\E066', 'Options');
+@include icon('android-options-rounded', '\E067', 'Options');
+@include icon('more', '\E068', 'More options');
+
+
+/*  Generic Actions  */
+@include icon('plus', '\E0A1', 'Plus');
+@include icon('minus', '\E0A2', 'Minus');
+@include icon('check', '\E0A3', 'Check');
+@include icon('x', '\E0A4', 'Close');
+@include icon('circle-plus', '\E0A5', 'Circled Plus');
+@include icon('circle-minus', '\E0A6', 'Circled Minus');
+@include icon('circle-check', '\E0A7', 'Circled Check');
+@include icon('circle-x', '\E0A8', 'Circled Close');
+@include icon('hollow-circle-plus', '\E0A9', 'Circled Plus');
+@include icon('hollow-circle-minus', '\E0AA', 'Circled Minus');
+@include icon('hollow-circle-check', '\E0AB', 'Circled Check');
+@include icon('hollow-circle-x', '\E0AC', 'Circled Close');
+
+
+/*  Special Actions */
+@include icon('like', '\E0C1', 'Like');
+@include icon('star', '\E0C3', 'Star');
+@include icon('hollow-star', '\E0C4', 'Hollow Star');
+@include icon('half-star', '\E0C5', 'Half Star');
+@include icon('info', '\E0C6', 'Info');
+@include icon('refresh', '\E0C7', 'Refresh');
+
+@include icon('lock', '\E0CA', 'Lock');
+@include icon('unlock', '\E0CB', 'Opened Lock');
+@include icon('compose', '\E0CC', 'Compose');
+@include icon('edit', '\E0CD', 'Edit');
+
+@include icon('rotate-clockwise', '\E0CE', 'Rotate Clockwise');
+@include icon('rotate-counterclockwise', '\E0CF', 'Rotate Counter Clockwise');
+
+
+/*  Users  */
+@include icon('user', '\E122', 'Person');
+@include icon('group', '\E124', 'Group');
+
+/*  Interface Arrows  */
+@include icon('back', '\E181', 'Back Arrow');
+@include icon('forward', '\E182', 'Forward Arrow');
+@include icon('disclosure-right', '\E183', 'Disclosure Arrow Pointing Right');
+@include icon('disclosure-left', '\E184', 'Disclosure Arrow Pointing Left');
+@include icon('disclosure-down', '\E185', 'Disclosure Arrow Pointing Down');
+@include icon('disclosure-up', '\E186', 'Disclosure Arrow Pointing Up');
+@include icon('drop-down', '\E187', 'Drop Down Arrow');
+@include icon('drop-down-flipped', '\E188', 'Drop Down Arrow Flipped');
+
+
+/*  Media  */
+@include icon('phone', '\E1A2', 'Mobile Phone');
+@include icon('camera', '\E1A5', 'Camera');
+@include icon('comment', '\E1A6', 'Comment bubble');
+@include icon('email', '\E1A8', 'Email');
+
+/*  Validation  */
+@include icon('error', '\E1E1', 'Error');
+@include icon('prohibited', '\E1E3', 'Prohibited Action');
+
+
+/*  Brands  */
+@include icon('facebook-logo', '\E1F1', 'Facebook Logo');
+@include icon('facebook-underscore', '\E1F2', 'Facebook Logo');
+@include icon('twitter-logo', '\E1F3', 'Twitter Logo');
+@include icon('google-logo', '\E1F4', 'Google Logo');

@@ -48,7 +48,6 @@
 	font-style:italic;
 }
 
-
 .natural-text {
 	color: $C_text !important;
 
@@ -61,6 +60,9 @@
 	font-weight:bold;
 }
 
+.double-spaced {
+	line-height:1.8;
+}
 
 .triple-spaced {
 	line-height:2.8;
@@ -73,7 +75,7 @@
 	}
 
 	.unpadded { //padded-none 
-		padding: 0;
+		padding: 0 !important;
 	}
 
 /* }}} */
