@@ -2,12 +2,11 @@ COMPILER    = "sass"
 SOURCES     = "src/sassquatch"
 TARGET      = "build"
 DOC_ASSETS  = "docs/css"
+HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
-HR = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
-# compile
-task :default do
-
+# compile sass & copy files into build/
+task :compile do
     # desktop 
     puts
     puts "#{HR}"
@@ -23,20 +22,61 @@ task :default do
     puts "#{HR}"
     sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/mobile/_sassquatch_m.scss"
     sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/mobile/sassquatch_m.css --style compressed"
+end
 
-    # docs (local/master only - to update the live github pages docs, use the :ghpages task)
+
+# copy built css files into docs/
+task :docs do
     puts
     puts "#{HR}"
-    puts "Building (local) docs" 
+    puts "Copying assets for docs" 
     puts "#{HR}"
     sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css" 
     sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_m.css" 
+end
+
+
+# local dev build
+task :default do
+
+    Rake::Task['compile'].execute
+    Rake::Task['docs'].execute
 
     puts
     puts "YOU BUILD IS SUCCESS"
     puts
 end
 
-# TODO: task to sync sassquatch docs on gh-pages with master
+
+# LAUNCH - syncs master with the gh-pages branch; 
+# rebuilds LIVE github documentation page
 task :ghpages do
+    puts
+    puts "Rebuilding SassQuatch github pages" 
+    puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
+    puts
+
+    Rake::Task['compile'].execute
+    Rake::Task['docs'].execute
+
+    branch = `git rev-parse --abbrev-ref HEAD`
+
+    if "#{branch}" == "master\n"
+        sh "git checkout gh-pages"
+        sh "git rebase master"
+        sh "git push"
+        sh "git checkout master"
+
+        puts
+        puts "Succesfully updated docs in gh-pages\n"
+        puts "Check http://meetup.github.io/sassquatch\n"
+        puts
+    else
+        puts
+        puts "WARNING: you're not on master."
+        puts "see launch instructions at https://github.com/meetup/sassquatch"
+        puts
+        puts "BUILD FAILED"
+        puts
+    end
 end
