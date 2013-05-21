@@ -54,7 +54,6 @@ task :ghpages do
     puts
     puts "Rebuilding SassQuatch github pages" 
     puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
-    puts
 
     Rake::Task['compile'].execute
     Rake::Task['docs'].execute
