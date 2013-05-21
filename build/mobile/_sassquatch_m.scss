@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
 * SASSQUATCH_M
 * contains sassquatch includes that define vars, mixins, base element and typography rules
@@ -146,7 +147,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -164,7 +165,7 @@ mark {
 /* Redeclare monospace font family: h5bp.com/j */
 pre, code, kbd, samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 /* Improve readability of pre-formatted text in all browsers */
@@ -456,7 +457,7 @@ textarea[contenteditable] {
 
   /* Don't show links for images, or javascript/internal links */
   pre, blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid; }
 
   thead {
@@ -791,7 +792,7 @@ input[type=submit], button, .button, .button-light {
   border-radius: 2px 2px 2px 2px;
   line-height: 1;
   font-size: 16px;
-  padding: 0.5em 0.75em 0.4em;
+  padding: .5em 0.75em .4em;
   vertical-align: middle;
   height: auto;
   width: auto;
@@ -810,7 +811,7 @@ input[type=submit], button, .button, .button-light {
     -o-box-shadow: #848484 1px 1px 2px 0 inset;
     box-shadow: #848484 1px 1px 2px 0 inset; }
   input[type=submit].primary, button.primary, .button.primary, .button-light.primary {
-    color: white !important;
+    color: #fff !important;
     -moz-box-shadow: #ed6b7c 1px 1px 0 0 inset;
     -webkit-box-shadow: #ed6b7c 1px 1px 0 0 inset;
     -o-box-shadow: #ed6b7c 1px 1px 0 0 inset;
@@ -890,7 +891,7 @@ input[type=submit], button, .button, .button-light {
     -o-box-shadow: #f3d2d7 1px 1px 0 0 inset;
     box-shadow: #f3d2d7 1px 1px 0 0 inset;
     border: 1px solid #da6f7d;
-    color: whitesmoke !important;
+    color: #f5f5f5 !important;
     text-shadow: none !important; }
     input[type=submit][disabled].primary:hover, input[type=submit][disabled="disabled"].primary:hover, input[type=submit].disabled.primary:hover, button[disabled].primary:hover, button[disabled="disabled"].primary:hover, button.disabled.primary:hover, .button[disabled].primary:hover, .button[disabled="disabled"].primary:hover, .button.disabled.primary:hover, .button-light[disabled].primary:hover, .button-light[disabled="disabled"].primary:hover, .button-light.disabled.primary:hover {
       background: #e497a2;
@@ -1032,7 +1033,7 @@ td, tbody th {
 /* striped */
 .stripedTable tbody tr:nth-child(odd) td,
 .stripedTable tbody tr:nth-child(odd) th {
-  background-color: whitesmoke; }
+  background-color: #f5f5f5; }
 
 /* }}} */
 /* {{{ Typography modifiers */
@@ -1526,7 +1527,7 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
       border-top: none; }
   .doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
     float: none;
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #ddd;
     display: table-cell;
     vertical-align: top; }
   .doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
@@ -1545,14 +1546,12 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
     -webkit-border-bottom-left-radius: 4px;
     border-bottom-left-radius: 4px; }
   .doc-box > .line .unit:last-child .doc-content:first-child,
-  .doc-box > .line .lastUnit .doc-content:first-child, .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
-  .doc-box > .line-gutters .lastUnit .doc-content:first-child {
+  .doc-box > .line .lastUnit .doc-content:first-child, .doc-box > .line-gutters .unit:last-child .doc-content:first-child, .doc-box > .line-gutters .lastUnit .doc-content:first-child {
     -moz-border-radius-topright: 4px;
     -webkit-border-top-right-radius: 4px;
     border-top-right-radius: 4px; }
   .doc-box > .line .unit:last-child .doc-content:last-child,
-  .doc-box > .line .lastUnit .doc-content:last-child, .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
-  .doc-box > .line-gutters .lastUnit .doc-content:last-child {
+  .doc-box > .line .lastUnit .doc-content:last-child, .doc-box > .line-gutters .unit:last-child .doc-content:last-child, .doc-box > .line-gutters .lastUnit .doc-content:last-child {
     -moz-border-radius-bottomright: 4px;
     -webkit-border-bottom-right-radius: 4px;
     border-bottom-right-radius: 4px; }
@@ -1560,8 +1559,7 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
     border: 0; }
 
 .ie6 .doc-box .line .unit,
-.ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
-.ie7 .doc-box .line-gutters .unit {
+.ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit, .ie7 .doc-box .line-gutters .unit {
   float: left!important; }
 
 .doc-padding,
@@ -1719,7 +1717,7 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
 
 /* }}} */
 body {
-  background-color: whitesmoke; }
+  background-color: #f5f5f5; }
 
 .doc-box {
   margin: 6px;
@@ -1806,16 +1804,14 @@ body {
 /* }}} */
 /* {{{ Figuresets in NON-adaptable width for stupid browsers */
 .ie6 .figureset .figureset-figure,
-.ie6 .figureset .figureset-description, .ie7 .figureset .figureset-figure,
-.ie7 .figureset .figureset-description {
+.ie6 .figureset .figureset-description, .ie7 .figureset .figureset-figure, .ie7 .figureset .figureset-description {
   float: left; }
 .ie6 .figureset .figureset-description, .ie7 .figureset .figureset-description {
   min-width: 67%;
   width: 67%; }
 
 .ie6 .figureset-right .figureset-figure,
-.ie6 .figureset-right .figureset-description, .ie7 .figureset-right .figureset-figure,
-.ie7 .figureset-right .figureset-description {
+.ie6 .figureset-right .figureset-description, .ie7 .figureset-right .figureset-figure, .ie7 .figureset-right .figureset-description {
   float: right; }
 .ie6 .figureset-right .figureset-description, .ie7 .figureset-right .figureset-description {
   float: left;
@@ -1855,7 +1851,7 @@ body {
 .tearsheet-30,
 .tearsheet-40,
 .tearsheet-80 {
-  font-family: "helvetica neue", arial;
+  font-family: 'helvetica neue', arial;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -1890,7 +1886,7 @@ body {
     -moz-border-radius: 0 0 2px 2px;
     -webkit-border-radius: 0 0 2px 2px;
     border-radius: 0 0 2px 2px;
-    background: whitesmoke; }
+    background: #f5f5f5; }
   .tearsheet .month,
   .tearsheet-25 .month,
   .tearsheet-30 .month,
@@ -1946,12 +1942,12 @@ body {
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
   -o-box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   width: 54px;
   height: 18px;
   overflow: hidden;
@@ -1990,9 +1986,9 @@ body {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='white', endColorstr='#eeeeee')";
     z-index: 1;
     left: 0px;
-    -moz-transition: left 0.1s ease-out;
-    -webkit-transition: left 0.1s ease-out;
-    transition: left 0.1s ease-out; }
+    -moz-transition: left .1s ease-out;
+    -webkit-transition: left .1s ease-out;
+    transition: left .1s ease-out; }
   .slideswitch input:checked + .slider {
     left: 27px; }
   .slideswitch .ieOn {
@@ -2070,7 +2066,7 @@ body {
     display: block;
     text-decoration: none;
     color: #888888;
-    background-color: whitesmoke;
+    background-color: #f5f5f5;
     padding: 6px 12px; }
     .nav-tabs a:focus {
       outline-width: 0; }
@@ -2082,7 +2078,7 @@ body {
     border-color: #dddddd;
     background-color: #fff;
     border: 1px solid #dddddd;
-    border-bottom: 1px solid white; }
+    border-bottom: 1px solid #fff; }
   .nav-tabs .tabcount {
     color: #888; }
 
@@ -2157,7 +2153,7 @@ body {
       font-weight: 500;
       letter-spacing: 0.04em;
       background-color: #3987cb;
-      color: white !important;
+      color: #fff !important;
       background: #4d93d0;
       background: -webkit-gradient(linear, left top, left bottom, from(#2264a0), to(#4d93d0));
       background: -moz-linear-gradient(top, #2264a0, #4d93d0);
@@ -2192,7 +2188,7 @@ body {
     font-weight: 500;
     letter-spacing: 0.04em;
     background-color: #3987cb;
-    color: white !important;
+    color: #fff !important;
     background: #4d93d0;
     background: -webkit-gradient(linear, left top, left bottom, from(#2264a0), to(#4d93d0));
     background: -moz-linear-gradient(top, #2264a0, #4d93d0);
@@ -2270,7 +2266,7 @@ body {
       font-weight: 500;
       letter-spacing: 0.04em;
       background-color: #3987cb;
-      color: white !important;
+      color: #fff !important;
       background: #4d93d0;
       background: -webkit-gradient(linear, left top, left bottom, from(#2264a0), to(#4d93d0));
       background: -moz-linear-gradient(top, #2264a0, #4d93d0);
@@ -2284,7 +2280,7 @@ ul.toolbar {
   margin: 0;
   padding: 0; }
   ul.toolbar.nested {
-    background-color: whitesmoke;
+    background-color: #f5f5f5;
     border-top: 1px solid #dddddd; }
   ul.toolbar li {
     padding: 4px 8px;
@@ -2478,7 +2474,7 @@ body > .tooltip {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #999;
-  border: 2px solid white;
+  border: 2px solid #fff;
   -moz-border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
