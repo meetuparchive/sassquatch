@@ -1217,6 +1217,9 @@ a.unlink:link, a.unlink:visited {
 .bold {
   font-weight: bold; }
 
+.double-spaced {
+  line-height: 1.8; }
+
 .triple-spaced {
   line-height: 2.8; }
 
@@ -1225,7 +1228,7 @@ a.unlink:link, a.unlink:visited {
   color: #888888; }
 
 .unpadded {
-  padding: 0; }
+  padding: 0 !important; }
 
 /* }}} */
 /* List modifiers */
