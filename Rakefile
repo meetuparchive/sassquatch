@@ -75,6 +75,7 @@ task :ghpages do
         puts "#{HR}"
         puts "Succesfully updated docs in gh-pages\n"
         puts "Check http://meetup.github.io/sassquatch\n"
+        puts "(sometimes github takes a few minutes to rebuild the page)\n"
         puts "#{HR}"
         puts
     else
