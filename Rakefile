@@ -72,8 +72,10 @@ task :ghpages do
         sh "git checkout master"
 
         puts
+        puts "#{HR}"
         puts "Succesfully updated docs in gh-pages\n"
         puts "Check http://meetup.github.io/sassquatch\n"
+        puts "#{HR}"
         puts
     else
         puts
