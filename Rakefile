@@ -61,6 +61,7 @@ task :ghpages do
     branch = `git rev-parse --abbrev-ref HEAD`
 
     if "#{branch}" == "master\n"
+        sh "rm -rf .sass-cache"
         sh "git checkout gh-pages"
         sh "git rm -rf css"
         sh "git rm -rf index.html"
