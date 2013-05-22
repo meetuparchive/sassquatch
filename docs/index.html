@@ -2,14 +2,1683 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>SassQuatch</title>
+	<title>Meetup Styleguide</title>
+	
+	<link rel="stylesheet" href="css/sassquatch.css" type="text/css" />
 
-    <link rel="stylesheet" type="text/css" href="css/sassquatch.css" />
-    <link rel="stylesheet" type="text/css" href="css/sassquatch_m.css" />
+	<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
+	<link rel="stylesheet" href="css/guide.css" type="text/css" />
+	<link rel="stylesheet" href="syntax/desert.css" type="text/css" />
+	
+	<script src="syntax/prettify.js" type="text/javascript"></script>
+	<script src="js/Meetup.Base.jquery.js" type="text/javascript"></script>
+	<script src="js/closeable.js" type="text/javascript"></script>
+	<script src="js/jquery.scrollbeacon.js" type="text/javascript"></script>
 </head>
 
-<body>
-    <h1>Docs TK</a>
+<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->  
+<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->  
+<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->  
+<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->  
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->  
+<script>
+	$(prettyPrint);
+</script>
 
+	<ul id="guide-nav" class="inlineList">
+		<li><a href="#getstarted">Let's get started</a></li>
+		<li><a href="#layout">Layout</a></li>
+		<li><a href="#lists">Lists</a></li>
+		<li><a href="#forms">Forms</a></li>
+		<li><a href="#navigation">Navigation</a></li>
+		<li><a href="#modifiers">Modifiers</a></li>
+		<li><a href="#contentpatterns">Content patterns</a></li>
+		<li><a href="#copy">Copy</a></li>
+		<li><a href="#colors">Colors</a></li>
+		<li><a href="#typography">Typography</a></li>
+        <li><a href="#red-label-icons">Red Label Icons</a></li>
+			
+	</ul>
+
+	<div id="getstarted" class="doc-page first">
+		<div class="doc-content line-gutters">
+			<h1>Let's get started</h1>
+			<div class="unit size1of3">
+				<h3>Markup first, style second</h3>
+				<ul>
+					<li>Mark things up semantically and the styles should follow.</li>
+					<li>In general, text should not live naked inside a <code>&lt;div&gt;</code> unless you're doing something 1%-ish.</li>
+				</ul>
+			</div>
+			<div class="unit size1of3">
+				<h3>Occupy stylesheet</h3>	
+				<ul>
+					<li>The default styles should work for the <strong>99%</strong> of elements on your page.</li>
+					<li>If an element is truly part of the <strong>1%</strong>, wearing a monocle and standing on a yacht, use modifier classes and page-specific styles.</li>
+				</ul>
+			</div>
+			<div class="unit lastUnit">
+				<h3>Blocks that fit together</h3>
+				<ul>
+					<li>Padding (top, right, left) happens on wrappers.</li>
+					<li>Margin (bottom) happens on block-level content.</li>
+					<li><div style="border: 1px dotted #87CEEB; background: #FFA0A0; padding: 4px 4px 0;"><div style="background: #F0E68C; border-bottom: 4px solid #BDB76B;">like this</div></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="layout" class="doc-page scrollbeacon">
+	
+<div class="doc-content">
+	<h1>Layout</h1>	
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>OOCSS Grids</h2>
+			<p>OOCSS Grids are used to break any space into fractions, they can be nested and stacked. A unit can contain another line or it can contain other objects directly. Grids control width, content controls height.</p>
+			<p><code>.line</code> is a row. <code>.unit</code> is a column.
+            <p><strong>DEPRECATED:</strong> <code>.gutter-left</code>, <code>.gutter-right</code> (resulted in uneven width of lastUnit)</p>
+			<p>See also: <br /><a href="https://github.com/stubbornella/oocss/wiki/Grids">https://github.com/stubbornella/oocss/wiki/Grids</a></p>
+		</div>
+		<div class="lastUnit">
+
+<pre class="prettyprint">&lt;div class="line"&gt;
+   &lt;div class="unit size1of3"&gt;	
+   	...first column...
+   &lt;/div&gt;	
+   &lt;div class="unit size1of3"&gt;	
+   	...second column...
+   &lt;/div&gt;	
+   &lt;div class="lastUnit"&gt;	
+   	...third column...
+   &lt;/div&gt;	
+&lt;/div&gt;</pre>
+
+		</div>
+	</div>
+
+</div>
+<div class="doc-content">
+
+	
+	<h2 class="">Columns</h2>
+	<div class="line">
+		<div class="guide-shade unit size1of5"><code>.unit</code> <code>.size1of5</code></div>
+		<div class="guide-shade unit size1of5"><code>.unit</code> <code>.size1of5</code></div>
+		<div class="guide-shade unit size1of5"><code>.unit</code> <code>.size1of5</code></div>
+		<div class="guide-shade unit size1of5"><code>.unit</code> <code>.size1of5</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+
+	<div class="line">
+		<div class="guide-shade unit size1of4"><code>.unit</code> <code>.size1of4</code></div>
+		<div class="guide-shade unit size1of4"><code>.unit</code> <code>.size1of4</code></div>
+		<div class="guide-shade unit size1of4"><code>.unit</code> <code>.size1of4</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+
+	<div class="line">
+		<div class="guide-shade unit size1of3"><code>.unit</code> <code>.size1of3</code></div>
+		<div class="guide-shade unit size1of3"><code>.unit</code> <code>.size1of3</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+
+	<div class="line">
+		<div class="guide-shade unit size1of7"><code>.unit</code> <code>.size1of7</code></div>
+		<div class="guide-shade unit size4of7"><code>.unit</code> <code>.size4of7</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+
+	<div class="line">
+		<div class="guide-shade unit size1of5"><code>.unit</code> <code>.size1of5</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+
+	<div class="line">
+		<div class="guide-shade unit size3of5"><code>.unit</code> <code>.size3of5</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+
+	<div class="line">
+		<div class="guide-shade unit size3of4"><code>.unit</code> <code>.size3of4</code></div>
+		<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+	
+
+</div>
+
+<div class="doc-content">
+
+		
+	<h2>Grids with gutters</h2>
+    <p>For gutters, use <code>.line-gutters</code> instead of <code>.line</code>. Gutters are applied as padding on the right of each <code>.unit</code></p>
+	<div class="line-gutters" style="outline: 1px dotted pink;">
+		<div class="guide-content-shade unit size1of4"><code>.unit</code> <code>.size1of4</code></div>
+		<div class="guide-content-shade unit size1of4"><code>.unit</code> <code>.size1of4</code></div>
+		<div class="guide-content-shade unit size1of4"><code>.unit</code> <code>.size1of4</code></div>
+		<div class="guide-content-shade lastUnit"><code>.lastUnit</code></div>
+	</div>
+	
+
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Nesting lines and columns</h2>
+			<p>You can create a new <code>.line</code> inside any <code>.unit</code> or <code>.lastUnit</code>.</p>
+		</div>
+		<div class="lastUnit">			
+			<div class="line">
+				<div class="guide-shade unit size1of2">
+					<code>.unit</code> <code>.size1of2</code>
+					<div class="line" style="margin-top: 1em; border: 1px dotted  pink">
+						<div class="unit size1of2" style="border-right: 1px dotted pink">
+							 <code>.unit</code> <code>.size1of2</code>
+						</div>
+						<div class="lastUnit"><code>.lastUnit</code></div>
+					</div>
+				</div>
+				<div class="guide-shade lastUnit"><code>.lastUnit</code></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters" id="document-boxes">
+		<div class="unit size1of3">
+			<h2>Box and sections</h2>
+			<p><code>.doc-box</code> is the main box of the page. 99% of the time, there should be only one.</p>
+			<p>Optionally, your box can be divided into columns by using the standard grid, if you so desire. Do not use gutters here.</p>
+			<p>Next, a "section" of content is created by adding <code>.doc-content</code> . Simple boxes may have only one section.</p>
+		</div>
+
+		<div class="lastUnit">
+				<div class="doc-box">
+					<div class="doc-content">
+						<h1>My first document box</h1>
+						<p>Let's start with some prose. Proident high life food truck, four loko accusamus esse photo booth single-origin coffee tattooed laborum mollit. 3 wolf moon gentrify organic +1 scenester put a bird on it, photo booth nisi.</p>
+
+					</div>
+					<div class="doc-content">
+						<h2>List of things</h2>
+						<ul class="dividedList">
+							<li>
+								<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+							</li>
+							<li>
+								<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+							</li>
+						</ul>	
+					</div>
+				</div>
+<pre class="prettyprint">&lt;div class="doc-box"&gt;
+	&lt;div class="doc-content"&gt;
+		&lt;h1&gt;My first document box&lt;/h1&gt;
+		&lt;p&gt;Let's start with some prose...&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="doc-content"&gt;
+		&lt;h2&gt;List of things&lt;/h2&gt;
+		&lt;ul class="dividedList"&gt;
+			&lt;li&gt;
+				&lt;p&gt;Leggings Austin minim...&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p&gt;Leggings Austin minim...&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;	
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Doc content types</h2>	
+			<p>What it is</p>
+			<p><code>.doc-content-notice</code></p>
+			<p><code>.doc-content-into</code></p>
+			<p><code>.doc-content-outof</code></p>
+		</div>
+		<div class="lastUnit">
+			<div class="doc-box">
+				<div class="doc-content doc-content-notice" id="notify-example">
+					<h3>This is here to notify you</h3>
+					<p>Biodiesel vinyl leggings trust fund, proident williamsburg keytar in blog dolore sustainable. Veniam fanny pack cupidatat, tempor nesciunt master cleanse cillum do vegan duis brooklyn minim cliche mollit.</p>
+					<input type="submit" value="Fine, I'll do it" />
+				</div>
+				<div class="doc-content">
+					<h1>Some normal page</h1>
+					<p>Biodiesel vinyl leggings trust fund, proident williamsburg keytar in blog dolore sustainable. Veniam fanny pack cupidatat, tempor nesciunt master cleanse cillum do vegan duis brooklyn minim cliche mollit. Lomo reprehenderit wolf pariatur lo-fi id sartorial yr, laborum consequat quinoa DIY eu.</p>
+				</div>
+				<div class="doc-content doc-content-into">
+					<p>Notice how the first box flows into this one. Cool, huh? Biodiesel vinyl leggings trust fund, proident williamsburg keytar in blog dolore sustainable. Veniam fanny pack cupidatat, tempor nesciunt master cleanse cillum do vegan duis brooklyn minim cliche mollit. Lomo reprehenderit wolf pariatur lo-fi id sartorial yr, laborum consequat quinoa DIY eu.</p>
+				</div>
+			</div>
+			<script>
+				$('#notify-example').closeable();
+			</script>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+	<div id="lists" class="doc-page scrollbeacon"> 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="doc-content">
+	<h1>Lists</h1>
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Basic lists <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;dl&gt;</code></h2>
+		</div>
+		<div class="lastUnit">
+	
+			<div class="line-gutters">
+				<div class="unit size1of3">
+					<h3>Unordered <code>&lt;ul&gt;</code></h3>
+					<ul>
+						<li>Eggs</li>
+						<li>Milk</li>
+						<li>Coors Light</li>
+					</ul>
+				</div>
+				<div class="unit size1of3">
+					<h3>Ordered <code>&lt;ol&gt;</code></h3>
+					<ol>
+						<li>Write styleguide</li>
+						<li>Publish styleguide</li>
+						<li>???</li>
+						<li>PROFIT!</li>
+					</ol>
+				</div>
+				<div class="unit lastUnit">
+					<h3>Unstyled list <code>.resetList</code></h3>
+					<ul class="resetList">
+						<li>Eggs</li>
+						<li>Milk</li>
+						<li>Coors Light</li>
+					</ul>
+				</div>
+			</div>
+			<div class="line-gutters">
+				<div class="unit size1of3">				
+					<h3>Inline/Unstyled <code>.inlineList</code></h3>
+					<ul class="inlineList">
+						<li>Eggs</li>
+						<li>Milk</li>
+						<li>Coors Light</li>
+					</ul>
+				</div>
+				<div class="unit size1of3">		
+					<h3>Inline block <code>.inlineblockList</code></h3>
+					<ul class="inlineblockList">
+						<li class="guide-hasBackground">Eggs</li>
+						<li class="guide-hasBackground">Milk</li>
+						<li class="guide-hasBackground">Coors Light</li>
+					</ul>
+				</div>
+				<div class="unit lastUnit">
+					<h3>Pipes <code>.pipeList</code></h3>
+					<ul class="pipeList">
+						<li class="">A Series</li>
+						<li>of tubes</li>
+						<li>or pipes</li>
+					</ul>
+				</div>
+			</div>
+			<div class="line-gutters">
+                <div class="unit size1of3">
+                    <h3>Definition <code>&lt;dl&gt;</code></h3>
+                    <dl>
+                        <dt>MEME</dt>
+                            <dd>Meetups Everywhere about almost Everything</dd>
+                        <dt>PSOG</dt>
+                            <dd>Power of Self Organized Groups</dd>
+                    </dl>				
+                </div>
+				<div class="unit lastUnit">
+					<h3>Breadcrumbs <code>.crumbList</code></h3>
+					<ul class="crumbList">
+						<li>Home</li>
+						<li>Section</li>
+						<li>Page</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Padded list</h2>
+			<p>It's a simple list with nothing but padding. Good for very simple items.</p>
+			<p><code>.paddedList</code></p>
+		</div>
+		<div class="lastUnit">
+				<div class="doc-box">
+					<div class="doc-content">
+						<h3>Simple <code>.paddedList</code></h3>
+						<ul class="paddedList">
+							<li><p>List items are divided...</p></li>
+							<li><p>This doesn't need any special "first" or "last" classes</p></li>
+							<li><p>You can subdivide these list items into columns with the standard grid, if you like</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Divided list</h2>
+			<p>This is the most common list. If you're listing things, chances are, this is the one you want.</p>
+			<p><code>.dividedList</code></p>
+		</div>
+		<div class="lastUnit">
+				<div class="doc-box">
+					<div class="doc-content">
+						<h3>A normal dividedList</h3>
+						<ul class="dividedList">
+						
+							<li>
+								<div class="figureset">
+									<div class="figureset-figure">
+										<a href=""><img src="http://placekitten.com/40/40" /></a>
+									</div>
+									<div class="figureset-description">
+										<h4><a href="">Sally Smeetup</a></h4>
+										<p>Lists are the backbone of society.</p>
+									</div>
+								</div>
+							</li>
+						
+							<li>
+								<div class="figureset">
+									<div class="figureset-figure">
+										<a href=""><img src="http://placekitten.com/40/40" /></a>
+									</div>
+									<div class="figureset-description">
+										<h4><a href="">Sally Smeetup</a></h4>
+										<p>Lists are the backbone of society.</p>
+									</div>
+								</div>
+							</li>
+						
+							<li>
+								<div class="figureset">
+									<div class="figureset-figure">
+										<a href=""><img src="http://placekitten.com/40/40" /></a>
+									</div>
+									<div class="figureset-description">
+										<h4><a href="">Sally Smeetup</a></h4>
+										<p>Lists are the backbone of society.</p>
+									</div>
+								</div>
+							</li>
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Section list</h2>
+			<p>For lists with particularly complex items (looking at you, group home), you can omit the <code>.doc-content</code>and use a <code>.sectionList</code>. The list items then span the box and behave as if each were its own <code>.doc-content</code></p>
+			<p><code>.sectionList</code></p>
+		</div>
+		<div class="lastUnit">
+				
+				<div class="doc-box">
+					<div class="doc-content">
+						<h3>A full-width .sectionList</h3>
+					</div>
+					<ul class="sectionList">
+						
+							<li>
+								<div class="figureset">
+									<div class="figureset-figure">
+										<a href=""><img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" /></a>
+									</div>
+									<div class="figureset-description">
+										<h4><a href="">Sally Smeetup</a></h4>
+										<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche. osby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+										<div class="figureset">
+											<div class="figureset-figure">
+												<time class="tearsheet-25">
+													<span class="month">Oct</span>
+													<span class="day">25</span>
+												</time>
+											</div>
+											<div class="figureset-description">
+												<h5 class="padding-none">Next Meetup:</h5>
+												<p>Let's hike to Mt. Awesome</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						
+							<li>
+								<div class="figureset">
+									<div class="figureset-figure">
+										<a href=""><img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" /></a>
+									</div>
+									<div class="figureset-description">
+										<h4><a href="">Sally Smeetup</a></h4>
+										<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche. osby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+										<div class="figureset">
+											<div class="figureset-figure">
+												<time class="tearsheet-25">
+													<span class="month">Oct</span>
+													<span class="day">25</span>
+												</time>
+											</div>
+											<div class="figureset-description">
+												<h5 class="padding-none">Next Meetup:</h5>
+												<p>Let's hike to Mt. Awesome</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						
+							<li>
+								<div class="figureset">
+									<div class="figureset-figure">
+										<a href=""><img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" /></a>
+									</div>
+									<div class="figureset-description">
+										<h4><a href="">Sally Smeetup</a></h4>
+										<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche. osby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+										<div class="figureset">
+											<div class="figureset-figure">
+												<time class="tearsheet-25">
+													<span class="month">Oct</span>
+													<span class="day">25</span>
+												</time>
+											</div>
+											<div class="figureset-description">
+												<h5 class="padding-none">Next Meetup:</h5>
+												<p>Let's hike to Mt. Awesome</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						
+					</ul>
+				</div>
+	
+
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Data tables</h2>
+			<p>Data tables should be used for tabular data, of course. In most cases on Meetup, we omit the <code>&lt;thead&gt;</code> and <code>&lt;caption&gt;</code>. If you do however, need table headers, you should be using <code>&lt;thead&gt;</code> instead of styling a table body row to look like table headers.</p>
+			<p><code>&lt;table&gt;</code>, <code>&lt;caption&gt;</code> <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, 
+			<code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>, , <code>.stripedList</code></p>
+		</div>
+		<div class="lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<h3>Default table</h3>
+					<table>
+						<thead>
+							<th>Event Name</th>
+							<th>RSVPs</th>
+							<th>Date</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a href="#">Play Pinball</a></td>
+								<td>2 attending</td>
+								<td><a aref="#">Nov 28, 7:30 PM</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">Play Pinball</a></td>
+								<td>0 attending</td>
+								<td><a href="#">Nov 30, 7:30 PM</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">Play Pinball</a></td>
+								<td>12 attending</td>
+								<td><a href="#">Dec 3, 4:30 AM</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="doc-box">
+				<div class="doc-content">
+
+					<h3>Striped table <code>.stripedTable</code></h3>
+					<table class="stripedTable">
+						<thead>
+							<th>Event Name</th>
+							<th>RSVPs</th>
+							<th>Date</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td><a href="#">Play Pinball</a></td>
+								<td>2 attending</td>
+								<td><a href="#">Nov 28, 7:30 PM</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">Play Pinball</a></td>
+								<td>0 attending</td>
+								<td><a href="#">Nov 30, 7:30 PM</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">Play Pinball</a></td>
+								<td>12 attending</td>
+								<td><a href="#">Dec 3, 4:30 AM</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+	<div id="forms" class="doc-page scrollbeacon">
+	
+<div class="doc-content">
+	<h1>Forms</h1>	
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Buttons</h2>
+			<p>As a rule, buttons are for actions, not navigation. This style applies to <code>&lt;input type="submit" /&gt;</code>, <code>&lt;button&gt;</code>, and anything with the class <code>.button</code>.</p> 
+			<p>The default is a simple gray button. There is also red <code>.primary</code> class for "do this one thing" actions.</p>		
+            <p>For side-by-side inputs and buttons, you'll probably want something a little smaller than the default button. For this, you can use the <code>.small</code> class.</p>		
+		</div>
+		<div class="unit lastUnit">
+            <h3>Default buttons</h3>
+			<div class="doc-box">
+				<div class="doc-content">
+					<input type="submit" class="primary" value="Primary" /> <input type="submit" value="Default" />
+				</div>
+			</div>
+            <h3>Small inline button next to an input (<code>.small.inline</code>)</h3> 
+			<div class="doc-box">
+				<div class="doc-content">
+                    <input type="text" class="inline" />
+					<input class="small inline" type="submit" value="Default" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Default stacked forms</h2>
+			<p>To group related label &amp; input pairs, put them in a fieldset. Use OOCSS grids to divide into columns if needed.</p>
+		</div>
+		<div class="unit lastUnit">
+			
+			<div class="doc-box">
+				<div class="doc-content">
+					<form>
+						<label for="name">Name</label>
+						<input id="name" type="text" />
+
+						<label for="color">Favorite color</label>
+						<select name="color">
+							<option>Midnight Saffron</option>
+							<option>Seabreeze Brown</option>
+							<option>Fragrant Forest Ochre</option>
+						<select>
+		
+						<fieldset class="line-gutters">
+							<legend>Where are you?</legend>
+							<div class="unit size1of2">
+								<label for="city">City</label>
+								<input type="text" id="city" />
+							</div>
+							<div class="lastUnit">
+								<label for="state">State</label>
+								<select>
+									<option>New York</option>
+									<option>New Jersey</option>
+									<option>New Mexico</option>
+									<option>New Oregon</option>
+								</select>
+							</div>
+						</fieldset>
+
+						<label for="unicorn">Describe your unicorn</label>
+						<textarea name="unicorn"></textarea>
+					</form>
+				</div>
+			</div>
+			
+<pre class="prettyprint">&lt;form&gt;
+	&lt;label for="name"&gt;Name&lt;/label&gt;
+	&lt;input id="name" type="text" /&gt;
+	
+	&lt;label for="color"&gt;Favorite color&lt;/label&gt;
+	&lt;select name=&quot;color&quot;&gt;
+		&lt;option&gt;Midnight Saffron&lt;/option&gt;
+		&lt;option&gt;Seabreeze Brown&lt;/option&gt;
+		&lt;option&gt;Fragrant Forest Ochre&lt;/option&gt;
+	&lt;select&gt;
+	
+	&lt;fieldset class="line"&gt; &lt;!-- OOCSS "line" --&gt;
+		&lt;legend&gt;Where are you?&lt;/legend&gt;
+
+		&lt;!-- OOCSS "units" --&gt;
+		&lt;div class="unit size1of2"&gt; 
+			&lt;label for="city"&gt;City&lt;/label&gt;
+			&lt;input name="city" type="text" /&gt;
+			&lt;label for="state"&gt;state&lt;/label&gt;
+			&lt;select&gt;
+				&lt;option&gt;New York&lt;/option&gt;
+				...
+			&lt;/select&gt;
+		&lt;/div&gt;
+		&lt;div class="lastUnit"&gt;
+		&lt;/div&gt;
+
+	&lt;/fieldset&gt;
+
+	&lt;label for="unicorn"&gt;Describe your unicorn&lt;/label&gt;
+	&lt;textarea name="unicorn"&gt;&lt;/textarea&gt;
+&lt;/form&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Checkboxes and radio sets</h2>
+			<p>Checkbox and radio inputs are placed <em>inside</em> the <code>&lt;label&gt;</code> elements for larger click targets.</p>
+			<p>The default label size applies here, but you can add a <code>.small</code> modifier to the labels if you prefer something smaller</p>
+			<p><code>&lt;input type="checkbox" /&gt;</code>, <code>&lt;input type="radio" /&gt;</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<form>
+						<fieldset>
+							<legend>I'm interested in...</legend>
+							<label class="small"><input type="checkbox" /> Cats</label>
+							<label class="small"><input type="checkbox" checked="checked" /> Honey Badgers</label>
+							<label class="small"><input type="checkbox" /> Quails</label>
+							<label class="small"><input type="checkbox" checked="checked" /> Goats</label>
+							<label class="small"><input type="checkbox"  checked="checked" /> Red Pandas</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+<pre class="prettyprint">&lt;fieldset&gt;
+	&lt;legend&gt;I'm interested in...&lt;/legend&gt;
+	&lt;label class="small"&gt;&lt;input type="checkbox" /&gt; Cats&lt;/label&gt;
+	&lt;label class="small"&gt;&lt;input type="checkbox" checked="checked" /&gt; Honey Badgers&lt;/label&gt;
+	&lt;label class="small"&gt;&lt;input type="checkbox" /&gt; Quails&lt;/label&gt;
+	&lt;label class="small"&gt;&lt;input type="checkbox" checked="checked" /&gt; Goats&lt;/label&gt;
+	&lt;label class="small"&gt;&lt;input type="checkbox"  checked="checked" /&gt; Red Pandas&lt;/label&gt;
+&lt;/fieldset&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Form field sizes</h2>
+			<p>There are width helpers defined in <code>layout.scss</code> that can assist in changing the default width of fields. You can ajust the width by thirds and quarters of the width of the parent container.</p>
+			<p><code>.span-25</code>, <code>.span-30</code>, <code>.span-50</code>, <code>.span-60</code>, <code>.span-75</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<code>.span-25</code>
+					<input type="text" class="span-25" />
+					<code>.span-30</code>
+					<input type="text" class="span-30" />
+					<code>.span-50</code>
+					<input type="text" class="span-50" />
+					<code>.span-60</code>
+					<input type="text" class="span-60" />
+					<code>.span-75</code>
+					<input type="text" class="span-75" />
+					<code>.span-100</code>
+					<input type="text" class="span-100" />
+					<em>Default (width: auto;)</em>
+					<input type="text" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Error states</h2>
+			<p><code>.error</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<form class="span-60">
+						<label for="address">Address</label>
+						<input id="address" value="123 Fake St." type="text" />
+
+						<label for="name">Name</label>
+						<input class="error" id="name" value="Keith Hernandez" type="text" />
+						<p class="italic">You are not Keith Hernandez.</p>
+
+						<label for="address">Profession</label>
+						<input id="address" value="Blimp Captain" type="text" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Disabled elements</h2>
+            <p><code>.disabled</code>, <code>&lt;input ... disabled /&gt;</code>, <code>&lt;input ... disabled="disabled" /&gt;</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<form class="span-60">
+						<label for="address">Stop</label>
+						<input id="address" value="hammer time" type="text" disabled />
+
+                        <input type="submit" class="inline-block marign-right primary" value="can't touch this" disabled="disabled" />
+                        <input type="submit" class="inline block" value="or this" disabled="disabled" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+	<div id="navigation" class="doc-page scrollbeacon">
+	<div class="doc-content">
+	<h1>Navigation</h1>	
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Pagination</h2>
+			<p>Pagination is for paginating. Use the <code>rel</code> attributes of the "Previous" and "Next" anchors to indicate <code>prev</code> or <code>next</code>. Not only is it good markup, we use it as a styling hook for adding the nifty arrows.</p>
+			<p><code>.nav-pagination</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<ul class="nav-pagination">
+						<li><a rel="prev" href="#">Previous</a></li>	
+						<li><a href="#">1</a></li>
+						<li class="selected"><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">7</a></li>
+						<li><a href="#">8</a></li>
+						<li><a href="#">9</a></li>
+						<li><a rel="next" href="#">Next</a></li>	
+					</ul>
+				</div>
+			</div>
+<pre class="prettyprint">&lt;ul class="nav-pagination"&gt;
+	&lt;li&gt;&lt;a rel="prev" href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="selected"&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;5&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;6&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;9&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;9&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel="next" href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Append-style paging</h2>
+			<p>We often have a list of stuff that has a "see more" button at the bottom that ajax appends more content. The feed or meetups list on group home does this.</p>
+			<p><code>.nav-appendPager</code></p>
+		</div>
+		<div class="unit lastUnit">
+				
+				<div class="doc-box">
+					<div class="doc-content">
+						<h3>A few things</h3>
+						<ul class="dividedList">
+							<li>
+								<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+							</li>
+							<li>
+								<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+							</li>
+						</ul>	
+						<a rel="next" class="nav-appendPager">See more</a>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Button groups (filtering)</h2>
+			<p>Buttons joined in groups, presented as a list of options. Most useful for filtering/sorting lists, but we may be able to use this for other things.</p>
+			<p><code>.nav-buttons</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<h5>Sort by:</h5>
+					<ul class="nav-buttons">
+						<li><a >Date Joined</a></li>
+						<li><a class="selected">Size</a></li>
+						<li><a >Name</a></li>
+						<li><a >Role</a></li>
+					</ul>
+				</div>
+			</div>
+<pre class="prettyprint">&lt;h5&gt;Sort by:&lt;/h5&gt;
+&lt;ul class="nav-buttons"&gt;
+	&lt;li&gt;&lt;a href="#"&gt;Date Joined&lt;/a&gt;&lt;/li&gt;
+	&lt;li &gt;&lt;a href="#" class="selected"&gt;Size&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;Name&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;Role&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+			
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			
+			<h2>Tabs</h2>
+			<p>Tabbed navigation. Used mostly as secondary navigation on Meetup; load the tab content with <code>web:ajax</code> where possible.</p>
+			<p><code>.nav-tabs</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<ul class="nav-tabs">
+						<li><a href="#">Upcoming Meetups</a></li>
+						<li><a href="#">Past  Meetups</a></li>
+						<li class="selected"><a href="#">Selected tab</a></li>
+					</ul>
+				</div>
+			</div>
+<pre class="prettyprint">&lt;ul class="nav-tabs"&gt;
+	&lt;li&gt;&lt;a href="#"&gt;Upcoming Meetups&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;Past Meetups&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="selected"&gt;&lt;a href="#"&gt;Selected tab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt; </pre>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+	<div id="modifiers" class="doc-page scrollbeacon">
+	
+<div class="doc-content">
+	<h1>Modifiers</h1>	
+
+		<div class="line-gutters">
+			<div class="unit size1of3">
+                <h2>Typography modifiers</h2>	
+				<p>Sometimes you need to nudge alignment and/or spacing of elements  byeond what the framework defaults handle. These modifiers should help you do this without the need to write new styles for minor tasks.</p>		
+                <p><code>.leading-top | .padding-top</code>, <code>.leading-bottom | .padding-bottom</code>, <code>.leading-left | .padding-left</code>, <code>.leading-right | .padding-right</code>, <code>.leading-all | .padding-all</code>, <code>.leading-none | .padding-none</code>, <br /> <code>.margin-top</code>, <code>.margin-bottom</code>, <code>.margin-left</code>, <code>.margin-right</code>, <code>.margin-none</code>, <code>.align-left</code>, <code>.align-right</code>, <code>.align-center</code>, <code>.muted</code>, <code>.muted-opacity</code>, <code>.opacity-quarter</code>, <code>.small</code>, <code>.big</code>, <code>.caps</code>, <code>.bold</code>, <code>.debug</code></p>
+			</div>
+			<div class="unit lastUnit">
+				<h3>Size &amp; color examples</h3>
+                <p>This is a normal paragraph</p>
+                <p class="big">This is a big paragraph <code>.big</code></p>
+                <p class="small">This paragraph is small (you could also use a <code>&lt;small&gt;</code> element)<code>.small</code></p>
+				<p class="muted">This paragraph is not small, but muted <code>.muted</code></p>
+				<p class="muted-opacity">This paragraph is muted, but using opacity. <code>.muted-opacity</code></p>
+				<p class="bold">This paragraph is bold <code>.bold</code></p>
+				<p class="italic">This paragraph is italic <code>.italic</code></p>
+				<p class="opacity-quarter">This paragraph 25% opaque <code>.opacity-quarter</code></p>
+				<p class="caps">Fake capslock lol (text-transform) <code style="text-transform: lowercase;">.caps</code></p> 
+                <p class="small muted caps">This paragraph is small <em>and</em> and muted <em>and</em> in caps <code style="text-transform: lowercase;">.small.muted.caps</code></p>
+				<p><a href="" class="unlink">This link isn't colored like a link <code>.unlink</code></a></p> 
+
+				<h3 class="leading-top">Alignment</h3>
+				<p class="align-left">This paragraph is aligned left (default) <code>.align-left</code></p>
+				<p class="align-center">This paragraph is centered <code>.align-center</code></p>
+				<p class="align-right">This paragraph is aligned right <code>.align-right</code></p>
+
+				<h3 class="margin-top">Vertical spacing</h3>
+				<h4>Leading (padding)</h4>
+				<p class="leading-top guide-hasBackground">This paragraph has a line of leading above it <code>.leading-top</code></p>
+				<p class="guide-hasBackground">Normal paragraph</p>
+				<p class="leading-bottom guide-hasBackground">This paragraph has a line of leading below it <code>.leading-bottom</code></p>
+
+				<h4>Margin</h4>
+				<div class="guide-hasBackground">Normal div</div>
+				<div class="margin-top guide-hasBackground">This div has a line of margin above it <code>.margin-top</code></div>
+				<div class="margin-bottom guide-hasBackground">This div has a line of margin below it <code>.margin-bottom</code></div>
+				<p class="guide-hasBackground margin-none">This is actually a <code>p</code>, but the margin is overridden by <code>.margin-none</code></p>
+				<p class="guide-hasBackground">Normal Paragraph</p>
+
+				<h3>Horizontal spacing</h3>
+                <p>In this example, we're applying the horizontal spacing classes on a few <code>.inline-block</code> paragraphs</p> 
+                <h4>Padding</h4>
+                <p class="inline-block align-center guide-hasBackground padding-right">room on the right <code>.padding-right</code></p>
+                <p class="inline-block align-center guide-hasBackground">normal</p>
+                <p class="inline-block align-center guide-hasBackground padding-left">room on the left <code>.padding-left</code></p>
+
+                <h4>Margin</h4>
+                <p class="inline-block align-center guide-hasBackground margin-right">room on the right <code>.margin-right</code></p>
+                <p class="inline-block align-center guide-hasBackground">normal</p>
+                <p class="inline-block align-center guide-hasBackground margin-left">room on the left <code>.margin-left</code></p>
+
+				<h3 class="margin-top">Highlighted things <code>.highlighted</code></h3>
+				<p class="inline-block align-center highlighted padding-left padding-right">Sometimes, you want something to be highlighted</p>
+
+                <h3 class="margin-top">Debugging <code>.debug</code></h3>
+                <p class="debug">Sometimes, you just want to check something in JSP by printing a value on the page or highlighting an element. Don't use this in production, though.</p>
+			</div>
+		</div>
+	</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Layout modifiers</h2>
+			<p>Sometimes we need to apply some extra layout/decoration rules to a container element. These classes should allow you do to this without explicitly declaring new CSS rules for a given element.</p>
+            <p>
+                <code>.doc-padding</code>, 
+                <code>.rounded-top</code>, <code>.rounded-bottom</code>, <code>.rounded-left</code>, <code>.rounded-right</code>, <code>.rounded-all</code>, 
+                <code>.span-25</code>, <code>.span-30</code>, <code>.span-50</code>, <code>.span-60</code>, <code>.span-75</code>,
+                <code>.block</code>, <code>.inline</code>, <code>.inline-block</code>, <code>.display-none</code>, <code>.hidden</code>
+                <code>.block-if-js</code>, <code>.inline-if-js</code>, <code>.inline-block-if-js</code>, <code>.hide-if-js</code>
+            </p>
+			
+		</div>
+		<div class="unit lastUnit">
+			<h3>Changing the display property</h3>
+            <table> 
+                <thead>
+                    <tr>
+                        <th>css class</th>
+                        <th>purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="class"><code>.block</code></td>
+                        <td headers="purpose">sets display to "block"</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.inline</code></td>
+                        <td headers="purpose">sets display to "block"</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.inline-block</code></td>
+                        <td headers="purpose">sets display to "inline-block"</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.display-none</code></td>
+                        <td headers="purpose">sets display to "none"</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.hidden</code></td>
+                        <td headers="purpose">sets visibility to "hidden"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+			<h3>Changing widths of elements</h3>
+			<p>These classes will apply a percentage width to any element.</p>
+			<em>25%</em> <code>.span-25</code>
+			<div class="guide-hasBackground span-25">&nbsp;</div>
+			<em>30%</em> <code>.span-30</code>
+			<div class="guide-hasBackground span-30">&nbsp;</div>
+			<em>50%</em> <code>.span-50</code>
+			<div class="guide-hasBackground span-50">&nbsp;</div>
+			<em>60%</em> <code>.span-60</code>
+			<div class="guide-hasBackground span-60">&nbsp;</div>
+			<em>75%</em> <code>.span-75</code>
+			<div class="guide-hasBackground span-75">&nbsp;</div>
+			<em>100%</em> <code>.span-100</code>
+			<div class="guide-hasBackground span-100">&nbsp;</div>
+
+			<h3 class="margin-top">Generic padding helper</h3>
+			<div class="guide-hasBackground doc-padding">
+				<p style="background: lightblue">The parent DIV of this paragraph has <code>.doc-padding</code></p>
+			</div>
+			
+			<h3 class="margin-top">Rounding corners of boxes</h3>
+			<p class="guide-hasBackground rounded-top" style="padding: 1em;">
+				Rounded top <code>.rounded-top</code>
+			</p>
+			<p class="guide-hasBackground rounded-bottom" style="padding: 1em;">
+				Rounded bottom <code>.rounded-bottom</code>
+			</p>
+			<p class="guide-hasBackground rounded-left" style="padding: 1em;">
+				Rounded left <code>.rounded-left</code>
+			</p>
+			<p class="guide-hasBackground rounded-right" style="padding: 1em;">
+				Rounded right <code>.rounded-right</code>
+			</p>
+			<p class="guide-hasBackground rounded-all" style="padding: 1em;">
+				Rounded all <code>.rounded-all</code>
+			</p>
+
+			<h3>Float clearing</h3>
+            <table> 
+                <thead>
+                    <tr>
+                        <th>css class</th>
+                        <th>purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="class"><code>.clearfix</code></td>
+                        <td headers="purpose">clears all floated children of the element.  <br />
+                            see: <a target="_blank" href="http://www.positioniseverything.net/easyclearing.html">http://www.positioniseverything.net/easyclearing.html</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.clear-both</code></td>
+                        <td headers="purpose">adds <code>clear: both;</code> rule to the element</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+			<h3>Javascript degradation helpers</h3>
+            <p>
+                Why show someone a feature that they can't use without javascript? Why hide javascript-dependent content from people without javascript? 
+                These classes will give you a bit more control over how things work with and without JS. No need to utilize the <code>.hasJS</code> class
+                in your stylesheets; you can just use these helpers.
+            </p>
+            <table> 
+                <thead>
+                    <tr>
+                        <th>css class</th>
+                        <th>purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="class"><code>.hide-if-js</code></td>
+                        <td headers="purpose">sets display to "none" if javascript is available</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.block-if-js</code></td>
+                        <td headers="purpose">sets display to "block" if javascript is available</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.inline-if-js</code></td>
+                        <td headers="purpose">sets display to "inline" if javascript is available</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.inline-block-if-js</code></td>
+                        <td headers="purpose">sets display to "inline-block" if javascript is available</td>
+                    </tr>
+                    <tr>
+                        <td headers="class"><code>.inline-block-if-js</code></td>
+                        <td headers="purpose">sets display to "inline-block" if javascript is available</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+	
+
+	<div id="contentpatterns" class="doc-page scrollbeacon">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc-content">
+	
+	<h1>Content patterns</h1>	
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Tearsheet icons</h2>
+			<p>Tearshees act as a universal companion icon to upcoming Meetups. They contain the date of the event, but should never be relied on as the only conveyance of the event date.</p>
+			<p><code>.tearsheet-25</code>, <code>.tearsheet</code>, <code>.tearsheet-80</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<time class="tearsheet-25">
+						<span class="month">Oct</span>
+						<span class="day">25</span>
+					</time>
+					<time class="tearsheet">
+						<span class="month">Oct</span>
+						<span class="day">##</span>
+					</time>
+					<time class="tearsheet-80">
+						<span class="month">Oct</span>
+						<span class="day">80</span>
+					</time>
+				</div>
+			</div>
+<pre class="prettyprint">&lt;time class="tearsheet"&gt; &lt;!-- OR class="tearsheet-[25|80] "--&gt;
+	&lt;span class="month"&gt;Oct&lt;/span&gt;
+	&lt;span class="day"&gt;25&lt;/span&gt;
+&lt;/time&gt;</pre>
+		</div>
+	</div>
+
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Member Photos</h2>
+            <p><code>.nametag-photo</code>, <code>.nametag-photo-name</code></p>
+		</div>
+		<div class="unit lastUnit">
+            <h3>Member photos with nametag gradient</h3>
+            <ul class="inlineblockList margin-bottom">
+                <li>
+                    <div class="nametag-photo" style="background-image: url(http://photos2.dev.meetupstatic.com/photos/member/3/f/f/9/member_5596377.jpeg);">
+                        <div class="nametag-photo-name">
+                            <strong>Takashi</strong> <br />
+                            <small>Has a square photo</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="nametag-photo" style="background-image: url(http://photos4.dev.meetupstatic.com/photos/event/a/6/a/5/600_45582661.jpeg);">
+                        <div class="nametag-photo-name">
+                            <strong>Davide</strong> <br />
+                            <small>Has a tall photo</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="nametag-photo" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/b/3/9/3/600_50925971.jpeg);">
+                    <div class="nametag-photo-name">
+                            <strong>Will</strong> <br />
+                            <small>Has a landscape photo</small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+<pre class="prettyprint">&lt;div class="nametag-photo" style="background-image: url(...);"&gt;
+    &lt;div class="nametag-photo-name"&gt;
+        &lt;strong&gt;Member name &lt;/strong&gt; &lt;br /&gt;
+        &lt;small&gt;Organizer&lt;/small&gt;
+        &lt;!-- or almost any content you want can live here --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+	</div>
+</div>
+
+<div class="doc-content">
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Figure set</h2>
+			<p>Figure sets are a common visual pattern on Meetup that consist of a figure (ie. an image) to the left of some descriptive text.</p>
+			<p><code>.figureset-right</code> is a variation of <code>.figureset</code> that puts the figure on the right.</p>
+		</div>
+		<div class="unit lastUnit">
+			
+			<div class="doc-box">
+				<div class="doc-content">
+					<div class="figureset">
+						<div class="figureset-figure">
+							<img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" />
+						</div>
+						<div class="figureset-description">
+							<h3>This is a title</h3>
+							<p>Cardigan consectetur cillum mollit accusamus letterpress. Food truck vinyl aute irony, umami terry richardson post-ironic ut id stumptown flexitarian. Gastropub nostrud kale chips, eiusmod wolf synth truffaut cillum enim incididunt raw denim freegan flexitarian.</p>
+						</div>
+					</div>
+
+					<div class="figureset-right">
+						<div class="figureset-description">
+							<h3>This is a title</h3>
+							<p>Cardigan consectetur cillum mollit accusamus letterpress. Food truck vinyl aute irony, umami terry richardson post-ironic ut id stumptown flexitarian. Gastropub nostrud kale chips, eiusmod wolf synth truffaut cillum enim incididunt raw denim freegan flexitarian.</p>
+						</div>
+						<div class="figureset-figure">
+							<img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+<pre class="prettyprint">&lt;div class="doc-content"&gt;
+	&lt;div class="figureset"&gt;
+		&lt;div class="figureset-figure"&gt;	
+			&lt;img src="..." /&gt;	
+		&lt;/div&gt;	
+		&lt;div class="figureset-description"&gt;	
+			&lt;h3&gt;This is a title&lt;/h3&gt;	
+			&lt;p&gt;Cardigan consectetur cillum mollit accusamus letterpress... &lt;/p&gt;	
+		&lt;/div&gt;	
+	&lt;/div&gt;
+
+	&lt;div class="figureset-right"&gt;   
+		&lt;div class="figureset-description"&gt;
+			&lt;h3&gt;This is a title&lt;/h3&gt;	
+			&lt;p&gt;Cardigan consectetur cillum mollit accusamus letterpress... &lt;/p&gt;	
+		&lt;/div&gt;	
+		&lt;div class="figureset-figure"&gt;	
+			&lt;img src="..." /&gt;	
+		&lt;/div&gt;	
+	&lt;/div&gt;	
+&lt;/div&gt;</pre>
+
+
+		</div>
+		
+	</div>
+
+
+</div>
+<div class="doc-content">
+    <h2>Card list</h2>
+    <p><strong>DEPRECATED</strong> - in the future, the framework should have a cards list that matches the style of meetup.com/explore</p>
+    <p><code>.cardList</code></p>
+</div>
+
+	</div>
+
+	<div id="copy" class="doc-page scrollbeacon">
+	
+<div class="doc-content">
+	<h1>Copy</h1>
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h3>Meetup vs. Meetup Group</h3>
+			<ul>
+				<li>If specifically the group: <strong>Meetup Group</strong></li>
+				<li>If specifically the event: <strong>Meetup</strong>
+				<li>If distinction isn't important: <strong>Meetup</strong>
+				<li>If a generic verb: Let's <strong>meetup</strong> and&hellip;</li>
+			</ul>
+		</div>
+		<div class="unit size1of3">
+			<h3>Your vs. my</h3>
+			<p>Let the user have a conversation with the interface. Don't speak for the user.</p>
+			<ul>
+				<li>Your Meetups</li>
+				<li><s>My Meetups</s></li>
+			</ul>
+		</div>
+		<div class="lastUnit">	
+			<h3>We</h3>
+			<p>Who's we? There aren't elves in the computer doing work. Let the user be the active party.
+			<ul>
+				<li>Send a message to the Organizer</li>
+				<li><s>Click here and we'll send this message to the Organizer</s></li> 
+			</ul>
+		</div>
+	</div>
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h3>Capitalization</h3>
+			<ul>
+				<li>Sentence case is the way</li>
+				<li><s>Title Case Is Not The Way</s></li>
+			</ul>
+		</div>
+		<div class="unit size1of3">
+			<h3>Style</h3>
+			<ul>
+				<li>Keep it short. Keep it snappy.</li>
+				<li>Can you stand up and exclaim loudly what you've written without an ironic grin? If not, use a period, not an exclamation mark.</li>
+			</ul>
+		</div>
+		<div class="lastUnit">	
+		</div>
+</div>
+
+
+	</div>
+
+	<div id="colors" class="doc-page scrollbeacon">
+	
+<div class="doc-content">
+	<h1>Colors</h1>	
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h3>Text</h3>
+			<table class="guide-table">
+				<tbody>
+					<tr>
+						<td headers="color" class="bg_darkgray"></td>
+						<td headers="sass"><code>$C_text_headline</code>
+							<br /><code class="opacity-quarter">$C_darkgray</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_darkgray_lighter"></td>
+						<td headers="sass"><code>$C_text</code>
+							<br /><code class="opacity-quarter">$C_darkgray_lighter</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_darkgray_lightest"></td>
+						<td headers="sass"><code>$C_text_less</code>
+							<br /><code class="opacity-quarter">$C_darkgray_lightest</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_darkblue"></td>
+						<td headers="sass"><code>$C_link</code>
+							<br /><code class="opacity-quarter">$C_darkblue</code></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+
+		</div>
+		<div class="unit size1of3">
+			<h3>Interface</h3>
+			<table class="guide-table">
+				<tbody>
+					<tr>
+						<td headers="color" class="bg_gray"></td>
+						<td headers="sass"><code>$C_line</code>
+							<br /><code class="opacity-quarter">$C_gray</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_gray_lighter"></td>
+						<td headers="sass"><code>$C_line_less</code>
+							<br /><code class="opacity-quarter">$C_gray_lighter</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_gray_lightest"></td>
+						<td headers="sass"><code>$C_shade</code>
+							<br /><code class="opacity-quarter">$C_gray_lightest</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_red"></td>
+						<td headers="sass"><code>$C_accent</code>
+							<br /><code class="opacity-quarter">$C_red</code></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="lastUnit">
+			<h3>RSVP colors</h3>
+			<table class="guide-table">
+				<tbody>
+					<tr>
+						<td headers="color" class="bg_rsvpGoing"></td>
+						<td headers="sass"><code>$C_rsvpGoing</code>
+							<br /><code class="opacity-quarter">$C_green</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_rsvpWaiting"></td>
+						<td headers="sass"><code>$C_rsvpWaiting</code>
+							<br /><code class="opacity-quarter">$C_blue</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_rsvpNotGoing"></td>
+						<td headers="sass"><code>$C_rsvpNotGoing</code>
+							<br /><code class="opacity-quarter">$C_darkgray_lightest</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>System message colors</h3>
+			<table class="guide-table">
+				<tbody>
+					<tr>
+						<td headers="color" class="bg_warnBg"></td>
+						<td headers="sass"><code>$C_warnBg</code>
+							<br /><code class="opacity-quarter">$C_pink</code></td>
+					</tr>
+					<tr>
+						<td headers="color" class="bg_warnText"></td>
+						<td headers="sass"><code>$C_warnText</code>
+							<br /><code class="opacity-quarter">$C_red</code></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+	</div>
+
+	<div id="typography" class="doc-page scrollbeacon">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc-content">
+	<h1>Typography</h1>	
+	
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<p>We use the <code>@baseline</code> and <code>@baseFontSize</code> sass variables to control vertical spacing. Block elements always use bottom margins for spacing, and headings use line heights.</p>
+			<p>Text should generally not live in a naked <code>&lt;div&gt;</code>. If no better tag makes sense, consider using a <code>&lt;p&gt;</code> instead.</p>
+			<p><code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;abbr&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;small&gt;</code></p>
+		</div>
+		<div class="unit size1of3">
+			<h1>h1. Heading One</h1>
+			<h2>h2. Heading Two</h2>
+			<h3>h3. Heading Three</h3>
+			<h4>h4. Heading Four</h4>
+			<h5>h5. Heading Five</h5>
+			<h6>h6. Heading Six</h6>
+		</div>
+		<div class="unit lastUnit">
+			<p>Ronnie James Dio <strong>strongly</strong> recommends that you rock out. <acronym title="Meetups Everywhere about almost Everything">MEME</acronym> is an acronym you might hear in <abbr title="November">Nov</abbr>, but other months as well. This sentence has an extra bit of <em>emphasis</em> and a <a href="#">link</a>. In New York you can ride on the <sub>subway</sub>. It's really a <sup>super</sup> way to get around. I'm going to take a <small>small</small> nap.</p>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+    <div id="red-label-icons">
+        <a href="/admin/styleguide/includes/red-label.md">External .md file</a>
+    </div>
+
+	
+
+</div>
+
+
+<footer>
+	<div id="footer" class="doc-page">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+</footer>
+
+<script>
+	$(document).ready(function(){
+		function highlight(ev){
+			var targetId = $(ev.target).attr('id');
+		    $("#guide-nav a").removeClass('selected');
+		    $("[href=#"+targetId+"]").addClass('selected');
+		}
+		$('.scrollbeacon').scrollbeacon(
+		{   appear: function (ev) { 
+		    	if(ev.scrollbeacon.direction == 'up'){
+			    	highlight(ev);	
+		    	}
+		    },
+		    topreached: function(ev){ 
+		    	if(ev.scrollbeacon.direction == 'down'){
+			    	highlight(ev);	
+		    	}
+			}
+		});	
+	});
+
+	
+</script>
 </body>
 </html>
