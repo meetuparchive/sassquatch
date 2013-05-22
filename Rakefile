@@ -63,6 +63,8 @@ task :ghpages do
     if "#{branch}" == "master\n"
         sh "git checkout gh-pages"
         sh "git checkout docs/"
+        sh "git mv docs/css/ ./css/"
+        sh "git mv docs/index.html ./index.html"
         sh "git add ."
         sh "git commit -a -m \"update live docs\""
         sh "git push"
