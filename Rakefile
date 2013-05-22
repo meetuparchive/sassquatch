@@ -62,6 +62,7 @@ task :ghpages do
 
     if "#{branch}" == "master\n"
         sh "git checkout gh-pages"
+        sh "git rm -rf ."
         sh "git checkout master docs/"
         sh "mv docs/css/ ./css/"
         sh "mv docs/index.html index.html"
