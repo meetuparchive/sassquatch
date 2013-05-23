@@ -1,6 +1,7 @@
 # SassQuatch
 SassQuatch is a CSS foundation and framework for [Meetup](http://www.meetup.com), built with [Sass](http://sass-lang.com/).
 
+
 - - -
 
 ## Installation
@@ -45,9 +46,22 @@ You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass fi
 
 ## Documentation
 
-Docs are on the way!
+https://github.com/meetup/sassquatch
 
 - - -
+
+## How to contribute
+
+SassQuatch development currently requires ruby, rake, and sass.
+
+When you fork or clone this repo, there's a handy rake task to recompile sass source:
+	
+	$ rake
+
+To test your changes after building, point your browser at `{repo root}/docs/index.html`.
+
+- - -
+
 
 ## License
 
