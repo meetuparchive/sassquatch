@@ -52,13 +52,14 @@ https://github.com/meetup/sassquatch
 
 ## How to contribute
 
-SassQuatch development currently requires ruby, rake, and sass.
+SassQuatch development currently requires Ruby, Rake, and Sass.
 
 When you fork or clone this repo, there's a handy rake task to recompile sass source:
 	
 	$ rake
 
-To test your changes after building, point your browser at `{repo root}/docs/index.html`.
+
+After editing `docs/index.html` and/or Sass source and building, point your browser at `{repo root}/docs/index.html`.
 
 If you have push access, there's a separate task for updating the live github pages documentation:
 
