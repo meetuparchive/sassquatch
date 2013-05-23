@@ -6,7 +6,7 @@ SassQuatch is a CSS foundation and framework for [Meetup](http://www.meetup.com)
 
 ## Installation
 
-SassQuatch can be installed or updated via the [bower](https://github.com/twitter/bower) package manager, which requires Node 8.0 or higher:
+SassQuatch can be installed or updated via the [bower](https://github.com/twitter/bower) package manager, which requires Node 0.8.0 or higher:
 
 	$ bower install sassquatch
 
