@@ -46,7 +46,7 @@ You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass fi
 
 ## Documentation
 
-https://github.com/meetup/sassquatch
+http://meetup.github.io/sassquatch/
 
 - - -
 
