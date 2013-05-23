@@ -64,7 +64,7 @@ If you have push access, there's a separate task for updating the live github pa
 
 	$ rake ghpages
 
-_NOTE_: the `ghpages` task is intended to help update the live documentation after new changes have been merged into master.
+_NOTE_: the `ghpages` task is intended to help update the live documentation after new changes have been merged into master. This won't launch new changes from other branches.
 - - -
 
 
