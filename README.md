@@ -60,6 +60,11 @@ When you fork or clone this repo, there's a handy rake task to recompile sass so
 
 To test your changes after building, point your browser at `{repo root}/docs/index.html`.
 
+If you have push access, there's a separate task for updating the live github pages documentation:
+
+	$ rake ghpages
+
+_NOTE_: the `ghpages` task is intended to help update the live documentation after new changes have been merged into master.
 - - -
 
 
