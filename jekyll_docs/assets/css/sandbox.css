@@ -1,0 +1,43 @@
+/**
+* SANDBOX
+* not organized yet
+*/
+/**
+* MIXINS
+* Sass mixins (including compass mixins)
+*/
+/**
+* selectedNav
+* selected item in pagination, navbuttons
+*/
+/**
+* VARIABLES
+* Sass vars
+*/
+/* {{{ Type */
+/* }}} */
+/* {{{ Colors */
+/* {{{ Hex definitions ( define new ones sparingly ) */
+/* }}} */
+/* {{{ Color aliases ( shouldn't be any hex codes here ) */
+/* }}} */
+/* }}} */
+/* {{{ Layout */
+/* horizontal offset of label/field */
+/* }}} */
+body {
+  background: #eee; }
+
+.header {
+  height: 16px;
+  background: #e6304c; }
+
+.sysmsg {
+  background: #222222;
+  color: #fff; }
+
+.wrap {
+  width: 960px;
+  margin: 0 auto;
+  padding: 12px 0;
+  overflow: hidden; }

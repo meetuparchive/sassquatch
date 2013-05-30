@@ -1,0 +1,138 @@
+/**
+* MIXINS
+* Sass mixins (including compass mixins)
+*/
+
+@function imgUrl($url) {
+	$secure: unquote(getParam("secure","//img1.dev.meetupstatic.com"));
+	$img: unquote($url);
+	@return quote(#{$secure}$img);
+}
+
+@mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
+  -moz-border-radius: $nw $ne $se $sw;
+  -webkit-border-radius: $nw $ne $se $sw;
+  border-radius: $nw $nw $se $sw;
+}
+@mixin round-nw($r){
+  -moz-border-radius-topleft: $r; 
+  -webkit-border-top-left-radius: $r;
+  border-top-left-radius: $r;
+}
+@mixin round-ne($r){
+  -moz-border-radius-topright: $r; 
+  -webkit-border-top-right-radius: $r;
+  border-top-right-radius: $r;
+}
+@mixin round-sw($r){
+  -moz-border-radius-bottomleft: $r; 
+  -webkit-border-bottom-left-radius: $r;
+  border-bottom-left-radius: $r;
+}
+
+@mixin round-se($r){
+  -moz-border-radius-bottomright: $r; 
+  -webkit-border-bottom-right-radius: $r;
+  border-bottom-right-radius: $r;
+}
+
+@mixin gradient($first, $second, $simpleIE: false) {
+  background: $second;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
+  background-image: -moz-linear-gradient(top,  $first,  $second);
+  @if $simpleIE != true {
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#{$first}', endColorstr='#{$second}');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$first}', endColorstr='#{$second}')";
+  }
+}
+
+@mixin background-centering() {
+	background-repeat: no-repeat;
+	background-position: top center;	
+}
+
+@mixin inlineblock() {
+	display: inline-block;
+	zoom: 1;
+	*display: inline; }
+
+@mixin box-shadow($color: #333333, $hoff: 1px, $voff: 1px, $blur: 5px, $spread: 0, $inset: false) {
+  $full: $color $hoff $voff $blur $spread;
+  @if $inset {
+    @if not ($inset == true or $inset == inset) {
+      @warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
+      $full: $full inset; }
+  @if $color == none {
+    @include experimental(box-shadow, none, -moz, -webkit, -o, not -ms, not -khtml, official); }
+  @else {
+    @include experimental(box-shadow, $full, -moz, -webkit, -o, not -ms, not -khtml, official);
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  @if true {
+    $value: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+    @include experimental(filter, $value, not -moz, not -webkit, not -o, -ms, not -khtml, official); } }
+
+@mixin experimental($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
+  @if $moz {
+    -moz-#{$property}: $value; }
+  @if $webkit {
+    -webkit-#{$property}: $value; }
+  @if $o {
+    -o-#{$property}: $value; }
+  @if $ms {
+    -ms-#{$property}: $value; }
+  @if $khtml {
+    -khtml-#{$property}: $value; }
+  @if $official {
+    #{$property}: $value; } }
+
+
+@mixin experimental-value($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
+	@if $moz {
+		#{$property}: -moz-#{$value}; }
+	@if $webkit {
+		#{$property}: -webkit-#{$value}; }
+	@if $o {
+		#{$property}: -o-#{$value}; }
+	@if $ms {
+		#{$property}: -ms-#{$value}; }
+	@if $khtml {
+		#{$property}: -khtml-#{$value}; }
+	@if $official {
+		#{$property}: #{$value}; } }
+
+@mixin clearfix {
+	zoom: 1;
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+}
+
+/**
+* selectedNav
+* selected item in pagination, navbuttons
+*/
+@mixin selectedNav {
+	font-weight: bold;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	background-color: $C_selectedBg;
+	color: #fff !important;
+	@include gradient($C_selectedShade, $C_selectedTint);
+}
+
+@mixin solid{
+	background: $C_gray_lightest;
+	border: 1px solid #fff;
+	@include box-shadow(rgba(0,0,0,.5), 0, 0, 2px);
+}
+
+
