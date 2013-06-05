@@ -1,7 +1,3 @@
----
-heading: Padded List
----
-
 <div class="line-gutters">
 	<div class="unit size1of3">
 		<p>It's a simple list with nothing but padding. Good for very simple items.</p>

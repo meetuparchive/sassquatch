@@ -1,7 +1,3 @@
----
-heading: section list
----
-
 <div class="line-gutters">
 	<div class="unit size1of3">
 		<p>For lists with particularly complex items (looking at you, group home), you can omit the <code>.doc-content</code>and use a <code>.sectionList</code>. The list items then span the box and behave as if each were its own <code>.doc-content</code></p>
