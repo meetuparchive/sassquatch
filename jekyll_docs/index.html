@@ -1,8 +1,6 @@
 ---
-title: indexo
+title: Styleguide Home
 ---
-
-
 
 <!DOCTYPE html>
 
@@ -52,21 +50,24 @@ title: indexo
 		</ul>
 
 		<!-- declare order of pages by id -->
-		{% assign sassquatch_section_names = "hi,mom,bye" | split: "," %}
-		 
-		<!-- loop through the ids -->
-		<ul>
-			{% for pagetitle in sassquatch_section_names %}
-				{% for page in site.pages %}
-		 			
+		{% assign sassquatch_section_names = "whew,start,layout" | split: "," %}
+		<!-- tbd ,forms,navigation Modifiers Content patterns Copy Colors Typography Red Label Icons -->
 
-					{% if page.title == pagetitle %}
-						<li>ok {{ page.content }}</li>
-					{% endif %}
-		 
-				{% endfor %}
+		<!-- loop through the ids -->
+	
+		{% for pagetitle in sassquatch_section_names %}
+			{% for page in site.pages %}
+	 			
+				{% if page.title == pagetitle %}
+
+					<div class="doc-page">
+						{{ page.content }}
+					</div>
+
+				{% endif %}
+	 
 			{% endfor %}
-		</ul>
+		{% endfor %}
 
 	</body>
 </html>
