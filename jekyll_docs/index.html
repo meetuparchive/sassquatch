@@ -59,14 +59,18 @@ title: Styleguide Home
 			{% for page in site.pages %}
 	 			
 				{% if page.title == pagetitle %}
+					
+					<div class="doc-page scrollbeacon" id="{{ page.section_id }}">
+						<h1>{{ page.section_title }}</h1>
 
-					<div class="doc-page">
 						{{ page.content }}
+					
 					</div>
 
 				{% endif %}
 	 
 			{% endfor %}
+			
 		{% endfor %}
 
 	</body>
