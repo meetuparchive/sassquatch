@@ -91,6 +91,33 @@
  *  implementation.
  *
  */
+/*  m-box-shadow()
+ *
+ *  A variant of the main SQ mixin found in `_mixins.scss`. Based on our
+ *  current browser support profile, the only extensions we need to support
+ *  are old IE and old Webkit.
+ *
+ *  BB OS 6 ........ -webkit
+ *  BB OS 7 ........ -webkit
+ *  iOS 4.3 ........ -webkit
+ *
+ *  As our support profile changes, we can phase these vendor prefixes out
+ *  of this mixin.
+ */
+/*  m-gradient()
+ *
+ *  A variant of the main SQ mixin found in `_mixins.scss`. This CSS3 feature
+ *  isn't particularly well supported unprefixed, even in "newer" browsers, so
+ *  we'll need to have a prefixed version into the future.
+ * 
+ *  BB OS 6 + ...... -webkit
+ *  Android 2.3 + .. -webkit
+ *  iOS 4.3 + ...... -webkit
+ *  WP 7.5 / IE9 ... progid
+ *
+ *  As our support profile changes, we can phase these vendor prefixes out
+ *  of this mixin.
+ */
 /*  loop_prop_list()
  *  
  *  This function is an awesome utility helper for more complex
@@ -123,15 +150,28 @@
  *  And unfortunately, based on the way SASS works, I don't think we
  *  can encapsulate the looping process within each of these mixins.
  */
+/* TODO these phone() and tablet() mixins are totally ill advised,
+ * and we shouldn't use them (and I added them!) -j
+ * 
+ * Kill on cleanup.
+ */
 /*  truncate()
  *
  *  Makes a line of `display:box` text truncate to an
  *  ellipsis using CSS3 `text-overflow` if available.
+ *
+ *  TODO This is better served by an extend in the new lists layout.
+ *  Kill on cleanup.
  */
 /*  border-box()
  *
  *  Used to do an x-browser border-box layout.
  *  Most likely redundant somewhere.
+ *
+ *  NOTE
+ *  Should be deprecated in favor of `@box-sizing('border')`
+ *
+ *  TODO Kill on cleanup. This is redundant.
  */
 /*  shaded()
  *
@@ -685,6 +725,7 @@ h6 {
 /**
 * Placeholder styles
 */
+/*  TODO Please kill this. -j */
 /*  NOTE
  *  This is a terrible, hacky mixin, but I can't tell 
  *  why it's being overridden elsewhere ATM. -j
@@ -1905,7 +1946,7 @@ body {
   background-color: #eeeeee; }
 
 .doc-box {
-  margin: 6px;
+  margin: 12px;
   margin-bottom: 0; }
   .doc-box:last-child {
     margin-bottom: 9px; }
@@ -4738,12 +4779,16 @@ a.doc-content {
     vertical-align: top;
     margin-top: 2px; }
 
+.shared-topic-fact {
+  line-height: 1.5em; }
+
 .topic-box {
   background-color: #eeeeee;
   padding: 3px;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px; }
+  border-radius: 3px 3px 3px 3px;
+  white-space: nowrap; }
 
 .rsvp-list-bio {
   margin-top: 5px;
@@ -5052,13 +5097,688 @@ li.nice-mem {
   background: transparent url("//img1.dev.meetupstatic.com/img/icon/icon_check_white.png") scroll no-repeat center center; }
 
 .niceToSeeYou span {
-  display: inline-block;
-  width: 80px;
-  height: 16px;
-  line-height: 16px; }
+  display: inline-block; }
 
 .shadedList .survey {
   padding: 0; }
 
 .survey-container {
   padding: 9px; }
+
+/*  VARIABLES */
+/** 
+ *      @file   _new_parameters
+ *
+ *      @description
+ *
+ *      Temporary holding place for new parameters for mobile layout.
+ */
+/*  ======================================================================= */
+/*  PARAMETERS  */
+/* 10/16 */
+/* 10/16 */
+/* 10/16 */
+/* For iOS: Hard coded because fixed width */
+/* 22/16 */
+/* 48/16 */
+/* 32/16 */
+/*  Equivalent dummy values for a 1em = 16px browser baseline */
+/* 20/16 */
+/* 18/16 */
+/* 16/16 */
+/* 14/16 */
+/* 12/16 */
+/*  We probably shouldn't go smaller than 12px because running text and labels
+ *  become difficult to read/grainy on low resolution displays */
+/*  Colors  */
+/* #000                             */
+/* #333     == $C_darkgray          */
+/* #666     ≈≈ $C_darkgray_lighter  */
+/* #999                             */
+/* #b3b3b3                          */
+/* #ccc                             */
+/* #e5e5e5                          */
+/* #f0f0f0  ≈≈ $C_gray_lighter      */
+/* #f5f5f5  ≈≈ $C_gray_lightest     */
+/* #fafafa                          */
+/* #fff                             */
+/** 
+ *      @file   _new_extends.scss
+ *
+ *      @description
+ *      Temporary holding file until extends are merged into sassquatch.
+ */
+/*  ======================================================================= */
+/*  TEMPORARY RESET  */
+.avatar-s, .avatar-m, .avatar-l, .touchList, .touchList label {
+  font-size: 16px !important; }
+
+/*  ======================================================================= */
+/*  LAYOUT  */
+.ff-box, .touchList .figureset, .touchList-item--segment-header {
+  display: table;
+  width: 100%; }
+
+.ff-box-fix,
+.ff-box-flex, .touchList .figureset-figure,
+.touchList .figureset-description, .touchList-item--segment-header-label {
+  display: table-cell;
+  vertical-align: middle; }
+
+/*  ======================================================================= */
+/*  MEDIA AND IMAGES  */
+.avatar-s img, .avatar-m img, .avatar-l img {
+  background-color: #eeeeee;
+  width: 100%;
+  height: 100%;
+  display: block;
+  line-height: 1;
+  overflow: hidden; }
+
+/*  ======================================================================= */
+/*  TEXT MANIPULATION  */
+.touchList-item--attendee-label, .touchList-item--attendee-role {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: hidden;
+  -o-text-overflow: ellipsis;
+  /* Opera Mini/Mobile */
+  text-overflow: ellipsis; }
+
+.touchList-item--segment-header, .touchList-item--input-label, .touchList-item--textarea-label, .touchList-item--input-radio-label,
+.touchList-item--input-checkbox-label, .touchList-item--input-radio-pseudoradio,
+.touchList-item--input-checkbox-pseudocheckbox {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/*  ======================================================================= */
+/*  TEXT STYLES MANIPULATION  */
+.touchList-item--attendee-label, .touchList-item--load-more-link-label,
+.touchList-item--jump-link-label, .touchList-item--input input, .touchList-item--textarea-label, .touchList-item--textarea textarea, .touchList-item--input-radio input,
+.touchList-item--input-checkbox input {
+  font-size: 1em;
+  line-height: 1.25; }
+
+/*  ======================================================================= */
+/*  UI SPECIFIC EXTENDS AND MIXINS  */
+.touchList-item--input-radio-pseudoradio,
+.touchList-item--input-checkbox-pseudocheckbox {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 1.375em;
+  width: 1.375em;
+  text-align: center;
+  border: 2px solid #cccccc; }
+
+.touchList-item--input-label, .touchList-item--textarea-label, .touchList-item--input-radio-label,
+.touchList-item--input-checkbox-label {
+  padding-bottom: 0;
+  /* Reset */
+  padding-left: 0.625em; }
+
+/*  NEW SASSQUATCH CANDIDATES */
+/**
+ *      @file   _fix-flex.scss
+ *
+ *      @author John Cockrell <john@meetup.com>
+ *      @since  2013-05-14
+ *
+ *      @description
+ *      A collection of styles that allow us to do tabular internal layouts 
+ *      on list items, etc. It's particularly useful on responsive layouts, 
+ *      like we use for mobile.
+ *      
+ *      For semantics, it's important to always put `.fix` and `.flex` elements
+ *      inside a `.fix-flex-box`--because putting naked table cells inside other
+ *      table cells doesn't make semantic sense and won't necessarily be 
+ *      predictable in layout across browsers.
+ *
+ *      There should be only one `.flex` per row.
+ *
+ *      NOTE: If you want to set minimum heights on fix, flex or ff-box,
+ *      you'll need to use `height` rather than `min-height` because of the 
+ *      way table layouts are used in CSS.
+ *
+ *      NOTE: In the future, we'll probably want to swap out tabular layouts 
+ *      with flexbox.
+ */
+/*  ======================================================================= */
+/*  FF BOX  */
+.ff-box {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+.ff-box-flex {
+  width: 100%; }
+
+/*  ======================================================================= */
+/*  FF BOX MODIFIERS  */
+/*  Use `class="ff-box ff-box--fixed-layout"` to get a fixed width layout for
+ *  all child cells.
+ */
+.ff-box--fixed-layout {
+  table-layout: fixed; }
+
+.ff-box--fixed-layout .ff-box-flex {
+  width: auto; }
+
+/**
+ *      @file   _figureset_m.scss
+ *      
+ *      @author John Cockrell <john@meetup.com>
+ *      @since  2013-05-14
+ *
+ *      @description
+ *      Touchblock's `.figureset` implementation is slightly different
+ *      from the full Sassquatch--it does roughly the same thing, but
+ *      with a more specific implementation.
+ *
+ *      This is used within a `fix/flex` layout to provide text wrapping
+ *      and automated positioning of the figure and it's description.
+ *
+ *      Basically, you'd use a "figureset" whenever you do now, instead 
+ *      of fix-flex--because fix-flex doesn't handle CSS text truncation.
+ *
+ *      NOTE: Unlike FixFlex, Figset requires one of the two cells to have 
+ *      a width assigned to it in order for the layout to perform correctly
+ *      AND for the text truncation to work.
+ *
+ *      <div class="figureset">
+ *          <div class="figureset-figure media-m"> 
+ *              <img>
+ *          </div> 
+ *          <div class="figureset-description">...</div>
+ *      </div>
+ */
+/* NOTE: these have to all be scoped to touchList for now because of 
+ * the layout restrictions
+ */
+.touchList .figureset {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  table-layout: fixed; }
+.touchList .figureset-description {
+  width: 100%; }
+.touchList .figureset-figure + .figureset-description,
+.touchList .figureset-description + .figureset-figure {
+  padding-left: 0.625em;
+  /*  10/16  */ }
+
+/**
+ *  @file   _touchList.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-05-27
+ *
+ *  @description
+ *      File intended to be consolidated with _lists_m.scss in Sassquatch.
+ *      Determines styles for the `touchList` list layout style.
+ */
+.touchList-item,
+.touchList-item--segment, .touchList-item--empty, .touchList-item--load-more-link,
+.touchList-item--jump-link {
+  /*  A divider applied to the top of every list-item-like element in a
+   *  touchlist. Applying it to <li> results in nesting clusterpuck, so it's
+   *  applied to special hook classes for granularity:
+   *
+   *      `.touchList-item`
+   *      `.touchList-load-more-link`
+   *      `.touchList-jump-link`
+   */
+  border-top: 1px solid #eeeeee; }
+
+/*  ======================================================================= */
+/*  TOUCHLIST STYLES  */
+.touchList {
+  /* RESETS { */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* } */ }
+  .touchList .touchList-item:first-child {
+    /* TODO Add rounding to top if in a rounded container */
+    border-top-color: transparent; }
+  .touchList .touchList-item:last-child {
+    /* TODO Add rounding to bottom if in a rounded container */ }
+
+/*  ======================================================================= */
+/*  TOUCHLIST ITEMS  */
+/*  These are all <li> elements, but only these are getting borders, rather 
+ *  than blanket coating all <li> elements, nested, first child, or otherwise
+ *  with this style. It's a more targeted, conservative approach.
+ */
+/*  Attendee Items  */
+.touchList-item--attendee-figureset {
+  padding: 0.625em; }
+
+.touchList-item--attendee-label {
+  padding: 0;
+  /* RESET */ }
+
+.touchList-item--attendee-label-guest-count {
+  font-size: 0.875em;
+  /* NOTE: dividing any two parameters with the same units strips the units.
+   * We need to multiply by an em to make sure this number is in ems.
+   */
+  font-weight: normal;
+  color: #999999;
+  vertical-align: 1px;
+  /* Bump it up a hair, because parentheses are all dangly */ }
+
+.touchList-item--attendee-role,
+.touchList-item--attendee-context {
+  padding: 0;
+  font-size: 0.75em;
+  color: #999999; }
+
+.touchList-item--attendee-role {
+  line-height: 1.3; }
+
+.touchList-item--attendee-fun-fact-description {
+  line-height: 1.3; }
+
+.touchList-item--attendee-fun-fact-description .topic-box {
+  white-space: nowrap; }
+
+/* TODO: Unstyled for now; haven't made it show up to test */
+.touchList-item--attendee-secondary-actions {
+  white-space: nowrap;
+  padding: 0 0.625em; }
+
+.touchList-item--attendee-secondary-actions .button {
+  /* RESET { */
+  margin: 0;
+  /* kill bottom margin */
+  /* } */
+  /* NOTE: Right now, all the buttons in the "secondary actions" block are
+   * set to `inline-block` display. This will provide a 4px (roughly) gap
+   * organically between each button--no padding/margin needed.
+   *
+   * If we change that in the future, button-level padding should probably
+   * work together with the secondary-actions wrapper.
+   */ }
+
+/*  ======================================================================= */
+/*  TOUCHLIST EMPTY ITEMS  */
+.touchList-item--empty {
+  padding: 2em 0.625em;
+  background-color: whitesmoke; }
+
+.touchList-item--empty-label {
+  font-size: 1em;
+  line-height: 1.25;
+  color: #b3b3b3;
+  text-align: center;
+  text-shadow: 0 1px 0 white; }
+
+/*  ======================================================================= */
+/*  TOUCHLIST JUMP LINKS AND LOAD MORE LINKS  */
+.touchList-item--jump-link .ff-box,
+.touchList-item--load-more-link .ff-box {
+  padding: 0 0.625em;
+  height: 3em;
+  /* See notes about tables and m-height everywhere */ }
+
+.touchList-item--load-more-link-label,
+.touchList-item--jump-link-label {
+  padding-bottom: 0;
+  /* RESET */ }
+
+.touchList-item--load-more-link-label {
+  text-align: center;
+  color: #555555; }
+
+.touchList-item--jump-link-disclosure-icon {
+  color: #999999; }
+
+/*  ======================================================================= */
+/*  TOUCHLIST SEGMENT COMPONENTS */
+.touchList-item--segment-header {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 0.625em;
+  height: 2em; }
+
+/* The actual text inside the --segment-header that forms a title for the
+ * section below.
+ */
+.touchList-item--segment-header-label {
+  /* RESET { */
+  padding: 0;
+  font-weight: bold;
+  /* } */
+  /* We're basically making this small caps, for now */
+  color: #666666;
+  /* $C_darkgray_lighter */
+  font-size: 0.75em;
+  text-transform: uppercase; }
+
+.touchList-item--segment-content {
+  /* RESET { */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* } */ }
+
+/**
+ *  @file   _touchForms.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-05-28
+ *
+ *  @description
+ *      A collection of form resets and styles currently scoped to the
+ *      touchList list type. In the future, these styles should be used
+ *      site-wide, and this file should become `_forms_m.scss`, and serve
+ *      as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
+ */
+/*  ======================================================================= */
+/*  SCOPED RESETS TO FORM ELEMENTS  */
+/*  NOTE: We can get rid of most of these resets once we switch over to using
+ *  this file as a _forms_m.scss instead of the normal Sq _forms.scss 
+ */
+.touchList {
+  /* Generic Resets */
+  /* Text Input Specific Resets */
+  /* Disabled states */
+  /*  Browser Specific Overrides  */
+  /* Don't worry about repetition here; the extend will clean it up
+   * in compilation
+   */ }
+  .touchList label {
+    /*  This needs to be reset on top of the .touchList, because label
+     *  is sized using PX, not ems.
+     */
+    margin: 0; }
+  .touchList input,
+  .touchList textarea {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    /* The full, non-diet-mobile mixin has to be used to erase the full
+     * SQ statements
+     */
+    /*  We're interpolating the inputs here in case they're wrapped
+     *  in strings from use in the mixins.
+     */
+    -webkit-transition: none 0 ;
+    -moz-transition: none 0 ;
+    -o-transition: none 0 ;
+    transition: none 0 ;
+    -moz-border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    /* Needs to be here to override all full SQ statements */
+    /* Acceptable values are border, content, and padding - content is the default W3C model */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none; }
+  .touchList textarea {
+    width: 100%;
+    resize: none; }
+  .touchList [disabled],
+  .touchList [disabled="disabled"],
+  .touchList .disabled {
+    background-color: whitesmoke; }
+  .touchList input[type="search"],
+  .touchList input[type="date"],
+  .touchList input[type="time"],
+  .touchList input[type="datetime"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    /*  Needed for iOS Safari to not auto-format `<input type="date">` to
+     *  look like a dropdown menu of inconsistent widths. 
+     */ }
+  .touchList input[type="text"],
+  .touchList input[type="email"],
+  .touchList input[type="password"],
+  .touchList input[type="date"],
+  .touchList input[type="time"],
+  .touchList input[type="datetime"],
+  .touchList input[type="number"],
+  .touchList input[type="tel"],
+  .touchList input[type="search"] {
+    background: transparent;
+    /*  NOTE: for Android Firefox, the browser will add a dippy background
+     *  shadow that should be overridden above, but isn't. I can't tell 
+     *  whether it's us, from a bad override chain or the default browser
+     *  styles.
+     */
+    /*  TODO: Remove once this file becomes `_forms_m.scss` and we no longer
+     *  have to have as crazy a system of overrides from  `_forms.scss` in
+     *  Sassquatch.
+     */ }
+  .touchList input[type="email"],
+  .touchList input[type="datetime"] {
+    background: transparent;
+    /*  NOTE: Webkit builds. By default, the browser will attempt to
+     *  validate an email input as soon as you start typing it, helpfully
+     *  changing the background color of the field for you. This really
+     *  rustles my jimmies, and this rule disables it for the email input
+     *  which is the most notable offender. 
+     *  This also goes for `datetime`, apparently. 
+     */ }
+  .touchList input[type="date"],
+  .touchList input[type="time"] {
+    background: transparent;
+    /* NOTE: On Android Browser 4.2.2, Date and Time will not display the
+     * correct entry interface. This means that you can type whatever
+     * you want in there, resulting in the same validation problems as 
+     * above.
+     */ }
+  .touchList ::-webkit-search-cancel-button {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    /*  Webkit builds now employ an (X) button in search inputs, and only
+     *  search inputs. This pseudo-element selector will allow us to 
+     *  not display them, instead of having them half cut off and weird
+     *  looking. 
+     */ }
+  .touchList ::-webkit-inputplaceholder {
+    color: #b3b3b3;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.25;
+    padding-left: 5px;
+    opacity: 1.0; }
+  .touchList ::-moz-placeholder {
+    color: #b3b3b3;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.25;
+    padding-left: 5px;
+    opacity: 1.0; }
+  .touchList :-ms-input-placeholder {
+    color: #b3b3b3;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.25;
+    padding-left: 5px;
+    opacity: 1.0;
+    padding-left: 0.625em;
+    /* NOTE: Placeholder pseudo elements in IE10 (Windows Phone 8) do not
+     * inherit padding assigned to their associated <input> or <textarea>
+     * element. Here, we're just assigning the left padding to be equal
+     * to that added other <input>/<textarea>
+     */ }
+
+/*  ======================================================================= */
+/*  TEXT INPUT STYLES  */
+.touchList-item--input .ff-box-flex,
+.touchList-item--input .ff-box-fix {
+  height: 3em;
+  /* There is no `min-height` on tables. Use `height` instead */ }
+
+.touchList-item--input-label {
+  white-space: nowrap; }
+
+.touchList-item--input input {
+  height: 100%;
+  width: 100%;
+  padding: 0 0.625em; }
+
+.touchList-item--input-pseudo-placeholder {
+  color: #b3b3b3;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.25;
+  padding-left: 5px;
+  opacity: 1.0;
+  display: none;
+  /* Hidden by default, until JS loads */ }
+
+/*  ======================================================================= */
+/*  TEXTAREA STYLES  */
+.touchList-item--textarea-label {
+  padding: 0.625em 0.625em 0;
+  line-height: 1.4;
+  /* NOTE: this expanded line height value bumps the overall height of this 
+   * element to 32px (aka 2em), which arguably makes it fit better into our
+   * 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
+   */ }
+
+.touchList-item--textarea textarea {
+  padding: 0.625 0.625em 0;
+  margin-bottom: 0.625;
+  /* NOTE: setting the margin on the bottom instead of padding causes the
+   * textarea to ratchet evenly on the bottom when typing more than the
+   * present 4 lines in height.
+   * However, using a margin on bottom instead of padding would mean that
+   * the coloration of a disabled textarea does not extend all the way to
+   * the "visual bottom" of its cell--which looks weird. That's why I'm 
+   * not using margin here, even though it would be better for interaction.
+   */
+  height: 6.25;
+  /* NOTE: Because the textarea is set up with border-box layout, we need
+   * to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
+   */ }
+
+.touchList-item--textarea-counter {
+  padding: 0 0.625em 0.625em;
+  text-align: right; }
+
+/*  ======================================================================= */
+/*  RADIO/CHECKBOX STYLES  */
+.touchList-item--input-radio .ff-box-fix,
+.touchList-item--input-radio .ff-box-flex,
+.touchList-item--input-checkbox .ff-box-fix,
+.touchList-item--input-checkbox .ff-box-flex {
+  height: 3em;
+  /* There is no `min-height` on tables. Use `height` instead */ }
+
+.touchList-item--input-radio input,
+.touchList-item--input-checkbox input {
+  display: none;
+  margin: 0 0.625em;
+  /*  NOTE: radio boxes and checkboxes need to use margin, not padding for
+   *  layout--since they don't really have insides or anything.
+   */ }
+
+/*  NOTE: Why go through all the trouble creating and styling pseudo-radio
+ *  and -checkboxes? It turns out, on iOS, radio buttons and checkboxes are
+ *  damn hard to see and on Android, they're damn tiny.
+ */
+.touchList-item--input-radio-pseudoradio,
+.touchList-item--input-checkbox-pseudocheckbox {
+  margin: 0 0.625em; }
+
+.touchList-item--input-radio-pseudoradio-dot,
+.touchList-item--input-checkbox-pseudocheckbox-check {
+  visibility: hidden; }
+
+.touchList-item--input-radio-pseudoradio {
+  border-radius: 0.6875em; }
+
+.touchList-item--input-radio-pseudoradio-dot {
+  border-radius: 0.51563em;
+  display: inline-block;
+  height: 0.51563em;
+  width: 0.51563em;
+  background-color: #333333;
+  vertical-align: 0.19em;
+  /*  NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
+   *  good on IE10, iOS, and Android 4+
+   */ }
+
+.touchList-item--input-checkbox-pseudocheckbox {
+  border-radius: 3px; }
+
+.touchList-item--input-checkbox-pseudocheckbox-check {
+  padding: 0;
+  /* yucky override */
+  vertical-align: 0.05em;
+  /*  NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
+   *  good on IE10, iOS, and Android 4+
+   */ }
+
+input:checked + .touchList-item--input-radio-pseudoradio .touchList-item--input-radio-pseudoradio-dot,
+input:checked + .touchList-item--input-checkbox-pseudocheckbox .touchList-item--input-checkbox-pseudocheckbox-check {
+  visibility: visible; }
+
+/**
+ *      @file   _media-m.scss
+ *
+ *      @author John Cockrell <john@meetup.com>
+ *      @since  2013-05-14
+ *
+ *      @description
+ *      Solely squared off figures that work in conjunction with an image 
+ *      loaded using background-sizing. 
+ *
+ *      This style also separates the mechanical style attributes from each
+ *      photo's relation to other sizes, so that the names won't be misleading
+ *      in the future (unlike, say, a `.photo45` that changes to a different
+ *      number and we have to update all the classes everywhere).
+ *
+ *      <div class="avatar-small">
+ *          <img src="...">
+ *      </div>
+ */
+/*  32pt */
+.avatar-s {
+  height: 2em;
+  width: 2em; }
+
+/*  48pt */
+.avatar-m {
+  height: 3em;
+  width: 3em; }
+
+/*  64pt */
+.avatar-l {
+  height: 4em;
+  width: 4em; }
+
+/**
+ *  @file _pin-layout.scss
+ *
+ *  @author  John Cockrell <john@meetup.com>
+ *  @since   2013-05-31
+ *
+ *  @description
+ *  By default, both Mobile's `_figureset-m.scss` and `_fix-flex.scss` are
+ *  middle aligned. The pinning system allows you to append to either the 
+ *  "table" components of a figureset or ff-box OR the "table cell" 
+ *  components to adjust that alignment to the top or bottom.
+ */
+.pin-top.ff-box .ff-box-flex, .pin-top.ff-box .ff-box-fix, .pin-top.ff-box-flex, .pin-top.ff-box-fix, .pin-top.figureset .figureset-figure, .pin-top.figureset .figureset-description, .pin-top.figureset-figure, .pin-top.figureset-description {
+  vertical-align: top; }
+
+.pin-bottom.ff-box .ff-box-flex, .pin-bottom.ff-box .ff-box-fix, .pin-bottom.ff-box-flex, .pin-bottom.ff-box-fix, .pin-bottom.figureset .figureset-figure, .pin-bottom.figureset .figureset-description, .pin-bottom.figureset-figure, .pin-bottom.figureset-description {
+  vertical-align: bottom; }

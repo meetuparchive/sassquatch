@@ -10,7 +10,8 @@ title: Mobile Styleguide
 		<meta charset="UTF-8" />
 		<title>Meetup Mobile Styleguide</title>
 		
-		<link rel="stylesheet" href="assets/css/sassquatch-standalone.css" type="text/css" />
+		<!-- our mobile standalone for now -->
+		<link rel="stylesheet" href="assets/css/meetup_mobi.css" type="text/css" />
 
 		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
 		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
@@ -43,7 +44,7 @@ title: Mobile Styleguide
 		</ul>
 
 		
-		{% assign sassquatch_mobile_sections = "touchlists,forms" | split: "," %}
+		{% assign sassquatch_mobile_sections = "touchlists" | split: "," %}
 		
 		{% for pagetitle in sassquatch_mobile_sections %}
 			{% for page in site.pages %}
