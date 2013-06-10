@@ -2,4 +2,4 @@
 .sass-cache
 *.swp
 .ruby-version
-_site/*
+jekyll_docs/_site/*
