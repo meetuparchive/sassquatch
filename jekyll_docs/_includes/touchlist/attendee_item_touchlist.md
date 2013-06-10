@@ -1,6 +1,6 @@
 <div class="doc-content">
 	<div class="line">
-		<div class="unit size1of3 gutter-right">
+		<div class="unit size1of2 gutter-right">
 			<h2>Attendee Item TouchList</h2>
 			<p> First designed for attendees, we can use whenever we need to display member data in a list </p>
 		</div>

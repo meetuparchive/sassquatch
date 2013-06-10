@@ -27,9 +27,6 @@ title: Mobile Styleguide
 			body, html {
 				margin:20px;
 			}
-			.figureset-figure {
-				width:50%;
-			}
 		</style>
 
 	</head>
@@ -42,11 +39,11 @@ title: Mobile Styleguide
 			<li><a href="#forms">Forms</a></li>
 			<li><a href="#navigation">Navigation</a></li>
 		</ul>
-
 		
 		{% assign sassquatch_mobile_sections = "touchlists" | split: "," %}
 		
 		{% for pagetitle in sassquatch_mobile_sections %}
+
 			{% for page in site.pages %}
 	 			
 				{% if page.title == pagetitle %}
