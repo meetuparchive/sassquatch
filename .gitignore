@@ -2,3 +2,4 @@
 .sass-cache
 *.swp
 .ruby-version
+_site/*
