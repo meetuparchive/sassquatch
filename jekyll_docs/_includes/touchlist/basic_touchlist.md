@@ -6,6 +6,7 @@
 		<div class="doc-content">
 			{% include touchlist/basic_touchlist_example.md %}
 
+			{% highlight jsp %}{% include touchlist/basic_touchlist_example_jsp.md %}{% endhighlight %}
 			{% highlight html %}{% include touchlist/basic_touchlist_example.md %}{% endhighlight %}
 		</div>
 	</div>

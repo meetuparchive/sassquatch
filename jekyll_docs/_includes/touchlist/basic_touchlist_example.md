@@ -1,8 +1,28 @@
+<!-- HTML -->
 <div class="doc-box">
-	<ul class="touchList">
-		<li class="touchList-item"><a href="thing1">Such a basic example</a></li>
-		<li class="touchList-item"><a href="thing2">Another basic item</a></li>
-		<li class="touchList-item"><a href="thing3">And another</a></li>
-		<li class="touchList-item--jump-link"><a href="more_things">Go to more basic items</a></li>
-	</ul>
+    <ul class="touchList">
+        <li class="touchList-item">
+            <a href="url" class="ff-box touchList-item-ff-box">
+                <div class="ff-box-flex">
+                    <h4 class="touchList-item-label">Item 1</h4>
+                </div>
+            </a>
+        </li>
+
+        <li class="touchList-item">
+            <a href="url" class="ff-box touchList-item-ff-box">
+                <div class="ff-box-flex">
+                    <h4 class="touchList-item-label">Item 2</h4>
+                </div>
+            </a>
+        </li>
+
+        <li class="touchList-item">
+            <a href="url" class="ff-box touchList-item-ff-box">
+                <div class="ff-box-flex">
+                    <h4 class="touchList-item-label">Item 3</h4>
+                </div>
+            </a>
+        </li>
+    </ul>
 </div>
