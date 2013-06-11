@@ -5198,7 +5198,7 @@ li.nice-mem {
 
 /*  ======================================================================= */
 /*  TEXT STYLES MANIPULATION  */
-.touchList-item--attendee-label, .touchList-item--load-more-link-label,
+.touchList-item-label, .touchList-item--attendee-label, .touchList-item--load-more-link-label,
 .touchList-item--jump-link-label, .touchList-item--input input, .touchList-item--textarea-label, .touchList-item--textarea textarea, .touchList-item--input-radio input,
 .touchList-item--input-checkbox input {
   font-size: 1em;
@@ -5357,6 +5357,15 @@ li.nice-mem {
  *  than blanket coating all <li> elements, nested, first child, or otherwise
  *  with this style. It's a more targeted, conservative approach.
  */
+/*  Basic Item (Demo)  */
+.touchList-item-ff-box {
+  padding: 0 0.625em;
+  height: 3em; }
+
+.touchList-item-label {
+  padding: 0;
+  /* RESET */ }
+
 /*  Attendee Items  */
 .touchList-item--attendee-figureset {
   padding: 0.625em; }
@@ -5423,8 +5432,8 @@ li.nice-mem {
 
 /*  ======================================================================= */
 /*  TOUCHLIST JUMP LINKS AND LOAD MORE LINKS  */
-.touchList-item--jump-link .ff-box,
-.touchList-item--load-more-link .ff-box {
+.touchList-item--jump-link-ff-box,
+.touchList-item--load-more-link-ff-box {
   padding: 0 0.625em;
   height: 3em;
   /* See notes about tables and m-height everywhere */ }
