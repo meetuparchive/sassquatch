@@ -9,9 +9,10 @@
 		</div>
 	</div>
 
-	<h3>html markup</h3>
-	{% highlight html %}{% include touchlist/attendee_item_touchlist_example.md %}{% endhighlight %}
-
 	<h3>jsp markup</h3>
 	{% highlight jsp %}{% include touchlist/attendee_item_touchlist_example_jsp.md %}{% endhighlight %}
+
+	<h3>html markup</h3>
+	{% highlight html %}{% include touchlist/attendee_item_touchlist_example.md %}{% endhighlight %}
+	
 </div>
