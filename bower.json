@@ -3,7 +3,10 @@
     "version": "1.0.4",
     "description": "CSS foundation and framework for Meetup",
     "main": [
-        "./build/"
+        "./build/desktop/sassquatch.css",
+        "./build/desktop/_sassquatch.scss",
+        "./build/mobile/sassquatch_mobile.css",
+        "./build/mobile/_sassquatch_mobile.scss"
     ],
     "license": "MIT"
 }

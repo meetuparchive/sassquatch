@@ -12,16 +12,16 @@ task :compile do
     puts "#{HR}"
     puts "Compiling SassQuatch for desktop" 
     puts "#{HR}"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/desktop/_sassquatch.scss"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/desktop/sassquatch.css --style compressed"
+    sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/_sassquatch.scss"
+    sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
 
     # mobile
     puts
     puts "#{HR}"
     puts "Compiling SassQuatch for mobile" 
     puts "#{HR}"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/mobile/_sassquatch_m.scss"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/mobile/sassquatch_m.css --style compressed"
+    sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/_sassquatch_mobile.scss"
+    sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
 end
 
 
@@ -31,8 +31,8 @@ task :docs do
     puts "#{HR}"
     puts "Copying assets for docs" 
     puts "#{HR}"
-    sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css" 
-    sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_m.css" 
+    sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css" 
+    sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css" 
 end
 
 
