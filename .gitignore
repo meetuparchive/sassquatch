@@ -3,3 +3,4 @@
 *.swp
 .ruby-version
 jekyll_docs/_site/*
+jekyll_docs.sublime*
