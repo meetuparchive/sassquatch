@@ -1,4 +1,4 @@
- 
+<%-- JSP --%>
  <li:attendee 	attendee="${ rsvp }" 
  		listing="${listing}" 
  		rsvp_type="${rsvp_type}" 
