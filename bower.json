@@ -3,7 +3,7 @@
     "version": "1.0.3",
     "description": "CSS foundation and framework for Meetup",
     "main": [
-        "./build/",
+        "./build/"
     ],
     "license": "MIT"
 }
