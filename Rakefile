@@ -1,7 +1,8 @@
 COMPILER    = "sass"
 SOURCES     = "src/sassquatch"
 TARGET      = "build"
-DOC_ASSETS  = "jekyll_docs/assets/css"
+JEKYLL_DIR  = "jekyll_docs/"
+DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 
@@ -27,12 +28,18 @@ end
 
 # copy built css files into docs/
 task :docs do
-    puts
-    puts "#{HR}"
-    puts "Copying assets for docs" 
-    puts "#{HR}"
-    sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
-    sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_m.css"
+	puts
+	puts "#{HR}"
+	puts "Copying assets for docs" 
+	puts "#{HR}"
+	sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
+	sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_m.css"
+
+	puts
+	puts "#{HR}"
+	puts "STARTING JEKYLL..."
+	puts "#{HR}"
+	sh "jekyll serve -s #{JEKYLL_DIR}"
 end
 
 
