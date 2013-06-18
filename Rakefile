@@ -57,45 +57,40 @@ end
 
 # LAUNCH - syncs master with the gh-pages branch; 
 # rebuilds LIVE github documentation page
-task :ghpages do
-    puts
-    puts "Rebuilding SassQuatch github pages" 
-    puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
+task :launch do
+	puts
+	puts "Rebuilding SassQuatch github pages" 
+	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
-    Rake::Task['compile'].execute
-    Rake::Task['docs'].execute
+	Rake::Task['compile'].execute
+	Rake::Task['docs'].execute
 
-    branch = `git rev-parse --abbrev-ref HEAD`
+	branch = `git rev-parse --abbrev-ref HEAD`
 
-    if "#{branch}" == "master\n"
-        sh "rm -rf .sass-cache"
-        sh "git checkout gh-pages"
-        sh "rm -rf css"
-        sh "rm -rf js"
-        sh "rm -rf index.html"
-        sh "git checkout master docs/"
-        sh "mv docs/css/ ./css/"
-        sh "mv docs/js/ ./js/"
-        sh "mv docs/index.html index.html"
-        sh "rm -r docs/"
-        sh "git add ."
-        sh "git commit -a -m \"update live docs\""
-        sh "git push"
-        sh "git checkout master"
+	if "#{branch}" == "master\n"
+		sh "rm -rf .sass-cache"
+		sh "git checkout gh-pages"
+		sh "git checkout master jekyll_docs/"
+		sh "cp -r jekyll_docs/ ./"
+		sh "rm -rf jekyll_docs/"
+		sh "git add ."
+		sh "git commit -a -m \"update live docs\""
+		sh "git push"
+		sh "git checkout master"
 
-        puts
-        puts "#{HR}"
-        puts "Succesfully updated docs in gh-pages\n"
-        puts "Check http://meetup.github.io/sassquatch\n"
-        puts "(sometimes github takes a few minutes to rebuild the page)\n"
-        puts "#{HR}"
-        puts
-    else
-        puts
-        puts "WARNING: you're not on master."
-        puts "see launch instructions at https://github.com/meetup/sassquatch"
-        puts
-        puts "BUILD FAILED"
-        puts
-    end
+		puts
+		puts "#{HR}"
+		puts "Succesfully updated docs in gh-pages\n"
+		puts "Check http://meetup.github.io/sassquatch\n"
+		puts "(sometimes github takes a few minutes to rebuild the page)\n"
+		puts "#{HR}"
+		puts
+	else
+		puts
+		puts "WARNING: you're not on master."
+		puts "see launch instructions at https://github.com/meetup/sassquatch"
+		puts
+		puts "BUILD FAILED"
+		puts
+	end
 end
