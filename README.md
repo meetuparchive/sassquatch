@@ -52,20 +52,19 @@ http://meetup.github.io/sassquatch/
 
 ## How to contribute
 
-SassQuatch development currently requires Ruby, Rake, and Sass.
+SassQuatch development currently requires ruby gems Rake, Sass, and Jekyll.
 
-When you fork or clone this repo, there's a handy rake task to recompile sass source:
-	
-	$ rake
+To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs. 
 
+After editing, run `rake` in the root directory of the repo and point your browser at `localhost:4000`.
 
-After editing `docs/index.html` and/or Sass source and building, point your browser at `{repo root}/docs/index.html`.
-
-If you have push access, there's a separate task for updating the live github pages documentation:
-
-	$ rake ghpages
-
-_NOTE_: the `ghpages` task is intended to help update the live documentation after new changes have been merged into master. This won't launch new changes from other branches.
+<!--
+   -If you have push access, there's a separate task for updating the live github pages documentation:
+   -
+	-   $ rake ghpages
+   -
+   -_NOTE_: the `ghpages` task is intended to help update the live documentation after new changes have been merged into master. This won't launch new changes from other branches.
+	-->
 - - -
 
 
