@@ -1,7 +1,7 @@
 COMPILER    = "sass"
 SOURCES     = "src/sassquatch"
 TARGET      = "build"
-DOC_ASSETS  = "docs/css"
+DOC_ASSETS  = "jekyll_docs/assets/css"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 
@@ -31,8 +31,8 @@ task :docs do
     puts "#{HR}"
     puts "Copying assets for docs" 
     puts "#{HR}"
-    sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css" 
-    sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_m.css" 
+    sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
+    sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_m.css"
 end
 
 
