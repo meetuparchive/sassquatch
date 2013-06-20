@@ -20,13 +20,6 @@ title: Styleguide Home
 		<script src="assets/js/closeable.js" type="text/javascript"></script>
 		<script src="assets/js/jquery.scrollbeacon.js" type="text/javascript"></script>
 
-		<style type=text/css>
-			body, html {
-				margin:20px;
-			}
-			
-		</style>
-
 	</head>
 
 
@@ -73,3 +66,25 @@ title: Styleguide Home
 
 	</body>
 </html>
+
+<script>
+	$(document).ready(function(){
+		function highlight(ev){
+			var targetId = $(ev.target).attr('id');
+		    $("#guide-nav a").removeClass('selected');
+		    $("[href=#"+targetId+"]").addClass('selected');
+		}
+		$('.scrollbeacon').scrollbeacon(
+		{   appear: function (ev) { 
+		    	if(ev.scrollbeacon.direction == 'up'){
+			    	highlight(ev);	
+		    	}
+		    },
+		    topreached: function(ev){ 
+		    	if(ev.scrollbeacon.direction == 'down'){
+			    	highlight(ev);	
+		    	}
+			}
+		});	
+	});
+</script>
