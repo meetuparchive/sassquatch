@@ -32,8 +32,8 @@ task :docs do
 	puts "#{HR}"
 	puts "Copying assets for docs" 
 	puts "#{HR}"
-	sh "cp #{TARGET}/desktop/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
-	sh "cp #{TARGET}/mobile/sassquatch_m.css #{DOC_ASSETS}/sassquatch_mobile.css"
+	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
+	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
 
 	puts
 	puts "#{HR}"
