@@ -31,7 +31,7 @@ task :compile do
 	puts "#{HR}"
 	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
 	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "jekyll build -s #{JEKYLL_DIR}"
+	sh "jekyll build -s #{JEKYLL_DIR} -d #{JEKYLL_DIR}/_site/"
 end
 
 
