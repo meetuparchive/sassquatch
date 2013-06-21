@@ -72,7 +72,7 @@ task :launch do
 	if "#{branch}" == "master\n"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
-		sh "git checkout master site/"
+		sh "git checkout master _site/"
 		sh "git add ."
 		sh "git commit -a -m \"update live docs\""
 		sh "git push"
