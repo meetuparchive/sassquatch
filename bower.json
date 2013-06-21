@@ -1,11 +1,5 @@
 {
     "name": "sassquatch",
     "description": "CSS foundation and framework for Meetup",
-    "main": [
-        "./build/sassquatch.css",
-        "./build/_sassquatch.scss",
-        "./build/sassquatch_mobile.css",
-        "./build/_sassquatch_mobile.scss"
-    ],
     "license": "MIT"
 }
