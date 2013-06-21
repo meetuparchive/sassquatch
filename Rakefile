@@ -31,9 +31,7 @@ task :compile do
 	puts "#{HR}"
 	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
 	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "cd #{JEKYLL_DIR}"
 	sh "jekyll build -s #{JEKYLL_DIR}"
-	sh "cd ../"
 end
 
 
@@ -74,7 +72,7 @@ task :launch do
 	if "#{branch}" == "master\n"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
-		sh "git checkout master jekyll_docs/_site/"
+		sh "git checkout master _site/"
 		sh "git add ."
 		sh "git commit -a -m \"update live docs\""
 		sh "git push"
