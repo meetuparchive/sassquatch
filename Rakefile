@@ -74,21 +74,23 @@ task :launch do
 	if "#{branch}" == "master\n"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
-		sh "git checkout master jekyll_docs/"
-		sh "cp -r jekyll_docs/_site/ ./_site/"
-		sh "rm -rf jekyll_docs/"
-		sh "git add ."
-		sh "git commit -a -m \"update live docs\""
-		sh "git push"
-		sh "git checkout master"
+		sh "git checkout master jekyll_docs/_site/"
+		#sh "git add ."
+		#sh "git commit -a -m \"update live docs\""
+		#sh "git push"
+		#sh "git checkout master"
+		
+		puts "#{HR}"
+		puts "CHECK THE BRANCH NOW...\n"
+		puts "#{HR}"
 
-		puts
-		puts "#{HR}"
-		puts "Succesfully updated docs in gh-pages\n"
-		puts "Check http://meetup.github.io/sassquatch\n"
-		puts "(sometimes github takes a few minutes to rebuild the page)\n"
-		puts "#{HR}"
-		puts
+		#puts
+		#puts "#{HR}"
+		#puts "Succesfully updated docs in gh-pages\n"
+		#puts "Check http://meetup.github.io/sassquatch\n"
+		#puts "(sometimes github takes a few minutes to rebuild the page)\n"
+		#puts "#{HR}"
+		#puts
 	else
 		puts
 		puts "WARNING: you're not on master."
