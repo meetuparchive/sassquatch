@@ -1,6 +1,6 @@
 COMPILER    = "sass"
 SOURCES     = "src/sassquatch"
-TARGET      = "build"
+TARGET      = "build/"
 JEKYLL_DIR  = "jekyll_docs/"
 DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
