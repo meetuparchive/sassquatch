@@ -73,6 +73,8 @@ task :launch do
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
 		sh "git checkout master _site/"
+		sh "cp -r _site/ ./"
+		sh "rm -rf _site/"
 		sh "git add ."
 		sh "git commit -a -m \"update live docs\""
 		sh "git push"
