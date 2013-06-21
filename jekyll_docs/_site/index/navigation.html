@@ -1,0 +1,137 @@
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Pagination</h2>
+			<p>Pagination is for paginating. Use the <code>rel</code> attributes of the "Previous" and "Next" anchors to indicate <code>prev</code> or <code>next</code>. Not only is it good markup, we use it as a styling hook for adding the nifty arrows.</p>
+			<p><code>.nav-pagination</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<ul class="nav-pagination">
+	<li><a rel="prev" href="#">Previous</a></li>	
+	<li><a href="#">1</a></li>
+	<li class="selected"><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">6</a></li>
+	<li><a href="#">7</a></li>
+	<li><a href="#">8</a></li>
+	<li><a href="#">9</a></li>
+	<li><a rel="next" href="#">Next</a></li>	
+</ul>
+
+				</div>
+				<div class="highlight"><pre><code class="html"> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-pagination&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">rel=</span><span class="s">&quot;prev&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Previous<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>	
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>7<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>8<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>9<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">rel=</span><span class="s">&quot;next&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Next<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>	
+<span class="nt">&lt;/ul&gt;</span>
+ 
+</code></pre></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Append-style paging</h2>
+			<p>We often have a list of stuff that has a "see more" button at the bottom that ajax appends more content. The feed or meetups list on group home does this.</p>
+			<p><code>.nav-appendPager</code></p>
+		</div>
+		<div class="unit lastUnit">
+				
+				<div class="doc-box">
+					<div class="doc-content">
+						<h3>A few things</h3>
+						<ul class="dividedList">
+							<li>
+								<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+							</li>
+							<li>
+								<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
+							</li>
+						</ul>	
+						<a rel="next" class="nav-appendPager">See more</a>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Button groups (filtering)</h2>
+			<p>Buttons joined in groups, presented as a list of options. Most useful for filtering/sorting lists, but we may be able to use this for other things.</p>
+			<p><code>.nav-buttons</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<h5>Sort by:</h5>
+					<h5>Sort by:</h5>
+<ul class="nav-buttons">
+	<li><a >Date Joined</a></li>
+	<li><a class="selected">Size</a></li>
+	<li><a >Name</a></li>
+	<li><a >Role</a></li>
+</ul>
+
+
+				</div>
+			</div>
+			<div class="highlight"><pre><code class="html">				<span class="nt">&lt;h5&gt;</span>Sort by:<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-buttons&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="nt">&gt;</span>Date Joined<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>Size<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="nt">&gt;</span>Name<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="nt">&gt;</span>Role<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+
+			
+</code></pre></div>
+		</div>
+	</div>
+</div>
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			
+			<h2>Tabs</h2>
+			<p>Tabbed navigation. Used mostly as secondary navigation on Meetup; load the tab content with <code>web:ajax</code> where possible.</p>
+			<p><code>.nav-tabs</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<ul class="nav-tabs">
+	<li><a href="#">Upcoming Meetups</a></li>
+	<li><a href="#">Past  Meetups</a></li>
+	<li class="selected"><a href="#">Selected tab</a></li>
+</ul>
+
+				</div>
+			</div>
+			<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-tabs&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Past  Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>		
+		</div>
+	</div>
+</div>
+

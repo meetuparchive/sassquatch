@@ -1,0 +1,132 @@
+<div class="line-gutters">
+	<div class="unit size1of3">
+		<h2>Tearsheet icons</h2>
+		<p>Tearshees act as a universal companion icon to upcoming Meetups. They contain the date of the event, but should never be relied on as the only conveyance of the event date.</p>
+		<p><code>.tearsheet-25</code>, <code>.tearsheet</code>, <code>.tearsheet-80</code></p>
+	</div>
+	<div class="unit lastUnit">
+		<div class="doc-box">
+			<div class="doc-content">
+				<time class="tearsheet-25">
+	<span class="month">Oct</span>
+	<span class="day">25</span>
+</time>
+				<time class="tearsheet">
+					<span class="month">Oct</span>
+					<span class="day">##</span>
+				</time>
+				<time class="tearsheet-80">
+					<span class="month">Oct</span>
+					<span class="day">80</span>
+				</time>
+			</div>
+		</div>
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">&quot;tearsheet-25&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/span&gt;</span>
+	<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;day&quot;</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/time&gt;</span> 
+</code></pre></div> 
+	</div>
+</div>
+
+<div class="line-gutters">
+	<div class="unit size1of3">
+		<h2>Member Photos</h2>
+        <p><code>.nametag-photo</code>, <code>.nametag-photo-name</code></p>
+	</div>
+	<div class="unit lastUnit">
+        <h3>Member photos with nametag gradient</h3>
+        <ul class="inlineblockList margin-bottom">
+            <li>
+                <div class="nametag-photo" style="background-image: url(http://photos2.dev.meetupstatic.com/photos/member/3/f/f/9/member_5596377.jpeg);">
+				    <div class="nametag-photo-name">
+				        <strong>Takashi</strong> <br />
+				        <small>Has a square photo</small>
+				    </div>
+				</div>
+            </li>
+            <li>
+                <div class="nametag-photo" style="background-image: url(http://photos4.dev.meetupstatic.com/photos/event/a/6/a/5/600_45582661.jpeg);">
+                    <div class="nametag-photo-name">
+                        <strong>Davide</strong> <br />
+                        <small>Has a tall photo</small>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="nametag-photo" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/b/3/9/3/600_50925971.jpeg);">
+                <div class="nametag-photo-name">
+                        <strong>Will</strong> <br />
+                        <small>Has a landscape photo</small>
+                    </div>
+                </div>
+            </li>
+        </ul>
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nametag-photo&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(...);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nametag-photo-name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>Takashi<span class="nt">&lt;/strong&gt;</span> <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;small&gt;</span>Has a square photo<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span> 
+</code></pre></div> 
+    </div>
+</div>
+
+<div class="line-gutters">
+	<div class="unit size1of3">
+		<h2>Figure set</h2>
+		<p>Figure sets are a common visual pattern on Meetup that consist of a figure (ie. an image) to the left of some descriptive text.</p>
+		<p><code>.figureset-right</code> is a variation of <code>.figureset</code> that puts the figure on the right.</p>
+	</div>
+	<div class="unit lastUnit">
+		
+		<div class="doc-box">
+			<div class="doc-content">
+				<div class="figureset">
+	<div class="figureset-figure">
+		<img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" />
+	</div>
+	<div class="figureset-description">
+		<h3>This is a title</h3>
+		<p>Food truck vinyl aute irony, umami terry richardson post-ironic ut id stumptown.</p>
+	</div>
+</div>
+
+<div class="figureset-right">
+	<div class="figureset-description">
+		<h3>This is a title</h3>
+		<p>Cardigan consectetur cillum mollit accusamus letterpress. ...</p>
+	</div>
+	<div class="figureset-figure">
+		<img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" />
+	</div>
+</div>
+			</div>
+		</div>
+		<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif&quot;</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>This is a title<span class="nt">&lt;/h3&gt;</span>
+		<span class="nt">&lt;p&gt;</span>Food truck vinyl aute irony, umami terry richardson post-ironic ut id stumptown.<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-right&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>This is a title<span class="nt">&lt;/h3&gt;</span>
+		<span class="nt">&lt;p&gt;</span>Cardigan consectetur cillum mollit accusamus letterpress. ...<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif&quot;</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+	</div>
+</div>
+	
+
+<h2>Card list</h2>
+<p><strong>DEPRECATED</strong> - in the future, the framework should have a cards list that matches the style of meetup.com/explore</p>
+<p><code>.cardList</code></p>
