@@ -8,33 +8,35 @@ HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\
 
 # compile sass & copy files into build/
 task :compile do
-    # desktop 
-    puts
-    puts "#{HR}"
-    puts "Compiling SassQuatch for desktop" 
-    puts "#{HR}"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/_sassquatch.scss"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
-
-    # mobile
-    puts
-    puts "#{HR}"
-    puts "Compiling SassQuatch for mobile" 
-    puts "#{HR}"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/_sassquatch_mobile.scss"
-    sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
-end
-
-
-# copy built css files into docs/
-task :docs do
+	# desktop 
 	puts
 	puts "#{HR}"
-	puts "Copying assets for docs" 
+	puts "Compiling SassQuatch for desktop" 
+	puts "#{HR}"
+	sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/_sassquatch.scss"
+	sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+
+	# mobile
+	puts
+	puts "#{HR}"
+	puts "Compiling SassQuatch for mobile" 
+	puts "#{HR}"
+	sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/_sassquatch_mobile.scss"
+	sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
+
+	# compile docs
+	puts
+	puts "#{HR}"
+	puts "Building docs"
 	puts "#{HR}"
 	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
 	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
+	sh "jekyll build -s #{JEKYLL_DIR}"
+end
 
+
+# start jekyll 
+task :jekyll do
 	puts
 	puts "#{HR}"
 	puts "STARTING JEKYLL..."
@@ -47,7 +49,7 @@ end
 task :default do
 
     Rake::Task['compile'].execute
-    Rake::Task['docs'].execute
+    Rake::Task['jekyll'].execute
 
     puts
     puts "YOU BUILD IS SUCCESS"
@@ -70,8 +72,8 @@ task :launch do
 	if "#{branch}" == "master\n"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
-		sh "git checkout master jekyll_docs/"
-		sh "cp -r jekyll_docs/ ./"
+		sh "git checkout master jekyll_docs/_site/"
+		sh "cp -r jekyll_docs/_site/ ./_site/"
 		sh "rm -rf jekyll_docs/"
 		sh "git add ."
 		sh "git commit -a -m \"update live docs\""
