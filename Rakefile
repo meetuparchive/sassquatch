@@ -32,7 +32,7 @@ task :compile do
 	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
 	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
 	sh "cd #{JEKYLL_DIR}"
-	sh "jekyll build"
+	sh "jekyll build -s #{JEKYLL_DIR}"
 	sh "cd ../"
 end
 
