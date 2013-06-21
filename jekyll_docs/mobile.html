@@ -1,0 +1,62 @@
+---
+title: Mobile Styleguide
+---
+
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Meetup Mobile Styleguide</title>
+		
+		<!-- our mobile standalone for now -->
+		<link rel="stylesheet" href="assets/css/sassquatch_mobile.css" type="text/css" />
+
+		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
+		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
+		<!-- <link rel="stylesheet" href="assets/syntax/desert.css" type="text/css" /> -->
+		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />	
+
+		<script src="assets/syntax/prettify.js" type="text/javascript"></script>
+		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
+		<script src="assets/js/closeable.js" type="text/javascript"></script>
+		<script src="assets/js/jquery.scrollbeacon.js" type="text/javascript"></script>
+
+
+	</head>
+
+
+	<body>
+		
+		<ul id="guide-nav" class="inlineList">
+			<li><a href="#lists">Touch Lists</a></li>
+			<li><a href="#lists">Layout</a></li>
+			<li><a href="#forms">Forms</a></li>
+			<li><a href="#navigation">Navigation</a></li>
+		</ul>
+		
+		{% assign sassquatch_mobile_sections = "touchlists,layout-m,forms-m,navigation-m" | split: "," %}
+		
+		{% for pagetitle in sassquatch_mobile_sections %}
+
+			{% for page in site.pages %}
+	 			
+				{% if page.title == pagetitle %}
+					
+					<div class="doc-page scrollbeacon" id="{{ page.section_id }}">
+						
+						<h1>{{ page.section_title }}</h1>
+
+						{{ page.content }}
+					
+					</div>
+
+				{% endif %}
+	 
+			{% endfor %}
+			
+		{% endfor %}
+
+	</body>
+</html>

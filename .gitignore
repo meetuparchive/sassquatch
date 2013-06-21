@@ -1,2 +1,7 @@
+.DS_Store
 .sass-cache
 *.swp
+.ruby-version
+_site
+jekyll_docs/_site/*
+jekyll_docs.sublime*

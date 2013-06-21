@@ -113,6 +113,7 @@ code {
   margin-bottom: 1em;
   padding: 0.75em 0; }
 
+.line-gutters .guide-content-shade,
 .line:hover .guide-shade {
   /*why the hell not*/
   border-color: #fff;
@@ -121,18 +122,17 @@ code {
   .line:hover .guide-shade code {
     color: #efefef; }
 
-.guide-shade code,
-.guide-content-shade code {
+.guide-content-shade code,
+.guide-shade code {
   background: transparent; }
 
 /* only shade content box */
 .guide-content-shade {
-  background: #ccc;
-  color: #000 !important;
-  -ms-background-clip: content-box !important;
-  -moz-background-clip: content-box !important;
-  -webkit-background-clip: content-box !important;
-  background-clip: content-box !important; }
+  background: #ddd;
+  -ms-background-clip: content-box;
+  -moz-background-clip: content-box;
+  -webkit-background-clip: content-box;
+  background-clip: content-box; }
 
 .guide-table td[headers=sass] {
   width: 60%; }
@@ -233,4 +233,3 @@ footer {
   background-color: #e6304c; }
 
 /* }}} */
-
