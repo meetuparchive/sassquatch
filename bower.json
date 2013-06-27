@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "CSS foundation and framework for Meetup",
 	"main": [
 		"./build/_sassquatch.scss",
@@ -11,6 +11,7 @@
 	"ignore": [
 		"*.*",
 		".*",
+		"Rakefile",
 		"src",
 		"_site",
 		"docs",
