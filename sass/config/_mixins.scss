@@ -3,45 +3,60 @@
 * Sass mixins (including compass mixins)
 */
 
+
+
 @mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
-  -moz-border-radius: $nw $ne $se $sw;
-  -webkit-border-radius: $nw $ne $se $sw;
-  border-radius: $nw $ne $se $sw;
+	-moz-border-radius: $nw $ne $se $sw;
+	-webkit-border-radius: $nw $ne $se $sw;
+	border-radius: $nw $ne $se $sw;
 }
 @mixin round-nw($r){
-  -moz-border-radius-topleft: $r; 
-  -webkit-border-top-left-radius: $r;
-  border-top-left-radius: $r;
+	-moz-border-radius-topleft: $r;
+	-webkit-border-top-left-radius: $r;
+	border-top-left-radius: $r;
 }
 @mixin round-ne($r){
-  -moz-border-radius-topright: $r; 
-  -webkit-border-top-right-radius: $r;
-  border-top-right-radius: $r;
+	-moz-border-radius-topright: $r;
+	-webkit-border-top-right-radius: $r;
+	border-top-right-radius: $r;
 }
 @mixin round-sw($r){
-  -moz-border-radius-bottomleft: $r; 
-  -webkit-border-bottom-left-radius: $r;
-  border-bottom-left-radius: $r;
+	-moz-border-radius-bottomleft: $r;
+	-webkit-border-bottom-left-radius: $r;
+	border-bottom-left-radius: $r;
 }
 
 @mixin round-se($r){
-  -moz-border-radius-bottomright: $r; 
-  -webkit-border-bottom-right-radius: $r;
-  border-bottom-right-radius: $r;
+	-moz-border-radius-bottomright: $r;
+	-webkit-border-bottom-right-radius: $r;
+	border-bottom-right-radius: $r;
 }
 
 @mixin gradient($first, $second, $simpleIE: false) {
-  background: $second;
-  background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
-  background: -moz-linear-gradient(top,  $first,  $second);
-	@if $simpleIE != true {
-		filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#{$first}', endColorstr='#{$second}');
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$first}', endColorstr='#{$second}')";
-  }
+	background: $second;
+	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
+	background: -moz-linear-gradient(top,  $first,  $second);
+		@if $simpleIE != true {
+				filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";
+	}
 }
+
+// from https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss
+@mixin gradient-vertical-three-colors($startColor, $midColor, $endColor, $colorStop: 50%) {
+	background-color: mix($midColor, $endColor, 80%);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor));
+	background-image: -webkit-linear-gradient($startColor, $midColor $colorStop, $endColor);
+	background-image: -moz-linear-gradient(top, $startColor, $midColor $colorStop, $endColor);
+	background-image: -o-linear-gradient($startColor, $midColor $colorStop, $endColor);
+	background-image: linear-gradient($startColor, $midColor $colorStop, $endColor);
+	background-repeat: no-repeat;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
 @mixin background-centering() {
 	background-repeat: no-repeat;
-	background-position: center top;	
+	background-position: center top;
 }
 
 @mixin squarethumb($width){
@@ -61,21 +76,21 @@
 * fixes OSX vanishing scrollbar
 */
 @mixin scrollable($bgColor: #fff) {
-    overflow-y: auto;
+		overflow-y: auto;
 
-    /* hide the default UA scrollbar */
-    &::-webkit-scrollbar {
-        -webkit-appearance: none;
-        width: 11px;
-        height: 30px; 
-    }
+		/* hide the default UA scrollbar */
+		&::-webkit-scrollbar {
+				-webkit-appearance: none;
+				width: 11px;
+				height: 30px;
+		}
 
-    /* fake the UA scrollbar (this one doesn't hide) */
-    &::-webkit-scrollbar-thumb {
-        border-radius: 8px;
-        border: 2px solid $bgColor; 
-        background-color: rgba(0, 0, 0, .5);
-    }
+		/* fake the UA scrollbar (this one doesn't hide) */
+		&::-webkit-scrollbar-thumb {
+				border-radius: 8px;
+				border: 2px solid $bgColor;
+				background-color: rgba(0, 0, 0, .5);
+		}
 }
 
 @mixin inlineblock() {
@@ -84,16 +99,27 @@
 	*display: inline; }
 
 @mixin box-shadow($color: #333333, $hoff: 1px, $voff: 1px, $blur: 5px, $spread: 0, $inset: false) {
-  $full: $color $hoff $voff $blur $spread;
-  @if $inset {
-    @if not ($inset == true or $inset == inset) {
-      @warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
-      $full: $full inset; }
-  @if $color == none {
-    @include experimental(box-shadow, none, -moz, -webkit, -o, not -ms, not -khtml, official); }
-  @else {
-    @include experimental(box-shadow, $full, -moz, -webkit, -o, not -ms, not -khtml, official);
-  }
+	$full: $color $hoff $voff $blur $spread;
+	@if $inset {
+		@if not ($inset == true or $inset == inset) {
+			@warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
+			$full: $full inset; }
+	@if $color == none {
+		@include experimental(box-shadow, none, -moz, -webkit, -o, not -ms, not -khtml, official); }
+	@else {
+		@include experimental(box-shadow, $full, -moz, -webkit, -o, not -ms, not -khtml, official);
+	}
+}
+
+@mixin box-sizing($type : "border") {
+	/* Acceptable values are border, content, and padding - content is the default W3C model */
+	box-sizing: #{$type}-box;
+	-webkit-box-sizing: #{$type}-box;
+	-moz-box-sizing: #{$type}-box;
+}
+
+@mixin background-size( $size) {
+	@include experimental(background-size, $size);
 }
 
 @mixin solid() {
@@ -104,98 +130,109 @@
 
 @mixin clickable($base: #fff) {
 	border: 1px solid darken($base, 15%);
-    @include gradient($base, darken($base, 5%));
-    @include experimental(box-shadow, "1px 1px 0 #{$base} inset", -moz, -webkit, -o, not -ms, not -khtml, official);
-    @include round(4px);
-    &:hover, &.hover{
-        border-color: darken($base, 20%);
-        @include experimental(box-shadow, "1px 1px 0 #{$base} inset, 0 0 1px rgba(0,0,0,.25)", -moz, -webkit, -o, not -ms, not -khtml, official);
-    }
-    &:active, &.active{
-        border-color: darken($base, 25%);
-        @include experimental(box-shadow, "0 0 1px rgba(0,0,0,.45) inset, -1px -1px 0 #{$base} inset", -moz, -webkit, -o, not -ms, not -khtml, official);
-        @include gradient(darken($base, 1%), darken($base, 6%));
-    }
+		@include gradient($base, darken($base, 5%));
+		@include experimental(box-shadow, "1px 1px 0 #{$base} inset", -moz, -webkit, -o, not -ms, not -khtml, official);
+		@include round(4px);
+		&:hover, &.hover{
+				border-color: darken($base, 20%);
+				@include experimental(box-shadow, "1px 1px 0 #{$base} inset, 0 0 1px rgba(0,0,0,.25)", -moz, -webkit, -o, not -ms, not -khtml, official);
+		}
+		&:active, &.active{
+				border-color: darken($base, 25%);
+				@include experimental(box-shadow, "0 0 1px rgba(0,0,0,.45) inset, -1px -1px 0 #{$base} inset", -moz, -webkit, -o, not -ms, not -khtml, official);
+				@include gradient(darken($base, 1%), darken($base, 6%));
+		}
 }
 
 @mixin opacity($opacity) {
-  opacity: $opacity;
-  @if true {
-    $value: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
-    @include experimental(filter, $value, not -moz, not -webkit, not -o, -ms, not -khtml, official); } }
+	opacity: $opacity;
+	@if true {
+		$value: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+		@include experimental(filter, $value, not -moz, not -webkit, not -o, -ms, not -khtml, official);
+	}
+}
 
+@mixin punched_in_box_shadow{
+	@include box-shadow(rgba(0,0,0,.5), 1px, 1px, 3px, -1px, true);
+}
 
-// MODERN button (color) mixin
+// BUTTON COLOR
+// Can be used for all clickable 3d affordance elements
 @mixin button_color($base_color, $isLight: false){
-    @include box-shadow(mix(#ffffff, $base_color, 20%), 1px, 1px, 0, 0, true);
-    border: 1px solid darken($base_color, 20%);
+	@include button_color_base($base_color, $isLight);
+
+	&:hover {
+		@include button_color_hover($base_color, $isLight);
+	}
+
+	&:active, &.selected, &.activated {
+		// TODO: consolidate these class names
+		@include button_color_active($base_color, $isLight);
+	}
+}
+
+// alias deprecated buttonColor to button_color
+@mixin buttonColor($base_color, $isLight: false){
+	@include button_color($base_color, $isLight);
+}
+
+
+// BUTTON COLOR COMPONENTS
+// 90% of the time, you probably don't want to use these directly -- try button_color
+@mixin button_color_base($base_color, $isLight: false){
+	@include box-shadow( rgba(255,255,255,.2), 1px, 1px, 0, 0, true);
+	border: 1px solid rgba(0,0,0,.15);
 	@if $isLight{
-		@include gradient($base_color, darken($base_color, 7.5%));
-		text-shadow: mix(#ffffff, $base_color, 20%) 1px 1px 0;
+		@include gradient($base_color, darken($base_color, 5%));
+		text-shadow: #ffffff 1px 1px 0;
 	}
 	@else{
 		@include gradient($base_color, darken($base_color, 10%));
 		text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
 	}
-	&:hover {
-        $lighter_base_color: lighten($base_color, 5%);
-        $darker: darken($base_color, 10%);
-        @include gradient($lighter_base_color, $darker);
-    }
-	&:active {
-		background: darken($base_color, 10%);
-		@include box-shadow(mix(#000000, $base_color, 40%), 1px, 1px, 2px, 0, true);
+}
+@mixin button_color_hover($base_color, $isLight: false){
+	@if $isLight{
+		$lighter_base_color: lighten($base_color, 5%);
+		$darker: darken($base_color, 7%);
+		@include gradient($lighter_base_color, $darker);
 	}
+	@else{
+		$lighter_base_color: lighten($base_color, 5%);
+		$darker: darken($base_color, 10%);
+		@include gradient($lighter_base_color, $darker);
+	}
+}
+@mixin button_color_active($base_color, $isLight: false){
+	@if $isLight{
+		background: darken($base_color, 10%);
+	}
+	@else{
+		background: darken($base_color, 15%);
+	}
+	@include punched_in_box_shadow;
 }
 
 @mixin button_personality{
 	@include experimental('user-select', 'none');
 	cursor: pointer;
-}
-
-
-// CRUSTYBASE button mixin
-@mixin buttonize($base_color){
-  display: inline;
-  display: inline-block;
-  $darker: $base_color - #444;
-  @include gradient($base_color, $darker);
-  text-shadow: darken($base_color, 35%) 0 0 3px;
-  border: 2px solid $darker;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  zoom: 1;
-  font-weight: bold;
-  font-family: arial, sans-serif;
-  *cursor: hand;
-
-  &:hover {
-    $lighter_base_color: $base_color + #0a0a0a;
-    $darker: $lighter_base_color - #444;
-    @include gradient($lighter_base_color, $darker);
-    text-shadow: none;
-    border: 2px solid $darker;
-    text-decoration: none; }
-
-  &:active {
-    background: $darker; }
+		text-decoration: none!important;
 }
 
 @mixin experimental($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
-  $value: unquote($value);
-  @if $moz {
-    -moz-#{$property}: $value; }
-  @if $webkit {
-    -webkit-#{$property}: $value; }
-  @if $o {
-    -o-#{$property}: $value; }
-  @if $ms {
-    -ms-#{$property}: $value; }
-  @if $khtml {
-    -khtml-#{$property}: $value; }
-  @if $official {
-    #{$property}: $value; } }
+	$value: unquote($value);
+	@if $moz {
+		-moz-#{$property}: $value; }
+	@if $webkit {
+		-webkit-#{$property}: $value; }
+	@if $o {
+		-o-#{$property}: $value; }
+	@if $ms {
+		-ms-#{$property}: $value; }
+	@if $khtml {
+		-khtml-#{$property}: $value; }
+	@if $official {
+		#{$property}: $value; } }
 
 
 @mixin experimental-value($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
@@ -212,7 +249,20 @@
 	@if $official {
 		#{$property}: #{$value}; } }
 
+%clearfix {
+	zoom: 1;
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+}
+
 @mixin clearfix {
+	// @extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
 	zoom: 1;
 	&:after {
 		content: ".";
@@ -244,38 +294,38 @@
 }
 
 @mixin rotate($deg) {
-  /* gave up on figuring out experimental mixin for now... */
-  transform: rotate($deg);
-  -ms-transform: rotate($deg);
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: rotateZ($deg);
-  -o-transform: rotate($deg);
-  -moz-transform: rotate($deg);
+	/* gave up on figuring out experimental mixin for now... */
+	transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateZ($deg);
+	-o-transform: rotate($deg);
+	-moz-transform: rotate($deg);
 }
 
 @mixin transform($transform, $only3d: false) {
-  @if $only3d {
-    @include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official); 
-  }
-  @else {
-    @include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
-  } 
+	@if $only3d {
+		@include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
+	}
+	@else {
+		@include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
+	}
 }
 
 @mixin transform-origin($t) {
-  @include experimental(transform-origin, $t, -moz, -webkit, -o, -ms, not -khtml, official); 
+	@include experimental(transform-origin, $t, -moz, -webkit, -o, -ms, not -khtml, official);
 }
 
 @mixin transform-style($t) {
-  @include experimental(transform-style, $t, -moz, -webkit, -o, -ms, not -khtml, official); 
+	@include experimental(transform-style, $t, -moz, -webkit, -o, -ms, not -khtml, official);
 }
 
 @mixin perspective($p) {
-  @include experimental(perspective, $p, -moz, -webkit, -o, -ms, not -khtml, official); 
+	@include experimental(perspective, $p, -moz, -webkit, -o, -ms, not -khtml, official);
 }
 
 @mixin transition($t) {
-  @include experimental(transition, $t, -moz, -webkit, -o, -ms, not -khtml, official); 
+	@include experimental(transition, $t, -moz, -webkit, -o, -ms, not -khtml, official);
 }
 
 @mixin transform ($t) {
@@ -293,10 +343,92 @@
 	transition: tranform $t;
 }
 
-/**
-* selectedNav
-* selected item in pagination, navbuttons
-*/
+
+@mixin background-clip($value:padding){
+	-moz-background-clip: $value;
+	-webkit-background-clip: $value;
+	-o-background-clip: #{$value}-box;
+	-ms-background-clip: #{$value}-box;
+	-khtml-background-clip: #{$value}-box;
+	background-clip: #{$value}-box;
+}
+
+@mixin triangle($direction: 'n', $color: black, $size: 6px){
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+}
+
+
+@mixin input-placeholder(){
+	$selectors: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder');
+	@each $s in $selectors{
+		&#{$s}{
+			@content;
+		}
+	}
+}
+
+@mixin image-2x($image, $width, $height) {
+	@media (min--moz-device-pixel-ratio: 1.3),
+	(-o-min-device-pixel-ratio: 2.6/2),
+	(-webkit-min-device-pixel-ratio: 1.3),
+	(min-device-pixel-ratio: 1.3),
+	(min-resolution: 1.3dppx) {
+		/* on retina, use image that's scaled by 2 */
+		background-image: url($image);
+		background-size: $width $height;
+	}
+}
+
+
+// TYPOGRAPHY
+
+// various tricks to produce nice header text across browsers
+@mixin nice-type{
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+	//-webkit-text-stroke: .5px;
+}
+
+@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: '#{$font-family}';
+		font-weight: $weight;
+		font-style: $style;
+		src: url('#{$url}.eot?') format('eot'), url('#{$url}.woff') format('woff'), url('#{$url}.ttf') format('truetype');
+	}
+}
+
+
+
+
+
+// #############################################################################################
+// CRUSTYBASE MIXINS - DEPRECATED
+// #############################################################################################
+
+
+
 @mixin selectedNav {
 	font-weight: bold;
 	font-weight: 500;
@@ -307,90 +439,119 @@
 }
 
 @mixin background-clip($value:padding){
-  -moz-background-clip: $value;
-  -webkit-background-clip: $value;
-  -o-background-clip: #{$value}-box;
-  -ms-background-clip: #{$value}-box;
-  -khtml-background-clip: #{$value}-box;
-  background-clip: #{$value}-box;
+	-moz-background-clip: $value;
+	-webkit-background-clip: $value;
+	-o-background-clip: #{$value}-box;
+	-ms-background-clip: #{$value}-box;
+	-khtml-background-clip: #{$value}-box;
+	background-clip: #{$value}-box;
 }
 
 @mixin triangle($direction: 'n', $color: black, $size: 6px){
-  width: 0;
-  height: 0;
-  @if $direction == 'n'{
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
-    border-bottom: $size solid $color;
-  }
-  @else if $direction == 'e'{
-    border-top: $size solid transparent;
-    border-bottom: $size solid transparent;
-    border-left: $size solid $color;
-  } 
-  @else if $direction == 's'{
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
-    border-top: $size solid $color;
-  }
-  @else if $direction == 'w'{
-    border-top: $size solid transparent;
-    border-bottom: $size solid transparent;
-    border-right: $size solid $color;
-  }
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
 }
 
 
 @mixin button_primary_color($base_color){
-    @include gradient($base_color, darken($base_color, 10%));
-    text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
-    @include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-    border: 1px solid darken($base_color, 20%);
-    &:hover {
-        $lighter_base_color: lighten($base_color, 5%);
-        $darker: darken($base_color, 10%);
-        @include gradient($lighter_base_color, $darker);
-    }
-    &:active {
-        background: darken($base_color, 10%);
-        @include box-shadow(mix(#000000, $base_color, 40%), 1px, 1px, 0, 0, true);
-    }
+	@include gradient($base_color, darken($base_color, 10%));
+	text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
+	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
+	border: 1px solid darken($base_color, 20%);
+	&:hover {
+			$lighter_base_color: lighten($base_color, 5%);
+			$darker: darken($base_color, 10%);
+			@include gradient($lighter_base_color, $darker);
+	}
+	&:active {
+			background: darken($base_color, 10%);
+			@include box-shadow(mix(#000000, $base_color, 40%), 1px, 1px, 0, 0, true);
+	}
 }
 
 @mixin button_secondary_color($base_color){
-    @include gradient($base_color, darken($base_color, 7.5%));
-    text-shadow: mix(#ffffff, $base_color, 20%) 1px 1px 0;
-    @include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-    border: 1px solid darken($base_color, 10%);
-    &:hover {
-        $lighter_base_color: lighten($base_color, 5%);
-        $darker: darken($base_color, 10%);
-        @include gradient($lighter_base_color, $darker);
-    }
-    &:active {
-        background: darken($base_color, 10%);
-        @include box-shadow(mix(#000000, $base_color, 40%), 1px, 1px, 0, 0, true);
-    }
+	@include gradient($base_color, darken($base_color, 7.5%));
+	text-shadow: mix(#ffffff, $base_color, 20%) 1px 1px 0;
+	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
+	border: 1px solid darken($base_color, 10%);
+	&:hover {
+			$lighter_base_color: lighten($base_color, 5%);
+			$darker: darken($base_color, 10%);
+			@include gradient($lighter_base_color, $darker);
+	}
+	&:active {
+			background: darken($base_color, 10%);
+			@include box-shadow(mix(#000000, $base_color, 40%), 1px, 1px, 0, 0, true);
+	}
 }
 
 @mixin button_disabled_color($base_color){
-        @include gradient($base_color, darken($base_color, 10%));
-        text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
-        @include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-        border: 1px solid darken($base_color, 20%);
-    &:hover {
-        @include gradient($base_color, darken($base_color, 10%));
-        text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
-        @include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-        border: 1px solid darken($base_color, 20%);
-    }
-    &:active {
-        @include gradient($base_color, darken($base_color, 10%));
-        text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
-        @include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-        border: 1px solid darken($base_color, 20%);
-    }
+	@include gradient($base_color, darken($base_color, 10%));
+	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
+	text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
+	border: 1px solid darken($base_color, 20%);
+	&:hover {
+			@include gradient($base_color, darken($base_color, 10%));
+			@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
+			text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
+			border: 1px solid darken($base_color, 20%);
+	}
+	&:active {
+			@include gradient($base_color, darken($base_color, 10%));
+			@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
+			text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
+			border: 1px solid darken($base_color, 20%);
+	}
 }
+
+@mixin buttonize($base_color){
+	display: inline;
+	display: inline-block;
+	$darker: $base_color - #444;
+	@include gradient($base_color, $darker);
+	text-shadow: darken($base_color, 35%) 0 0 3px;
+	border: 2px solid $darker;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	zoom: 1;
+	font-weight: bold;
+	font-family: arial, sans-serif;
+	*cursor: hand;
+
+  &:hover {
+	$lighter_base_color: $base_color + #0a0a0a;
+	$darker: $lighter_base_color - #444;
+	@include gradient($lighter_base_color, $darker);
+	text-shadow: none;
+	border: 2px solid $darker;
+	text-decoration: none; }
+
+  &:active {
+	background: $darker; }
+}
+
+
 
 @mixin facebookButton($paddingTop, $paddingBottom) {
 	color: #fff !important;
@@ -404,37 +565,19 @@
 	padding-bottom: $paddingBottom;
 
 	&:before {
-			font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
-			content: '\00a0';
-			background: url(imgUrl('/img/f-logo.png')) center center no-repeat;
-			position: absolute;
-			display: block;
-			border-right: 1px solid mix(#ffffff, $base_color, 30%);
-			@include box-shadow( darken($base_color, 10%), -1px, 0, 0, 0, true);
-			left: 0px;
-			top: 0px;
-			text-align: center;
-			padding-top: $paddingTop;
-			padding-bottom: $paddingBottom;
-			padding-left: 18px;
-			padding-right: 18px;
+		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+		content: '\00a0';
+		background: url(imgUrl('/img/f-logo.png')) center center no-repeat;
+		position: absolute;
+		display: block;
+		border-right: 1px solid mix(#ffffff, $base_color, 30%);
+		@include box-shadow( darken($base_color, 10%), -1px, 0, 0, 0, true);
+		left: 0px;
+		top: 0px;
+		text-align: center;
+		padding-top: $paddingTop;
+		padding-bottom: $paddingBottom;
+		padding-left: 18px;
+		padding-right: 18px;
 	}
-}
-
-// TYPOGRAPHY
-
-// various tricks to produce nice header text across browsers
-@mixin nice-type{
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: subpixel-antialiased;
-    //-webkit-text-stroke: .5px;
-}
-
-@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
-    @font-face {
-        font-family: '#{$font-family}';
-        font-weight: $weight;
-        font-style: $style;
-        src: url('#{$url}.eot?') format('eot'), url('#{$url}.woff') format('woff'), url('#{$url}.ttf') format('truetype');
-    }
 }
