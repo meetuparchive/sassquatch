@@ -1,0 +1,377 @@
+/*  config/_mixins_m.scss
+ *
+ *  @author     John Cockrell
+ *  @date       2013-3-20
+ *  @requires   SASS 3.2 or greater to compile. (`sass --version`)
+ *  
+ *  @description
+ *  For now, this is a separate place to stash useful mixins that are
+ *  currently only part of the mobile experience. 
+ *
+ *  If they're useful enough, merge this file in with _mixins.scss--
+ *  I just don't want to add things that may complicate the fullsite
+ *  implementation.
+ *
+ */
+
+
+
+/*  m-box-shadow()
+ *
+ *  A variant of the main SQ mixin found in `_mixins.scss`. Based on our
+ *  current browser support profile, the only extensions we need to support
+ *  are old IE and old Webkit.
+ *
+ *  BB OS 6 ........ -webkit
+ *  BB OS 7 ........ -webkit
+ *  iOS 4.3 ........ -webkit
+ *
+ *  As our support profile changes, we can phase these vendor prefixes out
+ *  of this mixin.
+ */
+@mixin m-box-shadow($color: #333333, $hoff: 1px, $voff: 1px, $blur: 5px, $spread: 0, $inset: false) {
+
+    @if $color == none {
+        $full: none; 
+    } @else {
+        $full: $color $hoff $voff $blur $spread;
+        @if $inset {
+            $full: $full inset; 
+        }
+    }
+
+    -webkit-box-shadow: $full;
+    box-shadow: $full;
+}
+
+
+/*  m-gradient()
+ *
+ *  A variant of the main SQ mixin found in `_mixins.scss`. This CSS3 feature
+ *  isn't particularly well supported unprefixed, even in "newer" browsers, so
+ *  we'll need to have a prefixed version into the future.
+ * 
+ *  BB OS 6 + ...... -webkit
+ *  Android 2.3 + .. -webkit
+ *  iOS 4.3 + ...... -webkit
+ *  WP 7.5 / IE9 ... progid
+ *
+ *  As our support profile changes, we can phase these vendor prefixes out
+ *  of this mixin.
+ */
+
+@mixin m-gradient($first, $second) {
+
+    /* IE9, Windows Phone 7.5 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  
+
+    /* IE10, Windows Phone 8, Based on Working Draft Syntax */
+    background-image: -ms-linear-gradient(top, $first 0%, $second 100%); 
+
+    /* Mobile Webkit (BB OS 6-10, Android 2.3-4.2, iOS 4.3-6.1) */
+    background-image: -webkit-linear-gradient(top, $first 0%, $second 100%);
+
+    /* Standards */
+    background-image: linear-gradient(top, $first 0%, $second 100%);
+}
+
+
+
+/*  loop_prop_list()
+ *  
+ *  This function is an awesome utility helper for more complex
+ *  SASS mixins, where you might need to loop through property-value
+ *  pairs stored in SASS arrays.
+ *
+ *  Outputs CSS attr/value pairs constructed from a property list.
+ *  Total time saver, and should be used elsewhere.
+ */
+@mixin loop_prop_list($prop_list, $with_prefix:false) {
+
+    $prefixable_css3_attributes: 'transform';
+
+    $i: 1;
+    $max: length($prop_list) + 1;
+
+    @while $i < $max {
+        $a: nth($prop_list, $i);
+        $b: nth($prop_list, $i+1);
+        $i: $i+2;
+
+        $is_prefixable: false;
+
+        @if $with_prefix {
+            @each $ix in $prefixable_css3_attributes {
+                @if $a == $ix {
+                    $is_prefixable: true;
+                }
+            }
+        }
+
+        @if $is_prefixable  {
+            #{$with_prefix}-#{$a}: #{$b};
+
+        } @else {
+            #{$a}: #{$b};
+        }
+    }
+}
+
+
+/*  DEVICE @MEDIA MIXINS
+ *  
+ *  phone()
+ *  tablet()
+ *  portrait()
+ *  landscape()
+ *
+ *  Tablet and phone layouts have very different requirements and 
+ *  ergonomic factors--and putting styles that work well on a phone
+ *  onto a tablet makes everything look stretched like silly putty.
+ *  (Vice-versa, and it looks equally shoddy.)
+ *
+ *  To avoid having to remember breakpoints and all that fun stuff,
+ *  these mixins, `@tablet` and `@phone`.
+ *
+ *  These won't be the most accurate names, but they're pretty useful.
+ *
+ *  Again, these breakpoints are using CSS Pixels, which are the 
+ *  measurement unit, not the hardware subelement.
+ *
+ *  And unfortunately, based on the way SASS works, I don't think we
+ *  can encapsulate the looping process within each of these mixins.
+ */
+
+/* TODO these phone() and tablet() mixins are totally ill advised,
+ * and we shouldn't use them (and I added them!) -j
+ * 
+ * Kill on cleanup.
+ */
+@mixin phone($selector, $prop_list) {
+    @media screen and (max-device-width: $phone_tablet_breakpoint) {
+        $i:   1;
+        $max: length($prop_list) + 1;
+
+        #{$selector} {
+
+            @while ($i < $max) {
+                $a: nth($prop_list, $i);
+                $b: nth($prop_list, $i+1);
+
+                $i: $i + 2;  
+
+                #{$a}: #{$b};
+            }
+        } 
+    }
+}
+@mixin tablet($selector, $prop_list) {
+    @media screen and (min-device-width: $phone_tablet_breakpoint + 1) {
+        $i:   1;
+        $max: length($prop_list) + 1;
+
+        #{$selector} {
+            @while ($i < $max) {
+                $a: nth($prop_list, $i);
+                $b: nth($prop_list, $i+1);
+
+                $i: $i + 2;  
+
+                #{$a}: #{$b};
+            }
+        } 
+    }
+}
+@mixin landscape($selector, $prop_list) {
+    @media screen and (orientation:landscape) {
+        $i:   1;
+        $max: length($prop_list) + 1;
+
+        #{$selector} {
+
+            @while ($i < $max) {
+                $a: nth($prop_list, $i);
+                $b: nth($prop_list, $i+1);
+
+                $i: $i + 2;  
+
+                #{$a}: #{$b};
+            }
+        }
+    }
+}
+@mixin portrait($selector, $prop_list) {
+    @media screen and (orientation:portrait) {
+        $i:   1;
+        $max: length($prop_list) + 1;
+
+        #{$selector} {
+            @while ($i < $max) {
+                $a: nth($prop_list, $i);
+                $b: nth($prop_list, $i+1);
+
+                $i: $i + 2;  
+
+                #{$a}: #{$b};
+            }
+        }
+    }
+}
+
+
+
+
+
+/*  truncate()
+ *
+ *  Makes a line of `display:box` text truncate to an
+ *  ellipsis using CSS3 `text-overflow` if available.
+ *
+ *  TODO This is better served by an extend in the new lists layout.
+ *  Kill on cleanup.
+ */
+@mixin truncate() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+};
+
+
+
+/*  border-box()
+ *
+ *  Used to do an x-browser border-box layout.
+ *  Most likely redundant somewhere.
+ *
+ *  NOTE
+ *  Should be deprecated in favor of `@box-sizing('border')`
+ *
+ *  TODO Kill on cleanup. This is redundant.
+ */
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+};
+
+
+
+/*  shaded()
+ *
+ *  Not sure what this really does; used once, and appeared
+ *  naked in _sassquatch_m.scss     -j
+ */
+@mixin shaded($color: $C_shade) {
+	background:$color;
+}
+
+
+
+/*  ANIMATION MIXINS {
+ *
+ *  A collection of mixins that are used to generate keyframe
+ *  animation in CSS. Used on mobile to make animations
+ *  buttery smooth.
+ *
+ *  animate() ................. Creates complete animation statement
+ *                              with a keyframe animation, easing, and
+ *                              duration reference.
+ *  transition() .............. CSS Transition maker
+ *  loop_keyframe_list() ...... SASS list helper for keyframe()
+ *  keyframe()  ............... keyframe animations
+ */
+
+@mixin animate($name, $duration, $iteration_count, $timing_fn, $use_browser_prefixes:true) {
+
+    /*  We're interpolating the inputs here in case they're wrapped
+     *  in strings from use in the mixins.
+     */
+    @if $use_browser_prefixes == true {
+        -webkit-animation-name: #{$name};
+        -webkit-animation-duration: #{$duration};
+        -webkit-animation-iteration-count: #{$iteration_count};
+        -webkit-animation-timing-function: #{$timing_fn};
+
+        -moz-animation-name: #{$name};
+        -moz-animation-duration: #{$duration};
+        -moz-animation-iteration-count: #{$iteration_count};
+        -moz-animation-timing-function: #{$timing_fn};
+
+        -o-animation-name: #{$name};
+        -o-animation-duration: #{$duration};
+        -o-animation-iteration-count: #{$iteration_count};
+        -o-animation-timing-function: #{$timing_fn};
+    }
+
+    animation-name: #{$name};
+    animation-duration: #{$duration};
+    animation-iteration-count: #{$iteration_count};
+    animation-timing-function: #{$timing_fn};
+}
+
+@mixin transition($prop, $duration:0, $timing_fn:'', $use_browser_prefixes:true) { 
+
+    /*  We're interpolating the inputs here in case they're wrapped
+     *  in strings from use in the mixins.
+     */
+   
+    @if $use_browser_prefixes {
+        -webkit-transition: #{$prop} #{$duration} #{$timing_fn};
+        -moz-transition: #{$prop} #{$duration} #{$timing_fn};
+        -o-transition: #{$prop} #{$duration} #{$timing_fn};
+    }
+
+    transition: #{$prop} #{$duration} #{$timing_fn};
+}
+
+/*  @mixin loop_keyframe_list
+ *
+ *  Loops a keyframe list. Pretty much only used here, but a bunch.
+ *  Depends on `@mixin loop_prop_list`.
+ */
+@mixin loop_keyframe_list($keyframe_list, $with_prefix:false) {
+    @each $frame in $keyframe_list {
+        $stop: nth($frame, 1);
+        $frame_prop_list: nth($frame, 2);
+
+        #{$stop} {
+            @include loop_prop_list($frame_prop_list, $with_prefix);
+        }
+    }
+}
+
+
+
+/*  @mixin keyframe
+ *
+ *  Outputs a completed @keyframe statement that can be 
+ *  used with CSS animations.
+ */
+@mixin keyframe($name, $keyframe_list, $use_browser_prefixes:true) {
+
+    @if $use_browser_prefixes {
+        /*  we can't interpolate into an @keyframes statement, which is
+         *  why we're doing it this way, instead of with an @each 
+         */
+        @-webkit-keyframes #{$name} {
+            @include loop_keyframe_list($keyframe_list, '-webkit');
+        }
+        @-moz-keyframes #{$name} {
+            @include loop_keyframe_list($keyframe_list, '-moz');
+        }
+        @-o-keyframes #{$name} {
+            @include loop_keyframe_list($keyframe_list, '-o');
+        }
+    }
+
+
+    /*  Official CSS3 Spec.
+     *
+     *  Used a few places, like high-version FF and 
+     *  IE10. (Maybe others, too!)
+     */
+    @keyframes #{$name} {
+        @include loop_keyframe_list($keyframe_list);
+    }
+}
+/*  }   */
