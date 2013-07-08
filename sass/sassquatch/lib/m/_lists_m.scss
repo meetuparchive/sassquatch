@@ -52,8 +52,12 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
 .figureset-figure .linkedBlock {
 	padding: $spacing*.75 $spacing*.75;
 }
+.figureset-figure.linkedBlock {
+	padding-left: 0;
+}
 .figureset-description .linkedBlock {
 	padding-left: 0;
+	padding-right: 0;
 }
 
 /* another list */
@@ -62,7 +66,7 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
 
 	& > li {
 		padding:$spacing;
-		@include shaded($C_gray_lighter);
+		@include shaded(darken($C_gray_lighter, 4%));
 		margin-bottom:1px;
 	}
 	&.last-child,  &:last-child{

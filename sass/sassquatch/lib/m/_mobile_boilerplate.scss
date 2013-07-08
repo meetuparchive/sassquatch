@@ -43,9 +43,14 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fC6; color: #fff; text-shadow: none; }
-::selection { background: #fC6; color: #fff; text-shadow: none; }
 
+/*  Removing this for now. Not absolutely sure there are any 
+ *  adverse effects, but it seems like the kind of thing that 
+ *  we shouldn't spend time modifying?  -j
+ *
+::-moz-selection { text-shadow: none; }
+::selection { text-shadow: none; }
+*/
 
 /* =============================================================================
    Links
