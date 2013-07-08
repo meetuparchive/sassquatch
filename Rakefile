@@ -1,7 +1,7 @@
 COMPILER    = "sass"
-SOURCES     = "src/sassquatch"
-TARGET      = "build/"
-JEKYLL_DIR  = "jekyll_docs/"
+SOURCES     = "sass/sassquatch"
+TARGET      = "css"
+JEKYLL_DIR  = "jekyll_docs"
 DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
@@ -13,7 +13,6 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling SassQuatch for desktop" 
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/_sassquatch.scss"
 	sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
 
 	# mobile
@@ -21,7 +20,6 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling SassQuatch for mobile" 
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/_sassquatch_mobile.scss"
 	sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
 
 	# compile docs
