@@ -7,8 +7,8 @@
 //TODO make own variables for mobile
 @import "../config/variables.scss";
 @import "../config/variables_m.scss";
-
 @import "../config/mixins.scss";
+@import "../config/animation_m.scss";
 
 @mixin shaded($color: $C_shade) {
 	background:$color;

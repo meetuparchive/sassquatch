@@ -1,0 +1,95 @@
+/*  ANIMATION LIBRARY
+ *
+ *  @author     John Cockrell
+ *  @date       2013-3-20
+ *  @depends    /config/_mixins_m.scss
+ *  @requires   SASS 3.2 or greater
+ *  
+ *  @description
+ *  For now, these are just in use by the Spinner on mobile web.
+ *
+ *  The $keyframe_list uses a `list of lists` design pattern for SASS,
+ *  which basically means there are shitloads of nested lists.
+ *
+ *  Animation CSS classes currentliy use the `.ani-*` prefix.
+ *
+ */
+
+
+/*  ANIMATIONS
+ *
+ *  Due to the potential overrides in the styles above, animations should
+ *  stay down here at the bottom, unless we want to up the stakes with 
+ *  a bunch of selector overrides.
+ *
+ *  Why are we using `cubic-bezier` easing instead of `ease-in/out`? 
+ *  Apparently these non-bezier timing functions case noticeable hiccups and 
+ *  bugs in Safari at the moment. 
+ *  This will need to be verified, but this is just a hack around it. -j
+ *
+ *
+ *  TODO: Bad design pattern. Any non-animations style properties in these
+ *  animation classes currently require `!important` since this file comes
+ *  earlier in the load order than many other pieces.
+ *
+ *  Booo `!important`. -j
+ */
+$ease_in: cubic-bezier(0.42, 0, 1.0, 1.0);
+$ease_out: cubic-bezier(0, 0, 0.58, 1.0);
+
+
+@include keyframe('rotate360', (
+    ('0%', ('transform', 'rotate(0deg)')),
+    ('100%', ('transform', 'rotate(360deg)'))
+));
+
+@include keyframe('boing_in', (
+    ('0%', ('transform', 'scale(0.0, 0.0)')),
+    ('60%', ('transform', 'scale(1.4, 1.4)')),
+    ('100%', ('transform', 'scale(1.0, 1.0)'))
+));
+
+@include keyframe('boing_out', (
+    ('0%', ('transform', 'scale(1.0, 1.0)')),
+    ('32%', ('transform', 'scale(1.3, 1.3)')),
+    ('100%', ('transform', 'scale(0.0, 0.0)'))
+));
+
+.ani-enter { 
+    opacity: 1.0 !important;
+    @include transition(opacity, 0.4s, $ease_in);
+    @include animate('boing_in', 0.3s, 1, $ease_in);
+}
+
+.ani-exit { 
+    opacity: 0.0 !important;
+    @include transition(opacity, 0.4s, $ease_out);
+    @include animate('boing_out', 0.3s, 1, $ease_out);
+}
+
+.ani-spin {
+    opacity: 1.0 !important;
+    @include animate('rotate360', 0.8s, infinite, linear);
+}
+
+/* 
+ * fades/opacity animation
+*/
+
+@include keyframe('fadein', (
+    ('0%', ('opacity', '0')),
+    ('100%', ('opacity', '1'))
+));
+
+@include keyframe('fadeout', (
+    ('0%', ('opacity', '1')),
+    ('100%', ('opacity', '0'))
+));
+
+.ani-fadein {
+	@include animate('fadein', 0.4s, 1, ease-out);
+}
+
+.ani-fadeout {
+	@include animate('fadeout', 0.4s, 1, ease-out);
+}
