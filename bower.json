@@ -1,18 +1,15 @@
 {
 	"name": "sassquatch",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"description": "CSS foundation and framework for Meetup",
 	"main": [
-		"./build/_sassquatch.scss",
-		"./build/_sassquatch_mobile.scss",
-		"./build/sassquatch.css",
-		"./build/sassquatch_mobile.css"
+		"./sass",
+		"./css"
 	],
 	"ignore": [
 		"*.*",
 		".*",
 		"Rakefile",
-		"src",
 		"_site",
 		"docs",
 		"jekyll_docs"
