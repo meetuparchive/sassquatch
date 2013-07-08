@@ -95,6 +95,36 @@ h6 { font-weight: bold; font-size: $h6FontSize; }  /* probably won't use it, but
 /* }}} */
 
 
+/*  {{{ Override input styles */
+/**
+* Placeholder styles
+*/
+
+/*  TODO Please kill this. -j */
+
+/*  NOTE
+ *  This is a terrible, hacky mixin, but I can't tell 
+ *  why it's being overridden elsewhere ATM. -j
+ */
+@mixin pholder() {
+    color: #aaa !important;
+    font-style: normal !important;
+}
+textarea::-webkit-input-placeholder, 
+input::-webkit-input-placeholder { 
+    @include pholder();
+}
+textarea:-moz-placeholder,
+input:-moz-placeholder { 
+    @include pholder();
+}
+textarea:-ms-input-placeholder, 
+input:-ms-input-placeholder {
+    @include pholder();
+}
+/* }}} */
+
+
 /* {{{ Widget helpers (graceful degradation for JS features) */
 .block-if-js,
 .inline-if-js,

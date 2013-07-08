@@ -6,51 +6,75 @@
 	font-family: Consolas, Monaco, monospace;
     padding: $spacing/2;
     &:before {
-        color: blue; 
-        content: "DEBUG: "; 
+        color: blue;
+        content: "DEBUG: ";
     }
 }
-.leading-top { 
-	padding-top: $spacing; 
+.highlighted {
+	background: $C_yellow;
 }
-.leading-bottom { 
-	padding-bottom: $spacing; 
+.shaded {
+	background-color:$C_gray;
 }
-.leading-left { 
-	padding-left: $spacing; 
+.shaded-lightest {
+	background-color:$C_gray_lightest;
 }
-.leading-right { 
-	padding-right: $spacing; 
+.shaded-lighter {
+	background-color:$C_gray_lighter;
 }
-.leading-all {
+.shaded-red {
+	background-color: $C_red;
+	color: white;
+}
+.shaded-pixelate {
+	// this is a translucent 128x128 overlay that darkens squares of the underlying color
+	// to make it appear blocky/giant-pixelated. It's a cool effect, show your friends!
+	background-image: url('data:image/png;base64,
+		iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx
+		DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K
+		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b
+		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
+}
+.leading-top {
+	padding-top: $spacing;
+}
+.leading-bottom {
+	padding-bottom: $spacing;
+}
+.leading-left,
+.padding-left {
+	padding-left: $spacing;
+}
+.leading-right,
+.padding-right {
+	padding-right: $spacing;
+}
+.leading-none,
+.padding-none {
+	padding: 0 !important;
+}
+.leading-all,
+.padding-all {
 	padding: $spacing;
 }
 .margin-all{
 	margin:$spacing;
 }
-.margin-top { 
-	margin-top: $spacing; 
+.margin-top {
+	margin-top: $spacing;
 }
-.margin-bottom { 
-	margin-bottom: $spacing; 
+.margin-bottom {
+	margin-bottom: $spacing;
 }
-.margin-left { 
-	margin-left: $spacing; 
+.margin-left {
+	margin-left: $spacing;
 }
-.margin-right { 
-	margin-right: $spacing; 
+.margin-right {
+	margin-right: $spacing;
 }
 .margin-none {
 	margin: 0 !important;
-}
-.padding-left { 
-	padding-left: $spacing; 
-}
-.padding-right { 
-	padding-right: $spacing; 
-}
-.padding-none {
-	padding: 0 !important;
 }
 .align-right {
 	text-align: right;
@@ -60,6 +84,11 @@
 }
 .align-center {
 	text-align: center;
+}
+.center-able {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .img-align-middle{
 	vertical-align:middle;
@@ -77,7 +106,7 @@
 	display: inline;
 }
 .inline-block {
-	@include inlineblock();
+    @include inlineblock();
 }
 .muted {
 	color: $C_text_less;
@@ -89,6 +118,7 @@
 
 .bold {
 	font-weight: bold;
+    font-weight: 500;
 }
 .italic {
     font-style: oblique;
@@ -100,7 +130,7 @@
 	font-size: $baseFontSize - 2;
 }
 .big {
-    font-size: $bigFontSize; 
+    font-size: $bigFontSize;
 }
 .opacity-quarter {
     // what is this used for?
@@ -110,15 +140,15 @@
 	border-width: 0 !important;
 }
 // http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+// Removed the `word-break: break-all` because it breaks ALL the words, not just
+// the long ones.
 .wrapNice {
- -ms-word-break: break-all;
-     word-break: break-all;
-
-     // Non standard for webkit
-     word-break: break-word;
+ // Non standard for webkit
+ word-break: break-word;
 
 -webkit-hyphens: auto;
    -moz-hyphens: auto;
+    -ms-hyphens: auto;
         hyphens: auto;
 }
 
@@ -134,4 +164,17 @@ a.unlink{
         color: $C_text;
     }
 }
+
+/* {{{ Widget helpers (graceful degradation for JS features) */
+.block-if-js,
+.inline-if-js,
+.inline-block-if-js,
+.hasJS .hide-if-js {
+	display: none;
+}
+
+.hasJS .block-if-js			{ display: block; }
+.hasJS .inline-if-js		{ display: inline; }
+.hasJS .inline-block-if-js	{ display: inline-block; }
+/* }}} */
 

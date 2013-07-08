@@ -1,11 +1,11 @@
 /**
 * Popover 
 * core/skin for popover plugin
-* query/plug-in/bootstrap-popover.js
+* jquery/plug-in/bootstrap-popover.js
 */
 
 $ARROW_WIDTH: 14px;
-$BORDER_COLOR: $C_text;
+$BORDER_COLOR: $C_line;
 
 @mixin popoverTop($arrowWidth: $ARROW_WIDTH, $color: $BORDER_COLOR, $innerOffset: 0) {
     bottom: $innerOffset;
@@ -68,9 +68,36 @@ $BORDER_COLOR: $C_text;
     width: 240px;
     min-height: 46px;
     overflow: hidden;
-    @include round(5px);
+    @include round($defaultRadius);
     @include box-shadow(rgba(0, 0, 0, .55) , 0px, 1px, 3px);
 }
 .popover-content {
     padding: 12px;
+}
+
+
+/**
+ * @override
+ * Popover mini (for cases in which you need a complex tooltip)
+ */
+
+$MINI_ARROW_WIDTH: 6px;
+.popover.mini {
+    padding: $MINI_ARROW_WIDTH;
+    &.top .arrow    { @include popoverTop($MINI_ARROW_WIDTH); }
+    &.right .arrow  { @include popoverRight($MINI_ARROW_WIDTH); }
+    &.bottom .arrow { @include popoverBottom($MINI_ARROW_WIDTH); }
+    &.left .arrow   { @include popoverLeft($MINI_ARROW_WIDTH);  }
+    &.top .arrow-inner    { @include popoverTop($MINI_ARROW_WIDTH - 1, #fff, 2px); }
+    &.right .arrow-inner  { @include popoverRight($MINI_ARROW_WIDTH - 1, #fff, 2px); }
+    &.bottom .arrow-inner { @include popoverBottom($MINI_ARROW_WIDTH - 1, #fff, 2px); }
+    &.left .arrow-inner   { @include popoverLeft($MINI_ARROW_WIDTH - 1, #fff, 2px);  }
+    p { margin-bottom: 0; }
+    .popover-inner {
+        min-height: 25px;
+        width: auto;
+    }
+    .popover-content {
+        padding: 3px 8px;
+    }
 }

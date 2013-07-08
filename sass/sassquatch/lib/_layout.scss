@@ -42,7 +42,7 @@
 .line-gutters {
     margin-bottom: $baseline;
     margin-right: $baseline*-1; /* pull last child to the right to meet the right edge of the page */
-    .unit, .lastUnit {
+    & > .unit, & > .lastUnit {
         padding-right: $baseline;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -52,7 +52,7 @@
 }
 /* }}} */
 
-/** {{{ Width Modifiers 
+/** {{{ Width Modifiers
 * (arbitrary percentage of parent; outside grid system patterns)
 */
 .span-25 { width: 25%; }
@@ -68,13 +68,16 @@
 	@include round($defaultRadius);
 	background-color: #fff;
 	margin-bottom: $baseline;
-	border: 1px solid $C_gray;
+	border: 1px solid $C_line;
+    border-color: rgba(0,0,0,.04);
+    @include background-clip(padding);
+
 
 	/**
 	* round any first or last .doc-content elements inside of .doc-box
 	* allows the doc-content to be shaded without conflicting with .doc-box rounding
 	*/
-	
+
 	& > .doc-content:first-child{
 		@include round-nw($defaultRadius);
 		@include round-ne($defaultRadius);
@@ -87,7 +90,7 @@
 	/**
 	* doc-content elemenmts inside doc-box get a dividing border by default
 	* (override with .border-none if you need to)
-	*/ 
+	*/
 	& .doc-content {
 		border-top: 1px solid $C_line;
 		&:first-child{
@@ -95,12 +98,20 @@
 		}
 	}
 
-	/** 
+	/**
+	 * Let a first-child doc-content have a border too.
+	 */
+
+	& .doc-content.doc-content-border {
+		border-top: 1px solid $C_line;
+	}
+
+	/**
 	* Vertical box divisions (when direct child is an OOCSS "line")
 	* allows the borders to span the full height of the .doc-box
 	*/
 	& > .line,
-	& > .line-gutters{ 
+	& > .line-gutters{
 		& > .unit{
 			float: none;
 			border-right: 1px solid #ddd;
@@ -111,10 +122,10 @@
 			border-right: 0;
 			vertical-align: top;
 		}
-		
 
 
-		// magically correct rounded corners when in full-height columns 
+
+		// magically correct rounded corners when in full-height columns
 		.doc-content{
 			@include round(0);
 		}
@@ -153,7 +164,7 @@
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
 	padding: $baseline;
-	padding-bottom: $baseline * .25; 
+	padding-bottom: $baseline * .25;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
 
@@ -163,14 +174,14 @@
 
 .doc-controls {
 	background: $C_gray;
-	padding-bottom: $baseline; 
+	padding-bottom: $baseline;
 	margin-bottom: $spacing;
 }
 
 /**
 * footer used for dialogs, but could potentially be used elsewhere
 */
-.doc-content.footer { 
+.doc-content.footer {
 	background: $C_gray_lighter;
 	@include round(0, 0 $defaultRadius, $defaultRadius);
 }
@@ -186,7 +197,7 @@
   font-size: 0;
   content: " ";
   clear: both;
-  height: 0; 
+  height: 0;
 }
 * {
   html .clearfix, &:first-child+html .clearfix {
@@ -217,7 +228,7 @@
 
 /**
 * Notice
-* notification at the top of a .doc-box 
+* notification at the top of a .doc-box
 * can be used to present optional actions for a user
 */
 .doc-content-notice{
@@ -229,8 +240,7 @@
 	top: 12px;
 	right: 12px;
 	display: block;
-    /* not currently in use in live; we should replace with a Red Label font icon */
-	/*background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;*/
+	background: url(imgUrl('/img/ui-dialog-close.png')) no-repeat top left;
 	width: 14px;
 	height: 14px;
 	cursor: pointer;
@@ -239,7 +249,7 @@
 	&:hover{
 		@include opacity(1);
 	}
-} 
+}
 
 /**
 * into/outof
@@ -291,12 +301,12 @@ $arrow-width: $baseline/2;
     padding-bottom: $bigBaseline - $spacing;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 
-  input, textarea, select, 
+  input, textarea, select,
     button, .button {
-        font-size: $bigFontSize;    
+        font-size: $bigFontSize;
     }
     label, legend {
-        font-size: $bigFontSize - 2; 
+        font-size: $bigFontSize - 2;
     }
 
     label.small {
@@ -313,4 +323,49 @@ $arrow-width: $baseline/2;
       font-size:15px;
     }
 }
+.doc-content-jagged {
+	$jagged-height: 8px;
+	margin-bottom: 0;
+	position: relative;
+	&:after {
+		// note, the jagged edge image is based on a WHITE BACKGROUND
+		content: '';
+		height: $jagged-height;
+		background: transparent url('data:image/png;base64,
+			iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo
+			5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q
+			9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A
+			AAAASUVORK5CYII=') repeat-x top left;
+		background-size: $jagged-height;
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: -$jagged-height;
+		width: 100%;
+	}
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+	// worth it.
+	.doc-content-jagged {
+		&:after {
+			background: transparent url('data:image/png;base64,
+			iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy
+			8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh
+			+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb
+			iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC') repeat-x top left;
+			background-size: 8px auto;
+		}
+	}
+}
 /* }}} */
+
+hr.double-line {
+	// decorative hr style
+	border: double;
+	margin: 0 0 1px;
+	border-width: 3px 0 0;
+}
+

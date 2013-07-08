@@ -20,7 +20,7 @@ $tabSpacing: $spacing/2;
 		display: block;
 		text-decoration: none;
 		color: $C_text_less;
-		background-color: $C_gray_lightest;	
+		background-color: $C_gray_lightest;
 		padding: 6px 12px;
 		&:focus {
 			outline-width: 0;
@@ -49,6 +49,6 @@ $tabSpacing: $spacing/2;
 * allows border to span the whole D_box
 */
 #lma .tabsNav {
-	border-bottom: 0px; 
+	border-bottom: 0px;
 	background-color: #E9EBE5;
 }

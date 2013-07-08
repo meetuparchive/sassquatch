@@ -5,19 +5,20 @@
 
 /* {{{ first, some normalization */
 button, input, select, textarea {
+    margin: 0;
 	vertical-align: baseline;
 	*vertical-align: middle;
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing: border-box; 
-	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 button, input {
 	line-height: normal;
 	*overflow: visible;
 }
-button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner {         
-	padding: 0 !important;         
-	border: 0 none !important;     
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner {
+	padding: 0 !important;
+	border: 0 none !important;
 }
 button, input[type=button], input[type=reset], input[type=submit] {
 	cursor: pointer;
@@ -42,8 +43,8 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 	legend {
 		display: block;
 		font-size: $baseFontSize * 1.25;
-		line-height: 1; 
-		color: $C_text; 
+		line-height: 1;
+		color: $C_text;
 		*line-height: 1.5; /* IE7 */
 		margin-bottom: 0;
 		position: absolute;
@@ -55,7 +56,7 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 input, select, textarea {
 	font-family: $baseFontStack;
 	display: block;
-	line-height: $baseline;
+	line-height: $baseLineHeight;
 	padding: $baseline/4;
 	font-size: $baseFontSize;
 	width: auto;
@@ -73,7 +74,7 @@ label {
 	display: block;
 	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
 	&.small {
-		font-size: $baseFontSize;	
+		font-size: $baseFontSize;
 	}
 }
 
@@ -119,25 +120,29 @@ textarea {
 /**
 * Placeholder styles
 */
-textarea::-webkit-input-placeholder, 
-input::-webkit-input-placeholder { color: #ccc; font-style: italic; }
-textarea:-moz-placeholder,
-input:-moz-placeholder           { color: #ccc; font-style: italic; }
-textarea:-ms-input-placeholder, 
-input:-ms-input-placeholder      { color: #ccc; font-style: italic; }
+input, textarea {
+    @include input-placeholder {
+        color: $C_text;
+        font-style: italic;
+        opacity: .3;
+    }
+}
 
-/** 
+
+/**
 * Focus states
 * applies box shadow in normal state;
 * declares transition for any border & box shadow changes (set below in focus)
 */
 input, textarea {
+	// transition-all() is too blunt - should only transition border
 	/*transition*/
 	-webkit-transition: border linear 0.1s, box-shadow linear 0.2s;
 	-moz-transition: border linear 0.1s, box-shadow linear 0.2s;
 	-ms-transition: border linear 0.1s, box-shadow linear 0.2s;
 	-o-transition: border linear 0.1s, box-shadow linear 0.2s;
 	transition: border linear 0.1s, box-shadow linear 0.2s;
+
 
 	/*default state*/
 	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
@@ -146,7 +151,7 @@ input, textarea {
 
 	/*focus border & outline*/
 	&:focus {
-		outline: 0;	
+		outline: 0;
 		border-color: $C_darkblue;
 		-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
 		-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
@@ -187,16 +192,18 @@ input.disabled { /*only change the background of inputs, not wrappers with .disa
 /* {{{ Button defaults */
 
 input[type=submit], button, .button, .button-light {
-	@include button_color($C_gray, true);
+	@include button_color($C_gray_lightest);
 	@include button_personality;
+    white-space: nowrap;
+    @include experimental(transition, none); // transition makes button action mushy
 	display: inline-block;
 	text-decoration: none!important;
 	text-align: center;
 	zoom: 1;
-	color: #484848;
+	color: $C_text;
 	font-weight: bold;
 	font-family: helvetica, arial, sans-serif;
-	@include round($defaultRadius/2);
+	@include round($defaultRadius);
 	line-height: 1;
 	font-size: 16px;
 	padding: .5em 0.75em .4em;
@@ -213,8 +220,8 @@ input[type=submit], button, .button, .button-light {
     &.small {
         font-size: 12px;
     }
-    &.small.inline {/* line it up with default input size */ 
-        position: relative; 
+    &.small.inline {/* line it up with default input size */
+        position: relative;
         top: 4px;
     }
 
@@ -244,7 +251,7 @@ input[type=submit], button, .button, .button-light {
 label.required:after {
 	margin-left: 0.75em;
 	content: "*";
-	color: $C_red; 
+	color: $C_red;
 }
 
 input.error, select.error, textarea.error {
@@ -270,13 +277,13 @@ input.error, select.error, textarea.error {
 
 /* {{{ char counter */
 .counter { /*new style*/
-    font-size: 10px;     
+    font-size: 10px;
     color: $C_text_less;
 }
 .counter,
 
 .limit-container { /*legacy char counter*/
-    margin-top: -1em; 
+    margin-top: -1em;
 }
 input.hasMaxLen, textarea.hasMaxLen {
 	margin-bottom: $spacing;
@@ -299,4 +306,4 @@ select.big {
     *height: auto;
     line-height: $bigFontSize*2 -2;
 }
-/* }}} */	
+/* }}} */

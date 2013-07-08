@@ -1,9 +1,9 @@
 body {
-	background-color:$C_gray_lightest;
+	background-color:$C_gray_lighter;
 }
 
 .doc-box {
-	margin: $baseline*.5;
+	margin: $baseline;
 	margin-bottom:0;
 
 	&:last-child {

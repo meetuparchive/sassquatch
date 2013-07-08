@@ -4,51 +4,217 @@
 * list filtering, for example
 */
 
-//border
-$borderColor: darken($C_line, 10%);
 
-.nav-buttons {	
+.nav-buttons {
 	list-style-type: none;
-	margin-bottom: $baseline;
+	margin-bottom: $spacing;
 	padding-left: 0;
 	line-height: 1.5;
+    @include inlineblock;
+	@include round($defaultRadius);	
 	@include clearfix;
-	li > a {
-		background-color: $C_buttonBg;
-		@include gradient($C_buttonTint, $C_buttonShade);
-		font-family: $headingFontStack;
-		border: 1px solid $borderColor;
-		border-left-color: #fff;
-		color: $C_text !important;
-		padding: 0.4em 1em;
-		display: block;
+    @include experimental(box-sizing, border-box);
+    @include experimental(background-clip, padding-box);
+    border: 1px solid $C_line;
 
-		&:hover {
-			$lighter_base_color: lighten($C_buttonTint, 50%);
-			$darker: darken($C_buttonShade, 8%);
-			@include gradient($lighter_base_color, $darker);
-		}
-		&:active {
-			@include gradient(darken($C_buttonShade, 30%), darken($C_buttonTint, 15%));
-			@include box-shadow(mix(#000000, $C_buttonBg, 40%), 1px, 1px, 0, 0, true);
-		}
-	}
-	li {
+
+    /*****************************
+     * STRUCTURE
+     ****************************/
+    li, label {
         padding-top: 0;
 		float: left;
-		&:first-child > a {
-			@include round-nw($defaultRadius/2);	
-			@include round-sw($defaultRadius/2);	
-			border-left-color: $borderColor;
+        text-align: center;
+	}
+
+	label,
+	li > a,
+	li > span {
+		@include button_personality;
+		padding: ($baseFontSize * .4) $baseFontSize;
+		display: block;
+	}
+
+	label:first-of-type,
+	li:first-child > a,
+	li:first-child > span {
+		@include round-nw($defaultRadius - 1px);
+		@include round-sw($defaultRadius - 1px);
+	}
+
+	label:last-of-type,
+	li:last-child > a,
+	li:last-child > span {
+		@include round-ne($defaultRadius - 1px);
+		@include round-se($defaultRadius - 1px);
+	}
+
+    &.vertical{
+        display: block;
+
+        li, label {
+            display: block;
+            float: none;
+            text-align: left;
 		}
-		&:last-child > a {
-			@include round-ne($defaultRadius/2);	
-			@include round-se($defaultRadius/2);	
-			border-right-width: 1px;
+
+		label:first-of-type,
+		li:first-child > a,
+		li:first-child > span {
+			@include round-nw($defaultRadius - 1px);	
+			@include round-ne($defaultRadius - 1px);	
+			@include round-sw(0);	
 		}
-		&.selected > a {
+		label:last-of-type
+		li:last-child > a,
+		li:last-child > span {
+			@include round-ne(0);	
+			@include round-se($defaultRadius - 1px);	
+			@include round-sw($defaultRadius - 1px);	
+		}
+    }
+
+
+    /*****************************
+     * COLOR NORMAL
+     ****************************/
+    $highlight: rgba(255,255,255,.2) 1px 1px 0 0 inset;
+    $shadow_e: rgba(0,0,0,.1) -1px 0 0 0 inset;
+    $shadow_s: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+
+	label,
+	li > a,
+	li > span {
+		@include button_personality;
+		@include button_color(#fff, true);
+		border: none;
+		text-shadow: none;
+		color: $C_darkgray_lightest;
+		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
+	}
+
+	input[type=radio]:checked + label, input[attr="checked"] + label,
+	li > a:active, li > a.selected, li > a.push,
+	li > span.selected, li > span.push {
+		color: $C_darkgray!important;
+	}
+
+	label:last-of-type,
+	li:last-child > a,
+	li:last-child > span {
+		@include experimental(box-shadow, '#{$highlight}');
+	}
+    &.vertical{
+		label,
+		li > a, 
+		li > span{
+			@include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
+		}
+
+		label:last-of-type,
+		li:last-child > a,
+		li:last-child > span {
+			@include experimental(box-shadow, '#{$highlight}');
+		}
+    }
+    
+    /*****************************
+     * COLOR INVERTED
+     ****************************/
+    
+    .inverted &{
+        border-color: $C_darkgray;
+		label,
+		li > a,
+		li > span {
+			@include button_color($C_darkgray_lighter, false);
+			border: none;
+			text-shadow: none;
+			color: $C_gray!important;
+		}
+
+		input[type=radio]:checked + label, input[attr="checked"] + label {
+			@include button_color_active($C_darkgray_lighter, true);
+		}
+
+		input[type=radio]:checked + label, input[attr="checked"] + label,
+		li > a:active, li > a.selected, li > a.push,
+		li > span.selected, li > span.push {
+			color: $C_gray_lightest!important;
+		}
+
+        &.vertical{
+			label,
+			li > a,
+			li > span{
+				@include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
+			}
+
+			label:last-of-type,
+			li:last-child > a,
+			li:last-child > span {
+				@include experimental(box-shadow, '#{$highlight}');
+			}
+        }
+    }
+
+
+    /*****************************
+     * COLOR SELECTED ITEM 
+     ****************************/
+
+    li, li:first-child, li:last-child{
+        & > a,
+        & > span {
+            &:active, &.selected, &.push {
+                @include punched_in_box_shadow;
+            }
+        }
+    }
+
+	input[type=radio]:checked + label, input[attr="checked"] + label {
+		@include button_color_active(#fff, true);
+	}
+
+
+	/*******************************
+	 * RADIO-BUTTON-ONLY SELECTORS *
+	 *******************************/
+
+	input[type=radio] {
+		display: none;
+	}
+
+	label {
+		margin: 0;
+	}
+
+	&.equal-width {
+		display: table;
+		table-layout: fixed;
+		width: 99.8%;
+
+		&:after {
+			display: none;
+		}
+
+		& > label, & > a, & > li {
+			float: none;
+			display: table-cell;
+		}
+	}
+}
+
+
+
+// DEPRECATED
+// .selected on LI is deprecated -- use .selected on SPAN or A instead
+.nav-buttons {
+    li {
+		&.selected > a,
+		&.selected > span {
 			@include selectedNav;
-			border-left: 0;
+            border: none;
 		}
 	}
 }

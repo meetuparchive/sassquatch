@@ -7,7 +7,7 @@ html {
 html, body {
 	font-size: $baseFontSize;
 	color: $C_text;
-	line-height: 1.5;
+	line-height: $baseLineHeight;
 	margin: 0;
 	padding: 0;
 }
@@ -21,10 +21,9 @@ abbr, strong, acronym, span, small, time, strike, sub, sup, a {
 	font-family: inherit;
 }
 abbr, acronym {
-	border-width: 0;	
+	border-width: 0;
 }
 b,strong { font-weight: bold; }
-i,em     { font-weight: normal; }
 sup, sub {
 	font-size: 75%;
 	line-height: 0;
@@ -54,7 +53,7 @@ img {
 	border: 0;
 	line-height: 0;
 	&.resample { /* assuming we're sizing an img down on the client */
-		-ms-interpolation-mode: bicubic; 
+		-ms-interpolation-mode: bicubic;
 		image-rendering: optimizeQuality;
 	}
 }
@@ -82,13 +81,13 @@ a:hover, a:active {
     cursor: hand;
     cursor: pointer;
 	color: $C_link;
-	text-decoration: none;	
+	text-decoration: none;
 }
 a:visited {
 	color: $C_link;
 }
 a:hover, a:active {
-	text-decoration: underline;	
+	text-decoration: underline;
 	color: $C_link;
 }
 a:active {
@@ -98,37 +97,24 @@ a:active {
 
 /* {{{ Headings */
 h1,h2,h3,h4,h5,h6 {
-	font-family: $headingFontStack;	
+	font-family: $headingFontStack;
 	color: $C_text_headline;
 	margin: 0;
 	padding: 0;
 	padding-bottom: $baseline/2.5;
 	line-height: 1.1;
+    font-weight: bold;
 }
-h1 { 
-	font-size: $h1FontSize; 
-	letter-spacing: -0.75px; 
+h1 {
+	font-size: $h1FontSize;
+	letter-spacing: -0.75px;
 }
-h2 { 
-	font-size: $h2FontSize; 
-	letter-spacing: -0.5px; 
+h2 {
+	font-size: $h2FontSize;
+	letter-spacing: -0.5px;
 }
 h3 { font-size: $h3FontSize; }
 h4 { font-size: $h4FontSize; }
 h5 { font-size: $h5FontSize; }
 h6 { text-transform:uppercase; font-weight: normal; font-size: $h6FontSize; font-variant: small-caps; } /* probably won't use it, but it's in the html spec, so worth defining a default */
 /* }}} */
-
-/* {{{ Widget helpers (graceful degradation for JS features) */
-.block-if-js,
-.inline-if-js,
-.inline-block-if-js,
-.hasJS .hide-if-js {	
-	display: none;
-}
-
-.hasJS .block-if-js			{ display: block; }
-.hasJS .inline-if-js		{ display: inline; }
-.hasJS .inline-block-if-js	{ display: inline-block; }
-/* }}} */
-

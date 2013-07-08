@@ -45,7 +45,7 @@ $optionWidth: $widgetWidth - $sliderWidth;
 		@include gradient(#fff, $C_gray_lighter);
 		z-index: 1;
 		left: 0px;
-		-moz-transition: left .1s ease-out;
+		-moz-transition: left .1s ease-out;  // this transition should be changed to translate3d for supported browsers
 		-webkit-transition: left .1s ease-out;
 		transition: left .1s ease-out;
 	}
