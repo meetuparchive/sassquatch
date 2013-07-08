@@ -5,37 +5,37 @@
 */
 
 //TODO make own variables for mobile
-@import "../config/variables.scss";
-@import "../config/variables_m.scss";
-@import "../config/mixins.scss";
-@import "../config/animation_m.scss";
+@import "../config/variables";
+@import "../config/variables_m";
 
-@mixin shaded($color: $C_shade) {
-	background:$color;
-}
+@import "../config/mixins";
+@import "../config/mixins_m";
 
-/* {{{ defaults and resets for most block and inline els, includes boilerplate */ 
+/*  Animation  */
+@import "lib/animation";
+@import "lib/animation_m";
 
-@import "lib/m/defaults_m.scss";
-
+/* {{{ defaults and resets for most block and inline els, includes boilerplate */
+@import "lib/m/defaults_m";
 /* }}} */
 
 
-@import "lib/forms.scss";
-@import "lib/tables.scss";
+@import "lib/forms";
+@import "lib/tables";
 
-@import "lib/modifiers.scss";
-@import "lib/m/modifiers_m.scss";
+@import "lib/modifiers";
+@import "lib/m/modifiers_m";
 
-@import "lib/lists.scss";
-@import "lib/m/lists_m.scss";
+@import "lib/lists";
+@import "lib/m/lists_m";
 
 /* {{{ import other frameworks components (from least specific selectors to most) */
 
-@import "lib/layout.scss";
-@import "lib/m/layout_m.scss";
+@import "lib/layout";
+@import "lib/m/layout_m";
 
-@import "lib/patterns.scss";
+@import "lib/patterns_m";
 
+/* Icons */
+@import "lib/red-label-icons";
 /* }}} */
-

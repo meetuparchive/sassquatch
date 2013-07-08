@@ -1,33 +1,36 @@
 /**
-* SASSQUATCH 
+* SASSQUATCH
 * import all the framework includes
 */
 
 /* {{{ base config */
 
-@import "../config/variables.scss";
-@import "../config/mixins.scss";
-@import "../config/fonts.scss";
-@import "../config/animation.scss";
+@import "../config/variables";
+@import "../config/mixins";
 
 /* }}} */
 
-/* {{{ defaults and resets for most block and inline els */ 
+/* {{{ defaults and resets for most block and inline els */
 
-@import "lib/defaults.scss";
+@import "lib/defaults";
+@import "lib/animation";
 
 /* }}} */
 
-/* {{{ modifiers */ 
+/* {{{ modifiers */
 
-@import "lib/forms.scss";
-@import "lib/tables.scss";
-@import "lib/modifiers.scss";
-@import "lib/lists.scss";
+@import "lib/forms";
+@import "lib/tables";
+@import "lib/modifiers";
+@import "lib/lists";
 
 /* }}} */
 
 /* {{{ import other frameworks components (from least specific selectors to most) */
-@import "lib/layout.scss";
-@import "lib/patterns.scss";
+@import "lib/layout";
+@import "lib/patterns";
+
+/* Icons */
+@import "lib/red-label-icons";
+@import "lib/multicolor-icons";
 /* }}} */
