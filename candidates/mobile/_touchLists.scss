@@ -1,0 +1,241 @@
+/**
+ *  @file   _touchList.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-05-27
+ *
+ *  @description
+ *      File intended to be consolidated with _lists_m.scss in Sassquatch.
+ *      Determines styles for the `touchList` list layout style.
+ */
+
+
+%top_divider {
+    /*  A divider applied to the top of every list-item-like element in a
+     *  touchlist. Applying it to <li> results in nesting clusterpuck, so it's
+     *  applied to special hook classes for granularity:
+     *
+     *      `.touchList-item`
+     *      `.touchList-load-more-link`
+     *      `.touchList-jump-link`
+     */
+    border-top: 1px solid $C_line_less; 
+}
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST STYLES  */
+
+.touchList {
+
+    /* RESETS { */
+    @extend %temporary_reset_font_size;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* } */
+
+    .touchList-item:first-child { 
+        /* TODO Add rounding to top if in a rounded container */
+        border-top-color: transparent;        
+    }
+
+    .touchList-item:last-child { 
+        /* TODO Add rounding to bottom if in a rounded container */
+    }
+}
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST ITEMS  */
+
+/*  These are all <li> elements, but only these are getting borders, rather 
+ *  than blanket coating all <li> elements, nested, first child, or otherwise
+ *  with this style. It's a more targeted, conservative approach.
+ */
+.touchList-item,
+.touchList-item--segment {
+    @extend %top_divider;
+}
+
+.touchList-item--padded {
+    padding: $touchList_item_inner_padding; 
+}
+
+/*  Basic Item (Demo)  */
+
+.touchList-item-ff-box {
+    padding: 0 $touchList_item_inner_padding;
+    height: $touchable_default_height;
+}
+
+.touchList-item-label {
+    @extend %touch_item_label_font_style;
+    padding: 0; /* RESET */
+}
+
+/*  Attendee Items  */
+.touchList-item--attendee-figureset {
+    padding: $touchList_item_inner_padding;
+}
+
+.touchList-item--attendee-label {
+    @extend %touch_item_label_font_style;
+    @extend %text_truncate;
+
+    padding: 0; /* RESET */
+}
+
+.touchList-item--attendee-label-guest-count { 
+    font-size: ($FS_text / $FS_label) * 1em;
+    /* NOTE: dividing any two parameters with the same units strips the units.
+     * We need to multiply by an em to make sure this number is in ems.
+     */
+    font-weight: normal;
+    color: $C_gray60;
+    vertical-align: 1px;
+    /* Bump it up a hair, because parentheses are all dangly */
+}
+
+.touchList-item--attendee-role,
+.touchList-item--attendee-context {
+    padding: 0;
+
+    font-size: $FS_caption;
+    color: $C_gray60;
+}
+
+.touchList-item--attendee-role {
+    @extend %text_truncate;
+    line-height: $LH_expanded;
+}
+
+.touchList-item--attendee-context-fun-fact {
+	.figureset-figure {
+		padding-right:.625em;
+	}
+
+	.figureset-description {
+    line-height: $LH_expanded;
+		padding-left:0!important;
+
+		.topic-box {
+			white-space: nowrap;
+		}
+	}
+}
+
+/* TODO: Unstyled for now; haven't made it show up to test */
+.touchList-item--attendee-ledger {
+    padding: 0;
+    font-size: $FS_caption;
+    color: $C_gray60;
+}
+
+.touchList-item--attendee-secondary-actions {
+    white-space: nowrap;
+    padding: 0 $touchList_item_inner_padding;
+}
+
+
+.touchList-item--attendee-secondary-actions .button {
+    /* RESET { */
+    margin: 0;  /* kill bottom margin */
+    /* } */
+
+    /* NOTE: Right now, all the buttons in the "secondary actions" block are
+     * set to `inline-block` display. This will provide a 4px (roughly) gap
+     * organically between each button--no padding/margin needed.
+     *
+     * If we change that in the future, button-level padding should probably
+     * work together with the secondary-actions wrapper.
+     */
+}
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST EMPTY ITEMS  */
+
+.touchList-item--empty { 
+    @extend %top_divider;
+     
+    padding: $touchable_min_height $touchList_item_inner_padding;
+    background-color: $C_gray96;
+}
+
+.touchList-item--empty-label { 
+    font-size: $FS_label;
+    line-height: $LH_standard;
+    color: $C_gray70;
+    text-align: center;
+    text-shadow: 0 1px 0 white;
+}
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST JUMP LINKS AND LOAD MORE LINKS  */
+
+.touchList-item--load-more-link,
+.touchList-item--jump-link {
+    @extend %top_divider;
+}
+
+.touchList-item--jump-link-ff-box, 
+.touchList-item--load-more-link-ff-box {
+    padding: 0 $touchList_item_inner_padding;
+    height: $touchable_default_height;
+    /* See notes about tables and m-height everywhere */
+}
+
+.touchList-item--load-more-link-label, 
+.touchList-item--jump-link-label { 
+    @extend %touch_item_label_font_style;
+    padding-bottom: 0; /* RESET */
+}
+
+.touchList-item--load-more-link-label { 
+    text-align: center;
+    color: $C_darkgray_lighter;
+}
+.touchList-item--jump-link-disclosure-icon {
+    color: $C_gray60;
+}
+
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST SEGMENT COMPONENTS */
+
+.touchList-item--segment-header { 
+    @extend %layout_full_width_table;
+    @extend %text_disable_selection;
+    @include box-sizing('border');
+    border-bottom: 1px solid $C_line_less; 
+    padding: 0 $touchList_item_inner_padding;
+    height: $touchable_min_height;
+    //  See notes everywhere about table height/min-height.
+}
+
+/* The actual text inside the --segment-header that forms a title for the
+ * section below.
+ */
+.touchList-item--segment-header-label { 
+    @extend %layout_middle_align_table_cell;
+
+    /* RESET { */
+    padding: 0;
+    font-weight: bold;
+    /* } */
+
+    /* We're basically making this small caps, for now */
+    color: $C_gray40; /* $C_darkgray_lighter */
+    font-size: $FS_caption;
+    text-transform: uppercase;
+}
+
+.touchList-item--segment-content { 
+    /* RESET { */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* } */
+}
