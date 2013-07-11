@@ -1,8 +1,10 @@
-//@import "../../sassquatch/sassquatch_m.scss";
-//@import "_global.scss";
-//@import "_chapter_m.scss";
+@import '../../sass/config/_variables.scss';
+@import '../../sass/config/_variables_m.scss';
 
-/*  VARIABLES */
+@import '../../sass/config/_mixins.scss';
+@import '../../sass/config/_mixins_m.scss';
+
+/*  MAS VARIABLES */
 @import '_tl_parameters.scss';
 @import '_tl_extends.scss';
 
