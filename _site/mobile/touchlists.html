@@ -1,12 +1,11 @@
 <p>Right now, the touchList class is applying some overrides to the way font-size, margin and padding are defined in sectionLists and dividedLists</p>
 
-<div class="line">
+<div class="doc-content">
 	<h2>Basic TouchList</h2>
-	<p class="unit size1of3 gutter-right">This is an example of the most basic touchlist.</p>
-	<div class="lastUnit">
+	<p>This is an example of the most basic touchlist.</p>	
+</div>
 
-		<div class="doc-content">
-			<!-- HTML -->
+<!-- HTML -->
 <div class="doc-box">
     <ul class="touchList">
         <li class="touchList-item">
@@ -36,7 +35,8 @@
 </div>
 
 
-			<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
+<div class="doc-content j-code">
+	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li:item</span> <span class="na">label=</span><span class="s">&quot;Item 1&quot;</span> <span class="na">action=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
@@ -45,7 +45,7 @@
     <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
-			<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
+	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
@@ -74,18 +74,18 @@
     <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
-		</div>
-	</div>
 </div>
 
 <div class="doc-content">
-	<div class="line">
-		<div class="unit size1of2 gutter-right">
-			<h2>Attendee Item TouchList</h2>
-			<p> Initially designed for the Attendee/RSVP list on event details, we can use this pattern whenever we need to display member data in a list.</p>
-		</div>
-		<div class="lastUnit">
-			<!-- HTML -->
+	
+	<h2>Attendee Item TouchList</h2>
+	<p> Initially designed for the Attendee/RSVP list on event details, 
+		we can use this pattern whenever we need to display member data in a list.
+	</p>
+
+</div>
+	
+	<!-- HTML -->
 <div class="doc-box">
   <ul class="touchList">
     <li class="touchList-item--attendee">
@@ -140,58 +140,52 @@
             </div>
         </div>
     </li>
+		<li class="touchList-item--attendee">
+			<div class="ff-box">
+		         <div class="ff-box-flex">
+		             <a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
+		                 <div class="figureset-figure avatar-m pin-top">
+		                   <img src="assets/img/uhura.jpg" />
+		                 </div>
+		                 <div class="figureset-description">
+		                     <h4 class="touchList-item--attendee-label">
+		                        Lieutenant Uhura
+		                     </h4>
+		                 </div>
+		             </a>
+		         </div>
+		         <div class="ff-box-fix touchList-item--attendee-secondary-actions">
+		           <a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
+		               <span>Good to see you</span>
+		           </a>
+		         </div>
+		     </div>
+		</li>
+		<li class="touchList-item--attendee">
+			<div class="ff-box">
+				<div class="ff-box-flex">
+					<a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
+						<div class="figureset-figure avatar-m pin-top">
+							<img src="assets/img/kirk2.jpg" />
+						</div>
+						<div class="figureset-description">
+							<h4 class="touchList-item--attendee-label">
+								Evil Kirk
+							</h4>
+						</div>
+					</a>
+				</div>
+				<div class="ff-box-fix touchList-item--attendee-secondary-actions">
+					<a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
+						<span>Good to see you</span>
+					</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
 
-		    <li class="touchList-item--attendee">
-		        <div class="ff-box">
-		            <div class="ff-box-flex">
-		                <a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-		                    <div class="figureset-figure avatar-m pin-top">
-		                      <img src="assets/img/uhura.jpg" />
-		                    </div>
-
-		                    <div class="figureset-description">
-		                        <h4 class="touchList-item--attendee-label">
-		                           Lieutenant Uhura
-		                        </h4>
-		                    </div>
-		                </a>
-		            </div>
-		          
-		            <div class="ff-box-fix touchList-item--attendee-secondary-actions">
-		              <a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-		                  <span>Good to see you</span>
-		              </a>
-		            </div>
-		        </div>
-		    </li>
-		    <li class="touchList-item--attendee">
-		        <div class="ff-box">
-		            <div class="ff-box-flex">
-		                <a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-		                    <div class="figureset-figure avatar-m pin-top">
-		                      <img src="assets/img/kirk2.jpg" />
-		                    </div>
-
-		                    <div class="figureset-description">
-		                        <h4 class="touchList-item--attendee-label">
-		                           Evil Kirk
-		                        </h4>
-		                    </div>
-		                </a>
-		            </div>
-		        
-		            <div class="ff-box-fix touchList-item--attendee-secondary-actions">
-		              <a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-		                  <span>Good to see you</span>
-		              </a>
-		            </div>
-		        </div>
-		    </li>
-		  </ul>
-
-		</div>
-	</div>
-
+<div class="doc-content j-code">
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
  <span class="nt">&lt;li:attendee</span> 	<span class="na">attendee=</span><span class="s">&quot;${ rsvp }&quot;</span> 
  		<span class="na">listing=</span><span class="s">&quot;${listing}&quot;</span> 
@@ -203,8 +197,6 @@
 <span class="s">			&quot;context&quot;:&quot;${comment}&quot;}&#39;</span>
 <span class="nt">/&gt;</span>
 </code></pre></div>
-
-
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
@@ -260,9 +252,13 @@
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
+	<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span> 
 </code></pre></div>
-	
+
 </div>
-<h2>Segmented Touch List</h2>
-tbd
+<div class="doc-content">
+	<h2>Segmented Touch List</h2>
+	<p class="lighter">TBDocumented</p>
+</div>
 
