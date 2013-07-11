@@ -5,7 +5,7 @@
 			<p> Initially designed for the Attendee/RSVP list on event details, we can use this pattern whenever we need to display member data in a list.</p>
 		</div>
 		<div class="lastUnit">
-			{% include touchlist/attendee_item_touchlist_example.md %}
+			{% include touchlist/attendee_item_example.md %}
 
 		    <li class="touchList-item--attendee">
 		        <div class="ff-box">
@@ -58,9 +58,9 @@
 		</div>
 	</div>
 
-	{% highlight jsp %}{% include touchlist/attendee_item_touchlist_example_jsp.md %}{% endhighlight %}
+	{% highlight jsp %}{% include touchlist/attendee_item_example_jsp.md %}{% endhighlight %}
 
 
-	{% highlight html %}{% include touchlist/attendee_item_touchlist_example.md %}{% endhighlight %}
+	{% highlight html %}{% include touchlist/attendee_item_example.md %}{% endhighlight %}
 	
 </div>
