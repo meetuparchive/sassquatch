@@ -1,5 +1,5 @@
 
-<h2>doc-box</h2>
+<h2 class="section-subtitle">doc-box</h2>
 
 <p>
 	This is for the most part inherited from desktop Sassquatch.<br/>
@@ -7,17 +7,15 @@
 	In order for the boxy-ness to be seen in a one-column layout, it also has margins in mobile sassquatch.
 </p>
 
-
 <div class="doc-box">
 	This is a basic doc-box. It has no padding so right now it looks pretty cramped. 
 	It usually wraps some kind of content.
 </div>
 
+<h2 class="section-subtitle">doc-content</h2>
 <div class="doc-content">
-	<h2>doc-content</h2>
-	
-	<code>.doc-content</code> is basically just padded content. 
-	It can sit directly on the background, like this one is.
+	<p><code>.doc-content</code> is basically just padded content. 
+	It can sit directly on the background, like this one is.</p>
 	<p>This is wrapped in <code>.doc-content</code>!</p>
 	<p>or it can be nested within a doc box for header footer and sections: </p>
 </div>

@@ -1,13 +1,9 @@
-<div class="doc-content">
-	
-	<h2>Attendee Item TouchList</h2>
-	<p> Initially designed for the Attendee/RSVP list on event details, 
-		we can use this pattern whenever we need to display member data in a list.
-	</p>
+<h2 class="section-subtitle">Attendee Item TouchList</h2>
+<p> Initially designed for the Attendee/RSVP list on event details, 
+	we can use this pattern whenever we need to display member data in a list.
+</p>
 
-</div>
-
-	{% include mobile/touchlist/attendee_item_example.md %}
+{% include mobile/touchlist/attendee_item_example.md %}
 		<li class="touchList-item--attendee">
 			<div class="ff-box">
 		         <div class="ff-box-flex">
@@ -50,10 +46,11 @@
 				</div>
 			</div>
 		</li>
+	<!-- leaving extra els out of the example, these tags close it off -->
 	</ul>
 </div>
 
-<div class="doc-content j-code">
+<div class="j-code">
 	{% highlight jsp %}{% include mobile/touchlist/attendee_item_example_jsp.md %}{% endhighlight %}
 	{% highlight html %}{% include mobile/touchlist/attendee_item_example.md %}
 	</ul>
