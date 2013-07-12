@@ -8,9 +8,9 @@
 		<div class="unit lastUnit">
 			<div class="doc-box">
 				<div class="doc-content">
-					{% include pagination_example.md %}
+					{% include navigation/pagination_example.md %}
 				</div>
-				{% highlight html %} {% include pagination_example.md %} {% endhighlight %}
+				{% highlight html %} {% include navigation/pagination_example.md %} {% endhighlight %}
 			</div>
 		</div>
 	</div>

@@ -7,10 +7,10 @@
 	<div class="unit lastUnit">
 		<div class="doc-box">
 			<div class="doc-content">
-				{% include stacked_forms_example.md %}
+				{% include forms/stacked_forms_example.md %}
 			</div>
 		</div>
-		{% highlight html %} {% include stacked_forms_example.md %} {% endhighlight %}
+		{% highlight html %} {% include forms/stacked_forms_example.md %} {% endhighlight %}
 	</div>
 </div>
 

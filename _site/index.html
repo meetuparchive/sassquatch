@@ -182,7 +182,17 @@
 	</div>
 
 	<div class="lastUnit">
-		<div class="highlight"><pre><code class="html">Included file &#39;grids_example.md&#39; not found in _includes directory
+		<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;line&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;unit size1of3&quot;</span><span class="nt">&gt;</span>	
+		...first column...
+	<span class="nt">&lt;/div&gt;</span>	
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;unit size1of3&quot;</span><span class="nt">&gt;</span>	
+		...second column...
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;lastUnit&quot;</span><span class="nt">&gt;</span>	
+		...third column...
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 	</div>
 </div>
@@ -262,9 +272,8 @@
 		</div>
 	</div>
 </div>
----
-heading: Box and sections
----
+<h2>Box and sections</h2>
+
 <div class="line-gutters" id="document-boxes">
 	<div class="unit size1of3">
 		<p><code>.doc-box</code> is the main box of the page. 99% of the time, there should be only one.</p>
@@ -316,9 +325,7 @@ heading: Box and sections
 
 	</div>
 </div>
----
-heading: Doc content types
----
+<h2>Doc content types</h2>
 
 <div class="line-gutters">
 	<div class="unit size1of3">
@@ -512,9 +519,39 @@ heading: Doc content types
 		<p><code>.paddedList</code></p>
 	</div>
 	<div class="lastUnit">
-		Included file 'paddedlist_example.md' not found in _includes directory
+		<div class="doc-box">
+	<div class="doc-content">
+		<h3>Simple <code>.paddedList</code></h3>
+		<ul class="paddedList">
+			<li><p>List items are divided...</p></li>
+			<li><p>This doesn't need any special 
+				"first" or "last" classes</p>
+			</li>
+			<li><p>You can subdivide these list items into columns 
+				with the standard grid, if you like</p>
+			</li>
+		</ul>
+	</div>
+</div>
 
-		<div class="highlight"><pre><code class="html"> Included file &#39;paddedlist_example.md&#39; not found in _includes directory 
+
+
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-content&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>Simple <span class="nt">&lt;code&gt;</span>.paddedList<span class="nt">&lt;/code&gt;&lt;/h3&gt;</span>
+		<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paddedList&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;li&gt;&lt;p&gt;</span>List items are divided...<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+			<span class="nt">&lt;li&gt;&lt;p&gt;</span>This doesn&#39;t need any special 
+				&quot;first&quot; or &quot;last&quot; classes<span class="nt">&lt;/p&gt;</span>
+			<span class="nt">&lt;/li&gt;</span>
+			<span class="nt">&lt;li&gt;&lt;p&gt;</span>You can subdivide these list items into columns 
+				with the standard grid, if you like<span class="nt">&lt;/p&gt;</span>
+			<span class="nt">&lt;/li&gt;</span>
+		<span class="nt">&lt;/ul&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+ 
 </code></pre></div>
 	</div>
 </div>
@@ -524,9 +561,95 @@ heading: Doc content types
 		<p><code>.dividedList</code></p>
 	</div>
 	<div class="lastUnit">
-		Included file 'dividedlist_example.md' not found in _includes directory
+		<div class="doc-box">
+	<div class="doc-content">
+		<h3>A normal dividedList</h3>
+		<ul class="dividedList">
+		
+			<li>
+				<div class="figureset">
+					<div class="figureset-figure">
+						<a href=""><img src="http://placekitten.com/40/40" /></a>
+					</div>
+					<div class="figureset-description">
+						<h4><a href="">Sally Smeetup</a></h4>
+						<p>Lists are the backbone of society.</p>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class="figureset">
+					<div class="figureset-figure">
+						<a href=""><img src="http://placekitten.com/40/40" /></a>
+					</div>
+					<div class="figureset-description">
+						<h4><a href="">Sally Smeetup</a></h4>
+						<p>Lists are the backbone of society.</p>
+					</div>
+				</div>
+			</li>
+		
+			<li>
+				<div class="figureset">
+					<div class="figureset-figure">
+						<a href=""><img src="http://placekitten.com/40/40" /></a>
+					</div>
+					<div class="figureset-description">
+						<h4><a href="">Sally Smeetup</a></h4>
+						<p>Lists are the backbone of society.</p>
+					</div>
+				</div>
+			</li>
+		
+		</ul>
+	</div>
+</div>
 
-		<div class="highlight"><pre><code class="html"> Included file &#39;dividedlist_example.md&#39; not found in _includes directory 
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-content&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>A normal dividedList<span class="nt">&lt;/h3&gt;</span>
+		<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dividedList&quot;</span><span class="nt">&gt;</span>
+		
+			<span class="nt">&lt;li&gt;</span>
+				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/40/40&quot;</span> <span class="nt">/&gt;&lt;/a&gt;</span>
+					<span class="nt">&lt;/div&gt;</span>
+					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Sally Smeetup<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+						<span class="nt">&lt;p&gt;</span>Lists are the backbone of society.<span class="nt">&lt;/p&gt;</span>
+					<span class="nt">&lt;/div&gt;</span>
+				<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;/li&gt;</span>
+		
+			<span class="nt">&lt;li&gt;</span>
+				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/40/40&quot;</span> <span class="nt">/&gt;&lt;/a&gt;</span>
+					<span class="nt">&lt;/div&gt;</span>
+					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Sally Smeetup<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+						<span class="nt">&lt;p&gt;</span>Lists are the backbone of society.<span class="nt">&lt;/p&gt;</span>
+					<span class="nt">&lt;/div&gt;</span>
+				<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;/li&gt;</span>
+		
+			<span class="nt">&lt;li&gt;</span>
+				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/40/40&quot;</span> <span class="nt">/&gt;&lt;/a&gt;</span>
+					<span class="nt">&lt;/div&gt;</span>
+					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Sally Smeetup<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+						<span class="nt">&lt;p&gt;</span>Lists are the backbone of society.<span class="nt">&lt;/p&gt;</span>
+					<span class="nt">&lt;/div&gt;</span>
+				<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;/li&gt;</span>
+		
+		<span class="nt">&lt;/ul&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span> 
 </code></pre></div>
 	</div>
 </div>
@@ -756,12 +879,231 @@ heading: Doc content types
 					<div class="doc-page scrollbeacon" id="forms">
 						<h1>Forms</h1>
 
-						Included file 'buttons.md' not found in _includes directory
-Included file 'stacked_forms.md' not found in _includes directory
-Included file 'checkboxes.md' not found in _includes directory
-Included file 'formfield_sizes.md' not found in _includes directory
-Included file 'error_states.md' not found in _includes directory
-Included file 'disabled_elements.md' not found in _includes directory
+						<div class="line-gutters">
+	<div class="unit size1of3">
+		<h2>Buttons</h2>
+		<p>As a rule, buttons are for actions, not navigation. This style applies to <div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>, <span class="nt">&lt;button&gt;</span> 
+</code></pre></div>, and anything with the class <code>.button</code>.</p> 
+		<p>The default is a simple gray button. There is also red <code>.primary</code> class for "do this one thing" actions.</p>		
+        <p>For side-by-side inputs and buttons, you'll probably want something a little smaller than the default button. For this, you can use the <code>.small</code> class.</p>		
+	</div>
+	<div class="unit lastUnit">
+        <h3>Default buttons</h3>
+		<div class="doc-box">
+			<div class="doc-content">
+				<input type="submit" class="primary" value="Primary" /> <input type="submit" value="Default" />
+			</div>
+		</div>
+        <h3>Small inline button next to an input (<code>.small.inline</code>)</h3> 
+		<div class="doc-box">
+			<div class="doc-content">
+                <input type="text" class="inline" />
+				<input class="small inline" type="submit" value="Default" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Default stacked forms</h2>
+			<p>To group related label &amp; input pairs, put them in a fieldset. Use OOCSS grids to divide into columns if needed.</p>
+		</div>
+	<div class="unit lastUnit">
+		<div class="doc-box">
+			<div class="doc-content">
+				<form>
+	<label for="name">Name</label>
+	<input id="name" type="text">
+
+	<label for="color">Favorite color</label>
+	<select name="color">
+		<option>Midnight Saffron</option>
+		<option>Seabreeze Brown</option>
+		<option>Fragrant Forest Ochre</option>
+	</select>
+
+	<fieldset class="line-gutters">
+		<legend>Where are you?</legend>
+		<div class="unit size1of2">
+			<label for="city">City</label>
+			<input type="text" id="city">
+		</div>
+		<div class="lastUnit">
+			<label for="state">State</label>
+			<select>
+				<option>New York</option>
+				<option>New Jersey</option>
+				<option>New Mexico</option>
+				<option>New Oregon</option>
+			</select>
+		</div>
+	</fieldset>
+
+	<label for="unicorn">Describe your unicorn</label>
+	<textarea name="unicorn"></textarea>
+</form>	
+
+			</div>
+		</div>
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;form&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;name&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;color&quot;</span><span class="nt">&gt;</span>Favorite color<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;color&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;option&gt;</span>Midnight Saffron<span class="nt">&lt;/option&gt;</span>
+		<span class="nt">&lt;option&gt;</span>Seabreeze Brown<span class="nt">&lt;/option&gt;</span>
+		<span class="nt">&lt;option&gt;</span>Fragrant Forest Ochre<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;/select&gt;</span>
+
+	<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">&quot;line-gutters&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;legend&gt;</span>Where are you?<span class="nt">&lt;/legend&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;unit size1of2&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;city&quot;</span><span class="nt">&gt;</span>City<span class="nt">&lt;/label&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;city&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;lastUnit&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;state&quot;</span><span class="nt">&gt;</span>State<span class="nt">&lt;/label&gt;</span>
+			<span class="nt">&lt;select&gt;</span>
+				<span class="nt">&lt;option&gt;</span>New York<span class="nt">&lt;/option&gt;</span>
+				<span class="nt">&lt;option&gt;</span>New Jersey<span class="nt">&lt;/option&gt;</span>
+				<span class="nt">&lt;option&gt;</span>New Mexico<span class="nt">&lt;/option&gt;</span>
+				<span class="nt">&lt;option&gt;</span>New Oregon<span class="nt">&lt;/option&gt;</span>
+			<span class="nt">&lt;/select&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;unicorn&quot;</span><span class="nt">&gt;</span>Describe your unicorn<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;unicorn&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="nt">&lt;/form&gt;</span>	
+ 
+</code></pre></div>
+	</div>
+</div>
+
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Checkboxes and radio sets</h2>
+			<p>Checkbox and radio inputs are placed <em>inside</em> the <code>&lt;label&gt;</code> elements for larger click targets.</p>
+			<p>The default label size applies here, but you can add a <code>.small</code> modifier to the labels if you prefer something smaller</p>
+			<p><code>&lt;input type="checkbox" /&gt;</code>, <code>&lt;input type="radio" /&gt;</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<form>
+	<fieldset>
+		<legend>I'm interested in...</legend>
+		<label class="small"><input type="checkbox" /> Cats</label>
+		<label class="small"><input type="checkbox" checked="checked" /> Honey Badgers</label>
+		<label class="small"><input type="checkbox" /> Quails</label>
+		<label class="small"><input type="checkbox" checked="checked" /> Goats</label>
+		<label class="small"><input type="checkbox"  checked="checked" /> Red Pandas</label>
+	</fieldset>
+</form>
+
+
+				</div>
+			</div>
+			<div class="highlight"><pre><code class="html"> <span class="nt">&lt;form&gt;</span>
+	<span class="nt">&lt;fieldset&gt;</span>
+		<span class="nt">&lt;legend&gt;</span>I&#39;m interested in...<span class="nt">&lt;/legend&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;</span> Cats<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="nt">/&gt;</span> Honey Badgers<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;</span> Quails<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="nt">/&gt;</span> Goats<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span>  <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="nt">/&gt;</span> Red Pandas<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+ 
+</code></pre></div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Form field sizes</h2>
+			<p>There are width helpers defined in <code>layout.scss</code> that can assist in changing the default width of fields. You can ajust the width by thirds and quarters of the width of the parent container.</p>
+			<p><code>.span-25</code>, <code>.span-30</code>, <code>.span-50</code>, <code>.span-60</code>, <code>.span-75</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<code>.span-25</code>
+					<input type="text" class="span-25" />
+					<code>.span-30</code>
+					<input type="text" class="span-30" />
+					<code>.span-50</code>
+					<input type="text" class="span-50" />
+					<code>.span-60</code>
+					<input type="text" class="span-60" />
+					<code>.span-75</code>
+					<input type="text" class="span-75" />
+					<code>.span-100</code>
+					<input type="text" class="span-100" />
+					<em>Default (width: auto;)</em>
+					<input type="text" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Error states</h2>
+			<p><code>.error</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<form class="span-60">
+						<label for="address">Address</label>
+						<input id="address" value="123 Fake St." type="text" />
+
+						<label for="name">Name</label>
+						<input class="error" id="name" value="Keith Hernandez" type="text" />
+						<p class="italic">You are not Keith Hernandez.</p>
+
+						<label for="address">Profession</label>
+						<input id="address" value="Blimp Captain" type="text" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="doc-content">
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<h2>Disabled elements</h2>
+            <p><code>.disabled</code>, <code>&lt;input ... disabled /&gt;</code>, <code>&lt;input ... disabled="disabled" /&gt;</code></p>
+		</div>
+		<div class="unit lastUnit">
+			<div class="doc-box">
+				<div class="doc-content">
+					<form class="span-60">
+						<label for="address">Stop</label>
+						<input id="address" value="hammer time" type="text" disabled />
+
+                        <input type="submit" class="inline-block marign-right primary" value="can't touch this" disabled="disabled" />
+                        <input type="submit" class="inline block" value="or this" disabled="disabled" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 					
 					</div>
@@ -864,9 +1206,35 @@ Included file 'disabled_elements.md' not found in _includes directory
 		<div class="unit lastUnit">
 			<div class="doc-box">
 				<div class="doc-content">
-					Included file 'pagination_example.md' not found in _includes directory
+					<ul class="nav-pagination">
+	<li><a rel="prev" href="#">Previous</a></li>	
+	<li><a href="#">1</a></li>
+	<li class="selected"><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">6</a></li>
+	<li><a href="#">7</a></li>
+	<li><a href="#">8</a></li>
+	<li><a href="#">9</a></li>
+	<li><a rel="next" href="#">Next</a></li>	
+</ul>
+
 				</div>
-				<div class="highlight"><pre><code class="html"> Included file &#39;pagination_example.md&#39; not found in _includes directory 
+				<div class="highlight"><pre><code class="html"> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-pagination&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">rel=</span><span class="s">&quot;prev&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Previous<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>	
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>7<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>8<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>9<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">rel=</span><span class="s">&quot;next&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Next<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>	
+<span class="nt">&lt;/ul&gt;</span>
+ 
 </code></pre></div>
 			</div>
 		</div>
@@ -911,10 +1279,26 @@ Included file 'disabled_elements.md' not found in _includes directory
 			<div class="doc-box">
 				<div class="doc-content">
 					<h5>Sort by:</h5>
-					Included file 'button_groups_example.md' not found in _includes directory
+					<h5>Sort by:</h5>
+<ul class="nav-buttons">
+	<li><a >Date Joined</a></li>
+	<li><a class="selected">Size</a></li>
+	<li><a >Name</a></li>
+	<li><a >Role</a></li>
+</ul>
+
+
 				</div>
 			</div>
-			<div class="highlight"><pre><code class="html">				Included file &#39;button_groups_example.md&#39; not found in _includes directory
+			<div class="highlight"><pre><code class="html">				<span class="nt">&lt;h5&gt;</span>Sort by:<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-buttons&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="nt">&gt;</span>Date Joined<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>Size<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="nt">&gt;</span>Name<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="nt">&gt;</span>Role<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+
 			
 </code></pre></div>
 		</div>
@@ -931,10 +1315,19 @@ Included file 'disabled_elements.md' not found in _includes directory
 		<div class="unit lastUnit">
 			<div class="doc-box">
 				<div class="doc-content">
-					Included file 'tabs_example.md' not found in _includes directory
+					<ul class="nav-tabs">
+	<li><a href="#">Upcoming Meetups</a></li>
+	<li><a href="#">Past  Meetups</a></li>
+	<li class="selected"><a href="#">Selected tab</a></li>
+</ul>
+
 				</div>
 			</div>
-			<div class="highlight"><pre><code class="html">Included file &#39;tabs_example.md&#39; not found in _includes directory
+			<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-tabs&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Past  Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </code></pre></div>		
 		</div>
 	</div>
@@ -1285,7 +1678,10 @@ Included file 'disabled_elements.md' not found in _includes directory
 	<div class="unit lastUnit">
 		<div class="doc-box">
 			<div class="doc-content">
-				Included file 'tearsheet_example.md' not found in _includes directory
+				<time class="tearsheet-25">
+	<span class="month">Oct</span>
+	<span class="day">25</span>
+</time>
 				<time class="tearsheet">
 					<span class="month">Oct</span>
 					<span class="day">##</span>
@@ -1296,7 +1692,10 @@ Included file 'disabled_elements.md' not found in _includes directory
 				</time>
 			</div>
 		</div>
-		<div class="highlight"><pre><code class="html"> Included file &#39;tearsheet_example.md&#39; not found in _includes directory 
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">&quot;tearsheet-25&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/span&gt;</span>
+	<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;day&quot;</span><span class="nt">&gt;</span>25<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/time&gt;</span> 
 </code></pre></div> 
 	</div>
 </div>
@@ -1334,7 +1733,12 @@ Included file 'disabled_elements.md' not found in _includes directory
                 </div>
             </li>
         </ul>
-		<div class="highlight"><pre><code class="html"> Included file &#39;member_photos_example.md&#39; not found in _includes directory 
+		<div class="highlight"><pre><code class="html"> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nametag-photo&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(...);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;nametag-photo-name&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>Takashi<span class="nt">&lt;/strong&gt;</span> <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;small&gt;</span>Has a square photo<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span> 
 </code></pre></div> 
     </div>
 </div>
@@ -1349,10 +1753,46 @@ Included file 'disabled_elements.md' not found in _includes directory
 		
 		<div class="doc-box">
 			<div class="doc-content">
-				Included file 'figureset_example.md' not found in _includes directory
+				<div class="figureset">
+	<div class="figureset-figure">
+		<img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" />
+	</div>
+	<div class="figureset-description">
+		<h3>This is a title</h3>
+		<p>Food truck vinyl aute irony, umami terry richardson post-ironic ut id stumptown.</p>
+	</div>
+</div>
+
+<div class="figureset-right">
+	<div class="figureset-description">
+		<h3>This is a title</h3>
+		<p>Cardigan consectetur cillum mollit accusamus letterpress. ...</p>
+	</div>
+	<div class="figureset-figure">
+		<img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" />
+	</div>
+</div>
 			</div>
 		</div>
-		<div class="highlight"><pre><code class="html">Included file &#39;figureset_example.md&#39; not found in _includes directory
+		<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif&quot;</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>This is a title<span class="nt">&lt;/h3&gt;</span>
+		<span class="nt">&lt;p&gt;</span>Food truck vinyl aute irony, umami terry richardson post-ironic ut id stumptown.<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-right&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h3&gt;</span>This is a title<span class="nt">&lt;/h3&gt;</span>
+		<span class="nt">&lt;p&gt;</span>Cardigan consectetur cillum mollit accusamus letterpress. ...<span class="nt">&lt;/p&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif&quot;</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 	</div>
 </div>

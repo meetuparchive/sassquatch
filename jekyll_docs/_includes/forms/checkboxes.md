@@ -9,10 +9,10 @@
 		<div class="unit lastUnit">
 			<div class="doc-box">
 				<div class="doc-content">
-					{% include checkboxes_example.md %}
+					{% include forms/checkboxes_example.md %}
 				</div>
 			</div>
-			{% highlight html %} {% include checkboxes_example.md %} {% endhighlight %}
+			{% highlight html %} {% include forms/checkboxes_example.md %} {% endhighlight %}
 		</div>
 	</div>
 </div>

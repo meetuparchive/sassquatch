@@ -4,8 +4,8 @@
 		<p><code>.dividedList</code></p>
 	</div>
 	<div class="lastUnit">
-		{% include dividedlist_example.md %}
+		{% include lists/dividedlist_example.md %}
 
-		{% highlight html %} {% include dividedlist_example.md %} {% endhighlight %}
+		{% highlight html %} {% include lists/dividedlist_example.md %} {% endhighlight %}
 	</div>
 </div>

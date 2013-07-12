@@ -9,10 +9,10 @@
 		
 		<div class="doc-box">
 			<div class="doc-content">
-				{% include figureset_example.md %}
+				{% include content_patterns/figureset_example.md %}
 			</div>
 		</div>
-		{% highlight html %}{% include figureset_example.md %}{% endhighlight %}
+		{% highlight html %}{% include content_patterns/figureset_example.md %}{% endhighlight %}
 	</div>
 </div>
 	

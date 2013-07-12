@@ -22,10 +22,29 @@
 		<script src="assets/js/jquery.scrollbeacon.js" type="text/javascript"></script>
 
 		<style>
-			.doc-page .doc-box {
-				margin:0;
+			.doc-page {
+				padding-left:0;
+				padding-right:0;
 			}
-		
+			
+			.doc-page > p, 
+			.doc-page > h1, 
+			.doc-page > h2,
+			.doc-page > .doc-content {
+				padding-left:12px;
+				padding-right:12px;
+				border:0;
+			}
+			
+			.j-show-code {
+				margin-left:12px;
+				margin-right:12px;
+			}
+			
+			.doc-page > .doc-content > .doc-content {
+				padding-left:0px;
+				padding-right:0px;
+			}
 		</style>
 	</head>
 
@@ -99,11 +118,57 @@
 						
 						<h1>Layout</h1>
 
-						<h2>doc-box and doc-content</h2>
-<p class="lighter">TBDocumented</p>
+						
+<h2>doc-box</h2>
 
+<p>
+	This is for the most part inherited from desktop Sassquatch.<br/>
+	<code>.doc-box</code> is rounded and bordered and has a white background.</br>
+	In order for the boxy-ness to be seen in a one-column layout, it also has margins in mobile sassquatch.
+</p>
+
+
+<div class="doc-box">
+	This is a basic doc-box. It has no padding so right now it looks pretty cramped. 
+	It usually wraps some kind of content.
+</div>
+
+<div class="doc-content">
+	<h2>doc-content</h2>
+	
+	<code>.doc-content</code> is basically just padded content. 
+	It can sit directly on the background, like this one is.
+	<p>This is wrapped in <code>.doc-content</code>!</p>
+	<p>or it can be nested within a doc box for header footer and sections: </p>
+</div>
+
+<div class="doc-box">
+	<div class="doc-content">
+		<h2>Slightly complex doc-box</h2>
+	</div>
+	<div class="doc-content">
+		<p>It has doc-content children to wrap the heading and section.</p>
+	</div>
+</div>
+
+<p class="margin-top">
+	There are tags for these elements on mobile: 
+	<code>m:box</code>, <code>m:section</code>, <code>m:head</code>, <code>m:foot</code>.
+</p>
+
+<p class="lighter">TODO: full-width, unrounded, white doc-box or doc-content extension.</p>
 <h2>fix-flex</h2>
-<p class="lighter">TBDocumented</p>
+<p>
+	This layout pattern is used often in lists when we need to display 
+	different content in columns. <code>.ff-box</code> wraps elements that
+	are either <code>.ff-box-flex</code> or <code>.ff-box-fix</code>.
+</p>
+
+Included file 'layout/fixflex_example.md' not found in _includes directory
+
+<div class="highlight"><pre><code class="html">Included file &#39;layout/fixflex_example.md&#39; not found in _includes directory
+</code></pre></div>
+
 					
 					</div>
 

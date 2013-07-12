@@ -9,10 +9,10 @@
 		<div class="unit lastUnit">
 			<div class="doc-box">
 				<div class="doc-content">
-					{% include tabs_example.md %}
+					{% include navigation/tabs_example.md %}
 				</div>
 			</div>
-			{% highlight html %}{% include tabs_example.md %}{% endhighlight %}		
+			{% highlight html %}{% include navigation/tabs_example.md %}{% endhighlight %}		
 		</div>
 	</div>
 </div>

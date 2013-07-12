@@ -31,6 +31,6 @@
                 </div>
             </li>
         </ul>
-		{% highlight html %} {% include member_photos_example.md %} {% endhighlight html %} 
+		{% highlight html %} {% include content_patterns/member_photos_example.md %} {% endhighlight html %} 
     </div>
 </div>

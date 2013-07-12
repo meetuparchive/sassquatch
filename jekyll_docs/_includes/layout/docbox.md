@@ -1,6 +1,5 @@
----
-heading: Box and sections
----
+<h2>Box and sections</h2>
+
 <div class="line-gutters" id="document-boxes">
 	<div class="unit size1of3">
 		<p><code>.doc-box</code> is the main box of the page. 99% of the time, there should be only one.</p>

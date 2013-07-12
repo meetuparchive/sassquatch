@@ -1,6 +1,4 @@
----
-heading: Doc content types
----
+<h2>Doc content types</h2>
 
 <div class="line-gutters">
 	<div class="unit size1of3">

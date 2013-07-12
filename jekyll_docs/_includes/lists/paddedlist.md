@@ -4,8 +4,8 @@
 		<p><code>.paddedList</code></p>
 	</div>
 	<div class="lastUnit">
-		{% include paddedlist_example.md %}
+		{% include lists/paddedlist_example.md %}
 
-		{% highlight html %} {% include paddedlist_example.md %} {% endhighlight %}
+		{% highlight html %} {% include lists/paddedlist_example.md %} {% endhighlight %}
 	</div>
 </div>

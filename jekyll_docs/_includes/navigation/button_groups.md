@@ -9,11 +9,11 @@
 			<div class="doc-box">
 				<div class="doc-content">
 					<h5>Sort by:</h5>
-					{% include button_groups_example.md %}
+					{% include navigation/button_groups_example.md %}
 				</div>
 			</div>
 			{% highlight html %}
-				{% include button_groups_example.md %}
+				{% include navigation/button_groups_example.md %}
 			{% endhighlight %}
 		</div>
 	</div>

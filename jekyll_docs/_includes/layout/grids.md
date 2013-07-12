@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="lastUnit">
-		{% highlight html %}{% include grids_example.md %}{% endhighlight %}
+		{% highlight html %}{% include layout/grids_example.md %}{% endhighlight %}
 	</div>
 </div>
 

@@ -7,7 +7,7 @@
 	<div class="unit lastUnit">
 		<div class="doc-box">
 			<div class="doc-content">
-				{% include tearsheet_example.md %}
+				{% include content_patterns/tearsheet_example.md %}
 				<time class="tearsheet">
 					<span class="month">Oct</span>
 					<span class="day">##</span>
@@ -18,6 +18,6 @@
 				</time>
 			</div>
 		</div>
-		{% highlight html %} {% include tearsheet_example.md %} {% endhighlight html %} 
+		{% highlight html %} {% include content_patterns/tearsheet_example.md %} {% endhighlight html %} 
 	</div>
 </div>
