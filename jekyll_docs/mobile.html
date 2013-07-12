@@ -73,7 +73,13 @@ title: Mobile Styleguide
 				margin-left:12px;
 				margin-right:12px;
 			}
-			
+			.candidate:after {
+				font-size: 10px;
+				font-weight: normal;
+				text-transform: uppercase;
+				color: #62ac75;
+				content: 'candidate';
+			}
 		</style>
 	</head>
 
@@ -87,7 +93,8 @@ title: Mobile Styleguide
 			<li><a href="#navigation">Nav</a></li>
 		</ul>
 		
-		{% assign sassquatch_mobile_sections = "layout-m,touchlists,forms-m,navigation-m" | split: "," %}
+		
+		{% assign sassquatch_mobile_sections = "intro-m,layout-m,touchlists,forms-m,navigation-m" | split: "," %}
 		
 		{% for pagetitle in sassquatch_mobile_sections %}
 

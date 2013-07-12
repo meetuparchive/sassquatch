@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Basic TouchList</h2>
+<h2 class="section-subtitle">Basic TouchList  <span class='candidate'></span></h2>
 <p>This is an example of the most basic touchlist.</p>	
 
 {% include mobile/touchlist/basic_example.md %}

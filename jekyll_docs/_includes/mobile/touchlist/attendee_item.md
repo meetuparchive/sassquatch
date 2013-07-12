@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Attendee Item TouchList</h2>
+<h2 class="section-subtitle">Attendee Item TouchList  <span class='candidate'></span></h2>
 <p> Initially designed for the Attendee/RSVP list on event details, 
 	we can use this pattern whenever we need to display member data in a list.
 </p>
