@@ -6,7 +6,7 @@
 	</p>
 
 </div>
-	
+
 	{% include touchlist/attendee_item_example.md %}
 		<li class="touchList-item--attendee">
 			<div class="ff-box">
