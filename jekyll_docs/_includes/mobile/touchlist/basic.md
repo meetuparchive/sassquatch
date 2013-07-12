@@ -3,9 +3,9 @@
 	<p>This is an example of the most basic touchlist.</p>	
 </div>
 
-{% include touchlist/basic_example.md %}
+{% include mobile/touchlist/basic_example.md %}
 
 <div class="doc-content j-code">
-	{% highlight jsp %}{% include touchlist/basic_example_jsp.md %}{% endhighlight %}
-	{% highlight html %}{% include touchlist/basic_example.md %}{% endhighlight %}
+	{% highlight jsp %}{% include mobile/touchlist/basic_example_jsp.md %}{% endhighlight %}
+	{% highlight html %}{% include mobile/touchlist/basic_example.md %}{% endhighlight %}
 </div>
