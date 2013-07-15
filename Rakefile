@@ -73,6 +73,7 @@ task :launch do
 	if "#{branch}" == "master\n"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
+		sh "git pull"
 		sh "git checkout master _site/"
 		sh "cp -r _site/ ./"
 		sh "rm -rf _site/"
