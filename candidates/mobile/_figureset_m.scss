@@ -1,0 +1,54 @@
+/**
+ *      @file   _figureset_m.scss
+ *      
+ *      @author John Cockrell <john@meetup.com>
+ *      @since  2013-05-14
+ *
+ *      @description
+ *      Touchblock's `.figureset` implementation is slightly different
+ *      from the full Sassquatch--it does roughly the same thing, but
+ *      with a more specific implementation.
+ *
+ *      This is used within a `fix/flex` layout to provide text wrapping
+ *      and automated positioning of the figure and it's description.
+ *
+ *      Basically, you'd use a "figureset" whenever you do now, instead 
+ *      of fix-flex--because fix-flex doesn't handle CSS text truncation.
+ *
+ *      NOTE: Unlike FixFlex, Figset requires one of the two cells to have 
+ *      a width assigned to it in order for the layout to perform correctly
+ *      AND for the text truncation to work.
+ *
+ *      <div class="figureset">
+ *          <div class="figureset-figure media-m"> 
+ *              <img>
+ *          </div> 
+ *          <div class="figureset-description">...</div>
+ *      </div>
+ */
+
+
+/* NOTE: these have to all be scoped to touchList for now because of 
+ * the layout restrictions
+ */
+.touchList {
+    .figureset {
+        @extend %layout_full_width_table;
+        @include box-sizing('border');
+        table-layout: fixed;
+    }
+
+    .figureset-figure,
+    .figureset-description {
+        @extend %layout_middle_align_table_cell; 
+    }
+
+    .figureset-description { 
+        width: 100%;
+    }
+
+    .figureset-figure + .figureset-description,
+    .figureset-description + .figureset-figure { 
+        padding-left: $figureset_inner_padding;   /*  10/16  */    
+    }
+}
