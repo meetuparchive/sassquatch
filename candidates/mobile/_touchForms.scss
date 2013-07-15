@@ -1,0 +1,301 @@
+/**
+ *  @file   _touchForms.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-05-28
+ *
+ *  @description
+ *      A collection of form resets and styles currently scoped to the
+ *      touchList list type. In the future, these styles should be used
+ *      site-wide, and this file should become `_forms_m.scss`, and serve
+ *      as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
+ */
+
+
+
+/*  ======================================================================= */
+/*  SCOPED RESETS TO FORM ELEMENTS  */
+/*  NOTE: We can get rid of most of these resets once we switch over to using
+ *  this file as a _forms_m.scss instead of the normal Sq _forms.scss 
+ */
+.touchList { 
+
+    /* Generic Resets */
+    label {
+        @extend %temporary_reset_font_size;
+        /*  This needs to be reset on top of the .touchList, because label
+         *  is sized using PX, not ems.
+         */
+
+        margin: 0;
+    }
+
+    input,
+    textarea {
+        @include box-shadow(none);  
+        /* The full, non-diet-mobile mixin has to be used to erase the full
+         * SQ statements
+         */
+        @include transition(none);
+        @include round(0);
+        /* Needs to be here to override all full SQ statements */
+        @include box-sizing('border');
+
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /* Text Input Specific Resets */
+    textarea {
+        width: 100%;
+        resize: none;
+    }
+
+    /* Disabled states */
+    [disabled],
+    [disabled="disabled"],
+    .disabled {
+        background-color: $C_gray96;
+    }
+
+    /*  Browser Specific Overrides  */
+    input[type="search"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime"] {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        /*  Needed for iOS Safari to not auto-format `<input type="date">` to
+         *  look like a dropdown menu of inconsistent widths. 
+         */
+    }
+
+    /* Don't worry about repetition here; the extend will clean it up
+     * in compilation
+     */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="search"] {
+        background: transparent;
+        /*  NOTE: for Android Firefox, the browser will add a dippy background
+         *  shadow that should be overridden above, but isn't. I can't tell 
+         *  whether it's us, from a bad override chain or the default browser
+         *  styles.
+         */
+        /*  TODO: Remove once this file becomes `_forms_m.scss` and we no longer
+         *  have to have as crazy a system of overrides from  `_forms.scss` in
+         *  Sassquatch.
+         */
+    }
+
+
+    input[type="email"],
+    input[type="datetime"] {
+        background: transparent;
+        /*  NOTE: Webkit builds. By default, the browser will attempt to
+         *  validate an email input as soon as you start typing it, helpfully
+         *  changing the background color of the field for you. This really
+         *  rustles my jimmies, and this rule disables it for the email input
+         *  which is the most notable offender. 
+         *  This also goes for `datetime`, apparently. 
+         */
+    }
+
+    input[type="date"],
+    input[type="time"] {
+        background: transparent;
+        /* NOTE: On Android Browser 4.2.2, Date and Time will not display the
+         * correct entry interface. This means that you can type whatever
+         * you want in there, resulting in the same validation problems as 
+         * above.
+         */
+    }
+
+    ::-webkit-search-cancel-button {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        /*  Webkit builds now employ an (X) button in search inputs, and only
+         *  search inputs. This pseudo-element selector will allow us to 
+         *  not display them, instead of having them half cut off and weird
+         *  looking. 
+         */
+    }
+
+    ::-webkit-inputplaceholder {
+        @include ui_placeholder();
+    }
+
+    ::-moz-placeholder {
+        @include ui_placeholder();
+    }
+
+    :-ms-input-placeholder {
+        @include ui_placeholder();
+        padding-left: $input_and_textarea_inner_padding;
+        /* NOTE: Placeholder pseudo elements in IE10 (Windows Phone 8) do not
+         * inherit padding assigned to their associated <input> or <textarea>
+         * element. Here, we're just assigning the left padding to be equal
+         * to that added other <input>/<textarea>
+         */
+    }
+}
+
+/*  ======================================================================= */
+/*  TEXT INPUT STYLES  */
+
+.touchList-item--input .ff-box-flex,
+.touchList-item--input .ff-box-fix {
+    height: $touchable_default_height;
+    /* There is no `min-height` on tables. Use `height` instead */
+}
+
+.touchList-item--input-label {
+    @extend %ui_label_style; 
+    @extend %text_disable_selection;
+
+    white-space: nowrap;
+}
+
+
+.touchList-item--input input {
+    @extend %touch_item_label_font_style;
+
+    height: 100%;
+    width: 100%;
+    padding: 0 $input_and_textarea_inner_padding;
+}
+
+.touchList-item--input-pseudo-placeholder {    
+   @include ui_placeholder();
+   display: none;
+   /* Hidden by default, until JS loads */
+}
+
+/*  ======================================================================= */
+/*  TEXTAREA STYLES  */
+
+.touchList-item--textarea-label {
+    @extend %touch_item_label_font_style;
+    @extend %ui_label_style;
+    @extend %text_disable_selection;
+
+    padding: $input_and_textarea_inner_padding $input_and_textarea_inner_padding 0;
+    line-height: $LH_tall;
+    /* NOTE: this expanded line height value bumps the overall height of this 
+     * element to 32px (aka 2em), which arguably makes it fit better into our
+     * 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
+     */
+}
+
+.touchList-item--textarea textarea {
+    @extend %touch_item_label_font_style;
+
+    padding: ($LH_standard / 2) $input_and_textarea_inner_padding 0;
+    margin-bottom: ($LH_standard / 2);
+    /* NOTE: setting the margin on the bottom instead of padding causes the
+     * textarea to ratchet evenly on the bottom when typing more than the
+     * present 4 lines in height.
+     * However, using a margin on bottom instead of padding would mean that
+     * the coloration of a disabled textarea does not extend all the way to
+     * the "visual bottom" of its cell--which looks weird. That's why I'm 
+     * not using margin here, even though it would be better for interaction.
+     */
+
+    height: (5 * $LH_standard);
+    /* NOTE: Because the textarea is set up with border-box layout, we need
+     * to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
+     */
+}
+
+.touchList-item--textarea-counter {
+    padding: 0 $input_and_textarea_inner_padding $input_and_textarea_inner_padding;
+    text-align: right;
+}
+
+
+
+/*  ======================================================================= */
+/*  RADIO/CHECKBOX STYLES  */
+
+
+.touchList-item--input-radio .ff-box-fix,
+.touchList-item--input-radio .ff-box-flex,
+.touchList-item--input-checkbox .ff-box-fix,
+.touchList-item--input-checkbox .ff-box-flex {
+    height: $touchable_default_height;
+    /* There is no `min-height` on tables. Use `height` instead */
+}
+
+.touchList-item--input-radio-label,
+.touchList-item--input-checkbox-label {
+    @extend %ui_label_style;  
+    @extend %text_disable_selection;
+}
+
+.touchList-item--input-radio input,
+.touchList-item--input-checkbox input { 
+    @extend %touch_item_label_font_style;
+    display: none;
+    margin: 0 $input_and_textarea_inner_padding;
+    /*  NOTE: radio boxes and checkboxes need to use margin, not padding for
+     *  layout--since they don't really have insides or anything.
+     */
+}
+
+/*  NOTE: Why go through all the trouble creating and styling pseudo-radio
+ *  and -checkboxes? It turns out, on iOS, radio buttons and checkboxes are
+ *  damn hard to see and on Android, they're damn tiny.
+ */ 
+
+
+.touchList-item--input-radio-pseudoradio, 
+.touchList-item--input-checkbox-pseudocheckbox {
+    @extend %ui_pseudo_pressables_style;
+    @extend %text_disable_selection;
+    margin: 0 $input_and_textarea_inner_padding;
+}
+
+.touchList-item--input-radio-pseudoradio-dot,
+.touchList-item--input-checkbox-pseudocheckbox-check {
+    visibility: hidden;
+}
+
+.touchList-item--input-radio-pseudoradio {
+    border-radius: $pressables_height_and_width / 2;
+}
+
+.touchList-item--input-radio-pseudoradio-dot {
+    border-radius: $pressables_height_and_width * (3/8);
+    display: inline-block;
+    height: ($pressables_height_and_width * (3/8));    
+    width: ($pressables_height_and_width * (3/8));   
+    background-color: $C_gray20;
+    vertical-align: 0.19em; 
+    /*  NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
+     *  good on IE10, iOS, and Android 4+
+     */
+}
+
+.touchList-item--input-checkbox-pseudocheckbox {
+    border-radius: $defaultRadius;
+}
+
+.touchList-item--input-checkbox-pseudocheckbox-check {
+    padding: 0; /* yucky override */    
+    vertical-align: 0.05em; 
+    /*  NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
+     *  good on IE10, iOS, and Android 4+
+     */
+}
+
+input:checked + .touchList-item--input-radio-pseudoradio .touchList-item--input-radio-pseudoradio-dot,
+input:checked + .touchList-item--input-checkbox-pseudocheckbox .touchList-item--input-checkbox-pseudocheckbox-check {
+    visibility: visible;
+}
+
