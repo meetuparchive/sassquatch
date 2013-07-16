@@ -1,3 +1,4 @@
+<!-- HTML example -->
 <div class="doc-box">
         <ul class="touchList">
             <li class="touchList-item touchList-item--input " id="" >

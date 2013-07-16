@@ -1,3 +1,5 @@
+<!-- HTML example -->
+
 <div class="doc-box">
     <ul class="touchList">      
         
@@ -9,7 +11,7 @@
             
             <div class="ff-box">
                 <div class="ff-box-flex">
-                    <textarea name="" id="tx_textarea" placeholder="What's going on?"></textarea>
+                    <textarea name="question1" id="tx_textarea" placeholder="What's going on?"></textarea>
                 </div>
             </div>
         </li>

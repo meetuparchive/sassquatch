@@ -4,5 +4,6 @@
 {% include mobile/forms/radio_example.md %}
 
 <div class="doc-content j-code">
+	{% highlight jsp %}{% include mobile/forms/radio_example_jsp.md %}{% endhighlight %}
 	{% highlight html %}{% include mobile/forms/radio_example.md %}{% endhighlight %}
 </div>

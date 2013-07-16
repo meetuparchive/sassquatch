@@ -1,4 +1,4 @@
-
+<!-- HTML example -->
 <div class="doc-box">
     <ul class="touchList">
         
@@ -12,12 +12,12 @@
                 
                 <div class="ff-box-flex">
                     <div class="touchList-item--select-wrapper">
-                        <select id="select_select" name="" >
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                        <select id="food_choices" name="foods" >
+                                <option>Tomayto</option>
+                                <option>Tomahto</option>
+                                <option>Potayto</option>
+                                <option>Potahto</option>
+                                <option>Let's call the whole thing off</option>
                         </select>
 
                         

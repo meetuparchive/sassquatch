@@ -1,4 +1,4 @@
-
+<!-- HTML example -->
 <div class="doc-box">
     <ul class="touchList">
                     
@@ -13,9 +13,7 @@
 
                 
                 <div class="ff-box-fix">
-                    <input type="checkbox" name="" value="0" 
-                      
-                      > 
+                    <input type="checkbox" name="accessibility" value="0"> 
 
                     <div class="touchList-item--input-checkbox-pseudocheckbox">
                         <i class="icon-s icon-check touchList-item--input-checkbox-pseudocheckbox-check"></i> 

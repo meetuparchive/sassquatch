@@ -3,6 +3,7 @@
 {% include mobile/forms/select_example.md %}
 
 <div class="doc-content j-code">
+	{% highlight jsp %}{% include mobile/forms/select_example_jsp.md %}{% endhighlight %}
     {% highlight html %}{% include mobile/forms/select_example.md %}{% endhighlight %}
 </div>
    
