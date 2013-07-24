@@ -23,7 +23,7 @@ $headingFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $monoFontStack: Monaco, "Andale Mono", "Courier New", monospace;
 $uiControlFontStack: $headingFontStack;
 
-// Switch to Helvetica in near future 
+// Switch to Helvetica in near future
 // $baseFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
@@ -46,18 +46,19 @@ $C_darkgray_lightest: #888888;
 $C_darkgray_lighter: #555555;
 $C_darkgray: #333333;
 
-// red - interface red, not the red *in* the logo 
+// red - interface red, not the red *in* the logo
 $C_red: #E0393E;
 $C_red_darker: #CC1C32;
 
-// darkblue - links and linked things
-$C_darkblue: #2A9BC7;
+$C_darkblue: #2A9BC7;	// darkblue - links and linked things
+$C_lightblue: #a5c8e7; 	// brightblue - highlight borders, light blue bg
+
 
 // green - success and yes
-$C_green: #62AC75; 
+$C_green: #62AC75;
 
 // blue - secondary accent color
-$C_blue: #86c6ee; 
+$C_blue: #86c6ee;
 
 // pink - error shading for now
 $C_pink: #FBE1E3;
@@ -113,21 +114,21 @@ $C_selectedShade: #2264A0;
 /* }}} */
 
 
-/* {{{ Color inventory (what exists in old base) 
+/* {{{ Color inventory (what exists in old base)
 
 // grayscale
 $C_lightestGray: #f7f7f7;
-$C_lightGraySaturated: #E9EBE5; 
-$C_mediumGray: #ccc; 
+$C_lightGraySaturated: #E9EBE5;
+$C_mediumGray: #ccc;
 $C_darkGray: #454545;
 $C_nearBlack: #333;
 
 // meetupy colors (reds)
 $C_logoRed: #Ce1126;
-$C_scarletRed: #E6304C; 
+$C_scarletRed: #E6304C;
 $C_pink: #FBE1E3;
 
-// link colors 
+// link colors
 $C_linkBlue: #3987CB;
 $C_buttonBlue: #3F73A1;
 $C_navBlue: #B5D0F2;
@@ -137,7 +138,7 @@ $C_rsvpGoing: #62AC75;
 $C_rsvpWating: #86c6ee;
 $C_rsvpNotGoing: #999;
 
-// Site status colors 
+// Site status colors
 $C_notifyBg: $C_navBlue;
 $C_notifyText: $C_buttonBlue;
 $C_successBg: #E0F4DA;
@@ -150,7 +151,7 @@ $C_warnText: $C_logoRed;
 /* }}} */
 
 /* {{{ Layout */
-$defaultRadius: 3px;	
+$defaultRadius: 3px;
 $formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
 $spacing: 12px;
 /* }}} */
