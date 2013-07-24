@@ -107,7 +107,7 @@ h6 { font-weight: bold; font-size: $h6FontSize; }  /* probably won't use it, but
  *  why it's being overridden elsewhere ATM. -j
  */
 @mixin pholder() {
-    color: #aaa !important;
+    color: #b3b3b3 !important; /* == $C_gray70 in `_tl_parameters.scss` */
     font-style: normal !important;
 }
 textarea::-webkit-input-placeholder, 

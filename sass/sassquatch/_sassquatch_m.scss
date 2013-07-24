@@ -12,16 +12,17 @@
 @import "../config/mixins_m";
 
 /*  Animation  */
-@import "../config/animation";
-@import "../config//animation_m";
+@import "lib/animation";
+@import "lib/animation_m";
 
 /* {{{ defaults and resets for most block and inline els, includes boilerplate */
 @import "lib/m/defaults_m";
 /* }}} */
 
 
-@import "lib/forms";
-@import "lib/tables";
+@import "lib/_forms.scss";
+@import "lib/m/_forms_m.scss";
+@import "lib/_tables.scss";
 
 @import "lib/modifiers";
 @import "lib/m/modifiers_m";
@@ -35,3 +36,7 @@
 @import "lib/m/layout_m";
 
 @import "lib/patterns_m";
+
+/* Icons */
+@import "lib/red-label-icons";
+/* }}} */

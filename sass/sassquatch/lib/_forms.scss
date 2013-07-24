@@ -114,7 +114,7 @@ input[type=file] {
 
 textarea {
 	height: auto;
-    width: 90%;
+    width: 100%;
 }
 
 /**
@@ -191,7 +191,7 @@ input.disabled { /*only change the background of inputs, not wrappers with .disa
 
 /* {{{ Button defaults */
 
-input[type=submit], button, .button, .button-light {
+input[type=submit], button, .button, .button-light, a.button {
 	@include button_color($C_gray_lightest);
 	@include button_personality;
     white-space: nowrap;
@@ -211,10 +211,20 @@ input[type=submit], button, .button, .button-light {
 	height: auto;
 	width: auto;
 	margin-bottom: $spacing;
+
+    &:hover,
+    &:active {
+        color: $C_text;
+    }
+
     /* primary action variant */
     &.primary {
-        color: #fff !important;
         @include button_color($C_red);
+    }
+    &.primary,
+    &.primary:hover,
+    &.primary:active {
+        color: #fff !important;
     }
 
     &.small {

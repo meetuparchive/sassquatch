@@ -21,6 +21,8 @@ $tabSpacing: $spacing/2;
 		text-decoration: none;
 		color: $C_text_less;
 		background-color: $C_gray_lightest;
+		border: 1px solid $C_gray_lightest;
+		border-bottom-color: $C_line;
 		padding: 6px 12px;
 		&:focus {
 			outline-width: 0;
@@ -34,8 +36,8 @@ $tabSpacing: $spacing/2;
 			color: $C_text;
 			border-color: $C_gray;
 			background-color: #fff;
-			border: 1px solid $C_line;
-			border-bottom: 1px solid #fff;
+			border-color: $C_line;
+			border-bottom-color: white;
 		}
 	}
 	.tabcount {
