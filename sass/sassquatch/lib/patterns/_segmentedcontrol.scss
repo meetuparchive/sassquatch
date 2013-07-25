@@ -2,10 +2,10 @@
 /* SEGMENTED CONTROL
  * This is a design pattern that should be used for elements that appear as
  * buttons in the UI and have button-like functionality, appearing grouped
- * together and interrelated. 
+ * together and interrelated.
  *
  * The types of elements are typically:
- * 
+ *
  *   <a> .............. Hash modification, changing contents of view below.
  *   <input radio> .... Making a mutually-exclusive choice in a form.
  *   <input checkbox> . Toggling a particular feature.
@@ -16,7 +16,7 @@
  *
  * In order to maintain IE8 compatibility, we need to have slightly different
  * layouts, which means having two classes: one in which we're using a pattern
- * where the immediate children of a segmented control are `.button`, and 
+ * where the immediate children of a segmented control are `.button`, and
  * another where there `.button` are wrapped in a secondary element, particularly
  * to hide extraneous native UI (checkboxes and radio buttons, for ex).
  *
@@ -56,16 +56,15 @@
 	font-size: 14px;
 	line-height: 1.5;
 	white-space: nowrap;
-	text-shadow: none;
 	text-align: center;
 	text-decoration: none;
-	color: $C_text !important; 
+	color: $C_text !important;
 	/* NOTE: Needed because of cascade overrides post-sassquatch in mobile. */
 }
 
 
 /* These next two are sort of nasty selectors--but since this doesn't work
- * in IE8 anyway (border radius not supported), do we care? -j 
+ * in IE8 anyway (border radius not supported), do we care? -j
  */
 .segmented-control-segment:first-child .segmented-control-button {
 	border-radius: $defaultRadius 0 0 $defaultRadius;

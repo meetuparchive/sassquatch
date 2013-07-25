@@ -184,11 +184,9 @@
 	border: 1px solid rgba(0,0,0,.15);
 	@if $isLight{
 		@include gradient($base_color, darken($base_color, 5%));
-		text-shadow: #ffffff 1px 1px 0;
 	}
 	@else{
 		@include gradient($base_color, darken($base_color, 10%));
-		text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
 	}
 }
 @mixin button_color_hover($base_color, $isLight: false){
@@ -475,7 +473,6 @@
 
 @mixin button_primary_color($base_color){
 	@include gradient($base_color, darken($base_color, 10%));
-	text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
 	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
 	border: 1px solid darken($base_color, 20%);
 	&:hover {
@@ -491,7 +488,6 @@
 
 @mixin button_secondary_color($base_color){
 	@include gradient($base_color, darken($base_color, 7.5%));
-	text-shadow: mix(#ffffff, $base_color, 20%) 1px 1px 0;
 	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
 	border: 1px solid darken($base_color, 10%);
 	&:hover {
@@ -508,18 +504,15 @@
 @mixin button_disabled_color($base_color){
 	@include gradient($base_color, darken($base_color, 10%));
 	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-	text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
 	border: 1px solid darken($base_color, 20%);
 	&:hover {
 			@include gradient($base_color, darken($base_color, 10%));
 			@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-			text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
 			border: 1px solid darken($base_color, 20%);
 	}
 	&:active {
 			@include gradient($base_color, darken($base_color, 10%));
 			@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
-			text-shadow: mix(#000000, $base_color, 20%) -1px -1px 0;
 			border: 1px solid darken($base_color, 20%);
 	}
 }
@@ -529,7 +522,6 @@
 	display: inline-block;
 	$darker: $base_color - #444;
 	@include gradient($base_color, $darker);
-	text-shadow: darken($base_color, 35%) 0 0 3px;
 	border: 2px solid $darker;
 	text-decoration: none;
 	text-align: center;
@@ -543,7 +535,6 @@
 	$lighter_base_color: $base_color + #0a0a0a;
 	$darker: $lighter_base_color - #444;
 	@include gradient($lighter_base_color, $darker);
-	text-shadow: none;
 	border: 2px solid $darker;
 	text-decoration: none; }
 

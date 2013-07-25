@@ -240,14 +240,12 @@ input[type=submit], button, .button, .button-light, a.button {
     &.disabled {
         @include button_disabled_color( $C_gray_lighter );
         color: $C_text_less !important;
-        text-shadow: none !important;
     }
     &[disabled].primary,
     &[disabled="disabled"].primary,
     &.disabled.primary {
         @include button_disabled_color( lighten(desaturate($C_red, 20%), 25%) );
         color: $C_shade !important;
-        text-shadow: none !important;
     }
 }
 
