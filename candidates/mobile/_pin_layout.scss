@@ -1,0 +1,44 @@
+/**
+ *  @file _pin-layout.scss
+ *
+ *  @author  John Cockrell <john@meetup.com>
+ *  @since   2013-05-31
+ *
+ *  @description
+ *  By default, both Mobile's `_figureset-m.scss` and `_fix-flex.scss` are
+ *  middle aligned. The pinning system allows you to append to either the 
+ *  "table" components of a figureset or ffbox OR the "table cell" 
+ *  components to adjust that alignment to the top or bottom.
+ */
+
+/* ======================================================================= */
+/* PIN TOP */
+
+/* Pin a particular cell of a ffbox. Intended to be used on a `ffbox-fix`
+ * or `ffbox-flex` directly. */
+.pintop {
+	vertical-align: top;
+}
+
+/* Pin a whole ffbox unit, and its immediate children. It's implicit that
+ * `pintop` in this case is applied to a `ffbox`. */
+.pintop > .ffbox-flex,
+.pintop > .ffbox-fix {
+	vertical-align: top;
+}
+
+
+/* ======================================================================= */
+/* PIN BOTTOM */
+
+/* Pin a particular cell of a ffbox */
+.pinbottom {
+	vertical-align: bottom;
+}
+
+/* Pin a whole ffbox unit, and its immediate children. It's implicit that
+ * `pintop` in this case is applied to a `ffbox`. */
+.pinbottom > .ffbox-flex,
+.pinbottom > .ffbox-fix {
+	vertical-align: bottom;
+}

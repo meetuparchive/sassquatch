@@ -1,59 +1,85 @@
 <h2 class="section-subtitle">Attendee Item TouchList  <span class='candidate'></span></h2>
 <p> Initially designed for the Attendee/RSVP list on event details, 
-	we can use this pattern whenever we need to display member data in a list.
+    we can use this pattern whenever we need to display member data in a list.
 </p>
 
-{% include mobile/touchlist/attendee_item_example.md %}
-		<li class="touchList-item--attendee">
-			<div class="ff-box">
-		         <div class="ff-box-flex">
-		             <a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-		                 <div class="figureset-figure avatar-m pin-top">
-		                   <img src="assets/img/uhura.jpg" />
-		                 </div>
-		                 <div class="figureset-description">
-		                     <h4 class="touchList-item--attendee-label">
-		                        Lieutenant Uhura
-		                     </h4>
-		                 </div>
-		             </a>
-		         </div>
-		         <div class="ff-box-fix touchList-item--attendee-secondary-actions">
-		           <a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-		               <span>Good to see you</span>
-		           </a>
-		         </div>
-		     </div>
-		</li>
-		<li class="touchList-item--attendee">
-			<div class="ff-box">
-				<div class="ff-box-flex">
-					<a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-						<div class="figureset-figure avatar-m pin-top">
-							<img src="assets/img/kirk2.jpg" />
-						</div>
-						<div class="figureset-description">
-							<h4 class="touchList-item--attendee-label">
-								Evil Kirk
-							</h4>
-						</div>
-					</a>
-				</div>
-				<div class="ff-box-fix touchList-item--attendee-secondary-actions">
-					<a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-						<span>Good to see you</span>
-					</a>
-				</div>
-			</div>
-		</li>
-	<!-- leaving extra els out of the example, these tags close it off -->
-	</ul>
+
+<div class="doc-box">
+    <ul class="touchList">
+        {% include mobile/touchlist/attendee_item_example.md %}
+        <li class="touchList-item touchList-item--attendee">
+            <div class="ffbox">
+                <div class="ffbox-flex">
+                    <a href="${member_url}" class="ffbox ffbox--touchList-item ffbox--fixed">
+                        <div class="ffbox-fix avatar-m pintop touchList-attendee-photo">
+                            <img src="assets/img/bones.jpg" />
+                        </div>
+                        <div class="ffbox-flex touchList-attendee-info">
+                            <h4 class="touchList-label touchList-attendee-name">
+                                Dr. Leonard McCoy
+                            </h4>
+                            <h6 class="touchList-caption touchList-attendee-role">Chief Medical Officer</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="ffbox-fix touchList-attendee-actions">
+                    <a class="button small niceToSeeYou primary" href="#">
+                        <span>Good to see you</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="touchList-item touchList-item--attendee">
+            <div class="ffbox">
+                <div class="ffbox-flex">
+                    <a href="${member_url}" class="ffbox ffbox--touchList-item ffbox--fixed">
+                        <div class="ffbox-fix avatar-m pintop touchList-attendee-photo">
+                            <img src="assets/img/uhura.jpg" />
+                        </div>
+                        <div class="ffbox-flex touchList-attendee-info">
+                            <h4 class="touchList-label touchList-attendee-name">
+                                Nyota Uhura
+                            </h4>
+                            <h6 class="touchList-caption touchList-attendee-role">Communications Officer</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="ffbox-fix touchList-attendee-actions">
+                    <a class="button small niceToSeeYou primary" href="#">
+                        <span>Good to see you</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="touchList-item touchList-item--attendee">
+            <div class="ffbox">
+                <div class="ffbox-flex">
+                    <a href="${member_url}" class="ffbox ffbox--touchList-item ffbox--fixed">
+                        <div class="ffbox-fix avatar-m pintop touchList-attendee-photo">
+                            <img src="assets/img/kirk2.jpg" />
+                        </div>
+                        <div class="ffbox-flex touchList-attendee-info">
+                            <h4 class="touchList-label touchList-attendee-name">
+                                James T. Kirk
+                            </h4>
+                            <h6 class="touchList-caption touchList-attendee-role">Captain</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="ffbox-fix touchList-attendee-actions">
+                    <a class="button small niceToSeeYou primary" href="#">
+                        <span>Good to see you</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <div class="j-code">
-	{% highlight jsp %}{% include mobile/touchlist/attendee_item_example_jsp.md %}{% endhighlight %}
-	{% highlight html %}{% include mobile/touchlist/attendee_item_example.md %}
-	</ul>
+    {% highlight jsp %}{% include mobile/touchlist/attendee_item_example_jsp.md %}{% endhighlight %}
+    {% highlight html %}{% include mobile/touchlist/attendee_item_example.md %}
+    </ul>
 </div> 
 {% endhighlight %}
 

@@ -1,10 +1,10 @@
 
-<div class="ff-box">
-	<div class="ff-box-flex">
+<div class="ffbox">
+	<div class="ffbox-flex">
 		<h4>It causes some elements in the row</h4>
-		to flex their width to fill the container. While other elements...
+		<p>to flex their width to fill the container, while other elements stay</p>
 	</div>
-	<div class="ff-box-fix">
-		STAY FIXED
+	<div class="ffbox-fix">
+		<p>FIXED</p>
 	</div>
 </div>
