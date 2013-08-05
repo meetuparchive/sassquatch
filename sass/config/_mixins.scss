@@ -249,6 +249,10 @@
 	@if $official {
 		#{$property}: #{$value}; } }
 
+
+// NOTE: This can probably be replaced with the @necolas clearfix, since it's
+// terser and has fewer strange properties.
+// nicolasgallagher.com/micro-clearfix-hack/
 %clearfix {
 	zoom: 1;
 	&:after {
