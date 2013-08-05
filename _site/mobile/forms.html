@@ -2,230 +2,283 @@
  
 <h2 class="section-subtitle">Html5 Form field types <span class='candidate'></span></h2>
 
-
-<!-- HTML example -->
 <div class="doc-box">
-        <ul class="touchList">
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Text</h4>
-                        </label>
-                    </div>
-                    <div class="ff-box-flex">
-                        <input name="" type="text" id="" 
-                          value="" 
-                          class=" "
-                          placeholder="Enter the dragon">
-                    </div>
-                </div>
-            </li>
+	<ul class="touchList">
+		<!-- HTML example -->
+<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+    <div class="ffbox ffbox--touchList-input">
+        <label class="ffbox-fix" for="">
+            <h4 class="touchList-label touchList-label--input">No Type</h4>
+        </label>
+        <div class="ffbox-flex">
 
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Name</h4>
-                        </label>
-                    </div>
-                    <div class="ff-box-flex">
-                        <input name="" type="text" id="" 
-                          value="" 
-                          class=" "
-                          placeholder="John Appleseed"
-                          autocapitalize="words">
-                    </div>
-                </div>
-            </li>
+            <input name="f1_text_omitted" type="text" id=""
+              value="" tabindex="0"
+              class=" j-has-pseudoplaceholder"
+              placeholder="Regular Text">
 
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Password</h4>
-                        </label>
-                    </div>
-                
-                    <div class="ff-box-flex">
-                        <input name="" type="password" id="" 
-                          value="" 
-                          class=" "
-                          placeholder="Password">
-                    </div>
-                </div>
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Email</h4>
-                        </label>
-                    </div>
-                    <div class="ff-box-flex">
-                        <input name="" type="email" id="" 
-                          value="" 
-                          class=" "
-                          placeholder="john@example.com"              
-                          autocorrect="off">
-                    </div>
-                </div>
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Number</h4>
-                        </label>
-                    </div>
-                    <div class="ff-box-flex">
-                        <input name="" type="number" id="" 
-                          value="" 
-                          class=" "
-                          pattern="[0-9]*">
-
-                        <label for="" class="touchList-item--input-pseudo-placeholder j-placeholder">1234</label>
-                    </div>
-                </div>
-            </li>
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Date</h4>
-                        </label>
-                    </div>
-                    
-                    <div class="ff-box-flex">    
-                        <input name="" type="date" id="" 
-                          value="" 
-                          class="j-input-date ">
-                        
-                        <label for="" class="touchList-item--input-pseudo-placeholder j-placeholder">Start Date</label>
-                        
-                    </div>
-                </div>
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Date Time</h4>
-                        </label>
-                    </div>
-                    
-                    <div class="ff-box-flex">
-                        <input  name="" 
-                                type="datetime" 
-                                id="" 
-                                value="" 
-                                class="j-input-datetime ">
-
-                        <label for="" class="touchList-item--input-pseudo-placeholder j-placeholder">Start DateTime</label>
-                    </div>
-                </div>
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-                
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">DT Local</h4>
-                        </label>
-                    </div>
-                    
-                    <div class="ff-box-flex">        
-                        <input name="" type="datetime-local" id="" 
-                          value="" 
-                          class="j-input-datetime ">
-
-                        <label for="" class="touchList-item--input-pseudo-placeholder j-placeholder">Start DateTimeLocal</label>
-                    </div>
-                </div>
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Time</h4>
-                        </label>
-                    </div>
-                    <div class="ff-box-flex">
-                        <input name="" type="time" id="" 
-                          value="" 
-                          class="j-input-time ">
-
-                        <label for="" class="touchList-item--input-pseudo-placeholder j-placeholder">Start Time</label>
-                    </div>
-                </div>    
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-                
-                <div class="ff-box">    
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Phone</h4>
-                        </label>
-                    </div>
-                    
-                    <div class="ff-box-flex">    
-                        <input name="" type="tel" id="" 
-                          value="" 
-                          class=" "
-                          placeholder="444 444 4444">
-                    </div>
-                </div>
-
-            </li>
-
-            <li class="touchList-item touchList-item--input " id="" >
-                
-                <div class="ff-box">
-                    <div class="ff-box-fix">
-                        <label for="">
-                            <h4 class="touchList-item--input-label">Website</h4>
-                        </label>
-                    </div>
-                
-                    
-                    <div class="ff-box-flex">
-
-                        
-                        <input name="" type="url" id="" 
-                          value="" 
-                          class=" "
-                          placeholder="example.com">
-
-                  
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-        <div class="doc-box">
-            <ul class="touchList">
-                <li class="touchList-item touchList-item--input " id="" >
-                    <div class="ff-box">
-         
-                        <div class="ff-box-flex">
-                            <input name="" type="search" id="" 
-                              value="" 
-                              class=" "
-                              placeholder="Search">
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">Regular Text</label>
         </div>
+    </div>
+</li>
+
+
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Text</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_text" type="text" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="Regular Text">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Regular Text
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Name</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_name" type="text" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="John Appleseed"
+					  autocapitalize="words">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						John Appleseed
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Email</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_email" type="email" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="john@meetup.com"
+					  autocorrect="off">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						john@meetup.com
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Password</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_pw" type="password" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Number</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_number" type="number" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="0-20"
+					  pattern="[0-9]*">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						0-20
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Date</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_date" type="date" id=""
+					  value="" tabindex="0"
+					  class="j-input-date j-has-pseudoplaceholder"
+					  placeholder="Date">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Date
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Time</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_time" type="time" id=""
+					  value="" tabindex="0"
+					  class="j-input-time j-has-pseudoplaceholder"
+					  placeholder="Time">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Time
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">DateTime</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_datetime" type="datetime-local" id=""
+					  value="" tabindex="0"
+					  class="j-input-datetime j-has-pseudoplaceholder"
+					  placeholder="D&T">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						D&T
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input " id="" >
+			<div class="ffbox">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Date And Time</h4>
+				</label>
+				<div class="ffbox-flex">
+					<div class="ffbox ffbox--fixed-layout ffbox--touchList-input ">
+						<div class="ffbox-fix">
+							<input name="f1_datetime_date" type="date" id=""
+							  value="" tabindex="0"
+							  class="j-input-date j-has-pseudoplaceholder"
+							  placeholder="Date">
+							<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+								Date
+							</label>
+						</div>
+						<div class="ffbox-fix">
+							<input name="f1_datetime_time" type="time" id=""
+							  value="" tabindex="0"
+							  class="j-input-time j-has-pseudoplaceholder"
+							  placeholder="Time">
+							<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+								Time
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Phone</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_tel" type="tel" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="888 888 8888">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						888 888 8888
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Url</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_url" type="url" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="http://npr.org">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						http://npr.org
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Text with Value</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_text_value" type="text" id=""
+					  value="I can't go for that." tabindex="0"
+					  class="">
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input disabled j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Disabled</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_text_disabled" type="text" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="No can do."
+					  disabled="disabled">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						No can do.
+					</label>
+				</div>
+			</div>
+		</li>
+
+	</ul>
+</div>
+
+<div class="doc-box">
+	<ul class="touchList">
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<i class="icon-s icon-search icon-search--searchInput"></i>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f2_search_ph" type="search" id=""
+					  value="" tabindex="0"
+					  class=" j-has-pseudoplaceholder"
+					  placeholder="Search">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">Search</label>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
 
 <div class="doc-content j-code">
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="n">examples</span> <span class="o">--</span><span class="k">%&gt;</span>
@@ -236,329 +289,61 @@
 <span class="nt">&lt;li:datetime</span> <span class="err">...</span> <span class="nt">/&gt;</span>
 </code></pre></div>
     <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">placeholder=</span><span class="s">&quot;Enter the dragon&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input j-has-pseudoplaceholder&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>No Type<span class="nt">&lt;/h4&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
 
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">placeholder=</span><span class="s">&quot;John Appleseed&quot;</span>
-                          <span class="na">autocapitalize=</span><span class="s">&quot;words&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;f1_text_omitted&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span>
+              <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span>
+              <span class="na">class=</span><span class="s">&quot; j-has-pseudoplaceholder&quot;</span>
+              <span class="na">placeholder=</span><span class="s">&quot;Regular Text&quot;</span><span class="nt">&gt;</span>
 
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">placeholder=</span><span class="s">&quot;john@example.com&quot;</span>              
-                          <span class="na">autocorrect=</span><span class="s">&quot;off&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Number<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;number&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">pattern=</span><span class="s">&quot;[0-9]*&quot;</span><span class="nt">&gt;</span>
-
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-pseudo-placeholder j-placeholder&quot;</span><span class="nt">&gt;</span>1234<span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Date<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>    
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;date&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot;j-input-date &quot;</span><span class="nt">&gt;</span>
-                        
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-pseudo-placeholder j-placeholder&quot;</span><span class="nt">&gt;</span>Start Date<span class="nt">&lt;/label&gt;</span>
-                        
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Date Time<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span>  <span class="na">name=</span><span class="s">&quot;&quot;</span> 
-                                <span class="na">type=</span><span class="s">&quot;datetime&quot;</span> 
-                                <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                                <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                                <span class="na">class=</span><span class="s">&quot;j-input-datetime &quot;</span><span class="nt">&gt;</span>
-
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-pseudo-placeholder j-placeholder&quot;</span><span class="nt">&gt;</span>Start DateTime<span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>DT Local<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>        
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;datetime-local&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot;j-input-datetime &quot;</span><span class="nt">&gt;</span>
-
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-pseudo-placeholder j-placeholder&quot;</span><span class="nt">&gt;</span>Start DateTimeLocal<span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Time<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;time&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot;j-input-time &quot;</span><span class="nt">&gt;</span>
-
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-pseudo-placeholder j-placeholder&quot;</span><span class="nt">&gt;</span>Start Time<span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>    
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>    
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Phone<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                    
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>    
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">placeholder=</span><span class="s">&quot;444 444 4444&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-            <span class="nt">&lt;/li&gt;</span>
-
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-label&quot;</span><span class="nt">&gt;</span>Website<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/label&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                
-                    
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-
-                        
-                        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;url&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                          <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                          <span class="na">placeholder=</span><span class="s">&quot;example.com&quot;</span><span class="nt">&gt;</span>
-
-                  
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-         
-                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">type=</span><span class="s">&quot;search&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> 
-                              <span class="na">value=</span><span class="s">&quot;&quot;</span> 
-                              <span class="na">class=</span><span class="s">&quot; &quot;</span>
-                              <span class="na">placeholder=</span><span class="s">&quot;Search&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;/div&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/li&gt;</span>
-            <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-pseudoplaceholder j-pseudoplaceholder&quot;</span><span class="nt">&gt;</span>Regular Text<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
+
 <h2 class="section-subtitle">Radio buttons <span class='candidate'></span></h2>
 <p>This is an example of the radio buttons touchlist.</p>
 
-<!-- HTML example -->
+
 <div class="doc-box">
-    <ul class="touchList">
-    
-        <li class="touchList-item touchList-item--input-radio " id="" >        
-            <label class="ff-box">
+	<ul class="touchList">
+		<!-- HTML example -->
+<li class="touchList-item touchList-item--input-radio " id="" >
+	<label class="ffbox ffbox--touchList-input">
+		<div class="ffbox-flex">
+			<h4 class="touchList-label touchList-label--input">Cats</h4>
+		</div>
+		<div class="ffbox-fix">
+			<input type="radio" name="f3_5" value="1" id="" tabindex="0" checked="checked">
+			<div class="pseudoradio">
+				<div class="pseudoradio-dot"></div>
+			</div>
+		</div>
+	</label>
+</li>
+<li class="touchList-item touchList-item--input-radio " id="" >
+	<label class="ffbox ffbox--touchList-input">
+		<div class="ffbox-flex">
+			<h4 class="touchList-label touchList-label--input">Dogs</h4>
+		</div>
+		<div class="ffbox-fix">
+			<input type="radio" name="f3_5" value="1" id="" tabindex="0">
+			<div class="pseudoradio">
+				<div class="pseudoradio-dot"></div>
+			</div>
+		</div>
+	</label>
+</li>
 
-                
-                <div class="ff-box-flex">
-                    <h4 class="touchList-item--input-radio-label">Cats</h4>
-                </div>
 
-                
-                <div class="ff-box-fix">
-                    <input type="radio" name="pets" value="0" 
-                      
-                      checked="checked"> 
-
-                    <div class="touchList-item--input-radio-pseudoradio">
-                        <div class="touchList-item--input-radio-pseudoradio-dot"></div>
-                    </div>
-
-                </div>
-            </label>
-        </li>
-
-        <li class="touchList-item touchList-item--input-radio " id="" >
-                
-            <label class="ff-box">
-
-                
-                <div class="ff-box-flex">
-                    <h4 class="touchList-item--input-radio-label">Dogs</h4>
-                </div>
-
-                
-                <div class="ff-box-fix">
-                    <input type="radio" name="pets" value="1" 
-                      
-                      > 
-
-                    <div class="touchList-item--input-radio-pseudoradio">
-                        <div class="touchList-item--input-radio-pseudoradio-dot"></div>
-                    </div>
-
-                </div>
-            </label>   
-            
-        </li>
-
-        <li class="touchList-item touchList-item--input-radio " id="" >
-                      
-            <label class="ff-box">
-
-                
-                <div class="ff-box-flex">
-                    <h4 class="touchList-item--input-radio-label">Turtles</h4>
-                </div>
-
-                
-                <div class="ff-box-fix">
-                    <input type="radio" name="pets" value="1" 
-                      
-                      > 
-
-                    <div class="touchList-item--input-radio-pseudoradio">
-                        <div class="touchList-item--input-radio-pseudoradio-dot"></div>
-                    </div>
-
-                </div>
-            </label> 
-        </li>
-        <li class="touchList-item touchList-item--input-radio " id="" >
-                      
-            <label class="ff-box">
-
-                
-                <div class="ff-box-flex">
-                    <h4 class="touchList-item--input-radio-label">Tazmanian Devils</h4>
-                </div>
-
-                
-                <div class="ff-box-fix">
-                    <input type="radio" name="pets" value="1" 
-                      
-                      > 
-
-                    <div class="touchList-item--input-radio-pseudoradio">
-                        <div class="touchList-item--input-radio-pseudoradio-dot"></div>
-                    </div>
-
-                </div>
-            </label> 
-        </li>
-
-    </ul>
+	</ul>
 </div>
 
 <div class="doc-content j-code">
@@ -566,305 +351,206 @@
 
 <span class="nt">&lt;li:radio</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;Cats&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;li:radio</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;Dogs&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;li:radio</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;Turtles&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;li:radio</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;Tazmanian Devils&quot;</span> <span class="nt">/&gt;</span>
 </code></pre></div>
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-    
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-radio &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>        
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-label&quot;</span><span class="nt">&gt;</span>Cats<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> 
-                      
-                      <span class="na">checked=</span><span class="s">&quot;checked&quot;</span><span class="nt">&gt;</span> 
-
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-radio &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-label&quot;</span><span class="nt">&gt;</span>Dogs<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> 
-                      
-                      <span class="nt">&gt;</span> 
-
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/label&gt;</span>   
-            
-        <span class="nt">&lt;/li&gt;</span>
-
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-radio &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                      
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-label&quot;</span><span class="nt">&gt;</span>Turtles<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> 
-                      
-                      <span class="nt">&gt;</span> 
-
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/label&gt;</span> 
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-radio &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                      
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-label&quot;</span><span class="nt">&gt;</span>Tazmanian Devils<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;pets&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> 
-                      
-                      <span class="nt">&gt;</span> 
-
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-radio-pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-                    <span class="nt">&lt;/div&gt;</span>
-
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/label&gt;</span> 
-        <span class="nt">&lt;/li&gt;</span>
-
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-radio &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Cats<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_5&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio&quot;</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+			<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-radio &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Dogs<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_5&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio&quot;</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+			<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
+
 <h2 class="section-subtitle">Checkboxes <span class='candidate'></span></h2>
 <p>This is an example of the checkbox touchlist.</p>
 
-<!-- HTML example -->
 <div class="doc-box">
-    <ul class="touchList">
-                    
-        <li class="touchList-item touchList-item--input-checkbox " id="" >
-                          
-            <label class="ff-box">
+	<ul class="touchList">
+		<!-- HTML example -->
+<li class="touchList-item touchList-item--input-checkbox" id="" >
+	<label class="ffbox ffbox--touchList-input">
+        <div class="ffbox-flex">
+			<h4 class="touchList-label touchList-label--input">Yay! Kittens</h4>
+        </div>
+		<div class="ffbox-fix">
+			<input type="checkbox" name="f3_3" value="0" id="" tabindex="0">
+			<div class="pseudocheckbox">
+				<i class="icon-s icon-check pseudocheckbox-check"></i> 
+			</div>
+		</div>
+	</label>
+</li>
 
-                
-                <div class="ff-box-flex">
-                    <h4 class="touchList-item--input-checkbox-label">Accessibility Mode</h4>
-                </div>
-
-                
-                <div class="ff-box-fix">
-                    <input type="checkbox" name="accessibility" value="0"> 
-
-                    <div class="touchList-item--input-checkbox-pseudocheckbox">
-                        <i class="icon-s icon-check touchList-item--input-checkbox-pseudocheckbox-check"></i> 
-                    </div>
-
-                </div>
-            </label>
-        </li>
-    </ul>
+	</ul>
 </div>
 
 <div class="doc-content j-code">
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="n">example</span> <span class="o">--</span><span class="k">%&gt;</span>
 
-<span class="nt">&lt;li:checkbox</span> <span class="na">name=</span><span class="s">&quot;accessibility&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="err">...</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;li:checkbox</span> <span class="na">name=</span><span class="s">&quot;kittttteennnnnssss&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="err">...</span> <span class="nt">/&gt;</span>
 </code></pre></div>
     <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-                    
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
-                          
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-checkbox-label&quot;</span><span class="nt">&gt;</span>Accessibility Mode<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;accessibility&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span> 
-
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--input-checkbox-pseudocheckbox&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-check touchList-item--input-checkbox-pseudocheckbox-check&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> 
-                    <span class="nt">&lt;/div&gt;</span>
-
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Yay! Kittens<span class="nt">&lt;/h4&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_3&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudocheckbox&quot;</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-check pseudocheckbox-check&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> 
+			<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
 
 <h2 class="section-subtitle">Select <span class='candidate'></span></h2>
-<p>...</p>
-<!-- HTML example -->
+
 <div class="doc-box">
-    <ul class="touchList">
-        
-        <li class="touchList-item touchList-item--select " id="select" >
-            
-            <label class="ff-box" for="select_select">
+	<ul class="touchList">
+		<!-- HTML example -->
+<li class="touchList-item touchList-item--select " id="" >
+	<label class="ffbox" for="">
+		<div class="ffbox-fix">
+			<h4 class="touchList-label touchList-label--select no-wrap">
+				Fave Caffeine?
+			</h4>
+		</div>
+		<div class="ffbox-flex">
+			<div class="touchList-item--select-wrapper">
+				<select id="" name="f5_1"  tabindex="0">
+					<option>Coffee</option>
+					<option>Espresso</option>
+					<option>Red Bull</option>
+					<option>Yerba Mate</option>
+					<option>5 Hour Energy</option>
+					<option>A Big Handful of Cat Hair</option>
+				</select>
+				<div class="touchList-item--select-mask">
+					<span class="touchList-item--select-mask-arrow">
+						<i class="icon-s icon-drop-down"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+	</label>
+</li>
 
-                <div class="ff-box-fix">
-                    <h4 class="touchList-item--select-label">Options</h4>
-                </div>
-                
-                <div class="ff-box-flex">
-                    <div class="touchList-item--select-wrapper">
-                        <select id="food_choices" name="foods" >
-                                <option>Tomayto</option>
-                                <option>Tomahto</option>
-                                <option>Potayto</option>
-                                <option>Potahto</option>
-                                <option>Let's call the whole thing off</option>
-                        </select>
 
-                        
-                        <div class="touchList-item--select-mask">
-                            <span class="touchList-item--select-mask-arrow">
-                                <i class="icon-s icon-drop-down"></i>
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-
-            </label>
-        </li>
-    </ul>
+	</ul>
 </div>
 
 <div class="doc-content j-code">
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="n">examples</span> <span class="o">--</span><span class="k">%&gt;</span>
 
-<span class="nt">&lt;li:select</span> <span class="na">id=</span><span class="s">&quot;food_choices&quot;</span> <span class="na">name=</span><span class="s">&quot;foods&quot;</span> <span class="nt">/&gt;</span>
-	<span class="nt">&lt;option&gt;</span>Tomayto<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;option&gt;</span>Tomahto<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;option&gt;</span>Potayto<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;option&gt;</span>Potahto<span class="nt">&lt;/option&gt;</span>
-    <span class="nt">&lt;option&gt;</span>Let&#39;s call the whole thing off<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;li:select</span> <span class="na">id=</span><span class="s">&quot;caffeine_choice&quot;</span> <span class="na">name=</span><span class="s">&quot;caffeine&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;option&gt;</span>Coffee<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;option&gt;</span>Espresso<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;option&gt;</span>Red Bull<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;option&gt;</span>Yerba Mate<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;option&gt;</span>5 Hour Energy<span class="nt">&lt;/option&gt;</span>
+	<span class="nt">&lt;option&gt;</span>A Big Handful of Cat Hair<span class="nt">&lt;/option&gt;</span>
 <span class="nt">&lt;/li:select&gt;</span>
 </code></pre></div>
     <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-        
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--select &quot;</span> <span class="na">id=</span><span class="s">&quot;select&quot;</span> <span class="nt">&gt;</span>
-            
-            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span> <span class="na">for=</span><span class="s">&quot;select_select&quot;</span><span class="nt">&gt;</span>
-
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-label&quot;</span><span class="nt">&gt;</span>Options<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-wrapper&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;food_choices&quot;</span> <span class="na">name=</span><span class="s">&quot;foods&quot;</span> <span class="nt">&gt;</span>
-                                <span class="nt">&lt;option&gt;</span>Tomayto<span class="nt">&lt;/option&gt;</span>
-                                <span class="nt">&lt;option&gt;</span>Tomahto<span class="nt">&lt;/option&gt;</span>
-                                <span class="nt">&lt;option&gt;</span>Potayto<span class="nt">&lt;/option&gt;</span>
-                                <span class="nt">&lt;option&gt;</span>Potahto<span class="nt">&lt;/option&gt;</span>
-                                <span class="nt">&lt;option&gt;</span>Let&#39;s call the whole thing off<span class="nt">&lt;/option&gt;</span>
-                        <span class="nt">&lt;/select&gt;</span>
-
-                        
-                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-mask&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-mask-arrow&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-drop-down&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
-                            <span class="nt">&lt;/span&gt;</span>
-                        <span class="nt">&lt;/div&gt;</span>
-
-                    <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--select &quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span> <span class="na">for=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--select no-wrap&quot;</span><span class="nt">&gt;</span>
+				Fave Caffeine?
+			<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-wrapper&quot;</span><span class="nt">&gt;</span>
+				<span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">name=</span><span class="s">&quot;f5_1&quot;</span>  <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;option&gt;</span>Coffee<span class="nt">&lt;/option&gt;</span>
+					<span class="nt">&lt;option&gt;</span>Espresso<span class="nt">&lt;/option&gt;</span>
+					<span class="nt">&lt;option&gt;</span>Red Bull<span class="nt">&lt;/option&gt;</span>
+					<span class="nt">&lt;option&gt;</span>Yerba Mate<span class="nt">&lt;/option&gt;</span>
+					<span class="nt">&lt;option&gt;</span>5 Hour Energy<span class="nt">&lt;/option&gt;</span>
+					<span class="nt">&lt;option&gt;</span>A Big Handful of Cat Hair<span class="nt">&lt;/option&gt;</span>
+				<span class="nt">&lt;/select&gt;</span>
+				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-mask&quot;</span><span class="nt">&gt;</span>
+					<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;touchList-item--select-mask-arrow&quot;</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-drop-down&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+					<span class="nt">&lt;/span&gt;</span>
+				<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
    
+
 <h2 class="section-subtitle">Textareas <span class='candidate'></span></h2>
-<!-- HTML example -->
 
 <div class="doc-box">
-    <ul class="touchList">      
-        
-        <li class="touchList-item touchList-item--textarea " id="tx" >
-              
-            <label for="tx_textarea">
-                <h4 class="touchList-item--textarea-label">Description</h4>
-            </label>
-            
-            <div class="ff-box">
-                <div class="ff-box-flex">
-                    <textarea name="question1" id="tx_textarea" placeholder="What's going on?"></textarea>
-                </div>
-            </div>
-        </li>
-    </ul>
+	<ul class="touchList">
+		<!-- HTML example -->
+<li class="touchList-item touchList-item--textarea " id="tx">
+	<label for="tx_textarea">
+		<h4 class="touchList-label touchList-label--textarea">What's happening?</h4>
+	</label>
+	<div class="ffbox ffbox--textareaWrapper">
+		<div class="ffbox-flex">
+			<textarea name="f6_1" id="tx_textarea"
+			  placeholder="For example, 'Fighting a grease fire'"
+			  maxlength="200"
+			  ></textarea>
+			<label for="" class="touchList-pseudoplaceholder touchList-pseudoplaceholder--textarea j-pseudoplaceholder">For example, 'Fighting a grease fire'</label>
+		</div>
+	</div>
+	<h6 id="tx_textarea_counter" class="touchList-item--textarea-counter">200</h6>
+</li>
+
+
+	</ul>
 </div>
 
 <div class="doc-content j-code">
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="n">example</span> <span class="o">--</span><span class="k">%&gt;</span>
-<span class="nt">&lt;li:textarea</span> <span class="na">id=</span><span class="s">&quot;tx&quot;</span> <span class="na">name=</span><span class="s">&quot;question1&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;What&#39;s going on?&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;li:textarea</span> <span class="na">id=</span><span class="s">&quot;tx&quot;</span> <span class="na">name=</span><span class="s">&quot;question1&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;For example, &#39;Fighting grease fire&#39;&quot;</span> <span class="na">label=</span><span class="s">&quot;What&#39;s happening?&quot;</span><span class="nt">/&gt;</span>
 </code></pre></div>
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>      
-        
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--textarea &quot;</span> <span class="na">id=</span><span class="s">&quot;tx&quot;</span> <span class="nt">&gt;</span>
-              
-            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;tx_textarea&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--textarea-label&quot;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/h4&gt;</span>
-            <span class="nt">&lt;/label&gt;</span>
-            
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;question1&quot;</span> <span class="na">id=</span><span class="s">&quot;tx_textarea&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;What&#39;s going on?&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--textarea &quot;</span> <span class="na">id=</span><span class="s">&quot;tx&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;tx_textarea&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--textarea&quot;</span><span class="nt">&gt;</span>What&#39;s happening?<span class="nt">&lt;/h4&gt;</span>
+	<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--textareaWrapper&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;f6_1&quot;</span> <span class="na">id=</span><span class="s">&quot;tx_textarea&quot;</span>
+			  <span class="na">placeholder=</span><span class="s">&quot;For example, &#39;Fighting a grease fire&#39;&quot;</span>
+			  <span class="na">maxlength=</span><span class="s">&quot;200&quot;</span>
+			  <span class="nt">&gt;&lt;/textarea&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-pseudoplaceholder touchList-pseudoplaceholder--textarea j-pseudoplaceholder&quot;</span><span class="nt">&gt;</span>For example, &#39;Fighting a grease fire&#39;<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;h6</span> <span class="na">id=</span><span class="s">&quot;tx_textarea_counter&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item--textarea-counter&quot;</span><span class="nt">&gt;</span>200<span class="nt">&lt;/h6&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
 
