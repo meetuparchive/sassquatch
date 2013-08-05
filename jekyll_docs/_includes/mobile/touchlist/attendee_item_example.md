@@ -17,8 +17,8 @@
                         </div>
                     </a>
                 </div>
-                <div class="ffbox-fix">
-                    <a class="button niceToSeeYou primary" href="#">
+                <div class="ffbox-fix touchList-attendee-actions">
+                    <a class="button small niceToSeeYou primary" href="#">
                         <span>Good to see you</span>
                     </a>
                 </div>
@@ -40,8 +40,8 @@
                         </div>
                     </a>
                 </div>
-                <div class="ffbox-fix">
-                    <a class="button niceToSeeYou primary" href="#">
+                <div class="ffbox-fix touchList-attendee-actions">
+                    <a class="button small niceToSeeYou primary" href="#">
                         <span>Good to see you</span>
                     </a>
                 </div>
