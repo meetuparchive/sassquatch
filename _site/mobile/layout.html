@@ -38,34 +38,36 @@
 <h2 class="section-subtitle">fix-flex <span class='candidate'></span></h2>
 <p>
 	This layout pattern is used often in lists when we need to display 
-	different content in columns. <code>.ff-box</code> wraps elements that
-	are either <code>.ff-box-flex</code> or <code>.ff-box-fix</code>.
+	different content in columns. <code>.ffbox</code> wraps elements that
+	are either <code>.ffbox-flex</code> or <code>.ffbox-fix</code>.
 </p>
 
 <div class="doc-box">
 	<div class="doc-content">
 		
-<div class="ff-box">
-	<div class="ff-box-flex">
+<div class="ffbox">
+	<div class="ffbox-flex">
 		<h4>It causes some elements in the row</h4>
-		to flex their width to fill the container. While other elements...
+		<p>to flex their width to fill the container, while other elements stay</p>
 	</div>
-	<div class="ff-box-fix">
-		STAY FIXED
+	<div class="ffbox-fix">
+		<p>FIXED</p>
 	</div>
 </div>
+
 	</div>
 </div>
 
 <div class="j-code">
-	<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
+	<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;h4&gt;</span>It causes some elements in the row<span class="nt">&lt;/h4&gt;</span>
-		to flex their width to fill the container. While other elements...
+		<span class="nt">&lt;p&gt;</span>to flex their width to fill the container, while other elements stay<span class="nt">&lt;/p&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix&quot;</span><span class="nt">&gt;</span>
-		STAY FIXED
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;p&gt;</span>FIXED<span class="nt">&lt;/p&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 </div>
+
