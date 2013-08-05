@@ -413,7 +413,6 @@
 <p>This is an example of the most basic touchlist.</p>	
 
 <!-- HTML -->
-<!-- Leave spaces in here, not tabs -->
 <div class="doc-box">
     <ul class="touchList">
         <li class="touchList-item">
@@ -452,7 +451,6 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
-<span class="c">&lt;!-- Leave spaces in here, not tabs --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
@@ -487,106 +485,57 @@
 </p>
 
 <!-- HTML -->
-
 <div class="doc-box">
-  <ul class="touchList">
-	<li class="touchList-item--attendee">
-		<div class="ff-box">
-		  <div class="ff-box-flex">
-			<a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-			  
-			  <!-- image -->
-			  <div class="figureset-figure avatar-m pin-top">
-				<img src="assets/img/spock.jpg" />
-			  </div>
-			  <!-- avatar and info -->
-			  <div class="figureset-description">
-				<h4 class="touchList-item--attendee-label">
-				  Captain Spock
-				  <span class="touchList-item--attendee-label-guest-count">(+ 5)</span>
-				</h4>
-				<h6 class="touchList-item--attendee-role">Vulcan</h6>
-			  </div>
-			</a>
-		  </div>
+    <ul class="touchList">
+        <li class="touchList-item touchList-item--attendee">
+            <div class="ffbox">
+                <div class="ffbox-flex">
+                    <a href="${member_url}" class="ffbox ffbox--touchList-item ffbox--fixed">
+                        <div class="ffbox-fix avatar-m pintop touchList-attendee-photo">
+                            <img src="assets/img/spock.jpg" />
+                        </div>
+                        <div class="ffbox-flex touchList-attendee-info">
+                            <h4 class="touchList-label touchList-attendee-name">
+                                Captain Spock
+                                <span class="touchList-guestcount">(+5 )</span>
+                            </h4>
+                            <h6 class="touchList-caption touchList-attendee-role">Vulcan</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="ffbox-fix">
+                    <a class="button niceToSeeYou primary" href="#">
+                        <span>Good to see you</span>
+                    </a>
+                </div>
+            </div>
+        </li>
 
-		  <!-- secondary actions -->
-		  <div class="ff-box-fix touchList-item--attendee-secondary-actions">
-			<a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-			  <span>Good to see you</span>
-			</a>
-		  </div>
-		</div>
-	</li>
-	<li class="touchList-item--attendee">
-		<div class="ff-box">
-			<div class="ff-box-flex">
-				<a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-					<div class="figureset-figure avatar-m pin-top">
-					  <img src="assets/img/bones.jpg" />
-					</div>
-
-					 <div class="figureset-description">
-						<h4 class="touchList-item--attendee-label">
-						  Leonard McCoy
-						</h4>
-						<h6 class="touchList-item--attendee-role">"Bones"</h6>
-					</div>
-				</a>
-			</div>
-		
-			<div class="ff-box-fix touchList-item--attendee-secondary-actions">
-			  <a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-				  <span>Good to see you</span>
-			  </a>
-			</div>
-		</div>
-	</li>
-		<li class="touchList-item--attendee">
-			<div class="ff-box">
-		         <div class="ff-box-flex">
-		             <a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-		                 <div class="figureset-figure avatar-m pin-top">
-		                   <img src="assets/img/uhura.jpg" />
-		                 </div>
-		                 <div class="figureset-description">
-		                     <h4 class="touchList-item--attendee-label">
-		                        Lieutenant Uhura
-		                     </h4>
-		                 </div>
-		             </a>
-		         </div>
-		         <div class="ff-box-fix touchList-item--attendee-secondary-actions">
-		           <a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-		               <span>Good to see you</span>
-		           </a>
-		         </div>
-		     </div>
-		</li>
-		<li class="touchList-item--attendee">
-			<div class="ff-box">
-				<div class="ff-box-flex">
-					<a href="${member_url}" class="figureset j-btn touchList-item--attendee-figureset">
-						<div class="figureset-figure avatar-m pin-top">
-							<img src="assets/img/kirk2.jpg" />
-						</div>
-						<div class="figureset-description">
-							<h4 class="touchList-item--attendee-label">
-								Evil Kirk
-							</h4>
-						</div>
-					</a>
-				</div>
-				<div class="ff-box-fix touchList-item--attendee-secondary-actions">
-					<a class="button small niceToSeeYou primary" data-memberId="${attendee.member.id}" href="#">
-						<span>Good to see you</span>
-					</a>
-				</div>
-			</div>
-		</li>
-	<!-- leaving extra els out of the example, these tags close it off -->
-	</ul>
+        <li class="touchList-item touchList-item--attendee">
+            <div class="ffbox">
+                <div class="ffbox-flex">
+                    <a href="${member_url}" class="ffbox ffbox--touchList-item ffbox--fixed">
+                        <div class="ffbox-fix avatar-m pintop touchList-attendee-photo">
+                            <img src="assets/img/bones.jpg" />
+                        </div>
+                        <div class="ffbox-flex touchList-attendee-info">
+                            <h4 class="touchList-label touchList-attendee-name">
+                                Dr. Leonard McCoy
+                            </h4>
+                            <h6 class="touchList-caption touchList-attendee-role">Bones</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="ffbox-fix">
+                    <a class="button niceToSeeYou primary" href="#">
+                        <span>Good to see you</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
+
 
 <div class="j-code">
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
@@ -600,66 +549,63 @@
 <span class="nt">/&gt;</span>
 </code></pre></div>
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
-
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee&quot;</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-		  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;${member_url}&quot;</span> <span class="na">class=</span><span class="s">&quot;figureset j-btn touchList-item--attendee-figureset&quot;</span><span class="nt">&gt;</span>
-			  
-			  <span class="c">&lt;!-- image --&gt;</span>
-			  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure avatar-m pin-top&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;assets/img/spock.jpg&quot;</span> <span class="nt">/&gt;</span>
-			  <span class="nt">&lt;/div&gt;</span>
-			  <span class="c">&lt;!-- avatar and info --&gt;</span>
-			  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee-label&quot;</span><span class="nt">&gt;</span>
-				  Captain Spock
-				  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee-label-guest-count&quot;</span><span class="nt">&gt;</span>(+ 5)<span class="nt">&lt;/span&gt;</span>
-				<span class="nt">&lt;/h4&gt;</span>
-				<span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee-role&quot;</span><span class="nt">&gt;</span>Vulcan<span class="nt">&lt;/h6&gt;</span>
-			  <span class="nt">&lt;/div&gt;</span>
-			<span class="nt">&lt;/a&gt;</span>
-		  <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--attendee&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;${member_url}&quot;</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item ffbox--fixed&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix avatar-m pintop touchList-attendee-photo&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;assets/img/spock.jpg&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-attendee-info&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-attendee-name&quot;</span><span class="nt">&gt;</span>
+                                Captain Spock
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;touchList-guestcount&quot;</span><span class="nt">&gt;</span>(+5 )<span class="nt">&lt;/span&gt;</span>
+                            <span class="nt">&lt;/h4&gt;</span>
+                            <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">&quot;touchList-caption touchList-attendee-role&quot;</span><span class="nt">&gt;</span>Vulcan<span class="nt">&lt;/h6&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button niceToSeeYou primary&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span&gt;</span>Good to see you<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
 
-		  <span class="c">&lt;!-- secondary actions --&gt;</span>
-		  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix touchList-item--attendee-secondary-actions&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button small niceToSeeYou primary&quot;</span> <span class="na">data-memberId=</span><span class="s">&quot;${attendee.member.id}&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
-			  <span class="nt">&lt;span&gt;</span>Good to see you<span class="nt">&lt;/span&gt;</span>
-			<span class="nt">&lt;/a&gt;</span>
-		  <span class="nt">&lt;/div&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;/li&gt;</span>
-	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee&quot;</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-flex&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;${member_url}&quot;</span> <span class="na">class=</span><span class="s">&quot;figureset j-btn touchList-item--attendee-figureset&quot;</span><span class="nt">&gt;</span>
-					<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-figure avatar-m pin-top&quot;</span><span class="nt">&gt;</span>
-					  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;assets/img/bones.jpg&quot;</span> <span class="nt">/&gt;</span>
-					<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--attendee&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;${member_url}&quot;</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item ffbox--fixed&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix avatar-m pintop touchList-attendee-photo&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;assets/img/bones.jpg&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-attendee-info&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-attendee-name&quot;</span><span class="nt">&gt;</span>
+                                Dr. Leonard McCoy
+                            <span class="nt">&lt;/h4&gt;</span>
+                            <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">&quot;touchList-caption touchList-attendee-role&quot;</span><span class="nt">&gt;</span>Bones<span class="nt">&lt;/h6&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button niceToSeeYou primary&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span&gt;</span>Good to see you<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-					 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;figureset-description&quot;</span><span class="nt">&gt;</span>
-						<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee-label&quot;</span><span class="nt">&gt;</span>
-						  Leonard McCoy
-						<span class="nt">&lt;/h4&gt;</span>
-						<span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">&quot;touchList-item--attendee-role&quot;</span><span class="nt">&gt;</span>&quot;Bones&quot;<span class="nt">&lt;/h6&gt;</span>
-					<span class="nt">&lt;/div&gt;</span>
-				<span class="nt">&lt;/a&gt;</span>
-			<span class="nt">&lt;/div&gt;</span>
-		
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ff-box-fix touchList-item--attendee-secondary-actions&quot;</span><span class="nt">&gt;</span>
-			  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button small niceToSeeYou primary&quot;</span> <span class="na">data-memberId=</span><span class="s">&quot;${attendee.member.id}&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
-				  <span class="nt">&lt;span&gt;</span>Good to see you<span class="nt">&lt;/span&gt;</span>
-			  <span class="nt">&lt;/a&gt;</span>
-			<span class="nt">&lt;/div&gt;</span>
-		<span class="nt">&lt;/div&gt;</span>
-	<span class="nt">&lt;/li&gt;</span>
 	<span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span> 
 </code></pre></div>
 
 </div>
+
 <h2 class="section-subtitle">Segmented Touch List  <span class='candidate'></span></h2>
 
 <div class="doc-box">
