@@ -1,0 +1,62 @@
+/**
+ *	  @file   _fix-flex.scss
+ *
+ *	  @author John Cockrell <john@meetup.com>
+ *	  @since  2013-05-14
+ *
+ *	  @description
+ *	  A collection of styles that allow us to do tabular internal layouts 
+ *	  on list items, etc. It's particularly useful on responsive layouts, 
+ *	  like we use for mobile.
+ *	  
+ *	  For semantics, it's important to always put `.ffbox-fix` and `.ffbox-flex` 
+ *	  elements inside a `.ffbox`--because putting naked table cells inside other
+ *	  table cells doesn't make semantic sense and won't necessarily be 
+ *	  predictable in layout across browsers.
+ *
+ *	  NOTE: There should be only one `.flex` per row.
+ *
+ *	  NOTE: If you want to set minimum heights on fix, flex or ffbox,
+ *	  you'll need to use `height` rather than `min-height` because of the 
+ *	  way table layouts are used in CSS.
+ *
+ *	  NOTE: In the future, we'll probably want to swap out tabular layouts 
+ *	  with flexbox.
+ *
+ *	  NOTE: If you want to use CSS text truncation with `ffbox`, you need to
+ *	  use the `ffbox--fixed` class on the `ffbox`, then set a class with a 
+ *	  width value on the nested `ffbox-fix`, like so:
+ *
+ *		<div class="ffbox ffbox--fixed">
+ *			<div class="ffbox-fix avatar-m">...</div>
+ *			<div class="ffbox-flex">...</div>
+ *		</div>
+ */
+
+
+/*  ======================================================================= */
+/*  FF BOX  */
+
+.ffbox {
+	@include box-sizing('border');
+	display: table;
+	table-layout: auto;
+	width: 100%;
+}
+
+.ffbox-fix,
+.ffbox-flex { 
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.ffbox-flex { 
+	width: 100%;
+}
+
+/*  ======================================================================= */
+/*  FF BOX - FIXED LAYOUT */
+
+.ffbox--fixed {
+	table-layout: fixed;
+}
