@@ -1,8 +1,8 @@
 <h2 class="section-subtitle">fix-flex <span class='candidate'></span></h2>
 <p>
 	This layout pattern is used often in lists when we need to display 
-	different content in columns. <code>.ff-box</code> wraps elements that
-	are either <code>.ff-box-flex</code> or <code>.ff-box-fix</code>.
+	different content in columns. <code>.ffbox</code> wraps elements that
+	are either <code>.ffbox-flex</code> or <code>.ffbox-fix</code>.
 </p>
 
 <div class="doc-box">

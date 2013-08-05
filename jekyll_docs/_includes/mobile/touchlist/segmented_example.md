@@ -1,63 +1,36 @@
 <!-- HTML -->
-<ul class="touchList">
-	<li class="touchList-item--segment">
-		<div class="touchList-item--segment-header">
-			<h5 class="touchList-item--segment-header-label">
-				A few of my favorite things
-			</h5>
-		</div>
-		<ul class="touchList-item--segment-content">
-			<li class="touchList-item">
-				<div class="ff-box touchList-item-ff-box">
-					<div class="ff-box-flex">
-						Raindrops on roses
-					</div>
-				</div>
-			</li>
-			<li class="touchList-item">
-				<div class="ff-box touchList-item-ff-box">
-					<div class="ff-box-flex">
-						Whiskers on kittens
-					</div>
-				</div>
-			</li>
-			<li class="touchList-item">
-				<div class="ff-box touchList-item-ff-box">
-					<div class="ff-box-flex">
-						Schnitzel with noodles
-					</div>
-				</div>
-			</li>
-		</ul>
-	</li>
-	<li class="touchList-item--segment">
-		<div class="touchList-item--segment-header">
-			<h5 class="touchList-item--segment-header-label">
-				Not faves
-			</h5>
-		</div>
-		<ul class="touchList-item--segment-content">
-			<li class="touchList-item">
-				<div class="ff-box touchList-item-ff-box">
-					<div class="ff-box-flex">
-						Dog bites
-					</div>
-				</div>
-			</li>
-			<li class="touchList-item">
-				<div class="ff-box touchList-item-ff-box">
-					<div class="ff-box-flex">
-						Bees sting
-					</div>
-				</div>
-			</li>
-			<li class="touchList-item">
-				<div class="ff-box touchList-item-ff-box">
-					<div class="ff-box-flex">
-						Feeling sad
-					</div>
-				</div>
-			</li>
-		</ul>
-	</li>
-</ul>
+<li class="touchList-segment">
+    <h5 class="touchList-segment-header">
+        Android Phones
+    </h5>
+    <ul class="touchList-segment-content">
+        <li class="touchList-item">
+            <div class="ffbox ffbox--touchList-item">
+                <div class="ffbox-flex">
+                    Motorola Droid X (2.3)
+                </div>
+            </div>
+        </li>
+        <li class="touchList-item">
+            <div class="ffbox ffbox--touchList-item">
+                <div class="ffbox-flex">
+                    Samsung Galaxy S (4.0)
+                </div>
+            </div>
+        </li>
+        <li class="touchList-item">
+            <div class="ffbox ffbox--touchList-item">
+                <div class="ffbox-flex">
+                    Samsung Galaxy S3 Mini (4.1)
+                </div>
+            </div>
+        </li>
+        <li class="touchList-item">
+            <div class="ffbox ffbox--touchList-item">
+                <div class="ffbox-flex">
+                    Galaxy Nexus 4 (4.3)
+                </div>
+            </div>
+        </li>
+    </ul>
+</li>

@@ -5,13 +5,12 @@
 @import '../../sass/config/_mixins_m.scss';
 
 /*  MAS VARIABLES */
-@import '_tl_parameters.scss';
-@import '_tl_extends.scss';
+@import '_touchList_variables.scss';
+@import '_touchList_extends.scss';
 
 /*  NEW SASSQUATCH CANDIDATES */
-@import '_fix-flex.scss';
-@import '_figureset_m.scss';
+@import '_fix_flex.scss';
 @import '_touchLists.scss';
 @import '_touchForms.scss';
 @import '_media_m.scss';
-@import '_pin-layout.scss';
+@import '_pin_layout.scss';
