@@ -40,24 +40,20 @@ body {
 	border-top: none; 
 }
 
-
-/*
-code, pre {
-  color: #555555;
-  font-family: Monaco, "Andale Mono", "Courier New", monospace !important;
-  font-size: 12px;
-  margin: 0; }
-
-code {
+code { /* inline code */
   padding: 1px 4px;
   background: #fbe1e3;
   border-radius: 4px;
-  white-space: nowrap;
-  font-weight: normal !important; }
-
-.prettyprint code {
-  background: #555; }
-*/
+}
+.highlight pre { /* pretty printed via pygments */
+	padding: 1em 1.5em;
+	margin: 0 0 16px 0;
+	border-radius: 4px;
+}
+.highlight pre code {
+	font-family: Monaco, "Andale Mono", "Courier New", monospace;
+	padding: 0;
+}
 .prettyprint {
   margin-bottom: 12px; }
 

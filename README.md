@@ -52,7 +52,7 @@ http://meetup.github.io/sassquatch/
 
 ## How to contribute
 
-SassQuatch development currently requires ruby gems Rake, Sass, and Jekyll.
+SassQuatch development currently requires Python, Ruby and the ruby gems Rake, Sass, and Jekyll.
 
 #### Editing sass source and documentation
 To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs. 
