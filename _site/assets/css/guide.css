@@ -46,6 +46,7 @@ code { /* inline code */
   background: #fbe1e3;
   border-radius: 4px;
   font-size: 12px !important;
+  font-weight: normal !important;
 }
 .highlight pre { /* pretty printed via pygments */
 	padding: 1em 1.5em;
