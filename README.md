@@ -59,7 +59,7 @@ To modify sassquatch, edit scss source files and/or liquid templates in jekyll d
 After editing, run `rake` in the root directory of the repo and point your browser at `localhost:4000`.
 
 #### Updating live docs
-If you have push access, there's a separate task for launching new changes merged into master to the live github pages documentation:
+If you have push access, there's a separate task for launching new changes from master to the live github pages branch:
 
 	$ rake push_docs
 
