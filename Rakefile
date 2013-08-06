@@ -60,7 +60,7 @@ end
 
 # LAUNCH - syncs master with the gh-pages branch; 
 # rebuilds LIVE github documentation page
-task :launch do
+task :push_docs do
 	puts
 	puts "Rebuilding SassQuatch github pages" 
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="

@@ -54,13 +54,14 @@ http://meetup.github.io/sassquatch/
 
 SassQuatch development currently requires ruby gems Rake, Sass, and Jekyll.
 
+#### Editing sass source and documentation
 To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs. 
-
 After editing, run `rake` in the root directory of the repo and point your browser at `localhost:4000`.
 
+#### Updating live docs
 If you have push access, there's a separate task for launching new changes merged into master to the live github pages documentation:
 
-	$ rake launch
+	$ rake push_docs
 
 _NOTE_: this only works when run in the master branch.
 - - -
