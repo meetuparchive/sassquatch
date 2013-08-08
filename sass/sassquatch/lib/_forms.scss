@@ -53,6 +53,12 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 	}
 }
 
+.ie8, .ie9, .ie10 {
+	input {
+		@include round(0);
+	}
+}
+
 input, select, textarea {
 	font-family: $baseFontStack;
 	display: block;
