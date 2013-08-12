@@ -58,6 +58,15 @@ SassQuatch development currently requires Python, Ruby and the ruby gems Rake, S
 To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs. 
 After editing, run `rake` in the root directory of the repo and point your browser at `localhost:4000`.
 
+There are also specific rake targets for recompiling docs, launching jekyll, and recompiling Sass individually:
+
+	(compile sass) $ rake compile
+
+	(compile docs) $ rake docs
+
+	(start jekyll) $ rake jekyll
+
+
 #### Updating live docs
 If you have push access, there's a separate task for launching new changes from master to the live github pages branch:
 
