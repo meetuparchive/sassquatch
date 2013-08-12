@@ -1,6 +1,6 @@
 /**
 * NAVBUTTONS
-* buttons uses for navigation purposes, not for taking actions and submitting stuff 
+* buttons uses for navigation purposes, not for taking actions and submitting stuff
 * list filtering, for example
 */
 
@@ -11,7 +11,7 @@
 	padding-left: 0;
 	line-height: 1.5;
     @include inlineblock;
-	@include round($defaultRadius);	
+	@include round($defaultRadius);
 	@include clearfix;
     @include experimental(box-sizing, border-box);
     @include experimental(background-clip, padding-box);
@@ -61,16 +61,16 @@
 		label:first-of-type,
 		li:first-child > a,
 		li:first-child > span {
-			@include round-nw($defaultRadius - 1px);	
-			@include round-ne($defaultRadius - 1px);	
-			@include round-sw(0);	
+			@include round-nw($defaultRadius - 1px);
+			@include round-ne($defaultRadius - 1px);
+			@include round-sw(0);
 		}
 		label:last-of-type
 		li:last-child > a,
 		li:last-child > span {
-			@include round-ne(0);	
-			@include round-se($defaultRadius - 1px);	
-			@include round-sw($defaultRadius - 1px);	
+			@include round-ne(0);
+			@include round-se($defaultRadius - 1px);
+			@include round-sw($defaultRadius - 1px);
 		}
     }
 
@@ -88,7 +88,6 @@
 		@include button_personality;
 		@include button_color(#fff, true);
 		border: none;
-		text-shadow: none;
 		color: $C_darkgray_lightest;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
 	}
@@ -106,7 +105,7 @@
 	}
     &.vertical{
 		label,
-		li > a, 
+		li > a,
 		li > span{
 			@include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
 		}
@@ -117,11 +116,11 @@
 			@include experimental(box-shadow, '#{$highlight}');
 		}
     }
-    
+
     /*****************************
      * COLOR INVERTED
      ****************************/
-    
+
     .inverted &{
         border-color: $C_darkgray;
 		label,
@@ -129,7 +128,6 @@
 		li > span {
 			@include button_color($C_darkgray_lighter, false);
 			border: none;
-			text-shadow: none;
 			color: $C_gray!important;
 		}
 
@@ -160,7 +158,7 @@
 
 
     /*****************************
-     * COLOR SELECTED ITEM 
+     * COLOR SELECTED ITEM
      ****************************/
 
     li, li:first-child, li:last-child{
