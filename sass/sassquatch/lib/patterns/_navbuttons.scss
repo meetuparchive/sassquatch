@@ -212,7 +212,7 @@
     li {
 		&.selected > a,
 		&.selected > span {
-			@include selectedNav;
+			@include punched_in_box_shadow;
             border: none;
 		}
 	}
