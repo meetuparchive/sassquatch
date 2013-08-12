@@ -47,6 +47,7 @@ code { /* inline code */
   border-radius: 4px;
   font-size: 12px !important;
   font-weight: normal !important;
+  color: #555;
 }
 .highlight pre { /* pretty printed via pygments */
 	padding: 1em 1.5em;
@@ -127,6 +128,9 @@ code { /* inline code */
   -webkit-background-clip: content-box;
   background-clip: content-box; }
 
+.guide-table td[headers=color] {
+	color: #fff !important;
+}
 .guide-table td[headers=sass] {
   width: 60%; }
 
@@ -205,10 +209,16 @@ footer {
   background-color: #222222; }
 
 .bg_red {
-  background-color: #e6304c; }
+  background-color: #E0393E; }
+
+.bg_red_darker {
+  background-color: #CC1C32; }
 
 .bg_darkblue {
   background-color: #3987cb; }
+
+.bg_lightblue {
+  background-color: #a5c8e7; }
 
 .bg_rsvpGoing {
   background-color: #62ac75; }
@@ -225,4 +235,28 @@ footer {
 .bg_warnText {
   background-color: #e6304c; }
 
+#thirdPartyColors dt {
+	color: #fff;
+	padding: 4px;
+	text-align: center;
+}
+.C_facebook dt {
+  background-color: #3B5998; }
+.C_twitter dt {
+  background-color: #33CCFF; }
+.C_linkedin dt {
+  background-color: #4875B4; }
+.C_tumblr dt {
+  background-color: #2B4964; }
+.C_flickr dt {
+  background-color: #FE0883; }
+.C_foursquare dt {
+  background-color: #8FD400; }
+.C_googleplus dt {
+  background-color: #C63D2D; }
+.C_instagram dt {
+  background-color: #4E433C; }
+.C_reddit dt {
+	color: #555 !important;
+  background-color: #CEE3F8; }
 /* }}} */
