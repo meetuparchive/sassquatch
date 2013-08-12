@@ -17,10 +17,12 @@
 	margin-bottom: $spacing;
 	cursor: pointer;
 	*cursor: hand; /* IE, you're a complete idiot */
+	@include experimental('user-select', 'none');
 	&:hover {
 		background-color: $C_line_less;
+		text-decoration: none !important;
 	}
 	&:active {
-		@include selectedNav;	
+		 @include punched_in_box_shadow;
 	}
 }
