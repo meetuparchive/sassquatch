@@ -166,7 +166,6 @@
         & > span {
             &:active, &.selected, &.push {
                 @include punched_in_box_shadow;
-					 color: $C_text_less !important;
             }
         }
     }
