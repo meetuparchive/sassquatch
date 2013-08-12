@@ -27,26 +27,8 @@
 		&.disabled {
 			color: $C_darkgray_lightest;
 			&:hover {
-				color: $C_darkgray_lightest;
 				background-color: white;
 			}
-		}
-		&[rel=prev]:before {
-			// ideally we should put an icon-font icon in here
-			content: "\2190";
-			margin-right: 0.5em;
-		}
-		&[rel=next]:after {
-			content: "\2192";
-			margin-left: 0.5em;
-		}
-		&[rel=first]:before {
-			content: "\00AB";
-			margin-right: 0.5em;
-		}
-		&[rel=last]:after {
-			content: "\00BB";
-			margin-right: 0.5em;
 		}
 	}
 	li, .nav-pageitem {  // should deprecate the class-free li styling and enforce li.nav-pageitem. cleanup
@@ -62,8 +44,8 @@
 			@include round-se($defaultRadius);
 		}
 		&.selected a {
-			@include selectedNav;
-			border-color: $C_selectedShade $C_selectedBg $C_selectedTint;
+			@include punched_in_box_shadow;
+			color: $C_text_less;
 		}
 	}
 }

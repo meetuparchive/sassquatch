@@ -88,7 +88,7 @@
 		@include button_personality;
 		@include button_color(#fff, true);
 		border: none;
-		color: $C_darkgray_lightest;
+		color: $C_text;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
 	}
 
@@ -211,7 +211,7 @@
     li {
 		&.selected > a,
 		&.selected > span {
-			@include selectedNav;
+			@include punched_in_box_shadow;
             border: none;
 		}
 	}

@@ -152,7 +152,9 @@
 	}
 }
 
-@mixin punched_in_box_shadow{
+@mixin punched_in_box_shadow {
+	background-color: $C_line_less;
+	color: $C_darkgray_lightest;
 	@include box-shadow(rgba(0,0,0,.5), 1px, 1px, 3px, -1px, true);
 }
 
@@ -429,16 +431,6 @@
 // CRUSTYBASE MIXINS - DEPRECATED
 // #############################################################################################
 
-
-
-@mixin selectedNav {
-	font-weight: bold;
-	font-weight: 500;
-	letter-spacing: 0.04em;
-	background-color: $C_selectedBg;
-	color: #fff !important;
-	@include gradient($C_selectedShade, $C_selectedTint);
-}
 
 @mixin background-clip($value:padding){
 	-moz-background-clip: $value;
