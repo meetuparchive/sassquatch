@@ -12,9 +12,7 @@
 					{% include navigation/button_groups_example.md %}
 				</div>
 			</div>
-			{% highlight html %}
-				{% include navigation/button_groups_example.md %}
-			{% endhighlight %}
+			{% highlight html %}{% include navigation/button_groups_example.md %}{% endhighlight %}
 		</div>
 	</div>
 </div>
