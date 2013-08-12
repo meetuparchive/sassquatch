@@ -4,28 +4,25 @@
 */
 
 /* {{{ base config */
-
 @import "../config/variables";
 @import "../config/mixins";
-
 /* }}} */
 
 /* {{{ defaults and resets for most block and inline els */
-
 @import "lib/defaults";
 @import "lib/animation";
-
 /* }}} */
 
-/* {{{ modifiers */
-
+/* {{{ components */
 @import "lib/forms";
 @import "lib/tables";
-@import "lib/modifiers";
 @import "lib/lists";
-
 /* }}} */
 
 /* {{{ import other frameworks components (from least specific selectors to most) */
 @import "lib/layout";
 @import "lib/patterns";
+/* }}} */
+
+/* modifiers */
+@import "lib/modifiers";

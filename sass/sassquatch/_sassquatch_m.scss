@@ -24,9 +24,6 @@
 @import "lib/m/_forms_m.scss";
 @import "lib/_tables.scss";
 
-@import "lib/modifiers";
-@import "lib/m/modifiers_m";
-
 @import "lib/lists";
 @import "lib/m/lists_m";
 
@@ -36,3 +33,6 @@
 @import "lib/m/layout_m";
 
 @import "lib/patterns_m";
+
+@import "lib/modifiers";
+@import "lib/m/modifiers_m";
