@@ -60,9 +60,9 @@ After editing, run `rake` in the root directory of the repo and point your brows
 
 There are also specific rake targets for recompiling docs, launching jekyll, and recompiling Sass individually:
 
-	(compile sass) $ rake compile
+	(compile sass and rebuild docs) $ rake compile
 
-	(compile docs) $ rake docs
+	(build jekyll docs only) $ rake docs
 
 	(start jekyll) $ rake jekyll
 
