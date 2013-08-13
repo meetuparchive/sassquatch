@@ -33,6 +33,8 @@
 	table-layout: fixed;
 	border-left: 1px solid $C_line;
 	border-radius: $defaultRadius 0 0 $defaultRadius;
+	width: 100%;
+	margin-bottom: $baseline;
 }
 
 .segmented-control-segment {

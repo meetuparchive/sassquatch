@@ -1,7 +1,15 @@
-<ul class="nav-buttons">
-	<li><a >Date Joined</a></li>
-	<li><a class="selected">Size</a></li>
-	<li><a >Name</a></li>
-	<li><a >Role</a></li>
-</ul>
+<div class='segmented-control'>
+
+	<div class="segmented-control-segment">
+		<input type='radio' name='guestsRadio' value='0' id='guestsRadio0' class='segmented-control-input' checked />
+		<label for='guestsRadio0' id='guestsRadio0label' class='bold segmented-control-button'>Just me</label>
+	</div>
+
+	<div class="segmented-control-segment">
+		<input type='radio' name='guestsRadio' value='1' id='guestsRadio1' class='segmented-control-input' />
+		<label for='guestsRadio1' id='guestsRadio1label' class='bold segmented-control-button'>+1</label>
+	</div>
+
+</div>
+
 

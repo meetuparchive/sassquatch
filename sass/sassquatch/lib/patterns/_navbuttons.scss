@@ -31,8 +31,9 @@
 	li > a,
 	li > span {
 		@include button_personality;
-		padding: ($baseFontSize * .4) $baseFontSize;
+		padding: 0.5em 1.2em 0.4em;
 		display: block;
+		font-size: 14px;
 	}
 
 	label:first-of-type,
