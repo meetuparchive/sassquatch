@@ -88,14 +88,14 @@
 		@include button_personality;
 		@include button_color(#fff, true);
 		border: none;
-		color: $C_text;
+		color: $C_text !important;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
 	}
 
 	input[type=radio]:checked + label, input[attr="checked"] + label,
 	li > a:active, li > a.selected, li > a.push,
 	li > span.selected, li > span.push {
-		color: $C_darkgray!important;
+		 @include punched_in_box_shadow;
 	}
 
 	label:last-of-type,

@@ -81,16 +81,12 @@
 
 /* Checked States: Natural, and with class (via JS, for IE8) */
 .segmented-control-input:checked + .segmented-control-button {
-	@include button_color_active($C_gray_lighter, true);
-	color: $C_darkgray !important;
-	filter: none;
+	@include punched_in_box_shadow;
 	/* Here comes the !important train, due to !important up above. Choo Choo! */
 }
 
 /* Apparently this rule might need to be split out from :checked selector for IE8 */
 .segmented-control-segment.checked .segmented-control-button {
-	@include button_color_active($C_gray_lighter, true);
-	filter: none;
-	color: $C_darkgray !important;
+	@include punched_in_box_shadow;
 }
 

@@ -153,8 +153,9 @@
 }
 
 @mixin punched_in_box_shadow {
-	background-color: $C_line_less;
-	color: $C_darkgray_lightest;
+	background-color: $C_line_less !important;
+	color: $C_darkgray_lightest !important;
+	filter: none;
 	@include box-shadow(rgba(0,0,0,.5), 1px, 1px, 3px, -1px, true);
 }
 
