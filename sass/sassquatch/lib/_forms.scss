@@ -53,7 +53,12 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 	}
 }
 
-.ie8, .ie9, .ie10 {
+.ie8, .ie9 {
+	input {
+		@include round(0);
+	}
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	input {
 		@include round(0);
 	}
