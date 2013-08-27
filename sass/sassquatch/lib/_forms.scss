@@ -59,8 +59,8 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 	}
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	input {
-		@include round(0) !important;
+	body input {
+		@include round(0);
 	}
 }
 
