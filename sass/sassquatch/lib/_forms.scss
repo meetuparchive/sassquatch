@@ -268,7 +268,7 @@ input[type=submit], button, .button, .button-light, a.button {
 
 /* {{{ Feedback/Error states */
 label.required:after {
-	margin-left: 0.75em;
+	margin-left: 0.15em;
 	content: "*";
 	color: $C_red;
 }

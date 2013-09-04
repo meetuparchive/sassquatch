@@ -1,25 +1,20 @@
 <div class="doc-content">
 	<div class="line-gutters">
 		<div class="unit size1of3">
-			<h2>Error states</h2>
-			<p><code>.error</code></p>
+			<h2>Required/Error states</h2>
+			<p><code>input.error</code>,<code>label.required</code></p>
 		</div>
 		<div class="unit lastUnit">
+			<p>
+				Required field labels can be marked as required with the <code>.required</code> class. 
+				Error states are applied with an <code>.error</code> class on the input element.
+			</p>
 			<div class="doc-box">
 				<div class="doc-content">
-					<form class="span-60">
-						<label for="address">Address</label>
-						<input id="address" value="123 Fake St." type="text" />
-
-						<label for="name">Name</label>
-						<input class="error" id="name" value="Keith Hernandez" type="text" />
-						<p class="italic">You are not Keith Hernandez.</p>
-
-						<label for="address">Profession</label>
-						<input id="address" value="Blimp Captain" type="text" />
-					</form>
+					{% include forms/error_states_example.md %}
 				</div>
 			</div>
+			{% highlight html %}{% include forms/error_states_example.md %}{% endhighlight %}		
 		</div>
 	</div>
 </div>
