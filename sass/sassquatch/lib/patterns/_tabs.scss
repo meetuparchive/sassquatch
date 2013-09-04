@@ -17,6 +17,7 @@ $tabSpacing: $spacing/2;
 		margin-bottom: -1px;
 	}
 	a {
+		@include round($defaultRadius);
 		display: block;
 		text-decoration: none;
 		color: $C_text_less;
