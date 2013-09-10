@@ -16,6 +16,7 @@ $(function() {
 		return digits[1] + '#' + rgb.toString(16);
 	};
 
+
 	$meetupSwatches.each(function(i, td) {
 		var rgb = getComputedStyle(td).backgroundColor;
 		$(td).html('<div class="small">' + rgb + '</div><div class="small">' + rgbToHex(rgb) + '</div>');
