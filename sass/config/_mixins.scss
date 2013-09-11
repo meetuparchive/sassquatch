@@ -563,7 +563,7 @@
 	&:before {
 		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 		content: '\00a0';
-		background: url(imgUrl('/img/f-logo.png')) center center no-repeat;
+		background: url('/img/f-logo.png') center center no-repeat;
 		position: absolute;
 		display: block;
 		border-right: 1px solid mix(#ffffff, $base_color, 30%);
