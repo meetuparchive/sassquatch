@@ -14,7 +14,6 @@
  */
 
 
-
 /**
 * PATTERNS 
 * Reusable UI components/widgets
@@ -41,3 +40,8 @@
 
 /* quoty thing */
 @import "patterns/quotify.scss";
+
+/* Touch list */
+@import 'm/_touchList_variables.scss';
+@import 'm/_touchList_extends.scss';
+@import 'm/_touchLists.scss';
