@@ -16,11 +16,8 @@
 .shaded {
 	background-color:$C_gray;
 }
-.shaded-lightest {
-	background-color:$C_gray_lightest;
-}
 .shaded-lighter {
-	background-color:$C_gray_lighter;
+	background-color:$C_gray_lightest;
 }
 .shaded-red {
 	background-color: $C_red;
@@ -94,14 +91,18 @@
 .valign-bottom {
 	vertical-align: bottom;
 }
+/* {{{ TODO: deprecate this */
 .center-able {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+/* }}} */
+/* {{{ TODO: deprecate this */
 .img-align-middle{
 	vertical-align:middle;
 }
+/* }}} */
 .display-none {
 	display: none;
 }

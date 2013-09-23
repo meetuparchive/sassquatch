@@ -1,17 +1,26 @@
-
 <div class="doc-content">
 	<div class="line-gutters">
 		<div class="unit size1of3">
 			<h2>Layout modifiers</h2>
 			<p>Sometimes we need to apply some extra layout/decoration rules to a container element. These classes should allow you do to this without explicitly declaring new CSS rules for a given element.</p>
-            <p>
-                <code>.doc-padding</code>, 
-                <code>.rounded-top</code>, <code>.rounded-bottom</code>, <code>.rounded-left</code>, <code>.rounded-right</code>, <code>.rounded-all</code>, 
-                <code>.span-25</code>, <code>.span-30</code>, <code>.span-50</code>, <code>.span-60</code>, <code>.span-75</code>,
-                <code>.block</code>, <code>.inline</code>, <code>.inline-block</code>, <code>.display-none</code>, <code>.hidden</code>
-                <code>.block-if-js</code>, <code>.inline-if-js</code>, <code>.inline-block-if-js</code>, <code>.hide-if-js</code>
-            </p>
-			
+			<p>
+				 <code>.doc-padding</code>
+			</p>
+			<p>
+				 <code>.rounded-top</code>, <code>.rounded-bottom</code>, <code>.rounded-left</code>, <code>.rounded-right</code>, <code>.rounded-all</code>
+			</p>
+			<p>
+				 <code>.span-25</code>, <code>.span-30</code>, <code>.span-50</code>, <code>.span-60</code>, <code>.span-75</code>
+			</p>
+			<p>
+				 <code>.block</code>, <code>.inline</code>, <code>.inline-block</code>, <code>.display-none</code>, <code>.hidden</code>
+			</p>
+			<p>
+				 <code>.clearfix</code>, <code>.clear-both</code>
+			</p>
+			<p>
+				 <code>.block-if-js</code>, <code>.inline-if-js</code>, <code>.inline-block-if-js</code>, <code>.hide-if-js</code>
+			</p>
 		</div>
 		<div class="unit lastUnit">
 			<h3>Changing the display property</h3>
