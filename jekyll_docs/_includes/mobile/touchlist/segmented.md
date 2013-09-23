@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Segmented Touch List  <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Segmented Touch List</h2>
 
 <div class="doc-box">
 	<ul class="touchList">
