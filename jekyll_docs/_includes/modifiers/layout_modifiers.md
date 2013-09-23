@@ -1,4 +1,3 @@
-
 <div class="doc-content">
 	<div class="line-gutters">
 		<div class="unit size1of3">
