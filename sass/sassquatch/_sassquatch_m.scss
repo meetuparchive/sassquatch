@@ -5,11 +5,11 @@
 */
 
 //TODO make own variables for mobile
-@import "config/variables";
-@import "config/variables_m";
+@import "../config/variables";
+@import "../config/variables_m";
 
-@import "config/mixins";
-@import "config/mixins_m";
+@import "../config/mixins";
+@import "../config/mixins_m";
 
 @import "lib/helper-functions/px-to-em";
 
