@@ -7,9 +7,12 @@
 //TODO make own variables for mobile
 @import "../config/variables";
 @import "../config/variables_m";
+@import '../config/touchList_variables';
 
+/* base mixins/extends */
 @import "../config/mixins";
 @import "../config/mixins_m";
+@import '../config/touchList_extends';
 
 @import "lib/helper-functions/px-to-em";
 
@@ -38,3 +41,5 @@
 
 @import "lib/modifiers";
 @import "lib/m/modifiers_m";
+
+@import "lib/m/media_m";

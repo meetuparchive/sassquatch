@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">fix-flex <span class='candidate'></span></h2>
+<h2 class="section-subtitle">fix-flex</h2>
 <p>
 	This layout pattern is used often in lists when we need to display 
 	different content in columns. <code>.ffbox</code> wraps elements that
