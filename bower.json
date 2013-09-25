@@ -12,8 +12,7 @@
 		"Rakefile",
 		"_site",
 		"docs",
-		"jekyll_docs",
-		"candidates"
+		"jekyll_docs"
 	],
 	"license": "MIT"
 }

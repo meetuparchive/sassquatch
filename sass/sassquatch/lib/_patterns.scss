@@ -5,10 +5,14 @@
 
 /* Content patterns */
 @import "patterns/figureset";
+@import "patterns/fix_flex";
+@import "patterns/pin_layout";
 @import "patterns/cards";
 @import "patterns/tearsheet";
 @import "patterns/slideswitch";
 @import "patterns/nametag-photo";
+@import 'patterns/touchLists';
+@import 'patterns/touchForms';
 
 /*
  *TODO: doc this before using
@@ -22,7 +26,7 @@
 @import "patterns/pagination";
 @import "patterns/appendpager";
 @import "patterns/navbuttons";
-@import "patterns/_segmentedcontrol";
+@import "patterns/segmentedcontrol";
 @import "patterns/toolbar";
 
 /*  Modals/Popups */
