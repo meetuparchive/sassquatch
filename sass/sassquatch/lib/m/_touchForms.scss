@@ -1,0 +1,528 @@
+/**
+ *  @file   _touchForms.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-05-28
+ *
+ *  @description
+ *	  A collection of form resets and styles currently scoped to the
+ *	  touchList list type. In the future, these styles should be used
+ *	  site-wide, and this file should become `_forms_m.scss`, and serve
+ *	  as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
+ */
+
+
+
+/*  ======================================================================= */
+/*  SCOPED RESETS TO FORM ELEMENTS  */
+/*  NOTE: We can get rid of most of these resets once we switch over to using
+ *  this file as a _forms_m.scss instead of the normal Sq _forms.scss 
+ */
+.touchList,
+.touchList--rounded, 
+.touchList--withInlineChildren {
+
+	// Generic Resets
+	h4, 
+	label {
+		font-size: 16px;
+		// This needs to be reset on top of the .touchList, because label
+		// is sized using PX, not ems.
+
+		margin: 0;
+		// NOTE: In addition to <label>, the actual text which serves as a 
+		// label for input elements may also be enclosed in an <h4> el. 
+		// Until we have a baseline reset in place, <h4> should be overridden
+		// as well :(
+	}
+
+	input,
+	textarea,
+	select {
+		@include box-shadow(none);  
+		// The full, non-diet-mobile mixin has to be used to erase the full
+		// SQ statements
+
+		@include transition(none);
+		@include round(0);
+		// Needs to be here to override all full SQ statements.
+
+		@include box-sizing('border');
+
+		margin: 0;
+		padding: 0;
+		border: none;
+		font-size: 16px;
+		line-height: 1;
+	}
+
+	// Text Input Specific Resets
+	textarea {
+		width: 100%;
+		line-height: $LH_standard;
+		resize: none;
+	}
+
+
+	// Select Specific Resets
+	select {
+		background: transparent;
+		line-height: $LH_tall;
+		// NOTE: In the <select> element, line-height doesn't behave like you 
+		// would expect. Instead of increasing the height of the <select> el,
+		// it instead moves all the text INSIDE the <select> element down, so
+		// that it's partially or entirely cut off. 
+		//
+		// This behavior has been observed in IE9-10, Safari, Chrome...
+		//
+		// ... but apparently for iOS, it has to be slightly more than 1, 
+		// otherwise the text gets clipped anyway.
+
+		outline: none;
+		// TODO : bad for accessibility, potentially, but normalization on
+		// Android versions for now. 
+	}
+
+	// Disabled states
+	// Should be consolidated with standard Sassquatch.
+	// NOTE: Also, selectors like `[disabled]` are extremely inefficient, and
+	// should be removed as soon as Sassq doesn't use them.
+	[disabled],
+	[disabled="disabled"],
+	.disabled {
+		background-color: $C_gray94;
+	}
+
+	// Placeholders
+	::-webkit-input-placeholder {
+		@include UIPlaceholder();
+	}
+
+	::-moz-placeholder {
+		@include UIPlaceholder();
+	}
+
+	:-ms-input-placeholder {
+		@include UIPlaceholder();
+		padding-left: $P_textInput;
+		// NOTE: Placeholder pseudo elements in IE10 (Windows Phone 8) do not
+		// inherit padding assigned to their associated <input> or <textarea>
+		// element. Here, we're just assigning the left padding to be equal
+		// to that added other <input>/<textarea>
+	}
+
+
+	
+
+	/*  Browser Specific Overrides  */
+	input,
+	textarea,
+	select {
+		-webkit-appearance: none !important;
+		// Needed for iOS Safari to not auto-format `<input type="date">` to
+		// look like a dropdown menu of inconsistent widths. 
+		//
+		// In older versions of Safari (like 4.3), this needs to be applied
+		// globally to all inputs to remove box shadow.
+	}
+
+
+	// NOTE: seems worthwhile keeping these statements separate, because each 
+	// statement relates to browser-specific bugs that may get cleaned up 
+	// individually.
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="date"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"], 
+	input[type="url"] {
+		background: transparent;
+		//  NOTE: for Android Firefox, the browser will add a dippy background
+		//  shadow that should be overridden above, but isn't. I can't tell 
+		//  whether it's us, from a bad override chain or the default browser
+		//  styles.
+
+		//  TODO: Remove once this file becomes `_forms_m.scss` and we no longer
+		//  have to have as crazy a system of overrides from  `_forms.scss` in
+		//  Sassquatch.
+	}
+
+
+	input[type="email"],
+	input[type="datetime"] {
+		background: transparent;
+		// NOTE: Webkit builds. By default, the browser will attempt to
+		// validate an email input as soon as you start typing it, helpfully
+		// changing the background color of the field for you. This really
+		// rustles my jimmies, and this rule disables it for the email input
+		// which is the most notable offender.
+		// This also goes for `datetime`, apparently.
+	}
+
+	input[type="date"],
+	input[type="time"] {
+		background: transparent;
+		// NOTE: On Android Browser 4.2.2, Date and Time will not display the
+		// correct entry interface. This means that you can type whatever
+		// you want in there, resulting in the same validation problems as 
+		// above.
+	}
+
+	textarea {
+		background: transparent;
+		// NOTE: Needed to get rid of a default inner shadow on Firefox Android.
+	}
+
+	select {
+		-ms-touch-action: none;
+		// NOTE: IE10 when you touch a <select> element, it stays highlighted
+		// with the MS tap highlight color after selecting an <option>, 
+		// kind of like a :hover-induced bug.
+		//
+		// In order for that NOT to happen you have to specify this rule.
+	}
+
+	::-webkit-search-cancel-button {
+		-webkit-appearance: none !important;
+		appearance: none !important;
+		// Webkit builds now employ an (X) button in search inputs, and only
+		// search inputs. This pseudo-element selector will allow us to 
+		// not display them, instead of having them half cut off and weird
+		// looking. 
+	}
+}
+
+/*  ======================================================================= */
+/*  TEXT INPUT STYLES  */
+
+.touchList-label--input {
+	padding-left: $P_touchListItem;
+	white-space: nowrap;
+}
+
+.touchList-item--input input {
+	line-height: $LH_standard;
+	// NOTE: a slightly taller than standard line height is needed to prevent
+	// letter descenders from getting clipped off on Windows Phone 8.
+
+	width: 100%;
+	height: $H_touchTargetDefault; 
+	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
+	// TL;DR Don't touch height or top/bottom padding, please.
+	//
+	// NOTE: These height and padding values are pretty sensitive. Here's why:
+	// On Firefox (all versions) and IE (all versions), specifying a `height`
+	// value on an <input> does jack all. 
+	//
+	// In FF <22, it causes some bugs, where a placeholder will float, pinned to 
+	// the top of the invisible "full height input", while the actual inputted value 
+	// of the element remains centered in height. 
+	//
+	// So for FF and IE, in order to simulate the input taking up the full height
+	// for touch target purposes, padding is added to the top and bottom of 50%
+	// height, less value of the line height.
+	//
+	// In desktop WebKit browsers (Chrome, Safar, Opera 15+), the fixed-value
+	// the `height` value is needed to prevent browser-inserted UI on date, time,
+	// datetime, datetime-local, and number elements from bumping the total height
+	// of the input from $H_touchTargetDefault (~48pt) to a larger value (~52pt),
+	// because the browser-inserted UI components take up more vertical space than
+	// specified by the line-height.
+
+	// NOTE: Caveat for Windows Phone 7.5 and 8 RE: padding -- they allow the 
+	// text value of an <input>, when wrapping, to overlap with space taken 
+	// up by the padding.
+	//
+	// A visual example: 
+	//
+	// | |__________| | ... Starting condition (all)
+	// | |e wrapping| | .... Webkit
+	// |type wrapping | .... IE
+}
+
+
+label.touchList-pseudoplaceholder {
+	// NOTE: Extra `label` element selector here is because all these styles
+	// are scoped to the touchList item.
+	//
+	// Once we get the resets unscoped, this selector can be reduced in 
+	// complexity (remove the `label`.
+
+	@include UIPlaceholder();
+	position: absolute;
+	z-index: 10;
+	margin-left: $P_textInput;
+	margin-right: $P_textInput;
+	margin-top: ($H_touchTargetDefault - $FS_label + 0.18) * -1;
+	// NOTE: (item height (ems) - font size (ems) + optical adjust) */
+
+	display: none;
+	// NOTE: Hidden by default, until JS loads */
+}
+
+.icon-search--searchInput {
+	padding-left: 0.5em;
+	/* NOTE: arbitrary optical value */
+
+	color: $C_gray70; 
+	/* NOTE: Same color as placeholder, see:
+	 * _tl_extends.scss : @mixin UIPlaceholder
+	 */
+}
+
+
+
+/*  ======================================================================= */
+/*  SELECT STYLES  */
+
+.touchList-label--select {
+	padding-left: $P_touchListItem;
+	padding-right: $P_touchListItem;
+	// <select> items don't really respond to internal padding, so we can't
+	// reliably put it on the <select> element directly. Instead, we want
+	// the <select> to fill the space of the row, UNLESS there's an inline 
+	// label in the mix. 
+	//
+	// If that's the case, then we want the label not to be directly abutting
+	// the <select>, so we throw a margin on the label.
+}
+
+.touchList-item--select .ffbox-flex,
+.touchList-item--select .ffbox-fix {
+	height: $H_touchTargetDefault;
+	// NOTE: There is no `min-height` on tables. Use `height` instead
+}
+
+.touchList-item--select-wrapper {
+	position: relative;
+}
+
+.touchList-item--select-mask {
+	position: absolute;
+	height: 100%;
+	background-color: white;
+	top: 0;
+	right: 0;
+	padding: 0 $P_touchListItem;
+}
+
+// NOTE: Also, selectors like `[disabled]` are extremely inefficient, and
+// should be removed as soon as Sassq doesn't use them.
+[disabled] .touchList-item--select-mask,
+[disabled="disabled"] .touchList-item--select-mask,
+.disabled .touchList-item--select-mask {
+	background-color: $C_gray94;
+}
+
+
+.touchList-item--select.error .touchList-item--select-mask {
+	background-color: $C_warnBg;
+}
+
+.touchList-item--select-mask-arrow {
+	@extend %textDisableSelection;
+	display: block;
+	color: $C_gray80;   
+	// NOTE: Same as border of radio/checkbox.
+
+	margin-top: ($H_touchTargetDefault - 1) / 2;
+	// NOTE: (height of row - height of small icon) / 2
+}
+
+/* Bottom line: <select> elements are REAAALLY messed up and difficult
+ * to style.
+ */
+.touchList-item--select select {
+	width: 100%;
+	height:  $H_touchTargetDefault - 0.1em;
+	// NOTE: `height: 100%` does not work on <select> AFAIK. In this case, to 
+	// get it to fill the whole height, we set it to the height of the 
+	// row, minus a little bit, otherwise it will break IE9 like 
+	// a real champion.
+
+	padding: 0 0 0 $P_textInput;
+	// NOTE: Padding only on the left for browsers that insist on showing a drop
+	// down caret (FF, Opera, IE)
+
+	font-size: $FS_label;
+}
+
+
+/*  ======================================================================= */
+/*  TEXTAREA STYLES  */
+
+.touchList-label--textarea {
+	line-height: $LH_tall;
+	padding: $P_touchListItem $P_touchListItem 0;
+	// NOTE: this expanded line height value bumps the overall height of this
+	// element to 32px (aka 2em), which arguably makes it fit better into our
+	// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
+}
+
+.ffbox--textareaWrapper {
+	position: relative;
+	// NOTE: Needed for positioning the pseudoplaceholder correctly in the event
+	// that the <li:textarea> eschews a label.
+}
+
+.touchList-item--textarea textarea {
+	line-height: $LH_standard;
+
+	padding: $P_textInput $P_textInput 0;
+	margin-bottom: ($LH_standard / 2) * 1em;
+	// NOTE: setting the margin on the bottom instead of padding causes the
+	// textarea to ratchet evenly on the bottom when typing more than the
+	// present 4 lines in height.
+	// However, using a margin on bottom instead of padding would mean that
+	// the coloration of a disabled textarea does not extend all the way to
+	// the "visual bottom" of its cell--which looks weird. That's why I'm 
+	// not using margin here, even though it would be better for interaction.
+
+	height: (5 * $LH_standard) * 1em;
+	// NOTE: Because the textarea is set up with border-box layout, we need
+	// to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
+}
+
+.touchList-item--textarea-counter {
+	padding: 0 $P_textInput $P_textInput;
+	text-align: right;
+}
+
+label.touchList-pseudoplaceholder--textarea {
+	// NOTE: Extra `label` element selector here is because all these styles
+	// are scoped to the touchList item.
+	//
+	// Once we get the resets unscoped, this selector can be reduced in 
+	// complexity (remove the `label`.)
+
+	top: ($LH_standard - $FS_label + 0.05) * 2;
+	// NOTE: (item height (ems) + font size (ems) + optical adjust) */
+
+	margin-top: 0; // Override
+}
+
+
+
+/*  ======================================================================= */
+/*  RADIO/CHECKBOX STYLES  */
+
+.touchList-item--input-radio input,
+.touchList-item--input-checkbox input { 
+	display: none;
+	margin: 0 $P_textInput;
+	// NOTE: radio boxes and checkboxes need to use margin, not padding for
+	// layout--since they don't really have insides or anything.
+}
+
+// NOTE: Why go through all the trouble creating and styling pseudo-radio
+//  and -checkboxes? It turns out, on iOS, radio buttons and checkboxes are
+//  damn hard to see and on Android, they're damn tiny.
+
+.pseudoradio, 
+.pseudocheckbox {
+	@extend %textDisableSelection;
+	@include box-sizing('border');
+	height: $H_pseudoradio;
+	width: $W_pseudoradio;
+	border: 2px solid $C_gray80;
+	margin: 0 $P_textInput;
+	text-align: center;
+}
+
+.pseudoradio-dot,
+.pseudocheckbox-check {
+	visibility: hidden;
+}
+
+.pseudoradio {
+	border-radius: $H_pseudoradio / 2;
+}
+
+.pseudoradio-dot {
+	display: inline-block;
+	background-color: $C_gray20;
+	border-radius: $H_pseudoradio * (3/8);
+	height: ($H_pseudoradio * (3/8));
+	width: ($W_pseudoradio * (3/8));
+	// NOTE: 3/8 is arbitrary, optical sizing.
+
+	vertical-align: 0.19em; 
+	// NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
+	// good on IE10, iOS, and Android 4+
+}
+
+.pseudocheckbox {
+	border-radius: $defaultRadius;
+}
+
+.pseudocheckbox-check {
+	padding: 0; // yucky override
+	vertical-align: 0.04em; 
+	//  NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
+	//  good on IE10, iOS, and Android 4+
+}
+
+input:checked + .pseudoradio .pseudoradio-dot,
+input:checked + .pseudocheckbox .pseudocheckbox-check {
+	visibility: visible;
+	// NOTE: the magic of sibling selectors means that we don't have to add
+	// classes to make an active state appear in the UI in modern browser.
+	// These selectors are kind of gnarly, but since it's state based and 
+	// helps us avoid JS, they seem kind of ok.
+}
+
+// NOTE: And for IE8, which doesn't support :checked pseudoclasses, we need to
+// provide a fallback class that can be applied with JS.
+input.checked + .pseudoradio .pseudoradio-dot,
+input.checked + .pseudocheckbox .pseudocheckbox-check {
+	visibility: visible;
+}
+
+
+/*  ======================================================================= */
+/*  ERROR AND HELPER TEXT STYLES  */
+
+// Currently, the way that this is built is that it's used in tandem with the
+// `.error` class detailed above. 
+// The sum of this validation message and the height of the input above it 
+// will always be $H_touchTargetDefault.
+// Adding or removing the `.error` class to the outermost <li> (the wrap
+// of a <li:input>, basically) will cause the validation message to be
+// displayed or not.
+
+// On a related note, I think switching from `.error` to `.has-error` for
+// designating that an input has an error could be a solid move. The `.error`
+// class could then be used for structures like a block error message 
+// summary, etc.
+
+/* Error States */
+.error {
+	background-color: $C_warnBg;
+	border-bottom: 1px solid $C_warnText;
+}
+
+
+/* Helper Text */
+label.touchList-helperText {
+	// NOTE: extra label in selector is from the global font size overrides
+	// scoped to labels and h4s. If that's cleaned up, this selector can be
+	// simplified.
+	
+	@extend %textTruncate;
+
+	font-size: $FS_caption;
+	font-weight: bolder; // Semibold
+	color: $C_gray80;
+	line-height: 1;
+
+	margin-top: -0.5em; // Arbitrary, optical.
+	padding: 0 ($P_textInput/$FS_caption * 1em) 0.5em;
+}
+
+.error label.touchList-helperText {
+	color: $C_warnText;
+}
