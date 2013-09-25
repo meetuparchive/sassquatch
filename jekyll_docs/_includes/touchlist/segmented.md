@@ -73,5 +73,5 @@
 </div>
 
 <div class="j-code">
-	{% highlight html %}{% include mobile/touchlist/segmented_example.md %}{% endhighlight %}
+	{% highlight html %}{% include touchlist/segmented_example.md %}{% endhighlight %}
 </div>
