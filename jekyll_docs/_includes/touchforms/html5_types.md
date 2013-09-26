@@ -2,7 +2,7 @@
 
 <div class="doc-box">
 	<ul class="touchList">
-		{% include mobile/forms/html5_types_example.md %}
+		{% include touchforms/html5_types_example.md %}
 		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
 			<div class="ffbox ffbox--touchList-input">
 				<label class="ffbox-fix" for="">
@@ -260,6 +260,6 @@
 </div>
 
 <div class="doc-content j-code">
-	{% highlight jsp %}{% include mobile/forms/html5_types_example_jsp.md %}{% endhighlight %}
-    {% highlight html %}{% include mobile/forms/html5_types_example.md %}{% endhighlight %}
+	{% highlight jsp %}{% include touchforms/html5_types_example_jsp.md %}{% endhighlight %}
+    {% highlight html %}{% include touchforms/html5_types_example.md %}{% endhighlight %}
 </div>
