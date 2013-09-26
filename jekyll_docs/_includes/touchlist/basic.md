@@ -4,6 +4,6 @@
 {% include touchlist/basic_example.md %}
 
 <div class="j-code">
-	{% highlight jsp %}{% include touchlist/basic_example_jsp.md %}{% endhighlight %}
+	<!--{% highlight jsp %}{% include touchlist/basic_example_jsp.md %}{% endhighlight %}-->
 	{% highlight html %}{% include touchlist/basic_example.md %}{% endhighlight %}
 </div>

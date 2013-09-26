@@ -77,7 +77,7 @@
 </div>
 
 <div class="j-code">
-    {% highlight jsp %}{% include touchlist/attendee_item_example_jsp.md %}{% endhighlight %}
+    <!--{% highlight jsp %}{% include touchlist/attendee_item_example_jsp.md %}{% endhighlight %}-->
     {% highlight html %}{% include touchlist/attendee_item_example.md %}
     </ul>
 </div> 
