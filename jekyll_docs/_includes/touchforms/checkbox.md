@@ -3,11 +3,11 @@
 
 <div class="doc-box">
 	<ul class="touchList">
-		{% include mobile/forms/checkbox_example.md %}
+		{% include touchforms/checkbox_example.md %}
 	</ul>
 </div>
 
 <div class="doc-content j-code">
-	{% highlight jsp %}{% include mobile/forms/checkbox_example_jsp.md %}{% endhighlight %}
-    {% highlight html %}{% include mobile/forms/checkbox_example.md %}{% endhighlight %}
+	{% highlight jsp %}{% include touchforms/checkbox_example_jsp.md %}{% endhighlight %}
+    {% highlight html %}{% include touchforms/checkbox_example.md %}{% endhighlight %}
 </div>
