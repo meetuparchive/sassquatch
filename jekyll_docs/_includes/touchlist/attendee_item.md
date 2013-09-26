@@ -6,7 +6,7 @@
 
 <div class="doc-box">
     <ul class="touchList">
-        {% include mobile/touchlist/attendee_item_example.md %}
+        {% include touchlist/attendee_item_example.md %}
         <li class="touchList-item touchList-item--attendee">
             <div class="ffbox">
                 <div class="ffbox-flex">

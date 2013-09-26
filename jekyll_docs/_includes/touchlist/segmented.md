@@ -2,7 +2,7 @@
 
 <div class="doc-box">
 	<ul class="touchList">
-		{% include mobile/touchlist/segmented_example.md %}
+		{% include touchlist/segmented_example.md %}
 		<li class="touchList-segment">
 			<h5 class="touchList-segment-header">Windows Phones</h5>
 			<ul class="touchList-segment-content">
