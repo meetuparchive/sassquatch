@@ -6,7 +6,7 @@
 
 <div class="doc-box">
     <ul class="touchList">
-        {% include mobile/touchlist/attendee_item_example.md %}
+        {% include touchlist/attendee_item_example.md %}
         <li class="touchList-item touchList-item--attendee">
             <div class="ffbox">
                 <div class="ffbox-flex">
@@ -77,8 +77,8 @@
 </div>
 
 <div class="j-code">
-    {% highlight jsp %}{% include mobile/touchlist/attendee_item_example_jsp.md %}{% endhighlight %}
-    {% highlight html %}{% include mobile/touchlist/attendee_item_example.md %}
+    <!--{% highlight jsp %}{% include touchlist/attendee_item_example_jsp.md %}{% endhighlight %}-->
+    {% highlight html %}{% include touchlist/attendee_item_example.md %}
     </ul>
 </div> 
 {% endhighlight %}
