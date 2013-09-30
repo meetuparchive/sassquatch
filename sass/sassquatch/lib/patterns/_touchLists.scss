@@ -221,10 +221,6 @@
 	padding-left: $P_figuresetGap;
 }
 
-.touchList-attendee-fun-fact-description .topic-box { 
-	white-space: nowrap;
-}
-
 .touchList-attendee-actions {
 	white-space: nowrap;
 	padding: 0 $P_touchListItem;
@@ -245,6 +241,37 @@
 }
 
 
+
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST EVENT ITEM */
+
+.touchList-event-info {
+	padding-top: 1.667em;
+	padding-bottom: 1.250em;
+}
+
+.touchList-event-groupname {
+	color: $C_gray70;
+}
+
+.touchList-event-datetime,
+.touchList-event-name {
+	color: $C_darkgray_lighter;
+}
+
+.touchList-event-reldate {
+	background-color: $C_red;
+	padding:0.333em 0.417em;
+	color:#FFF;
+	margin-right:0.167em;
+    font-size:0.813em;
+}
+
+.touchList-event-dates {
+	padding-bottom:0.833em;
+}
 
 /*  ======================================================================= */
 /*  TOUCHLIST ITEM GEMS  */
@@ -311,6 +338,13 @@
 	color: $C_gray70;
 	text-align: center;
 	text-shadow: 0 1px 0 white;
+}
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST ITEM NORMAL FONT-WEIGHT LABEL  */
+.touchList-item--normalWeightLabel .touchList-label {
+	font-weight: normal;
 }
 
 
