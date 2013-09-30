@@ -1,4 +1,4 @@
-/** 
+/**
  *	  @file   _new_extends.scss
  *
  *	  @description
@@ -13,7 +13,7 @@
 	white-space: nowrap;
 }
 
-%textTruncate {	 
+%textTruncate {
 	@include box-sizing('border');
 	white-space: nowrap;
 	overflow-x: hidden;
@@ -30,7 +30,7 @@
 	-ms-user-select: none;
 	user-select: none;
 	// NOTE: This will disable the ability to select/copy/paste text on iOS,
-	// some versions of Android, IE10. It should ONLY be applied to UI 
+	// some versions of Android, IE10. It should ONLY be applied to UI
 	// elements, like label and buttons that have no business being high-
 	// lighted, and can be highlighted accidentally.
 }
@@ -41,13 +41,13 @@
 /*  UI SPECIFIC EXTENDS AND MIXINS  */
 
 @mixin UIPlaceholder($color:$C_gray70) {
-	// Why isn't this an @extend instead? Because when you cluster together 
+	// Why isn't this an @extend instead? Because when you cluster together
 	// uninterpretable CSS rules (like vendor-specific placeholder attributes)
 	// it will invalidate all of the ones it doesn't understand, including
-	// our pseudo-placeholder styles. 
+	// our pseudo-placeholder styles.
 
-	// Use this instead of the `_defaults_m.scss` pholder() mixin. That 
-	// should be removed. 
+	// Use this instead of the `_defaults_m.scss` pholder() mixin. That
+	// should be removed.
 
 	color: $color !important;
 	// NOTE: apparently this !important is necessary to override browser
@@ -59,8 +59,9 @@
 	// NOTE: iOS needs expanded line height property to avoid clipping letter
 	// descenders.
 
-	padding-left: $W_mobileCursor;
-	// NOTE: Android < 2.3 (all browsers) will NOT respond to padding styles 
+	// padding-left: $W_mobileCursor;  // good idea, but it misaligns placeholders with text in nearby inputs
+	// It might be worth adding this padding ONLY for &:focus {}
+	// NOTE: Android < 2.3 (all browsers) will NOT respond to padding styles
 	// on placeholder and neither does Android Browser (Samsung) on 4.0+.
 
 	opacity: 1.0;
