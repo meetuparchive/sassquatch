@@ -246,17 +246,6 @@
 	// |type wrapping | .... IE
 }
 
-/* Generic touchable rule to be applied to any element with `.touchable` */
-.touchList-item .touchable {
-	line-height: $LH_standard;
-	// NOTE: a slightly taller than standard line height is needed to prevent
-	// letter descenders from getting clipped off on Windows Phone 8.
-
-	width: 100%;
-	/*height: $H_touchTargetDefault;*/
-	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
-}
-
 
 label.touchList-pseudoplaceholder {
 	// NOTE: Extra `label` element selector here is because all these styles
