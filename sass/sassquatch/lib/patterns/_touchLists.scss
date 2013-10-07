@@ -17,7 +17,7 @@
 	//	`.touchList-item`
 	//	`.touchList-load-more-link`
 	//	`.touchList-jump-link`
-	border-bottom: 1px solid $C_line_less; 
+	border-bottom: 1px solid $C_line_less;
 }
 
 %dividerLeft {
@@ -52,11 +52,11 @@
 .touchList--rounded {
 	@extend %layout_touchList;
 
-	.touchList-item:first-child { 
+	.touchList-item:first-child {
 		// TODO Add rounding to top if in a rounded container
 	}
 
-	.touchList-item:last-child { 
+	.touchList-item:last-child {
 		// TODO Add rounding to bottom if in a rounded container
 	}
 }
@@ -99,7 +99,7 @@
 
 .icon-disclosure-right--touchList-item {
 	color: $C_gray60;
-	vertical-align: -0.2em; 
+	vertical-align: -0.2em;
 	// Arbitary value, optical alignment
 }
 
@@ -107,7 +107,7 @@
 .ffbox--touchList-item {
 	height: 3em;
 	padding: 0 $P_touchListItem;
-	// NOTE: For whatever mysterious reason, Safari 6 (iOS 6 and OS X) does 
+	// NOTE: For whatever mysterious reason, Safari 6 (iOS 6 and OS X) does
 	// not know how to display heights correctly with padding on an element
 	// set to `display: table-cell` with `box-sizing: border-box`.
 	//
@@ -115,19 +115,19 @@
 	// of the table cell as $height + $pad_top + $pad_bottom, instead of the
 	// correct $height - ($pad_top + $pad_bottom).
 	//
-	// The result is that on Safari 6, and only Safari 6, the cells are the 
+	// The result is that on Safari 6, and only Safari 6, the cells are the
 	// sum of top and bottom padding taller than they should be.
 	//
 	// The other mystery is that this works perfectly fine with percentage
-	// widths and heights--it's only the fixed unit values that cause the 
+	// widths and heights--it's only the fixed unit values that cause the
 	// rendering bug in iOS 6.
 	//
-	// My solution is to basically only use top and bottom paddings on 
+	// My solution is to basically only use top and bottom paddings on
 	// child units you don't want to collide with the edges--assuming there's
-	// a case in which they would, like the attendee item--and leave top and 
+	// a case in which they would, like the attendee item--and leave top and
 	// bottom padding off of this outer element.
 	//
-	// Having padding on all four sides would 
+	// Having padding on all four sides would
 	// be a ton less work.
 }
 
@@ -142,7 +142,7 @@
 /*  ======================================================================= */
 /*  TOUCHLIST ITEMS  */
 
-/*  These are all <li> elements, but only these are getting borders, rather 
+/*  These are all <li> elements, but only these are getting borders, rather
  *  than blanket coating all <li> elements, nested, first child, or otherwise
  *  with this style. It's a more targeted, conservative approach.
  */
@@ -191,7 +191,7 @@
 }
 
 .touchList-guestcount {
-	// NOTE: This is nested inside a touchList-label, so these font 
+	// NOTE: This is nested inside a touchList-label, so these font
 	// sizes are relative the the base font sizes for a standard touchList
 	// label
 
@@ -221,10 +221,6 @@
 	padding-left: $P_figuresetGap;
 }
 
-.touchList-attendee-fun-fact-description .topic-box { 
-	white-space: nowrap;
-}
-
 .touchList-attendee-actions {
 	white-space: nowrap;
 	padding: 0 $P_touchListItem;
@@ -246,6 +242,37 @@
 
 
 
+
+
+/*  ======================================================================= */
+/*  TOUCHLIST EVENT ITEM */
+
+.touchList-event-info {
+	padding-top: 1.667em;
+	padding-bottom: 1.250em;
+}
+
+.touchList-event-groupname {
+	color: $C_gray70;
+}
+
+.touchList-event-datetime,
+.touchList-event-name {
+	color: $C_darkgray_lighter;
+}
+
+.touchList-event-reldate {
+	background-color: $C_red;
+	padding:0.333em 0.417em;
+	color:#FFF;
+	margin-right:0.167em;
+    font-size:0.813em;
+}
+
+.touchList-event-dates {
+	padding-bottom:0.833em;
+}
+
 /*  ======================================================================= */
 /*  TOUCHLIST ITEM GEMS  */
 
@@ -262,6 +289,7 @@
 	// Red Label.
 	//
 	i {
+		color: $C_darkgray_lighter;
 		vertical-align: middle;
 	}
 
@@ -277,7 +305,7 @@
 	}
 }
 
-/*  This is the Michal Czernow vertical align hack, since just doing 
+/*  This is the Michal Czernow vertical align hack, since just doing
  *  another `display:table-cell` inside a `display:table-cell` doesn't
  *  make sense semantically, meaning it's more likely to break based
  *  on how a browser renders tables.
@@ -290,7 +318,7 @@
 	height: 100%;
 	vertical-align: middle;
 	// Inline-block elements are usually ~4-5px wide in the browser
-	// calculations, somewhat arbitrarily. We have to pull this 
+	// calculations, somewhat arbitrarily. We have to pull this
 	// pseudo-element out of the way so that the image or icon we're
 	// socketing in the div.gem doesn't get pushed out.
 }
@@ -299,13 +327,13 @@
 /*  ======================================================================= */
 /*  TOUCHLIST EMPTY ITEMS  */
 
-.touchList-item--empty { 
-    @extend %dividerBottom;
+.touchList-item--empty {
+	@extend %dividerBottom;
 	padding: ($P_touchListItem * 2) $P_touchListItem;
 	background-color: $C_gray96;
 }
 
-.touchList-item--empty-label { 
+.touchList-item--empty-label {
 	font-size: $FS_label;
 	line-height: $LH_standard;
 	color: $C_gray70;
@@ -315,19 +343,34 @@
 
 
 /*  ======================================================================= */
+/*  TOUCHLIST ITEM NORMAL FONT-WEIGHT LABEL  */
+.touchList-item--normalWeightLabel .touchList-label {
+	font-weight: normal;
+}
+
+
+/*  ======================================================================= */
 /*  TOUCHLIST DISCLOSURE ITEMS  */
 
-.touchList-item--disclosure {} /* EMPTY */
+.touchList-item--disclosure {
+	.ffbox--touchList-item {
+		padding-left: 0;
+		min-height: 3em;
+	}
+	.touchList-item--disclosure-label {
+		padding-left: 0.5em;
+	}
+}
 
 .touchList-text--disclosure {
 	color: $C_gray60;
 	white-space: nowrap;
-	// NOTE: Needed to prevent the value from folding over each other when 
+	// NOTE: Needed to prevent the value from folding over each other when
 	// packed tightly in a ffbox-fix cell.
 
 	line-height: 1;
-	// NOTE: Needed to get the smaller font size centered inline with the 
-	// label to the left side of the disclosure item 
+	// NOTE: Needed to get the smaller font size centered inline with the
+	// label to the left side of the disclosure item
 }
 
 
@@ -349,7 +392,7 @@
 /*  TOUCHLIST SEGMENT COMPONENTS */
 
 
-.touchList-segment { 
+.touchList-segment {
 	@extend %dividerBottom;
 }
 
@@ -364,13 +407,13 @@
 	text-transform: uppercase;
 
 	/* RESET */
-	// My brain hurts too much right now to do this math. But the total 
+	// My brain hurts too much right now to do this math. But the total
 	// height needs to be $H_touchTargetMinimum, which this is.
 	padding: 0.8em $P_touchListItem;
 	/* END */
 
 	/* EXPERIMENTAL FEATURES */
-	/* position: -webkit-sticky; 
+	/* position: -webkit-sticky;
 	 * Partially broken implementation in iOS 6.1.4 means we shouldn't turn
 	 * on just yet.
 	 */

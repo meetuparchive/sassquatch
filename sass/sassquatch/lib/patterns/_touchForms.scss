@@ -15,22 +15,23 @@
 /*  ======================================================================= */
 /*  SCOPED RESETS TO FORM ELEMENTS  */
 /*  NOTE: We can get rid of most of these resets once we switch over to using
- *  this file as a _forms_m.scss instead of the normal Sq _forms.scss 
+ *  this file as a _forms_m.scss instead of the normal Sq _forms.scss
  */
 .touchList,
-.touchList--rounded, 
+.touchList--rounded,
 .touchList--withInlineChildren {
 
 	// Generic Resets
-	h4, 
+	h4,
 	label {
 		font-size: 16px;
+		font-weight: normal;
 		// This needs to be reset on top of the .touchList, because label
 		// is sized using PX, not ems.
 
 		margin: 0;
-		// NOTE: In addition to <label>, the actual text which serves as a 
-		// label for input elements may also be enclosed in an <h4> el. 
+		// NOTE: In addition to <label>, the actual text which serves as a
+		// label for input elements may also be enclosed in an <h4> el.
 		// Until we have a baseline reset in place, <h4> should be overridden
 		// as well :(
 	}
@@ -38,7 +39,7 @@
 	input,
 	textarea,
 	select {
-		@include box-shadow(none);  
+		@include box-shadow(none);
 		// The full, non-diet-mobile mixin has to be used to erase the full
 		// SQ statements
 
@@ -67,19 +68,19 @@
 	select {
 		background: transparent;
 		line-height: $LH_tall;
-		// NOTE: In the <select> element, line-height doesn't behave like you 
+		// NOTE: In the <select> element, line-height doesn't behave like you
 		// would expect. Instead of increasing the height of the <select> el,
 		// it instead moves all the text INSIDE the <select> element down, so
-		// that it's partially or entirely cut off. 
+		// that it's partially or entirely cut off.
 		//
 		// This behavior has been observed in IE9-10, Safari, Chrome...
 		//
-		// ... but apparently for iOS, it has to be slightly more than 1, 
+		// ... but apparently for iOS, it has to be slightly more than 1,
 		// otherwise the text gets clipped anyway.
 
 		outline: none;
 		// TODO : bad for accessibility, potentially, but normalization on
-		// Android versions for now. 
+		// Android versions for now.
 	}
 
 	// Disabled states
@@ -111,7 +112,7 @@
 	}
 
 
-	
+
 
 	/*  Browser Specific Overrides  */
 	input,
@@ -119,15 +120,15 @@
 	select {
 		-webkit-appearance: none !important;
 		// Needed for iOS Safari to not auto-format `<input type="date">` to
-		// look like a dropdown menu of inconsistent widths. 
+		// look like a dropdown menu of inconsistent widths.
 		//
 		// In older versions of Safari (like 4.3), this needs to be applied
 		// globally to all inputs to remove box shadow.
 	}
 
 
-	// NOTE: seems worthwhile keeping these statements separate, because each 
-	// statement relates to browser-specific bugs that may get cleaned up 
+	// NOTE: seems worthwhile keeping these statements separate, because each
+	// statement relates to browser-specific bugs that may get cleaned up
 	// individually.
 	input[type="text"],
 	input[type="email"],
@@ -138,11 +139,11 @@
 	input[type="datetime-local"],
 	input[type="number"],
 	input[type="search"],
-	input[type="tel"], 
+	input[type="tel"],
 	input[type="url"] {
 		background: transparent;
 		//  NOTE: for Android Firefox, the browser will add a dippy background
-		//  shadow that should be overridden above, but isn't. I can't tell 
+		//  shadow that should be overridden above, but isn't. I can't tell
 		//  whether it's us, from a bad override chain or the default browser
 		//  styles.
 
@@ -168,7 +169,7 @@
 		background: transparent;
 		// NOTE: On Android Browser 4.2.2, Date and Time will not display the
 		// correct entry interface. This means that you can type whatever
-		// you want in there, resulting in the same validation problems as 
+		// you want in there, resulting in the same validation problems as
 		// above.
 	}
 
@@ -180,7 +181,7 @@
 	select {
 		-ms-touch-action: none;
 		// NOTE: IE10 when you touch a <select> element, it stays highlighted
-		// with the MS tap highlight color after selecting an <option>, 
+		// with the MS tap highlight color after selecting an <option>,
 		// kind of like a :hover-induced bug.
 		//
 		// In order for that NOT to happen you have to specify this rule.
@@ -190,9 +191,9 @@
 		-webkit-appearance: none !important;
 		appearance: none !important;
 		// Webkit builds now employ an (X) button in search inputs, and only
-		// search inputs. This pseudo-element selector will allow us to 
+		// search inputs. This pseudo-element selector will allow us to
 		// not display them, instead of having them half cut off and weird
-		// looking. 
+		// looking.
 	}
 }
 
@@ -202,6 +203,7 @@
 .touchList-label--input {
 	padding-left: $P_touchListItem;
 	white-space: nowrap;
+	font-weight: normal;
 }
 
 .touchList-item--input input {
@@ -210,17 +212,17 @@
 	// letter descenders from getting clipped off on Windows Phone 8.
 
 	width: 100%;
-	height: $H_touchTargetDefault; 
+	height: $H_touchTargetDefault;
 	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
 	// TL;DR Don't touch height or top/bottom padding, please.
 	//
 	// NOTE: These height and padding values are pretty sensitive. Here's why:
 	// On Firefox (all versions) and IE (all versions), specifying a `height`
-	// value on an <input> does jack all. 
+	// value on an <input> does jack all.
 	//
-	// In FF <22, it causes some bugs, where a placeholder will float, pinned to 
-	// the top of the invisible "full height input", while the actual inputted value 
-	// of the element remains centered in height. 
+	// In FF <22, it causes some bugs, where a placeholder will float, pinned to
+	// the top of the invisible "full height input", while the actual inputted value
+	// of the element remains centered in height.
 	//
 	// So for FF and IE, in order to simulate the input taking up the full height
 	// for touch target purposes, padding is added to the top and bottom of 50%
@@ -233,11 +235,11 @@
 	// because the browser-inserted UI components take up more vertical space than
 	// specified by the line-height.
 
-	// NOTE: Caveat for Windows Phone 7.5 and 8 RE: padding -- they allow the 
-	// text value of an <input>, when wrapping, to overlap with space taken 
+	// NOTE: Caveat for Windows Phone 7.5 and 8 RE: padding -- they allow the
+	// text value of an <input>, when wrapping, to overlap with space taken
 	// up by the padding.
 	//
-	// A visual example: 
+	// A visual example:
 	//
 	// | |__________| | ... Starting condition (all)
 	// | |e wrapping| | .... Webkit
@@ -249,7 +251,7 @@ label.touchList-pseudoplaceholder {
 	// NOTE: Extra `label` element selector here is because all these styles
 	// are scoped to the touchList item.
 	//
-	// Once we get the resets unscoped, this selector can be reduced in 
+	// Once we get the resets unscoped, this selector can be reduced in
 	// complexity (remove the `label`.
 
 	@include UIPlaceholder();
@@ -268,7 +270,7 @@ label.touchList-pseudoplaceholder {
 	padding-left: 0.5em;
 	/* NOTE: arbitrary optical value */
 
-	color: $C_gray70; 
+	color: $C_gray70;
 	/* NOTE: Same color as placeholder, see:
 	 * _tl_extends.scss : @mixin UIPlaceholder
 	 */
@@ -284,8 +286,8 @@ label.touchList-pseudoplaceholder {
 	padding-right: $P_touchListItem;
 	// <select> items don't really respond to internal padding, so we can't
 	// reliably put it on the <select> element directly. Instead, we want
-	// the <select> to fill the space of the row, UNLESS there's an inline 
-	// label in the mix. 
+	// the <select> to fill the space of the row, UNLESS there's an inline
+	// label in the mix.
 	//
 	// If that's the case, then we want the label not to be directly abutting
 	// the <select>, so we throw a margin on the label.
@@ -295,6 +297,9 @@ label.touchList-pseudoplaceholder {
 .touchList-item--select .ffbox-fix {
 	height: $H_touchTargetDefault;
 	// NOTE: There is no `min-height` on tables. Use `height` instead
+	&.touchList-helperTextWrap {
+		height: auto;
+	}
 }
 
 .touchList-item--select-wrapper {
@@ -326,7 +331,7 @@ label.touchList-pseudoplaceholder {
 .touchList-item--select-mask-arrow {
 	@extend %textDisableSelection;
 	display: block;
-	color: $C_gray80;   
+	color: $C_gray80;
 	// NOTE: Same as border of radio/checkbox.
 
 	margin-top: ($H_touchTargetDefault - 1) / 2;
@@ -337,18 +342,16 @@ label.touchList-pseudoplaceholder {
  * to style.
  */
 .touchList-item--select select {
-	width: 100%;
-	height:  $H_touchTargetDefault - 0.1em;
-	// NOTE: `height: 100%` does not work on <select> AFAIK. In this case, to 
-	// get it to fill the whole height, we set it to the height of the 
-	// row, minus a little bit, otherwise it will break IE9 like 
-	// a real champion.
-
-	padding: 0 0 0 $P_textInput;
-	// NOTE: Padding only on the left for browsers that insist on showing a drop
-	// down caret (FF, Opera, IE)
-
 	font-size: $FS_label;
+	line-height: $LH_standard;
+	// NOTE: a slightly taller than standard line height is needed to prevent
+	// letter descenders from getting clipped off on Windows Phone 8.
+	width: 100%;
+	height: $H_touchTargetDefault;
+	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
+	// NOTE: this code is the same as for <input> elements, and potentially
+	// can be factored together once this is more stable.
+
 }
 
 
@@ -358,6 +361,7 @@ label.touchList-pseudoplaceholder {
 .touchList-label--textarea {
 	line-height: $LH_tall;
 	padding: $P_touchListItem $P_touchListItem 0;
+	font-weight: normal;
 	// NOTE: this expanded line height value bumps the overall height of this
 	// element to 32px (aka 2em), which arguably makes it fit better into our
 	// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
@@ -369,7 +373,7 @@ label.touchList-pseudoplaceholder {
 	// that the <li:textarea> eschews a label.
 }
 
-.touchList-item--textarea textarea {
+%touchListItemTextarea {
 	line-height: $LH_standard;
 
 	padding: $P_textInput $P_textInput 0;
@@ -379,12 +383,26 @@ label.touchList-pseudoplaceholder {
 	// present 4 lines in height.
 	// However, using a margin on bottom instead of padding would mean that
 	// the coloration of a disabled textarea does not extend all the way to
-	// the "visual bottom" of its cell--which looks weird. That's why I'm 
+	// the "visual bottom" of its cell--which looks weird. That's why I'm
 	// not using margin here, even though it would be better for interaction.
 
 	height: (5 * $LH_standard) * 1em;
 	// NOTE: Because the textarea is set up with border-box layout, we need
 	// to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
+}
+
+.touchList-item--textarea textarea{
+	@extend %touchListItemTextarea;
+}
+
+.touchList-item--twoLineTextarea textarea{
+	@extend %touchListItemTextarea;
+	height: (3 * $LH_standard) * 1em;
+}
+
+.touchList-item--input-counter {
+	padding: 0 $P_textInput 0;
+	text-align: right;
 }
 
 .touchList-item--textarea-counter {
@@ -396,7 +414,7 @@ label.touchList-pseudoplaceholder--textarea {
 	// NOTE: Extra `label` element selector here is because all these styles
 	// are scoped to the touchList item.
 	//
-	// Once we get the resets unscoped, this selector can be reduced in 
+	// Once we get the resets unscoped, this selector can be reduced in
 	// complexity (remove the `label`.)
 
 	top: ($LH_standard - $FS_label + 0.05) * 2;
@@ -411,7 +429,7 @@ label.touchList-pseudoplaceholder--textarea {
 /*  RADIO/CHECKBOX STYLES  */
 
 .touchList-item--input-radio input,
-.touchList-item--input-checkbox input { 
+.touchList-item--input-checkbox input {
 	display: none;
 	margin: 0 $P_textInput;
 	// NOTE: radio boxes and checkboxes need to use margin, not padding for
@@ -421,65 +439,43 @@ label.touchList-pseudoplaceholder--textarea {
 // NOTE: Why go through all the trouble creating and styling pseudo-radio
 //  and -checkboxes? It turns out, on iOS, radio buttons and checkboxes are
 //  damn hard to see and on Android, they're damn tiny.
-
-.pseudoradio, 
-.pseudocheckbox {
+.pseudocheckbox,
+.pseudoradio {
 	@extend %textDisableSelection;
-	@include box-sizing('border');
-	height: $H_pseudoradio;
-	width: $W_pseudoradio;
-	border: 2px solid $C_gray80;
 	margin: 0 $P_textInput;
 	text-align: center;
 }
 
-.pseudoradio-dot,
-.pseudocheckbox-check {
-	visibility: hidden;
+// NOTE: On how these pseudoradio/checkboxes work:
+// The magic of sibling selectors means that we don't have to add
+// classes to make an active state appear in the UI in modern browser.
+//
+// BUT for IE8, which doesn't support the `:checked` pseudoclass reliably,
+// we need to provide a fallback `input.checked` class state that can be
+// applied with JS.
+//
+// All the code below does is essentially toggle the contents of our
+// `.icon-radio` and `.icon-checkbox` so that they behave like
+// `.icon-radio-selected` and `.icon-checkbox-selected`, so we don't have
+// to rely on JS to update the classes and change the contents.
+input:checked + .icon-radio,
+input.checked + .icon-radio {
+	&:before {
+		content: "\E0D1";
+	}
+	&:after {
+		content: "Selected Radio Button";
+	}
 }
 
-.pseudoradio {
-	border-radius: $H_pseudoradio / 2;
-}
-
-.pseudoradio-dot {
-	display: inline-block;
-	background-color: $C_gray20;
-	border-radius: $H_pseudoradio * (3/8);
-	height: ($H_pseudoradio * (3/8));
-	width: ($W_pseudoradio * (3/8));
-	// NOTE: 3/8 is arbitrary, optical sizing.
-
-	vertical-align: 0.19em; 
-	// NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
-	// good on IE10, iOS, and Android 4+
-}
-
-.pseudocheckbox {
-	border-radius: $defaultRadius;
-}
-
-.pseudocheckbox-check {
-	padding: 0; // yucky override
-	vertical-align: 0.04em; 
-	//  NOTE: vertical alignment here from manual, arbitrary adjustment. Looks
-	//  good on IE10, iOS, and Android 4+
-}
-
-input:checked + .pseudoradio .pseudoradio-dot,
-input:checked + .pseudocheckbox .pseudocheckbox-check {
-	visibility: visible;
-	// NOTE: the magic of sibling selectors means that we don't have to add
-	// classes to make an active state appear in the UI in modern browser.
-	// These selectors are kind of gnarly, but since it's state based and 
-	// helps us avoid JS, they seem kind of ok.
-}
-
-// NOTE: And for IE8, which doesn't support :checked pseudoclasses, we need to
-// provide a fallback class that can be applied with JS.
-input.checked + .pseudoradio .pseudoradio-dot,
-input.checked + .pseudocheckbox .pseudocheckbox-check {
-	visibility: visible;
+input:checked + .icon-checkbox,
+input.checked + .icon-checkbox {
+	&:before {
+		content: "\E0D3";
+	}
+	&:after {
+		content: "Selected Checkbox";
+	}
 }
 
 
@@ -487,8 +483,8 @@ input.checked + .pseudocheckbox .pseudocheckbox-check {
 /*  ERROR AND HELPER TEXT STYLES  */
 
 // Currently, the way that this is built is that it's used in tandem with the
-// `.error` class detailed above. 
-// The sum of this validation message and the height of the input above it 
+// `.error` class detailed above.
+// The sum of this validation message and the height of the input above it
 // will always be $H_touchTargetDefault.
 // Adding or removing the `.error` class to the outermost <li> (the wrap
 // of a <li:input>, basically) will cause the validation message to be
@@ -496,7 +492,7 @@ input.checked + .pseudocheckbox .pseudocheckbox-check {
 
 // On a related note, I think switching from `.error` to `.has-error` for
 // designating that an input has an error could be a solid move. The `.error`
-// class could then be used for structures like a block error message 
+// class could then be used for structures like a block error message
 // summary, etc.
 
 /* Error States */
@@ -511,12 +507,9 @@ label.touchList-helperText {
 	// NOTE: extra label in selector is from the global font size overrides
 	// scoped to labels and h4s. If that's cleaned up, this selector can be
 	// simplified.
-	
-	@extend %textTruncate;
 
 	font-size: $FS_caption;
-	font-weight: bolder; // Semibold
-	color: $C_gray80;
+	color: $C_gray70;
 	line-height: 1;
 
 	margin-top: -0.5em; // Arbitrary, optical.
