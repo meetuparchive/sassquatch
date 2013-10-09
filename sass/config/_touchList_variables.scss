@@ -1,4 +1,4 @@
-/** 
+/**
  *	  @file   _new_parameters
  *
  *	  @description
@@ -21,7 +21,7 @@ $P_textInput:		0.625em;	/* 10/16 */
 /* $W_, $H_ : Height and Width */
 $W_mobileCursor:		4px;	/* For iOS/Samsung: Hard coded because fixed width */
 $W_pseudoradio:		1.375em;	/* 22/16 */
-$W_gem:					2em;	/* 32/16 */
+$W_gem:				1.5em;		/* 24/16 - icon gems are 16px with 0.5em padding */
 $W_inlineBlockConstant:	4px;
 
 $H_pseudoradio:		1.375em;	/* 22/16 */
@@ -44,7 +44,7 @@ $FS_caption:		0.750em;	/* 12/16 */
 /* $LH_ : Line heights */
 $LH_condensed:		1.125;	/* 16/18 */
 $LH_standard:		1.250;	/* 16/20 */
-$LH_expanded:		1.375;	/* 16/22 */ 
+$LH_expanded:		1.375;	/* 16/22 */
 $LH_tall:			1.500;	/* 16/24 */
 
 /*  $C_ : Colors  */
