@@ -281,7 +281,7 @@
 	width: $W_gem;
 	height: $H_gem;
 	text-align: center;
-	padding-left: 0.5em;
+	padding-right: 0.5em;
 	// NOTE: arbitary optical value; $P_touchListItem looked
 	// too wide
 
@@ -317,7 +317,8 @@
 	display: inline-block;
 	height: 100%;
 	vertical-align: middle;
-	// Inline-block elements are usually ~4-5px wide in the browser
+	margin-left: -6px;
+	// Inline-block elements are usually ~4-6px wide in the browser
 	// calculations, somewhat arbitrarily. We have to pull this
 	// pseudo-element out of the way so that the image or icon we're
 	// socketing in the div.gem doesn't get pushed out.
