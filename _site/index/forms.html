@@ -4,13 +4,22 @@
 		<p>As a rule, buttons are for actions, not navigation. This style applies to <div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>, <span class="nt">&lt;button&gt;</span> 
 </code></pre></div>, and anything with the class <code>.button</code>.</p> 
 		<p>The default is a simple gray button. There is also red <code>.primary</code> class for "do this one thing" actions.</p>		
-        <p>For side-by-side inputs and buttons, you'll probably want something a little smaller than the default button. For this, you can use the <code>.small</code> class.</p>		
+		<p>For side-by-side inputs and buttons, you'll probably want something a little smaller than the default button. For this, you can use the <code>.small</code> class.</p>		
 	</div>
 	<div class="unit lastUnit">
         <h3>Default buttons</h3>
 		<div class="doc-box">
 			<div class="doc-content">
-				<input type="submit" class="primary" value="Primary" /> <input type="submit" value="Default" />
+				<h4>Submit inputs</h4>
+				<input type="submit" class="primary" value="Primary" /> 
+				<input type="submit" value="Default" />
+				<input type="submit" class="selected" value="Selected" />
+			</div>
+			<div class="doc-content">
+				<h4>Anchors with button classes</h4>
+				<a href="#" class="button primary">Primary</a>
+				<a href="#" class="button">Default</a>
+				<a href="#" class="button selected">Selected</a>
 			</div>
 		</div>
         <h3>Small inline button next to an input (<code>.small.inline</code>)</h3> 
@@ -221,7 +230,7 @@
 <div class="doc-content">
 	<div class="line-gutters">
 		<div class="unit size1of3">
-			<h2>Disabled elements</h2>
+			<h2>Disabled & selected elements</h2>
             <p><code>.disabled</code>, <code>&lt;input ... disabled /&gt;</code>, <code>&lt;input ... disabled="disabled" /&gt;</code></p>
 		</div>
 		<div class="unit lastUnit">
