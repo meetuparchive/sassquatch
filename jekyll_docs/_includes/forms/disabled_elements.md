@@ -1,7 +1,7 @@
 <div class="doc-content">
 	<div class="line-gutters">
 		<div class="unit size1of3">
-			<h2>Disabled elements</h2>
+			<h2>Disabled & selected elements</h2>
             <p><code>.disabled</code>, <code>&lt;input ... disabled /&gt;</code>, <code>&lt;input ... disabled="disabled" /&gt;</code></p>
 		</div>
 		<div class="unit lastUnit">
