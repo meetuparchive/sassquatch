@@ -9,7 +9,11 @@
 	"ignore": [
 		"*.*",
 		".*",
+		"setup.sh",
+		"Gemfile",
+		"Gemfile.lock",
 		"Rakefile",
+		"requirements.txt",
 		"_site",
 		"docs",
 		"jekyll_docs"
