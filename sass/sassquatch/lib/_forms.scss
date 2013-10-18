@@ -235,7 +235,7 @@ input[type=submit], button, .button, .button-light, a.button {
     &.primary,
     &.primary:hover,
     &.primary:active {
-        color: #fff;
+        color: #fff !important;
     }
 
     &.small {
