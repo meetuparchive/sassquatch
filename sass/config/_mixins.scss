@@ -165,6 +165,10 @@
 	color: $C_darkgray_lightest !important;
 	filter: none;
 	@include box-shadow(rgba(0,0,0,.5), 1px, 1px, 3px, -1px, true);
+
+	&:link, &:hover, &:vistied, &:active {
+		color: $C_darkgray_lightest !important;
+	}
 }
 
 // BUTTON COLOR
