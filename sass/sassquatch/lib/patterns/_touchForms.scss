@@ -25,7 +25,6 @@
 	h4,
 	label {
 		font-size: 16px;
-		font-weight: normal;
 		// This needs to be reset on top of the .touchList, because label
 		// is sized using PX, not ems.
 
@@ -297,9 +296,6 @@ label.touchList-pseudoplaceholder {
 .touchList-item--select .ffbox-fix {
 	height: $H_touchTargetDefault;
 	// NOTE: There is no `min-height` on tables. Use `height` instead
-	&.touchList-helperTextWrap {
-		height: auto;
-	}
 }
 
 .touchList-item--select-wrapper {
@@ -361,7 +357,6 @@ label.touchList-pseudoplaceholder {
 .touchList-label--textarea {
 	line-height: $LH_tall;
 	padding: $P_touchListItem $P_touchListItem 0;
-	font-weight: normal;
 	// NOTE: this expanded line height value bumps the overall height of this
 	// element to 32px (aka 2em), which arguably makes it fit better into our
 	// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
@@ -507,6 +502,8 @@ label.touchList-helperText {
 	// NOTE: extra label in selector is from the global font size overrides
 	// scoped to labels and h4s. If that's cleaned up, this selector can be
 	// simplified.
+
+	@extend %textTruncate;
 
 	font-size: $FS_caption;
 	color: $C_gray70;
