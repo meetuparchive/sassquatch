@@ -8,7 +8,7 @@ HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\
 
 # compile sass & copy files into build/
 task :compile do
-	# desktop 
+	# desktop
 	puts
 	puts "#{HR}"
 	puts "Compiling SassQuatch for desktop"
@@ -78,7 +78,7 @@ task :push_docs do
 		sh "git commit -a -m \"update live docs\""
 		sh "git push"
 		sh "git checkout master"
-		
+
 		puts
 		puts "#{HR}"
 		puts "Succesfully updated docs in gh-pages\n"
