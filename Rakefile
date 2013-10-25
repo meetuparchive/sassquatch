@@ -11,16 +11,16 @@ task :compile do
 	# desktop 
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for desktop" 
+	puts "Compiling SassQuatch for desktop"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/_sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
 
 	# mobile
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for mobile" 
+	puts "Compiling SassQuatch for mobile"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/_sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
 
 	# compile docs
 	puts
@@ -33,7 +33,7 @@ task :compile do
 end
 
 
-# start jekyll 
+# start jekyll
 task :jekyll do
 	puts
 	puts "#{HR}"
@@ -55,11 +55,11 @@ task :default do
 end
 
 
-# LAUNCH - syncs master with the gh-pages branch; 
+# LAUNCH - syncs master with the gh-pages branch;
 # rebuilds LIVE github documentation page
 task :push_docs do
 	puts
-	puts "Rebuilding SassQuatch github pages" 
+	puts "Rebuilding SassQuatch github pages"
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
 	Rake::Task['compile'].execute
