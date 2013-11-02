@@ -1,0 +1,6 @@
+// PX to EM
+// -------------------------------------------------------------
+
+@function px-to-em($px-size, $base-size: $base-font-size){
+	@return #{ $px-size / $base-size }em;
+}
