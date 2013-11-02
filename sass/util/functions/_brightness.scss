@@ -20,16 +20,16 @@
 // -------------------------------------------------------------
 $brightness_threshold: 140;
 
-@function isDark( $color ) {
-	@if getPerceivedBrightness($color) < $brightness_threshold {
+@function isDark( $color, $threshold: $brightness_threshold ) {
+	@if getPerceivedBrightness($color) < $threshold {
 		@return false;
 	} @else {
 		@return true;
 	}
 }
 
-@function isLight( $color ) {
-	@if getPerceivedBrightness($color) < $brightness_threshold {
+@function isLight( $color, $threshold: $brightness_threshold ) {
+	@if getPerceivedBrightness($color) < $threshold {
 		@return false;
 	} @else {
 		@return true;
@@ -61,11 +61,10 @@ $contrast_color_black: #222;
 // returns a contrasting shade or tint of a given color depending
 // on if it's light or dark
 // -------------------------------------------------------------
-
-@function getContrastingOffset( $color ) {
+@function getContrastingOffset( $color, $offset: 80% ) {
 	@if isDark($color) {
-		@return lighten($color, 80%);
+		@return lighten($color, $offset);
 	} @else {
-		@return darken($color, 80%);
+		@return darken($color, $offset);
 	}
 }
