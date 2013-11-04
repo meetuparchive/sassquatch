@@ -54,7 +54,7 @@
 	// defaults, or contextually change color, like the error state does.
 
 	font-style: normal;
-	font-size: $FS_label;
+	font-size: $FS_base;
 	line-height: $LH_standard;
 	// NOTE: iOS needs expanded line height property to avoid clipping letter
 	// descenders.
