@@ -258,7 +258,7 @@ label.touchList-pseudoplaceholder {
 	z-index: 10;
 	margin-left: $P_textInput;
 	margin-right: $P_textInput;
-	margin-top: ($H_touchTargetDefault - $FS_label + 0.18) * -1;
+	margin-top: ($H_touchTargetDefault - $FS_base + 0.18) * -1;
 	// NOTE: (item height (ems) - font size (ems) + optical adjust) */
 
 	display: none;
@@ -338,7 +338,7 @@ label.touchList-pseudoplaceholder {
  * to style.
  */
 .touchList-item--select select {
-	font-size: $FS_label;
+	font-size: $FS_base;
 	line-height: $LH_standard;
 	// NOTE: a slightly taller than standard line height is needed to prevent
 	// letter descenders from getting clipped off on Windows Phone 8.
@@ -412,7 +412,7 @@ label.touchList-pseudoplaceholder--textarea {
 	// Once we get the resets unscoped, this selector can be reduced in
 	// complexity (remove the `label`.)
 
-	top: ($LH_standard - $FS_label + 0.05) * 2;
+	top: ($LH_standard - $FS_base + 0.05) * 2;
 	// NOTE: (item height (ems) + font size (ems) + optical adjust) */
 
 	margin-top: 0; // Override

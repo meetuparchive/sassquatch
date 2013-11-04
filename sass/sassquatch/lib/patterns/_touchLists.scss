@@ -79,7 +79,7 @@
 
 .touchList-label {
 	padding: 0; // RESET
-	font-size: $FS_label;
+	font-size: $FS_base;
 	line-height: $LH_standard;
 }
 
@@ -195,7 +195,7 @@
 	// sizes are relative the the base font sizes for a standard touchList
 	// label
 
-	font-size: ($FS_text / $FS_label) * 1em;
+	font-size: ($FS_text / $FS_base) * 1em;
 	// NOTE: dividing any two parameters with the same units strips the units.
 	// We need to multiply by an em to make sure this number is in ems.
 
@@ -333,7 +333,7 @@
 }
 
 .touchList-item--empty-label { 
-	font-size: $FS_label;
+	font-size: $FS_base;
 	line-height: $LH_standard;
 	color: $C_gray70;
 	text-align: center;
