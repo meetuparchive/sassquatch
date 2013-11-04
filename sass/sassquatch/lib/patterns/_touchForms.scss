@@ -103,7 +103,7 @@
 
 	:-ms-input-placeholder {
 		@include UIPlaceholder();
-		padding-left: $P_textInput;
+		padding-left: $P_secondary;
 		// NOTE: Placeholder pseudo elements in IE10 (Windows Phone 8) do not
 		// inherit padding assigned to their associated <input> or <textarea>
 		// element. Here, we're just assigning the left padding to be equal
@@ -212,7 +212,7 @@
 
 	width: 100%;
 	height: $H_touchTargetDefault;
-	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
+	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_secondary;
 	// TL;DR Don't touch height or top/bottom padding, please.
 	//
 	// NOTE: These height and padding values are pretty sensitive. Here's why:
@@ -256,8 +256,8 @@ label.touchList-pseudoplaceholder {
 	@include UIPlaceholder();
 	position: absolute;
 	z-index: 10;
-	margin-left: $P_textInput;
-	margin-right: $P_textInput;
+	margin-left: $P_secondary;
+	margin-right: $P_secondary;
 	margin-top: ($H_touchTargetDefault - $FS_base + 0.18) * -1;
 	// NOTE: (item height (ems) - font size (ems) + optical adjust) */
 
@@ -344,7 +344,7 @@ label.touchList-pseudoplaceholder {
 	// letter descenders from getting clipped off on Windows Phone 8.
 	width: 100%;
 	height: $H_touchTargetDefault;
-	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
+	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_secondary;
 	// NOTE: this code is the same as for <input> elements, and potentially
 	// can be factored together once this is more stable.
 
@@ -371,7 +371,7 @@ label.touchList-pseudoplaceholder {
 %touchListItemTextarea {
 	line-height: $LH_standard;
 
-	padding: $P_textInput $P_textInput 0;
+	padding: $P_secondary $P_secondary 0;
 	margin-bottom: ($LH_standard / 2) * 1em;
 	// NOTE: setting the margin on the bottom instead of padding causes the
 	// textarea to ratchet evenly on the bottom when typing more than the
@@ -396,12 +396,12 @@ label.touchList-pseudoplaceholder {
 }
 
 .touchList-item--input-counter {
-	padding: 0 $P_textInput 0;
+	padding: 0 $P_secondary 0;
 	text-align: right;
 }
 
 .touchList-item--textarea-counter {
-	padding: 0 $P_textInput $P_textInput;
+	padding: 0 $P_secondary $P_secondary;
 	text-align: right;
 }
 
@@ -426,7 +426,7 @@ label.touchList-pseudoplaceholder--textarea {
 .touchList-item--input-radio input,
 .touchList-item--input-checkbox input {
 	display: none;
-	margin: 0 $P_textInput;
+	margin: 0 $P_secondary;
 	// NOTE: radio boxes and checkboxes need to use margin, not padding for
 	// layout--since they don't really have insides or anything.
 }
@@ -437,7 +437,7 @@ label.touchList-pseudoplaceholder--textarea {
 .pseudocheckbox,
 .pseudoradio {
 	@extend %textDisableSelection;
-	margin: 0 $P_textInput;
+	margin: 0 $P_secondary;
 	text-align: center;
 }
 
@@ -478,7 +478,7 @@ label.touchList-helperText {
 	line-height: 1;
 
 	margin-top: -0.5em; // Arbitrary, optical.
-	padding: 0 ($P_textInput/$FS_small * 1em) 0.5em;
+	padding: 0 ($P_secondary/$FS_small * 1em) 0.5em;
 }
 
 .error label.touchList-helperText {
