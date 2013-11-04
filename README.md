@@ -16,7 +16,7 @@ SassQuatch will be installed in `./components/sassquatch` unless you've customiz
 
 ## Usage
 
-### Using SassQuatch with CSS 
+### Using SassQuatch with CSS
 
 This package contains a minified compiled CSS file for both mobile and desktop SassQuatch.
 
@@ -55,7 +55,7 @@ http://meetup.github.io/sassquatch/
 SassQuatch development currently requires Python, Ruby and the ruby gems Rake, Sass, and Jekyll.
 
 #### Editing sass source and documentation
-To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs. 
+To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs.
 After editing, run `rake` in the root directory of the repo and point your browser at `localhost:4000`.
 
 There are also specific rake targets for recompiling docs, launching jekyll, and recompiling Sass individually:
