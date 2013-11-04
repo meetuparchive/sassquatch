@@ -86,7 +86,7 @@
 .touchList-text {
 	margin: 0;
 	padding: 0;
-	font-size: $FS_text;
+	font-size: $FS_small;
 	line-height: $LH_standard;
 }
 
@@ -195,7 +195,7 @@
 	// sizes are relative the the base font sizes for a standard touchList
 	// label
 
-	font-size: ($FS_text / $FS_base) * 1em;
+	font-size: ($FS_small / $FS_base) * 1em;
 	// NOTE: dividing any two parameters with the same units strips the units.
 	// We need to multiply by an em to make sure this number is in ems.
 
