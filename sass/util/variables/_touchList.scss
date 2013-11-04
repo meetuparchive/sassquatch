@@ -1,9 +1,10 @@
 /**
- *	  @file   _new_parameters
+ * @file   _touchList_variables.scss
+ * @author John Cockrell <john@meetup.com>
+ * @since  2013-06-27
  *
- *	  @description
- *
- *	  Temporary holding place for new parameters for mobile layout.
+ * @description
+ *  New variables for touchList layouts on mobile.
  */
 
 
@@ -15,9 +16,16 @@
 
 
 /* $P_ : Padding */
-$P_touchListItem:	0.625em;	/* 10/16 */
-$P_figuresetGap:	0.625em;	/* 10/16 */
-$P_textInput:		0.625em;	/* 10/16 */
+$P_primary:        1em;         /* 16/16 - In the new dimension schema, this
+                                 * is primarily used for internal padding on
+                                 * cards and boxes.
+                                 */
+$P_secondary:       0.75em;     /* 12/16 - In the new dimension schema, this
+                                 * is value and its multiples (2x, 3x) are
+                                 * primarily used for external margins around
+                                 * cards, and separating content from the
+                                 * mobile footer.
+                                 */
 
 
 /* $W_, $H_ : Height and Width */
@@ -41,10 +49,9 @@ $FS_small:          0.8125em;   /* 13/16 */
 
 
 /* $LH_ : Line heights */
-$LH_condensed:		1.125;	/* 16/18 */
-$LH_standard:		1.250;	/* 16/20 */
-$LH_expanded:		1.375;	/* 16/22 */
-$LH_tall:			1.500;	/* 16/24 */
+$LH_condensed:      1.125;  /* 16/18.0 */
+$LH_standard:       1.3;    /* 16/20.8 */
+$LH_tall:           1.5;    /* 16/24.0 */
 
 /*  $C_ : Colors  */
 $C_gray00: black;		/* #000							*/
