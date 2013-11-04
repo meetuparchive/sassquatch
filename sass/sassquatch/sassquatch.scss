@@ -5,12 +5,12 @@
 
 /* base vars */
 @import "../config/variables";
-@import '../config/touchList_variables';
+/*@import '../config/touchList_variables';*/
 
 /* base mixins/extends */
 @import "../config/mixins";
 @import "../config/mixins_m";
-@import '../config/touchList_extends';
+/*@import '../config/touchList_extends';*/
 
 @import "lib/helper-functions/px-to-em";
 

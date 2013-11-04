@@ -6,13 +6,13 @@
 /* Content patterns */
 @import "patterns/figureset";
 @import "patterns/fix_flex";
-@import "patterns/pin_layout";
 @import "patterns/cards";
 @import "patterns/tearsheet";
 @import "patterns/slideswitch";
 @import "patterns/nametag-photo";
-@import 'patterns/touchLists';
-@import 'patterns/touchForms';
+/*@import "patterns/pin_layout";*/
+/*@import 'patterns/touchLists';*/
+/*@import 'patterns/touchForms';*/
 
 /*
  *TODO: doc this before using
@@ -30,6 +30,7 @@
 @import "patterns/toolbar";
 
 /*  Modals/Popups */
+/* TODO: move to chapstick - doesn't belong here */
 @import "patterns/bootstrap-meetup-tooltip";
 @import "patterns/bootstrap-meetup-popover";
 
