@@ -93,7 +93,7 @@
 .touchList-caption {
 	margin: 0;  // RESET
 	padding: 0; // RESET
-	font-size: $FS_caption;
+	font-size: $FS_small;
 	line-height: $LH_standard;
 }
 
@@ -392,7 +392,7 @@
 	@extend %dividerBottom;
 
 	color: $C_darkgray_lighter;
-	font-size: $FS_caption;
+	font-size: $FS_small;
 	font-weight: bold;
 	line-height: 1;
 	text-transform: uppercase;

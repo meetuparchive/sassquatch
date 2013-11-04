@@ -473,12 +473,12 @@ label.touchList-helperText {
 
 	@extend %textTruncate;
 
-	font-size: $FS_caption;
+	font-size: $FS_small;
 	color: $C_gray70;
 	line-height: 1;
 
 	margin-top: -0.5em; // Arbitrary, optical.
-	padding: 0 ($P_textInput/$FS_caption * 1em) 0.5em;
+	padding: 0 ($P_textInput/$FS_small * 1em) 0.5em;
 }
 
 .error label.touchList-helperText {
