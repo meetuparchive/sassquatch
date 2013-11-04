@@ -31,6 +31,7 @@
 	li > a,
 	li > span {
 		@include button_personality;
+		font-family: $headingFontStack;
 		padding: 0.5em 1.2em 0.4em;
 		display: block;
 		font-size: 14px;
