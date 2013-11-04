@@ -258,7 +258,7 @@ label.touchList-pseudoplaceholder {
 	z-index: 10;
 	margin-left: $P_textInput;
 	margin-right: $P_textInput;
-	margin-top: ($H_touchTargetDefault - $FS_label + 0.18) * -1;
+	margin-top: ($H_touchTargetDefault - $FS_base + 0.18) * -1;
 	// NOTE: (item height (ems) - font size (ems) + optical adjust) */
 
 	display: none;
@@ -338,7 +338,7 @@ label.touchList-pseudoplaceholder {
  * to style.
  */
 .touchList-item--select select {
-	font-size: $FS_label;
+	font-size: $FS_base;
 	line-height: $LH_standard;
 	// NOTE: a slightly taller than standard line height is needed to prevent
 	// letter descenders from getting clipped off on Windows Phone 8.
@@ -412,7 +412,7 @@ label.touchList-pseudoplaceholder--textarea {
 	// Once we get the resets unscoped, this selector can be reduced in
 	// complexity (remove the `label`.)
 
-	top: ($LH_standard - $FS_label + 0.05) * 2;
+	top: ($LH_standard - $FS_base + 0.05) * 2;
 	// NOTE: (item height (ems) + font size (ems) + optical adjust) */
 
 	margin-top: 0; // Override
@@ -439,38 +439,6 @@ label.touchList-pseudoplaceholder--textarea {
 	@extend %textDisableSelection;
 	margin: 0 $P_textInput;
 	text-align: center;
-}
-
-// NOTE: On how these pseudoradio/checkboxes work:
-// The magic of sibling selectors means that we don't have to add
-// classes to make an active state appear in the UI in modern browser.
-//
-// BUT for IE8, which doesn't support the `:checked` pseudoclass reliably,
-// we need to provide a fallback `input.checked` class state that can be
-// applied with JS.
-//
-// All the code below does is essentially toggle the contents of our
-// `.icon-radio` and `.icon-checkbox` so that they behave like
-// `.icon-radio-selected` and `.icon-checkbox-selected`, so we don't have
-// to rely on JS to update the classes and change the contents.
-input:checked + .icon-radio,
-input.checked + .icon-radio {
-	&:before {
-		content: "\E0D1";
-	}
-	&:after {
-		content: "Selected Radio Button";
-	}
-}
-
-input:checked + .icon-checkbox,
-input.checked + .icon-checkbox {
-	&:before {
-		content: "\E0D3";
-	}
-	&:after {
-		content: "Selected Checkbox";
-	}
 }
 
 
@@ -505,12 +473,12 @@ label.touchList-helperText {
 
 	@extend %textTruncate;
 
-	font-size: $FS_caption;
+	font-size: $FS_small;
 	color: $C_gray70;
 	line-height: 1;
 
 	margin-top: -0.5em; // Arbitrary, optical.
-	padding: 0 ($P_textInput/$FS_caption * 1em) 0.5em;
+	padding: 0 ($P_textInput/$FS_small * 1em) 0.5em;
 }
 
 .error label.touchList-helperText {
