@@ -200,7 +200,7 @@
 /*  TEXT INPUT STYLES  */
 
 .touchList-label--input {
-	padding-left: $P_touchListItem;
+	padding-left: $P_secondary;
 	white-space: nowrap;
 	font-weight: normal;
 }
@@ -281,8 +281,8 @@ label.touchList-pseudoplaceholder {
 /*  SELECT STYLES  */
 
 .touchList-label--select {
-	padding-left: $P_touchListItem;
-	padding-right: $P_touchListItem;
+	padding-left: $P_secondary;
+	padding-right: $P_secondary;
 	// <select> items don't really respond to internal padding, so we can't
 	// reliably put it on the <select> element directly. Instead, we want
 	// the <select> to fill the space of the row, UNLESS there's an inline
@@ -308,7 +308,7 @@ label.touchList-pseudoplaceholder {
 	background-color: white;
 	top: 0;
 	right: 0;
-	padding: 0 $P_touchListItem;
+	padding: 0 $P_secondary;
 }
 
 // NOTE: Also, selectors like `[disabled]` are extremely inefficient, and
@@ -356,7 +356,7 @@ label.touchList-pseudoplaceholder {
 
 .touchList-label--textarea {
 	line-height: $LH_tall;
-	padding: $P_touchListItem $P_touchListItem 0;
+	padding: $P_secondary $P_secondary 0;
 	// NOTE: this expanded line height value bumps the overall height of this
 	// element to 32px (aka 2em), which arguably makes it fit better into our
 	// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
