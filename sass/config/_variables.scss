@@ -32,53 +32,39 @@ $uiControlFontStack: $headingFontStack;
 
 /* }}} */
 
-/* {{{ Colors */
+/* {{{ Colors (legacy - try to use the bower swatches component) */
 
 /* {{{ Hex definitions ( define new ones sparingly ) */
 
 // gray - typically used for interface shading
-$C_gray_lightest: #f4f4f4;
-$C_gray_lighter: #eeeeee;
-$C_gray: #dddddd;
+$C_gray_lightest: $C_backgroundNav;
+$C_gray_lighter: $C_secondaryGray;
+$C_gray: $C_lineGray;
 
 // midgray - it's right in the middle
-$C_midgray: #aaa;
+$C_midgray: $C_tertiaryGray;
 
 // darkgray - typically used for text
-$C_darkgray_lightest: #888888;
-$C_darkgray_lighter: #555555;
-$C_darkgray: #333333;
+$C_darkgray_lightest: $C_tertiaryGray;
+$C_darkgray_lighter: $C_secondaryGray;
+$C_darkgray: $C_primaryGray;
 
 // red - interface red, not the red *in* the logo
-$C_red: #E0393E;
+$C_red: $C_red;
 $C_red_darker: #CC1C32;
 
-$C_darkblue: #2A9BC7;	// darkblue - links and linked things
+$C_darkblue: $C_blue;	// darkblue - links and linked things
 $C_lightblue: #a5c8e7; 	// brightblue - highlight borders, light blue bg
 
 
 // green - success and yes
 $C_green: #62AC75;
 
-// blue - secondary accent color
-$C_blue: #86c6ee;
-
 // pink - error shading for now
 $C_pink: #FBE1E3;
 
 // yellow - highlighting. You love it.
 $C_yellow: #FDF77B;
-
-// third party colors
-$C_facebook: #3B5998;
-$C_twitter: #33CCFF;
-$C_linkedin: #4875B4;
-$C_tumblr: #2B4964;
-$C_flickr: #FE0883;
-$C_foursquare: #0cbadf;
-$C_googleplus: #C63D2D;
-$C_instagram: #4E433C;
-$C_reddit: #CEE3F8;
 
 /* }}} */
 
