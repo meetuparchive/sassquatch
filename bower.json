@@ -1,22 +1,19 @@
 {
 	"name": "sassquatch",
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"description": "CSS foundation and framework for Meetup",
 	"main": [
 		"./sass",
 		"./css"
 	],
 	"ignore": [
-		"*.*",
-		".*",
-		"setup.sh",
 		"Gemfile",
-		"Gemfile.lock",
 		"Rakefile",
-		"requirements.txt",
-		"_site",
-		"docs",
-		"jekyll_docs"
+		"**/*.sh",
+		"**/*.txt",
+		"**/*.lock",
+		"jekyll_docs",
+		"_site"
 	],
 	"license": "MIT"
 }
