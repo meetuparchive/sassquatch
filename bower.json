@@ -16,7 +16,7 @@
 		"_site"
 	],
 	"dependencies": {
-		"meetup-swatches": "0.0.4"
+		"meetup-swatches": "0.0.5"
 	},
 	"license": "MIT"
 }
