@@ -72,8 +72,8 @@ $C_yellow: #FDF77B;
 /* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
 // interface (bg)
-$C_line: $C_gray;
-$C_line_less: $C_gray_lighter;
+$C_line: $C_lineGray;
+$C_line_less: $C_gray_lightest;
 $C_shade: $C_gray_lightest;
 $C_accent: $C_red;
 
