@@ -3,6 +3,9 @@
 * Sass vars
 */
 
+/* Import color vars from meetup-swatches */
+@import "../../bower_components/meetup-swatches/sass/colors";
+
 /* {{{ Type */
 $baseline: 16px;        // not actually used as line-height, we should rename
 $baseFontSize: 12px;
