@@ -41,11 +41,14 @@ $H_gem:					2em;	/* 32/16 */
 
 
 /* $FS_ : Font Size */
-$FS_base:           1.0625em;   /* 17/16 */
-$FS_small:          0.8125em;   /* 13/16 */
+$FS_hero:           2.25em;     /* 36/16 - for use in large banners */
+$FS_base:           1.0625em;   /* 17/16 - replaces $FS_label as a std size */
+$FS_small:          0.8125em;   /* 13/16 - replaces $FS_text as std text size */
 /*  Equivalent dummy values for a 1em = 16px browser baseline */
-/*  We probably shouldn't go smaller than 12px because running text and labels
- *  become difficult to read/grainy on small, low resolution displays */
+/*  We probably shouldn't go smaller than 12px for font sizes  because
+ *  running text and labels become difficult to read/grainy on small,
+ *  low resolution displays.
+ */
 
 
 /* $LH_ : Line heights */
