@@ -1,5 +1,6 @@
 .DS_Store
 .sass-cache
 *.swp
+bower_components/
 jekyll_docs/_site/
 jekyll_docs.sublime*
