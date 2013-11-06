@@ -40,64 +40,66 @@ $BORDER_COLOR: $C_line;
     border-right: $arrowWidth solid $color;
 }
 
-.popover {
-    font-family: 'arial','helvetica','sans-serif';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10001;
-    display: none;
-    padding: $ARROW_WIDTH;
-    &.top .arrow    { @include popoverTop(); }
-    &.right .arrow  { @include popoverRight(); }
-    &.bottom .arrow { @include popoverBottom(); }
-    &.left .arrow   { @include popoverLeft();  }
-    &.top .arrow-inner    { @include popoverTop($ARROW_WIDTH - 1, #fff, 2px); }
-    &.right .arrow-inner  { @include popoverRight($ARROW_WIDTH - 1, #fff, 2px); }
-    &.bottom .arrow-inner { @include popoverBottom($ARROW_WIDTH - 1, #fff, 2px); }
-    &.left .arrow-inner   { @include popoverLeft($ARROW_WIDTH - 1, #fff, 2px);  }
-    .arrow, .arrow-inner {
-        position: absolute;
-        width: 0;
-        height: 0;
-    }
-}
-.popover-inner {
-    border: 1px solid $BORDER_COLOR;
-    background-color: #fff;
-    width: 240px;
-    min-height: 46px;
-    overflow: hidden;
-    @include round($defaultRadius);
-    @include box-shadow(rgba(0, 0, 0, .55) , 0px, 1px, 3px);
-}
-.popover-content {
-    padding: 12px;
-}
+@if $platform == "desktop" {
+	.popover {
+		 font-family: 'arial','helvetica','sans-serif';
+		 position: absolute;
+		 top: 0;
+		 left: 0;
+		 z-index: 10001;
+		 display: none;
+		 padding: $ARROW_WIDTH;
+		 &.top .arrow    { @include popoverTop(); }
+		 &.right .arrow  { @include popoverRight(); }
+		 &.bottom .arrow { @include popoverBottom(); }
+		 &.left .arrow   { @include popoverLeft();  }
+		 &.top .arrow-inner    { @include popoverTop($ARROW_WIDTH - 1, #fff, 2px); }
+		 &.right .arrow-inner  { @include popoverRight($ARROW_WIDTH - 1, #fff, 2px); }
+		 &.bottom .arrow-inner { @include popoverBottom($ARROW_WIDTH - 1, #fff, 2px); }
+		 &.left .arrow-inner   { @include popoverLeft($ARROW_WIDTH - 1, #fff, 2px);  }
+		 .arrow, .arrow-inner {
+			  position: absolute;
+			  width: 0;
+			  height: 0;
+		 }
+	}
+	.popover-inner {
+		 border: 1px solid $BORDER_COLOR;
+		 background-color: #fff;
+		 width: 240px;
+		 min-height: 46px;
+		 overflow: hidden;
+		 @include round($defaultRadius);
+		 @include box-shadow(rgba(0, 0, 0, .55) , 0px, 1px, 3px);
+	}
+	.popover-content {
+		 padding: 12px;
+	}
 
 
-/**
- * @override
- * Popover mini (for cases in which you need a complex tooltip)
- */
+	/**
+	 * @override
+	 * Popover mini (for cases in which you need a complex tooltip)
+	 */
 
-$MINI_ARROW_WIDTH: 6px;
-.popover.mini {
-    padding: $MINI_ARROW_WIDTH;
-    &.top .arrow    { @include popoverTop($MINI_ARROW_WIDTH); }
-    &.right .arrow  { @include popoverRight($MINI_ARROW_WIDTH); }
-    &.bottom .arrow { @include popoverBottom($MINI_ARROW_WIDTH); }
-    &.left .arrow   { @include popoverLeft($MINI_ARROW_WIDTH);  }
-    &.top .arrow-inner    { @include popoverTop($MINI_ARROW_WIDTH - 1, #fff, 2px); }
-    &.right .arrow-inner  { @include popoverRight($MINI_ARROW_WIDTH - 1, #fff, 2px); }
-    &.bottom .arrow-inner { @include popoverBottom($MINI_ARROW_WIDTH - 1, #fff, 2px); }
-    &.left .arrow-inner   { @include popoverLeft($MINI_ARROW_WIDTH - 1, #fff, 2px);  }
-    p { margin-bottom: 0; }
-    .popover-inner {
-        min-height: 25px;
-        width: auto;
-    }
-    .popover-content {
-        padding: 3px 8px;
-    }
+	$MINI_ARROW_WIDTH: 6px;
+	.popover.mini {
+		 padding: $MINI_ARROW_WIDTH;
+		 &.top .arrow    { @include popoverTop($MINI_ARROW_WIDTH); }
+		 &.right .arrow  { @include popoverRight($MINI_ARROW_WIDTH); }
+		 &.bottom .arrow { @include popoverBottom($MINI_ARROW_WIDTH); }
+		 &.left .arrow   { @include popoverLeft($MINI_ARROW_WIDTH);  }
+		 &.top .arrow-inner    { @include popoverTop($MINI_ARROW_WIDTH - 1, #fff, 2px); }
+		 &.right .arrow-inner  { @include popoverRight($MINI_ARROW_WIDTH - 1, #fff, 2px); }
+		 &.bottom .arrow-inner { @include popoverBottom($MINI_ARROW_WIDTH - 1, #fff, 2px); }
+		 &.left .arrow-inner   { @include popoverLeft($MINI_ARROW_WIDTH - 1, #fff, 2px);  }
+		 p { margin-bottom: 0; }
+		 .popover-inner {
+			  min-height: 25px;
+			  width: auto;
+		 }
+		 .popover-content {
+			  padding: 3px 8px;
+		 }
+	}
 }

@@ -37,40 +37,41 @@
     border-right: $arrowWidth solid $color;
 }
 
-/* specific selector to avoid name collision with legacy tooltips */
-body > .tooltip {
-    position: absolute;
-    z-index: 11001;
-    display: block;
-    visibility: visible;
-    padding: 5px;
-    font-size: 11px;
-    border: 0px;
-    outline: 0px;
-    background-color: transparent;
-    @include opacity(0);
-    &.in     { @include opacity(80); }
-    &.top    { margin-top:  -2px; }
-    &.right  { margin-left:  2px; }
-    &.bottom { margin-top:   2px; }
-    &.left   { margin-left: -2px; }
-    &.top .tooltip-arrow    { @include tipTop(); }
-    &.left .tooltip-arrow   { @include tipLeft(); }
-    &.bottom .tooltip-arrow { @include tipBottom(); }
-    &.right .tooltip-arrow  { @include tipRight(); }
+@if $platform == "mobile" {
+	/* specific selector to avoid name collision with legacy tooltips */
+	body > .tooltip {
+		 position: absolute;
+		 z-index: 11001;
+		 display: block;
+		 visibility: visible;
+		 padding: 5px;
+		 font-size: 11px;
+		 border: 0px;
+		 outline: 0px;
+		 background-color: transparent;
+		 @include opacity(0);
+		 &.in     { @include opacity(80); }
+		 &.top    { margin-top:  -2px; }
+		 &.right  { margin-left:  2px; }
+		 &.bottom { margin-top:   2px; }
+		 &.left   { margin-left: -2px; }
+		 &.top .tooltip-arrow    { @include tipTop(); }
+		 &.left .tooltip-arrow   { @include tipLeft(); }
+		 &.bottom .tooltip-arrow { @include tipBottom(); }
+		 &.right .tooltip-arrow  { @include tipRight(); }
+	}
+	.tooltip-inner {
+		 max-width: 200px;
+		 padding: 3px 8px;
+		 color: #fff;
+		 text-align: center;
+		 text-decoration: none;
+		 background-color: #000;
+		 @include round(4px);
+	}
+	.tooltip-arrow {
+		 position: absolute;
+		 width: 0;
+		 height: 0;
+	}
 }
-.tooltip-inner {
-    max-width: 200px;
-    padding: 3px 8px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    background-color: #000;
-    @include round(4px);
-}
-.tooltip-arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-}
-
