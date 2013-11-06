@@ -1,33 +1,6 @@
 /**
-* SASSQUATCH
-* import all the framework includes
+* SASSQUATCH (desktop)
 */
+$platform: "desktop";
 
-/* base vars */
-@import "../config/variables";
-/*@import '../config/touchList_variables';*/
-
-/* base mixins/extends */
-@import "../config/mixins";
-@import "../config/mixins_m";
-/*@import '../config/touchList_extends';*/
-
-@import "lib/helper-functions/px-to-em";
-
-/* defaults and resets for most block and inline els */
-@import "lib/defaults";
-
-/* Animation */
-@import "lib/animation";
-
-/* components */
-@import "lib/forms";
-@import "lib/tables";
-@import "lib/lists";
-
-/* import other frameworks components (from least specific selectors to most) */
-@import "lib/layout";
-@import "lib/patterns";
-
-/* modifiers */
-@import "lib/modifiers";
+@import "base";

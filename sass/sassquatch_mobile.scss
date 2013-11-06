@@ -1,45 +1,7 @@
 /**
-* SASSQUATCH_M
-* contains sassquatch includes that define vars, mixins, base element and typography rules
-* some are direct sassquatch includes and some are mobile sassquatch includes
+* SASSQUATCH (mobile)
 */
+$platform: "mobile";
 
-//TODO make own variables for mobile
-@import "../config/variables";
-@import "../config/variables_m";
-@import '../config/touchList_variables';
-
-/* base mixins/extends */
-@import "../config/mixins";
-@import "../config/mixins_m";
-@import '../config/touchList_extends';
-
-@import "lib/helper-functions/px-to-em";
-
-/*  Animation  */
-@import "lib/animation";
-@import "lib/animation_m";
-
-/* {{{ defaults and resets for most block and inline els, includes boilerplate */
-@import "lib/m/defaults_m";
-/* }}} */
-
-
-@import "lib/_forms.scss";
-@import "lib/m/_forms_m.scss";
-@import "lib/_tables.scss";
-
-@import "lib/lists";
-@import "lib/m/lists_m";
-
-/* {{{ import other frameworks components (from least specific selectors to most) */
-
-@import "lib/layout";
-@import "lib/m/layout_m";
-
-@import "lib/patterns_m";
-
-@import "lib/modifiers";
-@import "lib/m/modifiers_m";
-
-@import "lib/m/media_m";
+@import "core/mobile_boilerplate";
+@import "base";
