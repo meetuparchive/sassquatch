@@ -1,0 +1,33 @@
+/**
+* BASE PARTIAL
+* import all the framework includes
+*/
+
+
+// VARS
+@import "util/variables/core";
+@import "util/variables/touchList";
+
+
+// FUNCTIONS
+@import "util/functions/px-to-em";
+@import "util/functions/brightness";
+
+
+// MIXINS/EXTENDS
+@import "util/mixins/core";
+@import "util/extends/animation";
+
+
+// CORE
+@import "core/normalize";
+@import "core/lists";
+@import "core/layout";
+@import "core/layout";
+
+
+// COMPONENTS
+
+
+// MODIFIERS (last in cascade to allow component overrides)
+@import "core/modifiers";
