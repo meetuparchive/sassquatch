@@ -1,86 +1,88 @@
-/**
- * @file   _touchList_variables.scss
- * @author John Cockrell <john@meetup.com>
- * @since  2013-06-27
- *
- * @description
- *  New variables for touchList layouts on mobile.
- */
+@if $platform == "mobile" {
+	/**
+	 * @file   _touchList_variables.scss
+	 * @author John Cockrell <john@meetup.com>
+	 * @since  2013-06-27
+	 *
+	 * @description
+	 *  New variables for touchList layouts on mobile.
+	 */
 
 
-/*  ======================================================================= */
-/*  PARAMETERS  */
+	/*  ======================================================================= */
+	/*  PARAMETERS  */
 
-/* $Z_ : Z Indices */
-/* ... */
-
-
-/* $P_ : Padding */
-$P_primary:        1em;         /* 16/16 - In the new dimension schema, this
-                                 * is primarily used for internal padding on
-                                 * cards and boxes.
-                                 */
-$P_secondary:       0.75em;     /* 12/16 - In the new dimension schema, this
-                                 * is value and its multiples (2x, 3x) are
-                                 * primarily used for external margins around
-                                 * cards, and separating content from the
-                                 * mobile footer.
-                                 */
+	/* $Z_ : Z Indices */
+	/* ... */
 
 
-/* $W_, $H_ : Height and Width */
-$W_mobileCursor:		4px;	/* For iOS/Samsung: Hard coded because fixed width */
-$W_pseudoradio:		1.375em;	/* 22/16 */
-$W_gem:				1.375em;	/* 22/16 */
-$W_inlineBlockConstant:	4px;
-
-$H_pseudoradio:		1.375em;	/* 22/16 */
-$H_touchTargetDefault:	3em;	/* 48/16 */
-$H_touchTargetMinimum:	2em;	/* 32/16 */
-$H_gem:					2em;	/* 32/16 */
-
-
-/* $FS_ : Font Size */
-/* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
- * be used with scoped resets in order to work properly. For touchList, this
- * hasn't been an issue, but it may be in the future.
- * NOTE: For running text, we probably shouldn't go smaller than 12px for
- * font sizes, since type smaller than that becomes difficult to read on
- * LDPI/@1x displays.
- */
-
-$FS_hero:           2.25em;     /* 36/16 - for use in large banners */
-$FS_base:           1.0625em;   /* 17/16 - replaces $FS_label as a std size */
-$FS_small:          0.8125em;   /* 13/16 - replaces $FS_text as std text size */
-$FS_micro:          0.5625em;   /*  9/16 - use in superscript values (am/pm),
-                                 *         currency, tab titles.
-                                 *         NOTE: this size should only be used
-                                 *         with small caps, which provide good-
-                                 *         enough legibility on low resolution
-                                 *         displays.
-                                 */
+	/* $P_ : Padding */
+	$P_primary:        1em;         /* 16/16 - In the new dimension schema, this
+												* is primarily used for internal padding on
+												* cards and boxes.
+												*/
+	$P_secondary:       0.75em;     /* 12/16 - In the new dimension schema, this
+												* is value and its multiples (2x, 3x) are
+												* primarily used for external margins around
+												* cards, and separating content from the
+												* mobile footer.
+												*/
 
 
-/* $LH_ : Line heights */
-$LH_condensed:      1.125;  /* 16/18.0 */
-$LH_standard:       1.3;    /* 16/20.8 */
-$LH_tall:           1.5;    /* 16/24.0 */
+	/* $W_, $H_ : Height and Width */
+	$W_mobileCursor:		4px;	/* For iOS/Samsung: Hard coded because fixed width */
+	$W_pseudoradio:		1.375em;	/* 22/16 */
+	$W_gem:				1.375em;	/* 22/16 */
+	$W_inlineBlockConstant:	4px;
 
-/*  $C_ : Colors  */
-/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
- *  at some point in the immediate future (Sassquatch >1.5), once touchList
- *  is fully integrated into Sq.
- *
- *  @see https://github.com/meetup/meetup-swatches
- */
-$C_gray00: black;		/* #000							*/
-$C_gray20: hsl(0,0,20);	/* #333	 == $C_darkgray			*/
-$C_gray40: hsl(0,0,40);	/* #666	 ≈≈ $C_darkgray_lighter	*/
-$C_gray60: hsl(0,0,60);	/* #999							*/
-$C_gray70: hsl(0,0,70);	/* #b3b3b3						*/
-$C_gray80: hsl(0,0,80);	/* #ccc							*/
-$C_gray90: hsl(0,0,90);	/* #e5e5e5						*/
-$C_gray94: hsl(0,0,94);	/* #f0f0f0  ≈≈ $C_gray_lighter	*/
-$C_gray96: hsl(0,0,96);	/* #f5f5f5  ≈≈ $C_gray_lightest	*/
-$C_gray98: hsl(0,0,98);	/* #fafafa						*/
-$C_gray100: white;		/* #fff							*/
+	$H_pseudoradio:		1.375em;	/* 22/16 */
+	$H_touchTargetDefault:	3em;	/* 48/16 */
+	$H_touchTargetMinimum:	2em;	/* 32/16 */
+	$H_gem:					2em;	/* 32/16 */
+
+
+	/* $FS_ : Font Size */
+	/* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
+	 * be used with scoped resets in order to work properly. For touchList, this
+	 * hasn't been an issue, but it may be in the future.
+	 * NOTE: For running text, we probably shouldn't go smaller than 12px for
+	 * font sizes, since type smaller than that becomes difficult to read on
+	 * LDPI/@1x displays.
+	 */
+
+	$FS_hero:           2.25em;     /* 36/16 - for use in large banners */
+	$FS_base:           1.0625em;   /* 17/16 - replaces $FS_label as a std size */
+	$FS_small:          0.8125em;   /* 13/16 - replaces $FS_text as std text size */
+	$FS_micro:          0.5625em;   /*  9/16 - use in superscript values (am/pm),
+												*         currency, tab titles.
+												*         NOTE: this size should only be used
+												*         with small caps, which provide good-
+												*         enough legibility on low resolution
+												*         displays.
+												*/
+
+
+	/* $LH_ : Line heights */
+	$LH_condensed:      1.125;  /* 16/18.0 */
+	$LH_standard:       1.3;    /* 16/20.8 */
+	$LH_tall:           1.5;    /* 16/24.0 */
+
+	/*  $C_ : Colors  */
+	/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
+	 *  at some point in the immediate future (Sassquatch >1.5), once touchList
+	 *  is fully integrated into Sq.
+	 *
+	 *  @see https://github.com/meetup/meetup-swatches
+	 */
+	$C_gray00: black;		/* #000							*/
+	$C_gray20: hsl(0,0,20);	/* #333	 == $C_darkgray			*/
+	$C_gray40: hsl(0,0,40);	/* #666	 ≈≈ $C_darkgray_lighter	*/
+	$C_gray60: hsl(0,0,60);	/* #999							*/
+	$C_gray70: hsl(0,0,70);	/* #b3b3b3						*/
+	$C_gray80: hsl(0,0,80);	/* #ccc							*/
+	$C_gray90: hsl(0,0,90);	/* #e5e5e5						*/
+	$C_gray94: hsl(0,0,94);	/* #f0f0f0  ≈≈ $C_gray_lighter	*/
+	$C_gray96: hsl(0,0,96);	/* #f5f5f5  ≈≈ $C_gray_lightest	*/
+	$C_gray98: hsl(0,0,98);	/* #fafafa						*/
+	$C_gray100: white;		/* #fff							*/
+}
