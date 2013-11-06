@@ -1,46 +1,22 @@
+/**
+ *  @file   _touchList.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-06-27
+ *
+ *  @description
+ *	 File intended to be consolidated with _lists_m.scss in Sassquatch.
+ *	 Determines styles for the `touchList` list layout style.
+ */
+
+@import "../util/variables/touchList";
+@import "../util/extends/touchList";
+
 @if $platform == "mobile" {
-	/**
-	 *  @file   _touchList.scss
-	 *  @author John Cockrell <john@meetup.com>
-	 *  @since  2013-06-27
-	 *
-	 *  @description
-	 *	 File intended to be consolidated with _lists_m.scss in Sassquatch.
-	 *	 Determines styles for the `touchList` list layout style.
-	 */
-
-
-	%dividerBottom {
-		// A divider applied to the top of every list-item-like element in a
-		// touchlist. Applying it to <li> results in nesting clusterpuck, so it's
-		// applied to special hook classes for granularity:
-		//
-		//	`.touchList-item`
-		//	`.touchList-load-more-link`
-		//	`.touchList-jump-link`
-		border-bottom: 1px solid $C_line_less;
-	}
-
-	%dividerLeft {
-		border-left: 1px solid $C_line_less;
-		// NOTE A border applied ONLY to `touchList-items` in a
-		// `touchList--withInlineChildren` list. Right now, this gets applied to 2n
-		// cells, but we may want to change that.
-	}
 
 
 	/*  ======================================================================= */
 	/*  TOUCHLIST STYLES  */
 
-
-	%layout_touchList {
-		// RESETS {
-		font-size: 16px;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		// }
-	}
 
 	.touchList {
 		@extend %layout_touchList;

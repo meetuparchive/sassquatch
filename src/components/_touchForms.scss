@@ -1,17 +1,19 @@
+/**
+ *  @file   _touchForms.scss
+ *  @author John Cockrell <john@meetup.com>
+ *  @since  2013-05-28
+ *
+ *  @description
+ *	  A collection of form resets and styles currently scoped to the
+ *	  touchList list type. In the future, these styles should be used
+ *	  site-wide, and this file should become `_forms_m.scss`, and serve
+ *	  as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
+ */
+
+@import "../util/variables/touchList";
+@import "../util/extends/touchList";
+
 @if $platform == "mobile" {
-	/**
-	 *  @file   _touchForms.scss
-	 *  @author John Cockrell <john@meetup.com>
-	 *  @since  2013-05-28
-	 *
-	 *  @description
-	 *	  A collection of form resets and styles currently scoped to the
-	 *	  touchList list type. In the future, these styles should be used
-	 *	  site-wide, and this file should become `_forms_m.scss`, and serve
-	 *	  as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
-	 */
-
-
 
 	/*  ======================================================================= */
 	/*  SCOPED RESETS TO FORM ELEMENTS  */
