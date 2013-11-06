@@ -1,0 +1,23 @@
+/**
+* Tearsheet mixin
+* creates a tearsheet class for a given px size
+*/
+
+@mixin tearsheet($size: 40){
+	$size-px: $size + px;
+	.tearsheet-#{$size} {
+		@extend %tearsheet;
+		width: $size-px;
+		height: $size-px;
+		.month{
+			font-size: round( $size * 1.4/5 ) + px;
+			height: $size * 2/5 + px;
+			line-height: $size * 2/5 + px;
+		}
+		.day{
+			line-height: $size * 3/5 + px;
+			font-size: $size * 2/5 + px;
+		}
+	}
+}
+

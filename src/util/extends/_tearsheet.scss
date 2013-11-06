@@ -1,0 +1,76 @@
+/**
+* Base tearsheet placeholder classes
+*/
+
+%background-color-transition {
+	-webkit-transition: all 150ms ease-in-out;
+	-moz-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+%tearsheet-interior {
+	@extend %background-color-transition;
+	background-color: $C_gray_lightest;
+	display: block;
+	border: 1px solid $C_line;
+	font-weight: bold;
+	color: $C_text !important; /* ignore link colors, theme */
+}
+%tearsheet {
+	$header_color: $C_red;  // this could be themed...
+	$cal_radius: 2px;
+	border-radius: $cal_radius;
+	font-family: $headingFontStack;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: $spacing;
+	&.tearsheet-expandable {
+		// nested selector to deal with height override
+		height: auto;
+	}
+	a:hover & {
+		// if the tearsheet is acting as button/link, it gets emphasizes onhover
+		.month {
+			background-color: darken($header_color, 10%);
+		}
+		.time {
+			background-color: $C_gray_lightest;
+			color: black !important;
+		}
+		.day, .day-of-week {
+			background-color: white;
+			color: black !important;  // !important overrides base !important
+		}
+	}
+	.month{
+		@extend %background-color-transition;
+		background-color: $header_color;
+		display: block;
+		color: white;
+		border-radius: $cal_radius $cal_radius 0 0;
+	}
+	.day{
+		@extend %tearsheet-interior;
+		border-radius: 0 0 $cal_radius $cal_radius;
+		border-width: 0 1px 1px;
+	}
+	.day-of-week {
+		@extend %tearsheet-interior;
+		border-width: 0 1px;
+		font-size: 11px;
+		margin-bottom: -0.8em;
+		padding-top: .4em;
+		height: 1.4em;
+		line-height: 1.2;
+	}
+	.time {
+		@extend %tearsheet-interior;
+		@extend .datetime-time;
+		@include round(0, 0, $cal_radius, $cal_radius);
+		margin-top: -$cal_radius;  // snug it up under .day
+		padding: 3px;
+		font-size: 11px;
+		background-color: $C_gray_lighter;
+	}
+}
+
