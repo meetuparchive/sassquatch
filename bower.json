@@ -15,5 +15,8 @@
 		"jekyll_docs",
 		"_site"
 	],
+	"dependencies": {
+		"meetup-swatches": "0.0.6"
+	},
 	"license": "MIT"
 }

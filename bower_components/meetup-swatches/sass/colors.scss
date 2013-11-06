@@ -1,0 +1,61 @@
+// PRIMITIVE COLORS - used in multiple color aliases, try not to use these directly
+$C_red: rgba(226,55,60,1);
+$C_blue: rgba(57,135,203,1);
+$C_primaryGray: rgba(0,0,0,0.8);
+$C_secondaryGray: rgba(0,0,0,0.55);
+$C_tertiaryGray: rgba(0,0,0,0.25);
+$C_lineGray: rgba(0,0,0,0.1);
+$C_primaryGrayInverted: rgba(255,255,255,1);
+$C_secondaryGrayInverted: rgba(255,255,255,0.8);
+$C_tertiaryGrayInverted: rgba(255,255,255,0.4);
+$C_lineGrayInverted: rgba(255,255,255,0.2);
+ 
+// BACKGROUNDS - these are always 100% opacity
+$C_backgroundContent: rgba(255,255,255,1);
+$C_backgroundCollection: rgba(231,231,231,1);
+$C_backgroundNav: rgba(247,247,247,1);
+$C_backgroundContentInverted: rgba(51,51,51,1);
+$C_backgroundContentAccent: rgba(226,55,60,1);
+ 
+// DEFAULT CONTEXT (content on light backgrounds)
+$C_textPrimary: rgba(0,0,0,0.8);
+$C_textSecondary: rgba(0,0,0,0.55);
+$C_textTertiary: rgba(0,0,0,0.25);
+$C_border: rgba(0,0,0,0.1);
+$C_link: rgba(57,135,203,1);
+$C_accent: rgba(226,55,60,1);
+$C_yes: rgba(226,55,60,1);
+$C_no: rgba(0,0,0,0.55);
+$C_waitlist: rgba(0,0,0,0.55);
+$C_buttonPrimary: rgba(226,55,60,1);
+$C_buttonSecondary: rgba(0,0,0,0.25);
+$C_buttonTertiaryBorder: rgba(0,0,0,0.25);
+ 
+// INVERTED CONTEXT (content on dark backgrounds)
+$C_textPrimaryInverted: rgba(255,255,255,1);
+$C_textSecondaryInverted: rgba(255,255,255,0.8);
+$C_textTertiaryInverted: rgba(255,255,255,0.4);
+$C_borderInverted: rgba(255,255,255,0.2);
+$C_linkInverted: rgba(57,135,203,1);
+$C_accentInverted: rgba(226,55,60,1);
+$C_yesInverted: rgba(226,55,60,1);
+$C_noInverted: rgba(255,255,255,0.8);
+$C_waitlistInverted: rgba(255,255,255,0.8);
+$C_buttonPrimaryInverted: rgba(226,55,60,1);
+$C_buttonSecondaryInverted: rgba(255,255,255,0.4);
+$C_buttonTertiaryBorder: rgba(255,255,255,0.4);
+ 
+// MISC
+$C_overlayPressed: rgba(64,197,255,0.2);
+ 
+// SOCIAL (third party colors)
+$C_facebook: rgba(59,89,152,1);
+$C_twitter: rgba(51,204,255,1);
+$C_linkedin: rgba(72,117,180,1);
+$C_tumblr: rgba(43,73,100,1);
+$C_flickr: rgba(254,8,131,1);
+$C_foursquare: rgba(12,186,223,1);
+$C_googleplus: rgba(198,61,45,1);
+$C_instagram: rgba(78,67,60,1);
+$C_reddit: rgba(206,227,248,1);
+ 
