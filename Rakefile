@@ -1,5 +1,5 @@
 COMPILER    = "sass"
-SOURCES     = "sass/"
+SOURCES     = "src/"
 TARGET      = "css"
 JEKYLL_DIR  = "jekyll_docs"
 DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
