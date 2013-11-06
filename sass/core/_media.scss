@@ -1,0 +1,70 @@
+@if $platform == "mobile" {
+	/**
+	 *	  @author John Cockrell <john@meetup.com>
+	 *	  @since  2013-05-14
+	 *
+	 *	  @description
+	 *	  Solely squared off figures that work in conjunction with an image 
+	 *	  loaded using background-sizing. 
+	 *
+	 *	  This style also separates the mechanical style attributes from each
+	 *	  photo's relation to other sizes, so that the names won't be misleading
+	 *	  in the future (unlike, say, a `.photo45` that changes to a different
+	 *	  number and we have to update all the classes everywhere).
+	 *
+	 *	  <div class="avatar-small">
+	 *		  <img src="...">
+	 *	  </div>
+	 */
+
+	%avatar {
+		font-size: 16px;
+		// NOTE: This is so we can use em-based sizing. In the future, once
+		// we edit the meetup mobile resets to a $baseline: 16px, we can
+		// get rid of this declaration.
+
+		img { 
+			// Inner image always fills width, and adjusts height accordingly
+			background-color: $C_gray_lighter;
+			width: 100%; 
+			max-height: 100%; 
+			// NOTE: Right now, this `height:100%` is needed to make sure that
+			// the img doesn't stretch to non-square dimensions on Android devices
+			// if the source img file isn't found or takes a while to load.
+
+			display: block; 
+			// NOTE: Needed for Firefox so that the img renders as a square in case
+			// the src asset does not load properly. Otherwise, it will collapse
+			// around the alt text.
+
+			line-height: 1;
+			overflow: hidden;
+			// NOTE: Needed to make sure that the alt text in the image does not 
+			// wrap over itself and is readable in case the img src does not load.
+			// Both of these problems are native to Firefox on Android.
+		}
+	}
+
+	/*  32pt */
+	.avatar-s {
+		@extend %avatar;
+		height: 2em;
+		width:  2em;
+	} 
+
+
+	/*  48pt */
+	.avatar-m {
+		@extend %avatar;
+		height: 3em;
+		width:  3em;
+	}
+
+
+	/*  64pt */
+	.avatar-l {
+		@extend %avatar;
+		height: 4em;
+		width:  4em;
+	}
+}
