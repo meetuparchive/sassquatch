@@ -122,6 +122,16 @@
 }
 
 
+/*  TODO Please kill this. -j */
+/*  NOTE
+ *  This is a terrible, hacky mixin, but I can't tell 
+ *  why it's being overridden elsewhere ATM. -j
+ */
+@mixin pholder() {
+	 color: #b3b3b3 !important; /* == $C_gray70 in `_tl_parameters.scss` */
+	 font-style: normal !important;
+}
+
 @if $platform == "mobile" {
 	/* {{{ RESETS, 	NOTE: this is most likely diff from full site sassquatch, 
 					we are using boilerplate that comes with mobile resets */
@@ -218,17 +228,6 @@
 	/**
 	* Placeholder styles
 	*/
-
-	/*  TODO Please kill this. -j */
-
-	/*  NOTE
-	 *  This is a terrible, hacky mixin, but I can't tell 
-	 *  why it's being overridden elsewhere ATM. -j
-	 */
-	@mixin pholder() {
-		 color: #b3b3b3 !important; /* == $C_gray70 in `_tl_parameters.scss` */
-		 font-style: normal !important;
-	}
 	textarea::-webkit-input-placeholder, 
 	input::-webkit-input-placeholder { 
 		 @include pholder();

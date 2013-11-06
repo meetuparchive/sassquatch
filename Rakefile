@@ -1,5 +1,5 @@
 COMPILER    = "sass"
-SOURCES     = "sass/sassquatch"
+SOURCES     = "sass/"
 TARGET      = "css"
 JEKYLL_DIR  = "jekyll_docs"
 DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
@@ -20,7 +20,7 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling SassQuatch for mobile"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_m.scss #{TARGET}/sassquatch_mobile.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style compressed"
 
 	# compile docs
 	puts
