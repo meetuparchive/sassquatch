@@ -50,7 +50,6 @@ perspective
 When divs flip, they'll be isometric unless you give the wrapping container
 a perspective value
 */
-%has-perspective,
 .has-perspective {
 	-webkit-perspective: 800px;
 	perspective: 800px;
