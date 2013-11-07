@@ -3,13 +3,15 @@
 * ------------------------------------------
 */
 
+// TODO: move to main vars file
+$buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif;
 
 
 /**
 * @param $bgColor REQUIRED background color
 * @param $textColor OPTIONAL text color (calculated from bgColor if unspecified)
 */
-@mixin button( $bgColor, $textColor: "" ) {
+@mixin button( $bgColor: $C_tertiaryGray, $textColor: "" ) {
 
 	@if $textColor == "" {
 		@if isDark( $bgColor ) {
@@ -19,7 +21,23 @@
 		}
 	}
 
+	@include round(3px);
+	@include box-shadow(0px, 2px, 0px, darken($bgColor, 75%));
 	color: $textColor;
+	background: $bgColor;
+	font-family: $buttonFont;
+	font-size: 15px;
+	font-weight: 600;
+	padding: 9px 18px;
+
+	&:active {
+		@include box-shadow(0px, 0px, 0px, darken($bgColor, 75%));
+		@include transform(translate(0px, 2px));
+		border-bottom: none;
+	}
+
+	&:hover {
+	}
 }
 
 
