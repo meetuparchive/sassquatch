@@ -5,7 +5,7 @@
 
 /* {{{ first, some normalization */
 button, input, select, textarea {
-    margin: 0;
+	 margin: 0;
 	vertical-align: baseline;
 	*vertical-align: middle;
 	-webkit-box-sizing: border-box;
@@ -195,8 +195,7 @@ input, textarea {
     }
 }
 [disabled],
-[disabled="disabled"],
-input.disabled { /*only change the background of inputs, not wrappers with .disabled class*/
+[disabled="disabled"] {
     background-color: $C_line_less;
 }
 

@@ -58,13 +58,13 @@ $borderOffset: 75%;
 	@extend %_button_base;
 	@include transition(all .1s ease-in-out);
 	@include box-sizing("border");
-	color: $color;
+	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
 	padding: 6px 15px;
 
 	&:hover {
 		background: $color;
-		color: getContrastTextColor($color);
+		color: getContrastTextColor($color) !important;
 	}
 }

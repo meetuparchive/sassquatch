@@ -18,7 +18,7 @@
 //
 // is this color what we would call "dark" or "light"?
 // -------------------------------------------------------------
-$brightness_threshold: 140;
+$brightness_threshold: 128;
 
 @function isDark( $color, $threshold: $brightness_threshold ) {
 	@if getPerceivedBrightness($color) < $threshold {
