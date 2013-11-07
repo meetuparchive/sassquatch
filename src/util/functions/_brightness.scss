@@ -61,7 +61,7 @@ $contrast_color_black: #222;
 // returns a contrasting shade or tint of a given color depending
 // on if it's light or dark
 // -------------------------------------------------------------
-@function getContrastingOffset( $color, $offset: 80% ) {
+@function getContrastingOffset( $color, $offset: 90% ) {
 	@if isDark($color) {
 		@return lighten($color, $offset);
 	} @else {
