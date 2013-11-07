@@ -9,7 +9,7 @@
 	$G: green($color);
 	$B: blue($color);
 
-	@return ( ($R * 299) + ($G * 587) + ($B * 114) )/1000;
+	@return floor( ( ($R * 299) + ($G * 587) + ($B * 114) )/1000 );
 }
 
 
@@ -18,23 +18,17 @@
 //
 // is this color what we would call "dark" or "light"?
 // -------------------------------------------------------------
-$brightness_threshold: 128;
+$brightness_threshold: 160;
 
 @function isDark( $color, $threshold: $brightness_threshold ) {
-	@if getPerceivedBrightness($color) < $threshold {
-		@return false;
-	} @else {
-		@return true;
-	}
+	@return ( getPerceivedBrightness($color) <= $threshold );
 }
 
-@function isLight( $color, $threshold: $brightness_threshold ) {
-	@if getPerceivedBrightness($color) < $threshold {
-		@return false;
-	} @else {
-		@return true;
-	}
-}
+/*
+ *@function isLight( $color, $threshold: $brightness_threshold ) {
+ *   @return !
+ *}
+ */
 
 
 
@@ -61,10 +55,17 @@ $contrast_color_black: #222;
 // returns a contrasting shade or tint of a given color depending
 // on if it's light or dark
 // -------------------------------------------------------------
-@function getContrastingOffset( $color, $offset: 90% ) {
+@function getContrastingOffset( $color, $offset: 98% ) {
+
+	// super dark colors
+	@if getPerceivedBrightness($color) <= 40 {
+		@return mix($color, #fff, 33%)
+	}
+
+	// ligher colors
 	@if isDark($color) {
-		@return lighten($color, $offset);
+		@return tint($color, $offset);
 	} @else {
-		@return darken($color, $offset);
+		@return shade($color, $offset);
 	}
 }
