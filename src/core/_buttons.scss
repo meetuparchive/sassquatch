@@ -78,7 +78,7 @@ input[type="submit"].button-flat--black {
 .button-flat--gray,
 button.button-flat--gray,
 input[type="submit"].button-flat--gray {
-	@include button-flat( $C_gray );
+	@include button-flat( #777 );
 }
 
 // Flat button (red)

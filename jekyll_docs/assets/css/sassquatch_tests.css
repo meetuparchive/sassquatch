@@ -191,17 +191,21 @@ input[type="submit"].button-flat--red {
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  display: block;
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: none 0 ;
+  -moz-transition: none 0 ;
+  -o-transition: none 0 ;
+  transition: none 0 ;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
   margin-bottom: 16px;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none !important;
-  -webkit-tap-highlight-color: transparent;
-  -moz-transition: none;
-  -webkit-transition: none;
-  -o-transition: color 0 ease-in;
-  transition: none;
   border-width: 0; }
   .button.primary:focus,
   .button--primary:focus,
@@ -740,6 +744,11 @@ input[type="submit"].button-flat--white {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
   color: white !important;
   background: transparent;
   border: 2px solid white;
@@ -764,6 +773,11 @@ input[type="submit"].button-flat--black {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
   color: black !important;
   background: transparent;
   border: 2px solid black;
@@ -788,14 +802,19 @@ input[type="submit"].button-flat--gray {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.1) !important;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  color: #777777 !important;
   background: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid #777777;
   padding: 6px 15px; }
   .button-flat--gray:hover,
   button.button-flat--gray:hover,
   input[type="submit"].button-flat--gray:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: #777777;
     color: white !important; }
 
 .button-flat--red,
@@ -812,6 +831,11 @@ input[type="submit"].button-flat--red {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
   color: #e2373c !important;
   background: transparent;
   border: 2px solid #e2373c;

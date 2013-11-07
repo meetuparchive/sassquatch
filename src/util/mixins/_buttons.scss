@@ -64,6 +64,11 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	@extend %_button_base;
 	@include transition(all .1s ease-in-out);
 	@include box-sizing("border");
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	-ms-box-shadow: none;
+	box-shadow: none;
 	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
