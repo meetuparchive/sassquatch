@@ -1,15 +1,26 @@
 /**
-* Button mixins
+* Button factory mixins
 * ------------------------------------------
 */
 
-// TODO: move to main vars file
-$buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif;
+$buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI/heading font defined in vars file
+$borderOffset: 75%;
 
+%_button_base {
+	@include round(3px);
+	font-family: $buttonFont;
+	font-size: 15px;
+	font-weight: 600;
+	text-decoration: none !important;
+	-webkit-tap-highlight-color: transparent;
+}
 
 /**
-* @param $bgColor REQUIRED background color
-* @param $textColor OPTIONAL text color (calculated from bgColor if unspecified)
+* Default button
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
 */
 @mixin button( $bgColor: $C_tertiaryGray, $textColor: "" ) {
 
@@ -20,32 +31,40 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif;
 			$textColor: getContrastingOffset($bgColor);
 		}
 	}
-
-	@include round(3px);
-	@include box-shadow(0px, 2px, 0px, darken($bgColor, 75%));
-	color: $textColor;
-	background: $bgColor;
-	font-family: $buttonFont;
-	font-size: 15px;
-	font-weight: 600;
+	@extend %_button_base;
+	@include box-shadow(0px, 2px, 0px, darken($bgColor, $borderOffset));
 	padding: 9px 18px;
+	color: $textColor !important; // need this for chapstick
+	background: $bgColor;
 
 	&:active {
-		@include box-shadow(0px, 0px, 0px, darken($bgColor, 75%));
+		@include box-shadow(0px, 0px, 0px, darken($bgColor, $borderOffset));
 		@include transform(translate(0px, 2px));
-		border-bottom: none;
 	}
 
 	&:hover {
+		background:  darken($bgColor, 2%);
 	}
 }
 
 
 
 /**
-* @param $bgColor REQUIRED background color
+* Flat button
+* @param $color - single border/text/hover color
+* -----------------------------------------------
 */
-@mixin button-flat( $bgColor ) {
+@mixin button-flat( $color ) {
+	@extend %_button_base;
+	@include transition(all .1s ease-in-out);
+	@include box-sizing("border");
+	color: $color;
+	background: transparent;
+	border: 2px solid $color;
+	padding: 6px 15px;
 
-	color: $bgColor;
+	&:hover {
+		background: $color;
+		color: getContrastTextColor($color);
+	}
 }

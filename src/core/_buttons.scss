@@ -5,6 +5,8 @@
 $button-primary-color: $C_red;
 $button-secondary-color: $C_gray;
 
+// Default button (secondary)
+// ---------------------------
 %button,
 .button, 
 button,
@@ -12,9 +14,53 @@ input[type="submit"] {
 	@include button( $button-secondary-color );
 }
 
-%button-primary,
-.button.primary,
-button,
-input[type="submit"] {
+// Primary button
+// ---------------------------
+%button--primary,
+.button.primary, // support legacy selector
+.button--primary {
 	@include button( $button-primary-color, #fff );
+}
+
+// Black button
+// ---------------------------
+%button--black,
+.button--black {
+	@include button( #000, #fff );
+}
+
+// Flat button (white)
+// ---------------------------
+%button-flat--white,
+.button-flat--white,
+button.button-flat--white,
+input[type="submit"].button-flat--white {
+	@include button-flat( #fff );
+}
+
+// Flat button (black)
+// ---------------------------
+%button-flat--black,
+.button-flat--black,
+button.button-flat--black,
+input[type="submit"].button-flat--black {
+	@include button-flat( #000 );
+}
+
+// Flat button (gray)
+// ---------------------------
+%button-flat--gray,
+.button-flat--gray,
+button.button-flat--gray,
+input[type="submit"].button-flat--gray {
+	@include button-flat( $C_gray );
+}
+
+// Flat button (red)
+// ---------------------------
+%button-flat--red,
+.button-flat--red,
+button.button-flat--red,
+input[type="submit"].button-flat--red {
+	@include button-flat( $C_red );
 }
