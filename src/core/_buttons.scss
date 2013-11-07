@@ -1,0 +1,20 @@
+/**
+* Buttons
+*/
+
+$button-primary-color: $C_red;
+$button-secondary-color: $C_gray;
+
+%button,
+.button, 
+button,
+input[type="submit"] {
+	@include button( $button-secondary-color );
+}
+
+%button-primary,
+.button.primary,
+button,
+input[type="submit"] {
+	@include button( $button-primary-color, #fff );
+}

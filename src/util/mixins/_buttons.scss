@@ -1,0 +1,33 @@
+/**
+* Button mixins
+* ------------------------------------------
+*/
+
+
+
+/**
+* @param $bgColor REQUIRED background color
+* @param $textColor OPTIONAL text color (calculated from bgColor if unspecified)
+*/
+@mixin button( $bgColor, $textColor: "" ) {
+
+	@if $textColor == "" {
+		@if isDark( $bgColor ) {
+			$textColor: getContrastTextColor($bgColor);
+		} @else {
+			$textColor: getContrastingOffset($bgColor);
+		}
+	}
+
+	color: $textColor;
+}
+
+
+
+/**
+* @param $bgColor REQUIRED background color
+*/
+@mixin button-flat( $bgColor ) {
+
+	color: $bgColor;
+}
