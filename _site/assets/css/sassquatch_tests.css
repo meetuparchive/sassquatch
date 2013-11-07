@@ -205,6 +205,7 @@ input[type="submit"].button-flat--red {
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 15px;
   font-weight: 600;
+  line-height: 1 !important;
   text-decoration: none !important;
   border-width: 0; }
   .button.primary:focus,
