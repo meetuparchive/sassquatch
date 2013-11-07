@@ -24,48 +24,39 @@ $brightness_threshold: 160;
 	@return ( getPerceivedBrightness($color) <= $threshold );
 }
 
-/*
- *@function isLight( $color, $threshold: $brightness_threshold ) {
- *   @return !
- *}
- */
+@function isLight( $color, $threshold: $brightness_threshold ) {
+	@return not isDark( $color, $threshold );
+}
 
 
 
-// getContrastTextColor
+// getPrimaryTextColor
 //
-// returns dark or light text color that has sufficient contrast
-// with provided color
+// returns dark or light text rgba that has sufficient contrast
 // -------------------------------------------------------------
-$contrast_color_white: #fff;
-$contrast_color_black: #222;
-
-@function getContrastTextColor( $color ) {
+@function getPrimaryTextColor( $color ) {
 	@if isDark($color) {
-		@return $contrast_color_white;
+		@return $C_textPrimaryInverted;
 	} @else {
-		@return $contrast_color_black;
+		@return $C_textPrimary;
 	}
 }
 
 
 
-// getContrastingOffset
+// getSecondaryTextColor
 //
-// returns a contrasting shade or tint of a given color depending
-// on if it's light or dark
+// returns dark or light text rgba that has sufficient contrast
+// (more transparent than getPrimary)
 // -------------------------------------------------------------
-@function getContrastingOffset( $color, $offset: 98% ) {
-
-	// super dark colors
-	@if getPerceivedBrightness($color) <= 40 {
-		@return mix($color, #fff, 33%)
-	}
-
-	// ligher colors
+@function getSecondaryTextColor( $color ) {
+	// very threshold darkness
 	@if isDark($color) {
-		@return tint($color, $offset);
-	} @else {
-		@return shade($color, $offset);
+		@return $C_secondaryGrayInverted;
 	}
+	// much light
+	@if isLight($color){
+		@return $C_textSecondary;
+	}
+	// wow
 }

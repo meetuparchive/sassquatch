@@ -104,51 +104,51 @@ $green: $C_green;
 /* set contrast text */
 #textRed {
 	background: $C_red;
-	color: getContrastTextColor( $C_red );
+	color: getPrimaryTextColor( $C_red );
 }
 #textBlack {
 	background: $black;
-	color: getContrastTextColor( $black );
+	color: getPrimaryTextColor( $black );
 }
 #textGray {
 	background: $gray;
-	color: getContrastTextColor( $gray );
+	color: getPrimaryTextColor( $gray );
 }
 #textBlue {
 	background: $blue;
-	color: getContrastTextColor( $blue );
+	color: getPrimaryTextColor( $blue );
 }
 #textLightblue {
 	background: $lightblue;
-	color: getContrastTextColor( $lightblue );
+	color: getPrimaryTextColor( $lightblue );
 }
 #textGreen {
 	background: $green;
-	color: getContrastTextColor( $green );
+	color: getPrimaryTextColor( $green );
 }
 
 /* set offset text */
 #offRed {
 	background: $C_red;
-	color: getContrastingOffset( $C_red );
+	color: getSecondaryTextColor( $C_red );
 }
 #offBlack {
 	background: $black;
-	color: getContrastingOffset( $black );
+	color: getSecondaryTextColor( $black );
 }
 #offGray {
 	background: $gray;
-	color: getContrastingOffset( $gray );
+	color: getSecondaryTextColor( $gray );
 }
 #offBlue {
 	background: $blue;
-	color: getContrastingOffset( $blue );
+	color: getSecondaryTextColor( $blue );
 }
 #offLightblue {
 	background: $lightblue;
-	color: getContrastingOffset( $lightblue );
+	color: getSecondaryTextColor( $lightblue );
 }
 #offGreen {
 	background: $green;
-	color: getContrastingOffset( $green );
+	color: getSecondaryTextColor( $green );
 }

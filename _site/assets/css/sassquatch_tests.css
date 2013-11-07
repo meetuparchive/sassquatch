@@ -28,11 +28,6 @@
 /* {{{ legacy (from crustybase) */
 /* _sponsoree.css and _sponsor_manage.scss */
 /* }}} */
-/*
- *@function isLight( $color, $threshold: $brightness_threshold ) {
- *   @return !
- *}
- */
 /**
 * MIXINS
 * Sass mixins (including compass mixins)
@@ -178,9 +173,6 @@
 * Button factory mixins
 * ------------------------------------------
 */
-.button,
-button,
-input[type="submit"],
 .button.primary,
 .button--primary,
 .button--black,
@@ -199,11 +191,30 @@ input[type="submit"].button-flat--red {
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
+  display: block;
+  margin-bottom: 16px;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none !important;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: color 0 ease-in;
+  transition: none;
+  border-width: 0; }
+  .button.primary:focus,
+  .button--primary:focus,
+  .button--black:focus,
+  .button-flat--white:focus,
+  input[type="submit"].button-flat--white:focus,
+  .button-flat--black:focus,
+  input[type="submit"].button-flat--black:focus,
+  .button-flat--gray:focus,
+  input[type="submit"].button-flat--gray:focus,
+  .button-flat--red:focus,
+  input[type="submit"].button-flat--red:focus {
+    outline-width: 0; }
 
 /**
 * Default button
@@ -647,47 +658,46 @@ select.big {
 /**
 * Buttons
 */
-.button,
-button,
-input[type="submit"] {
-  -moz-box-shadow: 0px 2px 0px #1e1e1e 0;
-  -webkit-box-shadow: 0px 2px 0px #1e1e1e 0;
-  -o-box-shadow: 0px 2px 0px #1e1e1e 0;
-  box-shadow: 0px 2px 0px #1e1e1e 0;
-  padding: 9px 18px;
-  color: shade(#dddddd, 98%) !important;
-  background: #dddddd; }
-  .button:active,
-  button:active,
-  input[type="submit"]:active {
-    -moz-box-shadow: 0px 0px 0px #1e1e1e 0;
-    -webkit-box-shadow: 0px 0px 0px #1e1e1e 0;
-    -o-box-shadow: 0px 0px 0px #1e1e1e 0;
-    box-shadow: 0px 0px 0px #1e1e1e 0;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
-  .button:hover,
-  button:hover,
-  input[type="submit"]:hover {
-    background: #d8d8d8; }
-
+/*%button,*/
+/*.button,*/
+/*button,*/
+/*input[type="submit"] {*/
+/*@extend %_button_base;*/
+/*padding: 9px 18px;*/
+/*color: $C_lineGray !important; // need this for chapstick*/
+/*background: $C_secondaryGray;*/
+/*@include box-shadow(0px, 2px, 0px, $C_primaryGray);*/
+/*&:active {*/
+/*@include box-shadow(0px, 0px, 0px, darken($bgColor, $borderOffset));*/
+/*@include transform(translate(0px, 2px));*/
+/*}*/
+/*&:hover {*/
+/*background:  darken($bgColor, 2%);*/
+/*}*/
+/*.inverted &*/
+/*
+ *border-bottom: 3px solid rgba(255,255,255,0.4);
+ *.inverted & {
+ *   @include button( $C_lineGrayInverted, $C_secondaryGrayInverted );
+ *   border-bottom: 3px solid rgba(0,0,0,0.4);
+ *}
+ */
+/*}*/
 .button.primary,
 .button--primary {
-  -moz-box-shadow: 0px 2px 0px black 0;
-  -webkit-box-shadow: 0px 2px 0px black 0;
-  -o-box-shadow: 0px 2px 0px black 0;
-  box-shadow: 0px 2px 0px black 0;
+  -moz-box-shadow: #861317 0px 2px 0px 0px;
+  -webkit-box-shadow: #861317 0px 2px 0px 0px;
+  -o-box-shadow: #861317 0px 2px 0px 0px;
+  box-shadow: #861317 0px 2px 0px 0px;
   padding: 9px 18px;
   color: white !important;
   background: #e2373c; }
   .button.primary:active,
   .button--primary:active {
-    -moz-box-shadow: 0px 0px 0px black 0;
-    -webkit-box-shadow: 0px 0px 0px black 0;
-    -o-box-shadow: 0px 0px 0px black 0;
-    box-shadow: 0px 0px 0px black 0;
+    -moz-box-shadow: #861317 0px 0px 0px 0px;
+    -webkit-box-shadow: #861317 0px 0px 0px 0px;
+    -o-box-shadow: #861317 0px 0px 0px 0px;
+    box-shadow: #861317 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
@@ -697,18 +707,18 @@ input[type="submit"] {
     background: #e12e33; }
 
 .button--black {
-  -moz-box-shadow: 0px 2px 0px black 0;
-  -webkit-box-shadow: 0px 2px 0px black 0;
-  -o-box-shadow: 0px 2px 0px black 0;
-  box-shadow: 0px 2px 0px black 0;
+  -moz-box-shadow: black 0px 2px 0px 0px;
+  -webkit-box-shadow: black 0px 2px 0px 0px;
+  -o-box-shadow: black 0px 2px 0px 0px;
+  box-shadow: black 0px 2px 0px 0px;
   padding: 9px 18px;
   color: white !important;
   background: black; }
   .button--black:active {
-    -moz-box-shadow: 0px 0px 0px black 0;
-    -webkit-box-shadow: 0px 0px 0px black 0;
-    -o-box-shadow: 0px 0px 0px black 0;
-    box-shadow: 0px 0px 0px black 0;
+    -moz-box-shadow: black 0px 0px 0px 0px;
+    -webkit-box-shadow: black 0px 0px 0px 0px;
+    -o-box-shadow: black 0px 0px 0px 0px;
+    box-shadow: black 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
@@ -738,7 +748,7 @@ input[type="submit"].button-flat--white {
   button.button-flat--white:hover,
   input[type="submit"].button-flat--white:hover {
     background: white;
-    color: #222222 !important; }
+    color: rgba(0, 0, 0, 0.8) !important; }
 
 .button-flat--black,
 button.button-flat--black,
@@ -3106,7 +3116,7 @@ a.unlink:link, a.unlink:visited {
   margin-top: 16px; }
   .testSwatches li {
     width: 188px;
-    height: 58px;
+    height: 32px;
     margin-right: 20px;
     margin-bottom: 48px;
     padding: 12px;
@@ -3199,7 +3209,7 @@ a.unlink:link, a.unlink:visited {
 
 #textGray {
   background: #dddddd;
-  color: #222222; }
+  color: rgba(0, 0, 0, 0.8); }
 
 #textBlue {
   background: #3987cb;
@@ -3216,24 +3226,24 @@ a.unlink:link, a.unlink:visited {
 /* set offset text */
 #offRed {
   background: #e2373c;
-  color: tint(#e2373c, 98%); }
+  color: rgba(255, 255, 255, 0.8); }
 
 #offBlack {
   background: black;
-  color: #aaaaaa; }
+  color: rgba(255, 255, 255, 0.8); }
 
 #offGray {
   background: #dddddd;
-  color: shade(#dddddd, 98%); }
+  color: rgba(0, 0, 0, 0.55); }
 
 #offBlue {
   background: #3987cb;
-  color: tint(#3987cb, 98%); }
+  color: rgba(255, 255, 255, 0.8); }
 
 #offLightblue {
   background: #13a1ff;
-  color: tint(#13a1ff, 98%); }
+  color: rgba(255, 255, 255, 0.8); }
 
 #offGreen {
   background: #62ac75;
-  color: tint(#62ac75, 98%); }
+  color: rgba(255, 255, 255, 0.8); }

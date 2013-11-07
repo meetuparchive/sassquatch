@@ -2,24 +2,49 @@
 * Buttons
 */
 
-$button-primary-color: $C_red;
-$button-secondary-color: #ddd;
-
 // Default button (secondary)
+//
+// this one doesn't use the button mixin
+// because it's transparent in order to visually
+// mix with any background color
 // ---------------------------
-%button,
-.button, 
-button,
-input[type="submit"] {
-	@include button( $button-secondary-color );
-}
+/*%button,*/
+/*.button,*/
+/*button,*/
+/*input[type="submit"] {*/
+
+	/*@extend %_button_base;*/
+	/*padding: 9px 18px;*/
+
+	/*color: $C_lineGray !important; // need this for chapstick*/
+	/*background: $C_secondaryGray;*/
+	/*@include box-shadow(0px, 2px, 0px, $C_primaryGray);*/
+
+	/*&:active {*/
+		/*@include box-shadow(0px, 0px, 0px, darken($bgColor, $borderOffset));*/
+		/*@include transform(translate(0px, 2px));*/
+	/*}*/
+
+	/*&:hover {*/
+		/*background:  darken($bgColor, 2%);*/
+	/*}*/
+
+	/*.inverted &*/
+	/*
+	 *border-bottom: 3px solid rgba(255,255,255,0.4);
+	 *.inverted & {
+	 *   @include button( $C_lineGrayInverted, $C_secondaryGrayInverted );
+	 *   border-bottom: 3px solid rgba(0,0,0,0.4);
+	 *}
+	 */
+/*}*/
 
 // Primary button
 // ---------------------------
 %button--primary,
 .button.primary, // support legacy selector
 .button--primary {
-	@include button( $button-primary-color, #fff );
+	@include button( $C_red, #fff );
 }
 
 // Black button
