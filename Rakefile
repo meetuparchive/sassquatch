@@ -27,7 +27,7 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling tests"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{TARGET}/sassquatch_tests.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
 
 	# compile docs
 	puts
@@ -36,7 +36,6 @@ task :compile do
 	puts "#{HR}"
 	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
 	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "cp #{TARGET}/sassquatch_tests.css #{DOC_ASSETS}/sassquatch_tests.css"
 	sh "jekyll build -s #{JEKYLL_DIR}"
 end
 
