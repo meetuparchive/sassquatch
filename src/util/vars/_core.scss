@@ -37,23 +37,23 @@ $uiControlFontStack: $headingFontStack;
 /* {{{ Hex definitions ( define new ones sparingly ) */
 
 // gray - typically used for interface shading
-$C_gray_lightest: $C_backgroundNav;
-$C_gray_lighter: $C_secondaryGray;
-$C_gray: $C_lineGray;
+$C_gray_lightest: #f4f4f4;
+$C_gray_lighter: #eeeeee;
+$C_gray: #dddddd;
 
 // midgray - it's right in the middle
-$C_midgray: $C_tertiaryGray;
+$C_midgray: #aaa;
 
 // darkgray - typically used for text
-$C_darkgray_lightest: $C_tertiaryGray;
-$C_darkgray_lighter: $C_secondaryGray;
-$C_darkgray: $C_primaryGray;
+$C_darkgray_lightest: #888888;
+$C_darkgray_lighter: #555555;
+$C_darkgray: #333333;
 
 // red - interface red, not the red *in* the logo
-$C_red: $C_red;
+$C_red: #E0393E;
 $C_red_darker: #CC1C32;
 
-$C_darkblue: $C_blue;	// darkblue - links and linked things
+$C_darkblue: #2A9BC7;	// darkblue - links and linked things
 $C_lightblue: #a5c8e7; 	// brightblue - highlight borders, light blue bg
 
 
@@ -72,8 +72,8 @@ $C_yellow: #FDF77B;
 /* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
 // interface (bg)
-$C_line: $C_lineGray;
-$C_line_less: $C_gray_lightest;
+$C_line: $C_gray;
+$C_line_less: $C_gray_lighter;
 $C_shade: $C_gray_lightest;
 $C_accent: $C_red;
 
