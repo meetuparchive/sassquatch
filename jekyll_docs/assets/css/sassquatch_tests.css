@@ -211,7 +211,7 @@ input[type="submit"].button-flat--red {
   -moz-box-sizing: border-box;
   padding: 9px 18px;
   margin: 0 0 16px 0;
-  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
   font-size: 15px;
   font-weight: 600;
   line-height: 1 !important;

@@ -12,7 +12,7 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	@include box-sizing("border");
 	padding: 9px 18px;
 	margin: 0 0 $baseline 0;
-	font-family: $buttonFont;
+	font-family: $buttonFont !important;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 1 !important;
