@@ -9,7 +9,9 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	@include round(3px);
 	@include transition('none');
 	@include inlineblock();
-	margin-bottom: $baseline;
+	@include box-sizing("border");
+	padding: 9px 18px;
+	margin: 0 0 $baseline 0;
 	font-family: $buttonFont;
 	font-size: 15px;
 	font-weight: 600;
@@ -32,15 +34,11 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	$borderOffset: 25%;
 
 	@if $textColor == "" {
-		@if isDark( $bgColor ) {
-			$textColor: getSecondaryTextColor($bgColor);
-		} @else {
-			$textColor: getSecondaryTextColor($bgColor);
-		}
+		$textColor: getPrimaryTextColor($bgColor);
 	}
+
 	@extend %_button_base;
 	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
-	padding: 9px 18px;
 	color: $textColor !important; // need this for chapstick
 	background: $bgColor;
 
@@ -50,7 +48,7 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	}
 
 	&:hover {
-		background:  darken($bgColor, 2%);
+		background:  darken($bgColor, 8%);
 	}
 }
 
@@ -64,7 +62,6 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 @mixin button-flat( $color ) {
 	@extend %_button_base;
 	@include transition(all .1s ease-in-out);
-	@include box-sizing("border");
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	-o-box-shadow: none;
@@ -73,7 +70,6 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
-	padding: 6px 15px;
 
 	&:hover {
 		background: $color;

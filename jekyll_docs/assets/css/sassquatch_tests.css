@@ -173,9 +173,13 @@
 * Button factory mixins
 * ------------------------------------------
 */
+.button,
+button,
+input[type="submit"],
 .button.primary,
 .button--primary,
 .button--black,
+.button--blue,
 .button-flat--white,
 button.button-flat--white,
 input[type="submit"].button-flat--white,
@@ -201,24 +205,28 @@ input[type="submit"].button-flat--red {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  margin-bottom: 16px;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 9px 18px;
+  margin: 0 0 16px 0;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 1 !important;
   text-decoration: none !important;
   border-width: 0; }
-  .button.primary:focus,
+  .button:focus,
+  button:focus,
+  input[type="submit"]:focus,
   .button--primary:focus,
   .button--black:focus,
+  .button--blue:focus,
   .button-flat--white:focus,
-  input[type="submit"].button-flat--white:focus,
   .button-flat--black:focus,
-  input[type="submit"].button-flat--black:focus,
   .button-flat--gray:focus,
-  input[type="submit"].button-flat--gray:focus,
-  .button-flat--red:focus,
-  input[type="submit"].button-flat--red:focus {
+  .button-flat--red:focus {
     outline-width: 0; }
 
 /**
@@ -411,13 +419,102 @@ h6 {
  *  This is a terrible, hacky mixin, but I can't tell 
  *  why it's being overridden elsewhere ATM. -j
  */
+/* {{{ Tables */
+table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse; }
+
+caption, td, th {
+  padding: 8px;
+  line-height: 16px;
+  text-align: left; }
+
+caption {
+  vertical-align: middle;
+  padding-left: 0; }
+
+th {
+  font-weight: bold;
+  vertical-align: middle; }
+
+td, tbody th {
+  vertical-align: top;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+/* bordered */
+.borderedTable {
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .borderedTable th + th, .borderedTable td + td, .borderedTable th + td {
+    border-left: 1px solid rgba(0, 0, 0, 0.1); }
+
+/* striped */
+.stripedTable tbody tr:nth-child(odd) td,
+.stripedTable tbody tr:nth-child(odd) th {
+  background-color: #f7f7f7; }
+
+/* }}} */
+/* List modifiers */
+.resetList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.inlineList, .inlineblockList, .pipeList, .crumbList {
+  padding-left: 0; }
+
+.inlineList > li, .pipeList > li, .crumbList > li {
+  display: inline;
+  list-style: none; }
+
+.inlineblockList > li {
+  display: inline-block;
+  list-style: none; }
+
+.pipeList > li {
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+  border-right: 1px solid; }
+  .pipeList > li:last-child, .pipeList > li.last {
+    border-right-width: 0; }
+
+.crumbList > li {
+  margin-right: 0.75em; }
+  .crumbList > li:after {
+    content: '>';
+    margin-left: 0.75em; }
+  .crumbList > li:last-child:after, .crumbList > li.last:after {
+    margin-left: 0;
+    content: ''; }
+
+.paddedList, .dividedList, .sectionList {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .paddedList > li, .dividedList > li, .sectionList > li {
+    margin: 0; }
+
+.paddedList > li {
+  padding: 6px 0 0 0; }
+  .paddedList > li:first-child {
+    padding: 0; }
+
+.dividedList > li {
+  padding: 12px 0 0;
+  border-top: 1px solid #f7f7f7; }
+
+.sectionList > li {
+  padding: 16px 16px 4px;
+  border-top: 1px solid #f7f7f7; }
+
+/* }}} */
 /**
 * FORMS
 * all form defaults and modifiers, to be included in foundation.scss
 */
 /* {{{ first, some normalization */
 button, input, select, textarea {
-  margin: 0;
+  margin: 0 0 16px 0;
   vertical-align: baseline;
   *vertical-align: middle;
   -webkit-box-sizing: border-box;
@@ -663,38 +760,65 @@ select.big {
 /**
 * Buttons
 */
-/*%button,*/
-/*.button,*/
-/*button,*/
-/*input[type="submit"] {*/
-/*@extend %_button_base;*/
-/*padding: 9px 18px;*/
-/*color: $C_lineGray !important; // need this for chapstick*/
-/*background: $C_secondaryGray;*/
-/*@include box-shadow(0px, 2px, 0px, $C_primaryGray);*/
-/*&:active {*/
-/*@include box-shadow(0px, 0px, 0px, darken($bgColor, $borderOffset));*/
-/*@include transform(translate(0px, 2px));*/
-/*}*/
-/*&:hover {*/
-/*background:  darken($bgColor, 2%);*/
-/*}*/
-/*.inverted &*/
-/*
- *border-bottom: 3px solid rgba(255,255,255,0.4);
- *.inverted & {
- *   @include button( $C_lineGrayInverted, $C_secondaryGrayInverted );
- *   border-bottom: 3px solid rgba(0,0,0,0.4);
- *}
- */
-/*}*/
+.button,
+button,
+input[type="submit"] {
+  padding: 9px 18px;
+  color: rgba(0, 0, 0, 0.55) !important;
+  background: rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+  .button:active,
+  button:active,
+  input[type="submit"]:active {
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .button:hover,
+  button:hover,
+  input[type="submit"]:hover {
+    background: rgba(0, 0, 0, 0.16); }
+  .inverted
+  .button, .inverted
+  button, .inverted
+  input[type="submit"] {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+    .inverted
+    .button:active, .inverted
+    button:active, .inverted
+    input[type="submit"]:active {
+      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -moz-transform: translate(0px, 2px);
+      -webkit-transform: translate(0px, 2px);
+      -o-transform: translate(0px, 2px);
+      transform: translate(0px, 2px); }
+    .inverted
+    .button:hover, .inverted
+    button:hover, .inverted
+    input[type="submit"]:hover {
+      background: rgba(255, 255, 255, 0.14); }
+
 .button.primary,
 .button--primary {
   -moz-box-shadow: #861317 0px 2px 0px 0px;
   -webkit-box-shadow: #861317 0px 2px 0px 0px;
   -o-box-shadow: #861317 0px 2px 0px 0px;
   box-shadow: #861317 0px 2px 0px 0px;
-  padding: 9px 18px;
   color: white !important;
   background: #e2373c; }
   .button.primary:active,
@@ -709,14 +833,13 @@ select.big {
     transform: translate(0px, 2px); }
   .button.primary:hover,
   .button--primary:hover {
-    background: #e12e33; }
+    background: #d21e24; }
 
 .button--black {
   -moz-box-shadow: black 0px 2px 0px 0px;
   -webkit-box-shadow: black 0px 2px 0px 0px;
   -o-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
-  padding: 9px 18px;
   color: white !important;
   background: black; }
   .button--black:active {
@@ -731,6 +854,25 @@ select.big {
   .button--black:hover {
     background: black; }
 
+.button--blue {
+  -moz-box-shadow: #005893 0px 2px 0px 0px;
+  -webkit-box-shadow: #005893 0px 2px 0px 0px;
+  -o-box-shadow: #005893 0px 2px 0px 0px;
+  box-shadow: #005893 0px 2px 0px 0px;
+  color: white !important;
+  background: #13a1ff; }
+  .button--blue:active {
+    -moz-box-shadow: #005893 0px 0px 0px 0px;
+    -webkit-box-shadow: #005893 0px 0px 0px 0px;
+    -o-box-shadow: #005893 0px 0px 0px 0px;
+    box-shadow: #005893 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .button--blue:hover {
+    background: #008ce9; }
+
 .button-flat--white,
 button.button-flat--white,
 input[type="submit"].button-flat--white {
@@ -741,10 +883,6 @@ input[type="submit"].button-flat--white {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
@@ -752,8 +890,7 @@ input[type="submit"].button-flat--white {
   box-shadow: none;
   color: white !important;
   background: transparent;
-  border: 2px solid white;
-  padding: 6px 15px; }
+  border: 2px solid white; }
   .button-flat--white:hover,
   button.button-flat--white:hover,
   input[type="submit"].button-flat--white:hover {
@@ -770,10 +907,6 @@ input[type="submit"].button-flat--black {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
@@ -781,8 +914,7 @@ input[type="submit"].button-flat--black {
   box-shadow: none;
   color: black !important;
   background: transparent;
-  border: 2px solid black;
-  padding: 6px 15px; }
+  border: 2px solid black; }
   .button-flat--black:hover,
   button.button-flat--black:hover,
   input[type="submit"].button-flat--black:hover {
@@ -799,10 +931,6 @@ input[type="submit"].button-flat--gray {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
@@ -810,8 +938,7 @@ input[type="submit"].button-flat--gray {
   box-shadow: none;
   color: #777777 !important;
   background: transparent;
-  border: 2px solid #777777;
-  padding: 6px 15px; }
+  border: 2px solid #777777; }
   .button-flat--gray:hover,
   button.button-flat--gray:hover,
   input[type="submit"].button-flat--gray:hover {
@@ -828,10 +955,6 @@ input[type="submit"].button-flat--red {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   -o-box-shadow: none;
@@ -839,103 +962,13 @@ input[type="submit"].button-flat--red {
   box-shadow: none;
   color: #e2373c !important;
   background: transparent;
-  border: 2px solid #e2373c;
-  padding: 6px 15px; }
+  border: 2px solid #e2373c; }
   .button-flat--red:hover,
   button.button-flat--red:hover,
   input[type="submit"].button-flat--red:hover {
     background: #e2373c;
     color: white !important; }
 
-/* {{{ Tables */
-table {
-  width: 100%;
-  font-size: 12px;
-  border-collapse: collapse; }
-
-caption, td, th {
-  padding: 8px;
-  line-height: 16px;
-  text-align: left; }
-
-caption {
-  vertical-align: middle;
-  padding-left: 0; }
-
-th {
-  font-weight: bold;
-  vertical-align: middle; }
-
-td, tbody th {
-  vertical-align: top;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
-/* bordered */
-.borderedTable {
-  border: 1px solid rgba(0, 0, 0, 0.1); }
-  .borderedTable th + th, .borderedTable td + td, .borderedTable th + td {
-    border-left: 1px solid rgba(0, 0, 0, 0.1); }
-
-/* striped */
-.stripedTable tbody tr:nth-child(odd) td,
-.stripedTable tbody tr:nth-child(odd) th {
-  background-color: #f7f7f7; }
-
-/* }}} */
-/* List modifiers */
-.resetList {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-
-.inlineList, .inlineblockList, .pipeList, .crumbList {
-  padding-left: 0; }
-
-.inlineList > li, .pipeList > li, .crumbList > li {
-  display: inline;
-  list-style: none; }
-
-.inlineblockList > li {
-  display: inline-block;
-  list-style: none; }
-
-.pipeList > li {
-  margin-right: 0.5em;
-  padding-right: 0.5em;
-  border-right: 1px solid; }
-  .pipeList > li:last-child, .pipeList > li.last {
-    border-right-width: 0; }
-
-.crumbList > li {
-  margin-right: 0.75em; }
-  .crumbList > li:after {
-    content: '>';
-    margin-left: 0.75em; }
-  .crumbList > li:last-child:after, .crumbList > li.last:after {
-    margin-left: 0;
-    content: ''; }
-
-.paddedList, .dividedList, .sectionList {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-  .paddedList > li, .dividedList > li, .sectionList > li {
-    margin: 0; }
-
-.paddedList > li {
-  padding: 6px 0 0 0; }
-  .paddedList > li:first-child {
-    padding: 0; }
-
-.dividedList > li {
-  padding: 12px 0 0;
-  border-top: 1px solid #f7f7f7; }
-
-.sectionList > li {
-  padding: 16px 16px 4px;
-  border-top: 1px solid #f7f7f7; }
-
-/* }}} */
 /**
 * LAYOUT
 * oocss grids, modifier classes for layout
