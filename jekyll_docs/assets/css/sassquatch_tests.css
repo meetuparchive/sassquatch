@@ -214,22 +214,16 @@ flips
 .button,
 button,
 input[type="submit"],
+.primary,
 .button.primary,
 .button--primary,
+input[type="submit"].primary,
 .button--black,
 .button--blue,
 .button-flat--white,
-button.button-flat--white,
-input[type="submit"].button-flat--white,
 .button-flat--black,
-button.button-flat--black,
-input[type="submit"].button-flat--black,
 .button-flat--gray,
-button.button-flat--gray,
-input[type="submit"].button-flat--gray,
-.button-flat--red,
-button.button-flat--red,
-input[type="submit"].button-flat--red {
+.button-flat--red {
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -258,6 +252,7 @@ input[type="submit"].button-flat--red {
   .button:focus,
   button:focus,
   input[type="submit"]:focus,
+  .primary:focus,
   .button--primary:focus,
   .button--black:focus,
   .button--blue:focus,
@@ -813,16 +808,20 @@ input[type="submit"] {
     input[type="submit"]:hover {
       background: rgba(255, 255, 255, 0.14); }
 
+.primary,
 .button.primary,
-.button--primary {
+.button--primary,
+input[type="submit"].primary {
   -moz-box-shadow: #861317 0px 2px 0px 0px;
   -webkit-box-shadow: #861317 0px 2px 0px 0px;
   -o-box-shadow: #861317 0px 2px 0px 0px;
   box-shadow: #861317 0px 2px 0px 0px;
   color: white !important;
   background: #e2373c; }
+  .primary:active,
   .button.primary:active,
-  .button--primary:active {
+  .button--primary:active,
+  input[type="submit"].primary:active {
     -moz-box-shadow: #861317 0px 0px 0px 0px;
     -webkit-box-shadow: #861317 0px 0px 0px 0px;
     -o-box-shadow: #861317 0px 0px 0px 0px;
@@ -831,8 +830,10 @@ input[type="submit"] {
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .primary:hover,
   .button.primary:hover,
-  .button--primary:hover {
+  .button--primary:hover,
+  input[type="submit"].primary:hover {
     background: #d21e24; }
 
 .button--black {
@@ -873,9 +874,7 @@ input[type="submit"] {
   .button--blue:hover {
     background: #008ce9; }
 
-.button-flat--white,
-button.button-flat--white,
-input[type="submit"].button-flat--white {
+.button-flat--white {
   /*  We're interpolating the inputs here in case they're wrapped
    *  in strings from use in the mixins.
    */
@@ -883,23 +882,21 @@ input[type="submit"].button-flat--white {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  -ms-box-shadow: none;
-  box-shadow: none;
   color: white !important;
   background: transparent;
   border: 2px solid white; }
-  .button-flat--white:hover,
-  button.button-flat--white:hover,
-  input[type="submit"].button-flat--white:hover {
+  .button-flat--white,
+  .button-flat--white:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--white:hover {
     background: white;
     color: rgba(0, 0, 0, 0.8) !important; }
 
-.button-flat--black,
-button.button-flat--black,
-input[type="submit"].button-flat--black {
+.button-flat--black {
   /*  We're interpolating the inputs here in case they're wrapped
    *  in strings from use in the mixins.
    */
@@ -907,23 +904,21 @@ input[type="submit"].button-flat--black {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  -ms-box-shadow: none;
-  box-shadow: none;
   color: black !important;
   background: transparent;
   border: 2px solid black; }
-  .button-flat--black:hover,
-  button.button-flat--black:hover,
-  input[type="submit"].button-flat--black:hover {
+  .button-flat--black,
+  .button-flat--black:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--black:hover {
     background: black;
     color: white !important; }
 
-.button-flat--gray,
-button.button-flat--gray,
-input[type="submit"].button-flat--gray {
+.button-flat--gray {
   /*  We're interpolating the inputs here in case they're wrapped
    *  in strings from use in the mixins.
    */
@@ -931,23 +926,21 @@ input[type="submit"].button-flat--gray {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  -ms-box-shadow: none;
-  box-shadow: none;
   color: #777777 !important;
   background: transparent;
   border: 2px solid #777777; }
-  .button-flat--gray:hover,
-  button.button-flat--gray:hover,
-  input[type="submit"].button-flat--gray:hover {
+  .button-flat--gray,
+  .button-flat--gray:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--gray:hover {
     background: #777777;
     color: white !important; }
 
-.button-flat--red,
-button.button-flat--red,
-input[type="submit"].button-flat--red {
+.button-flat--red {
   /*  We're interpolating the inputs here in case they're wrapped
    *  in strings from use in the mixins.
    */
@@ -955,17 +948,17 @@ input[type="submit"].button-flat--red {
   -moz-transition: all 0.1s ease-in-out 0 ;
   -o-transition: all 0.1s ease-in-out 0 ;
   transition: all 0.1s ease-in-out 0 ;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  -o-box-shadow: none;
-  -ms-box-shadow: none;
-  box-shadow: none;
   color: #e2373c !important;
   background: transparent;
   border: 2px solid #e2373c; }
-  .button-flat--red:hover,
-  button.button-flat--red:hover,
-  input[type="submit"].button-flat--red:hover {
+  .button-flat--red,
+  .button-flat--red:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--red:hover {
     background: #e2373c;
     color: white !important; }
 

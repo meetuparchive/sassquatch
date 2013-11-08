@@ -1,5 +1,6 @@
 /**
-* Buttons
+* ==============================================
+* BOXY BUTTONS
 */
 
 // Default button (secondary)
@@ -45,59 +46,66 @@ input[type="submit"] {
 }
 
 // Primary button
+//
+// this gets a bit lengthy to support
+// the legacy class "primary" on the higher
+// specificity 'input[type="submit"]'
 // ---------------------------
 %button--primary,
-.button.primary, // support legacy selector
-.button--primary {
+.primary,
+.button.primary,
+.button--primary,
+input[type="submit"].primary,
+input[type="submit"].button--primary {
 	@include button( $C_red, #fff );
 }
 
 // Black button
 // ---------------------------
 %button--black,
-.button--black {
+.button--black,
+input[type="submit"].button--black {
 	@include button( #000, #fff );
 }
 
 // Blue button
 // ---------------------------
 %button--blue,
-.button--blue {
+.button--blue,
+input[type="submit"].button--blue {
 	@include button( #13a1ff );
 }
+
+
+/**
+* ==============================================
+* FLAT BUTTONS
+*/
 
 // Flat button (white)
 // ---------------------------
 %button-flat--white,
-.button-flat--white,
-button.button-flat--white,
-input[type="submit"].button-flat--white {
+.button-flat--white {
 	@include button-flat( #fff );
 }
 
 // Flat button (black)
 // ---------------------------
 %button-flat--black,
-.button-flat--black,
-button.button-flat--black,
-input[type="submit"].button-flat--black {
+.button-flat--black {
 	@include button-flat( #000 );
 }
 
 // Flat button (gray)
 // ---------------------------
 %button-flat--gray,
-.button-flat--gray,
-button.button-flat--gray,
-input[type="submit"].button-flat--gray {
+.button-flat--gray {
 	@include button-flat( #777 );
 }
 
 // Flat button (red)
 // ---------------------------
 %button-flat--red,
-.button-flat--red,
-button.button-flat--red,
-input[type="submit"].button-flat--red {
+.button-flat--red {
 	@include button-flat( $C_red );
 }

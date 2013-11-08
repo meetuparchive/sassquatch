@@ -62,14 +62,17 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 @mixin button-flat( $color ) {
 	@extend %_button_base;
 	@include transition(all .1s ease-in-out);
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	-o-box-shadow: none;
-	-ms-box-shadow: none;
-	box-shadow: none;
 	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
+
+	&, &:active {
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		-o-box-shadow: none;
+		-ms-box-shadow: none;
+		box-shadow: none;
+	}
 
 	&:hover {
 		background: $color;
