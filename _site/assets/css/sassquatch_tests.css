@@ -169,6 +169,44 @@
  *  used with CSS animations.
  */
 /*  }   */
+/*
+Animations
+==========
+
+This is kind of a placeholder file until we transfer over to Compass, which
+provides a more complete and flexible system of mixins for animations.
+
+Once Compass is in place, we should be able to remove or replace the following
+functions with Compass equivalents, although we should try to maintain the
+@extend-based setup as much as possible
+*/
+/*
+transition-all
+--------------
+
+many of our transitions use a blunt "transition: all" target.
+
+@mixin create-transition-all() is just a helper for creating a bunch of placeholder
+selectors for the various timing functions we might want to use. Because
+it's based on placeholders, any timing functions that are not used will
+not
+
+*/
+/*
+perspective
+-----------
+
+When divs flip, they'll be isometric unless you give the wrapping container
+a perspective value
+*/
+.has-perspective {
+  -webkit-perspective: 800px;
+  perspective: 800px; }
+
+/*
+flips
+
+*/
 /**
 * Button factory mixins
 * ------------------------------------------
@@ -240,44 +278,6 @@ input[type="submit"].button-flat--red {
 * Flat button
 * @param $color - single border/text/hover color
 * -----------------------------------------------
-*/
-/*
-Animations
-==========
-
-This is kind of a placeholder file until we transfer over to Compass, which
-provides a more complete and flexible system of mixins for animations.
-
-Once Compass is in place, we should be able to remove or replace the following
-functions with Compass equivalents, although we should try to maintain the
-@extend-based setup as much as possible
-*/
-/*
-transition-all
---------------
-
-many of our transitions use a blunt "transition: all" target.
-
-@mixin create-transition-all() is just a helper for creating a bunch of placeholder
-selectors for the various timing functions we might want to use. Because
-it's based on placeholders, any timing functions that are not used will
-not
-
-*/
-/*
-perspective
------------
-
-When divs flip, they'll be isometric unless you give the wrapping container
-a perspective value
-*/
-.has-perspective {
-  -webkit-perspective: 800px;
-  perspective: 800px; }
-
-/*
-flips
-
 */
 html {
   overflow-y: scroll;
@@ -1632,7 +1632,9 @@ as well as a few different states/types:
 
 */
 /**
-* Base tearsheet placeholder classes
+* Tearsheet utils
+* extends and mixins for creating a
+* tearsheet class for a given px size
 */
 .tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .tearsheet-25 .month, .tearsheet-30 .month, .tearsheet-40 .month, .tearsheet .month, .tearsheet-80 .month {
   -webkit-transition: all 150ms ease-in-out;
@@ -1688,10 +1690,6 @@ as well as a few different states/types:
     font-size: 11px;
     background-color: rgba(0, 0, 0, 0.55); }
 
-/**
-* Tearsheet mixin
-* creates a tearsheet class for a given px size
-*/
 a:hover .tearsheet-disabled .month {
   background-color: rgba(0, 0, 0, 0.1); }
 .tearsheet-disabled .month {
