@@ -12,8 +12,7 @@ as well as a few different states/types:
 
 */
 
-@import "../util/extends/tearsheet";
-@import "../util/mixins/tearsheet";
+@import "../util/tearsheet";
 
 @if $platform == "desktop" {
 

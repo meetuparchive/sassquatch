@@ -8,7 +8,7 @@
 
 
 // VARS
-@import "util/variables/core";
+@import "util/vars/core";
 
 
 // FUNCTIONS
@@ -16,9 +16,9 @@
 @import "util/functions/brightness";
 
 
-// MIXINS/EXTENDS
-@import "util/mixins/core";
-@import "util/extends/animation";
+// UTIL
+@import "util/mixins";
+@import "util/animation";
 
 
 // CORE

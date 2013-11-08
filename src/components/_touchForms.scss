@@ -10,8 +10,8 @@
  *	  as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
  */
 
-@import "../util/variables/touchList";
-@import "../util/extends/touchList";
+@import "../util/vars/touchList";
+@import "../util/touchList";
 
 @if $platform == "mobile" {
 
