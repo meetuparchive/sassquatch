@@ -8,8 +8,8 @@
  *	 Determines styles for the `touchList` list layout style.
  */
 
-@import "../util/variables/touchList";
-@import "../util/extends/touchList";
+@import "../util/vars/touchList";
+@import "../util/touchList";
 
 @if $platform == "mobile" {
 
