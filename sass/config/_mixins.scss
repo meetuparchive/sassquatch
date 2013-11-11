@@ -180,7 +180,7 @@
 		@include button_color_hover($base_color, $isLight);
 	}
 
-	&:active, &.selected {
+	&:active, &.selected, &.active {
 		@include button_color_active($base_color, $isLight);
 	}
 }
