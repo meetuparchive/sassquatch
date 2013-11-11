@@ -87,32 +87,27 @@ input[type="submit"].button--blue {
 %button-flat,
 %button-flat--gray,
 .button-flat,
-.button-flat--gray,
-input[type="submit"].button-flat,
-input[type="submit"].button--flat-gray {
+.button-flat--gray {
 	@include button-flat( #777 );
 }
 
 // Flat button (white)
 // ---------------------------
 %button-flat--white,
-.button-flat--white,
-input[type="submit"].button--flat-white {
+.button-flat--white {
 	@include button-flat( #fff );
 }
 
 // Flat button (black)
 // ---------------------------
 %button-flat--black,
-.button-flat--black,
-input[type="submit"].button--flat-black {
+.button-flat--black {
 	@include button-flat( #000 );
 }
 
 // Flat button (red)
 // ---------------------------
 %button-flat--red,
-.button-flat--red,
-input[type="submit"].button--flat-red {
+.button-flat--red {
 	@include button-flat( $C_red );
 }
