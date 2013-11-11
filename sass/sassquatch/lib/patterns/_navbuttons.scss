@@ -59,21 +59,6 @@
             float: none;
             text-align: left;
 		}
-
-		label:first-of-type,
-		li:first-child > a,
-		li:first-child > span {
-			@include round-nw($defaultRadius - 1px);
-			@include round-ne($defaultRadius - 1px);
-			@include round-sw(0);
-		}
-		label:last-of-type
-		li:last-child > a,
-		li:last-child > span {
-			@include round-ne(0);
-			@include round-se($defaultRadius - 1px);
-			@include round-sw($defaultRadius - 1px);
-		}
     }
 
 
@@ -90,7 +75,7 @@
 		@include button_personality;
 		@include button_color(#fff, true);
 		border: none;
-		color: $C_text !important;
+		color: $C_text;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
 	}
 
@@ -123,40 +108,42 @@
      * COLOR INVERTED
      ****************************/
 
-    .inverted &{
-        border-color: $C_darkgray;
-		label,
-		li > a,
-		li > span {
-			@include button_color($C_darkgray_lighter, false);
-			border: none;
-			color: $C_gray!important;
-		}
-
-		input[type=radio]:checked + label, input[attr="checked"] + label {
-			@include button_color_active($C_darkgray_lighter, true);
-		}
-
-		input[type=radio]:checked + label, input[attr="checked"] + label,
-		li > a:active, li > a.selected, li > a.push,
-		li > span.selected, li > span.push {
-			color: $C_gray_lightest!important;
-		}
-
-        &.vertical{
-			label,
-			li > a,
-			li > span{
-				@include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
-			}
-
-			label:last-of-type,
-			li:last-child > a,
-			li:last-child > span {
-				@include experimental(box-shadow, '#{$highlight}');
-			}
-        }
-    }
+/*
+ *    .inverted &{
+ *        border-color: $C_darkgray;
+ *      label,
+ *      li > a,
+ *      li > span {
+ *         @include button_color($C_darkgray_lighter, false);
+ *         border: none;
+ *         color: $C_text;
+ *      }
+ *
+ *      input[type=radio]:checked + label, input[attr="checked"] + label {
+ *         @include button_color_active($C_darkgray_lighter, true);
+ *      }
+ *
+ *      input[type=radio]:checked + label, input[attr="checked"] + label,
+ *      li > a:active, li > a.selected, li > a.push,
+ *      li > span.selected, li > span.push {
+ *         color: $C_gray_lightest;
+ *      }
+ *
+ *        &.vertical{
+ *         label,
+ *         li > a,
+ *         li > span{
+ *            @include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
+ *         }
+ *
+ *         label:last-of-type,
+ *         li:last-child > a,
+ *         li:last-child > span {
+ *            @include experimental(box-shadow, '#{$highlight}');
+ *         }
+ *        }
+ *    }
+ */
 
 
     /*****************************
