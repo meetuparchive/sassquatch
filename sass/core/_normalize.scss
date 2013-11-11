@@ -7,13 +7,19 @@
 	}
 	html, body {
 		font-size: $baseFontSize;
-		color: $C_text;
+		color: $C_secondaryGray;
 		line-height: $baseLineHeight;
 		margin: 0;
 		padding: 0;
 	}
 	body, button, input, select, textarea {
 		font-family: $baseFontStack;
+	}
+
+	// Override default text color for "inverted" contexts
+	// (over deark backgrounds, photos, etc.)
+	.inverted {
+		color: $C_secondaryGrayInverted;
 	}
 
 	/* {{{ Inline tag defaults */
@@ -81,30 +87,33 @@
 	a:hover, a:active {
 		 cursor: hand;
 		 cursor: pointer;
-		color: $C_link;
+		color: $C_blue;
 		text-decoration: none;
 	}
 	a:visited {
-		color: $C_link;
+		color: $C_blue;
 	}
 	a:hover, a:active {
 		text-decoration: underline;
-		color: $C_link;
+		color: $C_blue;
 	}
 	a:active {
-		 color: darken($C_link, 10%);
+		 color: darken($C_blue, 10%);
 	}
 	/* }}} */
 
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
 		font-family: $headingFontStack;
-		color: $C_text_headline;
+		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2.5;
 		line-height: 1.1;
-		 font-weight: bold;
+		font-weight: bold;
+		.inverted & {
+			color: $C_primaryGrayInverted;
+		}
 	}
 	h1 {
 		font-size: $h1FontSize;
@@ -138,11 +147,18 @@
 
 	html, body {
 		font-size: $baseFontSize;
-		color: $C_text;
+		color: $C_secondaryGray;
 	} 
 	body, button, input, select, textarea {
 		font-family: $baseFontStack;
 	}
+
+	// Override default text color for "inverted" contexts
+	// (over deark backgrounds, photos, etc.)
+	.inverted {
+		color: $C_secondaryGrayInverted;
+	}
+
 	p {
 		line-height:1.5;
 	}
@@ -183,11 +199,11 @@
 
 	a:link, a:visited, a:hover, a:active {
 		text-decoration: none;	
-		color: $C_link;
+		color: $C_blue;
 	}
 
 	.linked {
-		color: $C_link !important;
+		color: $C_blue !important;
 	}
 
 	/* }}} */
@@ -197,11 +213,15 @@
 	h1,h2,h3,h4,h5,h6 {
 		font-family: $headingFontStack;	
 		font-weight: normal;
-		color: $C_text_headline;
+		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
 		line-height: 1.2;
+		
+		.inverted & {
+			color: $C_primaryGray;
+		}
 	}
 	h1 { 
 		font-weight: bold; 

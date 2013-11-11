@@ -14,7 +14,7 @@
 	background: $C_yellow;
 }
 .shaded {
-	background-color:$C_gray;
+	background-color: $C_gray;
 }
 .shaded-lighter {
 	background-color:$C_gray_lightest;
@@ -23,6 +23,8 @@
 	background-color: $C_red;
 	color: white;
 }
+
+// TODO: we probably shouldn't keep this in sassquatch; we only use it once in chapstick
 .shaded-pixelate {
 	// this is a translucent 128x128 overlay that darkens squares of the underlying color
 	// to make it appear blocky/giant-pixelated. It's a cool effect, show your friends!
@@ -119,7 +121,11 @@
     @include inlineblock();
 }
 .muted {
-	color: $C_text_less;
+	color: $C_tertiaryGray;
+
+	.inverted & {
+		color: $C_tertiaryGrayInverted;
+	}
 }
 .muted-opacity{
     // when over something that isn't just a white background
@@ -170,7 +176,7 @@
 
 a.unlink{
     &:link, &:visited{
-        color: $C_text;
+        color: $C_secondaryGray;
     }
 }
 
@@ -197,7 +203,7 @@ a.unlink{
 	.right {
 		float:right;
 	}
-	.spaced-right {
+	.spaced-right { // rename these spaced classes; not explicit about margin vs. padding
 		margin-right:$spacing;
 	}
 	.spaced-right-slight {
@@ -206,7 +212,7 @@ a.unlink{
 	.spaced-left {
 		margin-left:$spacing;
 	}
-	.flush-top {
+	.flush-top { // TODO: document this or kill it
 		margin-top:0 !important;
 		padding-top:0 !important;
 	}
@@ -215,10 +221,14 @@ a.unlink{
 	  margin-bottom: 0 !important; }
 
 	.darker {
-		color:$C_darkgray;
+		color: $C_primaryGray;
+
+		.inverted & {
+			color: $C_primaryGrayInverted;
+		}
 	}
-	.light {
-		color:#444;
+	.light { // TODO: kill this
+		color: #444;
 	}
 	.small, small {
 		font-size: 11px;
@@ -238,11 +248,16 @@ a.unlink{
 		font-style:italic;
 	}
 
-	.natural-text {
-		color: $C_text !important;
+	// this one only lives in mobile land
+	// we should deprecate this or document &
+	// move it to both platforms
+	@if $platform == "mobile" {
+		.natural-text {
+			color: $C_text !important;
 
-		.natural-text.light {
-			opacity:.7;
+			.natural-text.light {
+				opacity:.7;
+			}
 		}
 	}
 
@@ -258,15 +273,18 @@ a.unlink{
 		line-height:2.8;
 	}
 
-	/* aliases */
-
+	// 'aliases' only exist for mobile
+	// we should deprecate these or document &
+	// move them to both platforms
+	@if $platform == "mobile" {
+		/* aliases */
 		.lighter { //muted 
 			color: $C_text_less;
 		}
-
 		.unpadded { //padded-none 
 			padding: 0 !important;
 		}
+	}
 
 	/* }}} */
 }
