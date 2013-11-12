@@ -1237,7 +1237,7 @@ input[type="submit"].button--blue {
 /* }}} */
 /* {{{ layout  modifiers */
 /* clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ */
-.clearfix:after, .datetime-block:after {
+.clearfix:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -1245,7 +1245,7 @@ input[type="submit"].button--blue {
   clear: both;
   height: 0; }
 
-* html .clearfix, * html .datetime-block, *:first-child + html .clearfix, *:first-child + html .datetime-block {
+* html .clearfix, *:first-child + html .clearfix {
   zoom: 1; }
 
 .clear-both {
@@ -1837,71 +1837,6 @@ a:hover .tearsheet-add .time {
 .ie9 .nametag-photo-name {
   /* ie adds an extra hex pair for the alpha channel */
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00000000', EndColorStr='#80000000'); }
-
-.datetime-block {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #888888;
-  font-size: 13px;
-  line-height: 1.3;
-  position: relative;
-  border: 1px solid #dddddd;
-  padding: 9px 6px 6px;
-  margin: 6px; }
-  .datetime-block:hover {
-    border-color: #c4c4c4; }
-    .datetime-block:hover .icon-calendar {
-      color: #e0393e; }
-    .datetime-block:hover .double-line {
-      border-color: #c4c4c4; }
-  .datetime-block .icon-calendar {
-    float: left;
-    font-size: 32px;
-    padding: 0 5px 0 0;
-    color: #dddddd; }
-  .datetime-block .forward-ribbon {
-    font-size: 8px;
-    position: relative;
-    padding: 2px 7px 3px;
-    border-radius: 2px 0 0 2px;
-    background-color: #e0393e;
-    color: white;
-    position: absolute;
-    bottom: 12px;
-    right: -5px; }
-    .datetime-block .forward-ribbon:after {
-      content: '';
-      position: absolute;
-      right: 0;
-      bottom: -4px;
-      width: 0;
-      height: 0;
-      border: 2px solid #b11c20;
-      border-right-color: transparent;
-      border-bottom-color: transparent; }
-  .datetime-block .double-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: #dddddd;
-    width: 100%; }
-
-.datetime-value {
-  text-align: left;
-  float: left; }
-
-.datetime-date {
-  color: #e0393e;
-  font-weight: bold;
-  font-size: 1.15em; }
-
-.datetime-time, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time {
-  font-size: 0.9em; }
-  .datetime-time sup, .tearsheet-25 .time sup, .tearsheet-30 .time sup, .tearsheet-40 .time sup, .tearsheet .time sup, .tearsheet-80 .time sup {
-    border-bottom: 1px solid;
-    font-size: .7em;
-    top: -0.35em;
-    left: 0.05em;
-    padding-bottom: 0.04em; }
 
 /**
 * Tabs Pattern
@@ -2580,26 +2515,6 @@ a:hover .tearsheet-add .time {
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
   .segmented-control-segment.checked .segmented-control-button:link, .segmented-control-segment.checked .segmented-control-button:hover, .segmented-control-segment.checked .segmented-control-button:vistied, .segmented-control-segment.checked .segmented-control-button:active {
     color: #888888 !important; }
-
-ul.toolbar {
-  display: table;
-  width: 100%;
-  margin: 0;
-  padding: 0; }
-  ul.toolbar.nested {
-    background-color: #f4f4f4;
-    border-top: 1px solid #dddddd; }
-  ul.toolbar li {
-    padding: 4px 8px;
-    width: 1%;
-    display: table-cell;
-    vertical-align: middle; }
-    ul.toolbar li:first-child {
-      width: 99%; }
-    ul.toolbar li:last-child {
-      padding-right: 4px; }
-    ul.toolbar li.right {
-      float: right; }
 
 .badge {
   display: inline-block;
