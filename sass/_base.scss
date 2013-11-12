@@ -19,6 +19,7 @@
 // UTIL
 @import "util/mixins";
 @import "util/animation";
+@import "util/media";
 @import "util/buttons";
 
 
@@ -43,8 +44,7 @@
 @import "components/appendpager";
 @import "components/navbuttons";
 @import "components/segmentedcontrol";
-@import "components/media"; // TODO: check usage...
-@import "components/badge"; // TODO: check usage...
+@import "components/badge"; // TODO: need to check with mobile first... most likely deprecated by doc-* updates
 @import 'components/touchLists';
 @import 'components/touchForms';
 
