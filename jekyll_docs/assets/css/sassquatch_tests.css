@@ -2536,31 +2536,6 @@ a:hover .tearsheet-add .time {
   -o-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
   box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0; }
 
-.verify-quote {
-  background-color: #f2f2f2; }
-
-.quotify {
-  position: relative;
-  padding-left: 40px;
-  padding-right: 40px;
-  display: block; }
-  .quotify:before, .quotify:after {
-    font-family: georgia, serif;
-    font-size: 100px;
-    color: #ddd;
-    position: absolute;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.15); }
-  .quotify:before {
-    line-height: 1;
-    top: -10px;
-    left: 0;
-    content: "\201C"; }
-  .quotify:after {
-    line-height: 16px;
-    bottom: -25px;
-    right: 0;
-    content: "\201D"; }
-
 /**
  *  @file   _touchList.scss
  *  @author John Cockrell <john@meetup.com>
