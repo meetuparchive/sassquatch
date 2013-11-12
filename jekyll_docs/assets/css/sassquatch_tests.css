@@ -1580,65 +1580,6 @@ hr.double-line {
     .cardList > li .doc-content:first-child {
       border-top: 0; }
 
-.slideswitch {
-  display: block;
-  position: relative;
-  -moz-border-radius: 3px 3px 3px 3px;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px;
-  background-color: #f4f4f4;
-  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
-  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 7px 0 inset;
-  border: 1px solid #cccccc;
-  width: 54px;
-  height: 18px;
-  overflow: hidden;
-  cursor: pointer;
-  font-size: 10px; }
-  .slideswitch input {
-    display: none; }
-  .slideswitch .option {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: 27px;
-    text-align: center;
-    line-height: 18px; }
-  .slideswitch .on {
-    color: #2a9bc7;
-    left: 0; }
-  .slideswitch .off {
-    color: #555555;
-    right: 0; }
-  .slideswitch .slider {
-    display: block;
-    position: absolute;
-    top: 0;
-    -moz-border-radius: 2px 2px 2px 2px;
-    -webkit-border-radius: 2px 2px 2px 2px;
-    border-radius: 2px 2px 2px 2px;
-    width: 25px;
-    height: 16px;
-    border: 1px solid #dddddd;
-    background-color: #eeeeee;
-    background: #eeeeee;
-    background: -webkit-gradient(linear, left top, left bottom, from(white), to(#eeeeee));
-    background: -moz-linear-gradient(top, white, #eeeeee);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE')";
-    z-index: 1;
-    left: 0px;
-    -moz-transition: left 0.1s ease-out;
-    -webkit-transition: left 0.1s ease-out;
-    transition: left 0.1s ease-out; }
-  .slideswitch input:checked + .slider {
-    left: 27px; }
-  .slideswitch .ieOn {
-    /* ie js hack */
-    left: 27px; }
-
 /* Tearsheets
 
 Tearsheets are basically date displays that look like daily calendar tearsheets
