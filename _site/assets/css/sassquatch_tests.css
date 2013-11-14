@@ -287,13 +287,14 @@ html {
 
 html, body {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.55);
+  /*color: $C_secondaryGray;*/
+  color: lime;
   line-height: 1.5;
   margin: 0;
   padding: 0; }
 
 body, button, input, select, textarea {
-  font-family: verdana, Arial, sans-serif; }
+  font-family: Papyrus, fantasy; }
 
 .inverted {
   color: rgba(255, 255, 255, 0.8); }
@@ -384,8 +385,9 @@ a:active {
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  font-family: Papyrus, fantasy;
+  /*color: $C_primaryGray;*/
+  color: fuchsia;
   margin: 0;
   padding: 0;
   padding-bottom: 6.4px;
@@ -574,7 +576,7 @@ fieldset {
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; } }
 input, select, textarea {
-  font-family: verdana, Arial, sans-serif;
+  font-family: Papyrus, fantasy;
   display: block;
   line-height: 1.5;
   padding: 4px;
@@ -754,7 +756,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Papyrus, fantasy; }
 
 select.big {
   height: 34px;
@@ -1613,7 +1615,7 @@ as well as a few different states/types:
 
 .tearsheet-25, .tearsheet-30, .tearsheet-40, .tearsheet, .tearsheet-80 {
   border-radius: 2px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Papyrus, fantasy;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -1849,7 +1851,7 @@ a:hover .tearsheet-add .time {
     line-height: 0;
     height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Papyrus, fantasy;
     border: 1px solid #dddddd;
     border-left-width: 0;
     padding: 0.4em 0;
@@ -1910,7 +1912,7 @@ a:hover .tearsheet-add .time {
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Papyrus, fantasy;
   font-weight: bold;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -2000,7 +2002,7 @@ a:hover .tearsheet-add .time {
     user-select: none;
     cursor: pointer;
     text-decoration: none!important;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Papyrus, fantasy;
     padding: 0.5em 1.2em 0.4em;
     display: block;
     font-size: 14px; }
@@ -2389,7 +2391,7 @@ a:hover .tearsheet-add .time {
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Papyrus, fantasy;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.5;

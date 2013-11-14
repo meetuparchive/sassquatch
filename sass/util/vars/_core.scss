@@ -21,15 +21,10 @@ $h4FontSize: 16px;
 $h5FontSize: $baseFontSize;
 $h6FontSize: 11px;
 
-$baseFontStack: verdana, Arial, sans-serif;
-$headingFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$baseFontStack: Papyrus, fantasy;
+$headingFontStack: Papyrus, fantasy;
 $monoFontStack: Monaco, "Andale Mono", "Courier New", monospace;
 $uiControlFontStack: $headingFontStack;
-
-// Switch to Helvetica in near future
-// $baseFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-
 /* }}} */
 
 /* {{{ Colors (legacy - try to use the bower swatches component) */
