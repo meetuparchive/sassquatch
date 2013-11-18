@@ -80,6 +80,10 @@ flips
 	transform: rotateX(75deg);
 }
 
+
+// WARNING: you have to initialize mobile-specific vars outside of the @if so they have global scope
+$ease_in: null;
+$ease_out: null;
 @if $platform == "mobile" {
 	/*  ANIMATION LIBRARY
 	 *

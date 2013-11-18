@@ -29,6 +29,25 @@
 /* _sponsoree.css and _sponsor_manage.scss */
 /* }}} */
 /**
+*   @description
+*   Sass vars for mobile. include variables and override the spacing ones
+*
+*   @note
+*   - color naming convention is really weird and difficult to remember. this
+*     is why i ended up defining my own colors everywhere in _new_styles, which is 
+*     bad for consistency.
+*   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
+*     shrink the layout?
+*
+*   TODO
+*   - flexible font and padding sizes. Making it based off of a master `body {}`
+*     size will allow us to be responsive at multiple sizes without doing a lot
+*     of media-based overrides.
+*   - Standardized/saner gray values
+*
+*
+*/
+/**
 * MIXINS
 * Sass mixins (including compass mixins)
 */
