@@ -4,7 +4,7 @@
 */
 
 /* Import color vars from meetup-swatches */
-@import "../../../components/meetup-swatches/sass/colors";
+@import "../../components/meetup-swatches/sass/colors";
 
 /* {{{ Type */
 $baseline: 16px;        // not actually used as line-height, we should rename
