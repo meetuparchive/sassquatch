@@ -81,7 +81,8 @@ input, select, textarea {
 /* start with horizontal, inline type 	s as default */
 label {
 	font-size: $baseFontSize * 1.25;
-	color: $C_text;
+	/*color: $C_text;*/
+	color: Chocolate;
 	display: block;
 	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
 	&.small {
