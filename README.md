@@ -28,7 +28,6 @@ This package contains a minified compiled CSS file for both mobile and desktop S
 
     <link rel="stylesheet" href="components/sassquatch/mobile/sassquatch_m.css" />
 
-- - -
 
 ### Using SassQuatch with Sass
 
