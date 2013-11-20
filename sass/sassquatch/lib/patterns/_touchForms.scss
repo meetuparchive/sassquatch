@@ -25,7 +25,6 @@
 	h4,
 	label {
 		font-size: 16px;
-		font-weight: normal;
 		// This needs to be reset on top of the .touchList, because label
 		// is sized using PX, not ems.
 
@@ -54,8 +53,6 @@
 		border: none;
 		font-size: 16px;
 		line-height: 1;
-		color: $C_tl_value;
-		background-color: transparent;
 	}
 
 	// Text Input Specific Resets
@@ -106,7 +103,7 @@
 
 	:-ms-input-placeholder {
 		@include UIPlaceholder();
-		padding-left: $P_textInput;
+		padding-left: $P_secondary;
 		// NOTE: Placeholder pseudo elements in IE10 (Windows Phone 8) do not
 		// inherit padding assigned to their associated <input> or <textarea>
 		// element. Here, we're just assigning the left padding to be equal
@@ -203,73 +200,50 @@
 /*  TEXT INPUT STYLES  */
 
 .touchList-label--input {
-	padding-left: $P_touchListItem;
+	padding-left: $P_secondary;
 	white-space: nowrap;
 	font-weight: normal;
 }
 
-.touchList-item--input {
-	input {
-		line-height: $LH_standard;
-		// NOTE: a slightly taller than standard line height is needed to prevent
-		// letter descenders from getting clipped off on Windows Phone 8.
+.touchList-item--input input {
+	line-height: $LH_standard;
+	// NOTE: a slightly taller than standard line height is needed to prevent
+	// letter descenders from getting clipped off on Windows Phone 8.
 
-		width: 100%;
-		height: $H_touchTargetDefault;
-		padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
-		// TL;DR Don't touch height or top/bottom padding, please.
-		//
-		// NOTE: These height and padding values are pretty sensitive. Here's why:
-		// On Firefox (all versions) and IE (all versions), specifying a `height`
-		// value on an <input> does jack all.
-		//
-		// In FF <22, it causes some bugs, where a placeholder will float, pinned to
-		// the top of the invisible "full height input", while the actual inputted value
-		// of the element remains centered in height.
-		//
-		// So for FF and IE, in order to simulate the input taking up the full height
-		// for touch target purposes, padding is added to the top and bottom of 50%
-		// height, less value of the line height.
-		//
-		// In desktop WebKit browsers (Chrome, Safar, Opera 15+), the fixed-value
-		// the `height` value is needed to prevent browser-inserted UI on date, time,
-		// datetime, datetime-local, and number elements from bumping the total height
-		// of the input from $H_touchTargetDefault (~48pt) to a larger value (~52pt),
-		// because the browser-inserted UI components take up more vertical space than
-		// specified by the line-height.
+	width: 100%;
+	height: $H_touchTargetDefault;
+	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_secondary;
+	// TL;DR Don't touch height or top/bottom padding, please.
+	//
+	// NOTE: These height and padding values are pretty sensitive. Here's why:
+	// On Firefox (all versions) and IE (all versions), specifying a `height`
+	// value on an <input> does jack all.
+	//
+	// In FF <22, it causes some bugs, where a placeholder will float, pinned to
+	// the top of the invisible "full height input", while the actual inputted value
+	// of the element remains centered in height.
+	//
+	// So for FF and IE, in order to simulate the input taking up the full height
+	// for touch target purposes, padding is added to the top and bottom of 50%
+	// height, less value of the line height.
+	//
+	// In desktop WebKit browsers (Chrome, Safar, Opera 15+), the fixed-value
+	// the `height` value is needed to prevent browser-inserted UI on date, time,
+	// datetime, datetime-local, and number elements from bumping the total height
+	// of the input from $H_touchTargetDefault (~48pt) to a larger value (~52pt),
+	// because the browser-inserted UI components take up more vertical space than
+	// specified by the line-height.
 
-		// NOTE: Caveat for Windows Phone 7.5 and 8 RE: padding -- they allow the
-		// text value of an <input>, when wrapping, to overlap with space taken
-		// up by the padding.
-		//
-		// A visual example:
-		//
-		// | |__________| | ... Starting condition (all)
-		// | |e wrapping| | .... Webkit
-		// |type wrapping | .... IE
-	}
-
-	.touchList-input--expander {
-		// this is an input that looks like a normal one-line <input>,
-		// but expands on focus so that you can see longer values
-		// used in MUG settings profile questions
-		height: $LH_standard * 1em;
-		padding: 0 $P_touchListItem;
-		margin: $P_expander 0;
-		overflow: hidden;
-		&:focus {
-			height: $H_expanderClosed * 3;
-			overflow-y: scroll;
-		}
-	}
+	// NOTE: Caveat for Windows Phone 7.5 and 8 RE: padding -- they allow the
+	// text value of an <input>, when wrapping, to overlap with space taken
+	// up by the padding.
+	//
+	// A visual example:
+	//
+	// | |__________| | ... Starting condition (all)
+	// | |e wrapping| | .... Webkit
+	// |type wrapping | .... IE
 }
-.touchList-item--expander label.ffbox-fix {
-	// override the middle vertical alignment for expander labels - they should
-	// remain aligned to the first line of text in the input
-	vertical-align: top;
-	padding-top: $P_expander;
-}
-
 
 
 label.touchList-pseudoplaceholder {
@@ -282,9 +256,9 @@ label.touchList-pseudoplaceholder {
 	@include UIPlaceholder();
 	position: absolute;
 	z-index: 10;
-	margin-left: $P_textInput;
-	margin-right: $P_textInput;
-	margin-top: ($H_touchTargetDefault - $FS_label + 0.18) * -1;
+	margin-left: $P_secondary;
+	margin-right: $P_secondary;
+	margin-top: ($H_touchTargetDefault - $FS_base + 0.18) * -1;
 	// NOTE: (item height (ems) - font size (ems) + optical adjust) */
 
 	display: none;
@@ -307,8 +281,8 @@ label.touchList-pseudoplaceholder {
 /*  SELECT STYLES  */
 
 .touchList-label--select {
-	padding-left: $P_touchListItem;
-	padding-right: $P_touchListItem;
+	padding-left: $P_secondary;
+	padding-right: $P_secondary;
 	// <select> items don't really respond to internal padding, so we can't
 	// reliably put it on the <select> element directly. Instead, we want
 	// the <select> to fill the space of the row, UNLESS there's an inline
@@ -322,9 +296,6 @@ label.touchList-pseudoplaceholder {
 .touchList-item--select .ffbox-fix {
 	height: $H_touchTargetDefault;
 	// NOTE: There is no `min-height` on tables. Use `height` instead
-	&.touchList-helperTextWrap {
-		height: auto;
-	}
 }
 
 .touchList-item--select-wrapper {
@@ -337,7 +308,7 @@ label.touchList-pseudoplaceholder {
 	background-color: white;
 	top: 0;
 	right: 0;
-	padding: 0 $P_touchListItem;
+	padding: 0 $P_secondary;
 }
 
 // NOTE: Also, selectors like `[disabled]` are extremely inefficient, and
@@ -367,13 +338,13 @@ label.touchList-pseudoplaceholder {
  * to style.
  */
 .touchList-item--select select {
-	font-size: $FS_label;
+	font-size: $FS_base;
 	line-height: $LH_standard;
 	// NOTE: a slightly taller than standard line height is needed to prevent
 	// letter descenders from getting clipped off on Windows Phone 8.
 	width: 100%;
 	height: $H_touchTargetDefault;
-	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_textInput;
+	padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_secondary;
 	// NOTE: this code is the same as for <input> elements, and potentially
 	// can be factored together once this is more stable.
 
@@ -385,7 +356,7 @@ label.touchList-pseudoplaceholder {
 
 .touchList-label--textarea {
 	line-height: $LH_tall;
-	padding: $P_touchListItem $P_touchListItem 0;
+	padding: $P_secondary $P_secondary 0;
 	// NOTE: this expanded line height value bumps the overall height of this
 	// element to 32px (aka 2em), which arguably makes it fit better into our
 	// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
@@ -399,10 +370,9 @@ label.touchList-pseudoplaceholder {
 
 %touchListItemTextarea {
 	line-height: $LH_standard;
-	font-size: $FS_textarea_factor * 1em;
 
-	padding: $P_textInput/$FS_textarea_factor $P_textInput/$FS_textarea_factor 0;
-	margin-bottom: ($LH_standard / 2 / $FS_textarea_factor) * 1em;
+	padding: $P_secondary $P_secondary 0;
+	margin-bottom: ($LH_standard / 2) * 1em;
 	// NOTE: setting the margin on the bottom instead of padding causes the
 	// textarea to ratchet evenly on the bottom when typing more than the
 	// present 4 lines in height.
@@ -411,30 +381,27 @@ label.touchList-pseudoplaceholder {
 	// the "visual bottom" of its cell--which looks weird. That's why I'm
 	// not using margin here, even though it would be better for interaction.
 
-	height: (5 * $LH_standard / $FS_textarea_factor) * 1em;
+	height: (5 * $LH_standard) * 1em;
 	// NOTE: Because the textarea is set up with border-box layout, we need
 	// to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
 }
 
 .touchList-item--textarea textarea{
 	@extend %touchListItemTextarea;
-	&:focus {
-		height: (12 * $LH_standard / $FS_textarea_factor) * 1em
-	}
 }
 
 .touchList-item--twoLineTextarea textarea{
 	@extend %touchListItemTextarea;
-	height: (3 * $LH_standard / $FS_textarea_factor) * 1em;
+	height: (3 * $LH_standard) * 1em;
 }
 
 .touchList-item--input-counter {
-	padding: 0 $P_textInput 0;
+	padding: 0 $P_secondary 0;
 	text-align: right;
 }
 
 .touchList-item--textarea-counter {
-	padding: 0 $P_textInput $P_textInput;
+	padding: 0 $P_secondary $P_secondary;
 	text-align: right;
 }
 
@@ -445,7 +412,7 @@ label.touchList-pseudoplaceholder--textarea {
 	// Once we get the resets unscoped, this selector can be reduced in
 	// complexity (remove the `label`.)
 
-	top: ($LH_standard - $FS_label + 0.05) * 2;
+	top: ($LH_standard - $FS_base + 0.05) * 2;
 	// NOTE: (item height (ems) + font size (ems) + optical adjust) */
 
 	margin-top: 0; // Override
@@ -456,61 +423,22 @@ label.touchList-pseudoplaceholder--textarea {
 /*  ======================================================================= */
 /*  RADIO/CHECKBOX STYLES  */
 
-.touchList-item--input-radio,
-.touchList-item--input-checkbox {
-	input {
-		display: none;
-		margin: 0 $P_textInput;
-		// NOTE: radio boxes and checkboxes need to use margin, not padding for
-		// layout--since they don't really have insides or anything.
-	}
-	.touchList-helperText {
-		padding-right: $W_gem*2;
-	}
+.touchList-item--input-radio input,
+.touchList-item--input-checkbox input {
+	display: none;
+	margin: 0 $P_secondary;
+	// NOTE: radio boxes and checkboxes need to use margin, not padding for
+	// layout--since they don't really have insides or anything.
 }
 
 // NOTE: Why go through all the trouble creating and styling pseudo-radio
 //  and -checkboxes? It turns out, on iOS, radio buttons and checkboxes are
 //  damn hard to see and on Android, they're damn tiny.
-.pseudocheckbox {
+.pseudocheckbox,
+.pseudoradio {
 	@extend %textDisableSelection;
-	margin: 0 $P_textInput;
+	margin: 0 $P_secondary;
 	text-align: center;
-	color: $C_line;
-}
-
-// NOTE: On how these pseudoradio/checkboxes work:
-// The magic of sibling selectors means that we don't have to add
-// classes to make an active state appear in the UI in modern browser.
-//
-// BUT for IE8, which doesn't support the `:checked` pseudoclass reliably,
-// we need to provide a fallback `input.checked` class state that can be
-// applied with JS.
-//
-// All the code below does is essentially toggle the contents of our
-// `.icon-radio` and `.icon-checkbox` so that they behave like
-// `.icon-radio-selected` and `.icon-checkbox-selected`, so we don't have
-// to rely on JS to update the classes and change the contents.
-input:checked + .icon-radio,
-input.checked + .icon-radio {
-	color: $C_link;
-	&:before {
-		content: "\E0D1";
-	}
-	&:after {
-		content: "Selected Radio Button";
-	}
-}
-
-input:checked + .icon-checkbox,
-input.checked + .icon-checkbox {
-	color: $C_link;
-	&:before {
-		content: "\E0D3";
-	}
-	&:after {
-		content: "Selected Checkbox";
-	}
 }
 
 
@@ -543,23 +471,16 @@ label.touchList-helperText {
 	// scoped to labels and h4s. If that's cleaned up, this selector can be
 	// simplified.
 
-	font-size: $FS_caption;
-	font-weight: 300;
-	letter-spacing: 0.05em;
-	color: $C_tl_value;
-	line-height: 1.2;
+	@extend %textTruncate;
 
-	margin-top: -0.8em;
-	padding: 0 ($P_textInput/$FS_caption * 1em) $P_touchListItem*2;;
-	// helperText is tricky - it should have bottom padding when it is populated,
-	// but not affect layout when empty
-	&:empty {
-		// IE > 8 - make sure there's no whitespace
-		padding-bottom: 0;
-		margin: 0;
-	}
+	font-size: $FS_small;
+	color: $C_gray70;
+	line-height: 1;
 
-	.error & {
-		color: $C_warnText;
-	}
+	margin-top: -0.5em; // Arbitrary, optical.
+	padding: 0 ($P_secondary/$FS_small * 1em) 0.5em;
+}
+
+.error label.touchList-helperText {
+	color: $C_warnText;
 }
