@@ -17,11 +17,11 @@
 	//	`.touchList-item`
 	//	`.touchList-load-more-link`
 	//	`.touchList-jump-link`
-	border-bottom: 1px solid $C_line_less;
+	border-bottom: 1px solid $C_line;
 }
 
 %dividerLeft {
-	border-left: 1px solid $C_line_less;
+	border-left: 1px solid $C_line;
 	// NOTE A border applied ONLY to `touchList-items` in a
 	// `touchList--withInlineChildren` list. Right now, this gets applied to 2n
 	// cells, but we may want to change that.
@@ -81,6 +81,10 @@
 	padding: 0; // RESET
 	font-size: $FS_base;
 	line-height: $LH_standard;
+	.touchList & {
+		// RESET
+		color: $C_text_headline;  // overloaded selector to override link color
+	}
 }
 
 .touchList-text {
@@ -98,14 +102,14 @@
 }
 
 .icon-disclosure-right--touchList-item {
-	color: $C_gray60;
+	color: $C_line;
 	vertical-align: -0.2em;
 	// Arbitary value, optical alignment
 }
 
 
 .ffbox--touchList-item {
-	height: 3em;
+	height: $H_touchTargetDefault;
 	padding: 0 $P_secondary;
 	// NOTE: For whatever mysterious reason, Safari 6 (iOS 6 and OS X) does
 	// not know how to display heights correctly with padding on an element
@@ -132,9 +136,12 @@
 }
 
 .ffbox--touchList-input {
-	height: 3em;
+	height: $H_touchTargetDefault;
 	// NOTE: Needed to provide height to input items wrapped in a fix-flex
 	// box, so they can have a consistent height with the other cells.
+	.touchList-input--hasBlockLabel & {
+		margin-top: -0.5em;  // snuggle up with block label
+	}
 }
 
 
@@ -168,8 +175,15 @@
 	height: $H_touchTargetDefault;
 }
 
-
-
+.touchList-item-action {
+	// the anchor just inside standard touchList-items shouldn't appear
+	// like a normal link - it's just a list item that happens to be
+	// touchable. Extra specificity to override a:link
+	.touchList-item & {
+		color: $C_text;
+		display: block;
+	}
+}
 
 
 /*  ======================================================================= */
@@ -281,14 +295,16 @@
 	width: $W_gem;
 	height: $H_gem;
 	text-align: center;
-	padding-left: 0.5em;
-	// NOTE: arbitary optical value; $P_secondary looked
-	// too wide
+	.ffbox--touchList-input  & {
+		padding-left: $P_secondary / 2;
+	}
+	// NOTE: arbitary optical value; $P_secondary looked too wide.
 
 	// Assumed: all icons are properly nested in <i> elements, and using
 	// Red Label.
 	//
 	i {
+		color: $C_darkgray_lighter;
 		vertical-align: middle;
 	}
 
@@ -351,7 +367,11 @@
 /*  ======================================================================= */
 /*  TOUCHLIST DISCLOSURE ITEMS  */
 
-.touchList-item--disclosure {} /* EMPTY */
+.touchList-item--disclosure {
+	.touchList-item--disclosure-label {
+		padding-left: 0.5em;
+	}
+}
 
 .touchList-text--disclosure {
 	color: $C_gray60;
@@ -362,6 +382,24 @@
 	line-height: 1;
 	// NOTE: Needed to get the smaller font size centered inline with the
 	// label to the left side of the disclosure item
+}
+
+/* this is implemented as a set of disclosure items that open up
+other panels/sections of the UI in mug settings. It's more of a
+nav menu than a form, and so gets styled differently than
+form-oriented disclosure items */
+.touchList--menu {
+	$scaleFactor: 1.2;
+	background: none;
+	border: none;
+	.touchList-item {
+		border-color: $C_gray;
+	}
+	.touchList-label {
+		color: $C_darkgray_lighter;
+		font-size: $FS_base * $scaleFactor;
+		font-weight: bold;
+	}
 }
 
 
@@ -420,3 +458,26 @@
 	list-style: none;
 	/* END */
 }
+
+
+
+/*** touchList candidates ***/
+.touchList-item-actionIcon {
+	// styling for element that can be appended to touchList ffbox
+	// e.g. for a 'delete' x icon
+	// <a href='#' class='ffbox-fix touchList-item-actionIcon'><i class='icon icon-x'></i></a>
+	padding: 0 $P_secondary;
+	.touchList-item & {
+		// extra specificity to override a:link
+		color: $C_line;
+	}
+}
+
+/*  list heading - sits outside touchList, might be better as more generic
+	heading style but it just looks so nice with touchLists */
+.touchList-heading {
+	color: $C_darkgray_lighter;
+	font-size: 16px;
+	margin-bottom: 0.5em;
+}
+
