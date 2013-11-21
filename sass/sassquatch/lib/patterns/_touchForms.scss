@@ -261,8 +261,11 @@
 		margin: ($P_primary / 2) 0;
 		overflow: hidden;
 		&:focus {
-			height: $H_expanderClosed * 3;
+			height: $LH_standard * 3em;
 			overflow-y: scroll;
+			// NOTE: Without a shim, this does not work in older Android
+			// and iOS.
+			// -john
 		}
 	}
 }
