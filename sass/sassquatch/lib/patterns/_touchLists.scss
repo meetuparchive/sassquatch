@@ -296,10 +296,9 @@
 	height: $H_gem;
 	text-align: center;
 	.ffbox--touchList-input  & {
-		padding-left: 0.5em;
+		padding-left: $P_secondary / 2;
 	}
-	// NOTE: arbitary optical value; $P_touchListItem looked
-	// too wide
+	// NOTE: arbitary optical value; $P_secondary looked too wide.
 
 	// Assumed: all icons are properly nested in <i> elements, and using
 	// Red Label.
@@ -398,7 +397,7 @@ form-oriented disclosure items */
 	}
 	.touchList-label {
 		color: $C_darkgray_lighter;
-		font-size: $FS_label * $scaleFactor;
+		font-size: $FS_base * $scaleFactor;
 		font-weight: bold;
 	}
 }
@@ -467,7 +466,7 @@ form-oriented disclosure items */
 	// styling for element that can be appended to touchList ffbox
 	// e.g. for a 'delete' x icon
 	// <a href='#' class='ffbox-fix touchList-item-actionIcon'><i class='icon icon-x'></i></a>
-	padding: 0 $P_touchListItem;
+	padding: 0 $P_secondary;
 	.touchList-item & {
 		// extra specificity to override a:link
 		color: $C_line;

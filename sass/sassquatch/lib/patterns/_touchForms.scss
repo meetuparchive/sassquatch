@@ -257,7 +257,7 @@
 		// but expands on focus so that you can see longer values
 		// used in MUG settings profile questions
 		height: $LH_standard * 1em;
-		padding: 0 $P_touchListItem;
+		padding: 0 $P_secondary;
 		margin: ($P_primary / 2) 0;
 		overflow: hidden;
 		&:focus {
