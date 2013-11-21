@@ -16,7 +16,9 @@
 %textTruncate {
 	@include box-sizing('border');
 	white-space: nowrap;
-	overflow-x: hidden;
+	overflow: hidden;
+	// NOTE: overflow-x causes a bug in some webkits where a scrollbar appears
+	// for the y-axis (Chrome on Linux, Android Chrome, among others.)
 
 	-o-text-overflow: ellipsis; // Opera Mini/Mobile
 	text-overflow: ellipsis;
@@ -40,7 +42,7 @@
 /*  ======================================================================= */
 /*  UI SPECIFIC EXTENDS AND MIXINS  */
 
-@mixin UIPlaceholder($color:$C_gray70) {
+@mixin UIPlaceholder($color:$C_gray80) {
 	// Why isn't this an @extend instead? Because when you cluster together
 	// uninterpretable CSS rules (like vendor-specific placeholder attributes)
 	// it will invalidate all of the ones it doesn't understand, including
