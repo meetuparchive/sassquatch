@@ -258,7 +258,7 @@
 		// used in MUG settings profile questions
 		height: $LH_standard * 1em;
 		padding: 0 $P_touchListItem;
-		margin: $P_expander 0;
+		margin: ($P_primary / 2) 0;
 		overflow: hidden;
 		&:focus {
 			height: $H_expanderClosed * 3;
@@ -270,7 +270,7 @@
 	// override the middle vertical alignment for expander labels - they should
 	// remain aligned to the first line of text in the input
 	vertical-align: top;
-	padding-top: $P_expander;
+	padding-top: ($P_primary / 2);
 }
 
 
