@@ -405,7 +405,7 @@ label.touchList-pseudoplaceholder {
 
 %touchListItemTextarea {
 	line-height: $LH_standard;
-	font-size: $FS_textarea_factor * 1em;
+	font-size: $FS_base;
 
 	padding: $P_secondary $P_secondary 0;
 	margin-bottom: ($LH_standard / 2) * 1em;
@@ -417,7 +417,7 @@ label.touchList-pseudoplaceholder {
 	// the "visual bottom" of its cell--which looks weird. That's why I'm
 	// not using margin here, even though it would be better for interaction.
 
-	height: (5 * $LH_standard / $FS_textarea_factor) * 1em;
+	height: (5 * $LH_standard) * 1em;
 	// NOTE: Because the textarea is set up with border-box layout, we need
 	// to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
 }
@@ -425,7 +425,7 @@ label.touchList-pseudoplaceholder {
 .touchList-item--textarea textarea{
 	@extend %touchListItemTextarea;
 	&:focus {
-		height: (12 * $LH_standard / $FS_textarea_factor) * 1em
+		height: (12 * $LH_standard) * 1em
 		// NOTE: This behavior seems potentially disorienting (expanding
 		// textarea volume on focus) because it could screw with the browser
 		// trying to scroll the viewport.
@@ -437,7 +437,7 @@ label.touchList-pseudoplaceholder {
 
 .touchList-item--twoLineTextarea textarea{
 	@extend %touchListItemTextarea;
-	height: (3 * $LH_standard / $FS_textarea_factor) * 1em;
+	height: (3 * $LH_standard) * 1em;
 }
 
 .touchList-item--input-counter {
