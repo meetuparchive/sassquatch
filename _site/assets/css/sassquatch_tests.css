@@ -48,9 +48,9 @@
 *
 */
 /**
-* MIXINS
-* Sass mixins (including compass mixins)
-*/
+ * MIXINS
+ * Sass mixins (including compass mixins)
+ */
 /**
 * overflow-y becomes scrollable,
 * fixes OSX vanishing scrollbar
@@ -702,7 +702,7 @@ input[type=submit], button, .button, .button-light, a.button {
     background: -moz-linear-gradient(top, white, #dbdbdb);
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFDBDBDB');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFDBDBDB')"; }
-  input[type=submit]:active, input[type=submit].selected, input[type=submit].activated, button:active, button.selected, button.activated, .button:active, .button.selected, .button.activated, .button-light:active, .button-light.selected, .button-light.activated, a.button:active, a.button.selected, a.button.activated {
+  input[type=submit]:active, input[type=submit].selected, input[type=submit].active, button:active, button.selected, button.active, .button:active, .button.selected, .button.active, .button-light:active, .button-light.selected, .button-light.active, a.button:active, a.button.selected, a.button.active {
     background: #cecece;
     background-color: #eeeeee !important;
     background-image: none !important;
@@ -712,7 +712,7 @@ input[type=submit], button, .button, .button-light, a.button {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-    input[type=submit]:active:link, input[type=submit]:active:hover, input[type=submit]:active:vistied, input[type=submit]:active:active, input[type=submit].selected:link, input[type=submit].selected:hover, input[type=submit].selected:vistied, input[type=submit].selected:active, input[type=submit].activated:link, input[type=submit].activated:hover, input[type=submit].activated:vistied, input[type=submit].activated:active, button:active:link, button:active:hover, button:active:vistied, button:active:active, button.selected:link, button.selected:hover, button.selected:vistied, button.selected:active, button.activated:link, button.activated:hover, button.activated:vistied, button.activated:active, .button:active:link, .button:active:hover, .button:active:vistied, .button:active:active, .button.selected:link, .button.selected:hover, .button.selected:vistied, .button.selected:active, .button.activated:link, .button.activated:hover, .button.activated:vistied, .button.activated:active, .button-light:active:link, .button-light:active:hover, .button-light:active:vistied, .button-light:active:active, .button-light.selected:link, .button-light.selected:hover, .button-light.selected:vistied, .button-light.selected:active, .button-light.activated:link, .button-light.activated:hover, .button-light.activated:vistied, .button-light.activated:active, a.button:active:link, a.button:active:hover, a.button:active:vistied, a.button:active:active, a.button.selected:link, a.button.selected:hover, a.button.selected:vistied, a.button.selected:active, a.button.activated:link, a.button.activated:hover, a.button.activated:vistied, a.button.activated:active {
+    input[type=submit]:active:link, input[type=submit]:active:hover, input[type=submit]:active:vistied, input[type=submit]:active:active, input[type=submit].selected:link, input[type=submit].selected:hover, input[type=submit].selected:vistied, input[type=submit].selected:active, input[type=submit].active:link, input[type=submit].active:hover, input[type=submit].active:vistied, input[type=submit].active:active, button:active:link, button:active:hover, button:active:vistied, button:active:active, button.selected:link, button.selected:hover, button.selected:vistied, button.selected:active, button.active:link, button.active:hover, button.active:vistied, button.active:active, .button:active:link, .button:active:hover, .button:active:vistied, .button:active:active, .button.selected:link, .button.selected:hover, .button.selected:vistied, .button.selected:active, .button.active:link, .button.active:hover, .button.active:vistied, .button.active:active, .button-light:active:link, .button-light:active:hover, .button-light:active:vistied, .button-light:active:active, .button-light.selected:link, .button-light.selected:hover, .button-light.selected:vistied, .button-light.selected:active, .button-light.active:link, .button-light.active:hover, .button-light.active:vistied, .button-light.active:active, a.button:active:link, a.button:active:hover, a.button:active:vistied, a.button:active:active, a.button.selected:link, a.button.selected:hover, a.button.selected:vistied, a.button.selected:active, a.button.active:link, a.button.active:hover, a.button.active:vistied, a.button.active:active {
       color: #888888 !important; }
   input[type=submit]:hover, input[type=submit]:active, button:hover, button:active, .button:hover, .button:active, .button-light:hover, .button-light:active, a.button:hover, a.button:active {
     color: #555555; }
@@ -733,7 +733,7 @@ input[type=submit], button, .button, .button-light, a.button {
       background: -moz-linear-gradient(top, #e34f53, #c71f24);
       filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFE34F53', endColorstr='#FFC71F24');
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE34F53', endColorstr='#FFC71F24')"; }
-    input[type=submit].primary:active, input[type=submit].primary.selected, input[type=submit].primary.activated, button.primary:active, button.primary.selected, button.primary.activated, .button.primary:active, .button.primary.selected, .button.primary.activated, .button-light.primary:active, .button-light.primary.selected, .button-light.primary.activated, a.button.primary:active, a.button.primary.selected, a.button.primary.activated {
+    input[type=submit].primary:active, input[type=submit].primary.selected, input[type=submit].primary.active, button.primary:active, button.primary.selected, button.primary.active, .button.primary:active, .button.primary.selected, .button.primary.active, .button-light.primary:active, .button-light.primary.selected, .button-light.primary.active, a.button.primary:active, a.button.primary.selected, a.button.primary.active {
       background: #b11c20;
       background-color: #eeeeee !important;
       background-image: none !important;
@@ -743,7 +743,7 @@ input[type=submit], button, .button, .button-light, a.button {
       -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-      input[type=submit].primary:active:link, input[type=submit].primary:active:hover, input[type=submit].primary:active:vistied, input[type=submit].primary:active:active, input[type=submit].primary.selected:link, input[type=submit].primary.selected:hover, input[type=submit].primary.selected:vistied, input[type=submit].primary.selected:active, input[type=submit].primary.activated:link, input[type=submit].primary.activated:hover, input[type=submit].primary.activated:vistied, input[type=submit].primary.activated:active, button.primary:active:link, button.primary:active:hover, button.primary:active:vistied, button.primary:active:active, button.primary.selected:link, button.primary.selected:hover, button.primary.selected:vistied, button.primary.selected:active, button.primary.activated:link, button.primary.activated:hover, button.primary.activated:vistied, button.primary.activated:active, .button.primary:active:link, .button.primary:active:hover, .button.primary:active:vistied, .button.primary:active:active, .button.primary.selected:link, .button.primary.selected:hover, .button.primary.selected:vistied, .button.primary.selected:active, .button.primary.activated:link, .button.primary.activated:hover, .button.primary.activated:vistied, .button.primary.activated:active, .button-light.primary:active:link, .button-light.primary:active:hover, .button-light.primary:active:vistied, .button-light.primary:active:active, .button-light.primary.selected:link, .button-light.primary.selected:hover, .button-light.primary.selected:vistied, .button-light.primary.selected:active, .button-light.primary.activated:link, .button-light.primary.activated:hover, .button-light.primary.activated:vistied, .button-light.primary.activated:active, a.button.primary:active:link, a.button.primary:active:hover, a.button.primary:active:vistied, a.button.primary:active:active, a.button.primary.selected:link, a.button.primary.selected:hover, a.button.primary.selected:vistied, a.button.primary.selected:active, a.button.primary.activated:link, a.button.primary.activated:hover, a.button.primary.activated:vistied, a.button.primary.activated:active {
+      input[type=submit].primary:active:link, input[type=submit].primary:active:hover, input[type=submit].primary:active:vistied, input[type=submit].primary:active:active, input[type=submit].primary.selected:link, input[type=submit].primary.selected:hover, input[type=submit].primary.selected:vistied, input[type=submit].primary.selected:active, input[type=submit].primary.active:link, input[type=submit].primary.active:hover, input[type=submit].primary.active:vistied, input[type=submit].primary.active:active, button.primary:active:link, button.primary:active:hover, button.primary:active:vistied, button.primary:active:active, button.primary.selected:link, button.primary.selected:hover, button.primary.selected:vistied, button.primary.selected:active, button.primary.active:link, button.primary.active:hover, button.primary.active:vistied, button.primary.active:active, .button.primary:active:link, .button.primary:active:hover, .button.primary:active:vistied, .button.primary:active:active, .button.primary.selected:link, .button.primary.selected:hover, .button.primary.selected:vistied, .button.primary.selected:active, .button.primary.active:link, .button.primary.active:hover, .button.primary.active:vistied, .button.primary.active:active, .button-light.primary:active:link, .button-light.primary:active:hover, .button-light.primary:active:vistied, .button-light.primary:active:active, .button-light.primary.selected:link, .button-light.primary.selected:hover, .button-light.primary.selected:vistied, .button-light.primary.selected:active, .button-light.primary.active:link, .button-light.primary.active:hover, .button-light.primary.active:vistied, .button-light.primary.active:active, a.button.primary:active:link, a.button.primary:active:hover, a.button.primary:active:vistied, a.button.primary:active:active, a.button.primary.selected:link, a.button.primary.selected:hover, a.button.primary.selected:vistied, a.button.primary.selected:active, a.button.primary.active:link, a.button.primary.active:hover, a.button.primary.active:vistied, a.button.primary.active:active {
         color: #888888 !important; }
   input[type=submit].primary, input[type=submit].primary:hover, input[type=submit].primary:active, button.primary, button.primary:hover, button.primary:active, .button.primary, .button.primary:hover, .button.primary:active, .button-light.primary, .button-light.primary:hover, .button-light.primary:active, a.button.primary, a.button.primary:hover, a.button.primary:active {
     color: white !important; }
@@ -840,7 +840,7 @@ input[type=submit], button, .button, .button-light, a.button {
     background: -moz-linear-gradient(top, white, #ededed);
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
-  .button-light:active, .button-light.selected, .button-light.activated {
+  .button-light:active, .button-light.selected, .button-light.active {
     background: #e6e6e6;
     background-color: #eeeeee !important;
     background-image: none !important;
@@ -850,7 +850,7 @@ input[type=submit], button, .button, .button-light, a.button {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-    .button-light:active:link, .button-light:active:hover, .button-light:active:vistied, .button-light:active:active, .button-light.selected:link, .button-light.selected:hover, .button-light.selected:vistied, .button-light.selected:active, .button-light.activated:link, .button-light.activated:hover, .button-light.activated:vistied, .button-light.activated:active {
+    .button-light:active:link, .button-light:active:hover, .button-light:active:vistied, .button-light:active:active, .button-light.selected:link, .button-light.selected:hover, .button-light.selected:vistied, .button-light.selected:active, .button-light.active:link, .button-light.active:hover, .button-light.active:vistied, .button-light.active:active {
       color: #888888 !important; }
 
 /* }}} */
@@ -1894,6 +1894,42 @@ a:hover .tearsheet-add .time {
   /*****************************
    * COLOR INVERTED
    ****************************/
+  /*
+   *    .inverted &{
+   *        border-color: $C_darkgray;
+   *      label,
+   *      li > a,
+   *      li > span {
+   *         @include button_color($C_darkgray_lighter, false);
+   *         border: none;
+   *         color: $C_text;
+   *      }
+   *
+   *      input[type=radio]:checked + label, input[attr="checked"] + label {
+   *         @include button_color_active($C_darkgray_lighter, true);
+   *      }
+   *
+   *      input[type=radio]:checked + label, input[attr="checked"] + label,
+   *      li > a:active, li > a.selected, li > a.push,
+   *      li > span.selected, li > span.push {
+   *         color: $C_gray_lightest;
+   *      }
+   *
+   *        &.vertical{
+   *         label,
+   *         li > a,
+   *         li > span{
+   *            @include experimental(box-shadow, 'rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset');
+   *         }
+   *
+   *         label:last-of-type,
+   *         li:last-child > a,
+   *         li:last-child > span {
+   *            @include experimental(box-shadow, 'rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset');
+   *         }
+   *        }
+   *    }
+   */
   /*****************************
    * COLOR SELECTED ITEM
    ****************************/
@@ -1948,30 +1984,6 @@ a:hover .tearsheet-add .time {
       display: block;
       float: none;
       text-align: left; }
-    .nav-buttons.vertical label:first-of-type,
-    .nav-buttons.vertical li:first-child > a,
-    .nav-buttons.vertical li:first-child > span {
-      -moz-border-radius-topleft: 2px;
-      -webkit-border-top-left-radius: 2px;
-      border-top-left-radius: 2px;
-      -moz-border-radius-topright: 2px;
-      -webkit-border-top-right-radius: 2px;
-      border-top-right-radius: 2px;
-      -moz-border-radius-bottomleft: 0;
-      -webkit-border-bottom-left-radius: 0;
-      border-bottom-left-radius: 0; }
-    .nav-buttons.vertical label:last-of-type
-    li:last-child > a,
-    .nav-buttons.vertical li:last-child > span {
-      -moz-border-radius-topright: 0;
-      -webkit-border-top-right-radius: 0;
-      border-top-right-radius: 0;
-      -moz-border-radius-bottomright: 2px;
-      -webkit-border-bottom-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-      -moz-border-radius-bottomleft: 2px;
-      -webkit-border-bottom-left-radius: 2px;
-      border-bottom-left-radius: 2px; }
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
@@ -1992,7 +2004,7 @@ a:hover .tearsheet-add .time {
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
     border: none;
-    color: #555555 !important;
+    color: #555555;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
     -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
@@ -2005,13 +2017,13 @@ a:hover .tearsheet-add .time {
       background: -moz-linear-gradient(top, white, #ededed);
       filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
-    .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.activated,
+    .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.active,
     .nav-buttons li > a:active,
     .nav-buttons li > a.selected,
-    .nav-buttons li > a.activated,
+    .nav-buttons li > a.active,
     .nav-buttons li > span:active,
     .nav-buttons li > span.selected,
-    .nav-buttons li > span.activated {
+    .nav-buttons li > span.active {
       background: #e6e6e6;
       background-color: #eeeeee !important;
       background-image: none !important;
@@ -2021,7 +2033,7 @@ a:hover .tearsheet-add .time {
       -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-      .nav-buttons label:active:link, .nav-buttons label:active:hover, .nav-buttons label:active:vistied, .nav-buttons label:active:active, .nav-buttons label.selected:link, .nav-buttons label.selected:hover, .nav-buttons label.selected:vistied, .nav-buttons label.selected:active, .nav-buttons label.activated:link, .nav-buttons label.activated:hover, .nav-buttons label.activated:vistied, .nav-buttons label.activated:active,
+      .nav-buttons label:active:link, .nav-buttons label:active:hover, .nav-buttons label:active:vistied, .nav-buttons label:active:active, .nav-buttons label.selected:link, .nav-buttons label.selected:hover, .nav-buttons label.selected:vistied, .nav-buttons label.selected:active, .nav-buttons label.active:link, .nav-buttons label.active:hover, .nav-buttons label.active:vistied, .nav-buttons label.active:active,
       .nav-buttons li > a:active:link,
       .nav-buttons li > a:active:hover,
       .nav-buttons li > a:active:vistied,
@@ -2030,10 +2042,10 @@ a:hover .tearsheet-add .time {
       .nav-buttons li > a.selected:hover,
       .nav-buttons li > a.selected:vistied,
       .nav-buttons li > a.selected:active,
-      .nav-buttons li > a.activated:link,
-      .nav-buttons li > a.activated:hover,
-      .nav-buttons li > a.activated:vistied,
-      .nav-buttons li > a.activated:active,
+      .nav-buttons li > a.active:link,
+      .nav-buttons li > a.active:hover,
+      .nav-buttons li > a.active:vistied,
+      .nav-buttons li > a.active:active,
       .nav-buttons li > span:active:link,
       .nav-buttons li > span:active:hover,
       .nav-buttons li > span:active:vistied,
@@ -2042,10 +2054,10 @@ a:hover .tearsheet-add .time {
       .nav-buttons li > span.selected:hover,
       .nav-buttons li > span.selected:vistied,
       .nav-buttons li > span.selected:active,
-      .nav-buttons li > span.activated:link,
-      .nav-buttons li > span.activated:hover,
-      .nav-buttons li > span.activated:vistied,
-      .nav-buttons li > span.activated:active {
+      .nav-buttons li > span.active:link,
+      .nav-buttons li > span.active:hover,
+      .nav-buttons li > span.active:vistied,
+      .nav-buttons li > span.active:active {
         color: #888888 !important; }
   .nav-buttons input[type=radio]:checked + label, .nav-buttons input[attr="checked"] + label,
   .nav-buttons li > a:active, .nav-buttons li > a.selected, .nav-buttons li > a.push,
@@ -2089,103 +2101,6 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset; }
-  .inverted .nav-buttons {
-    border-color: #333333; }
-    .inverted .nav-buttons label,
-    .inverted .nav-buttons li > a,
-    .inverted .nav-buttons li > span {
-      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      background: #3b3b3b;
-      background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#3b3b3b));
-      background: -moz-linear-gradient(top, #555555, #3b3b3b);
-      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FF555555', endColorstr='#FF3B3B3B');
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF555555', endColorstr='#FF3B3B3B')";
-      border: none;
-      color: #dddddd !important; }
-      .inverted .nav-buttons label:hover,
-      .inverted .nav-buttons li > a:hover,
-      .inverted .nav-buttons li > span:hover {
-        background: #3b3b3b;
-        background: -webkit-gradient(linear, left top, left bottom, from(#626262), to(#3b3b3b));
-        background: -moz-linear-gradient(top, #626262, #3b3b3b);
-        filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FF626262', endColorstr='#FF3B3B3B');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF626262', endColorstr='#FF3B3B3B')"; }
-      .inverted .nav-buttons label:active, .inverted .nav-buttons label.selected, .inverted .nav-buttons label.activated,
-      .inverted .nav-buttons li > a:active,
-      .inverted .nav-buttons li > a.selected,
-      .inverted .nav-buttons li > a.activated,
-      .inverted .nav-buttons li > span:active,
-      .inverted .nav-buttons li > span.selected,
-      .inverted .nav-buttons li > span.activated {
-        background: #2f2f2f;
-        background-color: #eeeeee !important;
-        background-image: none !important;
-        color: #888888 !important;
-        filter: none;
-        -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-        -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-        -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-        box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-        .inverted .nav-buttons label:active:link, .inverted .nav-buttons label:active:hover, .inverted .nav-buttons label:active:vistied, .inverted .nav-buttons label:active:active, .inverted .nav-buttons label.selected:link, .inverted .nav-buttons label.selected:hover, .inverted .nav-buttons label.selected:vistied, .inverted .nav-buttons label.selected:active, .inverted .nav-buttons label.activated:link, .inverted .nav-buttons label.activated:hover, .inverted .nav-buttons label.activated:vistied, .inverted .nav-buttons label.activated:active,
-        .inverted .nav-buttons li > a:active:link,
-        .inverted .nav-buttons li > a:active:hover,
-        .inverted .nav-buttons li > a:active:vistied,
-        .inverted .nav-buttons li > a:active:active,
-        .inverted .nav-buttons li > a.selected:link,
-        .inverted .nav-buttons li > a.selected:hover,
-        .inverted .nav-buttons li > a.selected:vistied,
-        .inverted .nav-buttons li > a.selected:active,
-        .inverted .nav-buttons li > a.activated:link,
-        .inverted .nav-buttons li > a.activated:hover,
-        .inverted .nav-buttons li > a.activated:vistied,
-        .inverted .nav-buttons li > a.activated:active,
-        .inverted .nav-buttons li > span:active:link,
-        .inverted .nav-buttons li > span:active:hover,
-        .inverted .nav-buttons li > span:active:vistied,
-        .inverted .nav-buttons li > span:active:active,
-        .inverted .nav-buttons li > span.selected:link,
-        .inverted .nav-buttons li > span.selected:hover,
-        .inverted .nav-buttons li > span.selected:vistied,
-        .inverted .nav-buttons li > span.selected:active,
-        .inverted .nav-buttons li > span.activated:link,
-        .inverted .nav-buttons li > span.activated:hover,
-        .inverted .nav-buttons li > span.activated:vistied,
-        .inverted .nav-buttons li > span.activated:active {
-          color: #888888 !important; }
-    .inverted .nav-buttons input[type=radio]:checked + label, .inverted .nav-buttons input[attr="checked"] + label {
-      background: #3b3b3b;
-      background-color: #eeeeee !important;
-      background-image: none !important;
-      color: #888888 !important;
-      filter: none;
-      -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-      .inverted .nav-buttons input[type=radio]:checked + label:link, .inverted .nav-buttons input[type=radio]:checked + label:hover, .inverted .nav-buttons input[type=radio]:checked + label:vistied, .inverted .nav-buttons input[type=radio]:checked + label:active, .inverted .nav-buttons input[attr="checked"] + label:link, .inverted .nav-buttons input[attr="checked"] + label:hover, .inverted .nav-buttons input[attr="checked"] + label:vistied, .inverted .nav-buttons input[attr="checked"] + label:active {
-        color: #888888 !important; }
-    .inverted .nav-buttons input[type=radio]:checked + label, .inverted .nav-buttons input[attr="checked"] + label,
-    .inverted .nav-buttons li > a:active, .inverted .nav-buttons li > a.selected, .inverted .nav-buttons li > a.push,
-    .inverted .nav-buttons li > span.selected, .inverted .nav-buttons li > span.push {
-      color: #f4f4f4 !important; }
-    .inverted .nav-buttons.vertical label,
-    .inverted .nav-buttons.vertical li > a,
-    .inverted .nav-buttons.vertical li > span {
-      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset;
-      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset;
-      -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset;
-      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset; }
-    .inverted .nav-buttons.vertical label:last-of-type,
-    .inverted .nav-buttons.vertical li:last-child > a,
-    .inverted .nav-buttons.vertical li:last-child > span {
-      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset; }
   .nav-buttons li > a:active, .nav-buttons li > a.selected, .nav-buttons li > a.push, .nav-buttons li > span:active, .nav-buttons li > span.selected, .nav-buttons li > span.push, .nav-buttons li:first-child > a:active, .nav-buttons li:first-child > a.selected, .nav-buttons li:first-child > a.push, .nav-buttons li:first-child > span:active, .nav-buttons li:first-child > span.selected, .nav-buttons li:first-child > span.push, .nav-buttons li:last-child > a:active, .nav-buttons li:last-child > a.selected, .nav-buttons li:last-child > a.push, .nav-buttons li:last-child > span:active, .nav-buttons li:last-child > span.selected, .nav-buttons li:last-child > span.push {
     background-color: #eeeeee !important;
     background-image: none !important;
@@ -2324,7 +2239,7 @@ a:hover .tearsheet-add .time {
     background: -moz-linear-gradient(top, white, #ededed);
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
-  .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.activated {
+  .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.active {
     background: #e6e6e6;
     background-color: #eeeeee !important;
     background-image: none !important;
@@ -2334,7 +2249,7 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-    .segmented-control-button:active:link, .segmented-control-button:active:hover, .segmented-control-button:active:vistied, .segmented-control-button:active:active, .segmented-control-button.selected:link, .segmented-control-button.selected:hover, .segmented-control-button.selected:vistied, .segmented-control-button.selected:active, .segmented-control-button.activated:link, .segmented-control-button.activated:hover, .segmented-control-button.activated:vistied, .segmented-control-button.activated:active {
+    .segmented-control-button:active:link, .segmented-control-button:active:hover, .segmented-control-button:active:vistied, .segmented-control-button:active:active, .segmented-control-button.selected:link, .segmented-control-button.selected:hover, .segmented-control-button.selected:vistied, .segmented-control-button.selected:active, .segmented-control-button.active:link, .segmented-control-button.active:hover, .segmented-control-button.active:vistied, .segmented-control-button.active:active {
       color: #888888 !important; }
 
 /* These next two are sort of nasty selectors--but since this doesn't work
@@ -2432,7 +2347,7 @@ a:hover .tearsheet-add .time {
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* 22/16 */
-/* 22/16 */
+/* 24/16 - icon gems are 16px with 0.5em padding */
 /* 22/16 */
 /* 48/16 */
 /* 32/16 */
@@ -2524,7 +2439,7 @@ a:hover .tearsheet-add .time {
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* 22/16 */
-/* 22/16 */
+/* 24/16 - icon gems are 16px with 0.5em padding */
 /* 22/16 */
 /* 48/16 */
 /* 32/16 */

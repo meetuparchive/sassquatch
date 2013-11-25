@@ -1,7 +1,7 @@
 /**
-* MIXINS
-* Sass mixins (including compass mixins)
-*/
+ * MIXINS
+ * Sass mixins (including compass mixins)
+ */
 
 
 
@@ -146,8 +146,7 @@
 		@include button_color_hover($base_color, $isLight);
 	}
 
-	&:active, &.selected, &.activated {
-		// TODO: consolidate these class names
+	&:active, &.selected, &.active {
 		@include button_color_active($base_color, $isLight);
 	}
 }
