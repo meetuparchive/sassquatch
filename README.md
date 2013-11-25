@@ -28,7 +28,6 @@ This package contains a minified compiled CSS file for both mobile and desktop S
 
     <link rel="stylesheet" href="components/sassquatch/mobile/sassquatch_m.css" />
 
-- - -
 
 ### Using SassQuatch with Sass
 
@@ -51,8 +50,14 @@ http://meetup.github.io/sassquatch/
 - - -
 
 ## How to contribute
-
 SassQuatch development currently requires Python, Ruby and the ruby gems Rake, Sass, and Jekyll.
+
+#### Easy setup
+If you're using [rbenv](https://github.com/sstephenson/rbenv) (and you should be), just run this command to install all necessary development dependencies for Sassquatch:
+
+```
+$ ./setup.sh
+```
 
 #### Editing sass source and documentation
 To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs.

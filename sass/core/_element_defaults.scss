@@ -7,8 +7,7 @@
 	}
 	html, body {
 		font-size: $baseFontSize;
-		/*color: $C_secondaryGray;*/
-		color: lime;
+		color: $C_secondaryGray;
 		line-height: $baseLineHeight;
 		margin: 0;
 		padding: 0;
@@ -106,8 +105,7 @@
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
 		font-family: $headingFontStack;
-		/*color: $C_primaryGray;*/
-		color: fuchsia;
+		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2.5;

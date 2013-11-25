@@ -48,9 +48,9 @@
 *
 */
 /**
-* MIXINS
-* Sass mixins (including compass mixins)
-*/
+ * MIXINS
+ * Sass mixins (including compass mixins)
+ */
 /**
 * overflow-y becomes scrollable,
 * fixes OSX vanishing scrollbar
@@ -226,78 +226,6 @@ a perspective value
 flips
 
 */
-/**
-* Button factory mixins
-* ------------------------------------------
-*/
-.button,
-button,
-input[type="submit"],
-.primary,
-.button.primary,
-.button--primary,
-input[type="submit"].primary,
-input[type="submit"].button--primary,
-.button--black,
-input[type="submit"].button--black,
-.button--blue,
-input[type="submit"].button--blue,
-.button-flat,
-.button-flat--gray,
-.button-flat--white,
-.button-flat--black,
-.button-flat--red {
-  -moz-border-radius: 3px 3px 3px 3px;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px;
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: none 0 ;
-  -moz-transition: none 0 ;
-  -o-transition: none 0 ;
-  transition: none 0 ;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 9px 18px;
-  margin: 0 0 16px 0;
-  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1 !important;
-  text-decoration: none !important;
-  border-width: 0; }
-  .button:focus,
-  button:focus,
-  input[type="submit"]:focus,
-  .primary:focus,
-  .button--primary:focus,
-  .button--black:focus,
-  .button--blue:focus,
-  .button-flat:focus,
-  .button-flat--gray:focus,
-  .button-flat--white:focus,
-  .button-flat--black:focus,
-  .button-flat--red:focus {
-    outline-width: 0; }
-
-/**
-* Default button
-*
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
-* -----------------------------------------------
-*/
-/**
-* Flat button
-* @param $color - single border/text/hover color
-* -----------------------------------------------
-*/
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -306,14 +234,13 @@ html {
 
 html, body {
   font-size: 12px;
-  /*color: $C_secondaryGray;*/
-  color: lime;
+  color: rgba(0, 0, 0, 0.55);
   line-height: 1.5;
   margin: 0;
   padding: 0; }
 
 body, button, input, select, textarea {
-  font-family: Papyrus, fantasy; }
+  font-family: verdana, Arial, sans-serif; }
 
 .inverted {
   color: rgba(255, 255, 255, 0.8); }
@@ -404,9 +331,8 @@ a:active {
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: Papyrus, fantasy;
-  /*color: $C_primaryGray;*/
-  color: fuchsia;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
   margin: 0;
   padding: 0;
   padding-bottom: 6.4px;
@@ -595,7 +521,7 @@ fieldset {
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; } }
 input, select, textarea {
-  font-family: Papyrus, fantasy;
+  font-family: verdana, Arial, sans-serif;
   display: block;
   line-height: 1.5;
   padding: 4px;
@@ -724,9 +650,210 @@ input, textarea {
     box-shadow: none; }
 
 [disabled],
-[disabled="disabled"] {
+[disabled="disabled"],
+input.disabled {
+  /*only change the background of inputs, not wrappers with .disabled class*/
   background-color: #eeeeee; }
 
+/* {{{ Button defaults */
+input[type=submit], button, .button, .button-light, a.button {
+  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #dbdbdb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#dbdbdb));
+  background: -moz-linear-gradient(top, #f4f4f4, #dbdbdb);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFF4F4F4', endColorstr='#FFDBDBDB');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF4F4F4', endColorstr='#FFDBDBDB')";
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none!important;
+  white-space: nowrap;
+  -moz-transition: none;
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+  display: inline-block;
+  text-decoration: none!important;
+  text-align: center;
+  zoom: 1;
+  color: #555555;
+  font-weight: bold;
+  font-family: helvetica, arial, sans-serif;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  line-height: 1;
+  font-size: 16px;
+  padding: 0.5em 0.75em 0.4em;
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+  margin-bottom: 12px;
+  /* primary action variant */ }
+  input[type=submit]:hover, button:hover, .button:hover, .button-light:hover, a.button:hover {
+    background: #dbdbdb;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(#dbdbdb));
+    background: -moz-linear-gradient(top, white, #dbdbdb);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFDBDBDB');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFDBDBDB')"; }
+  input[type=submit]:active, input[type=submit].selected, input[type=submit].active, button:active, button.selected, button.active, .button:active, .button.selected, .button.active, .button-light:active, .button-light.selected, .button-light.active, a.button:active, a.button.selected, a.button.active {
+    background: #cecece;
+    background-color: #eeeeee !important;
+    background-image: none !important;
+    color: #888888 !important;
+    filter: none;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
+    input[type=submit]:active:link, input[type=submit]:active:hover, input[type=submit]:active:vistied, input[type=submit]:active:active, input[type=submit].selected:link, input[type=submit].selected:hover, input[type=submit].selected:vistied, input[type=submit].selected:active, input[type=submit].active:link, input[type=submit].active:hover, input[type=submit].active:vistied, input[type=submit].active:active, button:active:link, button:active:hover, button:active:vistied, button:active:active, button.selected:link, button.selected:hover, button.selected:vistied, button.selected:active, button.active:link, button.active:hover, button.active:vistied, button.active:active, .button:active:link, .button:active:hover, .button:active:vistied, .button:active:active, .button.selected:link, .button.selected:hover, .button.selected:vistied, .button.selected:active, .button.active:link, .button.active:hover, .button.active:vistied, .button.active:active, .button-light:active:link, .button-light:active:hover, .button-light:active:vistied, .button-light:active:active, .button-light.selected:link, .button-light.selected:hover, .button-light.selected:vistied, .button-light.selected:active, .button-light.active:link, .button-light.active:hover, .button-light.active:vistied, .button-light.active:active, a.button:active:link, a.button:active:hover, a.button:active:vistied, a.button:active:active, a.button.selected:link, a.button.selected:hover, a.button.selected:vistied, a.button.selected:active, a.button.active:link, a.button.active:hover, a.button.active:vistied, a.button.active:active {
+      color: #888888 !important; }
+  input[type=submit]:hover, input[type=submit]:active, button:hover, button:active, .button:hover, .button:active, .button-light:hover, .button-light:active, a.button:hover, a.button:active {
+    color: #555555; }
+  input[type=submit].primary, button.primary, .button.primary, .button-light.primary, a.button.primary {
+    -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+    -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+    box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #c71f24;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e0393e), to(#c71f24));
+    background: -moz-linear-gradient(top, #e0393e, #c71f24);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFE0393E', endColorstr='#FFC71F24');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE0393E', endColorstr='#FFC71F24')"; }
+    input[type=submit].primary:hover, button.primary:hover, .button.primary:hover, .button-light.primary:hover, a.button.primary:hover {
+      background: #c71f24;
+      background: -webkit-gradient(linear, left top, left bottom, from(#e34f53), to(#c71f24));
+      background: -moz-linear-gradient(top, #e34f53, #c71f24);
+      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFE34F53', endColorstr='#FFC71F24');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE34F53', endColorstr='#FFC71F24')"; }
+    input[type=submit].primary:active, input[type=submit].primary.selected, input[type=submit].primary.active, button.primary:active, button.primary.selected, button.primary.active, .button.primary:active, .button.primary.selected, .button.primary.active, .button-light.primary:active, .button-light.primary.selected, .button-light.primary.active, a.button.primary:active, a.button.primary.selected, a.button.primary.active {
+      background: #b11c20;
+      background-color: #eeeeee !important;
+      background-image: none !important;
+      color: #888888 !important;
+      filter: none;
+      -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+      -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+      box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
+      input[type=submit].primary:active:link, input[type=submit].primary:active:hover, input[type=submit].primary:active:vistied, input[type=submit].primary:active:active, input[type=submit].primary.selected:link, input[type=submit].primary.selected:hover, input[type=submit].primary.selected:vistied, input[type=submit].primary.selected:active, input[type=submit].primary.active:link, input[type=submit].primary.active:hover, input[type=submit].primary.active:vistied, input[type=submit].primary.active:active, button.primary:active:link, button.primary:active:hover, button.primary:active:vistied, button.primary:active:active, button.primary.selected:link, button.primary.selected:hover, button.primary.selected:vistied, button.primary.selected:active, button.primary.active:link, button.primary.active:hover, button.primary.active:vistied, button.primary.active:active, .button.primary:active:link, .button.primary:active:hover, .button.primary:active:vistied, .button.primary:active:active, .button.primary.selected:link, .button.primary.selected:hover, .button.primary.selected:vistied, .button.primary.selected:active, .button.primary.active:link, .button.primary.active:hover, .button.primary.active:vistied, .button.primary.active:active, .button-light.primary:active:link, .button-light.primary:active:hover, .button-light.primary:active:vistied, .button-light.primary:active:active, .button-light.primary.selected:link, .button-light.primary.selected:hover, .button-light.primary.selected:vistied, .button-light.primary.selected:active, .button-light.primary.active:link, .button-light.primary.active:hover, .button-light.primary.active:vistied, .button-light.primary.active:active, a.button.primary:active:link, a.button.primary:active:hover, a.button.primary:active:vistied, a.button.primary:active:active, a.button.primary.selected:link, a.button.primary.selected:hover, a.button.primary.selected:vistied, a.button.primary.selected:active, a.button.primary.active:link, a.button.primary.active:hover, a.button.primary.active:vistied, a.button.primary.active:active {
+        color: #888888 !important; }
+  input[type=submit].primary, input[type=submit].primary:hover, input[type=submit].primary:active, button.primary, button.primary:hover, button.primary:active, .button.primary, .button.primary:hover, .button.primary:active, .button-light.primary, .button-light.primary:hover, .button-light.primary:active, a.button.primary, a.button.primary:hover, a.button.primary:active {
+    color: white !important; }
+  input[type=submit].small, button.small, .button.small, .button-light.small, a.button.small {
+    font-size: 12px; }
+  input[type=submit].small.inline, button.small.inline, .button.small.inline, .button-light.small.inline, a.button.small.inline {
+    /* line it up with default input size */
+    position: relative;
+    top: 4px; }
+  input[type=submit][disabled], input[type=submit][disabled="disabled"], input[type=submit].disabled, button[disabled], button[disabled="disabled"], button.disabled, .button[disabled], .button[disabled="disabled"], .button.disabled, .button-light[disabled], .button-light[disabled="disabled"], .button-light.disabled, a.button[disabled], a.button[disabled="disabled"], a.button.disabled {
+    background: #d4d4d4;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#d4d4d4));
+    background: -moz-linear-gradient(top, #eeeeee, #d4d4d4);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFEEEEEE', endColorstr='#FFD4D4D4');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFD4D4D4')";
+    -moz-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+    -webkit-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+    -o-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+    box-shadow: #f3f3f3 1px 1px 0 0 inset;
+    border: 1px solid #bbbbbb;
+    color: #888888 !important; }
+    input[type=submit][disabled]:hover, input[type=submit][disabled="disabled"]:hover, input[type=submit].disabled:hover, button[disabled]:hover, button[disabled="disabled"]:hover, button.disabled:hover, .button[disabled]:hover, .button[disabled="disabled"]:hover, .button.disabled:hover, .button-light[disabled]:hover, .button-light[disabled="disabled"]:hover, .button-light.disabled:hover, a.button[disabled]:hover, a.button[disabled="disabled"]:hover, a.button.disabled:hover {
+      background: #d4d4d4;
+      background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#d4d4d4));
+      background: -moz-linear-gradient(top, #eeeeee, #d4d4d4);
+      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFEEEEEE', endColorstr='#FFD4D4D4');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFD4D4D4')";
+      -moz-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      -webkit-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      -o-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      border: 1px solid #bbbbbb; }
+    input[type=submit][disabled]:active, input[type=submit][disabled="disabled"]:active, input[type=submit].disabled:active, button[disabled]:active, button[disabled="disabled"]:active, button.disabled:active, .button[disabled]:active, .button[disabled="disabled"]:active, .button.disabled:active, .button-light[disabled]:active, .button-light[disabled="disabled"]:active, .button-light.disabled:active, a.button[disabled]:active, a.button[disabled="disabled"]:active, a.button.disabled:active {
+      background: #d4d4d4;
+      background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#d4d4d4));
+      background: -moz-linear-gradient(top, #eeeeee, #d4d4d4);
+      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFEEEEEE', endColorstr='#FFD4D4D4');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFD4D4D4')";
+      -moz-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      -webkit-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      -o-box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      box-shadow: #f3f3f3 1px 1px 0 0 inset;
+      border: 1px solid #bbbbbb; }
+  input[type=submit][disabled].primary, input[type=submit][disabled="disabled"].primary, input[type=submit].disabled.primary, button[disabled].primary, button[disabled="disabled"].primary, button.disabled.primary, .button[disabled].primary, .button[disabled="disabled"].primary, .button.disabled.primary, .button-light[disabled].primary, .button-light[disabled="disabled"].primary, .button-light.disabled.primary, a.button[disabled].primary, a.button[disabled="disabled"].primary, a.button.disabled.primary {
+    background: #db8a8d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e7b1b3), to(#db8a8d));
+    background: -moz-linear-gradient(top, #e7b1b3, #db8a8d);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFE7B1B3', endColorstr='#FFDB8A8D');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE7B1B3', endColorstr='#FFDB8A8D')";
+    -moz-box-shadow: #eec8c9 1px 1px 0 0 inset;
+    -webkit-box-shadow: #eec8c9 1px 1px 0 0 inset;
+    -o-box-shadow: #eec8c9 1px 1px 0 0 inset;
+    box-shadow: #eec8c9 1px 1px 0 0 inset;
+    border: 1px solid #cf6367;
+    color: #f4f4f4 !important; }
+    input[type=submit][disabled].primary:hover, input[type=submit][disabled="disabled"].primary:hover, input[type=submit].disabled.primary:hover, button[disabled].primary:hover, button[disabled="disabled"].primary:hover, button.disabled.primary:hover, .button[disabled].primary:hover, .button[disabled="disabled"].primary:hover, .button.disabled.primary:hover, .button-light[disabled].primary:hover, .button-light[disabled="disabled"].primary:hover, .button-light.disabled.primary:hover, a.button[disabled].primary:hover, a.button[disabled="disabled"].primary:hover, a.button.disabled.primary:hover {
+      background: #db8a8d;
+      background: -webkit-gradient(linear, left top, left bottom, from(#e7b1b3), to(#db8a8d));
+      background: -moz-linear-gradient(top, #e7b1b3, #db8a8d);
+      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFE7B1B3', endColorstr='#FFDB8A8D');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE7B1B3', endColorstr='#FFDB8A8D')";
+      -moz-box-shadow: #eec8c9 1px 1px 0 0 inset;
+      -webkit-box-shadow: #eec8c9 1px 1px 0 0 inset;
+      -o-box-shadow: #eec8c9 1px 1px 0 0 inset;
+      box-shadow: #eec8c9 1px 1px 0 0 inset;
+      border: 1px solid #cf6367; }
+    input[type=submit][disabled].primary:active, input[type=submit][disabled="disabled"].primary:active, input[type=submit].disabled.primary:active, button[disabled].primary:active, button[disabled="disabled"].primary:active, button.disabled.primary:active, .button[disabled].primary:active, .button[disabled="disabled"].primary:active, .button.disabled.primary:active, .button-light[disabled].primary:active, .button-light[disabled="disabled"].primary:active, .button-light.disabled.primary:active, a.button[disabled].primary:active, a.button[disabled="disabled"].primary:active, a.button.disabled.primary:active {
+      background: #db8a8d;
+      background: -webkit-gradient(linear, left top, left bottom, from(#e7b1b3), to(#db8a8d));
+      background: -moz-linear-gradient(top, #e7b1b3, #db8a8d);
+      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFE7B1B3', endColorstr='#FFDB8A8D');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE7B1B3', endColorstr='#FFDB8A8D')";
+      -moz-box-shadow: #eec8c9 1px 1px 0 0 inset;
+      -webkit-box-shadow: #eec8c9 1px 1px 0 0 inset;
+      -o-box-shadow: #eec8c9 1px 1px 0 0 inset;
+      box-shadow: #eec8c9 1px 1px 0 0 inset;
+      border: 1px solid #cf6367; }
+
+/* generic "clickable" button */
+.button-light {
+  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
+  background: -moz-linear-gradient(top, white, #f2f2f2);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')"; }
+  .button-light:hover {
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
+    background: -moz-linear-gradient(top, white, #ededed);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
+  .button-light:active, .button-light.selected, .button-light.active {
+    background: #e6e6e6;
+    background-color: #eeeeee !important;
+    background-image: none !important;
+    color: #888888 !important;
+    filter: none;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
+    .button-light:active:link, .button-light:active:hover, .button-light:active:vistied, .button-light:active:active, .button-light.selected:link, .button-light.selected:hover, .button-light.selected:vistied, .button-light.selected:active, .button-light.active:link, .button-light.active:hover, .button-light.active:vistied, .button-light.active:active {
+      color: #888888 !important; }
+
+/* }}} */
 /* {{{ Feedback/Error states */
 label.required:after {
   margin-left: 0.15em;
@@ -775,7 +902,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 16px;
-  font-family: Papyrus, fantasy; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 select.big {
   height: 34px;
@@ -783,234 +910,6 @@ select.big {
   line-height: 36px -2; }
 
 /* }}} */
-/**
-* ==============================================
-* BOXY BUTTONS
-*/
-.button,
-button,
-input[type="submit"] {
-  padding: 9px 18px;
-  color: rgba(0, 0, 0, 0.55) !important;
-  background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
-  .button:active,
-  button:active,
-  input[type="submit"]:active {
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
-  .button:hover,
-  button:hover,
-  input[type="submit"]:hover {
-    background: rgba(0, 0, 0, 0.16); }
-  .inverted
-  .button, .inverted
-  button, .inverted
-  input[type="submit"] {
-    color: rgba(255, 255, 255, 0.8) !important;
-    background: rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
-    .inverted
-    .button:active, .inverted
-    button:active, .inverted
-    input[type="submit"]:active {
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -moz-transform: translate(0px, 2px);
-      -webkit-transform: translate(0px, 2px);
-      -o-transform: translate(0px, 2px);
-      transform: translate(0px, 2px); }
-    .inverted
-    .button:hover, .inverted
-    button:hover, .inverted
-    input[type="submit"]:hover {
-      background: rgba(255, 255, 255, 0.14); }
-
-.primary,
-.button.primary,
-.button--primary,
-input[type="submit"].primary,
-input[type="submit"].button--primary {
-  -moz-box-shadow: #851518 0px 2px 0px 0px;
-  -webkit-box-shadow: #851518 0px 2px 0px 0px;
-  -o-box-shadow: #851518 0px 2px 0px 0px;
-  box-shadow: #851518 0px 2px 0px 0px;
-  color: white !important;
-  background: #e0393e; }
-  .primary:active,
-  .button.primary:active,
-  .button--primary:active,
-  input[type="submit"].primary:active,
-  input[type="submit"].button--primary:active {
-    -moz-box-shadow: #851518 0px 0px 0px 0px;
-    -webkit-box-shadow: #851518 0px 0px 0px 0px;
-    -o-box-shadow: #851518 0px 0px 0px 0px;
-    box-shadow: #851518 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
-  .primary:hover,
-  .button.primary:hover,
-  .button--primary:hover,
-  input[type="submit"].primary:hover,
-  input[type="submit"].button--primary:hover {
-    background: #d02126; }
-
-.button--black,
-input[type="submit"].button--black {
-  -moz-box-shadow: black 0px 2px 0px 0px;
-  -webkit-box-shadow: black 0px 2px 0px 0px;
-  -o-box-shadow: black 0px 2px 0px 0px;
-  box-shadow: black 0px 2px 0px 0px;
-  color: white !important;
-  background: black; }
-  .button--black:active,
-  input[type="submit"].button--black:active {
-    -moz-box-shadow: black 0px 0px 0px 0px;
-    -webkit-box-shadow: black 0px 0px 0px 0px;
-    -o-box-shadow: black 0px 0px 0px 0px;
-    box-shadow: black 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
-  .button--black:hover,
-  input[type="submit"].button--black:hover {
-    background: black; }
-
-.button--blue,
-input[type="submit"].button--blue {
-  -moz-box-shadow: #005893 0px 2px 0px 0px;
-  -webkit-box-shadow: #005893 0px 2px 0px 0px;
-  -o-box-shadow: #005893 0px 2px 0px 0px;
-  box-shadow: #005893 0px 2px 0px 0px;
-  color: white !important;
-  background: #13a1ff; }
-  .button--blue:active,
-  input[type="submit"].button--blue:active {
-    -moz-box-shadow: #005893 0px 0px 0px 0px;
-    -webkit-box-shadow: #005893 0px 0px 0px 0px;
-    -o-box-shadow: #005893 0px 0px 0px 0px;
-    box-shadow: #005893 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
-  .button--blue:hover,
-  input[type="submit"].button--blue:hover {
-    background: #008ce9; }
-
-/**
-* ==============================================
-* FLAT BUTTONS
-*/
-.button-flat,
-.button-flat--gray {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
-  color: #777777 !important;
-  background: transparent;
-  border: 2px solid #777777; }
-  .button-flat,
-  .button-flat:active,
-  .button-flat--gray,
-  .button-flat--gray:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
-  .button-flat:hover,
-  .button-flat--gray:hover {
-    background: #777777;
-    color: white !important; }
-
-.button-flat--white {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
-  color: white !important;
-  background: transparent;
-  border: 2px solid white; }
-  .button-flat--white,
-  .button-flat--white:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
-  .button-flat--white:hover {
-    background: white;
-    color: rgba(0, 0, 0, 0.8) !important; }
-
-.button-flat--black {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
-  color: black !important;
-  background: transparent;
-  border: 2px solid black; }
-  .button-flat--black,
-  .button-flat--black:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
-  .button-flat--black:hover {
-    background: black;
-    color: white !important; }
-
-.button-flat--red {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
-  color: #e0393e !important;
-  background: transparent;
-  border: 2px solid #e0393e; }
-  .button-flat--red,
-  .button-flat--red:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
-  .button-flat--red:hover {
-    background: #e0393e;
-    color: white !important; }
-
 /**
 * LAYOUT
 * oocss grids, modifier classes for layout
@@ -1634,7 +1533,7 @@ as well as a few different states/types:
 
 .tearsheet-25, .tearsheet-30, .tearsheet-40, .tearsheet, .tearsheet-80 {
   border-radius: 2px;
-  font-family: Papyrus, fantasy;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -1870,7 +1769,7 @@ a:hover .tearsheet-add .time {
     line-height: 0;
     height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
-    font-family: Papyrus, fantasy;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 1px solid #dddddd;
     border-left-width: 0;
     padding: 0.4em 0;
@@ -1931,7 +1830,7 @@ a:hover .tearsheet-add .time {
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: Papyrus, fantasy;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -1995,6 +1894,42 @@ a:hover .tearsheet-add .time {
   /*****************************
    * COLOR INVERTED
    ****************************/
+  /*
+   *    .inverted &{
+   *        border-color: $C_darkgray;
+   *      label,
+   *      li > a,
+   *      li > span {
+   *         @include button_color($C_darkgray_lighter, false);
+   *         border: none;
+   *         color: $C_text;
+   *      }
+   *
+   *      input[type=radio]:checked + label, input[attr="checked"] + label {
+   *         @include button_color_active($C_darkgray_lighter, true);
+   *      }
+   *
+   *      input[type=radio]:checked + label, input[attr="checked"] + label,
+   *      li > a:active, li > a.selected, li > a.push,
+   *      li > span.selected, li > span.push {
+   *         color: $C_gray_lightest;
+   *      }
+   *
+   *        &.vertical{
+   *         label,
+   *         li > a,
+   *         li > span{
+   *            @include experimental(box-shadow, 'rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset');
+   *         }
+   *
+   *         label:last-of-type,
+   *         li:last-child > a,
+   *         li:last-child > span {
+   *            @include experimental(box-shadow, 'rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset');
+   *         }
+   *        }
+   *    }
+   */
   /*****************************
    * COLOR SELECTED ITEM
    ****************************/
@@ -2021,7 +1956,7 @@ a:hover .tearsheet-add .time {
     user-select: none;
     cursor: pointer;
     text-decoration: none!important;
-    font-family: Papyrus, fantasy;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0.5em 1.2em 0.4em;
     display: block;
     font-size: 14px; }
@@ -2049,30 +1984,6 @@ a:hover .tearsheet-add .time {
       display: block;
       float: none;
       text-align: left; }
-    .nav-buttons.vertical label:first-of-type,
-    .nav-buttons.vertical li:first-child > a,
-    .nav-buttons.vertical li:first-child > span {
-      -moz-border-radius-topleft: 2px;
-      -webkit-border-top-left-radius: 2px;
-      border-top-left-radius: 2px;
-      -moz-border-radius-topright: 2px;
-      -webkit-border-top-right-radius: 2px;
-      border-top-right-radius: 2px;
-      -moz-border-radius-bottomleft: 0;
-      -webkit-border-bottom-left-radius: 0;
-      border-bottom-left-radius: 0; }
-    .nav-buttons.vertical label:last-of-type
-    li:last-child > a,
-    .nav-buttons.vertical li:last-child > span {
-      -moz-border-radius-topright: 0;
-      -webkit-border-top-right-radius: 0;
-      border-top-right-radius: 0;
-      -moz-border-radius-bottomright: 2px;
-      -webkit-border-bottom-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-      -moz-border-radius-bottomleft: 2px;
-      -webkit-border-bottom-left-radius: 2px;
-      border-bottom-left-radius: 2px; }
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
@@ -2093,7 +2004,7 @@ a:hover .tearsheet-add .time {
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
     border: none;
-    color: #555555 !important;
+    color: #555555;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
     -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
@@ -2106,13 +2017,13 @@ a:hover .tearsheet-add .time {
       background: -moz-linear-gradient(top, white, #ededed);
       filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
-    .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.activated,
+    .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.active,
     .nav-buttons li > a:active,
     .nav-buttons li > a.selected,
-    .nav-buttons li > a.activated,
+    .nav-buttons li > a.active,
     .nav-buttons li > span:active,
     .nav-buttons li > span.selected,
-    .nav-buttons li > span.activated {
+    .nav-buttons li > span.active {
       background: #e6e6e6;
       background-color: #eeeeee !important;
       background-image: none !important;
@@ -2122,7 +2033,7 @@ a:hover .tearsheet-add .time {
       -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-      .nav-buttons label:active:link, .nav-buttons label:active:hover, .nav-buttons label:active:vistied, .nav-buttons label:active:active, .nav-buttons label.selected:link, .nav-buttons label.selected:hover, .nav-buttons label.selected:vistied, .nav-buttons label.selected:active, .nav-buttons label.activated:link, .nav-buttons label.activated:hover, .nav-buttons label.activated:vistied, .nav-buttons label.activated:active,
+      .nav-buttons label:active:link, .nav-buttons label:active:hover, .nav-buttons label:active:vistied, .nav-buttons label:active:active, .nav-buttons label.selected:link, .nav-buttons label.selected:hover, .nav-buttons label.selected:vistied, .nav-buttons label.selected:active, .nav-buttons label.active:link, .nav-buttons label.active:hover, .nav-buttons label.active:vistied, .nav-buttons label.active:active,
       .nav-buttons li > a:active:link,
       .nav-buttons li > a:active:hover,
       .nav-buttons li > a:active:vistied,
@@ -2131,10 +2042,10 @@ a:hover .tearsheet-add .time {
       .nav-buttons li > a.selected:hover,
       .nav-buttons li > a.selected:vistied,
       .nav-buttons li > a.selected:active,
-      .nav-buttons li > a.activated:link,
-      .nav-buttons li > a.activated:hover,
-      .nav-buttons li > a.activated:vistied,
-      .nav-buttons li > a.activated:active,
+      .nav-buttons li > a.active:link,
+      .nav-buttons li > a.active:hover,
+      .nav-buttons li > a.active:vistied,
+      .nav-buttons li > a.active:active,
       .nav-buttons li > span:active:link,
       .nav-buttons li > span:active:hover,
       .nav-buttons li > span:active:vistied,
@@ -2143,10 +2054,10 @@ a:hover .tearsheet-add .time {
       .nav-buttons li > span.selected:hover,
       .nav-buttons li > span.selected:vistied,
       .nav-buttons li > span.selected:active,
-      .nav-buttons li > span.activated:link,
-      .nav-buttons li > span.activated:hover,
-      .nav-buttons li > span.activated:vistied,
-      .nav-buttons li > span.activated:active {
+      .nav-buttons li > span.active:link,
+      .nav-buttons li > span.active:hover,
+      .nav-buttons li > span.active:vistied,
+      .nav-buttons li > span.active:active {
         color: #888888 !important; }
   .nav-buttons input[type=radio]:checked + label, .nav-buttons input[attr="checked"] + label,
   .nav-buttons li > a:active, .nav-buttons li > a.selected, .nav-buttons li > a.push,
@@ -2190,103 +2101,6 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset; }
-  .inverted .nav-buttons {
-    border-color: #333333; }
-    .inverted .nav-buttons label,
-    .inverted .nav-buttons li > a,
-    .inverted .nav-buttons li > span {
-      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      background: #3b3b3b;
-      background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#3b3b3b));
-      background: -moz-linear-gradient(top, #555555, #3b3b3b);
-      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FF555555', endColorstr='#FF3B3B3B');
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF555555', endColorstr='#FF3B3B3B')";
-      border: none;
-      color: #dddddd !important; }
-      .inverted .nav-buttons label:hover,
-      .inverted .nav-buttons li > a:hover,
-      .inverted .nav-buttons li > span:hover {
-        background: #3b3b3b;
-        background: -webkit-gradient(linear, left top, left bottom, from(#626262), to(#3b3b3b));
-        background: -moz-linear-gradient(top, #626262, #3b3b3b);
-        filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FF626262', endColorstr='#FF3B3B3B');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF626262', endColorstr='#FF3B3B3B')"; }
-      .inverted .nav-buttons label:active, .inverted .nav-buttons label.selected, .inverted .nav-buttons label.activated,
-      .inverted .nav-buttons li > a:active,
-      .inverted .nav-buttons li > a.selected,
-      .inverted .nav-buttons li > a.activated,
-      .inverted .nav-buttons li > span:active,
-      .inverted .nav-buttons li > span.selected,
-      .inverted .nav-buttons li > span.activated {
-        background: #2f2f2f;
-        background-color: #eeeeee !important;
-        background-image: none !important;
-        color: #888888 !important;
-        filter: none;
-        -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-        -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-        -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-        box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-        .inverted .nav-buttons label:active:link, .inverted .nav-buttons label:active:hover, .inverted .nav-buttons label:active:vistied, .inverted .nav-buttons label:active:active, .inverted .nav-buttons label.selected:link, .inverted .nav-buttons label.selected:hover, .inverted .nav-buttons label.selected:vistied, .inverted .nav-buttons label.selected:active, .inverted .nav-buttons label.activated:link, .inverted .nav-buttons label.activated:hover, .inverted .nav-buttons label.activated:vistied, .inverted .nav-buttons label.activated:active,
-        .inverted .nav-buttons li > a:active:link,
-        .inverted .nav-buttons li > a:active:hover,
-        .inverted .nav-buttons li > a:active:vistied,
-        .inverted .nav-buttons li > a:active:active,
-        .inverted .nav-buttons li > a.selected:link,
-        .inverted .nav-buttons li > a.selected:hover,
-        .inverted .nav-buttons li > a.selected:vistied,
-        .inverted .nav-buttons li > a.selected:active,
-        .inverted .nav-buttons li > a.activated:link,
-        .inverted .nav-buttons li > a.activated:hover,
-        .inverted .nav-buttons li > a.activated:vistied,
-        .inverted .nav-buttons li > a.activated:active,
-        .inverted .nav-buttons li > span:active:link,
-        .inverted .nav-buttons li > span:active:hover,
-        .inverted .nav-buttons li > span:active:vistied,
-        .inverted .nav-buttons li > span:active:active,
-        .inverted .nav-buttons li > span.selected:link,
-        .inverted .nav-buttons li > span.selected:hover,
-        .inverted .nav-buttons li > span.selected:vistied,
-        .inverted .nav-buttons li > span.selected:active,
-        .inverted .nav-buttons li > span.activated:link,
-        .inverted .nav-buttons li > span.activated:hover,
-        .inverted .nav-buttons li > span.activated:vistied,
-        .inverted .nav-buttons li > span.activated:active {
-          color: #888888 !important; }
-    .inverted .nav-buttons input[type=radio]:checked + label, .inverted .nav-buttons input[attr="checked"] + label {
-      background: #3b3b3b;
-      background-color: #eeeeee !important;
-      background-image: none !important;
-      color: #888888 !important;
-      filter: none;
-      -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-      .inverted .nav-buttons input[type=radio]:checked + label:link, .inverted .nav-buttons input[type=radio]:checked + label:hover, .inverted .nav-buttons input[type=radio]:checked + label:vistied, .inverted .nav-buttons input[type=radio]:checked + label:active, .inverted .nav-buttons input[attr="checked"] + label:link, .inverted .nav-buttons input[attr="checked"] + label:hover, .inverted .nav-buttons input[attr="checked"] + label:vistied, .inverted .nav-buttons input[attr="checked"] + label:active {
-        color: #888888 !important; }
-    .inverted .nav-buttons input[type=radio]:checked + label, .inverted .nav-buttons input[attr="checked"] + label,
-    .inverted .nav-buttons li > a:active, .inverted .nav-buttons li > a.selected, .inverted .nav-buttons li > a.push,
-    .inverted .nav-buttons li > span.selected, .inverted .nav-buttons li > span.push {
-      color: #f4f4f4 !important; }
-    .inverted .nav-buttons.vertical label,
-    .inverted .nav-buttons.vertical li > a,
-    .inverted .nav-buttons.vertical li > span {
-      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset;
-      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset;
-      -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset;
-      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) 0 -1px 0 0 inset; }
-    .inverted .nav-buttons.vertical label:last-of-type,
-    .inverted .nav-buttons.vertical li:last-child > a,
-    .inverted .nav-buttons.vertical li:last-child > span {
-      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset; }
   .nav-buttons li > a:active, .nav-buttons li > a.selected, .nav-buttons li > a.push, .nav-buttons li > span:active, .nav-buttons li > span.selected, .nav-buttons li > span.push, .nav-buttons li:first-child > a:active, .nav-buttons li:first-child > a.selected, .nav-buttons li:first-child > a.push, .nav-buttons li:first-child > span:active, .nav-buttons li:first-child > span.selected, .nav-buttons li:first-child > span.push, .nav-buttons li:last-child > a:active, .nav-buttons li:last-child > a.selected, .nav-buttons li:last-child > a.push, .nav-buttons li:last-child > span:active, .nav-buttons li:last-child > span.selected, .nav-buttons li:last-child > span.push {
     background-color: #eeeeee !important;
     background-image: none !important;
@@ -2410,7 +2224,7 @@ a:hover .tearsheet-add .time {
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: Papyrus, fantasy;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.5;
@@ -2425,7 +2239,7 @@ a:hover .tearsheet-add .time {
     background: -moz-linear-gradient(top, white, #ededed);
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
-  .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.activated {
+  .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.active {
     background: #e6e6e6;
     background-color: #eeeeee !important;
     background-image: none !important;
@@ -2435,7 +2249,7 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
-    .segmented-control-button:active:link, .segmented-control-button:active:hover, .segmented-control-button:active:vistied, .segmented-control-button:active:active, .segmented-control-button.selected:link, .segmented-control-button.selected:hover, .segmented-control-button.selected:vistied, .segmented-control-button.selected:active, .segmented-control-button.activated:link, .segmented-control-button.activated:hover, .segmented-control-button.activated:vistied, .segmented-control-button.activated:active {
+    .segmented-control-button:active:link, .segmented-control-button:active:hover, .segmented-control-button:active:vistied, .segmented-control-button:active:active, .segmented-control-button.selected:link, .segmented-control-button.selected:hover, .segmented-control-button.selected:vistied, .segmented-control-button.selected:active, .segmented-control-button.active:link, .segmented-control-button.active:hover, .segmented-control-button.active:vistied, .segmented-control-button.active:active {
       color: #888888 !important; }
 
 /* These next two are sort of nasty selectors--but since this doesn't work
@@ -2533,7 +2347,7 @@ a:hover .tearsheet-add .time {
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* 22/16 */
-/* 22/16 */
+/* 24/16 - icon gems are 16px with 0.5em padding */
 /* 22/16 */
 /* 48/16 */
 /* 32/16 */
@@ -2625,7 +2439,7 @@ a:hover .tearsheet-add .time {
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* 22/16 */
-/* 22/16 */
+/* 24/16 - icon gems are 16px with 0.5em padding */
 /* 22/16 */
 /* 48/16 */
 /* 32/16 */
