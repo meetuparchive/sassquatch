@@ -7,22 +7,24 @@
 @import "../../components/meetup-swatches/sass/colors";
 
 /* {{{ Type */
-$baseline: 16px;        // not actually used as line-height, we should rename
-$baseFontSize: 12px;
-$bigFontSize: 18px;
+$sans: 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+
+$baseline: 18px;        // not actually used as line-height, we should rename
+$baseFontSize: 18px;
+$bigFontSize: 24px;
 $bigBaseline: 24px;     // not actually used as line-height, we should rename
 $baseLineHeight: 1.5;   // this is the actual line-height
 
 
-$h1FontSize: 32px;
-$h2FontSize: 26px;
-$h3FontSize: 20px;
-$h4FontSize: 16px;
+$h1FontSize: 38px;
+$h2FontSize: 32px;
+$h3FontSize: 24px;
+$h4FontSize: 18px;
 $h5FontSize: $baseFontSize;
-$h6FontSize: 11px;
+$h6FontSize: 12px;
 
-$baseFontStack: verdana, Arial, sans-serif;
-$headingFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$baseFontStack: $serif;
+$headingFontStack: $sans;
 $monoFontStack: Monaco, "Andale Mono", "Courier New", monospace;
 $uiControlFontStack: $headingFontStack;
 /* }}} */
