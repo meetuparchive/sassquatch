@@ -225,6 +225,78 @@ a perspective value
 flips
 
 */
+/**
+* Button factory mixins
+* ------------------------------------------
+*/
+.button,
+button,
+input[type="submit"],
+.primary,
+.button.primary,
+.button--primary,
+input[type="submit"].primary,
+input[type="submit"].button--primary,
+.button--black,
+input[type="submit"].button--black,
+.button--blue,
+input[type="submit"].button--blue,
+.button-flat,
+.button-flat--gray,
+.button-flat--white,
+.button-flat--black,
+.button-flat--red {
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: none 0 ;
+  -moz-transition: none 0 ;
+  -o-transition: none 0 ;
+  transition: none 0 ;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 9px 18px;
+  margin: 0 0 18px 0;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  border-width: 0; }
+  .button:focus,
+  button:focus,
+  input[type="submit"]:focus,
+  .primary:focus,
+  .button--primary:focus,
+  .button--black:focus,
+  .button--blue:focus,
+  .button-flat:focus,
+  .button-flat--gray:focus,
+  .button-flat--white:focus,
+  .button-flat--black:focus,
+  .button-flat--red:focus {
+    outline-width: 0; }
+
+/**
+* Default button
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+/**
+* Flat button
+* @param $color - single border/text/hover color
+* -----------------------------------------------
+*/
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -536,7 +608,12 @@ input, select, textarea {
 /* start with horizontal, inline type 	s as default */
 label {
   font-size: 22.5px;
+<<<<<<< HEAD
   color: #555555;
+=======
+  /*color: $C_text;*/
+  color: Chocolate;
+>>>>>>> release_1.5.0
   display: block;
   margin-right: 1em;
   /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */ }
@@ -649,11 +726,10 @@ input, textarea {
     box-shadow: none; }
 
 [disabled],
-[disabled="disabled"],
-input.disabled {
-  /*only change the background of inputs, not wrappers with .disabled class*/
+[disabled="disabled"] {
   background-color: #eeeeee; }
 
+<<<<<<< HEAD
 /* {{{ Button defaults */
 input[type=submit], button, .button, .button-light, a.button {
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
@@ -853,6 +929,8 @@ input[type=submit], button, .button, .button-light, a.button {
       color: #888888 !important; }
 
 /* }}} */
+=======
+>>>>>>> release_1.5.0
 /* {{{ Feedback/Error states */
 label.required:after {
   margin-left: 0.15em;
@@ -909,6 +987,234 @@ select.big {
   line-height: 48px -2; }
 
 /* }}} */
+/**
+* ==============================================
+* BOXY BUTTONS
+*/
+.button,
+button,
+input[type="submit"] {
+  padding: 9px 18px;
+  color: rgba(0, 0, 0, 0.55) !important;
+  background: rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+  .button:active,
+  button:active,
+  input[type="submit"]:active {
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .button:hover,
+  button:hover,
+  input[type="submit"]:hover {
+    background: rgba(0, 0, 0, 0.16); }
+  .inverted
+  .button, .inverted
+  button, .inverted
+  input[type="submit"] {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+    .inverted
+    .button:active, .inverted
+    button:active, .inverted
+    input[type="submit"]:active {
+      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -moz-transform: translate(0px, 2px);
+      -webkit-transform: translate(0px, 2px);
+      -o-transform: translate(0px, 2px);
+      transform: translate(0px, 2px); }
+    .inverted
+    .button:hover, .inverted
+    button:hover, .inverted
+    input[type="submit"]:hover {
+      background: rgba(255, 255, 255, 0.14); }
+
+.primary,
+.button.primary,
+.button--primary,
+input[type="submit"].primary,
+input[type="submit"].button--primary {
+  -moz-box-shadow: #851518 0px 2px 0px 0px;
+  -webkit-box-shadow: #851518 0px 2px 0px 0px;
+  -o-box-shadow: #851518 0px 2px 0px 0px;
+  box-shadow: #851518 0px 2px 0px 0px;
+  color: white !important;
+  background: #e0393e; }
+  .primary:active,
+  .button.primary:active,
+  .button--primary:active,
+  input[type="submit"].primary:active,
+  input[type="submit"].button--primary:active {
+    -moz-box-shadow: #851518 0px 0px 0px 0px;
+    -webkit-box-shadow: #851518 0px 0px 0px 0px;
+    -o-box-shadow: #851518 0px 0px 0px 0px;
+    box-shadow: #851518 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .primary:hover,
+  .button.primary:hover,
+  .button--primary:hover,
+  input[type="submit"].primary:hover,
+  input[type="submit"].button--primary:hover {
+    background: #d02126; }
+
+.button--black,
+input[type="submit"].button--black {
+  -moz-box-shadow: black 0px 2px 0px 0px;
+  -webkit-box-shadow: black 0px 2px 0px 0px;
+  -o-box-shadow: black 0px 2px 0px 0px;
+  box-shadow: black 0px 2px 0px 0px;
+  color: white !important;
+  background: black; }
+  .button--black:active,
+  input[type="submit"].button--black:active {
+    -moz-box-shadow: black 0px 0px 0px 0px;
+    -webkit-box-shadow: black 0px 0px 0px 0px;
+    -o-box-shadow: black 0px 0px 0px 0px;
+    box-shadow: black 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .button--black:hover,
+  input[type="submit"].button--black:hover {
+    background: black; }
+
+.button--blue,
+input[type="submit"].button--blue {
+  -moz-box-shadow: #005893 0px 2px 0px 0px;
+  -webkit-box-shadow: #005893 0px 2px 0px 0px;
+  -o-box-shadow: #005893 0px 2px 0px 0px;
+  box-shadow: #005893 0px 2px 0px 0px;
+  color: white !important;
+  background: #13a1ff; }
+  .button--blue:active,
+  input[type="submit"].button--blue:active {
+    -moz-box-shadow: #005893 0px 0px 0px 0px;
+    -webkit-box-shadow: #005893 0px 0px 0px 0px;
+    -o-box-shadow: #005893 0px 0px 0px 0px;
+    box-shadow: #005893 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .button--blue:hover,
+  input[type="submit"].button--blue:hover {
+    background: #008ce9; }
+
+/**
+* ==============================================
+* FLAT BUTTONS
+*/
+.button-flat,
+.button-flat--gray {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: all 0.1s ease-in-out 0 ;
+  -moz-transition: all 0.1s ease-in-out 0 ;
+  -o-transition: all 0.1s ease-in-out 0 ;
+  transition: all 0.1s ease-in-out 0 ;
+  color: #777777 !important;
+  background: transparent;
+  border: 2px solid #777777; }
+  .button-flat,
+  .button-flat:active,
+  .button-flat--gray,
+  .button-flat--gray:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat:hover,
+  .button-flat--gray:hover {
+    background: #777777;
+    color: white !important; }
+
+.button-flat--white {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: all 0.1s ease-in-out 0 ;
+  -moz-transition: all 0.1s ease-in-out 0 ;
+  -o-transition: all 0.1s ease-in-out 0 ;
+  transition: all 0.1s ease-in-out 0 ;
+  color: white !important;
+  background: transparent;
+  border: 2px solid white; }
+  .button-flat--white,
+  .button-flat--white:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--white:hover {
+    background: white;
+    color: rgba(0, 0, 0, 0.8) !important; }
+
+.button-flat--black {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: all 0.1s ease-in-out 0 ;
+  -moz-transition: all 0.1s ease-in-out 0 ;
+  -o-transition: all 0.1s ease-in-out 0 ;
+  transition: all 0.1s ease-in-out 0 ;
+  color: black !important;
+  background: transparent;
+  border: 2px solid black; }
+  .button-flat--black,
+  .button-flat--black:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--black:hover {
+    background: black;
+    color: white !important; }
+
+.button-flat--red {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: all 0.1s ease-in-out 0 ;
+  -moz-transition: all 0.1s ease-in-out 0 ;
+  -o-transition: all 0.1s ease-in-out 0 ;
+  transition: all 0.1s ease-in-out 0 ;
+  color: #e0393e !important;
+  background: transparent;
+  border: 2px solid #e0393e; }
+  .button-flat--red,
+  .button-flat--red:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+  .button-flat--red:hover {
+    background: #e0393e;
+    color: white !important; }
+
 /**
 * LAYOUT
 * oocss grids, modifier classes for layout
