@@ -81,7 +81,8 @@ input, select, textarea {
 /* start with horizontal, inline type 	s as default */
 label {
 	font-size: $baseFontSize * 1.25;
-	color: $C_text;
+	/*color: $C_text;*/
+	color: Chocolate;
 	display: block;
 	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
 	&.small {
@@ -195,76 +196,9 @@ input, textarea {
     }
 }
 [disabled],
-[disabled="disabled"],
-input.disabled { /*only change the background of inputs, not wrappers with .disabled class*/
+[disabled="disabled"] {
     background-color: $C_line_less;
 }
-
-/* {{{ Button defaults */
-
-input[type=submit], button, .button, .button-light, a.button {
-	@include button_color($C_gray_lightest);
-	@include button_personality;
-    white-space: nowrap;
-    @include experimental(transition, none); // transition makes button action mushy
-	display: inline-block;
-	text-decoration: none!important;
-	text-align: center;
-	zoom: 1;
-	color: $C_text;
-	font-weight: bold;
-	font-family: helvetica, arial, sans-serif;
-	@include round($defaultRadius);
-	line-height: 1;
-	font-size: 16px;
-	padding: .5em 0.75em .4em;
-	vertical-align: middle;
-	height: auto;
-	width: auto;
-	margin-bottom: $spacing;
-
-    &:hover,
-    &:active {
-        color: $C_text;
-    }
-
-    /* primary action variant */
-    &.primary {
-        @include button_color($C_red);
-    }
-    &.primary,
-    &.primary:hover,
-    &.primary:active {
-        color: #fff !important;
-    }
-
-    &.small {
-        font-size: 12px;
-    }
-    &.small.inline {/* line it up with default input size */
-        position: relative;
-        top: 4px;
-    }
-
-    &[disabled],
-    &[disabled="disabled"],
-    &.disabled {
-        @include button_disabled_color( $C_gray_lighter );
-        color: $C_text_less !important;
-    }
-    &[disabled].primary,
-    &[disabled="disabled"].primary,
-    &.disabled.primary {
-        @include button_disabled_color( lighten(desaturate($C_red, 20%), 25%) );
-        color: $C_shade !important;
-    }
-}
-
-/* generic "clickable" button */
-.button-light {
-    @include button_color(#fff, true);
-}
-/* }}} */
 
 /* {{{ Feedback/Error states */
 label.required:after {
