@@ -7,6 +7,8 @@
 @import "../../components/meetup-swatches/sass/colors";
 
 /* {{{ Type */
+$sans: helvetica, arial, sans-serif;
+
 $baseline: 16px;        // not actually used as line-height, we should rename
 $baseFontSize: 12px;
 $bigFontSize: 18px;
