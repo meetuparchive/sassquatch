@@ -25,6 +25,14 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	&:focus {
 		outline-width: 0;
 	}
+	&.small {
+		font-size: 12px;
+		padding: 5px 14px;
+	}
+	&.disabled,
+	&::disabled {
+		opacity: 0.5;
+	}
 }
 
 /**
