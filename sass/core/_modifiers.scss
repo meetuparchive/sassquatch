@@ -36,18 +36,18 @@
 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
 }
 .leading-top {
-	padding-top: $spacing;
+	padding-top: $spacing !important;
 }
 .leading-bottom {
-	padding-bottom: $spacing;
+	padding-bottom: $spacing !important;
 }
 .leading-left,
 .padding-left {
-	padding-left: $spacing;
+	padding-left: $spacing !important;
 }
 .leading-right,
 .padding-right {
-	padding-right: $spacing;
+	padding-right: $spacing !important;
 }
 .leading-none,
 .padding-none {
@@ -55,22 +55,22 @@
 }
 .leading-all,
 .padding-all {
-	padding: $spacing;
+	padding: $spacing !important;
 }
 .margin-all{
-	margin:$spacing;
+	margin:$spacing !important;
 }
 .margin-top {
-	margin-top: $spacing;
+	margin-top: $spacing !important;
 }
 .margin-bottom {
-	margin-bottom: $spacing;
+	margin-bottom: $spacing !important;
 }
 .margin-left {
-	margin-left: $spacing;
+	margin-left: $spacing !important;
 }
 .margin-right {
-	margin-right: $spacing;
+	margin-right: $spacing !important;
 }
 .margin-none {
 	margin: 0 !important;
