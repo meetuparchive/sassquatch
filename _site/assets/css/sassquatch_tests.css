@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.8);
   margin: 0;
   padding: 0;
-  padding-bottom: 7.2px;
+  padding-bottom: 4.5px;
   line-height: 1.1;
   font-weight: bold; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
@@ -457,28 +457,33 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 44px;
-  letter-spacing: -0.75px; }
+  letter-spacing: -0.75px;
+  line-height: 1; }
 
 h2 {
   font-size: 36px;
-  letter-spacing: -0.5px; }
+  letter-spacing: -0.5px;
+  line-height: 1; }
 
 h3 {
-  font-size: 24px; }
+  font-size: 24px;
+  padding-bottom: 3.6px; }
 
 h4 {
-  font-size: 18px; }
+  font-size: 18px;
+  padding-bottom: 2.57143px; }
 
 h5 {
-  font-size: 16px; }
+  font-size: 16px;
+  padding-bottom: 2px; }
 
 h6 {
+  font-size: 16px;
+  padding-bottom: 0;
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 16px;
   font-variant: small-caps; }
 
-/* probably won't use it, but it's in the html spec, so worth defining a default */
 /* }}} */
 /*  TODO Please kill this. -j */
 /*  NOTE
