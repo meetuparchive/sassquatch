@@ -25,8 +25,7 @@
 /* {{{ Layout */
 /* horizontal offset of label/field */
 /* }}} */
-/* {{{ legacy (from crustybase) */
-/* _sponsoree.css and _sponsor_manage.scss */
+/* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
 /* }}} */
 /**
 *   @description
@@ -45,8 +44,9 @@
 *     of media-based overrides.
 *   - Standardized/saner gray values
 *
-*
+* {{{
 */
+/* }}} */
 /**
  * MIXINS
  * Sass mixins (including compass mixins)
@@ -258,7 +258,7 @@ input[type="submit"].button--blue,
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 9px 18px;
-  margin: 0 0 16px 0;
+  margin: 0 0 18px 0;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
   font-size: 15px;
   font-weight: 600;
@@ -347,14 +347,14 @@ html {
   -ms-text-size-adjust: 100%; }
 
 html, body {
-  font-size: 12px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.55);
   line-height: 1.5;
   margin: 0;
   padding: 0; }
 
 body, button, input, select, textarea {
-  font-family: helvetica, arial, sans-serif; }
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif; }
 
 .inverted {
   color: rgba(255, 255, 255, 0.8); }
@@ -445,22 +445,22 @@ a:active {
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: helvetica, arial, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   color: rgba(0, 0, 0, 0.8);
   margin: 0;
   padding: 0;
-  padding-bottom: 6.4px;
+  padding-bottom: 7.2px;
   line-height: 1.1;
   font-weight: bold; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
 
 h1 {
-  font-size: 38px;
+  font-size: 44px;
   letter-spacing: -0.75px; }
 
 h2 {
-  font-size: 32px;
+  font-size: 36px;
   letter-spacing: -0.5px; }
 
 h3 {
@@ -470,12 +470,12 @@ h4 {
   font-size: 18px; }
 
 h5 {
-  font-size: 12px; }
+  font-size: 16px; }
 
 h6 {
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 16px;
   font-variant: small-caps; }
 
 /* probably won't use it, but it's in the html spec, so worth defining a default */
@@ -488,12 +488,12 @@ h6 {
 /* {{{ Tables */
 table {
   width: 100%;
-  font-size: 12px;
+  font-size: 16px;
   border-collapse: collapse; }
 
 caption, td, th {
-  padding: 8px;
-  line-height: 16px;
+  padding: 9px;
+  line-height: 18px;
   text-align: left; }
 
 caption {
@@ -570,7 +570,7 @@ td, tbody th {
   border-top: 1px solid #eeeeee; }
 
 .sectionList > li {
-  padding: 16px 16px 4px;
+  padding: 18px 18px 6px;
   border-top: 1px solid #eeeeee; }
 
 /* }}} */
@@ -580,7 +580,7 @@ td, tbody th {
 */
 /* {{{ first, some normalization */
 button, input, select, textarea {
-  margin: 0 0 16px 0;
+  margin: 0 0 18px 0;
   vertical-align: baseline;
   *vertical-align: middle;
   -webkit-box-sizing: border-box;
@@ -614,7 +614,7 @@ fieldset {
   margin-top: 2.25em; }
   fieldset legend {
     display: block;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1;
     color: #555555;
     *line-height: 1.5;
@@ -635,11 +635,11 @@ fieldset {
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; } }
 input, select, textarea {
-  font-family: helvetica, arial, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   display: block;
   line-height: 1.5;
-  padding: 4px;
-  font-size: 12px;
+  padding: 4.5px;
+  font-size: 16px;
   width: auto;
   margin-bottom: 12px;
   color: #555555;
@@ -650,17 +650,17 @@ input, select, textarea {
 
 /* start with horizontal, inline type 	s as default */
 label {
-  font-size: 15px;
+  font-size: 20px;
   color: #555555;
   display: block;
   margin-right: 1em;
   /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */ }
   label.small {
-    font-size: 12px; }
+    font-size: 16px; }
 
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
-  font-size: 15px;
+  font-size: 20px;
   display: inline;
   cursor: pointer;
   width: auto;
@@ -673,9 +673,9 @@ input[type=checkbox], input[type=radio] {
   border: none; }
 
 select {
-  height: 28px;
+  height: 31.5px;
   *height: auto;
-  line-height: 32px;
+  line-height: 36px;
   *margin-top: 4px;
   /* IE7 - helps alignment with inline-style labels */ }
 
@@ -810,17 +810,17 @@ button.big,
 select.big,
 .button.big,
 input[type=submit].big {
-  font-size: 18px !important; }
+  font-size: 20px !important; }
 
 label.big,
 legend.big {
-  font-size: 16px;
-  font-family: helvetica, arial, sans-serif; }
+  font-size: 18px;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif; }
 
 select.big {
-  height: 34px;
+  height: 38px;
   *height: auto;
-  line-height: 36px -2; }
+  line-height: 40px -2; }
 
 /* }}} */
 /**
@@ -1136,19 +1136,19 @@ input[type="submit"].button--blue {
 /* }}} */
 /* {{{ ---DEPRECATED--- gutter modifiers */
 .gutter-left {
-  margin-left: 16px; }
+  margin-left: 18px; }
 
 .gutter-right {
-  margin-right: 16px; }
+  margin-right: 18px; }
 
 /* }}} */
 /* {{{ Grid line with auto-gutters units (.line-gutters shares .line rules as defined above) */
 .line-gutters {
-  margin-bottom: 16px;
-  margin-right: -16px;
+  margin-bottom: 18px;
+  margin-right: -18px;
   /* pull last child to the right to meet the right edge of the page */ }
   .line-gutters > .unit, .line-gutters > .lastUnit {
-    padding-right: 16px;
+    padding-right: 18px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -1184,7 +1184,7 @@ input[type="submit"].button--blue {
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   border: 1px solid #dddddd;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
@@ -1272,8 +1272,8 @@ input[type="submit"].button--blue {
 .doc-content,
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
-  padding: 16px;
-  padding-bottom: 4px;
+  padding: 18px;
+  padding-bottom: 4.5px;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
 
@@ -1282,7 +1282,7 @@ input[type="submit"].button--blue {
 
 .doc-controls {
   background: #dddddd;
-  padding-bottom: 16px;
+  padding-bottom: 18px;
   margin-bottom: 12px; }
 
 /**
@@ -1374,24 +1374,24 @@ input[type="submit"].button--blue {
   .doc-content-into:before, .doc-content-into:after, .doc-content-outof:before, .doc-content-outof:after {
     content: ' ';
     position: absolute;
-    left: 16px;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
+    left: 18px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
     display: block; }
 
 .doc-content-outof:before {
-  top: -9px;
-  border-bottom: 8px solid #dddddd; }
+  top: -10px;
+  border-bottom: 9px solid #dddddd; }
 .doc-content-outof:after {
-  top: -8px;
-  border-bottom: 8px solid white; }
+  top: -9px;
+  border-bottom: 9px solid white; }
 
 .doc-content-into:before {
   top: 0;
-  border-top: 8px solid #dddddd; }
+  border-top: 9px solid #dddddd; }
 .doc-content-into:after {
   top: -1px;
-  border-top: 8px solid white; }
+  border-top: 9px solid white; }
 
 /**
 * doc-content-big
@@ -1399,8 +1399,8 @@ input[type="submit"].button--blue {
 */
 .doc-content-big {
   border-top: 1px solid #dddddd;
-  padding: 24px;
-  padding-bottom: 12px;
+  padding: 18px;
+  padding-bottom: 6px;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
   /*Don't want file inputs to be quite so huge, because it looks crazy.*/ }
@@ -1408,15 +1408,15 @@ input[type="submit"].button--blue {
     border-top: none; }
   .doc-content-big input, .doc-content-big textarea, .doc-content-big select,
   .doc-content-big button, .doc-content-big .button {
-    font-size: 18px; }
+    font-size: 20px; }
   .doc-content-big label, .doc-content-big legend {
-    font-size: 16px; }
+    font-size: 18px; }
   .doc-content-big label.small {
     font-size: 12px; }
   .doc-content-big select {
-    height: 34px;
+    height: 38px;
     *height: auto;
-    line-height: 34px; }
+    line-height: 38px; }
   .doc-content-big input[type="file"] {
     font-size: 15px; }
 
@@ -1617,7 +1617,7 @@ hr.double-line {
   padding: 0;
   list-style: none;
   vertical-align: top;
-  margin: 0 -16px 0 0;
+  margin: 0 -18px 0 0;
   font-size: 0; }
   .cardList > li {
     -moz-box-sizing: border-box;
@@ -1626,7 +1626,7 @@ hr.double-line {
     box-sizing: border-box;
     border: 1px solid #dddddd;
     background: #fff;
-    font-size: 12px;
+    font-size: 16px;
     margin: 0 12px 12px 0;
     padding: 0;
     display: inline-block;
@@ -1673,7 +1673,7 @@ as well as a few different states/types:
 
 .tearsheet-25, .tearsheet-30, .tearsheet-40, .tearsheet, .tearsheet-80 {
   border-radius: 2px;
-  font-family: helvetica, arial, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -1909,7 +1909,7 @@ a:hover .tearsheet-add .time {
     line-height: 0;
     height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
-    font-family: helvetica, arial, sans-serif;
+    font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
     border: 1px solid #dddddd;
     border-left-width: 0;
     padding: 0.4em 0;
@@ -1970,7 +1970,7 @@ a:hover .tearsheet-add .time {
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: helvetica, arial, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-weight: bold;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -2096,7 +2096,7 @@ a:hover .tearsheet-add .time {
     user-select: none;
     cursor: pointer;
     text-decoration: none!important;
-    font-family: helvetica, arial, sans-serif;
+    font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
     padding: 0.5em 1.2em 0.4em;
     display: block;
     font-size: 14px; }
@@ -2328,7 +2328,7 @@ a:hover .tearsheet-add .time {
   border-left: 1px solid #dddddd;
   border-radius: 3px 0 0 3px;
   width: 100%;
-  margin-bottom: 16px; }
+  margin-bottom: 18px; }
 
 .segmented-control-segment {
   display: table-cell;
@@ -2364,7 +2364,7 @@ a:hover .tearsheet-add .time {
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: helvetica, arial, sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.5;
@@ -2768,10 +2768,12 @@ a:hover .tearsheet-add .time {
   text-transform: uppercase; }
 
 .small, small {
-  font-size: 10px; }
+  font-size: 12px;
+  line-height: 1.8; }
 
 .big {
-  font-size: 18px; }
+  font-size: 20px;
+  line-height: 1.1; }
 
 .opacity-quarter {
   opacity: 0.25;
