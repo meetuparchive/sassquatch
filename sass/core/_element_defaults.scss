@@ -16,10 +16,28 @@
 		font-family: $baseFontStack;
 	}
 
+	::-moz-selection {
+		background: $C_red;
+		color: #fff;
+	}
+	::selection {
+		background: $C_red;
+		color: #fff;
+	}
+
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
 		color: $C_secondaryGrayInverted;
+
+		::-moz-selection {
+			background: opacify(#fff, 1);
+			color: $C_red;
+		}
+		::selection {
+			background: opacify(#fff, 1);
+			color: $C_red;
+		}
 	}
 
 	/* {{{ Inline tag defaults */
@@ -127,21 +145,25 @@
 		font-size: $h3FontSize;
 		padding-bottom: $baseline/3;
 	}
-	h4 {
+	h4{
 		font-size: $h4FontSize;
-		padding-bottom: $baseline/4;
+		padding-bottom: 0;
+		line-height: $baseLineHeight;
 	}
 	h5 {
 		font-size: $h5FontSize;
-		padding-bottom: $baseline/6;
+		padding-bottom: 0;
+		line-height: $baseLineHeight;
+
+		text-transform:uppercase;
+		font-weight: normal;
 	}
 	h6 {
 		font-size: $h6FontSize;
 		padding-bottom: 0;
+		line-height: $baseLineHeight;
 
-		text-transform:uppercase;
 		font-weight: normal;
-		font-variant: small-caps;
 	}
 	/* }}} */
 }

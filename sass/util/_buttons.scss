@@ -6,6 +6,7 @@
 $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI/heading font defined in vars file
 
 %_button_base {
+	@include button_personality();
 	@include round(3px);
 	@include inlineblock();
 	@include box-sizing("border");

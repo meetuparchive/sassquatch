@@ -247,6 +247,12 @@ input[type="submit"].button--blue,
 .button-flat--white,
 .button-flat--black,
 .button-flat--red {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none!important;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -356,8 +362,22 @@ html, body {
 body, button, input, select, textarea {
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif; }
 
+::-moz-selection {
+  background: #e0393e;
+  color: #fff; }
+
+::selection {
+  background: #e0393e;
+  color: #fff; }
+
 .inverted {
   color: rgba(255, 255, 255, 0.8); }
+  .inverted ::-moz-selection {
+    background: white;
+    color: #e0393e; }
+  .inverted ::selection {
+    background: white;
+    color: #e0393e; }
 
 /* {{{ Inline tag defaults */
 abbr, strong, acronym, span, small, time, strike, sub, sup, a {
@@ -444,48 +464,46 @@ a:active {
 
 /* }}} */
 /* {{{ Headings */
-hgroup {
-  margin-bottom: 4.5px; }
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   color: rgba(0, 0, 0, 0.8);
   margin: 0;
   padding: 0;
   padding-bottom: 9px;
-  line-height: 1.15;
+  line-height: 1.1;
   font-weight: bold; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
-  hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
-    padding-bottom: 4.5px; }
 
 h1 {
-  font-size: 44px;
+  font-size: 42px;
   letter-spacing: -0.75px; }
 
 h2 {
-  font-size: 36px;
+  font-size: 32px;
   letter-spacing: -0.5px; }
 
 h3 {
-  font-size: 24px;
-  /*padding-bottom: $baseline/3;*/ }
+  font-size: 20px;
+  padding-bottom: 6px; }
 
 h4 {
-  font-size: 18px;
-  /*padding-bottom: $baseline/4;*/ }
+  font-size: 16px;
+  padding-bottom: 0;
+  line-height: 1.5; }
 
 h5 {
   font-size: 16px;
-  /*padding-bottom: $baseline/6;*/ }
+  padding-bottom: 0;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: normal; }
 
 h6 {
   font-size: 16px;
   padding-bottom: 0;
-  text-transform: uppercase;
-  font-weight: normal;
-  font-variant: small-caps; }
+  line-height: 1.5;
+  font-weight: normal; }
 
 /* }}} */
 /*  TODO Please kill this. -j */
