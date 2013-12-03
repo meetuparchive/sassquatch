@@ -650,11 +650,7 @@ input, select, textarea {
 
 /* start with horizontal, inline type 	s as default */
 label {
-<<<<<<< HEAD
-  font-size: 22.5px;
-=======
   font-size: 15px;
->>>>>>> release_1.5.0
   color: #555555;
   display: block;
   margin-right: 1em;
