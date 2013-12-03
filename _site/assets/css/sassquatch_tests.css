@@ -349,7 +349,7 @@ html {
 html, body {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.55);
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
   padding: 0; }
 
@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.8);
   margin: 0;
   padding: 0;
-  padding-bottom: 4.5px;
+  padding-bottom: 9px;
   line-height: 1.1;
   font-weight: bold; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
@@ -457,25 +457,23 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 44px;
-  letter-spacing: -0.75px;
-  line-height: 1; }
+  letter-spacing: -0.75px; }
 
 h2 {
   font-size: 36px;
-  letter-spacing: -0.5px;
-  line-height: 1; }
+  letter-spacing: -0.5px; }
 
 h3 {
   font-size: 24px;
-  padding-bottom: 3.6px; }
+  padding-bottom: 6px; }
 
 h4 {
   font-size: 18px;
-  padding-bottom: 2.57143px; }
+  padding-bottom: 4.5px; }
 
 h5 {
   font-size: 16px;
-  padding-bottom: 2px; }
+  padding-bottom: 3px; }
 
 h6 {
   font-size: 16px;
@@ -642,7 +640,7 @@ fieldset {
 input, select, textarea {
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
   display: block;
-  line-height: 1.5;
+  line-height: 1.4;
   padding: 4.5px;
   font-size: 16px;
   width: auto;
@@ -2774,11 +2772,11 @@ a:hover .tearsheet-add .time {
 
 .small, small {
   font-size: 12px;
-  line-height: 1.8; }
+  line-height: 1.6; }
 
 .big {
   font-size: 20px;
-  line-height: 1.1; }
+  line-height: 1.33; }
 
 .opacity-quarter {
   opacity: 0.25;

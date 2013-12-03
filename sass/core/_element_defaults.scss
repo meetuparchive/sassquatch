@@ -108,7 +108,7 @@
 		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
-		padding-bottom: $baseline/4;
+		padding-bottom: $baseline/2;
 		line-height: 1.1;
 		font-weight: bold;
 		.inverted & {
@@ -118,24 +118,22 @@
 	h1 {
 		font-size: $h1FontSize;
 		letter-spacing: -0.75px;
-		line-height: 1;
 	}
 	h2 {
 		font-size: $h2FontSize;
 		letter-spacing: -0.5px;
-		line-height: 1;
 	}
 	h3 {
 		font-size: $h3FontSize;
-		padding-bottom: $baseline/5;
+		padding-bottom: $baseline/3;
 	}
 	h4 {
 		font-size: $h4FontSize;
-		padding-bottom: $baseline/7;
+		padding-bottom: $baseline/4;
 	}
 	h5 {
 		font-size: $h5FontSize;
-		padding-bottom: $baseline/9;
+		padding-bottom: $baseline/6;
 	}
 	h6 {
 		font-size: $h6FontSize;
