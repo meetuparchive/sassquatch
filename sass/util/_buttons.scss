@@ -7,7 +7,6 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 
 %_button_base {
 	@include round(3px);
-	@include transition('none');
 	@include inlineblock();
 	@include box-sizing("border");
 	padding: 9px 18px;
@@ -18,8 +17,21 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	line-height: 1 !important;
 	text-decoration: none !important;
 	border-width: 0;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
 	&:focus {
 		outline-width: 0;
+	}
+	&.small {
+		font-size: 12px;
+		padding: 5px 14px;
+	}
+	&.disabled,
+	&::disabled {
+		opacity: 0.5;
 	}
 }
 

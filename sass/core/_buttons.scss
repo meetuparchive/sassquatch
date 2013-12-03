@@ -14,7 +14,6 @@
 button,
 input[type="submit"] {
 	@extend %_button_base;
-	padding: 9px 18px;
 
 	color: $C_secondaryGray !important; // need this for chapstick
 	background: $C_lineGray;
