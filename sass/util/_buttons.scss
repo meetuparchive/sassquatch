@@ -69,6 +69,7 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 		}
 		&:active {
 			@include transform(translate(0px, 0px));
+			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 		}
 	}
 }
