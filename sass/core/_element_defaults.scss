@@ -128,7 +128,7 @@
 		padding: 0;
 		padding-bottom: $baseline/2;
 		line-height: 1.1;
-		font-weight: bold;
+		font-weight: $W_semibold;
 		.inverted & {
 			color: $C_primaryGrayInverted;
 		}
@@ -156,14 +156,14 @@
 		line-height: $baseLineHeight;
 
 		text-transform:uppercase;
-		font-weight: normal;
+		font-weight: $W_normal;
 	}
 	h6 {
 		font-size: $h6FontSize;
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
 
-		font-weight: normal;
+		font-weight: $W_normal;
 	}
 	/* }}} */
 }

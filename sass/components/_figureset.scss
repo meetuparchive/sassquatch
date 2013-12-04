@@ -4,6 +4,8 @@
 * floated image with descriptive text
 */
 
+$figuresetGutter: $baseline * 0.75;
+
 .figureset, .figureset-right {
     *zoom: 1; 
     &:after {
@@ -27,7 +29,7 @@
 }
 .figureset-description {
     width: auto;
-    padding-left: 10px;
+    padding-left: $figuresetGutter;
 
     /**
     * magical content expander
@@ -58,7 +60,7 @@
 /* {{{ Right side figure */
 .figureset-right {
     .figureset-description {
-        padding-right: $spacing;
+        padding-right: $figuresetGutter;
         padding-left: 0;
     }
 }

@@ -12,7 +12,7 @@
 
 	// base font sizes
 	$baseFontSize: 	16px;
-	$baseLineHeight: 	1.4; 
+	$baseLineHeight: 	1.4;
 
 	// small font sizes
 	$smallFontSize: 	12px;
@@ -32,12 +32,24 @@
 	$h6FontSize: 	$baseFontSize;
 
 	// font stacks
-	$sans: 						'Whitney SSm A', 'Whitney SSm B', sans-serif;
-	$baseFontStack: 			$sans;
-	$headingFontStack: 		$sans;
-	$monoFontStack: 			Monaco, "Andale Mono", "Courier New", monospace;
-	$uiControlFontStack: 	$headingFontStack;
+	$F_sans: 					'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+	$F_num: 						'Whitney SSm Numerals A', 'Whitney SSm Numerals B', helvetica, arial, sans-serif ;
+	$F_mono: 					Monaco, "Andale Mono", "Courier New", monospace;
+	$baseFontStack: 			$F_sans;
+	$headingFontStack: 		$F_sans;
+	$uiControlFontStack: 	$F_sans;
+	$monoFontStack: 			$F_mono;
 
+	// weights
+	$W_normal: 400;
+	$W_semibold: 600;
+	$W_numeral: 700;
+
+	// numeral placeholder
+	%numerialFont {
+		font-family: $F_num;
+		font-weight: $W_numeral;
+	}
 /* }}} */
 
 /* {{{ Colors (legacy - try to use the bower swatches component) */

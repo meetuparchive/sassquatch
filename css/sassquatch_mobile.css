@@ -2510,7 +2510,7 @@ body {
 
 .figureset-description {
   width: auto;
-  padding-left: 10px;
+  padding-left: 9.6px;
   /**
   * magical content expander
   * pushes figureset-description to fill as much width of the figureset as possible
@@ -2534,7 +2534,7 @@ body {
 /* }}} */
 /* {{{ Right side figure */
 .figureset-right .figureset-description {
-  padding-right: 9px;
+  padding-right: 9.6px;
   padding-left: 0; }
 
 /* }}} */
