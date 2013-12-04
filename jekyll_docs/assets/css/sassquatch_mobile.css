@@ -448,7 +448,7 @@ textarea[contenteditable] {
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.nav-pagination {
+.nav-pagination, .numerialFont {
   font-family: "Whitney SSm Numerals A", "Whitney SSm Numerals B", helvetica, arial, sans-serif;
   font-weight: 700; }
 
@@ -1137,11 +1137,7 @@ input[type="submit"].button--blue,
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -moz-transform: translate(0px, -2px);
-  -webkit-transform: translate(0px, -2px);
-  -o-transform: translate(0px, -2px);
-  transform: translate(0px, -2px);
-  padding: 9px 18px;
+  padding: 9px 18px 7px 18px;
   margin: 0 0 12px 0;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
   font-size: 15px;
@@ -1862,10 +1858,14 @@ input[type="submit"] {
     button:disabled:active,
     input[type="submit"].disabled:active,
     input[type="submit"]:disabled:active {
-      -moz-transform: translate(0px, -2px);
-      -webkit-transform: translate(0px, -2px);
-      -o-transform: translate(0px, -2px);
-      transform: translate(0px, -2px); }
+      -moz-transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
   .inverted
   .button, .inverted
   button, .inverted
@@ -1922,10 +1922,10 @@ input[type="submit"].button--primary {
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
     -o-box-shadow: #851518 0px 0px 0px 0px;
     box-shadow: #851518 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 0px);
-    -webkit-transform: translate(0px, 0px);
-    -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
   .primary:hover,
   .button.primary:hover,
   .button--primary:hover,
@@ -1965,10 +1965,10 @@ input[type="submit"].button--primary {
     input[type="submit"].primary:disabled:active,
     input[type="submit"].button--primary.disabled:active,
     input[type="submit"].button--primary:disabled:active {
-      -moz-transform: translate(0px, -2px);
-      -webkit-transform: translate(0px, -2px);
-      -o-transform: translate(0px, -2px);
-      transform: translate(0px, -2px); }
+      -moz-transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      transform: translate(0px, 0px); }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1984,10 +1984,10 @@ input[type="submit"].button--black {
     -webkit-box-shadow: black 0px 0px 0px 0px;
     -o-box-shadow: black 0px 0px 0px 0px;
     box-shadow: black 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 0px);
-    -webkit-transform: translate(0px, 0px);
-    -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
   .button--black:hover,
   input[type="submit"].button--black:hover {
     background: black; }
@@ -2006,10 +2006,10 @@ input[type="submit"].button--black {
     .button--black:disabled:active,
     input[type="submit"].button--black.disabled:active,
     input[type="submit"].button--black:disabled:active {
-      -moz-transform: translate(0px, -2px);
-      -webkit-transform: translate(0px, -2px);
-      -o-transform: translate(0px, -2px);
-      transform: translate(0px, -2px); }
+      -moz-transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      transform: translate(0px, 0px); }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -2025,10 +2025,10 @@ input[type="submit"].button--blue {
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
     -o-box-shadow: #005893 0px 0px 0px 0px;
     box-shadow: #005893 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 0px);
-    -webkit-transform: translate(0px, 0px);
-    -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
   .button--blue:hover,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
@@ -2047,10 +2047,10 @@ input[type="submit"].button--blue {
     .button--blue:disabled:active,
     input[type="submit"].button--blue.disabled:active,
     input[type="submit"].button--blue:disabled:active {
-      -moz-transform: translate(0px, -2px);
-      -webkit-transform: translate(0px, -2px);
-      -o-transform: translate(0px, -2px);
-      transform: translate(0px, -2px); }
+      -moz-transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      transform: translate(0px, 0px); }
 
 /**
 * ==============================================
@@ -2939,7 +2939,11 @@ as well as a few different states/types:
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
     .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
       color: #888888 !important; }
 
@@ -4205,7 +4209,7 @@ label.touchList-helperText {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); }
 
 .bold {
-  font-weight: bold; }
+  font-weight: 600; }
 
 .italic {
   font-style: oblique; }

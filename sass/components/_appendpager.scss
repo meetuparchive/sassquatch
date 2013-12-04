@@ -23,6 +23,7 @@
 		text-decoration: none !important;
 	}
 	&:active {
-		 @include punched_in_box_shadow;
+		@include punched_in_box_shadow;
+		@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 	}
 }

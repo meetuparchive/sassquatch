@@ -36,7 +36,8 @@ input[type="submit"] {
 			background: $C_lineGray;
 		}
 		&:active {
-			@include transform(translate(0px, -2px));
+			@include transform(translate(0px, 0px));
+			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 		}
 	}
 

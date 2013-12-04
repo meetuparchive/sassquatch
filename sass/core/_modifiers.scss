@@ -10,6 +10,7 @@
         content: "DEBUG: ";
     }
 }
+
 .highlighted {
 	background: $C_yellow;
 }
@@ -131,9 +132,8 @@
     // when over something that isn't just a white background
     @include opacity(.8);
 }
-
 .bold {
-	font-weight: bold;
+	font-weight: $W_semibold;
 }
 .italic {
     font-style: oblique;
