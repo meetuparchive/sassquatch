@@ -830,7 +830,7 @@ select.big {
 .button,
 button,
 input[type="submit"] {
-  color: rgba(0, 0, 0, 0.55) !important;
+  color: rgba(0, 0, 0, 0.65) !important;
   background: rgba(0, 0, 0, 0.1);
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
@@ -2897,8 +2897,7 @@ a:hover .tearsheet-add .time {
 
 .small, small {
   font-size: 13px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased; }
+  line-height: 1.6; }
 
 .big {
   font-size: 20px;
@@ -2926,7 +2925,7 @@ a:hover .tearsheet-add .time {
   white-space: nowrap; }
 
 a.unlink:link, a.unlink:visited {
-  color: rgba(0, 0, 0, 0.55); }
+  color: rgba(0, 0, 0, 0.65); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
 .block-if-js,

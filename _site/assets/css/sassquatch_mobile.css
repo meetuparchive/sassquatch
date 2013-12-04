@@ -1199,7 +1199,7 @@ input[type="submit"].button--blue,
 				we are using boilerplate that comes with mobile resets */
 html, body {
   font-size: 16px;
-  color: rgba(0, 0, 0, 0.55); }
+  color: rgba(0, 0, 0, 0.65); }
 
 body, button, input, select, textarea {
   font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -1248,13 +1248,13 @@ a:link, a:visited, a:hover, a:active {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.85);
   margin: 0;
   padding: 0;
   padding-bottom: 6px;
   line-height: 1.2; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
-    color: rgba(0, 0, 0, 0.8); }
+    color: rgba(0, 0, 0, 0.85); }
 
 h1 {
   font-weight: bold;
@@ -1816,7 +1816,7 @@ button.full-width,
 .button,
 button,
 input[type="submit"] {
-  color: rgba(0, 0, 0, 0.55) !important;
+  color: rgba(0, 0, 0, 0.65) !important;
   background: rgba(0, 0, 0, 0.1);
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
@@ -4231,8 +4231,7 @@ label.touchList-helperText {
 
 .small, small {
   font-size: 13px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased; }
+  line-height: 1.6; }
 
 .big {
   font-size: 20px;
@@ -4260,7 +4259,7 @@ label.touchList-helperText {
   white-space: nowrap; }
 
 a.unlink:link, a.unlink:visited {
-  color: rgba(0, 0, 0, 0.55); }
+  color: rgba(0, 0, 0, 0.65); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
 .block-if-js,
@@ -4304,7 +4303,7 @@ a.unlink:link, a.unlink:visited {
   margin-bottom: 0 !important; }
 
 .darker {
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(0, 0, 0, 0.85); }
   .inverted .darker {
     color: white; }
 
