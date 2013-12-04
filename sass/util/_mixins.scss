@@ -597,19 +597,19 @@
 
 		@if $offset-top {
 			top: $offset-top;
-			margin-top: -$size;
+			margin-top: -$size/2;
 		}
 		@if $offset-left {
 			left: $offset-left;
-			margin-left: -$size;
+			margin-left: -$size/2;
 		}
 		@if $offset-right and not $offset-left {  // will refer to $offset-left ONLY if both are set {
 			right: $offset-right;
-			margin-right: -$size;
+			margin-right: -$size/2;
 		}
 		@if $offset-bottom and not $offset-top {  // will refer to $offset-top ONLY if both are set
 			bottom: $offset-bottom;
-			margin-bottom: -$size;
+			margin-bottom: -$size/2;
 		}
 
 	}
