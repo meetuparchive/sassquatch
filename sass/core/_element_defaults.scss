@@ -7,7 +7,7 @@
 	}
 	html, body {
 		font-size: $baseFontSize;
-		color: $C_secondaryGray;
+		color: $C_textSecondary;
 		line-height: $baseLineHeight;
 		margin: 0;
 		padding: 0;
@@ -28,7 +28,7 @@
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
-		color: $C_secondaryGrayInverted;
+		color: $C_textSecondaryInverted;
 
 		::-moz-selection {
 			background: opacify(#fff, 1);
@@ -123,14 +123,14 @@
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
 		font-family: $headingFontStack;
-		color: $C_primaryGray;
+		color: $C_textPrimary;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
 		line-height: 1.1;
 		font-weight: $W_semibold;
 		.inverted & {
-			color: $C_primaryGrayInverted;
+			color: $C_textPrimaryInverted;
 		}
 	}
 	h1 {

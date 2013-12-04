@@ -448,7 +448,7 @@ textarea[contenteditable] {
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.nav-pagination, .numerialFont {
+.nav-pagination {
   font-family: "Whitney SSm Numerals A", "Whitney SSm Numerals B", helvetica, arial, sans-serif;
   font-weight: 700; }
 
@@ -1968,7 +1968,11 @@ input[type="submit"].button--primary {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
-      transform: translate(0px, 0px); }
+      transform: translate(0px, 0px);
+      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -2009,7 +2013,11 @@ input[type="submit"].button--black {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
-      transform: translate(0px, 0px); }
+      transform: translate(0px, 0px);
+      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -2050,7 +2058,11 @@ input[type="submit"].button--blue {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
-      transform: translate(0px, 0px); }
+      transform: translate(0px, 0px);
+      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
 
 /**
 * ==============================================
@@ -2102,7 +2114,7 @@ input[type="submit"].button--blue {
     box-shadow: none; }
   .button-flat--white:hover {
     background: white;
-    color: rgba(0, 0, 0, 0.8) !important; }
+    color: rgba(0, 0, 0, 0.85) !important; }
 
 .button-flat--black {
   /*  We're interpolating the inputs here in case they're wrapped
@@ -4218,8 +4230,9 @@ label.touchList-helperText {
   text-transform: uppercase; }
 
 .small, small {
-  font-size: 12px;
-  line-height: 1.6; }
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; }
 
 .big {
   font-size: 20px;
