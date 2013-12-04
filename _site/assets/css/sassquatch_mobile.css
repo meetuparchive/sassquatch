@@ -1856,6 +1856,16 @@ input[type="submit"] {
     input[type="submit"].disabled:hover,
     input[type="submit"]:disabled:hover {
       background: rgba(0, 0, 0, 0.1); }
+    .button.disabled:active,
+    .button:disabled:active,
+    button.disabled:active,
+    button:disabled:active,
+    input[type="submit"].disabled:active,
+    input[type="submit"]:disabled:active {
+      -moz-transform: translate(0px, -2px);
+      -webkit-transform: translate(0px, -2px);
+      -o-transform: translate(0px, -2px);
+      transform: translate(0px, -2px); }
   .inverted
   .button, .inverted
   button, .inverted
@@ -1945,6 +1955,20 @@ input[type="submit"].button--primary {
     input[type="submit"].button--primary.disabled:hover,
     input[type="submit"].button--primary:disabled:hover {
       background: #e0393e; }
+    .primary.disabled:active,
+    .primary:disabled:active,
+    .button.primary.disabled:active,
+    .button.primary:disabled:active,
+    .button--primary.disabled:active,
+    .button--primary:disabled:active,
+    input[type="submit"].primary.disabled:active,
+    input[type="submit"].primary:disabled:active,
+    input[type="submit"].button--primary.disabled:active,
+    input[type="submit"].button--primary:disabled:active {
+      -moz-transform: translate(0px, -2px);
+      -webkit-transform: translate(0px, -2px);
+      -o-transform: translate(0px, -2px);
+      transform: translate(0px, -2px); }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1978,6 +2002,14 @@ input[type="submit"].button--black {
     input[type="submit"].button--black.disabled:hover,
     input[type="submit"].button--black:disabled:hover {
       background: black; }
+    .button--black.disabled:active,
+    .button--black:disabled:active,
+    input[type="submit"].button--black.disabled:active,
+    input[type="submit"].button--black:disabled:active {
+      -moz-transform: translate(0px, -2px);
+      -webkit-transform: translate(0px, -2px);
+      -o-transform: translate(0px, -2px);
+      transform: translate(0px, -2px); }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -2011,6 +2043,14 @@ input[type="submit"].button--blue {
     input[type="submit"].button--blue.disabled:hover,
     input[type="submit"].button--blue:disabled:hover {
       background: #13a1ff; }
+    .button--blue.disabled:active,
+    .button--blue:disabled:active,
+    input[type="submit"].button--blue.disabled:active,
+    input[type="submit"].button--blue:disabled:active {
+      -moz-transform: translate(0px, -2px);
+      -webkit-transform: translate(0px, -2px);
+      -o-transform: translate(0px, -2px);
+      transform: translate(0px, -2px); }
 
 /**
 * ==============================================
@@ -2876,10 +2916,10 @@ as well as a few different states/types:
   text-align: center;
   font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.04em;
   color: #2a9bc7;
-  padding: 0.5em 0;
+  padding: 0.33em 0;
   margin-bottom: 9px;
   cursor: pointer;
   *cursor: hand;

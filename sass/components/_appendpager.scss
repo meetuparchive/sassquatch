@@ -10,10 +10,10 @@
 	text-align: center;
 	font-family: $headingFontStack;
 	font-weight: bold;
-	font-weight: 500;
+	font-weight: $W_normal;
 	letter-spacing: 0.04em;
 	color: $C_link;
-	padding: 0.5em 0;
+	padding: 0.33em 0;
 	margin-bottom: $spacing;
 	cursor: pointer;
 	*cursor: hand; /* IE, you're a complete idiot */
