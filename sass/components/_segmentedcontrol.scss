@@ -56,9 +56,9 @@
 		margin: 0;	/* OVERRIDE */
 		vertical-align: middle;
 
-		font-family: $headingFontStack;
-		font-weight: normal;
-		font-size: 14px;
+		font-family: $uiControlFontStack;
+		font-size: $baseFontSize;
+		font-weight: $W_normal;
 		line-height: 1.5;
 		white-space: nowrap;
 		text-align: center;

@@ -15,7 +15,7 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time {
+.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .nav-pagination {
   font-family: "Whitney SSm Numerals A", "Whitney SSm Numerals B", helvetica, arial, sans-serif;
   font-weight: 700; }
 
@@ -267,6 +267,10 @@ input[type="submit"].button--blue,
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -moz-transform: translate(0px, -2px);
+  -webkit-transform: translate(0px, -2px);
+  -o-transform: translate(0px, -2px);
+  transform: translate(0px, -2px);
   padding: 9px 18px;
   margin: 0 0 18px 0;
   font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
@@ -307,36 +311,6 @@ input[type="submit"].button--blue,
   .small.button-flat--red {
     font-size: 12px;
     padding: 5px 14px; }
-  .disabled.button,
-  button.disabled,
-  input.disabled[type="submit"],
-  .disabled.primary,
-  .disabled.button--primary,
-  .disabled.button--black,
-  .disabled.button--blue,
-  .disabled.button-flat,
-  .disabled.button-flat--gray,
-  .disabled.button-flat--white,
-  .disabled.button-flat--black,
-  .disabled.button-flat--red,
-  .button::disabled,
-  button::disabled,
-  input[type="submit"]::disabled,
-  .primary::disabled,
-  .button.primary::disabled,
-  .button--primary::disabled,
-  input[type="submit"].primary::disabled,
-  input[type="submit"].button--primary::disabled,
-  .button--black::disabled,
-  input[type="submit"].button--black::disabled,
-  .button--blue::disabled,
-  input[type="submit"].button--blue::disabled,
-  .button-flat::disabled,
-  .button-flat--gray::disabled,
-  .button-flat--white::disabled,
-  .button-flat--black::disabled,
-  .button-flat--red::disabled {
-    opacity: 0.5; }
 
 /**
 * Default button
@@ -881,6 +855,21 @@ input[type="submit"] {
   button:hover,
   input[type="submit"]:hover {
     background: rgba(0, 0, 0, 0.16); }
+  .button.disabled,
+  .button:disabled,
+  button.disabled,
+  button:disabled,
+  input[type="submit"].disabled,
+  input[type="submit"]:disabled {
+    opacity: 0.4;
+    cursor: normal; }
+    .button.disabled:hover,
+    .button:disabled:hover,
+    button.disabled:hover,
+    button:disabled:hover,
+    input[type="submit"].disabled:hover,
+    input[type="submit"]:disabled:hover {
+      background: rgba(0, 0, 0, 0.1); }
   .inverted
   .button, .inverted
   button, .inverted
@@ -908,6 +897,14 @@ input[type="submit"] {
     button:hover, .inverted
     input[type="submit"]:hover {
       background: rgba(255, 255, 255, 0.14); }
+    .inverted
+    .button.disabled:hover, .inverted
+    .button:disabled:hover, .inverted
+    button.disabled:hover, .inverted
+    button:disabled:hover, .inverted
+    input[type="submit"].disabled:hover, .inverted
+    input[type="submit"]:disabled:hover {
+      background: rgba(255, 255, 255, 0.2); }
 
 .primary,
 .button.primary,
@@ -929,16 +926,39 @@ input[type="submit"].button--primary {
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
     -o-box-shadow: #851518 0px 0px 0px 0px;
     box-shadow: #851518 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .primary:hover,
   .button.primary:hover,
   .button--primary:hover,
   input[type="submit"].primary:hover,
   input[type="submit"].button--primary:hover {
     background: #d02126; }
+  .primary.disabled,
+  .primary:disabled,
+  .button.primary.disabled,
+  .button.primary:disabled,
+  .button--primary.disabled,
+  .button--primary:disabled,
+  input[type="submit"].primary.disabled,
+  input[type="submit"].primary:disabled,
+  input[type="submit"].button--primary.disabled,
+  input[type="submit"].button--primary:disabled {
+    opacity: 0.4;
+    cursor: normal; }
+    .primary.disabled:hover,
+    .primary:disabled:hover,
+    .button.primary.disabled:hover,
+    .button.primary:disabled:hover,
+    .button--primary.disabled:hover,
+    .button--primary:disabled:hover,
+    input[type="submit"].primary.disabled:hover,
+    input[type="submit"].primary:disabled:hover,
+    input[type="submit"].button--primary.disabled:hover,
+    input[type="submit"].button--primary:disabled:hover {
+      background: #e0393e; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -954,13 +974,24 @@ input[type="submit"].button--black {
     -webkit-box-shadow: black 0px 0px 0px 0px;
     -o-box-shadow: black 0px 0px 0px 0px;
     box-shadow: black 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .button--black:hover,
   input[type="submit"].button--black:hover {
     background: black; }
+  .button--black.disabled,
+  .button--black:disabled,
+  input[type="submit"].button--black.disabled,
+  input[type="submit"].button--black:disabled {
+    opacity: 0.4;
+    cursor: normal; }
+    .button--black.disabled:hover,
+    .button--black:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: black; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -976,13 +1007,24 @@ input[type="submit"].button--blue {
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
     -o-box-shadow: #005893 0px 0px 0px 0px;
     box-shadow: #005893 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .button--blue:hover,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
+  .button--blue.disabled,
+  .button--blue:disabled,
+  input[type="submit"].button--blue.disabled,
+  input[type="submit"].button--blue:disabled {
+    opacity: 0.4;
+    cursor: normal; }
+    .button--blue.disabled:hover,
+    .button--blue:disabled:hover,
+    input[type="submit"].button--blue.disabled:hover,
+    input[type="submit"].button--blue:disabled:hover {
+      background: #13a1ff; }
 
 /**
 * ==============================================
@@ -1501,7 +1543,7 @@ hr.double-line {
 
 .figureset-description {
   width: auto;
-  padding-left: 14.4px;
+  padding-left: 13.5px;
   /**
   * magical content expander
   * pushes figureset-description to fill as much width of the figureset as possible
@@ -1525,7 +1567,7 @@ hr.double-line {
 /* }}} */
 /* {{{ Right side figure */
 .figureset-right .figureset-description {
-  padding-right: 14.4px;
+  padding-right: 13.5px;
   padding-left: 0; }
 
 /* }}} */
@@ -1926,9 +1968,10 @@ a:hover .tearsheet-add .time {
 * Pagination Pattern
 */
 .nav-pagination {
+  zoom: 1;
+  font-size: 14px;
   list-style-type: none;
   margin-bottom: 12px;
-  zoom: 1;
   padding: 0; }
   .nav-pagination:after {
     content: ".";
@@ -1938,7 +1981,6 @@ a:hover .tearsheet-add .time {
     line-height: 0;
     height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
-    font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
     border: 1px solid #dddddd;
     border-left-width: 0;
     padding: 0.4em 0;
@@ -2126,9 +2168,10 @@ a:hover .tearsheet-add .time {
     cursor: pointer;
     text-decoration: none!important;
     font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     padding: 0.5em 1.2em 0.4em;
-    display: block;
-    font-size: 14px; }
+    display: block; }
   .nav-buttons label:first-of-type,
   .nav-buttons li:first-child > a,
   .nav-buttons li:first-child > span {
@@ -2394,8 +2437,8 @@ a:hover .tearsheet-add .time {
   /* OVERRIDE */
   vertical-align: middle;
   font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
-  font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   white-space: nowrap;
   text-align: center;

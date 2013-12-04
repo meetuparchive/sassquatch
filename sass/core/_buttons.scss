@@ -28,6 +28,18 @@ input[type="submit"] {
 		background: opacify($C_lineGray, 0.06);
 	}
 
+	&.disabled,
+	&:disabled {
+		opacity: 0.4;
+		cursor: normal;
+		&:hover {
+			background: $C_lineGray;
+		}
+		&:active {
+			@include transform(translate(0px, -2px));
+		}
+	}
+
 	.inverted & {
 		color: $C_secondaryGrayInverted !important; // need this for chapstick
 		background: $C_lineGrayInverted;
@@ -40,6 +52,12 @@ input[type="submit"] {
 
 		&:hover {
 			background: transparentize($C_lineGrayInverted, 0.06);
+		}
+		&.disabled,
+		&:disabled {
+			&:hover {
+				background: $C_lineGrayInverted;
+			}
 		}
 	}
 }
