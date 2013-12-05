@@ -155,7 +155,6 @@
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
 
-		text-transform:uppercase;
 		font-weight: $W_normal;
 	}
 	h6 {
@@ -163,6 +162,8 @@
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
 
+		text-transform: uppercase;
+		font-variant: small-caps;
 		font-weight: $W_normal;
 	}
 	/* }}} */
