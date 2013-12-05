@@ -440,7 +440,7 @@ a:active {
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
   padding-bottom: 9px;
@@ -470,13 +470,14 @@ h5 {
   font-size: 16px;
   padding-bottom: 0;
   line-height: 1.4;
-  text-transform: uppercase;
   font-weight: 400; }
 
 h6 {
   font-size: 16px;
   padding-bottom: 0;
   line-height: 1.4;
+  text-transform: uppercase;
+  font-variant: small-caps;
   font-weight: 400; }
 
 /* }}} */
@@ -1128,7 +1129,7 @@ input[type="submit"].button--blue {
     box-shadow: none; }
   .button-flat--white:hover {
     background: white;
-    color: rgba(0, 0, 0, 0.85) !important; }
+    color: rgba(0, 0, 0, 0.95) !important; }
 
 .button-flat--black {
   /*  We're interpolating the inputs here in case they're wrapped
@@ -1878,7 +1879,7 @@ a:hover .tearsheet-add .time {
   .tearsheet-25 .month {
     font-size: 7px;
     height: 10px;
-    line-height: 10px; }
+    line-height: 11.25px; }
   .tearsheet-25 .day {
     line-height: 15px;
     font-size: 10px; }
@@ -1889,7 +1890,7 @@ a:hover .tearsheet-add .time {
   .tearsheet-30 .month {
     font-size: 8px;
     height: 12px;
-    line-height: 12px; }
+    line-height: 13.5px; }
   .tearsheet-30 .day {
     line-height: 18px;
     font-size: 12px; }
@@ -1900,7 +1901,7 @@ a:hover .tearsheet-add .time {
   .tearsheet-40 .month, .tearsheet .month {
     font-size: 11px;
     height: 16px;
-    line-height: 16px; }
+    line-height: 18px; }
   .tearsheet-40 .day, .tearsheet .day {
     line-height: 24px;
     font-size: 16px; }
@@ -1911,7 +1912,7 @@ a:hover .tearsheet-add .time {
   .tearsheet-80 .month {
     font-size: 22px;
     height: 32px;
-    line-height: 32px; }
+    line-height: 36px; }
   .tearsheet-80 .day {
     line-height: 48px;
     font-size: 32px; }
@@ -3053,7 +3054,7 @@ a.unlink:link, a.unlink:visited {
 
 #textGray {
   background: #dddddd;
-  color: rgba(0, 0, 0, 0.85); }
+  color: rgba(0, 0, 0, 0.95); }
 
 #textBlue {
   background: #3987cb;

@@ -1248,13 +1248,13 @@ a:link, a:visited, a:hover, a:active {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
   padding-bottom: 6px;
   line-height: 1.2; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
-    color: rgba(0, 0, 0, 0.85); }
+    color: rgba(0, 0, 0, 0.95); }
 
 h1 {
   font-weight: bold;
@@ -2114,7 +2114,7 @@ input[type="submit"].button--blue {
     box-shadow: none; }
   .button-flat--white:hover {
     background: white;
-    color: rgba(0, 0, 0, 0.85) !important; }
+    color: rgba(0, 0, 0, 0.95) !important; }
 
 .button-flat--black {
   /*  We're interpolating the inputs here in case they're wrapped
@@ -4303,7 +4303,7 @@ a.unlink:link, a.unlink:visited {
   margin-bottom: 0 !important; }
 
 .darker {
-  color: rgba(0, 0, 0, 0.85); }
+  color: rgba(0, 0, 0, 0.95); }
   .inverted .darker {
     color: white; }
 

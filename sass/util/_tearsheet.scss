@@ -90,7 +90,7 @@
 		.month{
 			font-size: round( $size * 1.4/5 ) + px;
 			height: $size * 2/5 + px;
-			line-height: $size * 2/5 + px;
+			line-height: $size * 0.45 + px;
 		}
 		.day{
 			line-height: $size * 3/5 + px;
