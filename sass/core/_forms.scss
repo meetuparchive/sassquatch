@@ -42,7 +42,7 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 	margin-top: 2.25em;
 	legend {
 		display: block;
-		font-size: $baseFontSize * 1.25;
+		font-size: $baseFontSize;
 		line-height: 1;
 		color: $C_text;
 		*line-height: 1.5; /* IE7 */
@@ -80,7 +80,7 @@ input, select, textarea {
 
 /* start with horizontal, inline type 	s as default */
 label {
-	font-size: $baseFontSize * 1.25;
+	font-size: $baseFontSize;
 	color: $C_text;
 	display: block;
 	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
@@ -91,7 +91,7 @@ label {
 
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
-	font-size: $baseFontSize * 1.25;
+	font-size: $baseFontSize;
 	display: inline;
 	cursor: pointer;
 	width: auto;
