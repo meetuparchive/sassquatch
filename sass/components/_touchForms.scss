@@ -494,6 +494,40 @@
 		color: $C_line;
 	}
 
+	// NOTE: On how these pseudoradio/checkboxes work:
+	// The magic of sibling selectors means that we don't have to add
+	// classes to make an active state appear in the UI in modern browser.
+	//
+	// BUT for IE8, which doesn't support the `:checked` pseudoclass reliably,
+	// we need to provide a fallback `input.checked` class state that can be
+	// applied with JS.
+	//
+	// All the code below does is essentially toggle the contents of our
+	// `.icon-radio` and `.icon-checkbox` so that they behave like
+	// `.icon-radio-selected` and `.icon-checkbox-selected`, so we don't have
+	// to rely on JS to update the classes and change the contents.
+	input:checked + .icon-radio,
+	input.checked + .icon-radio {
+		color: $C_link;
+		&:before {
+			content: "\E0D1";
+		}
+		&:after {
+			content: "Selected Radio Button";
+		}
+	}
+
+	input:checked + .icon-checkbox,
+	input.checked + .icon-checkbox {
+		color: $C_link;
+		&:before {
+			content: "\E0D3";
+		}
+		&:after {
+			content: "Selected Checkbox";
+		}
+	}
+
 
 	/*  ======================================================================= */
 	/*  ERROR AND HELPER TEXT STYLES  */
