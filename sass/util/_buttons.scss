@@ -23,6 +23,11 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	-ms-transition: none;
 	-o-transition: none;
 	transition: none;
+	-moz-text-shadow: none;
+	-webkit-text-shadow: none;
+	-ms-text-shadow: none;
+	-o-text-shadow: none;
+	text-shadow: none;
 	&:focus {
 		outline-width: 0;
 	}
@@ -87,7 +92,6 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
-	text-shadow: none;
 
 	&, &:active {
 		-moz-box-shadow: none;
@@ -95,12 +99,10 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 		-o-box-shadow: none;
 		-ms-box-shadow: none;
 		box-shadow: none;
-		text-shadow: none;
 	}
 
 	&:hover {
 		background: $color;
 		color: getPrimaryTextColor($color) !important;
-		text-shadow: none;
 	}
 }
