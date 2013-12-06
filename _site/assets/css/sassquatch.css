@@ -16,7 +16,7 @@
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
 .tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .nav-pagination {
-  font-family: "Whitney SSm Numerals A", "Whitney SSm Numerals B", helvetica, arial, sans-serif;
+  font-family: "Whitney Numerals", helvetica, arial, sans-serif;
   font-weight: 700; }
 
 /* }}} */
@@ -334,7 +334,7 @@ html, body {
   padding: 0; }
 
 body, button, input, select, textarea {
-  font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif; }
+  font-family: "Whitney SSm 4r", helvetica, arial, sans-serif; }
 
 ::-moz-selection {
   background: #e0393e;
@@ -439,7 +439,7 @@ a:active {
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
+  font-family: "Whitney SSm 6r", helvetica, arial, sans-serif;
   color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
@@ -615,7 +615,7 @@ fieldset {
   margin-top: 2.25em; }
   fieldset legend {
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1;
     color: #555555;
     *line-height: 1.5;
@@ -636,7 +636,7 @@ fieldset {
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; } }
 input, select, textarea {
-  font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
+  font-family: "Whitney SSm 4r", helvetica, arial, sans-serif;
   display: block;
   line-height: 1.4;
   padding: 4.5px;
@@ -651,7 +651,7 @@ input, select, textarea {
 
 /* start with horizontal, inline type 	s as default */
 label {
-  font-size: 20px;
+  font-size: 16px;
   color: #555555;
   display: block;
   margin-right: 1em;
@@ -661,7 +661,7 @@ label {
 
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
-  font-size: 20px;
+  font-size: 16px;
   display: inline;
   cursor: pointer;
   width: auto;
@@ -816,7 +816,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 18px;
-  font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif; }
+  font-family: "Whitney SSm 6r", helvetica, arial, sans-serif; }
 
 select.big {
   height: 38px;
@@ -833,17 +833,17 @@ button,
 input[type="submit"] {
   color: rgba(0, 0, 0, 0.65) !important;
   background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+  -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+  -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
   .button:active,
   button:active,
   input[type="submit"]:active {
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
@@ -877,28 +877,28 @@ input[type="submit"] {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
   .inverted
   .button, .inverted
   button, .inverted
   input[type="submit"] {
     color: rgba(255, 255, 255, 0.8) !important;
     background: rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
     .inverted
     .button:active, .inverted
     button:active, .inverted
     input[type="submit"]:active {
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
       -moz-transform: translate(0px, 2px);
       -webkit-transform: translate(0px, 2px);
       -o-transform: translate(0px, 2px);
@@ -984,10 +984,10 @@ input[type="submit"].button--primary {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1029,10 +1029,10 @@ input[type="submit"].button--black {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -1074,10 +1074,10 @@ input[type="submit"].button--blue {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
 
 /**
 * ==============================================
@@ -2022,7 +2022,7 @@ a:hover .tearsheet-add .time {
 */
 .nav-pagination {
   zoom: 1;
-  font-size: 14px;
+  font-size: 15px;
   list-style-type: none;
   margin-bottom: 12px;
   padding: 0; }
@@ -2094,7 +2094,7 @@ a:hover .tearsheet-add .time {
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
+  font-family: "Whitney SSm 6r", helvetica, arial, sans-serif;
   font-weight: bold;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -2120,10 +2120,10 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
     .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
       color: #888888 !important; }
 
@@ -2224,7 +2224,7 @@ a:hover .tearsheet-add .time {
     user-select: none;
     cursor: pointer;
     text-decoration: none!important;
-    font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
+    font-family: "Whitney SSm 4r", helvetica, arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     padding: 0.5em 1.2em 0.4em;
@@ -2493,7 +2493,7 @@ a:hover .tearsheet-add .time {
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: "Whitney SSm A", "Whitney SSm B", helvetica, arial, sans-serif;
+  font-family: "Whitney SSm 4r", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -2878,7 +2878,7 @@ a:hover .tearsheet-add .time {
   *display: inline; }
 
 .muted {
-  color: rgba(0, 0, 0, 0.25); }
+  color: rgba(0, 0, 0, 0.33); }
   .inverted .muted {
     color: rgba(255, 255, 255, 0.4); }
 

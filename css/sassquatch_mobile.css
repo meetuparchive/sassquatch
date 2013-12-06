@@ -449,7 +449,7 @@ textarea[contenteditable] {
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
 .nav-pagination {
-  font-family: "Whitney SSm Numerals A", "Whitney SSm Numerals B", helvetica, arial, sans-serif;
+  font-family: "Whitney Numerals", helvetica, arial, sans-serif;
   font-weight: 700; }
 
 /* }}} */
@@ -1528,7 +1528,7 @@ fieldset {
   margin-top: 2.25em; }
   fieldset legend {
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1;
     color: #555555;
     *line-height: 1.5;
@@ -1564,7 +1564,7 @@ input, select, textarea {
 
 /* start with horizontal, inline type 	s as default */
 label {
-  font-size: 20px;
+  font-size: 16px;
   color: #555555;
   display: block;
   margin-right: 1em;
@@ -1574,7 +1574,7 @@ label {
 
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
-  font-size: 20px;
+  font-size: 16px;
   display: inline;
   cursor: pointer;
   width: auto;
@@ -1818,17 +1818,17 @@ button,
 input[type="submit"] {
   color: rgba(0, 0, 0, 0.65) !important;
   background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+  -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+  -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
   .button:active,
   button:active,
   input[type="submit"]:active {
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
@@ -1862,28 +1862,28 @@ input[type="submit"] {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
   .inverted
   .button, .inverted
   button, .inverted
   input[type="submit"] {
     color: rgba(255, 255, 255, 0.8) !important;
     background: rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
     .inverted
     .button:active, .inverted
     button:active, .inverted
     input[type="submit"]:active {
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 0px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
       -moz-transform: translate(0px, 2px);
       -webkit-transform: translate(0px, 2px);
       -o-transform: translate(0px, 2px);
@@ -1969,10 +1969,10 @@ input[type="submit"].button--primary {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -2014,10 +2014,10 @@ input[type="submit"].button--black {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -2059,10 +2059,10 @@ input[type="submit"].button--blue {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
 
 /**
 * ==============================================
@@ -2854,7 +2854,7 @@ as well as a few different states/types:
 */
 .nav-pagination {
   zoom: 1;
-  font-size: 14px;
+  font-size: 15px;
   list-style-type: none;
   margin-bottom: 9px;
   padding: 0; }
@@ -2952,10 +2952,10 @@ as well as a few different states/types:
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
     .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
       color: #888888 !important; }
 
@@ -4074,6 +4074,26 @@ label.touchList-pseudoplaceholder--textarea {
   text-align: center;
   color: #dddddd; }
 
+input:checked + .icon-radio,
+input.checked + .icon-radio {
+  color: #2a9bc7; }
+  input:checked + .icon-radio:before,
+  input.checked + .icon-radio:before {
+    content: "\E0D1"; }
+  input:checked + .icon-radio:after,
+  input.checked + .icon-radio:after {
+    content: "Selected Radio Button"; }
+
+input:checked + .icon-checkbox,
+input.checked + .icon-checkbox {
+  color: #2a9bc7; }
+  input:checked + .icon-checkbox:before,
+  input.checked + .icon-checkbox:before {
+    content: "\E0D3"; }
+  input:checked + .icon-checkbox:after,
+  input.checked + .icon-checkbox:after {
+    content: "Selected Checkbox"; }
+
 /*  ======================================================================= */
 /*  ERROR AND HELPER TEXT STYLES  */
 /* Error States */
@@ -4211,7 +4231,7 @@ label.touchList-helperText {
   *display: inline; }
 
 .muted {
-  color: rgba(0, 0, 0, 0.25); }
+  color: rgba(0, 0, 0, 0.33); }
   .inverted .muted {
     color: rgba(255, 255, 255, 0.4); }
 
