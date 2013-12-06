@@ -16,8 +16,8 @@
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
 .tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .nav-pagination {
-  font-family: "Whitney Numerals", helvetica, arial, sans-serif;
-  font-weight: 700; }
+  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-weight: 750; }
 
 /* }}} */
 /* {{{ Colors (legacy - try to use the bower swatches component) */
@@ -279,7 +279,12 @@ input[type="submit"].button--blue,
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
-  transition: none; }
+  transition: none;
+  -moz-text-shadow: none;
+  -webkit-text-shadow: none;
+  -ms-text-shadow: none;
+  -o-text-shadow: none;
+  text-shadow: none; }
   .button:focus,
   button:focus,
   input[type="submit"]:focus,
@@ -334,7 +339,7 @@ html, body {
   padding: 0; }
 
 body, button, input, select, textarea {
-  font-family: "Whitney SSm 4r", helvetica, arial, sans-serif; }
+  font-family: "Whitney", helvetica, arial, sans-serif; }
 
 ::-moz-selection {
   background: #e0393e;
@@ -439,13 +444,13 @@ a:active {
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Whitney SSm 6r", helvetica, arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
   padding-bottom: 9px;
   line-height: 1.1;
-  font-weight: 600; }
+  font-weight: 700; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
 
@@ -636,7 +641,7 @@ fieldset {
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; } }
 input, select, textarea {
-  font-family: "Whitney SSm 4r", helvetica, arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   display: block;
   line-height: 1.4;
   padding: 4.5px;
@@ -816,7 +821,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 18px;
-  font-family: "Whitney SSm 6r", helvetica, arial, sans-serif; }
+  font-family: "Whitney", helvetica, arial, sans-serif; }
 
 select.big {
   height: 38px;
@@ -1792,7 +1797,7 @@ as well as a few different states/types:
   background-color: #f4f4f4;
   display: block;
   border: 1px solid #dddddd;
-  font-weight: 600;
+  font-weight: 700;
   color: #555555 !important;
   /* ignore link colors, theme */ }
 
@@ -2094,7 +2099,7 @@ a:hover .tearsheet-add .time {
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: "Whitney SSm 6r", helvetica, arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: bold;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -2224,7 +2229,7 @@ a:hover .tearsheet-add .time {
     user-select: none;
     cursor: pointer;
     text-decoration: none!important;
-    font-family: "Whitney SSm 4r", helvetica, arial, sans-serif;
+    font-family: "Whitney", helvetica, arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     padding: 0.5em 1.2em 0.4em;
@@ -2493,7 +2498,7 @@ a:hover .tearsheet-add .time {
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: "Whitney SSm 4r", helvetica, arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -2888,7 +2893,7 @@ a:hover .tearsheet-add .time {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); }
 
 .bold {
-  font-weight: 600; }
+  font-weight: 700; }
 
 .italic {
   font-style: oblique; }

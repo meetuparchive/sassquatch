@@ -449,8 +449,8 @@ textarea[contenteditable] {
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
 .nav-pagination {
-  font-family: "Whitney Numerals", helvetica, arial, sans-serif;
-  font-weight: 700; }
+  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-weight: 750; }
 
 /* }}} */
 /* {{{ Colors (legacy - try to use the bower swatches component) */
@@ -1149,7 +1149,12 @@ input[type="submit"].button--blue,
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
-  transition: none; }
+  transition: none;
+  -moz-text-shadow: none;
+  -webkit-text-shadow: none;
+  -ms-text-shadow: none;
+  -o-text-shadow: none;
+  text-shadow: none; }
   .button:focus,
   button:focus,
   input[type="submit"]:focus,
@@ -4241,7 +4246,7 @@ label.touchList-helperText {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); }
 
 .bold {
-  font-weight: 600; }
+  font-weight: 700; }
 
 .italic {
   font-style: oblique; }
