@@ -141,11 +141,13 @@
 	h3 {
 		font-size: $h3FontSize;
 		padding-bottom: $baseline/3;
+		letter-spacing: -0.25px;
 	}
 	h4{
 		font-size: $h4FontSize;
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
+		letter-spacing: -0.05px;
 	}
 	h5 {
 		font-size: $h5FontSize;

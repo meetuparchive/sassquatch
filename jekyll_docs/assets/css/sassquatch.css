@@ -335,11 +335,10 @@ html, body {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.65);
   line-height: 1.4;
+  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0; }
-
-body, button, input, select, textarea {
-  font-family: "Whitney", helvetica, arial, sans-serif; }
 
 ::-moz-selection {
   background: #e0393e;
@@ -360,8 +359,7 @@ body, button, input, select, textarea {
 
 /* {{{ Inline tag defaults */
 abbr, strong, acronym, span, small, time, strike, sub, sup, a {
-  display: inline;
-  font-family: inherit; }
+  display: inline; }
 
 abbr, acronym {
   border-width: 0; }
@@ -389,8 +387,7 @@ table, dl, dd,
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   margin: 0;
   padding: 0;
-  margin-bottom: 12px;
-  font-family: inherit; }
+  margin-bottom: 12px; }
 
 form, legend {
   margin-bottom: 0; }
@@ -464,12 +461,14 @@ h2 {
 
 h3 {
   font-size: 20px;
-  padding-bottom: 6px; }
+  padding-bottom: 6px;
+  letter-spacing: -0.25px; }
 
 h4 {
   font-size: 16px;
   padding-bottom: 0;
-  line-height: 1.4; }
+  line-height: 1.4;
+  letter-spacing: -0.05px; }
 
 h5 {
   font-size: 16px;
