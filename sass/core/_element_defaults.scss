@@ -9,11 +9,10 @@
 		font-size: $baseFontSize;
 		color: $C_textSecondary;
 		line-height: $baseLineHeight;
+		font-family: $baseFontStack;
+		font-weight: $W_normal;
 		margin: 0;
 		padding: 0;
-	}
-	body, button, input, select, textarea {
-		font-family: $baseFontStack;
 	}
 
 	::-moz-selection {
@@ -43,7 +42,6 @@
 	/* {{{ Inline tag defaults */
 	abbr, strong, acronym, span, small, time, strike, sub, sup, a {
 		display: inline;
-		font-family: inherit;
 	}
 	abbr, acronym {
 		border-width: 0;
@@ -67,7 +65,6 @@
 		margin: 0;
 		padding: 0;
 		margin-bottom: $spacing;
-		font-family: inherit;
 	}
 	form, legend {
 		margin-bottom: 0;
