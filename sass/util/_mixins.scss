@@ -494,7 +494,6 @@
 	padding-bottom: $paddingBottom;
 
 	&:before {
-		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 		content: '\00a0';
 		background: url('/img/f-logo.png') center center no-repeat;
 		position: absolute;
@@ -508,6 +507,7 @@
 		padding-bottom: $paddingBottom;
 		padding-left: 18px;
 		padding-right: 18px;
+		font-size: 16px !important;
 	}
 }
 
