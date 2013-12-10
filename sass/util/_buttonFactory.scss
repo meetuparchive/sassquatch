@@ -3,8 +3,6 @@
 * ------------------------------------------
 */
 
-$buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI/heading font defined in vars file
-
 %_button_base {
 	@include button_personality();
 	@include round(3px);
@@ -12,9 +10,9 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	@include box-sizing("border");
 	padding: 9px 18px 7px 18px;
 	margin: 0 0 $baseline 0;
-	font-family: $buttonFont !important;
-	font-size: 15px;
+	font-family: $uiControlFontStack;
 	font-weight: $W_bold;
+	font-size: 15px;
 	line-height: 1 !important;
 	text-decoration: none !important;
 	border-width: 0;
