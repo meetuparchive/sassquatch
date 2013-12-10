@@ -32,7 +32,7 @@
 	$h6FontSize: 	$baseFontSize;
 
 	// font stacks
-	$F_sans: 					'Whitney Book', 'Whitney', helvetica, arial, sans-serif;
+	$F_sans: 					'Whitney', helvetica, arial, sans-serif;
 	$F_num: 						'Whitney', helvetica, arial, sans-serif ;
 	$F_mono: 					Monaco, "Andale Mono", "Courier New", monospace;
 	$baseFontStack: 			$F_sans;
@@ -41,7 +41,7 @@
 	$monoFontStack: 			$F_mono;
 
 	// weights
-	$W_normal: normal;
+	$W_normal: 400;
 	$W_semibold: 700;
 	$W_numeral: 750;
 
