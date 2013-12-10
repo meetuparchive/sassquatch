@@ -532,6 +532,7 @@ textarea[contenteditable] {
     line-height: 0;
     height: 0; }
 
+/* TODO: check usage */
 /*
  *
  *  @author     John Cockrell
@@ -1100,101 +1101,6 @@ flips
   height: 4em;
   width: 4em; }
 
-/**
-* Button factory mixins
-* ------------------------------------------
-*/
-.button,
-button,
-input[type="submit"],
-.primary,
-.button.primary,
-.button--primary,
-input[type="submit"].primary,
-input[type="submit"].button--primary,
-.button--black,
-input[type="submit"].button--black,
-.button--blue,
-input[type="submit"].button--blue,
-.button-flat,
-.button-flat--gray,
-.button-flat--white,
-.button-flat--black,
-.button-flat--red {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  text-decoration: none!important;
-  -moz-border-radius: 3px 3px 3px 3px;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 9px 18px 7px 18px;
-  margin: 0 0 12px 0;
-  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1 !important;
-  text-decoration: none !important;
-  border-width: 0;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
-  transition: none;
-  -moz-text-shadow: none;
-  -webkit-text-shadow: none;
-  -ms-text-shadow: none;
-  -o-text-shadow: none;
-  text-shadow: none; }
-  .button:focus,
-  button:focus,
-  input[type="submit"]:focus,
-  .primary:focus,
-  .button--primary:focus,
-  .button--black:focus,
-  .button--blue:focus,
-  .button-flat:focus,
-  .button-flat--gray:focus,
-  .button-flat--white:focus,
-  .button-flat--black:focus,
-  .button-flat--red:focus {
-    outline-width: 0; }
-  .small.button,
-  button.small,
-  input.small[type="submit"],
-  .small.primary,
-  .small.button--primary,
-  .small.button--black,
-  .small.button--blue,
-  .small.button-flat,
-  .small.button-flat--gray,
-  .small.button-flat--white,
-  .small.button-flat--black,
-  .small.button-flat--red {
-    font-size: 12px;
-    padding: 5px 14px; }
-
-/**
-* Default button
-*
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
-* -----------------------------------------------
-*/
-/**
-* Flat button
-* @param $color - single border/text/hover color
-* -----------------------------------------------
-*/
 /*  TODO Please kill this. -j */
 /*  NOTE
  *  This is a terrible, hacky mixin, but I can't tell 
@@ -1252,7 +1158,7 @@ a:link, a:visited, a:hover, a:active {
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: normal;
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
@@ -1262,29 +1168,25 @@ h1, h2, h3, h4, h5, h6 {
     color: rgba(0, 0, 0, 0.95); }
 
 h1 {
-  font-weight: bold;
   font-size: 24px;
   letter-spacing: -0.75px; }
 
 h2 {
-  font-weight: bold;
   font-size: 20px;
   letter-spacing: -0.5px; }
 
 h3 {
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px; }
 
 h4 {
-  font-weight: bold;
   font-size: 14px; }
 
 h5 {
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px; }
 
 h6 {
-  font-weight: bold;
   font-size: 16px; }
 
 /* probably won't use it, but it's in the html spec, so worth defining a default */
@@ -1345,7 +1247,7 @@ caption {
   padding-left: 0; }
 
 th {
-  font-weight: bold;
+  font-weight: 700;
   vertical-align: middle; }
 
 td, tbody th {
@@ -1696,7 +1598,7 @@ input.error, select.error, textarea.error {
   background-color: #fbe1e3;
   border-color: #e0393e;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   margin-bottom: 0; }
 
 .fieldError {
@@ -1817,6 +1719,101 @@ button.full-width,
 /**
 * ==============================================
 * BOXY BUTTONS
+*/
+/**
+* Button factory mixins
+* ------------------------------------------
+*/
+.button,
+button,
+input[type="submit"],
+.primary,
+.button.primary,
+.button--primary,
+input[type="submit"].primary,
+input[type="submit"].button--primary,
+.button--black,
+input[type="submit"].button--black,
+.button--blue,
+input[type="submit"].button--blue,
+.button-flat,
+.button-flat--gray,
+.button-flat--white,
+.button-flat--black,
+.button-flat--red {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none!important;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 9px 18px 7px 18px;
+  margin: 0 0 12px 0;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  border-width: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  -moz-text-shadow: none;
+  -webkit-text-shadow: none;
+  -ms-text-shadow: none;
+  -o-text-shadow: none;
+  text-shadow: none; }
+  .button:focus,
+  button:focus,
+  input[type="submit"]:focus,
+  .primary:focus,
+  .button--primary:focus,
+  .button--black:focus,
+  .button--blue:focus,
+  .button-flat:focus,
+  .button-flat--gray:focus,
+  .button-flat--white:focus,
+  .button-flat--black:focus,
+  .button-flat--red:focus {
+    outline-width: 0; }
+  .small.button,
+  button.small,
+  input.small[type="submit"],
+  .small.primary,
+  .small.button--primary,
+  .small.button--black,
+  .small.button--blue,
+  .small.button-flat,
+  .small.button-flat--gray,
+  .small.button-flat--white,
+  .small.button-flat--black,
+  .small.button-flat--red {
+    font-size: 12px;
+    padding: 5px 14px; }
+
+/**
+* Default button
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+/**
+* Flat button
+* @param $color - single border/text/hover color
+* -----------------------------------------------
 */
 .button,
 button,
@@ -2517,23 +2514,15 @@ input[type="submit"].button--blue {
   padding: 18px;
   padding-bottom: 9px;
   border-bottom: 1px solid transparent;
-  /* avoids margin collapse, hence this border... (takashi is a genius) */
-  /*Don't want file inputs to be quite so huge, because it looks crazy.*/ }
+  /* avoids margin collapse, hence this border... (takashi is a genius) */ }
   .doc-content-big:first-child {
     border-top: none; }
-  .doc-content-big input, .doc-content-big textarea, .doc-content-big select,
-  .doc-content-big button, .doc-content-big .button {
-    font-size: 20px; }
-  .doc-content-big label, .doc-content-big legend {
-    font-size: 18px; }
   .doc-content-big label.small {
-    font-size: 12px; }
+    font-size: 13px; }
   .doc-content-big select {
     height: 38px;
     *height: auto;
     line-height: 38px; }
-  .doc-content-big input[type="file"] {
-    font-size: 15px; }
 
 .doc-content-jagged {
   margin-bottom: 0;
@@ -2932,7 +2921,7 @@ as well as a few different states/types:
   display: block;
   text-align: center;
   font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-weight: 400;
   letter-spacing: 0.04em;
   color: #2a9bc7;
@@ -3261,7 +3250,7 @@ as well as a few different states/types:
   display: inline-block;
   padding: 2px 6px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 14px;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -4355,7 +4344,7 @@ a.unlink:link, a.unlink:visited {
     opacity: .7; }
 
 .bold {
-  font-weight: bold; }
+  font-weight: 700; }
 
 .double-spaced {
   line-height: 1.8; }

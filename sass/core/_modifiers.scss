@@ -133,7 +133,7 @@
     @include opacity(.8);
 }
 .bold {
-	font-weight: $W_semibold;
+	font-weight: $W_bold;
 }
 .italic {
     font-style: oblique;
@@ -264,7 +264,7 @@ a.unlink{
 	}
 
 	.bold {
-		font-weight:bold;
+		font-weight: $W_bold;
 	}
 
 	.double-spaced {

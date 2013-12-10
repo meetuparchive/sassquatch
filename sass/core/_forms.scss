@@ -210,7 +210,7 @@ input.error, select.error, textarea.error {
 	background-color: $C_warnBg;
 	border-color: $C_warnText;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: $W_bold;
 	margin-bottom: 0;
 }
 

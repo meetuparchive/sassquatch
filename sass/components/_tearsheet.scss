@@ -12,7 +12,7 @@ as well as a few different states/types:
 
 */
 
-@import "../util/tearsheet";
+@import "../util/tearsheetFactory";
 
 @if $platform == "desktop" {
 

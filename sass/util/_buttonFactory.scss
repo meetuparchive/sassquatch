@@ -14,7 +14,7 @@ $buttonFont: "Whitney SSm A", "Whitney SSm B", sans-serif; // TODO: read from UI
 	margin: 0 0 $baseline 0;
 	font-family: $buttonFont !important;
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: $W_bold;
 	line-height: 1 !important;
 	text-decoration: none !important;
 	border-width: 0;
