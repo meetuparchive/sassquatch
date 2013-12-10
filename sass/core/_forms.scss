@@ -246,7 +246,7 @@ button.big,
 select.big,
 .button.big,
 input[type=submit].big {
-    font-size: $bigFontSize !important;
+    font-size: $baseFontSize;
 }
 label.big,
 legend.big {
