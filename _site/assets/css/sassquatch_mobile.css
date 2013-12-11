@@ -1631,7 +1631,7 @@ button.big,
 select.big,
 .button.big,
 input[type=submit].big {
-  font-size: 20px !important; }
+  font-size: 16px; }
 
 label.big,
 legend.big {
@@ -1759,9 +1759,9 @@ input[type="submit"].button--blue,
   -moz-box-sizing: border-box;
   padding: 9px 18px 7px 18px;
   margin: 0 0 12px 0;
-  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif !important;
-  font-size: 15px;
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-size: 15px;
   line-height: 1 !important;
   text-decoration: none !important;
   border-width: 0;
