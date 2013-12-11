@@ -9,6 +9,8 @@
 	"ignore": [
 		"Gemfile",
 		"Rakefile",
+		".ruby-version",
+		".bowerrc",
 		"**/*.sh",
 		"**/*.txt",
 		"**/*.lock",
