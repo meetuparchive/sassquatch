@@ -127,7 +127,7 @@
 /* {{{ Layout */
 	$defaultRadius: 		3px;
 	$formLabelOffset: 	$baseline * 9; /* horizontal offset of label/field */
-	$spacing: 				12px;
+	$spacing: 				$baseline;
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
