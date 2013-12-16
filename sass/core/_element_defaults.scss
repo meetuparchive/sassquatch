@@ -188,9 +188,6 @@
 		font-size: $baseFontSize;
 		color: $C_secondaryGray;
 	} 
-	body, button, input, select, textarea {
-		font-family: $baseFontStack;
-	}
 
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
@@ -211,7 +208,6 @@
 		margin: 0;
 		padding: 0;
 		margin-bottom: $spacing;
-		font-family: inherit;
 	}
 	form, legend {
 		margin-bottom: 0;
