@@ -1257,16 +1257,16 @@ select.big {
     border: 8px solid white;
     border-left-color: transparent;
     border-right-color: transparent;
-    border-bottom-width: 0;
-    top: -1px;
+    border-top-width: 0;
+    top: -8px;
     left: 24px;
     margin-left: -8px; }
   .doc-content-outof:before {
     border: 10px solid #dddddd;
     border-left-color: transparent;
     border-right-color: transparent;
-    border-bottom-width: 0;
-    top: -1px;
+    border-top-width: 0;
+    top: -10px;
     left: 24px;
     margin-left: -10px; }
 
