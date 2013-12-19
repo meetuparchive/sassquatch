@@ -15,7 +15,7 @@
 	$size,
 	$offset-type,
 	$offset-size,
-	$border_width: 0) {
+	$border-width: 0) {
 
 	#{$side}: if($arrow_pointing_toward == $side, -($size), -$border_width);
 	#{$offset-type}: $offset-size;
@@ -50,7 +50,7 @@
 		$size: 10px,
 		$color: black,
 		$side: top, // top, right, bottom, left
-		$border-width: false,
+		$border-width: 0,
 		$border-color: false
 		) {
 	// convert $direction to something that can be used
