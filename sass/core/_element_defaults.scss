@@ -11,8 +11,6 @@
 		line-height: $baseLineHeight;
 		margin: 0;
 		padding: 0;
-	}
-	body, button, input, select, textarea {
 		font-family: $baseFontStack;
 	}
 
@@ -25,7 +23,6 @@
 	/* {{{ Inline tag defaults */
 	abbr, strong, acronym, span, small, time, strike, sub, sup, a {
 		display: inline;
-		font-family: inherit;
 	}
 	abbr, acronym {
 		border-width: 0;
@@ -49,7 +46,6 @@
 		margin: 0;
 		padding: 0;
 		margin-bottom: $spacing;
-		font-family: inherit;
 	}
 	form, legend {
 		margin-bottom: 0;
@@ -149,9 +145,6 @@
 		font-size: $baseFontSize;
 		color: $C_secondaryGray;
 	} 
-	body, button, input, select, textarea {
-		font-family: $baseFontStack;
-	}
 
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
@@ -172,7 +165,6 @@
 		margin: 0;
 		padding: 0;
 		margin-bottom: $spacing;
-		font-family: inherit;
 	}
 	form, legend {
 		margin-bottom: 0;
@@ -211,7 +203,7 @@
 	/* {{{ Headings */
 
 	h1,h2,h3,h4,h5,h6 {
-		font-family: $headingFontStack;	
+		font-family: $headingFontStack;
 		font-weight: normal;
 		color: $C_primaryGray;
 		margin: 0;
