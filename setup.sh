@@ -12,9 +12,6 @@ gem install bundler
 echo "~~~~~~~~ installing required gems..."
 bundle install
 
-echo "~~~~~~~~ installing python requirements..."
-pip install -r requirements.txt
-
 echo "~~~~~~~~ installing bower components..."
 bower install
 
