@@ -58,8 +58,8 @@
 	/* }}} */
 
 	/* {{{ Block tag defaults */
-	p,ul,ol,li
-	blockquote, form, fieldset, legend,
+	p, li, blockquote,
+	form, fieldset, legend,
 	table, dl,dd,
 	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 		margin: 0;
@@ -79,8 +79,9 @@
 			image-rendering: optimizeQuality;
 		}
 	}
-
 	ul, ol {
+		margin: 0;
+		padding: 0;
 		list-style-position: outside;
 		padding-left: 1.33em; /* indent by default */
 	}
