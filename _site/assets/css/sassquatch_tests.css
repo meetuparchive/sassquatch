@@ -255,7 +255,7 @@ html {
 
 html, body {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(0, 0, 0, 0.65);
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -349,7 +349,7 @@ a:active {
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
   padding-bottom: 6.4px;
@@ -2363,7 +2363,7 @@ a:hover .tearsheet-add .time {
  *	 Determines styles for the `touchList` list layout style.
  */
 /**
- * @file   _touchList_variables.scss
+ * @file   vars/_touchList.scss
  * @author John Cockrell <john@meetup.com>
  * @since  2013-06-27
  *
@@ -2455,7 +2455,7 @@ a:hover .tearsheet-add .time {
  *	  as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
  */
 /**
- * @file   _touchList_variables.scss
+ * @file   vars/_touchList.scss
  * @author John Cockrell <john@meetup.com>
  * @since  2013-06-27
  *
@@ -2650,7 +2650,7 @@ a:hover .tearsheet-add .time {
   *display: inline; }
 
 .muted {
-  color: rgba(0, 0, 0, 0.25); }
+  color: rgba(0, 0, 0, 0.33); }
   .inverted .muted {
     color: rgba(255, 255, 255, 0.4); }
 
@@ -2696,7 +2696,7 @@ a:hover .tearsheet-add .time {
   white-space: nowrap; }
 
 a.unlink:link, a.unlink:visited {
-  color: rgba(0, 0, 0, 0.55); }
+  color: rgba(0, 0, 0, 0.65); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
 .block-if-js,
@@ -2824,7 +2824,7 @@ a.unlink:link, a.unlink:visited {
 
 #textGray {
   background: #dddddd;
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(0, 0, 0, 0.95); }
 
 #textBlue {
   background: #3987cb;
@@ -2849,7 +2849,7 @@ a.unlink:link, a.unlink:visited {
 
 #offGray {
   background: #dddddd;
-  color: rgba(0, 0, 0, 0.55); }
+  color: rgba(0, 0, 0, 0.65); }
 
 #offBlue {
   background: #3987cb;

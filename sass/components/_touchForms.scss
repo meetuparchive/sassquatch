@@ -58,7 +58,7 @@
 			line-height: 1;
 
 			background-color: transparent;
-			// NOTE: I have no idea why this bg is here, or what it's doing. It 
+			// NOTE: I have no idea why this bg is here, or what it's doing. It
 			// was introduced in the merge of Chapstick => Sassquatch Github.
 			// -john
 		}
@@ -260,22 +260,28 @@
 			// used in MUG settings profile questions
 			height: $LH_standard * 1em;
 			padding: 0 $P_secondary;
-			margin: ($P_primary / 2) 0;
+			margin-bottom: $P_secondary;  // top margin provided by ffbox-flex wrapper
 			overflow: hidden;
 			&:focus {
 				height: $LH_standard * 3em;
 				overflow-y: scroll;
 				// NOTE: Without a shim, this does not work in older Android
-				// and iOS.
-				// -john
+				// and iOS. Check out out touchScroll (//= ../mobile/libs/touchscroll)
 			}
 		}
 	}
 	.touchList-item--expander label.ffbox-fix {
+		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
+		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
+		$topOffset: ($H_touchTargetDefault - $LH_standard*1em) / 2;
 		// override the middle vertical alignment for expander labels - they should
 		// remain aligned to the first line of text in the input
 		vertical-align: top;
-		padding-top: ($P_primary / 2);
+		padding-top: $topOffset;
+		+ .ffbox-flex {
+			vertical-align: top;
+			padding-top: $topOffset;
+		}
 	}
 
 
