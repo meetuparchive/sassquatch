@@ -1567,6 +1567,12 @@ as well as a few different states/types:
     padding: 3px;
     font-size: 11px;
     background-color: #eeeeee; }
+    .tearsheet-25 .time sup, .tearsheet-30 .time sup, .tearsheet-40 .time sup, .tearsheet .time sup, .tearsheet-80 .time sup {
+      border-bottom: 1px solid;
+      font-size: .7em;
+      top: -0.35em;
+      left: 0.05em;
+      padding-bottom: 0.04em; }
 
 a:hover .tearsheet-disabled .month {
   background-color: #c4c4c4; }
