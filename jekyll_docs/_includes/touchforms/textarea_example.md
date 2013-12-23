@@ -14,4 +14,3 @@
 	</div>
 	<h6 id="tx_textarea_counter" class="touchList-item--textarea-counter">200</h6>
 </li>
-

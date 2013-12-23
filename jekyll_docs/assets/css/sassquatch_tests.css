@@ -2318,7 +2318,7 @@ a:hover .tearsheet-add .time {
  *	 Determines styles for the `touchList` list layout style.
  */
 /**
- * @file   _touchList_variables.scss
+ * @file   vars/_touchList.scss
  * @author John Cockrell <john@meetup.com>
  * @since  2013-06-27
  *
@@ -2410,7 +2410,7 @@ a:hover .tearsheet-add .time {
  *	  as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
  */
 /**
- * @file   _touchList_variables.scss
+ * @file   vars/_touchList.scss
  * @author John Cockrell <john@meetup.com>
  * @since  2013-06-27
  *
