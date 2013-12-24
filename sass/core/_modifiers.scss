@@ -10,6 +10,7 @@
         content: "DEBUG: ";
     }
 }
+
 .highlighted {
 	background: $C_yellow;
 }
@@ -131,9 +132,8 @@
     // when over something that isn't just a white background
     @include opacity(.8);
 }
-
 .bold {
-	font-weight: bold;
+	font-weight: $W_bold;
 }
 .italic {
     font-style: oblique;
@@ -142,10 +142,12 @@
 	text-transform: uppercase;
 }
 .small, small {
-	font-size: $baseFontSize - 2;
+	font-size: $smallFontSize;
+	line-height: $smallLineHeight;
 }
 .big {
     font-size: $bigFontSize;
+	 line-height: $bigLineHeight;
 }
 .opacity-quarter {
     // what is this used for?
@@ -262,7 +264,7 @@ a.unlink{
 	}
 
 	.bold {
-		font-weight:bold;
+		font-weight: $W_bold;
 	}
 
 	.double-spaced {

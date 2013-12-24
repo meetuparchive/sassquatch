@@ -392,7 +392,7 @@
 	//-webkit-text-stroke: .5px;
 }
 
-@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
+@mixin font-face($font-family, $url, $weight: $W_normal, $style: normal) {
 	@font-face {
 		font-family: '#{$font-family}';
 		font-weight: $weight;
@@ -455,6 +455,7 @@
 	}
 }
 
+/* TODO: check usage */
 @mixin buttonize($base_color){
 	display: inline;
 	display: inline-block;
@@ -465,7 +466,7 @@
 	text-align: center;
 	cursor: pointer;
 	zoom: 1;
-	font-weight: bold;
+	font-weight: $W_bold;
 	font-family: arial, sans-serif;
 	*cursor: hand;
 
@@ -494,7 +495,6 @@
 	padding-bottom: $paddingBottom;
 
 	&:before {
-		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 		content: '\00a0';
 		background: url('/img/f-logo.png') center center no-repeat;
 		position: absolute;
@@ -508,6 +508,7 @@
 		padding-bottom: $paddingBottom;
 		padding-left: 18px;
 		padding-right: 18px;
+		font-size: 16px !important;
 	}
 }
 

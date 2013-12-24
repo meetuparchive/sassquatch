@@ -31,10 +31,11 @@
 	li > a,
 	li > span {
 		@include button_personality;
-		font-family: $headingFontStack;
+		font-family: $uiControlFontStack;
+		font-size: $baseFontSize;
+		font-weight: $W_normal;
 		padding: 0.5em 1.2em 0.4em;
 		display: block;
-		font-size: 14px;
 	}
 
 	label:first-of-type,

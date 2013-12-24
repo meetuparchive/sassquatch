@@ -14,14 +14,13 @@
 	background-color: $C_gray_lightest;
 	display: block;
 	border: 1px solid $C_line;
-	font-weight: bold;
+	font-weight: $W_bold;
 	color: $C_text !important; /* ignore link colors, theme */
 }
 %tearsheet {
 	$header_color: $C_red;  // this could be themed...
 	$cal_radius: 2px;
 	border-radius: $cal_radius;
-	font-family: $headingFontStack;
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
@@ -53,11 +52,13 @@
 	}
 	.day{
 		@extend %tearsheet-interior;
+		@extend %numerialFont;
 		border-radius: 0 0 $cal_radius $cal_radius;
 		border-width: 0 1px 1px;
 	}
 	.day-of-week {
 		@extend %tearsheet-interior;
+		@extend %numerialFont;
 		border-width: 0 1px;
 		font-size: 11px;
 		margin-bottom: -0.8em;
@@ -67,6 +68,7 @@
 	}
 	.time {
 		@extend %tearsheet-interior;
+		@extend %numerialFont;
 		@extend .datetime-time;
 		@include round(0, 0, $cal_radius, $cal_radius);
 		margin-top: -$cal_radius;  // snug it up under .day
@@ -88,7 +90,7 @@
 		.month{
 			font-size: round( $size * 1.4/5 ) + px;
 			height: $size * 2/5 + px;
-			line-height: $size * 2/5 + px;
+			line-height: $size * 0.45 + px;
 		}
 		.day{
 			line-height: $size * 3/5 + px;
