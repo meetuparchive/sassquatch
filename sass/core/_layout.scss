@@ -255,36 +255,29 @@
 * heirarchy of doc-content elements signified by arrows in the borders
 */
 $arrow-width: $baseline/2;
-.doc-content-into, .doc-content-outof{
-	position: relative;
-	&:before, &:after{
-		content: ' ';
-		position: absolute;
-		left: $baseline;
-		border-left: $arrow-width solid transparent;
-		border-right: $arrow-width solid transparent;
-		display: block;
-	}
+.doc-content-outof {
+	@include ui-indicator(
+		$direction: up, // up, right, down, left
+		$size: $arrow-width,
+		$color: white,
+		$side: top, // top, right, bottom, left
+		$offset-type: left,
+		$offset-size: $baseline + $arrow-width,
+		$border-width: 1px,
+		$border-color: $C_line
+	)
 }
-.doc-content-outof{
-	&:before{
-		top: -1*($arrow-width+1);
-		border-bottom: $arrow-width solid #ddd;
-	}
-	&:after{
-		top: -1*$arrow-width;
-		border-bottom: $arrow-width solid #fff;
-	}
-}
-.doc-content-into{
-	&:before{
-		top: 0;
-		border-top: $arrow-width solid #ddd;
-	}
-	&:after{
-		top: -1px;
-		border-top: $arrow-width solid #fff;
-	}
+.doc-content-into {
+	@include ui-indicator(
+		$direction: down, // up, right, down, left
+		$size: $arrow-width,
+		$color: white,
+		$side: top, // top, right, bottom, left
+		$offset-type: left,
+		$offset-size: $baseline + $arrow-width,
+		$border-width: 1px,
+		$border-color: $C_line
+	)
 }
 
 /**

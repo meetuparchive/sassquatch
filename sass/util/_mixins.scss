@@ -469,14 +469,14 @@
 	font-family: arial, sans-serif;
 	*cursor: hand;
 
-  &:hover {
+&:hover {
 	$lighter_base_color: $base_color + #0a0a0a;
 	$darker: $lighter_base_color - #444;
 	@include gradient($lighter_base_color, $darker);
 	border: 2px solid $darker;
 	text-decoration: none; }
 
-  &:active {
+&:active {
 	background: $darker; }
 }
 
@@ -516,10 +516,10 @@
  *  @author     John Cockrell
  *  @date       2013-3-20
  *  @requires   SASS 3.2 or greater to compile. (`sass --version`)
- *  
+ *
  *  @description
  *  For now, this is a separate place to stash useful mixins that are
- *  currently only part of the mobile experience. 
+ *  currently only part of the mobile experience.
  *
  *  If they're useful enough, merge this file in with _mixins.scss--
  *  I just don't want to add things that may complicate the fullsite
@@ -545,11 +545,11 @@
 @mixin m-box-shadow($color: #333333, $hoff: 1px, $voff: 1px, $blur: 5px, $spread: 0, $inset: false) {
 
 	 @if $color == none {
-		  $full: none; 
+		  $full: none;
 	 } @else {
 		  $full: $color $hoff $voff $blur $spread;
 		  @if $inset {
-				$full: $full inset; 
+				$full: $full inset;
 		  }
 	 }
 
@@ -563,7 +563,7 @@
  *  A variant of the main SQ mixin found in `_mixins.scss`. This CSS3 feature
  *  isn't particularly well supported unprefixed, even in "newer" browsers, so
  *  we'll need to have a prefixed version into the future.
- * 
+ *
  *  BB OS 6 + ...... -webkit
  *  Android 2.3 + .. -webkit
  *  iOS 4.3 + ...... -webkit
@@ -576,10 +576,10 @@
 @mixin m-gradient($first, $second) {
 
 	 /* IE9, Windows Phone 7.5 */
-	 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  
+	 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";
 
 	 /* IE10, Windows Phone 8, Based on Working Draft Syntax */
-	 background-image: -ms-linear-gradient(top, $first 0%, $second 100%); 
+	 background-image: -ms-linear-gradient(top, $first 0%, $second 100%);
 
 	 /* Mobile Webkit (BB OS 6-10, Android 2.3-4.2, iOS 4.3-6.1) */
 	 background-image: -webkit-linear-gradient(top, $first 0%, $second 100%);
@@ -591,7 +591,7 @@
 
 
 /*  loop_prop_list()
- *  
+ *
  *  This function is an awesome utility helper for more complex
  *  SASS mixins, where you might need to loop through property-value
  *  pairs stored in SASS arrays.
@@ -632,13 +632,13 @@
 
 
 /*  DEVICE @MEDIA MIXINS
- *  
+ *
  *  phone()
  *  tablet()
  *  portrait()
  *  landscape()
  *
- *  Tablet and phone layouts have very different requirements and 
+ *  Tablet and phone layouts have very different requirements and
  *  ergonomic factors--and putting styles that work well on a phone
  *  onto a tablet makes everything look stretched like silly putty.
  *  (Vice-versa, and it looks equally shoddy.)
@@ -648,7 +648,7 @@
  *
  *  These won't be the most accurate names, but they're pretty useful.
  *
- *  Again, these breakpoints are using CSS Pixels, which are the 
+ *  Again, these breakpoints are using CSS Pixels, which are the
  *  measurement unit, not the hardware subelement.
  *
  *  And unfortunately, based on the way SASS works, I don't think we
@@ -657,7 +657,7 @@
 
 /* TODO these phone() and tablet() mixins are totally ill advised,
  * and we shouldn't use them (and I added them!) -j
- * 
+ *
  * Kill on cleanup.
  */
 @mixin phone($selector, $prop_list) {
@@ -671,11 +671,11 @@
 					 $a: nth($prop_list, $i);
 					 $b: nth($prop_list, $i+1);
 
-					 $i: $i + 2;  
+					 $i: $i + 2;
 
 					 #{$a}: #{$b};
 				}
-		  } 
+		  }
 	 }
 }
 @mixin tablet($selector, $prop_list) {
@@ -688,11 +688,11 @@
 					 $a: nth($prop_list, $i);
 					 $b: nth($prop_list, $i+1);
 
-					 $i: $i + 2;  
+					 $i: $i + 2;
 
 					 #{$a}: #{$b};
 				}
-		  } 
+		  }
 	 }
 }
 @mixin landscape($selector, $prop_list) {
@@ -706,7 +706,7 @@
 					 $a: nth($prop_list, $i);
 					 $b: nth($prop_list, $i+1);
 
-					 $i: $i + 2;  
+					 $i: $i + 2;
 
 					 #{$a}: #{$b};
 				}
@@ -723,7 +723,7 @@
 					 $a: nth($prop_list, $i);
 					 $b: nth($prop_list, $i+1);
 
-					 $i: $i + 2;  
+					 $i: $i + 2;
 
 					 #{$a}: #{$b};
 				}
@@ -822,12 +822,12 @@
 	 animation-timing-function: #{$timing_fn};
 }
 
-@mixin transition($prop, $duration:0, $timing_fn:'', $use_browser_prefixes:true) { 
+@mixin transition($prop, $duration:0, $timing_fn:'', $use_browser_prefixes:true) {
 
 	 /*  We're interpolating the inputs here in case they're wrapped
 	  *  in strings from use in the mixins.
 	  */
-	
+
 	 @if $use_browser_prefixes {
 		  -webkit-transition: #{$prop} #{$duration} #{$timing_fn};
 		  -moz-transition: #{$prop} #{$duration} #{$timing_fn};
@@ -857,14 +857,14 @@
 
 /*  @mixin keyframe
  *
- *  Outputs a completed @keyframe statement that can be 
+ *  Outputs a completed @keyframe statement that can be
  *  used with CSS animations.
  */
 @mixin keyframe($name, $keyframe_list, $use_browser_prefixes:true) {
 
 	 @if $use_browser_prefixes {
 		  /*  we can't interpolate into an @keyframes statement, which is
-			*  why we're doing it this way, instead of with an @each 
+			*  why we're doing it this way, instead of with an @each
 			*/
 		  @-webkit-keyframes #{$name} {
 				@include loop_keyframe_list($keyframe_list, '-webkit');
@@ -880,7 +880,7 @@
 
 	 /*  Official CSS3 Spec.
 	  *
-	  *  Used a few places, like high-version FF and 
+	  *  Used a few places, like high-version FF and
 	  *  IE10. (Maybe others, too!)
 	  */
 	 @keyframes #{$name} {

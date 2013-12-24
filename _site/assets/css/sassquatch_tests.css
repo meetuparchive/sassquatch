@@ -67,10 +67,10 @@
  *  @author     John Cockrell
  *  @date       2013-3-20
  *  @requires   SASS 3.2 or greater to compile. (`sass --version`)
- *  
+ *
  *  @description
  *  For now, this is a separate place to stash useful mixins that are
- *  currently only part of the mobile experience. 
+ *  currently only part of the mobile experience.
  *
  *  If they're useful enough, merge this file in with _mixins.scss--
  *  I just don't want to add things that may complicate the fullsite
@@ -95,7 +95,7 @@
  *  A variant of the main SQ mixin found in `_mixins.scss`. This CSS3 feature
  *  isn't particularly well supported unprefixed, even in "newer" browsers, so
  *  we'll need to have a prefixed version into the future.
- * 
+ *
  *  BB OS 6 + ...... -webkit
  *  Android 2.3 + .. -webkit
  *  iOS 4.3 + ...... -webkit
@@ -105,7 +105,7 @@
  *  of this mixin.
  */
 /*  loop_prop_list()
- *  
+ *
  *  This function is an awesome utility helper for more complex
  *  SASS mixins, where you might need to loop through property-value
  *  pairs stored in SASS arrays.
@@ -114,13 +114,13 @@
  *  Total time saver, and should be used elsewhere.
  */
 /*  DEVICE @MEDIA MIXINS
- *  
+ *
  *  phone()
  *  tablet()
  *  portrait()
  *  landscape()
  *
- *  Tablet and phone layouts have very different requirements and 
+ *  Tablet and phone layouts have very different requirements and
  *  ergonomic factors--and putting styles that work well on a phone
  *  onto a tablet makes everything look stretched like silly putty.
  *  (Vice-versa, and it looks equally shoddy.)
@@ -130,7 +130,7 @@
  *
  *  These won't be the most accurate names, but they're pretty useful.
  *
- *  Again, these breakpoints are using CSS Pixels, which are the 
+ *  Again, these breakpoints are using CSS Pixels, which are the
  *  measurement unit, not the hardware subelement.
  *
  *  And unfortunately, based on the way SASS works, I don't think we
@@ -138,7 +138,7 @@
  */
 /* TODO these phone() and tablet() mixins are totally ill advised,
  * and we shouldn't use them (and I added them!) -j
- * 
+ *
  * Kill on cleanup.
  */
 /*  truncate()
@@ -184,7 +184,7 @@
  */
 /*  @mixin keyframe
  *
- *  Outputs a completed @keyframe statement that can be 
+ *  Outputs a completed @keyframe statement that can be
  *  used with CSS animations.
  */
 /*  }   */
@@ -225,6 +225,27 @@ a perspective value
 /*
 flips
 
+*/
+/* Indicators
+	Author: MikeM, Nov 2012
+	-------------------------------------------------------------
+	the little arrow thingies that stick out of containers to point to something
+	else, or point to themselves (e.g. active nav item)
+
+	@params
+	---
+	$direction
+	- which direction the indicator points
+	- default 'up'
+	$size
+	- in px, this will be half the width of the indicator's base
+	- default '10px'
+	$offset-type (required - no default)
+	- top, bottom, left, right
+	$offset-size
+	- distance
+	$border-width
+	$border-color
 */
 html {
   overflow-y: scroll;
@@ -1225,29 +1246,53 @@ select.big {
 * into/outof
 * heirarchy of doc-content elements signified by arrows in the borders
 */
-.doc-content-into, .doc-content-outof {
+.doc-content-outof {
   position: relative; }
-  .doc-content-into:before, .doc-content-into:after, .doc-content-outof:before, .doc-content-outof:after {
-    content: ' ';
+  .doc-content-outof:before, .doc-content-outof:after {
+    content: '';
+    display: block;
     position: absolute;
-    left: 16px;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    display: block; }
+    border-style: solid; }
+  .doc-content-outof:after {
+    border: 8px solid white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-width: 0;
+    top: -8px;
+    left: 24px;
+    margin-left: -8px; }
+  .doc-content-outof:before {
+    border: 10px solid #dddddd;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-width: 0;
+    top: -10px;
+    left: 24px;
+    margin-left: -10px; }
 
-.doc-content-outof:before {
-  top: -9px;
-  border-bottom: 8px solid #dddddd; }
-.doc-content-outof:after {
-  top: -8px;
-  border-bottom: 8px solid white; }
-
-.doc-content-into:before {
-  top: 0;
-  border-top: 8px solid #dddddd; }
-.doc-content-into:after {
-  top: -1px;
-  border-top: 8px solid white; }
+.doc-content-into {
+  position: relative; }
+  .doc-content-into:before, .doc-content-into:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-style: solid; }
+  .doc-content-into:after {
+    border: 8px solid white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-width: 0;
+    top: -1px;
+    left: 24px;
+    margin-left: -8px; }
+  .doc-content-into:before {
+    border: 10px solid #dddddd;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-width: 0;
+    top: -1px;
+    left: 24px;
+    margin-left: -10px; }
 
 /**
 * doc-content-big
