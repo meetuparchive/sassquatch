@@ -10,12 +10,19 @@
 				{% include content_patterns/tearsheet_example.md %}
 				<time class="tearsheet">
 					<span class="month">Oct</span>
-					<span class="day">##</span>
+					<span class="day">40</span>
 				</time>
 				<time class="tearsheet-80">
 					<span class="month">Oct</span>
 					<span class="day">80</span>
 				</time>
+				<time class="tearsheet-80">
+					<span class="month">Oct</span>
+					<span class="day-of-week">Thursday</span>
+					<span class="day">80</span>
+					<span class="time">9:00<sup>AM</sup></span>
+				</time>
+
 			</div>
 		</div>
 		{% highlight html %} {% include content_patterns/tearsheet_example.md %} {% endhighlight html %} 
