@@ -14,11 +14,11 @@
 				<p>Biodiesel vinyl leggings trust fund, proident williamsburg keytar in blog dolore sustainable. Veniam fanny pack cupidatat, tempor nesciunt master cleanse cillum do vegan duis brooklyn minim cliche mollit.</p>
 				<input type="submit" value="Fine, I'll do it" />
 			</div>
-			<div class="doc-content">
+			<div class="doc-content doc-content-into">
 				<h1>Some normal page</h1>
 				<p>Biodiesel vinyl leggings trust fund, proident williamsburg keytar in blog dolore sustainable. Veniam fanny pack cupidatat, tempor nesciunt master cleanse cillum do vegan duis brooklyn minim cliche mollit. Lomo reprehenderit wolf pariatur lo-fi id sartorial yr, laborum consequat quinoa DIY eu.</p>
 			</div>
-			<div class="doc-content doc-content-into">
+			<div class="doc-content doc-content-outof">
 				<p>Notice how the first box flows into this one. Cool, huh? Biodiesel vinyl leggings trust fund, proident williamsburg keytar in blog dolore sustainable. Veniam fanny pack cupidatat, tempor nesciunt master cleanse cillum do vegan duis brooklyn minim cliche mollit. Lomo reprehenderit wolf pariatur lo-fi id sartorial yr, laborum consequat quinoa DIY eu.</p>
 			</div>
 		</div>
