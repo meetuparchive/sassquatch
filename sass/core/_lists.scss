@@ -3,37 +3,28 @@
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	& > li {
-		margin-bottom: 0;
-	}
 }
 .inlineList, .inlineblockList, .pipeList, .crumbList {
 	padding-left: 0;
-	& > li {
-		margin-bottom: 0;
-	}
 }
 .inlineList > li, .pipeList > li, .crumbList > li {
 	display: inline;
 	list-style: none;
 }
 .inlineblockList > li {
-	display: inline-block;
+    display: inline-block;
 	list-style: none;
-	margin-bottom: 0;
 }
 .pipeList > li {
 	margin-right: 0.5em;
 	padding-right: 0.5em;
 	border-right: 1px solid;
-	margin-bottom: 0;
 	&:last-child, &.last {
 		border-right-width: 0;	
 	}
 }
 .crumbList > li {
 	margin-right: 0.75em;
-	margin-bottom: 0;
 	&:after {
 		content: '>';
 		margin-left: 0.75em;
@@ -54,7 +45,6 @@
 }
 .paddedList > li {
 	padding: $spacing/2 0 0 0;
-	margin-bottom: 0;
 	&:first-child {
 		padding: 0;
 	}
@@ -62,13 +52,11 @@
 
 .dividedList > li{
 	padding: $spacing 0 0;
-	margin-bottom: 0;
 	border-top: 1px solid $C_line_less;
 }
 
 .sectionList > li{
 	padding: $baseline $baseline ($baseline - $spacing);
-	margin-bottom: 0;
 	border-top: 1px solid $C_line_less;
 }
 /* }}} */
@@ -79,14 +67,12 @@
 	.noneList {
 		list-style-type: none;
 		& > li {
-			margin-bottom: 0;
 			list-style: none;
 		}
 	}
 
 	.dividedList, .paddedList {
 		& > li {
-			margin-bottom: 0;
 			padding: $spacing*1.5 $spacing*1.5 0;
 		}
 		& > li:first-child, & > li.first {

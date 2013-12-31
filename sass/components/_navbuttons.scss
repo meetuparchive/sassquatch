@@ -10,25 +10,21 @@
 	margin-bottom: $spacing;
 	padding-left: 0;
 	line-height: 1.5;
-	@include inlineblock;
+    @include inlineblock;
 	@include round($defaultRadius);
 	@include clearfix;
-	@include experimental(box-sizing, border-box);
-	@include experimental(background-clip, padding-box);
-	border: 1px solid $C_line;
+    @include experimental(box-sizing, border-box);
+    @include experimental(background-clip, padding-box);
+    border: 1px solid $C_line;
 
 
     /*****************************
      * STRUCTURE
      ****************************/
-	li, label {
-		padding-top: 0;
+    li, label {
+        padding-top: 0;
 		float: left;
-		text-align: center;
-	}
-
-	li {
-		margin-bottom: 0;
+        text-align: center;
 	}
 
 	label,
