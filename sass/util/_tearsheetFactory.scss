@@ -69,7 +69,6 @@
 	.time {
 		@extend %tearsheet-interior;
 		@extend %numerialFont;
-		@extend .datetime-time;
 		@include round(0, 0, $cal_radius, $cal_radius);
 		margin-top: -$cal_radius;  // snug it up under .day
 		padding: 3px;
