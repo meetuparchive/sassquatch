@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- PRIMITIVE COLORS - used in multiple color aliases, try not to use these directly -->
+  <color name="red">#ffe2373c</color>
+  <color name="blue">#ff3987cb</color>
+  <color name="primary_gray">#f2000000</color>
+  <color name="secondary_gray">#a6000000</color>
+  <color name="tertiary_gray">#54000000</color>
+  <color name="line_gray">#1a000000</color>
+  <color name="primary_gray_inverted">#ffffffff</color>
+  <color name="secondary_gray_inverted">#ccffffff</color>
+  <color name="tertiary_gray_inverted">#66ffffff</color>
+  <color name="line_gray_inverted">#33ffffff</color>
+
+  <!-- BACKGROUNDS - these are always 100% opacity -->
+  <color name="background_content">#ffffffff</color>
+  <color name="background_collection">#ffe7e7e7</color>
+  <color name="background_nav">#fff7f7f7</color>
+  <color name="background_footer">#ff404040</color>
+  <color name="background_content_inverted">#ff353e47</color>
+  <color name="background_content_accent">#ffe2373c</color>
+
+  <!-- DEFAULT CONTEXT (content on light backgrounds) -->
+  <color name="text_primary">#f2000000</color>
+  <color name="text_secondary">#a6000000</color>
+  <color name="text_tertiary">#54000000</color>
+  <color name="border">#1a000000</color>
+  <color name="link">#ff3987cb</color>
+  <color name="accent">#ffe2373c</color>
+  <color name="yes">#ffe2373c</color>
+  <color name="no">#a6000000</color>
+  <color name="waitlist">#a6000000</color>
+  <color name="button_primary">#ffe2373c</color>
+  <color name="button_secondary">#54000000</color>
+  <color name="button_tertiary_border">#54000000</color>
+
+  <!-- INVERTED CONTEXT (content on dark backgrounds) -->
+  <color name="text_primary_inverted">#ffffffff</color>
+  <color name="text_secondary_inverted">#ccffffff</color>
+  <color name="text_tertiary_inverted">#66ffffff</color>
+  <color name="border_inverted">#33ffffff</color>
+  <color name="link_inverted">#ff3987cb</color>
+  <color name="accent_inverted">#ffe2373c</color>
+  <color name="yes_inverted">#ffe2373c</color>
+  <color name="no_inverted">#ccffffff</color>
+  <color name="waitlist_inverted">#ccffffff</color>
+  <color name="button_primary_inverted">#ffe2373c</color>
+  <color name="button_secondary_inverted">#66ffffff</color>
+  <color name="button_tertiary_border">#66ffffff</color>
+
+  <!-- MISC -->
+  <color name="overlay_pressed">#3340c5ff</color>
+
+  <!-- SOCIAL (third party colors) -->
+  <color name="facebook">#ff3b5998</color>
+  <color name="twitter">#ff33ccff</color>
+  <color name="linkedin">#ff4875b4</color>
+  <color name="tumblr">#ff2b4964</color>
+  <color name="flickr">#fffe0883</color>
+  <color name="foursquare">#ff0cbadf</color>
+  <color name="googleplus">#ffc63d2d</color>
+  <color name="instagram">#ff4e433c</color>
+  <color name="reddit">#ffcee3f8</color>
+</resources>

@@ -1,0 +1,50 @@
+<html>
+<head>
+	<style>
+		body{
+			font-family: 'helvetica neue', helvetica, sans-serif;
+			font-size: 18px;
+		}
+		.checkered-bg {
+			background-image: url('./checker-bg.png');
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0 0 18px;
+		}
+		li{
+			padding: 18px;
+			margin: 0;
+		}
+		.info{
+			background: white;
+			color: black;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h1>Meetup Swatches</h1>
+	
+	<label><input type="checkbox" class="checker"></input><small> transparency grid</small></label>
+
+	<% @color_types.each do |type_key, type| %>
+		<p><%= type["comment"] %></p>
+		<ul>
+			<% type["colors"].each do |c_key, c| %>
+				<li style="background: rgba(<%=c[0]%>, <%=c[1]%>, <%=c[2]%>, <%=c[3]%>)">
+					<span class="info"> <%=c_key%> rgba(<%=c[0]%>, <%=c[1]%>, <%=c[2]%>, <%=c[3]%>)</span>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('.checker').click(function(){
+		  $('body').toggleClass('checkered-bg');
+		});
+	</script>
+</body>
+</html>
