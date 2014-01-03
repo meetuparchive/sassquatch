@@ -235,7 +235,8 @@ input.error, select.error, textarea.error {
 .counter,
 
 .limit-container { /*legacy char counter*/
-    margin-top: -1em;
+	font-size: $smallFontSize;
+	margin-bottom: 0.5em;
 }
 input.hasMaxLen, textarea.hasMaxLen {
 	margin-bottom: $spacing;
