@@ -489,31 +489,38 @@
 		}
 	}
 
-	// NOTE: Why go through all the trouble creating and styling pseudo-radio
-	//  and -checkboxes? It turns out, on iOS, radio buttons and checkboxes are
-	//  damn hard to see and on Android, they're damn tiny.
+	/**
+	 * pseudocheckbox, pseudoradio
+	 * Icon-based radio and checkboxes mimicking native behavior. This normalizes
+	 * the appearance across all browsers, notably on iOS, where native
+	 * checkboxes and radios are hard to see, and Android, where they're tiny.
+	 *
+	 * Notes:
+	 * 1.	We're using tertiaryGray here in the case where checkbox is placed
+	 *		directly on a non-white background (e.g. $C_backgroundCollection).
+	 *		$C_tertiaryGray is the closest to the existing mobile $C_line value.
+	 *
+	 * 2.	The magic of sibling selectors means that we don't have to add
+	 *		classes to make an active state appear in the UI in modern browser.
+	 *		All the code below does is essentially toggle the contents of our
+	 *		`.icon-radio` and `.icon-checkbox` so that they behave like
+	 *		`.icon-radio-selected` and `.icon-checkbox-selected`, so we don't
+	 *		have to rely on JS to update the classes and change the contents.
+	 *
+	 * 3.	IE8 doesn't support the `:checked` pseudoclass reliably, so we need
+	 *		to provide a fallback `input.checked` class state that can be applied
+	 *		with JS so we can use this on the desktop site.
+	 */
 	.pseudocheckbox,
 	.pseudoradio {
 		@extend %textDisableSelection;
 		margin: 0 $P_secondary;
 		text-align: center;
-		color: $C_line;
+		color: $C_tertiaryGray; // *1
 	}
 
-	// NOTE: On how these pseudoradio/checkboxes work:
-	// The magic of sibling selectors means that we don't have to add
-	// classes to make an active state appear in the UI in modern browser.
-	//
-	// BUT for IE8, which doesn't support the `:checked` pseudoclass reliably,
-	// we need to provide a fallback `input.checked` class state that can be
-	// applied with JS.
-	//
-	// All the code below does is essentially toggle the contents of our
-	// `.icon-radio` and `.icon-checkbox` so that they behave like
-	// `.icon-radio-selected` and `.icon-checkbox-selected`, so we don't have
-	// to rely on JS to update the classes and change the contents.
-	input:checked + .icon-radio,
-	input.checked + .icon-radio {
+	input:checked + .icon-radio,	// *2
+	input.checked + .icon-radio {	// *3
 		color: $C_link;
 		&:before {
 			content: "\E0D1";
@@ -523,8 +530,8 @@
 		}
 	}
 
-	input:checked + .icon-checkbox,
-	input.checked + .icon-checkbox {
+	input:checked + .icon-checkbox,		// *2
+	input.checked + .icon-checkbox {	// *3
 		color: $C_link;
 		&:before {
 			content: "\E0D3";
