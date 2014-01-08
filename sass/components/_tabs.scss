@@ -10,6 +10,7 @@ $tabSpacing: $spacing/2;
 	border-bottom: 1px solid $C_line;
 	list-style: none;
 	@include clearfix;
+	margin-bottom: $spacing;
 	li {
 		float: left;
 		padding: 0;
