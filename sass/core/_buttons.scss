@@ -89,6 +89,14 @@ input[type="submit"].button--black {
 	@include button( #000, #fff );
 }
 
+// Black button
+// ---------------------------
+%button--white,
+.button--white,
+input[type="submit"].button--black {
+	@include button( #fff );
+}
+
 // Blue button
 // ---------------------------
 %button--blue,
