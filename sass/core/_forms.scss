@@ -92,6 +92,8 @@ label {
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
 	font-size: $baseFontSize;
+	width: $baseFontSize;
+	height: $baseFontSize;
 	display: inline;
 	cursor: pointer;
 	width: auto;
