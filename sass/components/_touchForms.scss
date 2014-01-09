@@ -270,6 +270,20 @@
 			}
 		}
 	}
+
+	/**
+	 * touchList-input--isSearchInput
+	 *
+	 * Special qualifying class applied to <input> els of type "search".
+	 * This cuts down the left spacing when the default label of a search
+	 * glass icon is applied.
+	 *
+	 * 1.	Half the normal <input> padding on the left side.
+	 */
+	.touchList-item--input .touchList-input--isSearchInput {
+		padding-left: ($P_secondary / 2); // *1
+	}
+
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
@@ -283,6 +297,7 @@
 			padding-top: $topOffset;
 		}
 	}
+
 
 
 	label.touchList-pseudoplaceholder {
