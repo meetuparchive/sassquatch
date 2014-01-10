@@ -1,0 +1,61 @@
+/**
+* ==============================================
+* PILL LABELS
+*
+* labels for members (ie. "ORG", "FRIEND", etc.)
+*
+* TODO: these are just examples - we need to finalize styles and colors
+*/
+
+@import "../util/pillLabelFactory.scss";
+
+
+// Generic pill label
+// ---------------------------
+%pill-label,
+.pill-label {
+	@include solid_pill();
+}
+
+// Generic pill label (hollow)
+// ---------------------------
+%pill-label--hollow,
+.pill-label--hollow {
+	@include hollow_pill();
+}
+
+// ORG pill label
+// ---------------------------
+%pill-label--org,
+.pill-label--org {
+	@include solid_pill( $C_red );
+}
+
+// COORG pill label
+// ---------------------------
+%pill-label--coorg,
+.pill-label--coorg {
+	@include hollow_pill( $C_red );
+}
+
+// DUES PAID pill label
+// ---------------------------
+%pill-label--paid,
+.pill-label--paid {
+	@include solid_pill( $C_green );
+}
+
+// DUES UNPAID pill label
+// ---------------------------
+%pill-label--unpaid,
+.pill-label--unpaid {
+	@include hollow_pill( $C_red );
+}
+
+
+// FB FRIEND pill label
+// ---------------------------
+%pill-label--friend,
+.pill-label--friend {
+	@include hollow_pill( $C_facebook );
+}
