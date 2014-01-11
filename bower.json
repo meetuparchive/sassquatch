@@ -18,7 +18,7 @@
 		"_site"
 	],
 	"dependencies": {
-		"meetup-swatches": "0.2.3"
+		"meetup-swatches": "git@github.com:meetup/meetup-swatches.git#sass_as_mixins"
 	},
 	"license": "MIT"
 }

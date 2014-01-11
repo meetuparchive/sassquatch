@@ -269,8 +269,9 @@ html {
   -ms-text-size-adjust: 100%; }
 
 html, body {
-  font-size: 16px;
+  color: #595959;
   color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
   line-height: 1.4;
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 400;
@@ -286,6 +287,7 @@ html, body {
   color: #fff; }
 
 .inverted {
+  color: white;
   color: rgba(255, 255, 255, 0.8); }
   .inverted ::-moz-selection {
     background: white;
@@ -384,8 +386,9 @@ a:active {
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  color: #0d0d0d;
   color: rgba(0, 0, 0, 0.95);
+  font-family: "Whitney", helvetica, arial, sans-serif;
   margin: 0;
   padding: 0;
   padding-bottom: 9px;
@@ -610,10 +613,10 @@ label {
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
   font-size: 16px;
+  width: 16px;
+  height: 16px;
   display: inline;
   cursor: pointer;
-  width: auto;
-  height: auto;
   padding: 0;
   margin: 3px;
   *margin-top: 0;
@@ -791,6 +794,7 @@ input[type="submit"].primary,
 input[type="submit"].button--primary,
 .button--black,
 input[type="submit"].button--black,
+.button--white,
 .button--blue,
 input[type="submit"].button--blue,
 .button-flat,
@@ -839,6 +843,7 @@ input[type="submit"].button--blue,
   .primary:focus,
   .button--primary:focus,
   .button--black:focus,
+  .button--white:focus,
   .button--blue:focus,
   .button-flat:focus,
   .button-flat--gray:focus,
@@ -852,6 +857,7 @@ input[type="submit"].button--blue,
   .small.primary,
   .small.button--primary,
   .small.button--black,
+  .small.button--white,
   .small.button--blue,
   .small.button-flat,
   .small.button-flat--gray,
@@ -878,17 +884,17 @@ button,
 input[type="submit"] {
   color: rgba(0, 0, 0, 0.65) !important;
   background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
   .button:active,
   button:active,
   input[type="submit"]:active {
-    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
@@ -922,28 +928,28 @@ input[type="submit"] {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
   .inverted
   .button, .inverted
   button, .inverted
   input[type="submit"] {
     color: rgba(255, 255, 255, 0.8) !important;
     background: rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
     .inverted
     .button:active, .inverted
     button:active, .inverted
     input[type="submit"]:active {
-      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 0px 0px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
       -moz-transform: translate(0px, 2px);
       -webkit-transform: translate(0px, 2px);
       -o-transform: translate(0px, 2px);
@@ -1029,10 +1035,10 @@ input[type="submit"].button--primary {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1074,10 +1080,55 @@ input[type="submit"].button--black {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+
+.button--white,
+input[type="submit"].button--black {
+  -moz-box-shadow: #bfbfbf 0px 2px 0px 0px;
+  -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
+  -o-box-shadow: #bfbfbf 0px 2px 0px 0px;
+  box-shadow: #bfbfbf 0px 2px 0px 0px;
+  color: #e0393e !important;
+  background: white; }
+  .button--white:active,
+  input[type="submit"].button--black:active {
+    -moz-box-shadow: #bfbfbf 0px 0px 0px 0px;
+    -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
+    -o-box-shadow: #bfbfbf 0px 0px 0px 0px;
+    box-shadow: #bfbfbf 0px 0px 0px 0px;
+    -moz-transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
+    transform: translate(0px, 2px); }
+  .button--white:hover,
+  input[type="submit"].button--black:hover {
+    background: #ebebeb; }
+  .button--white.disabled,
+  .button--white:disabled,
+  input[type="submit"].button--black.disabled,
+  input[type="submit"].button--black:disabled {
+    opacity: 0.4;
+    cursor: normal; }
+    .button--white.disabled:hover,
+    .button--white:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: white; }
+    .button--white.disabled:active,
+    .button--white:disabled:active,
+    input[type="submit"].button--black.disabled:active,
+    input[type="submit"].button--black:disabled:active {
+      -moz-transform: translate(0px, 0px);
+      -webkit-transform: translate(0px, 0px);
+      -o-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -1119,10 +1170,10 @@ input[type="submit"].button--blue {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
 
 /**
 * ==============================================
@@ -2032,7 +2083,8 @@ a:hover .tearsheet-add .time {
   padding-left: 9px;
   border-bottom: 1px solid #dddddd;
   list-style: none;
-  zoom: 1; }
+  zoom: 1;
+  margin-bottom: 18px; }
   .nav-tabs:after {
     content: ".";
     display: block;
@@ -2181,10 +2233,10 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -moz-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.33) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
     .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
       color: #888888 !important; }
 
@@ -2939,8 +2991,10 @@ a:hover .tearsheet-add .time {
   *display: inline; }
 
 .muted {
-  color: rgba(0, 0, 0, 0.33); }
+  color: #999999;
+  color: rgba(0, 0, 0, 0.4); }
   .inverted .muted {
+    color: white;
     color: rgba(255, 255, 255, 0.4); }
 
 .muted-opacity {
@@ -3128,28 +3182,3 @@ a.unlink:link, a.unlink:visited {
 #textGreen {
   background: #62ac75;
   color: white; }
-
-/* set offset text */
-#offRed {
-  background: #e0393e;
-  color: rgba(255, 255, 255, 0.8); }
-
-#offBlack {
-  background: black;
-  color: rgba(255, 255, 255, 0.8); }
-
-#offGray {
-  background: #dddddd;
-  color: rgba(0, 0, 0, 0.65); }
-
-#offBlue {
-  background: #3987cb;
-  color: rgba(255, 255, 255, 0.8); }
-
-#offLightblue {
-  background: #13a1ff;
-  color: rgba(255, 255, 255, 0.8); }
-
-#offGreen {
-  background: #62ac75;
-  color: rgba(255, 255, 255, 0.8); }
