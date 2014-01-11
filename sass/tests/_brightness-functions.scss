@@ -126,29 +126,3 @@ $green: $C_green;
 	background: $green;
 	color: getPrimaryTextColor( $green );
 }
-
-/* set offset text */
-#offRed {
-	background: $C_red;
-	color: getSecondaryTextColor( $C_red );
-}
-#offBlack {
-	background: $black;
-	color: getSecondaryTextColor( $black );
-}
-#offGray {
-	background: $gray;
-	color: getSecondaryTextColor( $gray );
-}
-#offBlue {
-	background: $blue;
-	color: getSecondaryTextColor( $blue );
-}
-#offLightblue {
-	background: $lightblue;
-	color: getSecondaryTextColor( $lightblue );
-}
-#offGreen {
-	background: $green;
-	color: getSecondaryTextColor( $green );
-}
