@@ -1503,7 +1503,6 @@ input[type="submit"].button--blue {
 
 .doc-controls {
   background: #dddddd;
-  padding-bottom: 18px;
   margin-bottom: 18px; }
 
 /**
@@ -3041,7 +3040,11 @@ a:hover .tearsheet-add .time {
   white-space: nowrap; }
 
 a.unlink:link, a.unlink:visited {
+  color: #595959;
   color: rgba(0, 0, 0, 0.65); }
+.inverted a.unlink:link, .inverted a.unlink:visited {
+  color: white;
+  color: rgba(255, 255, 255, 0.8); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
 .block-if-js,
