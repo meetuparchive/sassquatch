@@ -227,6 +227,10 @@
 	cursor: pointer;
 	text-decoration: none!important;
 }
+@mixin button_personality() {
+	// mixin for legacy support of @include button_personality
+	@extend %button_personality;
+}
 // NOTE: This can probably be replaced with the @necolas clearfix, since it's
 // terser and has fewer strange properties.
 // nicolasgallagher.com/micro-clearfix-hack/
