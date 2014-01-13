@@ -191,10 +191,14 @@
 	@include punched_in_box_shadow;
 }
 
-@mixin button_personality{
+%button_personality {
 	@include experimental('user-select', 'none');
 	cursor: pointer;
-		text-decoration: none!important;
+	text-decoration: none!important;
+}
+
+@mixin button_personality {
+	@extend %button_personality;
 }
 
 @mixin experimental($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
