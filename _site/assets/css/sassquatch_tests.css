@@ -62,9 +62,9 @@
 * looks flat, and "punched in"
 * overrides gradients, etc.
 */
-.nav-buttons {
+.nav-pagination, .nav-buttons {
   zoom: 1; }
-  .nav-buttons:after {
+  .nav-pagination:after, .nav-buttons:after {
     content: ".";
     display: block;
     clear: both;
@@ -1810,15 +1810,7 @@ a:hover .tearsheet-add .time {
 .nav-pagination {
   list-style-type: none;
   margin-bottom: 12px;
-  zoom: 1;
   padding: 0; }
-  .nav-pagination:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 1px solid #dddddd;
