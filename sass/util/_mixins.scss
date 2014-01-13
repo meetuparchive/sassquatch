@@ -191,15 +191,6 @@
 	@include punched_in_box_shadow;
 }
 
-%button_personality {
-	@include experimental('user-select', 'none');
-	cursor: pointer;
-	text-decoration: none!important;
-}
-
-@mixin button_personality {
-	@extend %button_personality;
-}
 
 @mixin experimental($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
 	$value: unquote($value);
@@ -231,7 +222,11 @@
 	@if $official {
 		#{$property}: #{$value}; } }
 
-
+%button_personality {
+	@include experimental('user-select', 'none');
+	cursor: pointer;
+	text-decoration: none!important;
+}
 // NOTE: This can probably be replaced with the @necolas clearfix, since it's
 // terser and has fewer strange properties.
 // nicolasgallagher.com/micro-clearfix-hack/
