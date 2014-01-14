@@ -26,6 +26,9 @@ $figuresetGutter: $baseline * 0.75;
 .figureset-figure {
     width: 1%; /* ensure "shrink wrap" effect */
     line-height: 0;
+	 img {
+		margin-bottom: $baseline; /* if the description is shorter than the figure */
+ 	}
 }
 .figureset-description {
     width: auto;
