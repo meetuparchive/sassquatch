@@ -85,7 +85,7 @@ label {
 	display: block;
 	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
 	&.small {
-		font-size: $baseFontSize;
+		font-size: $smallFontSize;
 	}
 }
 
