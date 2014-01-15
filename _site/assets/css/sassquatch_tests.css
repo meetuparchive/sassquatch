@@ -269,8 +269,8 @@ html {
   -ms-text-size-adjust: 100%; }
 
 html, body {
-  color: #595959;
-  color: rgba(0, 0, 0, 0.65);
+  color: #545454;
+  color: rgba(0, 0, 0, 0.67);
   font-size: 16px;
   line-height: 1.4;
   font-family: "Whitney", helvetica, arial, sans-serif;
@@ -288,7 +288,7 @@ html, body {
 
 .inverted {
   color: white;
-  color: rgba(255, 255, 255, 0.8); }
+  color: rgba(255, 255, 255, 0.67); }
   .inverted ::-moz-selection {
     background: white;
     color: #e0393e; }
@@ -445,7 +445,6 @@ table {
 
 caption, td, th {
   padding: 9px;
-  line-height: 18px;
   text-align: left; }
 
 caption {
@@ -608,7 +607,7 @@ label {
   margin-right: 1em;
   /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */ }
   label.small {
-    font-size: 16px; }
+    font-size: 13px; }
 
 /* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
@@ -807,7 +806,7 @@ input[type="submit"].button--blue,
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  text-decoration: none!important;
+  text-decoration: none !important;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -882,19 +881,19 @@ input[type="submit"].button--blue,
 .button,
 button,
 input[type="submit"] {
-  color: rgba(0, 0, 0, 0.65) !important;
+  color: rgba(0, 0, 0, 0.67) !important;
   background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
   .button:active,
   button:active,
   input[type="submit"]:active {
-    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
@@ -928,28 +927,28 @@ input[type="submit"] {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
   .inverted
   .button, .inverted
   button, .inverted
   input[type="submit"] {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.67) !important;
     background: rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
     .inverted
     .button:active, .inverted
     button:active, .inverted
     input[type="submit"]:active {
-      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 0px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
       -moz-transform: translate(0px, 2px);
       -webkit-transform: translate(0px, 2px);
       -o-transform: translate(0px, 2px);
@@ -1035,10 +1034,10 @@ input[type="submit"].button--primary {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1080,10 +1079,10 @@ input[type="submit"].button--black {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
 
 .button--white,
 input[type="submit"].button--black {
@@ -1125,10 +1124,10 @@ input[type="submit"].button--black {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -1170,10 +1169,10 @@ input[type="submit"].button--blue {
       -webkit-transform: translate(0px, 0px);
       -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
 
 /**
 * ==============================================
@@ -1451,7 +1450,7 @@ input[type="submit"].button--blue {
     border-top: 1px solid #dddddd; }
   .doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
     float: none;
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #ddd;
     display: table-cell;
     vertical-align: top; }
   .doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
@@ -1487,7 +1486,7 @@ input[type="submit"].button--blue {
 .ie6 .doc-box .line .unit,
 .ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
 .ie7 .doc-box .line-gutters .unit {
-  float: left!important; }
+  float: left !important; }
 
 .doc-padding,
 .doc-content,
@@ -1662,7 +1661,7 @@ input[type="submit"].button--blue {
   .doc-content-jagged:after {
     content: '';
     height: 8px;
-    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 			5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 			9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A 			AAAASUVORK5CYII=") repeat-x top left;
+    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A AAAASUVORK5CYII=") repeat-x top left;
     background-size: 8px;
     display: block;
     position: absolute;
@@ -1672,7 +1671,7 @@ input[type="submit"].button--blue {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   .doc-content-jagged:after {
-    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 			8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh 			+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb 			iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
+    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh +lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
     background-size: 8px auto; } }
 /* }}} */
 hr.double-line {
@@ -1704,6 +1703,9 @@ hr.double-line {
   width: 1%;
   /* ensure "shrink wrap" effect */
   line-height: 0; }
+  .figureset-figure img {
+    margin-bottom: 18px;
+    /* if the description is shorter than the figure */ }
 
 .figureset-description {
   width: auto;
@@ -2232,10 +2234,10 @@ a:hover .tearsheet-add .time {
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 0px 0px; }
+    -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+    -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
     .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
       color: #888888 !important; }
 
@@ -2335,7 +2337,7 @@ a:hover .tearsheet-add .time {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    text-decoration: none!important;
+    text-decoration: none !important;
     font-family: "Whitney", helvetica, arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -2373,7 +2375,7 @@ a:hover .tearsheet-add .time {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    text-decoration: none!important;
+    text-decoration: none !important;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
@@ -2582,7 +2584,7 @@ a:hover .tearsheet-add .time {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  text-decoration: none!important;
+  text-decoration: none !important;
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
@@ -2684,7 +2686,7 @@ a:hover .tearsheet-add .time {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #999;
-  border: 2px solid white;
+  border: 2px solid #fff;
   -moz-border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
@@ -2900,7 +2902,7 @@ a:hover .tearsheet-add .time {
   color: white; }
 
 .shaded-pixelate {
-  background-image: url("data:image/png;base64, 		iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA 		AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx 		DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K 		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
+  background-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
 
 .leading-top {
   padding-top: 18px; }
@@ -2990,11 +2992,11 @@ a:hover .tearsheet-add .time {
   *display: inline; }
 
 .muted {
-  color: #999999;
-  color: rgba(0, 0, 0, 0.4); }
+  color: #878787;
+  color: rgba(0, 0, 0, 0.47); }
   .inverted .muted {
     color: white;
-    color: rgba(255, 255, 255, 0.4); }
+    color: rgba(255, 255, 255, 0.47); }
 
 .muted-opacity {
   opacity: 0.8;
@@ -3040,11 +3042,11 @@ a:hover .tearsheet-add .time {
   white-space: nowrap; }
 
 a.unlink:link, a.unlink:visited {
-  color: #595959;
-  color: rgba(0, 0, 0, 0.65); }
+  color: #545454;
+  color: rgba(0, 0, 0, 0.67); }
 .inverted a.unlink:link, .inverted a.unlink:visited {
   color: white;
-  color: rgba(255, 255, 255, 0.8); }
+  color: rgba(255, 255, 255, 0.67); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
 .block-if-js,
@@ -3072,7 +3074,7 @@ a.unlink:link, a.unlink:visited {
   bottom: -24px;
   left: 1px;
   font-size: 11px;
-  color: #333333 !important;
+  color: #333 !important;
   font-family: monaco, consolas, monospace; }
 
 .testSwatches {

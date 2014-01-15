@@ -18,13 +18,13 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/meetup/meetup-swatches",
-  "_release": "48db5b2a58",
+  "_release": "90c57045a9",
   "_resolution": {
     "type": "branch",
-    "branch": "sass_as_mixins",
-    "commit": "48db5b2a5860741b28c2cc0f0518798881f7d734"
+    "branch": "darker_colors",
+    "commit": "90c57045a942c677ae17886171b23cf173395f38"
   },
   "_source": "git@github.com:meetup/meetup-swatches.git",
-  "_target": "sass_as_mixins",
+  "_target": "darker_colors",
   "_originalSource": "git@github.com:meetup/meetup-swatches.git"
 }
