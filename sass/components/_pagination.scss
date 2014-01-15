@@ -3,9 +3,9 @@
 */
 
 .nav-pagination {
+	@extend %clearfix;
 	list-style-type: none;
 	margin-bottom: $spacing;
-	@include clearfix;
 	padding: 0;
 	a, .nav-button {  // should deprecate the class-free a styling and enforce a.nav-pagelink. cleanup
 		font-family: $headingFontStack;

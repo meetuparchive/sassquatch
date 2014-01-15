@@ -244,16 +244,7 @@
 }
 
 @mixin clearfix {
-	// @extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
-	zoom: 1;
-	&:after {
-		content: ".";
-		display: block;
-		clear: both;
-		visibility: hidden;
-		line-height: 0;
-		height: 0;
-	}
+	@extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
 }
 
 @mixin squarethumb($width){

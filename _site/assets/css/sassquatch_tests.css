@@ -62,6 +62,16 @@
 * looks flat, and "punched in"
 * overrides gradients, etc.
 */
+.nav-pagination, .nav-buttons {
+  zoom: 1; }
+  .nav-pagination:after, .nav-buttons:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
 /*
  *
  *  @author     John Cockrell
@@ -689,14 +699,14 @@ input[type=submit], button, .button, .button-light, a.button {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  text-decoration: none !important;
+  text-decoration: none!important;
   white-space: nowrap;
   -moz-transition: none;
   -webkit-transition: none;
   -ms-transition: none;
   transition: none;
   display: inline-block;
-  text-decoration: none !important;
+  text-decoration: none!important;
   text-align: center;
   zoom: 1;
   color: #555555;
@@ -707,7 +717,7 @@ input[type=submit], button, .button, .button-light, a.button {
   border-radius: 3px 3px 3px 3px;
   line-height: 1;
   font-size: 16px;
-  padding: .5em 0.75em .4em;
+  padding: 0.5em 0.75em 0.4em;
   vertical-align: middle;
   height: auto;
   width: auto;
@@ -763,7 +773,7 @@ input[type=submit], button, .button, .button-light, a.button {
       input[type=submit].primary:active:link, input[type=submit].primary:active:hover, input[type=submit].primary:active:vistied, input[type=submit].primary:active:active, input[type=submit].primary.selected:link, input[type=submit].primary.selected:hover, input[type=submit].primary.selected:vistied, input[type=submit].primary.selected:active, input[type=submit].primary.active:link, input[type=submit].primary.active:hover, input[type=submit].primary.active:vistied, input[type=submit].primary.active:active, button.primary:active:link, button.primary:active:hover, button.primary:active:vistied, button.primary:active:active, button.primary.selected:link, button.primary.selected:hover, button.primary.selected:vistied, button.primary.selected:active, button.primary.active:link, button.primary.active:hover, button.primary.active:vistied, button.primary.active:active, .button.primary:active:link, .button.primary:active:hover, .button.primary:active:vistied, .button.primary:active:active, .button.primary.selected:link, .button.primary.selected:hover, .button.primary.selected:vistied, .button.primary.selected:active, .button.primary.active:link, .button.primary.active:hover, .button.primary.active:vistied, .button.primary.active:active, .button-light.primary:active:link, .button-light.primary:active:hover, .button-light.primary:active:vistied, .button-light.primary:active:active, .button-light.primary.selected:link, .button-light.primary.selected:hover, .button-light.primary.selected:vistied, .button-light.primary.selected:active, .button-light.primary.active:link, .button-light.primary.active:hover, .button-light.primary.active:vistied, .button-light.primary.active:active, a.button.primary:active:link, a.button.primary:active:hover, a.button.primary:active:vistied, a.button.primary:active:active, a.button.primary.selected:link, a.button.primary.selected:hover, a.button.primary.selected:vistied, a.button.primary.selected:active, a.button.primary.active:link, a.button.primary.active:hover, a.button.primary.active:vistied, a.button.primary.active:active {
         color: #888888 !important; }
   input[type=submit].primary, input[type=submit].primary:hover, input[type=submit].primary:active, button.primary, button.primary:hover, button.primary:active, .button.primary, .button.primary:hover, .button.primary:active, .button-light.primary, .button-light.primary:hover, .button-light.primary:active, a.button.primary, a.button.primary:hover, a.button.primary:active {
-    color: #fff !important; }
+    color: white !important; }
   input[type=submit].small, button.small, .button.small, .button-light.small, a.button.small {
     font-size: 12px; }
   input[type=submit].small.inline, button.small.inline, .button.small.inline, .button-light.small.inline, a.button.small.inline {
@@ -1107,7 +1117,7 @@ select.big {
     border-top: 1px solid #dddddd; }
   .doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
     float: none;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #dddddd;
     display: table-cell;
     vertical-align: top; }
   .doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
@@ -1143,7 +1153,7 @@ select.big {
 .ie6 .doc-box .line .unit,
 .ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
 .ie7 .doc-box .line-gutters .unit {
-  float: left !important; }
+  float: left!important; }
 
 .doc-padding,
 .doc-content,
@@ -1327,7 +1337,7 @@ select.big {
   .doc-content-jagged:after {
     content: '';
     height: 8px;
-    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A AAAASUVORK5CYII=") repeat-x top left;
+    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 			5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 			9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A 			AAAASUVORK5CYII=") repeat-x top left;
     background-size: 8px;
     display: block;
     position: absolute;
@@ -1337,7 +1347,7 @@ select.big {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   .doc-content-jagged:after {
-    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh +lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
+    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 			8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh 			+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb 			iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
     background-size: 8px auto; } }
 /* }}} */
 hr.double-line {
@@ -1800,15 +1810,7 @@ a:hover .tearsheet-add .time {
 .nav-pagination {
   list-style-type: none;
   margin-bottom: 12px;
-  zoom: 1;
   padding: 0; }
-  .nav-pagination:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 1px solid #dddddd;
@@ -1906,17 +1908,12 @@ a:hover .tearsheet-add .time {
 * list filtering, for example
 */
 .nav-buttons {
-  list-style-type: none;
-  margin-bottom: 12px;
-  padding-left: 0;
-  line-height: 1.5;
   display: inline-block;
   zoom: 1;
   *display: inline;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  zoom: 1;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -1925,6 +1922,10 @@ a:hover .tearsheet-add .time {
   -webkit-background-clip: padding-box;
   -ms-background-clip: padding-box;
   background-clip: padding-box;
+  list-style-type: none;
+  margin-bottom: 12px;
+  padding-left: 0;
+  line-height: 1.5;
   border: 1px solid #dddddd;
   /*****************************
    * STRUCTURE
@@ -1977,13 +1978,6 @@ a:hover .tearsheet-add .time {
   /*******************************
    * RADIO-BUTTON-ONLY SELECTORS *
    *******************************/ }
-  .nav-buttons:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
   .nav-buttons li, .nav-buttons label {
     padding-top: 0;
     float: left;
@@ -1996,7 +1990,7 @@ a:hover .tearsheet-add .time {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    text-decoration: none !important;
+    text-decoration: none!important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0.5em 1.2em 0.4em;
     display: block;
@@ -2033,7 +2027,7 @@ a:hover .tearsheet-add .time {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
-    text-decoration: none !important;
+    text-decoration: none!important;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
@@ -2242,7 +2236,7 @@ a:hover .tearsheet-add .time {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  text-decoration: none !important;
+  text-decoration: none!important;
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
@@ -2344,7 +2338,7 @@ a:hover .tearsheet-add .time {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #999;
-  border: 2px solid #fff;
+  border: 2px solid white;
   -moz-border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
@@ -2560,7 +2554,7 @@ a:hover .tearsheet-add .time {
   color: white; }
 
 .shaded-pixelate {
-  background-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
+  background-image: url("data:image/png;base64, 		iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA 		AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx 		DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K 		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
 
 .leading-top {
   padding-top: 12px; }
@@ -2724,7 +2718,7 @@ a.unlink:link, a.unlink:visited {
   bottom: -24px;
   left: 1px;
   font-size: 11px;
-  color: #333 !important;
+  color: #333333 !important;
   font-family: monaco, consolas, monospace; }
 
 .testSwatches {
