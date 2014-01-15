@@ -3,6 +3,8 @@
 * ------------------------------------------
 */
 
+$buttonFontSize: !6px;
+
 %_button_base {
 	@include button_personality();
 	@include round(3px);
@@ -16,7 +18,7 @@
 	margin: 0 0 $baseline 0;
 	font-family: $uiControlFontStack;
 	font-weight: $W_bold;
-	font-size: $baseFontSize;
+	font-size: $buttonFontSize;
 	line-height: 1 !important;
 	text-decoration: none !important;
 	border-width: 0;
