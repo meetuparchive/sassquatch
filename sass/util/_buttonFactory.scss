@@ -13,7 +13,7 @@ $buttonFontSize: 16px;
 	@if $platform == "desktop" {
 		padding: 9px 18px 7px 18px;
 	} @else {
-		padding: 12px 18px 11px 18px;
+		padding: 14px 18px 12px 18px;
 	}
 	margin: 0 0 $baseline 0;
 	font-family: $uiControlFontStack;
