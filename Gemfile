@@ -5,4 +5,5 @@ gem "sass", "=3.2.6"
 gem "jekyll", "=1.4.2"
 
 # for building docs locally
+gem 'kalei'
 gem "sinatra", "~> 1.4.4"
