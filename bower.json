@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch",
-	"version": "1.6.9",
+	"version": "1.6.10",
 	"description": "CSS foundation and framework for Meetup",
 	"main": [
 		"./sass",
