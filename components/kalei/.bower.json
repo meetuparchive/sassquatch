@@ -1,0 +1,13 @@
+{
+  "name": "kalei",
+  "homepage": "https://github.com/thomasdavis/kaleistyleguide",
+  "_release": "a8bb10a4c3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "dev",
+    "commit": "a8bb10a4c398481ff7308eca19b6080214024915"
+  },
+  "_source": "git://github.com/thomasdavis/kaleistyleguide.git",
+  "_target": "dev",
+  "_originalSource": "git://github.com/thomasdavis/kaleistyleguide.git"
+}
