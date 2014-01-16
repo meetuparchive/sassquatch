@@ -227,20 +227,32 @@
 	@if $official {
 		#{$property}: #{$value}; } }
 
-
-// NOTE: This can probably be replaced with the @necolas clearfix, since it's
-// terser and has fewer strange properties.
-// nicolasgallagher.com/micro-clearfix-hack/
+/**
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
 %clearfix {
-	zoom: 1;
+	&:before,
 	&:after {
-		content: ".";
-		display: block;
-		clear: both;
-		visibility: hidden;
-		line-height: 0;
-		height: 0;
+		content: " "; /* 1 */
+		display: table; /* 2 */
 	}
+
+	&:after {
+		clear: both;
+	}
+
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	*zoom: 1;
 }
 
 @mixin clearfix {
@@ -383,7 +395,7 @@
 	//-webkit-text-stroke: .5px;
 }
 
-@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
+@mixin font-face($font-family, $url, $weight: $W_normal, $style: normal) {
 	@font-face {
 		font-family: '#{$font-family}';
 		font-weight: $weight;
@@ -446,6 +458,7 @@
 	}
 }
 
+/* TODO: check usage */
 @mixin buttonize($base_color){
 	display: inline;
 	display: inline-block;
@@ -456,7 +469,7 @@
 	text-align: center;
 	cursor: pointer;
 	zoom: 1;
-	font-weight: bold;
+	font-weight: $W_bold;
 	font-family: arial, sans-serif;
 	*cursor: hand;
 
@@ -485,7 +498,6 @@
 	padding-bottom: $paddingBottom;
 
 	&:before {
-		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 		content: '\00a0';
 		background: url('/img/f-logo.png') center center no-repeat;
 		position: absolute;
@@ -499,6 +511,7 @@
 		padding-bottom: $paddingBottom;
 		padding-left: 18px;
 		padding-right: 18px;
+		font-size: 16px !important;
 	}
 }
 

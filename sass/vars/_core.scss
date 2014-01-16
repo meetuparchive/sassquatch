@@ -7,155 +7,144 @@
 @import "../../components/meetup-swatches/sass/colors";
 
 /* {{{ Type */
-$baseline: 16px;        // not actually used as line-height, we should rename
-$baseFontSize: 12px;
-$bigFontSize: 18px;
-$bigBaseline: 24px;     // not actually used as line-height, we should rename
-$baseLineHeight: 1.5;   // this is the actual line-height
 
+	$baseline: 			18px; // not actually used as line-height, we should rename
 
-$h1FontSize: 32px;
-$h2FontSize: 26px;
-$h3FontSize: 20px;
-$h4FontSize: 16px;
-$h5FontSize: $baseFontSize;
-$h6FontSize: 11px;
+	// base font sizes
+	$baseFontSize: 	16px;
+	$baseLineHeight: 	1.4;
 
-$baseFontStack: verdana, Arial, sans-serif;
-$headingFontStack: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$monoFontStack: Monaco, "Andale Mono", "Courier New", monospace;
-$uiControlFontStack: $headingFontStack;
+	// small font sizes
+	$smallFontSize: 	13px;
+	$smallLineHeight: 1.6;
+
+	// big font sizes
+	$bigFontSize: 		20px;
+	$bigLineHeight: 	1.33;
+	$bigBaseline: 		18px; // not actually used as line-height, we should rename
+
+	// heading sizes
+	$h1FontSize: 	38px;
+	$h2FontSize: 	28px;
+	$h3FontSize: 	20px;
+	$h4FontSize: 	$baseFontSize;
+	$h5FontSize: 	$baseFontSize;
+	$h6FontSize: 	$baseFontSize;
+
+	// font stacks
+	$F_sans: 					'Whitney', helvetica, arial, sans-serif;
+	$F_num: 						'Whitney', helvetica, arial, sans-serif ;
+	$F_mono: 					Monaco, "Andale Mono", "Courier New", monospace;
+	$baseFontStack: 			$F_sans;
+	$headingFontStack: 		$F_sans;
+	$uiControlFontStack: 	$F_sans;
+	$monoFontStack: 			$F_mono;
+
+	// weights
+	$W_normal: 400;
+	$W_bold: 700;
+	$W_numeral: 750;
+
+	// numeral placeholder
+	%numerialFont {
+		font-family: $F_num;
+		font-weight: $W_numeral;
+	}
 /* }}} */
 
 /* {{{ Colors (legacy - try to use the bower swatches component) */
 
-/* {{{ Hex definitions ( define new ones sparingly ) */
+	/* {{{ Hex definitions ( define new ones sparingly ) */
 
-// gray - typically used for interface shading
-$C_gray_lightest: #f4f4f4;
-$C_gray_lighter: #eeeeee;
-$C_gray: #dddddd;
+	// gray - typically used for interface shading
+	$C_gray_lightest: 		#f4f4f4;
+	$C_gray_lighter: 			#eeeeee;
+	$C_gray: 					#dddddd;
 
-// midgray - it's right in the middle
-$C_midgray: #aaa;
+	// midgray - it's right in the middle
+	$C_midgray: 				#aaa;
 
-// darkgray - typically used for text
-$C_darkgray_lightest: #888888;
-$C_darkgray_lighter: #555555;
-$C_darkgray: #333333;
+	// darkgray - typically used for text
+	$C_darkgray_lightest: 	#888888;
+	$C_darkgray_lighter: 	#555555;
+	$C_darkgray: 				#333333;
 
-// red - interface red, not the red *in* the logo
-$C_red: #E0393E;
-$C_red_darker: #CC1C32;
+	// red - interface red, not the red *in* the logo
+	$C_red: 						#E0393E;
+	$C_red_darker: 			#CC1C32;
 
-$C_darkblue: #2A9BC7;	// darkblue - links and linked things
-$C_lightblue: #a5c8e7; 	// brightblue - highlight borders, light blue bg
+	// blues
+	$C_darkblue: 				#2A9BC7;	// darkblue - links and linked things
+	$C_lightblue: 				#a5c8e7; 	// brightblue - highlight borders, light blue bg
 
+	// green - success and yes
+	$C_green: 					#62AC75;
 
-// green - success and yes
-$C_green: #62AC75;
+	// pink - error shading for now
+	$C_pink: 					#FBE1E3;
 
-// pink - error shading for now
-$C_pink: #FBE1E3;
+	// yellow - highlighting. You love it.
+	$C_yellow: 					#FDF77B;
 
-// yellow - highlighting. You love it.
-$C_yellow: #FDF77B;
-
-/* }}} */
-
-
-/* {{{ Color aliases ( shouldn't be any hex codes here ) */
-
-// interface (bg)
-$C_line: $C_gray;
-$C_line_less: $C_gray_lighter;
-$C_shade: $C_gray_lightest;
-$C_accent: $C_red;
-
-// text
-$C_text_headline: $C_darkgray;
-$C_text: $C_darkgray_lighter;
-$C_text_less: $C_darkgray_lightest;
-$C_link: $C_darkblue;
-
-// RSVP status colors
-$C_rsvpGoing: $C_green;
-$C_rsvpWating: $C_blue;
-$C_rsvpNotGoing: $C_darkgray_lightest;
-
-// Errors
-$C_warnBg: $C_pink;
-$C_warnText: $C_red;
-
-// interface (nav)
-$C_buttonBg: #fff;
-$C_buttonTint: #fff;
-$C_buttonShade: darken($C_buttonBg, 10%);
-$C_selectedBg: $C_link;
-$C_selectedTint: lighten($C_selectedBg, 5%);
-$C_selectedShade: #2264A0;
-
-/* }}} */
+	/* }}} */
 
 
-/* {{{ Color inventory (what exists in old base)
+	/* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
-// grayscale
-$C_lightestGray: #f7f7f7;
-$C_lightGraySaturated: #E9EBE5;
-$C_mediumGray: #ccc;
-$C_darkGray: #454545;
-$C_nearBlack: #333;
+	// interface (bg)
+	$C_line: 				$C_gray;
+	$C_line_less: 			$C_gray_lighter;
+	$C_shade: 				$C_gray_lightest;
+	$C_accent: 				$C_red;
 
-// meetupy colors (reds)
-$C_logoRed: #Ce1126;
-$C_scarletRed: #E6304C;
-$C_pink: #FBE1E3;
+	// text
+	$C_text_headline: 	$C_darkgray;
+	$C_text: 				$C_darkgray_lighter;
+	$C_text_less: 			$C_darkgray_lightest;
+	$C_link: 				$C_darkblue;
 
-// link colors
-$C_linkBlue: #3987CB;
-$C_buttonBlue: #3F73A1;
-$C_navBlue: #B5D0F2;
+	// RSVP status colors
+	$C_rsvpGoing: 			$C_green;
+	$C_rsvpWating: 		$C_blue;
+	$C_rsvpNotGoing: 		$C_darkgray_lightest;
 
-// RSVP status colors
-$C_rsvpGoing: #62AC75;
-$C_rsvpWating: #86c6ee;
-$C_rsvpNotGoing: #999;
+	// Errors
+	$C_warnBg: 				$C_pink;
+	$C_warnText: 			$C_red;
 
-// Site status colors
-$C_notifyBg: $C_navBlue;
-$C_notifyText: $C_buttonBlue;
-$C_successBg: #E0F4DA;
-$C_successText: #6EA835;
-$C_warnBg: $C_pink;
-$C_warnText: $C_logoRed;
+	// interface (nav)
+	$C_buttonBg: 			#fff;
+	$C_buttonTint: 		#fff;
+	$C_buttonShade: 		darken($C_buttonBg, 10%);
+	$C_selectedBg: 		$C_link;
+	$C_selectedTint: 		lighten($C_selectedBg, 5%);
+	$C_selectedShade: 	#2264A0;
 
-}}} */
+	/* }}} */
 
 /* }}} */
 
 /* {{{ Layout */
-$defaultRadius: 3px;
-$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
-$spacing: 12px;
+	$defaultRadius: 		3px;
+	$formLabelOffset: 	$baseline * 9; /* horizontal offset of label/field */
+	$spacing: 				$baseline;
 /* }}} */
 
-/* {{{ legacy (from crustybase) */
-$actionColor: #F1F3F1;
-$redTextColor: #E51937;
-$buttonColor: #F10044;
-$linkColor: $C_link;
-$basePadding : 8px;
+/* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
+	$actionColor: 			#F1F3F1;
+	$redTextColor: 		#E51937;
+	$buttonColor: 			#F10044;
+	$linkColor: 			$C_link;
+	$basePadding : 		8px;
 
-/* _sponsoree.css and _sponsor_manage.scss */
-$urgent-color:#B53336;
-$BG_STATUS:#F1F2ED;
-$BG_BOLD: #2b6892;
-$BG_META: #F0F2EC;
-$BG_LIGHT: #F8F9F5;
-$COLOR_XLIGHT: #EEEEEE;
-$COLOR_LIGHT: #CCCCCC;
-$COLOR_MEDIUM: #666666;
+	$urgent-color: 	#B53336;
+	$BG_STATUS: 		#F1F2ED;
+	$BG_BOLD: 			#2b6892;
+	$BG_META: 			#F0F2EC;
+	$BG_LIGHT: 			#F8F9F5;
+	$COLOR_XLIGHT: 	#EEEEEE;
+	$COLOR_LIGHT: 		#CCCCCC;
+	$COLOR_MEDIUM: 	#666666;
 /* }}} */
 
 
@@ -176,15 +165,17 @@ $COLOR_MEDIUM: #666666;
 *     of media-based overrides.
 *   - Standardized/saner gray values
 *
-*
+* {{{
 */
+
 // WARNING: you have to initialize mobile-specific vars outside of the @if so they have global scope
-$C_topbarRed: null;
-$C_topbarRed_dark: null;
-$checkin: null;
-$yes: null;
-$waiting: null;
-$no: null;
+$C_topbarRed: 			null;
+$C_topbarRed_dark: 	null;
+$checkin: 				null;
+$yes: 					null;
+$waiting: 				null;
+$no: 						null;
+
 @if $platform == "mobile" {
 
 	/*  OVERRIDES {
@@ -200,20 +191,22 @@ $no: null;
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
-	$baseFontStack: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-	$headingFontStack: $baseFontStack; 
-	$uiControlFontStack: $baseFontStack;
+	$baseFontStack: 			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+	$headingFontStack: 		$baseFontStack; 
+	$uiControlFontStack: 	$baseFontStack;
 
-	$h1FontSize: 24px;
-	$h2FontSize: 20px;
-	$h3FontSize: 16px;
-	$h4FontSize: 14px;
-	$h5FontSize: $baseFontSize;
-	$h6FontSize: $baseFontSize;
+	$baseFontSize: 12px;
 
-	$baseline: 12px;        /*  unused, except for below  */
-	$spacing: 9px;          /*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 8px; 
+	$h1FontSize: 	24px;
+	$h2FontSize: 	20px;
+	$h3FontSize: 	16px;
+	$h4FontSize: 	14px;
+	$h5FontSize: 	$baseFontSize;
+	$h6FontSize: 	$baseFontSize;
+
+	$baseline: 			12px;        	/*  unused, except for below  */
+	$spacing: 			9px;          	/*  used, but has a lot of conditional overrides/modifications */
+	$basePadding: 		8px; 
 	$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
 	/*  }  */
 
@@ -225,18 +218,19 @@ $no: null;
 	 *  Maybe some of these should be localized to where they're used, like
 	 *  the topbar colors?
 	 */
-	$C_topbarRed:#DA364B;
-	$C_topbarRed_dark:#C2293F;
+	$C_topbarRed: 			#DA364B;
+	$C_topbarRed_dark: 	#C2293F;
 
-	$C_darkGreen: #007B3D;  /* used 1x in global, after aliasing itself */
-	$C_rsvpGoing: #62AC75;
-	$C_rsvpWating: #86c6ee;
-	$C_rsvpNotGoing: #999;
+	$C_darkGreen: 			#007B3D;  /* used 1x in global, after aliasing itself */
+	$C_rsvpGoing: 			#62AC75;
+	$C_rsvpWating: 		#86c6ee;
+	$C_rsvpNotGoing: 		#999;
 
 	// RSVP status, aliases
-	$checkin: $C_darkGreen;
-	$yes: $C_rsvpGoing;
-	$waiting: $C_rsvpWating;
-	$no: $C_rsvpNotGoing;
+	$checkin: 				$C_darkGreen;
+	$yes: 					$C_rsvpGoing;
+	$waiting: 				$C_rsvpWating;
+	$no: 						$C_rsvpNotGoing;
 	/*  }  */
 }
+/* }}} */
