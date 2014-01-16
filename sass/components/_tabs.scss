@@ -5,11 +5,11 @@
 $tabSpacing: $spacing/2;
 
 .nav-tabs {
+	@extend %clearfix;
 	padding-top: $tabSpacing;
 	padding-left: $tabSpacing;
 	border-bottom: 1px solid $C_line;
 	list-style: none;
-	@include clearfix;
 	margin-bottom: $spacing;
 	li {
 		float: left;

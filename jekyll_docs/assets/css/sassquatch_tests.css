@@ -76,6 +76,20 @@
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+.nav-tabs, .nav-pagination, .nav-buttons {
+  /**
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  *zoom: 1; }
+  .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+    clear: both; }
+
 /* TODO: check usage */
 /*
  *
@@ -2084,15 +2098,7 @@ a:hover .tearsheet-add .time {
   padding-left: 9px;
   border-bottom: 1px solid #dddddd;
   list-style: none;
-  zoom: 1;
   margin-bottom: 18px; }
-  .nav-tabs:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
   .nav-tabs li {
     float: left;
     padding: 0;
@@ -2135,18 +2141,10 @@ a:hover .tearsheet-add .time {
 * Pagination Pattern
 */
 .nav-pagination {
-  zoom: 1;
   font-size: 15px;
   list-style-type: none;
   margin-bottom: 18px;
   padding: 0; }
-  .nav-pagination:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
     border: 1px solid #dddddd;
     border-left-width: 0;
@@ -2247,17 +2245,12 @@ a:hover .tearsheet-add .time {
 * list filtering, for example
 */
 .nav-buttons {
-  list-style-type: none;
-  margin-bottom: 18px;
-  padding-left: 0;
-  line-height: 1.5;
   display: inline-block;
   zoom: 1;
   *display: inline;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  zoom: 1;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -2266,6 +2259,10 @@ a:hover .tearsheet-add .time {
   -webkit-background-clip: padding-box;
   -ms-background-clip: padding-box;
   background-clip: padding-box;
+  list-style-type: none;
+  margin-bottom: 18px;
+  padding-left: 0;
+  line-height: 1.5;
   border: 1px solid #dddddd;
   /*****************************
    * STRUCTURE
@@ -2318,13 +2315,6 @@ a:hover .tearsheet-add .time {
   /*******************************
    * RADIO-BUTTON-ONLY SELECTORS *
    *******************************/ }
-  .nav-buttons:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
   .nav-buttons li, .nav-buttons label {
     padding-top: 0;
     float: left;
@@ -2963,7 +2953,8 @@ a:hover .tearsheet-add .time {
   vertical-align: bottom; }
 
 /* {{{ TODO: deprecate this */
-.center-able {
+.center-able,
+.centered {
   display: block;
   margin-left: auto;
   margin-right: auto; }

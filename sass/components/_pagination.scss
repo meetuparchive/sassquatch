@@ -3,7 +3,7 @@
 */
 
 .nav-pagination {
-	@include clearfix;
+	@extend %clearfix;
 	@extend %numerialFont;
 	font-size: 15px;
 	list-style-type: none;
