@@ -389,10 +389,13 @@
 // TYPOGRAPHY
 
 // various tricks to produce nice header text across browsers
-@mixin nice-type{
+%nice-type {
 	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: subpixel-antialiased;
-	//-webkit-text-stroke: .5px;
+	// -webkit-font-smoothing: subpixel-antialiased;  // this is the default value for webkit
+	//-webkit-text-stroke: .5px;  // bad for scrolling performance on lots of text
+}
+@mixin nice-type {
+	@extend %nice-type;
 }
 
 @mixin font-face($font-family, $url, $weight: $W_normal, $style: normal) {
