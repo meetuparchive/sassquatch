@@ -33,7 +33,7 @@
 		font-family: $headingFontStack;
 	}
 	.ui-dialog-title{
-		font-weight: bold;
+		font-weight: $W_bold;
 		font-size: $h3FontSize;
 		float: left;
 		display: block;

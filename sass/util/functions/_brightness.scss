@@ -35,28 +35,10 @@ $brightness_threshold: 160;
 // returns dark or light text rgba that has sufficient contrast
 // -------------------------------------------------------------
 @function getPrimaryTextColor( $color ) {
-	@if isDark($color) {
+	@if isDark($color) { // very threshold darkness
 		@return $C_textPrimaryInverted;
-	} @else {
+	} @else { // much light
 		@return $C_textPrimary;
-	}
-}
-
-
-
-// getSecondaryTextColor
-//
-// returns dark or light text rgba that has sufficient contrast
-// (more transparent than getPrimary)
-// -------------------------------------------------------------
-@function getSecondaryTextColor( $color ) {
-	// very threshold darkness
-	@if isDark($color) {
-		@return $C_secondaryGrayInverted;
-	}
-	// much light
-	@if isLight($color){
-		@return $C_textSecondary;
 	}
 	// wow
 }

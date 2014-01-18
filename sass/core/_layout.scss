@@ -173,7 +173,6 @@
 
 .doc-controls {
 	background: $C_gray;
-	padding-bottom: $baseline;
 	margin-bottom: $spacing;
 }
 
@@ -293,26 +292,14 @@ $arrow-width: $baseline/2;
     padding-bottom: $bigBaseline - $spacing;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 
-  input, textarea, select,
-    button, .button {
-        font-size: $bigFontSize;
-    }
-    label, legend {
-        font-size: $bigFontSize - 2;
-    }
-
     label.small {
-      font-size:12px;
+      font-size:13px;
     }
 
     select {
         height: $bigFontSize*2 - 2;
         *height: auto;
         line-height: $bigFontSize*2 - 2;
-    }
-    /*Don't want file inputs to be quite so huge, because it looks crazy.*/
-    input[type="file"] {
-      font-size:15px;
     }
 }
 .doc-content-jagged {

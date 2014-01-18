@@ -7,7 +7,6 @@ table {
 }
 caption, td, th { 
 	padding: $baseline/2;
-	line-height: $baseline;
 	text-align: left;
 }
 caption {
@@ -15,7 +14,7 @@ caption {
 	padding-left: 0;
 }
 th {
-	font-weight: bold;
+	font-weight: $W_bold;
 	vertical-align: middle;
 }
 td, tbody th {

@@ -10,6 +10,7 @@
         content: "DEBUG: ";
     }
 }
+
 .highlighted {
 	background: $C_yellow;
 }
@@ -94,7 +95,8 @@
 	vertical-align: bottom;
 }
 /* {{{ TODO: deprecate this */
-.center-able {
+.center-able,
+.centered {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -121,19 +123,18 @@
     @include inlineblock();
 }
 .muted {
-	color: $C_tertiaryGray;
+	@include color_textTertiary();
 
 	.inverted & {
-		color: $C_tertiaryGrayInverted;
+		@include color_textTertiaryInverted();
 	}
 }
 .muted-opacity{
     // when over something that isn't just a white background
     @include opacity(.8);
 }
-
 .bold {
-	font-weight: bold;
+	font-weight: $W_bold;
 }
 .italic {
     font-style: oblique;
@@ -142,10 +143,12 @@
 	text-transform: uppercase;
 }
 .small, small {
-	font-size: $baseFontSize - 2;
+	font-size: $smallFontSize;
+	line-height: $smallLineHeight;
 }
 .big {
     font-size: $bigFontSize;
+	 line-height: $bigLineHeight;
 }
 .opacity-quarter {
     // what is this used for?
@@ -175,9 +178,13 @@
 }
 
 a.unlink{
-    &:link, &:visited{
-        color: $C_secondaryGray;
-    }
+	&:link, &:visited {
+		@include color_textSecondary();
+	}
+	.inverted &:link,
+	.inverted &:visited {
+		@include color_textSecondaryInverted();
+	}
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
@@ -262,7 +269,7 @@ a.unlink{
 	}
 
 	.bold {
-		font-weight:bold;
+		font-weight: $W_bold;
 	}
 
 	.double-spaced {
