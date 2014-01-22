@@ -1,0 +1,19 @@
+/**
+* Dropdown base mixins
+*
+* provides base functionality; visual style
+* for dropdowns should extend this
+* ------------------------------------------
+*/
+
+%_dropdown_trigger_base {
+}
+%_dropdown_content_base {
+}
+
+/**
+* Default dropdown
+* -----------------------------------------------
+*/
+@mixin dropdown() {
+}

@@ -1,0 +1,56 @@
+/**
+* ==============================================
+* CSS DROPDOWNS
+*/
+
+@import "../util/dropdownFactory";
+
+
+// Chunky nav-menu style dropdown
+//
+// WARNING: expects UL as a child
+// ---------------------------
+%dropdown-nav,
+.dropdown-nav {
+	@include dropdown();
+}
+.dropdown-nav--right {
+	@extend %dropdown-nav;
+}
+.dropdown-nav--left {
+	@extend %dropdown-nav;
+}
+
+
+// Chunky nav-style dropdown with
+// generic content container
+//
+// accepts arbitrary content in child
+// ---------------------------
+%dropdown-flat,
+.dropdown-flat {
+	@include dropdown();
+}
+.dropdown-flat--right {
+	@extend %dropdown-flat;
+}
+.dropdown-flat--left {
+	@extend %dropdown-flat;
+}
+
+
+// Dropdown with speech bubble style
+// child with a pointer at the top
+//
+// accepts arbitrary content in child
+// ---------------------------
+%dropdown-bubble,
+.dropdown-bubble {
+	@include dropdown();
+}
+.dropdown-bubble--right {
+	@extend %dropdown-bubble;
+}
+.dropdown-bubble--left {
+	@extend %dropdown-bubble;
+}
