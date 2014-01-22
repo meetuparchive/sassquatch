@@ -795,6 +795,13 @@ select.big {
 * Button factory mixins
 * ------------------------------------------
 */
+.button-flat,
+.button-flat--gray,
+.button-flat--white,
+.button-flat--black,
+.button-flat--red,
+.button-photo,
+.button-photo--white,
 .button,
 button,
 input[type="submit"],
@@ -807,12 +814,7 @@ input[type="submit"].button--primary,
 input[type="submit"].button--black,
 .button--white,
 .button--blue,
-input[type="submit"].button--blue,
-.button-flat,
-.button-flat--gray,
-.button-flat--white,
-.button-flat--black,
-.button-flat--red {
+input[type="submit"].button--blue {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -848,6 +850,13 @@ input[type="submit"].button--blue,
   -ms-text-shadow: none;
   -o-text-shadow: none;
   text-shadow: none; }
+  .button-flat:focus,
+  .button-flat--gray:focus,
+  .button-flat--white:focus,
+  .button-flat--black:focus,
+  .button-flat--red:focus,
+  .button-photo:focus,
+  .button-photo--white:focus,
   .button:focus,
   button:focus,
   input[type="submit"]:focus,
@@ -855,13 +864,15 @@ input[type="submit"].button--blue,
   .button--primary:focus,
   .button--black:focus,
   .button--white:focus,
-  .button--blue:focus,
-  .button-flat:focus,
-  .button-flat--gray:focus,
-  .button-flat--white:focus,
-  .button-flat--black:focus,
-  .button-flat--red:focus {
+  .button--blue:focus {
     outline-width: 0; }
+  .small.button-flat,
+  .small.button-flat--gray,
+  .small.button-flat--white,
+  .small.button-flat--black,
+  .small.button-flat--red,
+  .small.button-photo,
+  .small.button-photo--white,
   .small.button,
   button.small,
   input.small[type="submit"],
@@ -869,14 +880,43 @@ input[type="submit"].button--blue,
   .small.button--primary,
   .small.button--black,
   .small.button--white,
-  .small.button--blue,
-  .small.button-flat,
-  .small.button-flat--gray,
-  .small.button-flat--white,
-  .small.button-flat--black,
-  .small.button-flat--red {
+  .small.button--blue {
     font-size: 12px;
     padding: 5px 14px; }
+
+.button-flat,
+.button-flat--gray,
+.button-flat--white,
+.button-flat--black,
+.button-flat--red,
+.button-photo,
+.button-photo--white {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: all 0.1s ease-in-out 0 ;
+  -moz-transition: all 0.1s ease-in-out 0 ;
+  -o-transition: all 0.1s ease-in-out 0 ;
+  transition: all 0.1s ease-in-out 0 ; }
+  .button-flat,
+  .button-flat--gray,
+  .button-flat--white,
+  .button-flat--black,
+  .button-flat--red,
+  .button-photo,
+  .button-photo--white,
+  .button-flat:active,
+  .button-flat--gray:active,
+  .button-flat--white:active,
+  .button-flat--black:active,
+  .button-flat--red:active,
+  .button-photo:active,
+  .button-photo--white:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
 
 /**
 * Default button
@@ -887,6 +927,12 @@ input[type="submit"].button--blue,
 */
 /**
 * Flat button
+* @param $color - single border/text/hover color
+* -----------------------------------------------
+*/
+/**
+* Photo button
+* for overlaying photos
 * @param $color - single border/text/hover color
 * -----------------------------------------------
 */
@@ -1192,95 +1238,51 @@ input[type="submit"].button--blue {
 */
 .button-flat,
 .button-flat--gray {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
   color: #777777 !important;
   background: transparent;
   border: 2px solid #777777; }
-  .button-flat,
-  .button-flat:active,
-  .button-flat--gray,
-  .button-flat--gray:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
   .button-flat:hover,
   .button-flat--gray:hover {
     background: #777777;
     color: white !important; }
 
 .button-flat--white {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
   color: white !important;
   background: transparent;
   border: 2px solid white; }
-  .button-flat--white,
-  .button-flat--white:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
   .button-flat--white:hover {
     background: white;
     color: rgba(0, 0, 0, 0.95) !important; }
 
 .button-flat--black {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
   color: black !important;
   background: transparent;
   border: 2px solid black; }
-  .button-flat--black,
-  .button-flat--black:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
   .button-flat--black:hover {
     background: black;
     color: white !important; }
 
 .button-flat--red {
-  /*  We're interpolating the inputs here in case they're wrapped
-   *  in strings from use in the mixins.
-   */
-  -webkit-transition: all 0.1s ease-in-out 0 ;
-  -moz-transition: all 0.1s ease-in-out 0 ;
-  -o-transition: all 0.1s ease-in-out 0 ;
-  transition: all 0.1s ease-in-out 0 ;
   color: #e0393e !important;
   background: transparent;
   border: 2px solid #e0393e; }
-  .button-flat--red,
-  .button-flat--red:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none; }
   .button-flat--red:hover {
     background: #e0393e;
     color: white !important; }
+
+/**
+* ==============================================
+* PHOTO OVERLAY BUTTONS
+*/
+.button-photo,
+.button-photo--white {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid white; }
+  .button-photo:hover,
+  .button-photo--white:hover {
+    background: white;
+    color: rgba(0, 0, 0, 0.95) !important; }
 
 /**
 * LAYOUT

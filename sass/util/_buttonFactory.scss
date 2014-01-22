@@ -42,6 +42,18 @@ $buttonFontSize: 16px;
 	}
 }
 
+%_button_base_flat {
+	@extend %_button_base;
+	@include transition(all .1s ease-in-out);
+	&, &:active {
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		-o-box-shadow: none;
+		-ms-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
 /**
 * Default button
 *
@@ -92,19 +104,28 @@ $buttonFontSize: 16px;
 * -----------------------------------------------
 */
 @mixin button-flat( $color ) {
-	@extend %_button_base;
-	@include transition(all .1s ease-in-out);
+	@extend %_button_base_flat;
 	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
 
-	&, &:active {
-		-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		-o-box-shadow: none;
-		-ms-box-shadow: none;
-		box-shadow: none;
+	&:hover {
+		background: $color;
+		color: getPrimaryTextColor($color) !important;
 	}
+}
+
+/**
+* Photo button
+* for overlaying photos
+* @param $color - single border/text/hover color
+* -----------------------------------------------
+*/
+@mixin button-photo( $color ) {
+	@extend %_button_base_flat;
+	color: $color !important;
+	background: rgba(0,0,0,0.25);
+	border: 2px solid $color;
 
 	&:hover {
 		background: $color;

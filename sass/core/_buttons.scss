@@ -140,3 +140,18 @@ input[type="submit"].button--blue {
 .button-flat--red {
 	@include button-flat( $C_red );
 }
+
+
+/**
+* ==============================================
+* PHOTO OVERLAY BUTTONS
+*/
+
+// Flat button (use over most photo bgs)
+// ---------------------------
+%button-photo,
+%button-photo--white,
+.button-photo,
+.button-photo--white {
+	@include button-photo( #fff );
+}
