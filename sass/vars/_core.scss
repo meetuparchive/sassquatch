@@ -8,28 +8,28 @@
 
 /* {{{ Type */
 
-	$baseline: 			18px !global; // not actually used as line-height, we should rename
+	$baseline: 			18px; // not actually used as line-height, we should rename
 
 	// base font sizes
-	$baseFontSize: 	16px !global;
-	$baseLineHeight: 	1.4 !global;
+	$baseFontSize: 	16px;
+	$baseLineHeight: 	1.4;
 
 	// small font sizes
-	$smallFontSize: 	13px !global;
-	$smallLineHeight: 1.6 !global;
+	$smallFontSize: 	13px;
+	$smallLineHeight: 1.6;
 
 	// big font sizes
-	$bigFontSize: 		20px !global;
-	$bigLineHeight: 	1.33 !global;
-	$bigBaseline: 		18px !global; // not actually used as line-height, we should rename
+	$bigFontSize: 		20px;
+	$bigLineHeight: 	1.33;
+	$bigBaseline: 		18px; // not actually used as line-height, we should rename
 
 	// heading sizes
-	$h1FontSize: 	38px !global;
-	$h2FontSize: 	28px !global;
-	$h3FontSize: 	20px !global;
-	$h4FontSize: 	$baseFontSize !global;
-	$h5FontSize: 	$baseFontSize !global;
-	$h6FontSize: 	$baseFontSize !global;
+	$h1FontSize: 	38px;
+	$h2FontSize: 	28px;
+	$h3FontSize: 	20px;
+	$h4FontSize: 	$baseFontSize;
+	$h5FontSize: 	$baseFontSize;
+	$h6FontSize: 	$baseFontSize;
 
 	// font stacks
 	$F_sans: 					'Whitney', helvetica, arial, sans-serif;
@@ -169,12 +169,12 @@
 */
 
 // WARNING: you have to initialize mobile-specific vars outside of the @if so they have global scope
-$C_topbarRed: 			null;
-$C_topbarRed_dark: 	null;
-$checkin: 				null;
-$yes: 					null;
-$waiting: 				null;
-$no: 						null;
+$C_topbarRed: 			null !global;
+$C_topbarRed_dark: 	null !global;
+$checkin: 				null !global;
+$yes: 					null !global;
+$waiting: 				null !global;
+$no: 						null !global;
 
 @if $platform == "mobile" {
 
@@ -191,23 +191,23 @@ $no: 						null;
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
-	$baseFontStack: 			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-	$headingFontStack: 		$baseFontStack; 
-	$uiControlFontStack: 	$baseFontStack;
+	$baseFontStack: 			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif !global;
+	$headingFontStack: 		$baseFontStack !global;
+	$uiControlFontStack: 	$baseFontStack !global;
 
-	$baseFontSize: 12px;
+	$baseFontSize: 12px !global;
 
-	$h1FontSize: 	24px;
-	$h2FontSize: 	20px;
-	$h3FontSize: 	16px;
-	$h4FontSize: 	14px;
-	$h5FontSize: 	$baseFontSize;
-	$h6FontSize: 	$baseFontSize;
+	$h1FontSize: 	24px !global;
+	$h2FontSize: 	20px !global;
+	$h3FontSize: 	16px !global;
+	$h4FontSize: 	14px !global;
+	$h5FontSize: 	$baseFontSize !global;
+	$h6FontSize: 	$baseFontSize !global;
 
-	$baseline: 			12px;        	/*  unused, except for below  */
-	$spacing: 			9px;          	/*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 		8px; 
-	$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
+	$baseline: 			12px !global;        	/*  unused, except for below  */
+	$spacing: 			9px !global;          	/*  used, but has a lot of conditional overrides/modifications */
+	$basePadding: 		8px !global;
+	$formLabelOffset: $baseline * 9 !global; /* horizontal offset of label/field */
 	/*  }  */
 
 
@@ -218,19 +218,19 @@ $no: 						null;
 	 *  Maybe some of these should be localized to where they're used, like
 	 *  the topbar colors?
 	 */
-	$C_topbarRed: 			#DA364B;
-	$C_topbarRed_dark: 	#C2293F;
+	$C_topbarRed: 			#DA364B !global;
+	$C_topbarRed_dark: 	#C2293F !global;
 
-	$C_darkGreen: 			#007B3D;  /* used 1x in global, after aliasing itself */
-	$C_rsvpGoing: 			#62AC75;
-	$C_rsvpWating: 		#86c6ee;
-	$C_rsvpNotGoing: 		#999;
+	$C_darkGreen: 			#007B3D !global;  /* used 1x in global, after aliasing itself */
+	$C_rsvpGoing: 			#62AC75 !global;
+	$C_rsvpWating: 		#86c6ee !global;
+	$C_rsvpNotGoing: 		#999 !global;
 
 	// RSVP status, aliases
-	$checkin: 				$C_darkGreen;
-	$yes: 					$C_rsvpGoing;
-	$waiting: 				$C_rsvpWating;
-	$no: 						$C_rsvpNotGoing;
+	$checkin: 				$C_darkGreen !global;
+	$yes: 					$C_rsvpGoing !global;
+	$waiting: 				$C_rsvpWating !global;
+	$no: 						$C_rsvpNotGoing !global;
 	/*  }  */
 }
 /* }}} */
