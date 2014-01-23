@@ -8,28 +8,28 @@
 
 /* {{{ Type */
 
-	$baseline: 			18px; // not actually used as line-height, we should rename
+	$baseline: 			18px !global; // not actually used as line-height, we should rename
 
 	// base font sizes
-	$baseFontSize: 	16px;
-	$baseLineHeight: 	1.4;
+	$baseFontSize: 	16px !global;
+	$baseLineHeight: 	1.4 !global;
 
 	// small font sizes
-	$smallFontSize: 	13px;
-	$smallLineHeight: 1.6;
+	$smallFontSize: 	13px !global;
+	$smallLineHeight: 1.6 !global;
 
 	// big font sizes
-	$bigFontSize: 		20px;
-	$bigLineHeight: 	1.33;
-	$bigBaseline: 		18px; // not actually used as line-height, we should rename
+	$bigFontSize: 		20px !global;
+	$bigLineHeight: 	1.33 !global;
+	$bigBaseline: 		18px !global; // not actually used as line-height, we should rename
 
 	// heading sizes
-	$h1FontSize: 	38px;
-	$h2FontSize: 	28px;
-	$h3FontSize: 	20px;
-	$h4FontSize: 	$baseFontSize;
-	$h5FontSize: 	$baseFontSize;
-	$h6FontSize: 	$baseFontSize;
+	$h1FontSize: 	38px !global;
+	$h2FontSize: 	28px !global;
+	$h3FontSize: 	20px !global;
+	$h4FontSize: 	$baseFontSize !global;
+	$h5FontSize: 	$baseFontSize !global;
+	$h6FontSize: 	$baseFontSize !global;
 
 	// font stacks
 	$F_sans: 					'Whitney', helvetica, arial, sans-serif;

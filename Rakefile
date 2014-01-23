@@ -1,4 +1,4 @@
-CMD_COMPILER 	= "compass compile"
+COMPILER 	= "compass"
 SOURCES     	= "sass/"
 TARGET      	= "css"
 JEKYLL_DIR  	= "jekyll_docs"
@@ -13,7 +13,8 @@ task :compile do
 	puts "#{HR}"
 	puts "Compass compile"
 	puts "#{HR}"
-	sh "#{CMD_COMPILER}"
+	sh "#{COMPILER} clean"
+	sh "#{COMPILER} compile"
 
 	# compile docs
 	puts
