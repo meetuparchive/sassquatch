@@ -45,7 +45,7 @@
 	}
 
 	.segmented-control-button {
-		@include button_personality;
+		@extend %button_personality;
 		@include button_color(#fff, true);
 		@include box-sizing('border');
 		display: inline-block;

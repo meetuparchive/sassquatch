@@ -66,16 +66,35 @@
 * looks flat, and "punched in"
 * overrides gradients, etc.
 */
-/**
- * http://nicolasgallagher.com/micro-clearfix-hack/
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
+.button-flat,
+.button-flat--gray,
+.button-flat--white,
+.button-flat--black,
+.button-flat--red,
+.button-photo,
+.button-photo--white,
+.button,
+button,
+input[type="submit"],
+.primary,
+.button.primary,
+.button--primary,
+input[type="submit"].primary,
+input[type="submit"].button--primary,
+.button--black,
+input[type="submit"].button--black,
+.button--white,
+.button--blue,
+input[type="submit"].button--blue, .nav-buttons label,
+.nav-buttons li > a,
+.nav-buttons li > span, .segmented-control-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none !important; }
+
 .nav-tabs, .nav-pagination, .nav-buttons {
   /**
    * For IE 6/7 only
@@ -815,12 +834,6 @@ input[type="submit"].button--black,
 .button--white,
 .button--blue,
 input[type="submit"].button--blue {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  text-decoration: none !important;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -2322,12 +2335,6 @@ a:hover .tearsheet-add .time {
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    text-decoration: none !important;
     font-family: "Whitney", helvetica, arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -2360,12 +2367,6 @@ a:hover .tearsheet-add .time {
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    text-decoration: none !important;
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
@@ -2569,12 +2570,6 @@ a:hover .tearsheet-add .time {
   text-align: center; }
 
 .segmented-control-button {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  text-decoration: none !important;
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;

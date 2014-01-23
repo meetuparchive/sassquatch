@@ -73,7 +73,7 @@
 	label,
 	li > a,
 	li > span {
-		@include button_personality;
+		@extend %button_personality;
 		@include button_color(#fff, true);
 		border: none;
 		color: $C_text;
