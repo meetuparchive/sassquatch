@@ -1,32 +1,19 @@
-COMPILER    = "sass"
-SOURCES     = "sass/"
-TARGET      = "css"
-JEKYLL_DIR  = "jekyll_docs"
-DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
-HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+CMD_COMPILER 	= "compass compile"
+SOURCES     	= "sass/"
+TARGET      	= "css"
+JEKYLL_DIR  	= "jekyll_docs"
+DOC_ASSETS  	= "#{JEKYLL_DIR}/assets/css"
+HR          	= "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 # compile sass & copy files into build/
 task :compile do
-	# desktop
-	puts
-	puts "#{HR}"
-	puts "Compiling SassQuatch for desktop"
-	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
 
-	# mobile
+	# compass compile
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for mobile"
+	puts "Compass compile"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
-
-	# tests
-	puts
-	puts "#{HR}"
-	puts "Compiling tests"
-	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
+	sh "#{CMD_COMPILER}"
 
 	# compile docs
 	puts
