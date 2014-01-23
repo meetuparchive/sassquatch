@@ -6,6 +6,9 @@
 * if any given css rule is compiled to desktop or mobile css files
 */
 
+// COMPASS PLUGINS
+@import "breakpoint";
+
 
 // VARS
 @import "vars/core";
