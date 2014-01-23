@@ -6,18 +6,37 @@
 		-ms-text-size-adjust: 100%;
 	}
 	html, body {
+		@include color_textSecondary();
 		font-size: $baseFontSize;
-		color: $C_secondaryGray;
 		line-height: $baseLineHeight;
+		font-family: $baseFontStack;
+		font-weight: $W_normal;
 		margin: 0;
 		padding: 0;
-		font-family: $baseFontStack;
+	}
+
+	::-moz-selection {
+		background: $C_red;
+		color: #fff;
+	}
+	::selection {
+		background: $C_red;
+		color: #fff;
 	}
 
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
-		color: $C_secondaryGrayInverted;
+		@include color_textSecondaryInverted();
+
+		::-moz-selection {
+			background: opacify(#fff, 1);
+			color: $C_red;
+		}
+		::selection {
+			background: opacify(#fff, 1);
+			color: $C_red;
+		}
 	}
 
 	/* {{{ Inline tag defaults */
@@ -27,7 +46,7 @@
 	abbr, acronym {
 		border-width: 0;
 	}
-	b,strong { font-weight: bold; }
+	b,strong { font-weight: $W_bold; }
 	sup, sub {
 		font-size: 75%;
 		line-height: 0;
@@ -39,8 +58,8 @@
 	/* }}} */
 
 	/* {{{ Block tag defaults */
-	p,ul,ol,li
-	blockquote, form, fieldset, legend,
+	p, ul, ol, blockquote,
+	form, fieldset, legend,
 	table, dl,dd,
 	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 		margin: 0;
@@ -60,10 +79,13 @@
 			image-rendering: optimizeQuality;
 		}
 	}
-
 	ul, ol {
 		list-style-position: outside;
-		padding-left: 2.75em; /* indent by default */
+		padding-left: 1.33em; /* indent by default */
+	}
+	li {
+		margin: 0;
+		padding: 0;
 	}
 	/* }}} */
 
@@ -100,15 +122,15 @@
 
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
+		@include color_textPrimary();
 		font-family: $headingFontStack;
-		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
-		padding-bottom: $baseline/2.5;
+		padding-bottom: $baseline/2;
 		line-height: 1.1;
-		font-weight: bold;
+		font-weight: $W_bold;
 		.inverted & {
-			color: $C_primaryGrayInverted;
+			@include color_textPrimaryInverted();
 		}
 	}
 	h1 {
@@ -119,10 +141,34 @@
 		font-size: $h2FontSize;
 		letter-spacing: -0.5px;
 	}
-	h3 { font-size: $h3FontSize; }
-	h4 { font-size: $h4FontSize; }
-	h5 { font-size: $h5FontSize; }
-	h6 { text-transform:uppercase; font-weight: normal; font-size: $h6FontSize; font-variant: small-caps; } /* probably won't use it, but it's in the html spec, so worth defining a default */
+	h3 {
+		font-size: $h3FontSize;
+		padding-bottom: $baseline/3;
+		line-height: 1.2;
+		letter-spacing: -0.25px;
+	}
+	h4{
+		font-size: $h4FontSize;
+		padding-bottom: 0;
+		line-height: $baseLineHeight;
+		letter-spacing: -0.05px;
+	}
+	h5 {
+		font-size: $h5FontSize;
+		padding-bottom: 0;
+		line-height: $baseLineHeight;
+
+		font-weight: $W_normal;
+	}
+	h6 {
+		font-size: $h6FontSize;
+		padding-bottom: 0;
+		line-height: $baseLineHeight;
+
+		text-transform: uppercase;
+		font-variant: small-caps;
+		font-weight: $W_normal;
+	}
 	/* }}} */
 }
 
@@ -204,7 +250,7 @@
 
 	h1,h2,h3,h4,h5,h6 {
 		font-family: $headingFontStack;
-		font-weight: normal;
+		font-weight: $W_bold;
 		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
@@ -216,22 +262,20 @@
 		}
 	}
 	h1 { 
-		font-weight: bold; 
 		font-size: $h1FontSize; 
 		letter-spacing: -0.75px; 
 	}
 	h2 { 
-		font-weight: bold; 
 		font-size: $h2FontSize; 
 		letter-spacing: -0.5px; 
 	}
 	h3 { 
-		font-weight: normal;
+		font-weight: $W_normal;
 		font-size: $h3FontSize; 
 	}
-	h4 { font-weight: bold; font-size: $h4FontSize }
-	h5 { font-weight: normal; font-size: $h5FontSize; }
-	h6 { font-weight: bold; font-size: $h6FontSize; }  /* probably won't use it, but it's in the html spec, so worth defining a default */
+	h4 { font-size: $h4FontSize }
+	h5 { font-weight: $W_normal; font-size: $h5FontSize; }
+	h6 { font-size: $h6FontSize; }  /* probably won't use it, but it's in the html spec, so worth defining a default */
 
 	/* }}} */
 

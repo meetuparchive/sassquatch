@@ -6,15 +6,15 @@
 
 
 .nav-buttons {
+	@include inlineblock;
+	@include round($defaultRadius);
+	@include experimental(box-sizing, border-box);
+	@include experimental(background-clip, padding-box);
+	@extend %clearfix;
 	list-style-type: none;
 	margin-bottom: $spacing;
 	padding-left: 0;
 	line-height: 1.5;
-	@include inlineblock;
-	@include round($defaultRadius);
-	@include clearfix;
-	@include experimental(box-sizing, border-box);
-	@include experimental(background-clip, padding-box);
 	border: 1px solid $C_line;
 
 
@@ -30,11 +30,12 @@
 	label,
 	li > a,
 	li > span {
-		@extend %button_personality;
-		font-family: $headingFontStack;
+		@include button_personality;
+		font-family: $uiControlFontStack;
+		font-size: $baseFontSize;
+		font-weight: $W_normal;
 		padding: 0.5em 1.2em 0.4em;
 		display: block;
-		font-size: 14px;
 	}
 
 	label:first-of-type,

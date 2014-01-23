@@ -231,32 +231,27 @@
 	// mixin for legacy support of @include button_personality
 	@extend %button_personality;
 }
-// NOTE: This can probably be replaced with the @necolas clearfix, since it's
-// terser and has fewer strange properties.
-// nicolasgallagher.com/micro-clearfix-hack/
+
 %clearfix {
-	zoom: 1;
+	&:before,
 	&:after {
-		content: ".";
-		display: block;
-		clear: both;
-		visibility: hidden;
-		line-height: 0;
-		height: 0;
+		content: " "; /* 1 */
+		display: table; /* 2 */
 	}
+
+	&:after {
+		clear: both;
+	}
+
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	*zoom: 1;
 }
 
 @mixin clearfix {
-	// @extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
-	zoom: 1;
-	&:after {
-		content: ".";
-		display: block;
-		clear: both;
-		visibility: hidden;
-		line-height: 0;
-		height: 0;
-	}
+	@extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
 }
 
 @mixin squarethumb($width){
@@ -389,13 +384,16 @@
 // TYPOGRAPHY
 
 // various tricks to produce nice header text across browsers
-@mixin nice-type{
+%nice-type {
 	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: subpixel-antialiased;
-	//-webkit-text-stroke: .5px;
+	// -webkit-font-smoothing: subpixel-antialiased;  // this is the default value for webkit
+	//-webkit-text-stroke: .5px;  // bad for scrolling performance on lots of text
+}
+@mixin nice-type {
+	@extend %nice-type;
 }
 
-@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
+@mixin font-face($font-family, $url, $weight: $W_normal, $style: normal) {
 	@font-face {
 		font-family: '#{$font-family}';
 		font-weight: $weight;
@@ -458,6 +456,7 @@
 	}
 }
 
+/* TODO: check usage */
 @mixin buttonize($base_color){
 	display: inline;
 	display: inline-block;
@@ -468,7 +467,7 @@
 	text-align: center;
 	cursor: pointer;
 	zoom: 1;
-	font-weight: bold;
+	font-weight: $W_bold;
 	font-family: arial, sans-serif;
 	*cursor: hand;
 
@@ -497,7 +496,6 @@
 	padding-bottom: $paddingBottom;
 
 	&:before {
-		font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 		content: '\00a0';
 		background: url('/img/f-logo.png') center center no-repeat;
 		position: absolute;
@@ -511,6 +509,7 @@
 		padding-bottom: $paddingBottom;
 		padding-left: 18px;
 		padding-right: 18px;
+		font-size: 16px !important;
 	}
 }
 

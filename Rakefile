@@ -19,7 +19,7 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling SassQuatch for mobile"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
 
 	# tests
 	puts
