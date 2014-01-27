@@ -209,8 +209,39 @@
 
 	.touchList-label--input {
 		padding-left: $P_secondary;
-		white-space: nowrap;
 		font-weight: normal;
+	}
+
+	/**
+	 * TouchList-item--input Labels
+	 * Specific to the kind of TL items that have a combination of text-based
+	 * <input> els.
+	 *
+	 * Notes:
+	 * 1.	These need to have a no-wrap property on the label. The reason is
+	 *		that these are typically in a `ffbox-fix` cell, and multi-word labels
+	 *		to the left of a flex cell will collapse without a &nbsp; manually
+	 *		inserted into the label.
+	 *
+	 *		The nowrap here prevents the collapse, but has to be factored out of
+	 *		a more generic selector to make sure labels can wrap on things like
+	 *		radio and checkbox items.
+	 */
+	.touchList-item--input .touchList-label--input {
+		white-space: nowrap; // *1
+	}
+
+	/**
+	 * touchList-input--isSearchInput
+	 *
+	 * Special qualifying class applied to <input> els of type "search".
+	 * This cuts down the left spacing when the default label of a search
+	 * glass icon is applied.
+	 *
+	 * 1.	Half the normal <input> padding on the left side.
+	 */
+	.touchList-item--input .touchList-input--isSearchInput {
+		padding-left: ($P_secondary / 2); // *1
 	}
 
 	.touchList-item--input {
@@ -271,18 +302,6 @@
 		}
 	}
 
-	/**
-	 * touchList-input--isSearchInput
-	 *
-	 * Special qualifying class applied to <input> els of type "search".
-	 * This cuts down the left spacing when the default label of a search
-	 * glass icon is applied.
-	 *
-	 * 1.	Half the normal <input> padding on the left side.
-	 */
-	.touchList-item--input .touchList-input--isSearchInput {
-		padding-left: ($P_secondary / 2); // *1
-	}
 
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
