@@ -1,4 +1,4 @@
-@if $platform == "desktop" {
+
 	/* ======================================================================== */
 	/* SEGMENTED CONTROL
 	 * This is a design pattern that should be used for elements that appear as
@@ -94,4 +94,4 @@
 	.segmented-control-segment.checked .segmented-control-button {
 		@include punched_in_box_shadow;
 	}
-}
+
