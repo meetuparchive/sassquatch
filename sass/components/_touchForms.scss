@@ -222,9 +222,9 @@
 	}
 
 	/**
-	 * TouchList-item--input Labels
-	 * Specific to the kind of TL items that have a combination of text-based
-	 * <input> els.
+	 * Custom TL input-and-label interactions
+	 * Settings for the combination of text <input> and <label> els next
+	 * to each other in fix-flex boxes.
 	 *
 	 * Notes:
 	 * 1.	These need to have a no-wrap property on the label. The reason is
@@ -235,22 +235,18 @@
 	 *		The nowrap here prevents the collapse, but has to be factored out of
 	 *		a more generic selector to make sure labels can wrap on things like
 	 *		radio and checkbox items.
+	 *
+	 * 2.	Half the normal <input> padding on the left side.
 	 */
-	.touchList-item--input .touchList-label--input {
-		white-space: nowrap; // *1
-	}
+	.touchList-item--input {
 
-	/**
-	 * touchList-input--isSearchInput
-	 *
-	 * Special qualifying class applied to <input> els of type "search".
-	 * This cuts down the left spacing when the default label of a search
-	 * glass icon is applied.
-	 *
-	 * 1.	Half the normal <input> padding on the left side.
-	 */
-	.touchList-item--input .touchList-input--isSearchInput {
-		padding-left: ($P_secondary / 2); // *1
+		.touchList-label--input {
+			white-space: nowrap; // *1
+		}
+
+		.touchList-input--isSearchInput {
+			padding-left: ($P_secondary / 2); // *2
+		}
 	}
 
 	.touchList-item--input {
