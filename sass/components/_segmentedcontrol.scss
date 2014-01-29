@@ -1,97 +1,96 @@
-
-	/* ======================================================================== */
-	/* SEGMENTED CONTROL
-	 * This is a design pattern that should be used for elements that appear as
-	 * buttons in the UI and have button-like functionality, appearing grouped
-	 * together and interrelated.
-	 *
-	 * The types of elements are typically:
-	 *
-	 *   <a> .............. Hash modification, changing contents of view below.
-	 *   <input radio> .... Making a mutually-exclusive choice in a form.
-	 *   <input checkbox> . Toggling a particular feature.
-	 *
-	 * This component uses tabular layout, and can be used with one, or more,
-	 * elements. The result is a bunch of equally-sized segments in a thing
-	 * that looks like a button.
-	 *
-	 * In order to maintain IE8 compatibility, we need to have slightly different
-	 * layouts, which means having two classes: one in which we're using a pattern
-	 * where the immediate children of a segmented control are `.button`, and
-	 * another where there `.button` are wrapped in a secondary element, particularly
-	 * to hide extraneous native UI (checkboxes and radio buttons, for ex).
-	 *
-	 * NOTE: Why use multiple class names, rather than immediate child selectors?
-	 * Mostly for performance reasons, since `>` selectors aren't particularly
-	 * efficient, ostensibly.
-	 */
-
-
-	/* Wrapping element */
-	.segmented-control {
-		@include box-sizing('border');
-		display: table;
-		table-layout: fixed;
-		border-left: 1px solid $C_line;
-		border-radius: $defaultRadius 0 0 $defaultRadius;
-		width: 100%;
-		margin-bottom: $baseline;
-	}
-
-	.segmented-control-segment {
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-	}
-
-	.segmented-control-button {
-		@extend %button_personality;
-		@include button_color(#fff, true);
-		@include box-sizing('border');
-		display: inline-block;
-		width: 100%;
-		padding: 0.5em 0.75em 0.4em;
-		border: 1px solid $C_line;
-		border-left: none;
-		margin: 0;	/* OVERRIDE */
-		vertical-align: middle;
-
-		font-family: $uiControlFontStack;
-		font-size: $baseFontSize;
-		font-weight: $W_normal;
-		line-height: 1.5;
-		white-space: nowrap;
-		text-align: center;
-		text-decoration: none;
-		color: $C_text !important;
-		/* NOTE: Needed because of cascade overrides post-sassquatch in mobile. */
-	}
+/* ======================================================================== */
+/* SEGMENTED CONTROL
+ * This is a design pattern that should be used for elements that appear as
+ * buttons in the UI and have button-like functionality, appearing grouped
+ * together and interrelated.
+ *
+ * The types of elements are typically:
+ *
+ *   <a> .............. Hash modification, changing contents of view below.
+ *   <input radio> .... Making a mutually-exclusive choice in a form.
+ *   <input checkbox> . Toggling a particular feature.
+ *
+ * This component uses tabular layout, and can be used with one, or more,
+ * elements. The result is a bunch of equally-sized segments in a thing
+ * that looks like a button.
+ *
+ * In order to maintain IE8 compatibility, we need to have slightly different
+ * layouts, which means having two classes: one in which we're using a pattern
+ * where the immediate children of a segmented control are `.button`, and
+ * another where there `.button` are wrapped in a secondary element, particularly
+ * to hide extraneous native UI (checkboxes and radio buttons, for ex).
+ *
+ * NOTE: Why use multiple class names, rather than immediate child selectors?
+ * Mostly for performance reasons, since `>` selectors aren't particularly
+ * efficient, ostensibly.
+ */
 
 
-	/* These next two are sort of nasty selectors--but since this doesn't work
-	 * in IE8 anyway (border radius not supported), do we care? -j
-	 */
-	.segmented-control-segment:first-child .segmented-control-button {
-		border-radius: $defaultRadius 0 0 $defaultRadius;
-	}
+/* Wrapping element */
+.segmented-control {
+    @include box-sizing('border');
+    display: table;
+    table-layout: fixed;
+    border-left: 1px solid $C_line;
+    border-radius: $defaultRadius 0 0 $defaultRadius;
+    width: 100%;
+    margin-bottom: $baseline;
+}
 
-	.segmented-control-segment:last-child .segmented-control-button {
-		border-radius: 0 $defaultRadius $defaultRadius 0;
-	}
+.segmented-control-segment {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
 
-	.segmented-control-input {
-		position: absolute;
-		z-index: -1;
-	}
+.segmented-control-button {
+    @extend %button_personality;
+    @include button_color(#fff, true);
+    @include box-sizing('border');
+    display: inline-block;
+    width: 100%;
+    padding: 0.5em 0.75em 0.4em;
+    border: 1px solid $C_line;
+    border-left: none;
+    margin: 0;	/* OVERRIDE */
+    vertical-align: middle;
 
-	/* Checked States: Natural, and with class (via JS, for IE8) */
-	.segmented-control-input:checked + .segmented-control-button {
-		@include punched_in_box_shadow;
-		/* Here comes the !important train, due to !important up above. Choo Choo! */
-	}
+    font-family: $uiControlFontStack;
+    font-size: $baseFontSize;
+    font-weight: $W_normal;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    color: $C_text !important;
+    /* NOTE: Needed because of cascade overrides post-sassquatch in mobile. */
+}
 
-	/* Apparently this rule might need to be split out from :checked selector for IE8 */
-	.segmented-control-segment.checked .segmented-control-button {
-		@include punched_in_box_shadow;
-	}
+
+/* These next two are sort of nasty selectors--but since this doesn't work
+ * in IE8 anyway (border radius not supported), do we care? -j
+ */
+.segmented-control-segment:first-child .segmented-control-button {
+    border-radius: $defaultRadius 0 0 $defaultRadius;
+}
+
+.segmented-control-segment:last-child .segmented-control-button {
+    border-radius: 0 $defaultRadius $defaultRadius 0;
+}
+
+.segmented-control-input {
+    position: absolute;
+    z-index: -1;
+}
+
+/* Checked States: Natural, and with class (via JS, for IE8) */
+.segmented-control-input:checked + .segmented-control-button {
+    @include punched_in_box_shadow;
+    /* Here comes the !important train, due to !important up above. Choo Choo! */
+}
+
+/* Apparently this rule might need to be split out from :checked selector for IE8 */
+.segmented-control-segment.checked .segmented-control-button {
+    @include punched_in_box_shadow;
+}
 
