@@ -46,7 +46,7 @@ $buttonFontSize: 16px;
 	// as the 2px translation on :active shaves some of the
 	// clickable are of the button
 	position: relative;
-	.button:before {
+	&:before {
 		content: '';
 		position: absolute;
 		outline: 1px solid blue;
