@@ -957,7 +957,11 @@ input[type="submit"] {
   -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+  box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+  -moz-transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  -o-transform: translate(0px, 2px);
+  transform: translate(0px, 2px); }
   .button:active,
   button:active,
   input[type="submit"]:active {
@@ -965,10 +969,10 @@ input[type="submit"] {
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .button:hover,
   button:hover,
   input[type="submit"]:hover {
@@ -1047,6 +1051,10 @@ input[type="submit"].button--primary {
   -webkit-box-shadow: #851518 0px 2px 0px 0px;
   -o-box-shadow: #851518 0px 2px 0px 0px;
   box-shadow: #851518 0px 2px 0px 0px;
+  -moz-transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  -o-transform: translate(0px, 2px);
+  transform: translate(0px, 2px);
   color: white !important;
   background: #e0393e; }
   .primary:active,
@@ -1058,10 +1066,10 @@ input[type="submit"].button--primary {
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
     -o-box-shadow: #851518 0px 0px 0px 0px;
     box-shadow: #851518 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .primary:hover,
   .button.primary:hover,
   .button--primary:hover,
@@ -1116,6 +1124,10 @@ input[type="submit"].button--black {
   -webkit-box-shadow: black 0px 2px 0px 0px;
   -o-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
+  -moz-transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  -o-transform: translate(0px, 2px);
+  transform: translate(0px, 2px);
   color: white !important;
   background: black; }
   .button--black:active,
@@ -1124,10 +1136,10 @@ input[type="submit"].button--black {
     -webkit-box-shadow: black 0px 0px 0px 0px;
     -o-box-shadow: black 0px 0px 0px 0px;
     box-shadow: black 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .button--black:hover,
   input[type="submit"].button--black:hover {
     background: black; }
@@ -1161,6 +1173,10 @@ input[type="submit"].button--black {
   -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
   -o-box-shadow: #bfbfbf 0px 2px 0px 0px;
   box-shadow: #bfbfbf 0px 2px 0px 0px;
+  -moz-transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  -o-transform: translate(0px, 2px);
+  transform: translate(0px, 2px);
   color: #e0393e !important;
   background: white; }
   .button--white:active,
@@ -1169,10 +1185,10 @@ input[type="submit"].button--black {
     -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
     -o-box-shadow: #bfbfbf 0px 0px 0px 0px;
     box-shadow: #bfbfbf 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .button--white:hover,
   input[type="submit"].button--black:hover {
     background: #ebebeb; }
@@ -1206,6 +1222,10 @@ input[type="submit"].button--blue {
   -webkit-box-shadow: #005893 0px 2px 0px 0px;
   -o-box-shadow: #005893 0px 2px 0px 0px;
   box-shadow: #005893 0px 2px 0px 0px;
+  -moz-transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
+  -o-transform: translate(0px, 2px);
+  transform: translate(0px, 2px);
   color: white !important;
   background: #13a1ff; }
   .button--blue:active,
@@ -1214,10 +1234,10 @@ input[type="submit"].button--blue {
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
     -o-box-shadow: #005893 0px 0px 0px 0px;
     box-shadow: #005893 0px 0px 0px 0px;
-    -moz-transform: translate(0px, 2px);
-    -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
-    transform: translate(0px, 2px); }
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .button--blue:hover,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
