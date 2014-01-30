@@ -70,7 +70,6 @@ $buttonFontSize: 16px;
 
 	@extend %_button_base;
 	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
-	@include transform(translateZ(1px));
 	color: $textColor !important; // need this for chapstick
 	background: $bgColor;
 
