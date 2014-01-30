@@ -21,11 +21,10 @@ input[type="submit"] {
 	color: $C_secondaryGray !important; // need this for chapstick
 	background: $C_lineGray;
 	@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
-	@include transform(translate(0px, 2px));
 
 	&:active {
 		@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
-		@include transform(translate(0px, 0px));
+		@include transform(translate(0px, 2px));
 	}
 
 	&:hover {
