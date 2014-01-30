@@ -40,6 +40,22 @@ $buttonFontSize: 16px;
 		font-size: 12px;
 		padding: 5px 14px;
 	}
+
+	// CHROME FIX:
+	// We append a pseudo element to intercept click events,
+	// as the 2px translation on :active shaves some of the
+	// clickable are of the button
+	position: relative;
+	.button:before {
+		content: '';
+		position: absolute;
+		outline: 1px solid blue;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
 }
 
 %_button_base_flat {

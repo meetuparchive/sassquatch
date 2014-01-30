@@ -862,7 +862,8 @@ input[type="submit"].button--blue {
   -webkit-text-shadow: none;
   -ms-text-shadow: none;
   -o-text-shadow: none;
-  text-shadow: none; }
+  text-shadow: none;
+  position: relative; }
   .button-flat:focus,
   .button-flat--gray:focus,
   .button-flat--white:focus,
@@ -896,6 +897,29 @@ input[type="submit"].button--blue {
   .small.button--blue {
     font-size: 12px;
     padding: 5px 14px; }
+  .button-flat .button:before,
+  .button-flat--gray .button:before,
+  .button-flat--white .button:before,
+  .button-flat--black .button:before,
+  .button-flat--red .button:before,
+  .button-photo .button:before,
+  .button-photo--white .button:before,
+  .button .button:before,
+  button .button:before,
+  input[type="submit"] .button:before,
+  .primary .button:before,
+  .button--primary .button:before,
+  .button--black .button:before,
+  .button--white .button:before,
+  .button--blue .button:before {
+    content: '';
+    position: absolute;
+    outline: 1px solid blue;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; }
 
 .button-flat,
 .button-flat--gray,
