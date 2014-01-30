@@ -952,12 +952,16 @@ input[type="submit"].button--blue {
 .button,
 button,
 input[type="submit"] {
-  color: rgba(0, 0, 0, 0.67) !important;
-  background: rgba(0, 0, 0, 0.1);
   -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+  box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
+  -moz-transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
+  color: rgba(0, 0, 0, 0.67) !important;
+  background: rgba(0, 0, 0, 0.1); }
   .button:active,
   button:active,
   input[type="submit"]:active {
@@ -1047,6 +1051,10 @@ input[type="submit"].button--primary {
   -webkit-box-shadow: #851518 0px 2px 0px 0px;
   -o-box-shadow: #851518 0px 2px 0px 0px;
   box-shadow: #851518 0px 2px 0px 0px;
+  -moz-transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
   color: white !important;
   background: #e0393e; }
   .primary:active,
@@ -1116,6 +1124,10 @@ input[type="submit"].button--black {
   -webkit-box-shadow: black 0px 2px 0px 0px;
   -o-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
+  -moz-transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
   color: white !important;
   background: black; }
   .button--black:active,
@@ -1161,6 +1173,10 @@ input[type="submit"].button--black {
   -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
   -o-box-shadow: #bfbfbf 0px 2px 0px 0px;
   box-shadow: #bfbfbf 0px 2px 0px 0px;
+  -moz-transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
   color: #e0393e !important;
   background: white; }
   .button--white:active,
@@ -1206,6 +1222,10 @@ input[type="submit"].button--blue {
   -webkit-box-shadow: #005893 0px 2px 0px 0px;
   -o-box-shadow: #005893 0px 2px 0px 0px;
   box-shadow: #005893 0px 2px 0px 0px;
+  -moz-transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
   color: white !important;
   background: #13a1ff; }
   .button--blue:active,
