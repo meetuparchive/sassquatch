@@ -41,21 +41,6 @@ $buttonFontSize: 16px;
 		padding: 5px 14px;
 	}
 
-	// CHROME FIX:
-	// We append a pseudo element to intercept click events,
-	// as the 2px translation on :active shaves some of the
-	// clickable are of the button
-	position: relative;
-	&:before {
-		content: '';
-		position: absolute;
-		outline: 1px solid blue;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 1;
-	}
 }
 
 %_button_base_flat {
@@ -67,6 +52,24 @@ $buttonFontSize: 16px;
 		-o-box-shadow: none;
 		-ms-box-shadow: none;
 		box-shadow: none;
+	}
+}
+
+// Adds a transparent pseudo element
+// that bleeds about 3px from the top of the button
+// to intercept clicks when the button itself
+// is translated down 2px
+%_chrome_button_fix {
+	position: relative;
+	&:before {
+		@include transform(translateZ(-1px));
+		content: '';
+		background: transparent;
+		position: absolute;
+		top: -4px;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 }
 
@@ -85,6 +88,7 @@ $buttonFontSize: 16px;
 	}
 
 	@extend %_button_base;
+	@extend %_chrome_button_fix;
 	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
 	color: $textColor !important; // need this for chapstick
 	background: $bgColor;
