@@ -1,24 +1,24 @@
-# SassQuatch
-SassQuatch is a CSS foundation and framework for [Meetup](http://www.meetup.com), built with [Sass](http://sass-lang.com/).
+# Sassquatch
+Sassquatch is a CSS foundation and framework for [Meetup](http://www.meetup.com), built with [Sass](http://sass-lang.com/).
 
 
 - - -
 
 ## Installation
 
-SassQuatch can be installed or updated via the [bower](https://github.com/twitter/bower) package manager, which requires Node 0.8.0 or higher:
+Sassquatch can be installed or updated via the [bower](https://github.com/twitter/bower) package manager, which requires Node 0.8.0 or higher:
 
 	$ bower install sassquatch
 
-SassQuatch will be installed in `./components/sassquatch` unless you've customized your bower install directory.
+Sassquatch will be installed in `./components/sassquatch` unless you've customized your bower install directory.
 
 - - -
 
 ## Usage
 
-### Using SassQuatch with CSS
+### Using Sassquatch with CSS
 
-This package contains a minified compiled CSS file for both mobile and desktop SassQuatch.
+This package contains a minified compiled CSS file for both mobile and desktop Sassquatch.
 
 #### Desktop CSS
 
@@ -29,7 +29,7 @@ This package contains a minified compiled CSS file for both mobile and desktop S
     <link rel="stylesheet" href="components/sassquatch/mobile/sassquatch_m.css" />
 
 
-### Using SassQuatch with Sass
+### Using Sassquatch with Sass
 
 You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass file:
 	
