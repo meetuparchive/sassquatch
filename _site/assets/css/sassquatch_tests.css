@@ -958,10 +958,6 @@ input[type="submit"].button--blue {
   .button--white:before,
   .button--blue:before,
   input[type="submit"].button--blue:before {
-    -moz-transform: translateZ(-1px);
-    -webkit-transform: translateZ(-1px);
-    -o-transform: translateZ(-1px);
-    transform: translateZ(-1px);
     content: '';
     background: transparent;
     position: absolute;

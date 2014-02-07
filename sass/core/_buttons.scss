@@ -17,7 +17,9 @@
 button,
 input[type="submit"] {
 	@extend %_button_base;
-	@extend %_chrome_button_fix;
+	@if $platform == "desktop" {
+		@extend %_chrome_button_fix;
+	}
 
 	color: $C_secondaryGray !important; // need this for chapstick
 	background: $C_lineGray;
