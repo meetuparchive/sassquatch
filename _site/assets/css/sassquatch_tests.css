@@ -944,7 +944,8 @@ input[type="submit"].button--black,
 .button--white,
 .button--blue,
 input[type="submit"].button--blue {
-  position: relative; }
+  position: relative;
+  z-index: 4999; }
   .button:before,
   button:before,
   input[type="submit"]:before,
@@ -964,7 +965,8 @@ input[type="submit"].button--blue {
     top: -4px;
     left: 0;
     right: 0;
-    bottom: 0; }
+    bottom: 0;
+    z-index: 4998; }
 
 /**
 * Default button
