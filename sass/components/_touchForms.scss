@@ -320,6 +320,9 @@
 			vertical-align: top;
 			padding-top: $topOffset;
 		}
+		.touchList-label--input {
+			padding-top: 0;  // top padding taken care of by label.ffbox-fix
+		}
 	}
 
 
@@ -439,9 +442,13 @@
 	/*  ======================================================================= */
 	/*  TEXTAREA STYLES  */
 
-	.touchList-label--textarea {
+	.touchList .touchList-label--textarea {
+		// using `.touchList` parent for font-size override
+		$scale_factor: 0.9;  // $FS_small is too small
+		@include color_textTertiary;
+		font-size: $scale_factor * 1em;
+		padding: ($P_secondary/$scale_factor) ($P_secondary/$scale_factor) 0;
 		line-height: $LH_tall;
-		padding: $P_secondary $P_secondary 0;
 		// NOTE: this expanded line height value bumps the overall height of this
 		// element to 32px (aka 2em), which arguably makes it fit better into our
 		// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
