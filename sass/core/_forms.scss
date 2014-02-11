@@ -125,18 +125,18 @@ input[type=file] {
 
 textarea {
 	height: auto;
-    width: 100%;
+	width: 100%;
 }
 
 /**
 * Placeholder styles
 */
 input, textarea {
-    @include input-placeholder {
-        color: $C_text;
-        font-style: italic;
-        opacity: .3;
-    }
+	@include input-placeholder {
+		color: $C_text;
+		font-style: italic;
+		opacity: .3;
+	}
 }
 
 
@@ -175,7 +175,7 @@ input, textarea {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-    border-width: 0px;
+	border-width: 0px;
 }
 
 /**
@@ -184,21 +184,20 @@ input, textarea {
 [disabled],
 [disabled="disabled"],
 .disabled {
-    opacity: 0.7;
-    color: $C_text_less;
-    cursor: auto !important;
-    &:focus {
-        border-color: $C_line;
+	opacity: 0.7;
+	color: $C_text_less;
+	cursor: auto !important;
+	&:focus {
+		border-color: $C_line;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
-    }
+	}
 }
 [disabled],
 [disabled="disabled"] {
     background-color: $C_line_less;
 }
-
 /* {{{ Feedback/Error states */
 label.required:after {
 	margin-left: 0.15em;
@@ -215,22 +214,22 @@ input.error, select.error, textarea.error {
 }
 
 .fieldError {
-    font-style: italic;
+	font-style: italic;
 }
 
 /* legacy support */
 .inlineErrorMsgs {
-    padding-left: 0;
-    li {
-        list-style: none;
-    }
+	padding-left: 0;
+	li {
+		list-style: none;
+	}
 }
 /* }}} */
 
 /* {{{ char counter */
 .counter { /*new style*/
-    font-size: 10px;
-    color: $C_text_less;
+	font-size: 10px;
+	color: $C_text_less;
 }
 .counter,
 
@@ -251,13 +250,13 @@ input[type=submit].big {
 }
 label.big,
 legend.big {
-    font-size: $bigFontSize - 2;
-    font-family: $headingFontStack;
+	font-size: $bigFontSize - 2;
+	font-family: $headingFontStack;
 }
 select.big {
-    height: $bigFontSize*2 - 2;
-    *height: auto;
-    line-height: $bigFontSize*2 -2;
+	height: $bigFontSize*2 - 2;
+	*height: auto;
+	line-height: $bigFontSize*2 -2;
 }
 /* }}} */
 
@@ -276,8 +275,8 @@ select.big {
 	/* ======================================================================== */
 	/* BUTTON SIZING
 	 * Working with a 16pt grid, we can make small buttons 24pt (1.5x)
-	 * normal buttons 32pt (2x), and big buttons 48pt (3x). This is in keeping 
-	 * with our 16pt media grid draft that icons and avatars also use (at 
+	 * normal buttons 32pt (2x), and big buttons 48pt (3x). This is in keeping
+	 * with our 16pt media grid draft that icons and avatars also use (at
 	 * least on mobile).
 	 */
 
@@ -291,7 +290,7 @@ select.big {
 		color: $C_text !important;
 		/* TODO: This is due to some overrides in mobile CSS that need cleaning up.
 		 *
-		 * See: lib/m/_defaults_m.scss : Line 57 
+		 * See: lib/m/_defaults_m.scss : Line 57
 		 */
 
 		/* Formula : desired height - font size - combined top and bottom border
@@ -305,7 +304,7 @@ select.big {
 		margin: 0; /* OVERRIDE */
 		/* NOTE: For mobile buttons in general, they're probably going to be in a
 		 * section of something like a ff-box, or a `.doc-content` (for padding)
-		 * when placed directly on the background. 
+		 * when placed directly on the background.
 		 *
 		 * The bottom margin isn't as useful here, and can lead to some cascade
 		 * issues and overrides--so it's set to zero here.
