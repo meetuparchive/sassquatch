@@ -626,7 +626,7 @@
 		color: $C_textTertiary;
 		line-height: $LH_standard;
 
-		margin-top: -0.8em;                                           // *2
+		margin-top: -$P_secondary;                                    // *2
 		padding: 0 ($P_secondary/$FS_small * 1em) ($P_secondary * 2); // *2
 
 		&:empty {     // *2
