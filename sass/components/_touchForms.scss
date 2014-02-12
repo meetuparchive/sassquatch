@@ -444,10 +444,9 @@
 
 	.touchList .touchList-label--textarea {
 		// using `.touchList` parent for font-size override
-		$scale_factor: 0.9;  // $FS_small is too small
-		@include color_textTertiary;
-		font-size: $scale_factor * 1em;
-		padding: ($P_secondary/$scale_factor) ($P_secondary/$scale_factor) 0;
+		@include color_textSecondary;
+		font-size: $FS_medium;
+		padding: ($P_secondary/$FS_medium * 1em) ($P_secondary/$FS_medium * 1em) 0;
 		line-height: $LH_tall;
 		margin-bottom: -$P_secondary;
 		// NOTE: this expanded line height value bumps the overall height of this

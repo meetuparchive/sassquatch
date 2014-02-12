@@ -126,6 +126,9 @@
 	 */
 	.touchList-item {
 		@extend %dividerBottom;
+		p:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.touchList-item--padded {
