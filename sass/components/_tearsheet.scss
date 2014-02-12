@@ -12,64 +12,56 @@ as well as a few different states/types:
 
 */
 
-@import "../util/tearsheetFactory";
+/**
+* Tearsheet utils
+* extends and mixins for creating a
+* tearsheet class for a given px size
+*/
+
+%tearsheet {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;  // remove link decoration, if any
+	margin-bottom: $spacing;
+	font-weight: $W_bold;
+	.month {
+		text-transform: uppercase;
+		background-color: $C_buttonPrimary;
+		color: $C_textPrimaryInverted;
+		display: block;
+	}
+	.day {
+		@extend %numerialFont;
+		display: block;
+		border: 2px solid $C_line;
+		color: $C_text !important; // ignore link colors, theme
+		border-top-width: 0;
+	}
+}
+
+@mixin tearsheet($size: 40){
+	$size-px: $size * 1px;
+	.tearsheet-#{$size} {
+		@extend %tearsheet;
+		width: $size-px;
+		height: $size-px;
+		.month{
+			@include round-ne($defaultRadius);
+			@include round-nw($defaultRadius);
+			font-size: round( $size * 1.2/5 ) * 1px;
+			height: $size * 2/5 * 1px;
+			line-height: $size * 0.45 * 1px;
+		}
+		.day {
+			// might want to do something fancy here to go to 1px
+			// borders when $size < (some threshold)
+			line-height: $size * 3/5 * 1px;
+			font-size: $size * 2/5 * 1px;
+		}
+	}
+}
 
 @if $platform == "desktop" {
-
-	.tearsheet-disabled {
-		a:hover & {
-			.month {
-				background-color: darken($C_gray, 10%);
-			}
-		}
-		.month {
-			background-color: $C_gray;
-		}
-	}
-	.tearsheet-add {
-		// standard markup for a tearsheet-add will have NO .month text,
-		// NO .day text, and NO .time text.
-		// .day-of-week text should be
-		// "Choose <br>another date" or somethings similar
-		a:hover & {
-			.time {
-				background-color: white;
-			}
-		}
-		.month {
-			position: relative;
-			&:after {
-				content: '+';
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 38px;
-				font-weight: bold;
-				-webkit-font-smoothing: antialiased;
-				text-align: center;
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: 50%;
-				width: 30px;
-				height: 30px;
-				border-radius: 15px;
-				line-height: 0.8;
-				margin-left: -14px;
-				margin-bottom: -15px;
-				margin-top: 12.5px;
-				background-color: inherit;
-				color: inherit;
-			}
-		}
-		.day-of-week {
-			padding-top: 2em;
-			margin-bottom: -2.5em;  // keeps the height similar to regular tearsheets
-		}
-		.time {
-			background-color: $C_gray_lightest;
-			font-weight: bold;
-			border-width: 0 1px 1px;
-		}
-	}
 
 	@include tearsheet(25);
 	@include tearsheet(30);
