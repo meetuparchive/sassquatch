@@ -2,7 +2,7 @@
 .sass-cache
 .bundle
 *.swp
-css/
+css/*
 bower_components/
 jekyll_docs/_site/
 jekyll_docs.sublime*
