@@ -604,28 +604,35 @@
 	}
 
 
-	/* Helper Text */
-	label.touchList-helperText {
-		// NOTE: extra label in selector is from the global font size overrides
-		// scoped to labels and h4s. If that's cleaned up, this selector can be
-		// simplified.
-
+	/**
+	 * Helper Text
+	 * Text applied below an input that provides contextual information
+	 * (like "Your email will never be shared" below an email <input>) or
+	 * validation information.
+	 *
+	 * Can also have an "error state" when enclosude in an element with an
+	 * `.error` class.
+	 *
+	 * Notes:
+	 * 1.	Extra <label> in selector is from the global font size overrides
+	 *		scoped to <label> and <h4> els on mobile web. When that's cleaned,
+	 *		this selector can be simplified.
+	 * 2.	Helper text should have bottom padding when populated, but not
+	 *		affect layout when empty. Hence, the :empty selector.
+	 * 3.	IE > 8, make sure there's no whitespace.
+	 */
+	label.touchList-helperText {     // *1
 		font-size: $FS_small;
 		font-weight: 300;
 		color: $C_gray70;
 		line-height: $LH_standard;
-		// NOTE: These font styles are pretty idiosyncratic/one-off, and should
-		// probably be cleaned up.
-		// -john
 
-		margin-top: -0.8em;
-		padding: 0 ($P_secondary/$FS_small * 1em) ($P_secondary * 2);
-		// helperText is tricky - it should have bottom padding when it is populated,
-		// but not affect layout when empty
-		&:empty {
-			// IE > 8 - make sure there's no whitespace
-			padding-bottom: 0;
-			margin: 0;
+		margin-top: -0.8em; // *2
+		padding: 0 ($P_secondary/$FS_small * 1em) ($P_secondary * 2); // *2
+
+		&:empty {     // *2
+			padding-bottom: 0; // *3
+			margin: 0;         // *3
 		}
 
 		.error & {
