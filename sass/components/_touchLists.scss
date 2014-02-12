@@ -113,9 +113,6 @@
 		height: $H_touchTargetDefault;
 		// NOTE: Needed to provide height to input items wrapped in a fix-flex
 		// box, so they can have a consistent height with the other cells.
-		.touchList-input--hasBlockLabel & {
-			margin-top: -$P_secondary;  // snuggle up with block label
-		}
 	}
 
 

@@ -449,6 +449,7 @@
 		font-size: $scale_factor * 1em;
 		padding: ($P_secondary/$scale_factor) ($P_secondary/$scale_factor) 0;
 		line-height: $LH_tall;
+		margin-bottom: -$P_secondary;
 		// NOTE: this expanded line height value bumps the overall height of this
 		// element to 32px (aka 2em), which arguably makes it fit better into our
 		// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
