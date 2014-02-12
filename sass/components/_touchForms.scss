@@ -445,9 +445,6 @@
 	.touchList .touchList-label--textarea {
 		// using `.touchList` parent for font-size override
 		@extend %tl-blockLabel;
-		// NOTE: this expanded line height value bumps the overall height of this
-		// element to 32px (aka 2em), which arguably makes it fit better into our
-		// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
 	}
 
 	.ffbox--textareaWrapper {
