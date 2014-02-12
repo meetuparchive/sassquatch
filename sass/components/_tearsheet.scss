@@ -18,41 +18,23 @@ as well as a few different states/types:
 * tearsheet class for a given px size
 */
 
-%tearsheet-interior {
-	display: block;
-	border: 1px solid $C_line;
-	font-weight: $W_bold;
-	color: $C_text !important; /* ignore link colors, theme */
-}
 %tearsheet {
-	$header_color: $C_buttonPrimary;  // this could be themed...
 	display: inline-block;
 	text-align: center;
-	text-decoration: none;
+	text-decoration: none;  // remove link decoration, if any
 	margin-bottom: $spacing;
-	&.tearsheet-expandable {
-		// nested selector to deal with height override
-		height: auto;
-	}
 	.month{
-		background-color: $header_color;
+		background-color: $C_buttonPrimary;
+		color: $C_textPrimaryInverted;
 		display: block;
-		color: white;
 	}
 	.day{
-		@extend %tearsheet-interior;
 		@extend %numerialFont;
-		border-width: 0 1px 1px;
-	}
-	.day-of-week {
-		@extend %tearsheet-interior;
-		@extend %numerialFont;
-		border-width: 0 1px;
-		font-size: 11px;
-		margin-bottom: -0.8em;
-		padding-top: .4em;
-		height: 1.4em;
-		line-height: 1.2;
+		display: block;
+		border: 2px solid $C_line;
+		font-weight: $W_bold;
+		color: $C_text !important; // ignore link colors, theme
+		border-top-width: 0;
 	}
 }
 
@@ -67,7 +49,9 @@ as well as a few different states/types:
 			height: $size * 2/5 * 1px;
 			line-height: $size * 0.45 * 1px;
 		}
-		.day{
+		.day {
+			// might want to do something fancy here to go to 1px
+			// borders when $size < (some threshold)
 			line-height: $size * 3/5 * 1px;
 			font-size: $size * 2/5 * 1px;
 		}

@@ -15,7 +15,7 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .nav-pagination {
+.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
 
@@ -1953,13 +1953,7 @@ as well as a few different states/types:
 * extends and mixins for creating a
 * tearsheet class for a given px size
 */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .tearsheet-25 .month, .tearsheet-30 .month, .tearsheet-40 .month, .tearsheet .month, .tearsheet-80 .month {
-  -webkit-transition: all 150ms ease-in-out;
-  -moz-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out; }
-
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time {
-  background-color: #f4f4f4;
+.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week {
   display: block;
   border: 1px solid #dddddd;
   font-weight: 700;
@@ -1967,28 +1961,17 @@ as well as a few different states/types:
   /* ignore link colors, theme */ }
 
 .tearsheet-25, .tearsheet-30, .tearsheet-40, .tearsheet, .tearsheet-80 {
-  border-radius: 2px;
   display: inline-block;
   text-align: center;
   text-decoration: none;
   margin-bottom: 18px; }
   .tearsheet-expandable.tearsheet-25, .tearsheet-expandable.tearsheet-30, .tearsheet-expandable.tearsheet-40, .tearsheet-expandable.tearsheet, .tearsheet-expandable.tearsheet-80 {
     height: auto; }
-  a:hover .tearsheet-25 .month, a:hover .tearsheet-30 .month, a:hover .tearsheet-40 .month, a:hover .tearsheet .month, a:hover .tearsheet-80 .month {
-    background-color: #c71f24; }
-  a:hover .tearsheet-25 .time, a:hover .tearsheet-30 .time, a:hover .tearsheet-40 .time, a:hover .tearsheet .time, a:hover .tearsheet-80 .time {
-    background-color: #f4f4f4;
-    color: black !important; }
-  a:hover .tearsheet-25 .day, a:hover .tearsheet-30 .day, a:hover .tearsheet-40 .day, a:hover .tearsheet .day, a:hover .tearsheet-80 .day, a:hover .tearsheet-25 .day-of-week, a:hover .tearsheet-30 .day-of-week, a:hover .tearsheet-40 .day-of-week, a:hover .tearsheet .day-of-week, a:hover .tearsheet-80 .day-of-week {
-    background-color: white;
-    color: black !important; }
   .tearsheet-25 .month, .tearsheet-30 .month, .tearsheet-40 .month, .tearsheet .month, .tearsheet-80 .month {
-    background-color: #e0393e;
+    background-color: #e2373c;
     display: block;
-    color: white;
-    border-radius: 2px 2px 0 0; }
+    color: white; }
   .tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day {
-    border-radius: 0 0 2px 2px;
     border-width: 0 1px 1px; }
   .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week {
     border-width: 0 1px;
@@ -1997,51 +1980,6 @@ as well as a few different states/types:
     padding-top: .4em;
     height: 1.4em;
     line-height: 1.2; }
-  .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time {
-    -moz-border-radius: 0 0 2px 2px;
-    -webkit-border-radius: 0 0 2px 2px;
-    border-radius: 0 0 2px 2px;
-    margin-top: -2px;
-    padding: 3px;
-    font-size: 11px;
-    background-color: #eeeeee; }
-
-a:hover .tearsheet-disabled .month {
-  background-color: #c4c4c4; }
-.tearsheet-disabled .month {
-  background-color: #dddddd; }
-
-a:hover .tearsheet-add .time {
-  background-color: white; }
-.tearsheet-add .month {
-  position: relative; }
-  .tearsheet-add .month:after {
-    content: '+';
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 38px;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    text-align: center;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    line-height: 0.8;
-    margin-left: -14px;
-    margin-bottom: -15px;
-    margin-top: 12.5px;
-    background-color: inherit;
-    color: inherit; }
-.tearsheet-add .day-of-week {
-  padding-top: 2em;
-  margin-bottom: -2.5em; }
-.tearsheet-add .time {
-  background-color: #f4f4f4;
-  font-weight: bold;
-  border-width: 0 1px 1px; }
 
 .tearsheet-25 {
   width: 25px;
