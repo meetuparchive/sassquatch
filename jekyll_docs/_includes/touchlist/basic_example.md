@@ -12,7 +12,7 @@
             <a href="url" class="touchList-item-action">
                 <div class="ffbox ffbox--touchList-item">
                     <div class="ffbox-flex">
-                        <p>Paragraph content, wrapping 'action' link</p>
+                        <p>Paragraph with link wrap</p>
                     </div>
                 </div>
             </a>

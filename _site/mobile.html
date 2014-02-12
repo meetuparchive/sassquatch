@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		
+
 		<title>Meetup Mobile Styleguide</title>
-		
+
 		<!-- our mobile standalone for now -->
 		<link rel="stylesheet" href="assets/css/sassquatch_mobile.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/candidates_mobile.css" type="text/css" />
@@ -14,7 +14,7 @@
 		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
 		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
 		<!-- <link rel="stylesheet" href="assets/syntax/desert.css" type="text/css" /> -->
-		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />	
+		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />
 
 		<script src="assets/syntax/prettify.js" type="text/javascript"></script>
 		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
@@ -24,7 +24,7 @@
 		<style>
 			/*
 			 	we are not going to make our page have default margins,
-				so as not to get in the way of docbox, doc-content examples 
+				so as not to get in the way of docbox, doc-content examples
 				(esp full-width)
 			*/
 			.doc-page {
@@ -32,27 +32,28 @@
 				padding-right:0;
 
 				/* Add width limiting */
+				width: auto;
 				max-width: 768px;
 				margin: 0 auto;
 			}
-			
+
 			/*
 			 	for the guide,
-				immediate children of doc-page will be padded 
+				immediate children of doc-page will be padded
 				so we don't have to wrap them all in doc-content
 			*/
-			.doc-page > p, 
+			.doc-page > p,
 			.doc-page > h1,
 			.doc-page > .doc-content {
 				padding-left:12px;
 				padding-right:12px;
 			}
-			
+
 			/* the borders don't look right on the examples */
 			.doc-page > .doc-content {
 				border:0;
 			}
-			
+
 			.section-subtitle {
 				padding-top:12px;
 				margin-top:12px;
@@ -60,14 +61,14 @@
 				margin-right:12px;
 				border-top:1px solid #DDD;
 			}
-			
+
 			/* inset the code examples */
 			.doc-page > .highlight,
 			.j-code {
 				margin-left:12px;
 				margin-right:12px;
 			}
-			
+
 			.j-show-code {
 				margin-left:12px;
 				margin-right:12px;
@@ -84,7 +85,7 @@
 
 
 	<body>
-		
+
 		<ul id="guide-nav" class="inlineList">
 			<li><a href="index.html">&larr; Desktop</a></li>
 			<li><a href="#lists">Layout</a></li>
@@ -92,74 +93,74 @@
 			<li><a href="#forms">Forms</a></li>
 			<li><a href="#navigation">Nav</a></li>
 		</ul>
+
+
 		
-		
-		
-		
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="intro">
-						
+
 						<h1>Sassquatch Mobile</h1>
 
 						<p>Visually documenting differences from desktop Sassquatch and new mobile patterns.</p>
@@ -168,113 +169,113 @@
 	
 <p class="align-center"><img src="assets/img/construc-57.gif" />&nbsp;&nbsp;Pardon our dust!</p>
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="layout">
-						
+
 						<h1>Layout</h1>
 
 						
@@ -351,117 +352,117 @@
 </div>
 
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="touchlists-m">
-						
+
 						<h1>Touch Lists</h1>
 
 						<p>Right now, the touchList class is applying some overrides to the way font-size, margin and padding are defined in sectionLists and dividedLists</p>
@@ -483,7 +484,7 @@
             <a href="url" class="touchList-item-action">
                 <div class="ffbox ffbox--touchList-item">
                     <div class="ffbox-flex">
-                        <p>Paragraph content, wrapping 'action' link</p>
+                        <p>Paragraph with link wrap</p>
                     </div>
                 </div>
             </a>
@@ -541,7 +542,7 @@
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;url&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item-action&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;p&gt;</span>Paragraph content, wrapping &#39;action&#39; link<span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>Paragraph with link wrap<span class="nt">&lt;/p&gt;</span>
                     <span class="nt">&lt;/div&gt;</span>
                 <span class="nt">&lt;/div&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
@@ -872,93 +873,93 @@
 
 
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="forms">
-						
+
 						<h1>Forms</h1>
 
 						<p>Examples of what we have right now</p>
@@ -1563,155 +1564,155 @@
 
     
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="navigation">
-						
+
 						<h1>Navigation</h1>
 
 						<p class="lighter">TBDocumented</p>
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 	</body>

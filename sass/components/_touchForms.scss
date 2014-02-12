@@ -628,8 +628,8 @@
 		font-size: $FS_small;
 		line-height: $LH_standard;
 
-		margin-top: -$P_secondary;                                    // *2
-		padding: 0 ($P_secondary/$FS_small * 1em) $P_primary; // *2
+		margin-top: -$P_secondary;                              // *2
+		padding: 0 ($P_secondary/$FS_small * 1em) $P_primary;   // *2
 
 		&:empty {     // *2
 			padding-bottom: 0; // *3
