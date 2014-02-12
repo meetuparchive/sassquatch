@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch",
-	"version": "1.6.18",
+	"version": "1.6.19",
 	"description": "CSS foundation and framework for Meetup",
 	"main": [
 		"./sass",
@@ -18,7 +18,7 @@
 		"_site"
 	],
 	"dependencies": {
-		"meetup-swatches": "0.4.0"
+		"meetup-swatches": "0.4.1"
 	},
 	"license": "MIT"
 }
