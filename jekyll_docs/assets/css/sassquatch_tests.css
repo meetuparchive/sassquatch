@@ -15,7 +15,7 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .nav-pagination {
+.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
 
@@ -1953,39 +1953,34 @@ as well as a few different states/types:
 * extends and mixins for creating a
 * tearsheet class for a given px size
 */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week {
-  display: block;
-  border: 1px solid #dddddd;
-  font-weight: 700;
-  color: #555555 !important;
-  /* ignore link colors, theme */ }
-
 .tearsheet-25, .tearsheet-30, .tearsheet-40, .tearsheet, .tearsheet-80 {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  margin-bottom: 18px; }
-  .tearsheet-expandable.tearsheet-25, .tearsheet-expandable.tearsheet-30, .tearsheet-expandable.tearsheet-40, .tearsheet-expandable.tearsheet, .tearsheet-expandable.tearsheet-80 {
-    height: auto; }
+  margin-bottom: 18px;
+  font-weight: 700; }
   .tearsheet-25 .month, .tearsheet-30 .month, .tearsheet-40 .month, .tearsheet .month, .tearsheet-80 .month {
+    text-transform: uppercase;
     background-color: #e2373c;
-    display: block;
-    color: white; }
+    color: white;
+    display: block; }
   .tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day {
-    border-width: 0 1px 1px; }
-  .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week {
-    border-width: 0 1px;
-    font-size: 11px;
-    margin-bottom: -0.8em;
-    padding-top: .4em;
-    height: 1.4em;
-    line-height: 1.2; }
+    display: block;
+    border: 2px solid #dddddd;
+    color: #555555 !important;
+    border-top-width: 0; }
 
 .tearsheet-25 {
   width: 25px;
   height: 25px; }
   .tearsheet-25 .month {
-    font-size: 7px;
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 6px;
     height: 10px;
     line-height: 11.25px; }
   .tearsheet-25 .day {
@@ -1996,7 +1991,13 @@ as well as a few different states/types:
   width: 30px;
   height: 30px; }
   .tearsheet-30 .month {
-    font-size: 8px;
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 7px;
     height: 12px;
     line-height: 13.5px; }
   .tearsheet-30 .day {
@@ -2007,7 +2008,13 @@ as well as a few different states/types:
   width: 40px;
   height: 40px; }
   .tearsheet-40 .month, .tearsheet .month {
-    font-size: 11px;
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 10px;
     height: 16px;
     line-height: 18px; }
   .tearsheet-40 .day, .tearsheet .day {
@@ -2018,7 +2025,13 @@ as well as a few different states/types:
   width: 80px;
   height: 80px; }
   .tearsheet-80 .month {
-    font-size: 22px;
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 19px;
     height: 32px;
     line-height: 36px; }
   .tearsheet-80 .day {

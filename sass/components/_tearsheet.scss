@@ -23,16 +23,17 @@ as well as a few different states/types:
 	text-align: center;
 	text-decoration: none;  // remove link decoration, if any
 	margin-bottom: $spacing;
-	.month{
+	font-weight: $W_bold;
+	.month {
+		text-transform: uppercase;
 		background-color: $C_buttonPrimary;
 		color: $C_textPrimaryInverted;
 		display: block;
 	}
-	.day{
+	.day {
 		@extend %numerialFont;
 		display: block;
 		border: 2px solid $C_line;
-		font-weight: $W_bold;
 		color: $C_text !important; // ignore link colors, theme
 		border-top-width: 0;
 	}
@@ -45,7 +46,9 @@ as well as a few different states/types:
 		width: $size-px;
 		height: $size-px;
 		.month{
-			font-size: round( $size * 1.4/5 ) * 1px;
+			@include round-ne($defaultRadius);
+			@include round-nw($defaultRadius);
+			font-size: round( $size * 1.2/5 ) * 1px;
 			height: $size * 2/5 * 1px;
 			line-height: $size * 0.45 * 1px;
 		}
