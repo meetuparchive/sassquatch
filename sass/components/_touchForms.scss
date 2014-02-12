@@ -207,10 +207,46 @@
 	/*  ======================================================================= */
 	/*  TEXT INPUT STYLES  */
 
+	/**
+	 * Inputs inside TL-input <li> items.
+	 * Notes:
+	 * 1.	These are for when a multi-line label (for example, a checkbox or
+	 *		radio item) wraps--this prevents the text of the label from hitting
+	 *		the edges of the cell.
+	 */
 	.touchList-label--input {
+		padding-top: ($P_secondary / 2); // *1
+		padding-bottom: ($P_secondary / 2); // *1
 		padding-left: $P_secondary;
-		white-space: nowrap;
 		font-weight: normal;
+	}
+
+	/**
+	 * Custom TL input-and-label interactions
+	 * Settings for the combination of text <input> and <label> els next
+	 * to each other in fix-flex boxes.
+	 *
+	 * Notes:
+	 * 1.	These need to have a no-wrap property on the label. The reason is
+	 *		that these are typically in a `ffbox-fix` cell, and multi-word labels
+	 *		to the left of a flex cell will collapse without a &nbsp; manually
+	 *		inserted into the label.
+	 *
+	 *		The nowrap here prevents the collapse, but has to be factored out of
+	 *		a more generic selector to make sure labels can wrap on things like
+	 *		radio and checkbox items.
+	 *
+	 * 2.	Half the normal <input> padding on the left side.
+	 */
+	.touchList-item--input {
+
+		.touchList-label--input {
+			white-space: nowrap; // *1
+		}
+
+		.touchList-input--isSearchInput {
+			padding-left: ($P_secondary / 2); // *2
+		}
 	}
 
 	.touchList-item--input {
@@ -270,6 +306,8 @@
 			}
 		}
 	}
+
+
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
@@ -283,6 +321,7 @@
 			padding-top: $topOffset;
 		}
 	}
+
 
 
 	label.touchList-pseudoplaceholder {

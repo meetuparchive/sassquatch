@@ -95,7 +95,8 @@
 	vertical-align: bottom;
 }
 /* {{{ TODO: deprecate this */
-.center-able {
+.center-able,
+.centered {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -122,10 +123,10 @@
     @include inlineblock();
 }
 .muted {
-	color: $C_tertiaryGray;
+	@include color_textTertiary();
 
 	.inverted & {
-		color: $C_tertiaryGrayInverted;
+		@include color_textTertiaryInverted();
 	}
 }
 .muted-opacity{
@@ -177,9 +178,13 @@
 }
 
 a.unlink{
-    &:link, &:visited{
-        color: $C_secondaryGray;
-    }
+	&:link, &:visited {
+		@include color_textSecondary();
+	}
+	.inverted &:link,
+	.inverted &:visited {
+		@include color_textSecondaryInverted();
+	}
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */

@@ -6,8 +6,8 @@
 		-ms-text-size-adjust: 100%;
 	}
 	html, body {
+		@include color_textSecondary();
 		font-size: $baseFontSize;
-		color: $C_textSecondary;
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
 		font-weight: $W_normal;
@@ -27,7 +27,7 @@
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
-		color: $C_textSecondaryInverted;
+		@include color_textSecondaryInverted();
 
 		::-moz-selection {
 			background: opacify(#fff, 1);
@@ -80,8 +80,6 @@
 		}
 	}
 	ul, ol {
-		margin: 0;
-		padding: 0;
 		list-style-position: outside;
 		padding-left: 1.33em; /* indent by default */
 	}
@@ -124,15 +122,15 @@
 
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
+		@include color_textPrimary();
 		font-family: $headingFontStack;
-		color: $C_textPrimary;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
 		line-height: 1.1;
 		font-weight: $W_bold;
 		.inverted & {
-			color: $C_textPrimaryInverted;
+			@include color_textPrimaryInverted();
 		}
 	}
 	h1 {

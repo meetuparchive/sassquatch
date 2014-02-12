@@ -3,6 +3,8 @@
 * ------------------------------------------
 */
 
+$buttonFontSize: 16px;
+
 %_button_base {
 	@include button_personality();
 	@include round(3px);
@@ -11,12 +13,12 @@
 	@if $platform == "desktop" {
 		padding: 9px 18px 7px 18px;
 	} @else {
-		padding: 12px 18px 11px 18px;
+		padding: 14px 18px 12px 18px;
 	}
 	margin: 0 0 $baseline 0;
 	font-family: $uiControlFontStack;
 	font-weight: $W_bold;
-	font-size: $baseFontSize;
+	font-size: $buttonFontSize;
 	line-height: 1 !important;
 	text-decoration: none !important;
 	border-width: 0;
@@ -38,6 +40,36 @@
 		font-size: 12px;
 		padding: 5px 14px;
 	}
+
+}
+
+%_button_base_flat {
+	@extend %_button_base;
+	@include transition(all .1s ease-in-out);
+	&, &:active {
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		-o-box-shadow: none;
+		-ms-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+// Adds a transparent pseudo element
+// that bleeds about 3px from the top of the button
+// to intercept clicks when the button itself
+// is translated down 2px
+%_chrome_button_fix {
+	position: relative;
+	&:after {
+		content: '';
+		background: transparent;
+		position: absolute;
+		top: -4px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 }
 
 /**
@@ -55,6 +87,9 @@
 	}
 
 	@extend %_button_base;
+	@if $platform == "desktop" {
+		@extend %_chrome_button_fix;
+	}
 	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
 	color: $textColor !important; // need this for chapstick
 	background: $bgColor;
@@ -90,19 +125,28 @@
 * -----------------------------------------------
 */
 @mixin button-flat( $color ) {
-	@extend %_button_base;
-	@include transition(all .1s ease-in-out);
+	@extend %_button_base_flat;
 	color: $color !important;
 	background: transparent;
 	border: 2px solid $color;
 
-	&, &:active {
-		-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		-o-box-shadow: none;
-		-ms-box-shadow: none;
-		box-shadow: none;
+	&:hover {
+		background: $color;
+		color: getPrimaryTextColor($color) !important;
 	}
+}
+
+/**
+* Photo button
+* for overlaying photos
+* @param $color - single border/text/hover color
+* -----------------------------------------------
+*/
+@mixin button-photo( $color ) {
+	@extend %_button_base_flat;
+	color: $color !important;
+	background: rgba(0,0,0,0.25);
+	border: 2px solid $color;
 
 	&:hover {
 		background: $color;

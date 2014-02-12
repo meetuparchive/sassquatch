@@ -4,6 +4,7 @@
 		<p>As a rule, buttons are for actions, not navigation. This style applies to {% highlight html %}<input type="submit" />, <button> {% endhighlight %}, and anything with the class <code>.button</code>.</p> 
 		<p>The default is a simple gray button. There is also red <code>.primary</code> class for "do this one thing" actions.</p>		
 		<p>For side-by-side inputs and buttons, you'll probably want something a little smaller than the default button. For this, you can use the <code>.small</code> class.</p>		
+		<p class="highlighted"><strong>Note:</strong> a full list of button types can be found on <a href="tests/buttons.html" target="_blank">this test page</a></p>
 	</div>
 	<div class="unit lastUnit">
         <h3>Default buttons</h3>

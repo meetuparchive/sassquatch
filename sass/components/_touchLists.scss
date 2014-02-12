@@ -306,6 +306,10 @@
 		display: inline-block;
 		height: 100%;
 		vertical-align: middle;
+		// NOTE (2014-01): We could probably use the `font-size: 0` hack
+		// to get rid of the 4-5px size space at some point in the future,
+		// if this is still creating problems.
+		//
 		// Inline-block elements are usually ~4-5px wide in the browser
 		// calculations, somewhat arbitrarily. We have to pull this
 		// pseudo-element out of the way so that the image or icon we're

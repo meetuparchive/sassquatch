@@ -17,6 +17,9 @@
 button,
 input[type="submit"] {
 	@extend %_button_base;
+	@if $platform == "desktop" {
+		@extend %_chrome_button_fix;
+	}
 
 	color: $C_secondaryGray !important; // need this for chapstick
 	background: $C_lineGray;
@@ -139,4 +142,19 @@ input[type="submit"].button--blue {
 %button-flat--red,
 .button-flat--red {
 	@include button-flat( $C_red );
+}
+
+
+/**
+* ==============================================
+* PHOTO OVERLAY BUTTONS
+*/
+
+// Flat button (use over most photo bgs)
+// ---------------------------
+%button-photo,
+%button-photo--white,
+.button-photo,
+.button-photo--white {
+	@include button-photo( #fff );
 }
