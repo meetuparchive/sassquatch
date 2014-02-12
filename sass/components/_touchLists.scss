@@ -55,11 +55,8 @@
 		padding: 0; // RESET
 		font-size: $FS_base;
 		line-height: $LH_standard;
-		.touchList & {
-			// RESET
-			color: $C_text_headline;  // overloaded selector to override link color
-		}
 	}
+	.touchList
 
 	.touchList-text {
 		margin: 0;
@@ -126,6 +123,7 @@
 	 */
 	.touchList-item {
 		@extend %dividerBottom;
+		@include color_textPrimary;
 		p:last-child {
 			margin-bottom: 0;
 		}
@@ -154,7 +152,7 @@
 		// like a normal link - it's just a list item that happens to be
 		// touchable. Extra specificity to override a:link
 		.touchList-item & {
-			color: $C_text;
+			@include color_textPrimary;
 			display: block;
 		}
 	}
