@@ -93,7 +93,7 @@ input[type="submit"].button--blue, .nav-buttons label,
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  text-decoration: none!important; }
+  text-decoration: none !important; }
 
 .nav-tabs, .nav-pagination, .nav-buttons {
   /**
@@ -949,10 +949,15 @@ input[type="submit"].button--blue {
   button:after,
   input[type="submit"]:after,
   .primary:after,
+  .button.primary:after,
   .button--primary:after,
+  input[type="submit"].primary:after,
+  input[type="submit"].button--primary:after,
   .button--black:after,
+  input[type="submit"].button--black:after,
   .button--white:after,
-  .button--blue:after {
+  .button--blue:after,
+  input[type="submit"].button--blue:after {
     content: '';
     background: transparent;
     position: absolute;
@@ -1507,7 +1512,7 @@ input[type="submit"].button--blue {
     border-top: 1px solid #dddddd; }
   .doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
     float: none;
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #ddd;
     display: table-cell;
     vertical-align: top; }
   .doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
@@ -1543,7 +1548,7 @@ input[type="submit"].button--blue {
 .ie6 .doc-box .line .unit,
 .ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
 .ie7 .doc-box .line-gutters .unit {
-  float: left!important; }
+  float: left !important; }
 
 .doc-padding,
 .doc-content,
@@ -1718,7 +1723,7 @@ input[type="submit"].button--blue {
   .doc-content-jagged:after {
     content: '';
     height: 8px;
-    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 			5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 			9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A 			AAAASUVORK5CYII=") repeat-x top left;
+    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A AAAASUVORK5CYII=") repeat-x top left;
     background-size: 8px;
     display: block;
     position: absolute;
@@ -1728,7 +1733,7 @@ input[type="submit"].button--blue {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   .doc-content-jagged:after {
-    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 			8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh 			+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb 			iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
+    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh +lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
     background-size: 8px auto; } }
 /* }}} */
 hr.double-line {
@@ -2086,6 +2091,65 @@ a:hover .tearsheet-add .time {
   .tearsheet-80 .day {
     line-height: 48px;
     font-size: 32px; }
+
+/**
+* ==============================================
+* PILL LABELS
+*
+* labels for members (ie. "ORG", "FRIEND", etc.)
+*/
+/**
+* Pill Label factory mixins
+* ------------------------------------------
+*/
+.pill-label,
+.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  padding: 2.75px 5.5px;
+  margin: 0 2.75px; }
+
+/**
+* Solid Pill
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+/**
+* Hollow Pill
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+.pill-label {
+  background-color: rgba(0, 0, 0, 0.67);
+  color: white; }
+
+.pill-label--hollow {
+  border: 1px solid rgba(0, 0, 0, 0.67);
+  color: rgba(0, 0, 0, 0.67); }
+
+.pill-label--friend {
+  background-color: #3b5998;
+  color: white; }
+
+.pill-label--leader {
+  background-color: #e0393e;
+  color: white; }
+
+.pill-label--paid {
+  border: 1px solid #62ac75;
+  color: #62ac75; }
+
+.pill-label--unpaid {
+  border: 1px solid #e0393e;
+  color: #e0393e; }
 
 /**
 * Nametag Photo pattern
@@ -2701,7 +2765,7 @@ a:hover .tearsheet-add .time {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #999;
-  border: 2px solid white;
+  border: 2px solid #fff;
   -moz-border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
@@ -2907,7 +2971,7 @@ a:hover .tearsheet-add .time {
   color: white; }
 
 .shaded-pixelate {
-  background-image: url("data:image/png;base64, 		iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA 		AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx 		DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K 		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
+  background-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
 
 .leading-top {
   padding-top: 18px; }
@@ -3080,7 +3144,7 @@ a.unlink:link, a.unlink:visited {
   bottom: -24px;
   left: 1px;
   font-size: 11px;
-  color: #333333 !important;
+  color: #333 !important;
   font-family: monaco, consolas, monospace; }
 
 .testSwatches {

@@ -4,7 +4,7 @@
 */
 
 %_pill_label_base {
-	$size: $smallFontSize;
+	$size: 11px;
 
 	@include round($defaultRadius);
 
@@ -12,6 +12,7 @@
 	text-transform: uppercase;
 	font-variant: small-caps;
 	padding: $size/4 $size/2;
+	margin: 0 $size/4;
 }
 
 
@@ -22,7 +23,7 @@
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin solid_pill( $bgColor: $C_primaryGray, $textColor: "" ) {
+@mixin solid_pill( $bgColor: $C_secondaryGray, $textColor: "" ) {
 
 	@extend %_pill_label_base;
 
@@ -42,7 +43,7 @@
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin hollow_pill( $color: $C_primaryGray ) {
+@mixin hollow_pill( $color: $C_secondaryGray ) {
 
 	@extend %_pill_label_base;
 
