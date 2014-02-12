@@ -622,8 +622,8 @@
 	 * 3.	IE > 8, make sure there's no whitespace.
 	 */
 	label.touchList-helperText {     // *1
+		@include color_textTertiary;
 		font-size: $FS_small;
-		color: $C_textTertiary;
 		line-height: $LH_standard;
 
 		margin-top: -$P_secondary;                                    // *2
