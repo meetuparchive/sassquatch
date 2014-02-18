@@ -6,7 +6,7 @@
 			<li>
 				<div class="figureset">
 					<div class="figureset-figure">
-						<a href=""><img src="http://placekitten.com/40/40" /></a>
+						<a href=""><img src="http://placekitten.com/g/60/60" /></a>
 					</div>
 					<div class="figureset-description">
 						<h4><a href="">Sally Smeetup</a></h4>
@@ -18,7 +18,7 @@
 			<li>
 				<div class="figureset">
 					<div class="figureset-figure">
-						<a href=""><img src="http://placekitten.com/40/40" /></a>
+						<a href=""><img src="http://placekitten.com/g/60/60" /></a>
 					</div>
 					<div class="figureset-description">
 						<h4><a href="">Sally Smeetup</a></h4>
@@ -30,7 +30,7 @@
 			<li>
 				<div class="figureset">
 					<div class="figureset-figure">
-						<a href=""><img src="http://placekitten.com/40/40" /></a>
+						<a href=""><img src="http://placekitten.com/g/60/60" /></a>
 					</div>
 					<div class="figureset-description">
 						<h4><a href="">Sally Smeetup</a></h4>
