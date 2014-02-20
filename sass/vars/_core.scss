@@ -129,6 +129,14 @@
 	$formLabelOffset: 	$baseline * 9; /* horizontal offset of label/field */
 	$spacing: 				$baseline;
 	$Z_top: 					5000;
+
+	// standard media sizes
+	$media-xs: 	16px;
+	$media-s: 	24px;
+	$media-m: 	32px;
+	$media-l: 	48px;
+	$media-xl: 	64px;
+	$media-xxl: 80px;
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
