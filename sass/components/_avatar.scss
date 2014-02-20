@@ -1,0 +1,40 @@
+/**
+* Avatars
+*
+* (Member photos)
+*/
+
+%_avatar_base {
+	@include background-size(cover);
+	@include round($media-l);
+	@include inlineblock();
+	vertical-align: top;
+	background-repeat: no-repeat;
+	background-position: center 38%
+}
+
+
+@mixin avatar( $size: $media-m ) {
+	@extend %_avatar_base;
+	width: $size;
+	height: $size;
+}
+
+
+// Small Avatar
+// ---------------------------
+.avatar--s {
+	@include avatar($media-s);
+}
+
+// Medium Avatar
+// ---------------------------
+.avatar--m {
+	@include avatar($media-m);
+}
+
+// Large Avatar
+// ---------------------------
+.avatar--l {
+	@include avatar($media-l);
+}

@@ -1,40 +1,94 @@
 /**
-* Avatars
-*
-* (Member photos)
+* Figureset Pattern
+* 
+* floated image with descriptive text
 */
 
-%_avatar_base {
-	@include background-size(cover);
-	@include round($media-l);
-	@include inlineblock();
-	vertical-align: top;
-	background-repeat: no-repeat;
-	background-position: center 38%
+$figuresetGutter: $baseline * 0.75;
+
+.figureset, .figureset-right {
+    *zoom: 1; 
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: ".";
+      clear: both;
+      height: 0; 
+    }
 }
 
-
-@mixin avatar( $size: $media-m ) {
-	@extend %_avatar_base;
-	width: $size;
-	height: $size;
+/* {{{ Standard figureset - adaptable width for figure and description */
+.figureset-figure, .figureset-description {
+    display: table-cell;
+    vertical-align: top;
 }
-
-
-// Small Avatar
-// ---------------------------
-.avatar--s {
-	@include avatar($media-s);
+.figureset-figure {
+    width: 1%; /* ensure "shrink wrap" effect */
+    line-height: 0;
+	 img {
+		margin-bottom: $baseline; /* if the description is shorter than the figure */
+ 	}
 }
+.figureset-description {
+    width: auto;
+    padding-left: $figuresetGutter;
 
-// Medium Avatar
-// ---------------------------
-.avatar--m {
-	@include avatar($media-m);
+    /**
+    * magical content expander
+    * pushes figureset-description to fill as much width of the figureset as possible
+    */
+    &:after {
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+        height: 0 !important;
+        line-height: 0;
+        font-size: 50px;
+        content: "M M M M M M M M M M M M M M M M M M M M ";
+        speak: none; /* STFU, screen readers. Don't read this. */
+    }
 }
+/* }}} */
 
-// Large Avatar
-// ---------------------------
-.avatar--l {
-	@include avatar($media-l);
+/* {{{ Right figureset (media on the right; adaptable width) */
+.figureset-right {
+    .figureset-description {
+    	padding: 0 10px 0 0;
+    }
 }
+/* }}} */
+
+
+/* {{{ Right side figure */
+.figureset-right {
+    .figureset-description {
+        padding-right: $figuresetGutter;
+        padding-left: 0;
+    }
+}
+/* }}} */
+
+/* {{{ Figuresets in NON-adaptable width for stupid browsers */
+.ie6 .figureset, .ie7 .figureset {
+		.figureset-figure, 
+    .figureset-description {
+			float: left;
+		}
+    .figureset-description {
+        min-width: 67%;
+        width: 67%;
+    } 
+}
+.ie6 .figureset-right, .ie7 .figureset-right {
+		.figureset-figure, 
+    .figureset-description {
+		float: right;
+	}
+    .figureset-description {
+		float: left;
+        min-width: 70%;
+        width: 70%;
+    } 
+}
+/* }}} */
