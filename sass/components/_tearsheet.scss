@@ -63,19 +63,19 @@ as well as a few different states/types:
 	// Deault Tearsheet (medium)
 	// --------------------------
 	.tearsheet,
-	.tearsheet-m {
+	.tearsheet--m {
 		@include tearsheet($media-l);
 	}
 
 	// Small Tearsheet
 	// --------------------------
-	.tearsheet-s {
+	.tearsheet--s {
 		@include tearsheet($media-s);
 	}
 
 	// Large Tearsheet
 	// --------------------------
-	.tearsheet-l {
+	.tearsheet--l {
 		@include tearsheet($media-xxl);
 	}
 

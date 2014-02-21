@@ -6,35 +6,40 @@
 
 %_avatar_base {
 	@include background-size(cover);
-	@include round($media-l);
-	@include inlineblock();
+	@include round($media-xxl);
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 	vertical-align: top;
 	background-repeat: no-repeat;
-	background-position: center 38%
+	background-position: center 42%;
+	background-color: $C_tertiaryGray;
 }
 
 
-@mixin avatar( $size: $media-m ) {
+@mixin avatar( $size: $media-l ) {
 	@extend %_avatar_base;
 	width: $size;
 	height: $size;
 }
 
 
+// Default Avatar (medium)
+// ---------------------------
+.avatar,
+.avatar--m {
+	@include avatar($media-l);
+}
+
 // Small Avatar
 // ---------------------------
 .avatar--s {
-	@include avatar($media-s);
-}
-
-// Medium Avatar
-// ---------------------------
-.avatar--m {
 	@include avatar($media-m);
 }
 
 // Large Avatar
 // ---------------------------
 .avatar--l {
-	@include avatar($media-l);
+	@include avatar($media-xxl);
 }

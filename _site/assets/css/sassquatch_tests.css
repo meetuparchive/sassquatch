@@ -16,7 +16,7 @@
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
 .tearsheet .day,
-.tearsheet-m .day, .tearsheet-s .day, .tearsheet-l .day, .nav-pagination {
+.tearsheet--m .day, .tearsheet--s .day, .tearsheet--l .day, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
 
@@ -1750,37 +1750,82 @@ hr.double-line {
   border-width: 3px 0 0; }
 
 /**
-* Avatars
-*
-* (Member photos)
+* Figureset Pattern
+* 
+* floated image with descriptive text
 */
-.avatar--s, .avatar--m, .avatar--l {
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover;
-  -moz-border-radius: 48px 48px 48px 48px;
-  -webkit-border-radius: 48px 48px 48px 48px;
-  border-radius: 48px 48px 48px 48px;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  vertical-align: top;
-  background-repeat: no-repeat;
-  background-position: center 38%; }
+.figureset, .figureset-right {
+  *zoom: 1; }
+  .figureset:after, .figureset-right:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0; }
 
-.avatar--s {
-  width: 24px;
-  height: 24px; }
+/* {{{ Standard figureset - adaptable width for figure and description */
+.figureset-figure, .figureset-description {
+  display: table-cell;
+  vertical-align: top; }
 
-.avatar--m {
-  width: 32px;
-  height: 32px; }
+.figureset-figure {
+  width: 1%;
+  /* ensure "shrink wrap" effect */
+  line-height: 0; }
+  .figureset-figure img {
+    margin-bottom: 18px;
+    /* if the description is shorter than the figure */ }
 
-.avatar--l {
-  width: 48px;
-  height: 48px; }
+.figureset-description {
+  width: auto;
+  padding-left: 13.5px;
+  /**
+  * magical content expander
+  * pushes figureset-description to fill as much width of the figureset as possible
+  */ }
+  .figureset-description:after {
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0 !important;
+    line-height: 0;
+    font-size: 50px;
+    content: "M M M M M M M M M M M M M M M M M M M M ";
+    speak: none;
+    /* STFU, screen readers. Don't read this. */ }
 
+/* }}} */
+/* {{{ Right figureset (media on the right; adaptable width) */
+.figureset-right .figureset-description {
+  padding: 0 10px 0 0; }
+
+/* }}} */
+/* {{{ Right side figure */
+.figureset-right .figureset-description {
+  padding-right: 13.5px;
+  padding-left: 0; }
+
+/* }}} */
+/* {{{ Figuresets in NON-adaptable width for stupid browsers */
+.ie6 .figureset .figureset-figure,
+.ie6 .figureset .figureset-description, .ie7 .figureset .figureset-figure,
+.ie7 .figureset .figureset-description {
+  float: left; }
+.ie6 .figureset .figureset-description, .ie7 .figureset .figureset-description {
+  min-width: 67%;
+  width: 67%; }
+
+.ie6 .figureset-right .figureset-figure,
+.ie6 .figureset-right .figureset-description, .ie7 .figureset-right .figureset-figure,
+.ie7 .figureset-right .figureset-description {
+  float: right; }
+.ie6 .figureset-right .figureset-description, .ie7 .figureset-right .figureset-description {
+  float: left;
+  min-width: 70%;
+  width: 70%; }
+
+/* }}} */
 /**
  *	  @file   _fix-flex.scss
  *
@@ -1922,31 +1967,31 @@ as well as a few different states/types:
 * tearsheet class for a given px size
 */
 .tearsheet,
-.tearsheet-m, .tearsheet-s, .tearsheet-l {
+.tearsheet--m, .tearsheet--s, .tearsheet--l {
   display: inline-block;
   text-align: center;
   text-decoration: none;
   margin-bottom: 18px;
   font-weight: 700; }
   .tearsheet .month,
-  .tearsheet-m .month, .tearsheet-s .month, .tearsheet-l .month {
+  .tearsheet--m .month, .tearsheet--s .month, .tearsheet--l .month {
     text-transform: uppercase;
     background-color: #e2373c;
     color: white;
     display: block; }
   .tearsheet .day,
-  .tearsheet-m .day, .tearsheet-s .day, .tearsheet-l .day {
+  .tearsheet--m .day, .tearsheet--s .day, .tearsheet--l .day {
     display: block;
     border: 2px solid #dddddd;
     color: #555555 !important;
     border-top-width: 0; }
 
 .tearsheet,
-.tearsheet-m {
+.tearsheet--m {
   width: 48px;
   height: 48px; }
   .tearsheet .month,
-  .tearsheet-m .month {
+  .tearsheet--m .month {
     -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
@@ -1957,14 +2002,14 @@ as well as a few different states/types:
     height: 19.2px;
     line-height: 21.6px; }
   .tearsheet .day,
-  .tearsheet-m .day {
+  .tearsheet--m .day {
     line-height: 28.8px;
     font-size: 19.2px; }
 
-.tearsheet-s {
+.tearsheet--s {
   width: 24px;
   height: 24px; }
-  .tearsheet-s .month {
+  .tearsheet--s .month {
     -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
@@ -1974,14 +2019,14 @@ as well as a few different states/types:
     font-size: 6px;
     height: 9.6px;
     line-height: 10.8px; }
-  .tearsheet-s .day {
+  .tearsheet--s .day {
     line-height: 14.4px;
     font-size: 9.6px; }
 
-.tearsheet-l {
+.tearsheet--l {
   width: 80px;
   height: 80px; }
-  .tearsheet-l .month {
+  .tearsheet--l .month {
     -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
@@ -1991,9 +2036,45 @@ as well as a few different states/types:
     font-size: 19px;
     height: 32px;
     line-height: 36px; }
-  .tearsheet-l .day {
+  .tearsheet--l .day {
     line-height: 48px;
     font-size: 32px; }
+
+/**
+* Avatars
+*
+* (Member photos)
+*/
+.avatar,
+.avatar--m, .avatar--s, .avatar--l {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px;
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center 42%;
+  background-color: rgba(0, 0, 0, 0.47); }
+
+.avatar,
+.avatar--m {
+  width: 48px;
+  height: 48px; }
+
+.avatar--s {
+  width: 32px;
+  height: 32px; }
+
+.avatar--l {
+  width: 80px;
+  height: 80px; }
 
 /**
 * ==============================================
