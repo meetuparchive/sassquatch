@@ -29,13 +29,13 @@
 // ---------------------------
 .avatar,
 .avatar--m {
-	@include avatar($media-l);
+	@include avatar($media-xl);
 }
 
 // Small Avatar
 // ---------------------------
 .avatar--s {
-	@include avatar($media-m);
+	@include avatar($media-l);
 }
 
 // Large Avatar

@@ -2065,12 +2065,12 @@ as well as a few different states/types:
 
 .avatar,
 .avatar--m {
-  width: 48px;
-  height: 48px; }
+  width: 64px;
+  height: 64px; }
 
 .avatar--s {
-  width: 32px;
-  height: 32px; }
+  width: 48px;
+  height: 48px; }
 
 .avatar--l {
   width: 80px;
