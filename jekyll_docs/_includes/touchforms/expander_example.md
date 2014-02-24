@@ -14,3 +14,23 @@
 		</div>
 	</div>
 </li>
+
+
+<li class="touchList-item touchList-item--input touchList-item--expander">
+	<div class="ffbox ffbox--touchList-input">
+		<label class="ffbox-fix" for="the_input_name">
+			<h4 class="touchList-label touchList-label--input">1.</h4>
+		</label>
+		<div class="ffbox-flex">
+			<textarea id="the_input_name" name="the_input_name" placeholder="Ask a question" class="touchList-input  touchList-input--expander"></textarea>
+			<label for="the_input_name" id="the_input_name_placeholder" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+				Ask a question
+			</label>
+		</div>
+	</div>
+	<div class="ffbox">
+		<div class="ffbox-flex touchList-helperTextWrap">
+			<label id="the_input_name_helper" for="the_input_name" class="touchList-helperText"></label>
+		</div>
+	</div>
+</li>
