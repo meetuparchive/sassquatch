@@ -109,6 +109,19 @@ input[type="submit"].button--blue {
 }
 
 
+// input translation fix
+//
+// we can't fix the chrome double click issue
+// without pseudo elements, which don't work on input els
+input[type="submit"]:active {
+	-moz-transform: translate(0px, 0px) !important;
+	-ms-transform: translate(0px, 0px) !important;
+	-o-transform: translate(0px, 0px) !important;
+	-webkit-transform: translate(0px, 0px) !important;
+	transform: translate(0px, 0px) !important;
+}
+
+
 /**
 * ==============================================
 * FLAT BUTTONS

@@ -406,8 +406,9 @@
 	.touchList-segment-header {
 		@extend %textDisableSelection;
 		@extend %dividerBottom;
+		@include color_textTertiary;
+		background-color: $C_backgroundNav;
 
-		color: $C_darkgray_lighter;
 		font-size: $FS_small;
 		font-weight: bold;
 		line-height: 1;
@@ -415,17 +416,16 @@
 
 		/* RESET */
 		// My brain hurts too much right now to do this math. But the total
-		// height needs to be $H_touchTargetMinimum, which this is.
-		padding: 0.8em $P_secondary;
+		// height needs to be $H_touchTargetMinimum, which this (almost) is.
+		padding: $P_secondary $P_secondary;
 		/* END */
 
 		/* EXPERIMENTAL FEATURES */
 		/* position: -webkit-sticky;
+		 * top: 0px;
 		 * Partially broken implementation in iOS 6.1.4 means we shouldn't turn
 		 * on just yet.
 		 */
-		background-color: white;
-		top: 0px;
 		/* END */
 	}
 

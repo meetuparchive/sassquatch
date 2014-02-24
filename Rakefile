@@ -7,6 +7,9 @@ HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\
 
 # compile sass & copy files into build/
 task :compile do
+	
+	Dir.mkdir(TARGET) unless Dir.exists?(TARGET)
+
 	# desktop
 	puts
 	puts "#{HR}"
