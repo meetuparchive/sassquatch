@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		
+
 		<title>Meetup Mobile Styleguide</title>
-		
+
 		<link rel="stylesheet" type="text/css" href="//static2.meetupstatic.com/fonts/whitney.css" />
 
 		<!-- our mobile standalone for now -->
@@ -16,7 +16,7 @@
 		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
 		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
 		<!-- <link rel="stylesheet" href="assets/syntax/desert.css" type="text/css" /> -->
-		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />	
+		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />
 
 		<script src="assets/syntax/prettify.js" type="text/javascript"></script>
 		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
@@ -26,7 +26,7 @@
 		<style>
 			/*
 			 	we are not going to make our page have default margins,
-				so as not to get in the way of docbox, doc-content examples 
+				so as not to get in the way of docbox, doc-content examples
 				(esp full-width)
 			*/
 			.doc-page {
@@ -34,27 +34,28 @@
 				padding-right:0;
 
 				/* Add width limiting */
-				max-width: 768px;
+				width: auto;  /* allow squishing to various mobile widths */
+				max-width: 768px;  /* maximum mobile-like width */
 				margin: 0 auto;
 			}
-			
+
 			/*
 			 	for the guide,
-				immediate children of doc-page will be padded 
+				immediate children of doc-page will be padded
 				so we don't have to wrap them all in doc-content
 			*/
-			.doc-page > p, 
+			.doc-page > p,
 			.doc-page > h1,
 			.doc-page > .doc-content {
 				padding-left:12px;
 				padding-right:12px;
 			}
-			
+
 			/* the borders don't look right on the examples */
 			.doc-page > .doc-content {
 				border:0;
 			}
-			
+
 			.section-subtitle {
 				padding-top:12px;
 				margin-top:12px;
@@ -62,14 +63,14 @@
 				margin-right:12px;
 				border-top:1px solid #DDD;
 			}
-			
+
 			/* inset the code examples */
 			.doc-page > .highlight,
 			.j-code {
 				margin-left:12px;
 				margin-right:12px;
 			}
-			
+
 			.j-show-code {
 				margin-left:12px;
 				margin-right:12px;
@@ -86,7 +87,7 @@
 
 
 	<body>
-		
+
 		<ul id="guide-nav" class="inlineList">
 			<li><a href="index.html">&larr; Desktop</a></li>
 			<li><a href="#lists">Layout</a></li>
@@ -94,74 +95,74 @@
 			<li><a href="#forms">Forms</a></li>
 			<li><a href="#navigation">Nav</a></li>
 		</ul>
+
+
 		
-		
-		
-		
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="intro">
-						
+
 						<h1>Sassquatch Mobile</h1>
 
 						<p>Visually documenting differences from desktop Sassquatch and new mobile patterns.</p>
@@ -170,113 +171,113 @@
 	
 <p class="align-center"><img src="assets/img/construc-57.gif" />&nbsp;&nbsp;Pardon our dust!</p>
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="layout">
-						
+
 						<h1>Layout</h1>
 
 						
@@ -353,117 +354,117 @@
 </div>
 
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="touchlists-m">
-						
+
 						<h1>Touch Lists</h1>
 
 						<p>Right now, the touchList class is applying some overrides to the way font-size, margin and padding are defined in sectionLists and dividedLists</p>
@@ -834,93 +835,93 @@
 
 
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="forms">
-						
+
 						<h1>Forms</h1>
 
 						<p>Examples of what we have right now</p>
@@ -1525,155 +1526,155 @@
 
     
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="navigation">
-						
+
 						<h1>Navigation</h1>
 
 						<p class="lighter">TBDocumented</p>
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 	</body>
