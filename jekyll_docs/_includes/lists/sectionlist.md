@@ -12,14 +12,14 @@
 				<li>
 					<div class="figureset">
 						<div class="figureset-figure">
-							<a href=""><img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" /></a>
+							<a href=""><img src="http://placekitten.com/g/112/112" /></a>
 						</div>
 						<div class="figureset-description">
 							<h4><a href="">Sally Smeetup</a></h4>
 							<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche. osby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
 							<div class="figureset">
 								<div class="figureset-figure">
-									<time class="tearsheet-25">
+									<time class="tearsheet">
 										<span class="month">Oct</span>
 										<span class="day">25</span>
 									</time>
@@ -36,14 +36,14 @@
 				<li>
 					<div class="figureset">
 						<div class="figureset-figure">
-							<a href=""><img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" /></a>
+							<a href=""><img src="http://placekitten.com/g/112/113" /></a>
 						</div>
 						<div class="figureset-description">
 							<h4><a href="">Sally Smeetup</a></h4>
 							<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche. osby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
 							<div class="figureset">
 								<div class="figureset-figure">
-									<time class="tearsheet-25">
+									<time class="tearsheet">
 										<span class="month">Oct</span>
 										<span class="day">25</span>
 									</time>
@@ -60,14 +60,14 @@
 				<li>
 					<div class="figureset">
 						<div class="figureset-figure">
-							<a href=""><img src="https://secure.dev.meetup.com/8145363791243687841/img/sassquatch_assets/100.gif" /></a>
+							<a href=""><img src="http://placekitten.com/g/112/110" /></a>
 						</div>
 						<div class="figureset-description">
 							<h4><a href="">Sally Smeetup</a></h4>
 							<p>Leggings Austin minim readymade aliquip, elit voluptate aesthetic. Cosby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche. osby sweater organic single-origin coffee aliquip adipisicing, food truck american apparel. Aesthetic high life qui retro cliche.</p>
 							<div class="figureset">
 								<div class="figureset-figure">
-									<time class="tearsheet-25">
+									<time class="tearsheet">
 										<span class="month">Oct</span>
 										<span class="day">25</span>
 									</time>
