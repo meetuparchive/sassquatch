@@ -49,6 +49,7 @@
 
 
 <div class="j-code">
+	<h4>JSP</h4>
 	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
 <span class="nt">&lt;web:jsonPopulate&gt;</span>
 {
@@ -72,6 +73,7 @@
     <span class="nt">&lt;meetstache:param</span> <span class="na">name=</span><span class="s">&quot;list&quot;</span> <span class="na">value=</span><span class="s">&quot;${list}&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/meetstache:render&gt;</span>
 </code></pre></div>
+	<h4>Python</h4>
 	<div class="highlight"><pre><code class="py"><span class="c"># python</span>
 <span class="kn">from</span> <span class="nn">meetup.mustache.util</span> <span class="kn">import</span> <span class="n">touchlistItem</span>
 
@@ -92,6 +94,7 @@
     <span class="s">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">touchlistItem</span><span class="o">.</span><span class="n">ItemConfig</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="o">.</span><span class="n">template_model</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">itemConfigs</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
+	<h4>HTML</h4>
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
