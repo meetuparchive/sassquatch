@@ -1367,18 +1367,21 @@
 <div class="doc-box">
 	<ul class="touchList">
 		<!-- HTML example -->
-<li class="touchList-item touchList-item--input-checkbox" id="" >
+<li id="check_name_item" class="touchList-item touchList-item--input-checkbox">
 	<label class="ffbox ffbox--touchList-input">
-        <div class="ffbox-flex">
-			<h4 class="touchList-label touchList-label--input">Yay! Kittens</h4>
-        </div>
+		<div class="ffbox-flex">
+			<h4 class="touchList-label touchList-label--input">Require photo</h4>
+		</div>
 		<div class="ffbox-fix">
-			<input type="checkbox" name="f3_3" value="0" id="" tabindex="0">
-			<div class="pseudocheckbox">
-				<i class="icon-s icon-check pseudocheckbox-check"></i> 
-			</div>
+			<input type="checkbox" name="check_name" id="check_name" class="" value="1" tabindex="0">
+			<i class="icon-s icon-checkbox pseudocheckbox"></i>
 		</div>
 	</label>
+	<div class="ffbox">
+		<div class="ffbox-flex touchList-helperTextWrap">
+			<label id="check_name_helper" for="check_name" class="touchList-helperText"></label>
+		</div>
+	</div>
 </li>
 
 	</ul>
@@ -1390,18 +1393,21 @@
 <span class="nt">&lt;li:checkbox</span> <span class="na">name=</span><span class="s">&quot;kittttteennnnnssss&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="err">...</span> <span class="nt">/&gt;</span>
 </code></pre></div>
     <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;check_name_item&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Yay! Kittens<span class="nt">&lt;/h4&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Require photo<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_3&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudocheckbox&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-check pseudocheckbox-check&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> 
-			<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;check_name&quot;</span> <span class="na">id=</span><span class="s">&quot;check_name&quot;</span> <span class="na">class=</span><span class="s">&quot;&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-checkbox pseudocheckbox&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;check_name_helper&quot;</span> <span class="na">for=</span><span class="s">&quot;check_name&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
