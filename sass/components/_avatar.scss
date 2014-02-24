@@ -32,6 +32,12 @@
 	@include avatar($media-xl);
 }
 
+// Extra Small Avatar
+// ---------------------------
+.avatar--xs {
+	@include avatar($media-m);
+}
+
 // Small Avatar
 // ---------------------------
 .avatar--s {

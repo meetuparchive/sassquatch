@@ -2046,7 +2046,7 @@ as well as a few different states/types:
 * (Member photos)
 */
 .avatar,
-.avatar--m, .avatar--s, .avatar--l {
+.avatar--m, .avatar--xs, .avatar--s, .avatar--l {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -2067,6 +2067,10 @@ as well as a few different states/types:
 .avatar--m {
   width: 64px;
   height: 64px; }
+
+.avatar--xs {
+  width: 32px;
+  height: 32px; }
 
 .avatar--s {
   width: 48px;
