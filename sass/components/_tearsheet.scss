@@ -26,7 +26,7 @@ as well as a few different states/types:
 	font-weight: $W_bold;
 	.month {
 		text-transform: uppercase;
-		background-color: $C_buttonPrimary;
+		background-color: $C_red;
 		color: $C_textPrimaryInverted;
 		display: block;
 	}
@@ -35,6 +35,7 @@ as well as a few different states/types:
 		display: block;
 		border: 2px solid $C_line;
 		color: $C_text !important; // ignore link colors, theme
+		background-color: #fff;
 		border-top-width: 0;
 	}
 }
