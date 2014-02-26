@@ -1976,7 +1976,7 @@ as well as a few different states/types:
   .tearsheet .month,
   .tearsheet--m .month, .tearsheet--s .month, .tearsheet--l .month {
     text-transform: uppercase;
-    background-color: #e2373c;
+    background-color: #e0393e;
     color: white;
     display: block; }
   .tearsheet .day,
@@ -1984,6 +1984,7 @@ as well as a few different states/types:
     display: block;
     border: 2px solid #dddddd;
     color: #555555 !important;
+    background-color: #fff;
     border-top-width: 0; }
 
 .tearsheet,
