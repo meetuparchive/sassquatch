@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Checkboxes <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Checkboxes</h2>
 <p>This is an example of the checkbox touchlist.</p>
 
 <div class="doc-box">

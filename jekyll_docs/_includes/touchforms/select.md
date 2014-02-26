@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Select <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Select</h2>
 
 <div class="doc-box">
 	<ul class="touchList">
