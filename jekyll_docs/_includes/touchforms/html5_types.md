@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Html5 Form field types <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Html5 Form field types</h2>
 
 <div class="doc-box">
 	<ul class="touchList">

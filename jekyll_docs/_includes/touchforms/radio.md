@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Radio buttons <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Radio buttons</h2>
 <p>This is an example of the radio buttons touchlist.</p>
 
 
