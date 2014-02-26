@@ -4,9 +4,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		
+
 		<title>Meetup Mobile Styleguide</title>
-		
 		<link rel="stylesheet" type="text/css" href="//static2.meetupstatic.com/fonts/whitney.css" />
 
 		<!-- our mobile standalone for now -->
@@ -16,7 +15,7 @@
 		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
 		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
 		<!-- <link rel="stylesheet" href="assets/syntax/desert.css" type="text/css" /> -->
-		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />	
+		<link rel="stylesheet" href="assets/css/syntax.css" tpe="text/css" />
 
 		<script src="assets/syntax/prettify.js" type="text/javascript"></script>
 		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
@@ -26,7 +25,7 @@
 		<style>
 			/*
 			 	we are not going to make our page have default margins,
-				so as not to get in the way of docbox, doc-content examples 
+				so as not to get in the way of docbox, doc-content examples
 				(esp full-width)
 			*/
 			.doc-page {
@@ -34,27 +33,28 @@
 				padding-right:0;
 
 				/* Add width limiting */
+				width: auto;
 				max-width: 768px;
 				margin: 0 auto;
 			}
-			
+
 			/*
 			 	for the guide,
-				immediate children of doc-page will be padded 
+				immediate children of doc-page will be padded
 				so we don't have to wrap them all in doc-content
 			*/
-			.doc-page > p, 
+			.doc-page > p,
 			.doc-page > h1,
 			.doc-page > .doc-content {
 				padding-left:12px;
 				padding-right:12px;
 			}
-			
+
 			/* the borders don't look right on the examples */
 			.doc-page > .doc-content {
 				border:0;
 			}
-			
+
 			.section-subtitle {
 				padding-top:12px;
 				margin-top:12px;
@@ -62,14 +62,14 @@
 				margin-right:12px;
 				border-top:1px solid #DDD;
 			}
-			
+
 			/* inset the code examples */
 			.doc-page > .highlight,
 			.j-code {
 				margin-left:12px;
 				margin-right:12px;
 			}
-			
+
 			.j-show-code {
 				margin-left:12px;
 				margin-right:12px;
@@ -86,7 +86,7 @@
 
 
 	<body>
-		
+
 		<ul id="guide-nav" class="inlineList">
 			<li><a href="index.html">&larr; Desktop</a></li>
 			<li><a href="#lists">Layout</a></li>
@@ -94,74 +94,74 @@
 			<li><a href="#forms">Forms</a></li>
 			<li><a href="#navigation">Nav</a></li>
 		</ul>
+
+
 		
-		
-		
-		
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="intro">
-						
+
 						<h1>Sassquatch Mobile</h1>
 
 						<p>Visually documenting differences from desktop Sassquatch and new mobile patterns.</p>
@@ -170,113 +170,113 @@
 	
 <p class="align-center"><img src="assets/img/construc-57.gif" />&nbsp;&nbsp;Pardon our dust!</p>
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="layout">
-						
+
 						<h1>Layout</h1>
 
 						
@@ -353,117 +353,117 @@
 </div>
 
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="touchlists-m">
-						
+
 						<h1>Touch Lists</h1>
 
 						<p>Right now, the touchList class is applying some overrides to the way font-size, margin and padding are defined in sectionLists and dividedLists</p>
@@ -475,64 +475,135 @@
 <div class="doc-box">
     <ul class="touchList">
         <li class="touchList-item">
-            <a href="url" class="ffbox ffbox--touchList-item">
-                <div class="ffbox-flex">
-                    <h4 class="touchList-label">Item 1</h4>
-                </div>
-            </a>
-        </li>
-        <li class="touchList-item">
-            <a href="url" class="ffbox ffbox--touchList-item">
-                <div class="ffbox-flex">
-                    <h4 class="touchList-label">Item 2</h4>
-                </div>
-            </a>
-        </li>
-        <li class="touchList-item">
-            <a href="url" class="ffbox ffbox--touchList-item">
-                <div class="ffbox-flex">
-                    <h4 class="touchList-label">Item 3</h4>
-                </div>
-            </a>
-        </li>
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <p>Paragraph content</p>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <span>Span content</span>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <a href="#" class="touchList-item-action">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-flex">
+                <p>Paragraph with link wrap</p>
+            </div>
+        </div>
+    </a>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <p>Paragraph content</p>
+        </div>
+    </div>
+    <div class="ffbox">
+        <div class="ffbox-flex touchList-helperTextWrap">
+            <label id="" for="" class="touchList-helperText">
+                Helper text - this can be as long as you want. It will wrap to multiple lines.
+            </label>
+        </div>
+    </div>
+</li>
+
     </ul>
 </div>
 
 
 <div class="j-code">
-	<!--<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li:item</span> <span class="na">label=</span><span class="s">&quot;Item 1&quot;</span> <span class="na">action=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;li:item</span> <span class="na">label=</span><span class="s">&quot;Item 2&quot;</span> <span class="na">action=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;li:item</span> <span class="na">label=</span><span class="s">&quot;Item 3&quot;</span> <span class="na">action=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>-->
+	<h4>JSP</h4>
+	<div class="highlight"><pre><code class="jsp"><span class="k">&lt;%-</span><span class="o">-</span> <span class="n">JSP</span> <span class="o">--</span><span class="k">%&gt;</span>
+<span class="nt">&lt;web:jsonPopulate&gt;</span>
+{
+    &quot;list&quot;: {
+        &quot;itemConfigs&quot;: [{
+            &quot;itemContent&quot;: &quot;<span class="nt">&lt;p&gt;</span>Paragraph content<span class="nt">&lt;/p&gt;</span>&quot;,
+        }, {
+            &quot;itemContent&quot;: &quot;<span class="nt">&lt;span&gt;</span>Span content<span class="nt">&lt;/span&gt;</span>&quot;,
+        }, {
+            &quot;action&quot;: { &quot;target&quot;: &quot;#&quot; },
+            &quot;itemContent&quot;: &quot;<span class="nt">&lt;p&gt;</span>Paragraph with link wrap<span class="nt">&lt;/p&gt;</span>&quot;,
+        }, {
+            &quot;itemContent&quot;: &quot;<span class="nt">&lt;p&gt;</span>Paragraph content<span class="nt">&lt;/p&gt;</span>&quot;,
+            &quot;helperText&quot;: &quot;Helper text - this can be as long as you want. It will wrap to multiple lines.&quot;,
+        }]
+    }
+}
+<span class="nt">&lt;/web:jsonPopulate&gt;</span>
+
+<span class="nt">&lt;meetstache:render</span> <span class="na">key=</span><span class="s">&quot;touchList.list&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meetstache:param</span> <span class="na">name=</span><span class="s">&quot;list&quot;</span> <span class="na">value=</span><span class="s">&quot;${list}&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/meetstache:render&gt;</span>
+</code></pre></div>
+	<h4>Python</h4>
+	<div class="highlight"><pre><code class="py"><span class="c"># python</span>
+<span class="kn">from</span> <span class="nn">meetup.mustache.util</span> <span class="kn">import</span> <span class="n">touchlistItem</span>
+
+<span class="n">itemConfigs</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="s">&quot;itemContent&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;p&gt;Paragraph content&lt;/p&gt;&quot;</span><span class="p">,</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s">&quot;itemContent&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;span&gt;Span content&lt;/span&gt;&quot;</span><span class="p">,</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s">&quot;action&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s">&quot;target&quot;</span><span class="p">:</span> <span class="s">&quot;#&quot;</span> <span class="p">},</span>
+    <span class="s">&quot;itemContent&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;p&gt;Paragraph with link wrap&lt;/p&gt;&quot;</span><span class="p">,</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s">&quot;itemContent&quot;</span><span class="p">:</span> <span class="s">&quot;&lt;p&gt;Paragraph content&lt;/p&gt;&quot;</span><span class="p">,</span>
+    <span class="s">&quot;helperText&quot;</span><span class="p">:</span> <span class="s">&quot;Helper text - this can be as long as you want. It will wrap to multiple lines.&quot;</span><span class="p">,</span>
+<span class="p">}]</span>
+
+<span class="c"># Build a list object to pass to touchlist/list.mustache</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">touchlistItem</span><span class="o">.</span><span class="n">ItemConfig</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="o">.</span><span class="n">template_model</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">itemConfigs</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+	<h4>HTML</h4>
 	<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;touchList&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;url&quot;</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label&quot;</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;url&quot;</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label&quot;</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;url&quot;</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label&quot;</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/h4&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Paragraph content<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Span content<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item-action&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Paragraph with link wrap<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Paragraph content<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">for=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;</span>
+                Helper text - this can be as long as you want. It will wrap to multiple lines.
+            <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+
     <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
@@ -686,6 +757,49 @@
 
 <div class="doc-box">
 	<ul class="touchList">
+		<li class="touchList-segment">
+			<h5 class="touchList-segment-header">iOS Devices</h5>
+			<ul class="touchList-segment-content">
+				<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <p>Paragraph content</p>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <span>Span content</span>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <a href="#" class="touchList-item-action">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-flex">
+                <p>Paragraph with link wrap</p>
+            </div>
+        </div>
+    </a>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <p>Paragraph content</p>
+        </div>
+    </div>
+    <div class="ffbox">
+        <div class="ffbox-flex touchList-helperTextWrap">
+            <label id="" for="" class="touchList-helperText">
+                Helper text - this can be as long as you want. It will wrap to multiple lines.
+            </label>
+        </div>
+    </div>
+</li>
+
+			</ul>
+		</li>
 		<!-- HTML -->
 <li class="touchList-segment">
     <h5 class="touchList-segment-header">
@@ -723,72 +837,6 @@
     </ul>
 </li>
 
-		<li class="touchList-segment">
-			<h5 class="touchList-segment-header">Windows Phones</h5>
-			<ul class="touchList-segment-content">
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							LG Quantum (7.5)
-						</div>
-					</div>
-				</li>
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							Nokia Lumia 620 (8)
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="touchList-segment">
-			<h5 class="touchList-segment-header">iOS Devices</h5>
-			<ul class="touchList-segment-content">
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							iPhone 3G (4.1.3)
-						</div>
-					</div>
-				</li>
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							iPhone 3GS (6.1.3)
-						</div>
-					</div>
-				</li>
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							iPhone 4 (6.1.4)
-						</div>
-					</div>
-				</li>
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							iPhone 4S (6.1.3)
-						</div>
-					</div>
-				</li>
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							iPhone 5 (6.1.4)
-						</div>
-					</div>
-				</li>
-				<li class="touchList-item">
-					<div class="ffbox ffbox--touchList-item">
-						<div class="ffbox-flex">
-							iPod Touch 5 (7.0)
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
 	</ul>
 </div>
 
@@ -834,93 +882,93 @@
 
 
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="forms">
-						
+
 						<h1>Forms</h1>
 
 						<p>Examples of what we have right now</p>
@@ -964,6 +1012,12 @@
 					</label>
 				</div>
 			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="" for="" class="touchList-helperText">This is helper text.</label>
+				</div>
+			</div>
+
 		</li>
 
 		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
@@ -1313,18 +1367,21 @@
 <div class="doc-box">
 	<ul class="touchList">
 		<!-- HTML example -->
-<li class="touchList-item touchList-item--input-checkbox" id="" >
+<li id="check_name_item" class="touchList-item touchList-item--input-checkbox">
 	<label class="ffbox ffbox--touchList-input">
-        <div class="ffbox-flex">
-			<h4 class="touchList-label touchList-label--input">Yay! Kittens</h4>
-        </div>
+		<div class="ffbox-flex">
+			<h4 class="touchList-label touchList-label--input">Require photo</h4>
+		</div>
 		<div class="ffbox-fix">
-			<input type="checkbox" name="f3_3" value="0" id="" tabindex="0">
-			<div class="pseudocheckbox">
-				<i class="icon-s icon-check pseudocheckbox-check"></i> 
-			</div>
+			<input type="checkbox" name="check_name" id="check_name" class="" value="1" tabindex="0">
+			<i class="icon-s icon-checkbox pseudocheckbox"></i>
 		</div>
 	</label>
+	<div class="ffbox">
+		<div class="ffbox-flex touchList-helperTextWrap">
+			<label id="check_name_helper" for="check_name" class="touchList-helperText"></label>
+		</div>
+	</div>
 </li>
 
 	</ul>
@@ -1336,18 +1393,21 @@
 <span class="nt">&lt;li:checkbox</span> <span class="na">name=</span><span class="s">&quot;kittttteennnnnssss&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="err">...</span> <span class="nt">/&gt;</span>
 </code></pre></div>
     <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;check_name_item&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Yay! Kittens<span class="nt">&lt;/h4&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Require photo<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_3&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudocheckbox&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-check pseudocheckbox-check&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> 
-			<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;check_name&quot;</span> <span class="na">id=</span><span class="s">&quot;check_name&quot;</span> <span class="na">class=</span><span class="s">&quot;&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-checkbox pseudocheckbox&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;check_name_helper&quot;</span> <span class="na">for=</span><span class="s">&quot;check_name&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
@@ -1499,6 +1559,26 @@
 	</div>
 </li>
 
+
+<li class="touchList-item touchList-item--input touchList-item--expander">
+	<div class="ffbox ffbox--touchList-input">
+		<label class="ffbox-fix" for="the_input_name">
+			<h4 class="touchList-label touchList-label--input">1.</h4>
+		</label>
+		<div class="ffbox-flex">
+			<textarea id="the_input_name" name="the_input_name" placeholder="Ask a question" class="touchList-input  touchList-input--expander"></textarea>
+			<label for="the_input_name" id="the_input_name_placeholder" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+				Ask a question
+			</label>
+		</div>
+	</div>
+	<div class="ffbox">
+		<div class="ffbox-flex touchList-helperTextWrap">
+			<label id="the_input_name_helper" for="the_input_name" class="touchList-helperText"></label>
+		</div>
+	</div>
+</li>
+
 	</ul>
 </div>
 <div class="doc-content j-code">
@@ -1518,6 +1598,26 @@
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
+
+
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input touchList-item--expander&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span> <span class="na">for=</span><span class="s">&quot;the_input_name&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>1.<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">name=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Ask a question&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-input  touchList-input--expander&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">id=</span><span class="s">&quot;the_input_name_placeholder&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-pseudoplaceholder j-pseudoplaceholder&quot;</span><span class="nt">&gt;</span>
+				Ask a question
+			<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;the_input_name_helper&quot;</span> <span class="na">for=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
 
@@ -1525,155 +1625,155 @@
 
     
 
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-					
+
 					<div class="doc-page scrollbeacon" id="navigation">
-						
+
 						<h1>Navigation</h1>
 
 						<p class="lighter">TBDocumented</p>
-					
+
 					</div>
 
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-	 			
+
 				
-	 
+
 			
-			
+
 		
 
 	</body>
