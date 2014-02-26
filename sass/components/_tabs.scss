@@ -8,7 +8,8 @@ $tabSpacing: $spacing/2;
 	@extend %clearfix;
 	padding-top: $tabSpacing;
 	padding-left: $tabSpacing;
-	border-bottom: 1px solid $C_line;
+	border-bottom: 1px solid;
+	@include color_lineGray('border-color');
 	list-style: none;
 	margin-bottom: $spacing;
 	li {
@@ -18,13 +19,15 @@ $tabSpacing: $spacing/2;
 		margin-bottom: -1px;
 	}
 	a {
-		@include round($defaultRadius);
+		@include round-nw($defaultRadius);
+		@include round-ne($defaultRadius);
 		display: block;
 		text-decoration: none;
-		color: $C_text_less;
-		background-color: $C_gray_lightest;
-		border: 1px solid $C_gray_lightest;
-		border-bottom-color: $C_line;
+		@include color_textSecondary;
+		@include color_lineGray('background-color');
+		border: 1px solid;
+		@include color_lineGray('border-color');
+		border-bottom-color: transparent;
 		padding: 6px 12px;
 		&:focus {
 			outline-width: 0;
@@ -35,14 +38,14 @@ $tabSpacing: $spacing/2;
 	}
 	.selected {
 		a {
-			color: $C_text;
-			background-color: #fff;
-			border-color: $C_line;
-			border-bottom-color: white;
+			@include color_textPrimary;
+			background-color: $C_primaryGrayInverted;
+			@include color_lineGray('border-color');
+			border-bottom-color: $C_primaryGrayInverted;
 		}
 	}
 	.tabcount {
-		color: #888;
+		@include color_textTertiary;
 	}
 }
 
@@ -55,3 +58,22 @@ $tabSpacing: $spacing/2;
 	border-bottom: 0px;
 	background-color: #E9EBE5;
 }
+
+@if $platform == "mobile" {
+	.nav-tabs {
+		padding-left: 0;
+		li {
+			margin-right: $tabSpacing/2;
+		}
+		a {
+			padding: 6px;
+			&.selected {
+				background-color: $C_primaryGrayInverted;
+			}
+		}
+		&:first-child {
+			padding-top: $tabSpacing;
+		}
+	}
+}
+

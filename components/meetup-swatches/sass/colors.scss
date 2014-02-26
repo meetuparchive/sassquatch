@@ -4,21 +4,21 @@ $C_red: rgb(226,55,60);
 $C_blue: rgb(57,135,203);
 @mixin color_blue { color: $C_blue; }
 $C_primaryGray: rgba(0,0,0,0.95);
-@mixin color_primaryGray { color: lighten( rgb(0,0,0), 5%); color: $C_primaryGray; }
+@mixin color_primaryGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 5%); #{$style}: $C_primaryGray; }
 $C_secondaryGray: rgba(0,0,0,0.67);
-@mixin color_secondaryGray { color: lighten( rgb(0,0,0), 33%); color: $C_secondaryGray; }
+@mixin color_secondaryGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 33%); #{$style}: $C_secondaryGray; }
 $C_tertiaryGray: rgba(0,0,0,0.47);
-@mixin color_tertiaryGray { color: lighten( rgb(0,0,0), 53%); color: $C_tertiaryGray; }
+@mixin color_tertiaryGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 53%); #{$style}: $C_tertiaryGray; }
 $C_lineGray: rgba(0,0,0,0.1);
-@mixin color_lineGray { color: lighten( rgb(0,0,0), 90%); color: $C_lineGray; }
+@mixin color_lineGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 90%); #{$style}: $C_lineGray; }
 $C_primaryGrayInverted: rgb(255,255,255);
 @mixin color_primaryGrayInverted { color: $C_primaryGrayInverted; }
 $C_secondaryGrayInverted: rgba(255,255,255,0.67);
-@mixin color_secondaryGrayInverted { color: lighten( rgb(255,255,255), 33%); color: $C_secondaryGrayInverted; }
+@mixin color_secondaryGrayInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_secondaryGrayInverted; }
 $C_tertiaryGrayInverted: rgba(255,255,255,0.47);
-@mixin color_tertiaryGrayInverted { color: lighten( rgb(255,255,255), 53%); color: $C_tertiaryGrayInverted; }
+@mixin color_tertiaryGrayInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_tertiaryGrayInverted; }
 $C_lineGrayInverted: rgba(255,255,255,0.2);
-@mixin color_lineGrayInverted { color: lighten( rgb(255,255,255), 80%); color: $C_lineGrayInverted; }
+@mixin color_lineGrayInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 80%); #{$style}: $C_lineGrayInverted; }
  
 // BACKGROUNDS - these are always 100% opacity
 $C_backgroundContent: rgb(255,255,255);
@@ -34,13 +34,13 @@ $C_backgroundContentAccent: rgb(226,55,60);
  
 // DEFAULT CONTEXT (content on light backgrounds)
 $C_textPrimary: rgba(0,0,0,0.95);
-@mixin color_textPrimary { color: lighten( rgb(0,0,0), 5%); color: $C_textPrimary; }
+@mixin color_textPrimary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 5%); #{$style}: $C_textPrimary; }
 $C_textSecondary: rgba(0,0,0,0.67);
-@mixin color_textSecondary { color: lighten( rgb(0,0,0), 33%); color: $C_textSecondary; }
+@mixin color_textSecondary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 33%); #{$style}: $C_textSecondary; }
 $C_textTertiary: rgba(0,0,0,0.47);
-@mixin color_textTertiary { color: lighten( rgb(0,0,0), 53%); color: $C_textTertiary; }
+@mixin color_textTertiary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 53%); #{$style}: $C_textTertiary; }
 $C_border: rgba(0,0,0,0.1);
-@mixin color_border { color: lighten( rgb(0,0,0), 90%); color: $C_border; }
+@mixin color_border($style: 'color') { #{$style}: lighten( rgb(0,0,0), 90%); #{$style}: $C_border; }
 $C_link: rgb(57,135,203);
 @mixin color_link { color: $C_link; }
 $C_accent: rgb(226,55,60);
@@ -48,25 +48,25 @@ $C_accent: rgb(226,55,60);
 $C_yes: rgb(226,55,60);
 @mixin color_yes { color: $C_yes; }
 $C_no: rgba(0,0,0,0.67);
-@mixin color_no { color: lighten( rgb(0,0,0), 33%); color: $C_no; }
+@mixin color_no($style: 'color') { #{$style}: lighten( rgb(0,0,0), 33%); #{$style}: $C_no; }
 $C_waitlist: rgba(0,0,0,0.67);
-@mixin color_waitlist { color: lighten( rgb(0,0,0), 33%); color: $C_waitlist; }
+@mixin color_waitlist($style: 'color') { #{$style}: lighten( rgb(0,0,0), 33%); #{$style}: $C_waitlist; }
 $C_buttonPrimary: rgb(226,55,60);
 @mixin color_buttonPrimary { color: $C_buttonPrimary; }
 $C_buttonSecondary: rgba(0,0,0,0.47);
-@mixin color_buttonSecondary { color: lighten( rgb(0,0,0), 53%); color: $C_buttonSecondary; }
+@mixin color_buttonSecondary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 53%); #{$style}: $C_buttonSecondary; }
 $C_buttonTertiaryBorder: rgba(0,0,0,0.47);
-@mixin color_buttonTertiaryBorder { color: lighten( rgb(0,0,0), 53%); color: $C_buttonTertiaryBorder; }
+@mixin color_buttonTertiaryBorder($style: 'color') { #{$style}: lighten( rgb(0,0,0), 53%); #{$style}: $C_buttonTertiaryBorder; }
  
 // INVERTED CONTEXT (content on dark backgrounds)
 $C_textPrimaryInverted: rgb(255,255,255);
 @mixin color_textPrimaryInverted { color: $C_textPrimaryInverted; }
 $C_textSecondaryInverted: rgba(255,255,255,0.67);
-@mixin color_textSecondaryInverted { color: lighten( rgb(255,255,255), 33%); color: $C_textSecondaryInverted; }
+@mixin color_textSecondaryInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_textSecondaryInverted; }
 $C_textTertiaryInverted: rgba(255,255,255,0.47);
-@mixin color_textTertiaryInverted { color: lighten( rgb(255,255,255), 53%); color: $C_textTertiaryInverted; }
+@mixin color_textTertiaryInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_textTertiaryInverted; }
 $C_borderInverted: rgba(255,255,255,0.2);
-@mixin color_borderInverted { color: lighten( rgb(255,255,255), 80%); color: $C_borderInverted; }
+@mixin color_borderInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 80%); #{$style}: $C_borderInverted; }
 $C_linkInverted: rgb(57,135,203);
 @mixin color_linkInverted { color: $C_linkInverted; }
 $C_accentInverted: rgb(226,55,60);
@@ -74,19 +74,19 @@ $C_accentInverted: rgb(226,55,60);
 $C_yesInverted: rgb(226,55,60);
 @mixin color_yesInverted { color: $C_yesInverted; }
 $C_noInverted: rgba(255,255,255,0.67);
-@mixin color_noInverted { color: lighten( rgb(255,255,255), 33%); color: $C_noInverted; }
+@mixin color_noInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_noInverted; }
 $C_waitlistInverted: rgba(255,255,255,0.67);
-@mixin color_waitlistInverted { color: lighten( rgb(255,255,255), 33%); color: $C_waitlistInverted; }
+@mixin color_waitlistInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_waitlistInverted; }
 $C_buttonPrimaryInverted: rgb(226,55,60);
 @mixin color_buttonPrimaryInverted { color: $C_buttonPrimaryInverted; }
 $C_buttonSecondaryInverted: rgba(255,255,255,0.47);
-@mixin color_buttonSecondaryInverted { color: lighten( rgb(255,255,255), 53%); color: $C_buttonSecondaryInverted; }
+@mixin color_buttonSecondaryInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_buttonSecondaryInverted; }
 $C_buttonTertiaryBorder: rgba(255,255,255,0.47);
-@mixin color_buttonTertiaryBorder { color: lighten( rgb(255,255,255), 53%); color: $C_buttonTertiaryBorder; }
+@mixin color_buttonTertiaryBorder($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_buttonTertiaryBorder; }
  
 // MISC
 $C_overlayPressed: rgba(64,197,255,0.2);
-@mixin color_overlayPressed { color: lighten( rgb(64,197,255), 80%); color: $C_overlayPressed; }
+@mixin color_overlayPressed($style: 'color') { #{$style}: lighten( rgb(64,197,255), 80%); #{$style}: $C_overlayPressed; }
  
 // SOCIAL (third party colors)
 $C_facebook: rgb(59,89,152);
