@@ -320,6 +320,9 @@
 			vertical-align: top;
 			padding-top: $topOffset;
 		}
+		.touchList-label--input {
+			padding-top: 0;  // top padding taken care of by label.ffbox-fix
+		}
 	}
 
 
