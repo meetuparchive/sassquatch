@@ -11,7 +11,7 @@ $tabSpacing: $spacing/2;
 	border-bottom: 1px solid;
 	@include color_border('border-color');
 	list-style: none;
-	margin-bottom: $spacing;
+	margin-bottom: 0;
 	li {
 		float: left;
 		padding: 0;
@@ -24,11 +24,10 @@ $tabSpacing: $spacing/2;
 		display: block;
 		text-decoration: none;
 		@include color_textSecondary;
-		@include color_border('background-color');
+		background-color: $C_backgroundNav;
 		border: 1px solid;
 		@include color_border('border-color');
-		border-bottom-color: transparent;
-		padding: 6px 12px;
+		padding: $tabSpacing/1.5 $tabSpacing*1.5;
 		&:focus {
 			outline-width: 0;
 		}
@@ -77,7 +76,6 @@ $tabSpacing: $spacing/2;
 		}
 		a {
 			@include round(0);
-			padding: 6px;
 			border-left-width: 0;
 		}
 		&:first-child {
