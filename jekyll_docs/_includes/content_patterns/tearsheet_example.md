@@ -2,15 +2,11 @@
 	<span class="month">Oct</span>
 	<span class="day">14</span>
 </time>
-<time class="tearsheet--s">
+<time class="tearsheet--small">
 	<span class="month">Oct</span>
 	<span class="day">14</span>
 </time>
-<time class="tearsheet--m">
-	<span class="month">Oct</span>
-	<span class="day">14</span>
-</time>
-<time class="tearsheet--l">
+<time class="tearsheet--big">
 	<span class="month">Oct</span>
 	<span class="day">14</span>
 </time>

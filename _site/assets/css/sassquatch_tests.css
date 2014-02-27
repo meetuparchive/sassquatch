@@ -15,8 +15,7 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.tearsheet .day,
-.tearsheet--m .day, .tearsheet--s .day, .tearsheet--l .day, .nav-pagination {
+.tearsheet .day, .tearsheet--small .day, .tearsheet--big .day, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
 
@@ -1966,33 +1965,28 @@ as well as a few different states/types:
 * extends and mixins for creating a
 * tearsheet class for a given px size
 */
-.tearsheet,
-.tearsheet--m, .tearsheet--s, .tearsheet--l {
+.tearsheet, .tearsheet--small, .tearsheet--big {
   display: inline-block;
   text-align: center;
   text-decoration: none;
   margin-bottom: 18px;
   font-weight: 700; }
-  .tearsheet .month,
-  .tearsheet--m .month, .tearsheet--s .month, .tearsheet--l .month {
+  .tearsheet .month, .tearsheet--small .month, .tearsheet--big .month {
     text-transform: uppercase;
     background-color: #e0393e;
     color: white;
     display: block; }
-  .tearsheet .day,
-  .tearsheet--m .day, .tearsheet--s .day, .tearsheet--l .day {
+  .tearsheet .day, .tearsheet--small .day, .tearsheet--big .day {
     display: block;
     border: 2px solid #dddddd;
     color: #555555 !important;
     background-color: #fff;
     border-top-width: 0; }
 
-.tearsheet,
-.tearsheet--m {
+.tearsheet {
   width: 48px;
   height: 48px; }
-  .tearsheet .month,
-  .tearsheet--m .month {
+  .tearsheet .month {
     -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
@@ -2002,32 +1996,31 @@ as well as a few different states/types:
     font-size: 12px;
     height: 19.2px;
     line-height: 21.6px; }
-  .tearsheet .day,
-  .tearsheet--m .day {
+  .tearsheet .day {
     line-height: 28.8px;
     font-size: 19.2px; }
 
-.tearsheet--s {
-  width: 24px;
-  height: 24px; }
-  .tearsheet--s .month {
+.tearsheet--small {
+  width: 32px;
+  height: 32px; }
+  .tearsheet--small .month {
     -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
     -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
-    font-size: 6px;
-    height: 9.6px;
-    line-height: 10.8px; }
-  .tearsheet--s .day {
-    line-height: 14.4px;
-    font-size: 9.6px; }
+    font-size: 8px;
+    height: 12.8px;
+    line-height: 14.4px; }
+  .tearsheet--small .day {
+    line-height: 19.2px;
+    font-size: 12.8px; }
 
-.tearsheet--l {
+.tearsheet--big {
   width: 80px;
   height: 80px; }
-  .tearsheet--l .month {
+  .tearsheet--big .month {
     -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
@@ -2037,7 +2030,7 @@ as well as a few different states/types:
     font-size: 19px;
     height: 32px;
     line-height: 36px; }
-  .tearsheet--l .day {
+  .tearsheet--big .day {
     line-height: 48px;
     font-size: 32px; }
 
@@ -2046,8 +2039,7 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar,
-.avatar--m, .avatar--xs, .avatar--s, .avatar--l {
+.avatar, .avatar--small, .avatar--big {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -2064,22 +2056,17 @@ as well as a few different states/types:
   background-position: center 42%;
   background-color: rgba(0, 0, 0, 0.47); }
 
-.avatar,
-.avatar--m {
-  width: 64px;
-  height: 64px; }
-
-.avatar--xs {
-  width: 32px;
-  height: 32px; }
-
-.avatar--s {
+.avatar {
   width: 48px;
   height: 48px; }
 
-.avatar--l {
-  width: 80px;
-  height: 80px; }
+.avatar--small {
+  width: 32px;
+  height: 32px; }
+
+.avatar--big {
+  width: 64px;
+  height: 64px; }
 
 /**
 * ==============================================
