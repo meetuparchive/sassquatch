@@ -9,7 +9,7 @@ $tabSpacing: $spacing/2;
 	padding-top: $tabSpacing;
 	padding-left: $tabSpacing;
 	border-bottom: 1px solid;
-	@include color_lineGray('border-color');
+	@include color_border('border-color');
 	list-style: none;
 	margin-bottom: $spacing;
 	li {
@@ -24,9 +24,9 @@ $tabSpacing: $spacing/2;
 		display: block;
 		text-decoration: none;
 		@include color_textSecondary;
-		@include color_lineGray('background-color');
+		@include color_border('background-color');
 		border: 1px solid;
-		@include color_lineGray('border-color');
+		@include color_border('border-color');
 		border-bottom-color: transparent;
 		padding: 6px 12px;
 		&:focus {
@@ -40,7 +40,7 @@ $tabSpacing: $spacing/2;
 		a {
 			@include color_textPrimary;
 			background-color: $C_primaryGrayInverted;
-			@include color_lineGray('border-color');
+			@include color_border('border-color');
 			border-bottom-color: $C_primaryGrayInverted;
 		}
 	}
@@ -63,13 +63,22 @@ $tabSpacing: $spacing/2;
 	.nav-tabs {
 		padding-left: 0;
 		li {
-			margin-right: $tabSpacing/2;
+			margin-right: 0;
+			&:first-child a {
+				border-left-width: 1px;
+				@include round-nw($defaultRadius);
+			}
+			&:last-child a {
+				@include round-ne($defaultRadius);
+			}
+			&.selected + li a {
+				border-left-width: 1px;
+			}
 		}
 		a {
+			@include round(0);
 			padding: 6px;
-			&.selected {
-				background-color: $C_primaryGrayInverted;
-			}
+			border-left-width: 0;
 		}
 		&:first-child {
 			padding-top: $tabSpacing;
