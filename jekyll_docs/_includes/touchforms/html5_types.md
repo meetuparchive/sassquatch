@@ -1,4 +1,4 @@
-<h2 class="section-subtitle">Html5 Form field types <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Html5 Form field types</h2>
 
 <div class="doc-box">
 	<ul class="touchList">
@@ -18,6 +18,12 @@
 					</label>
 				</div>
 			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="" for="" class="touchList-helperText">This is helper text.</label>
+				</div>
+			</div>
+
 		</li>
 
 		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
