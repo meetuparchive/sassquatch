@@ -442,12 +442,9 @@
 	/*  ======================================================================= */
 	/*  TEXTAREA STYLES  */
 
-	.touchList-label--textarea {
-		line-height: $LH_tall;
-		padding: $P_secondary $P_secondary 0;
-		// NOTE: this expanded line height value bumps the overall height of this
-		// element to 32px (aka 2em), which arguably makes it fit better into our
-		// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
+	.touchList .touchList-label--textarea {
+		// using `.touchList` parent for font-size override
+		@extend %tl-blockLabel;
 	}
 
 	.ffbox--textareaWrapper {
@@ -458,7 +455,6 @@
 
 	%touchListItemTextarea {
 		line-height: $LH_standard;
-		font-size: $FS_base;
 
 		padding: $P_secondary $P_secondary 0;
 		margin-bottom: ($LH_standard / 2) * 1em;
@@ -629,8 +625,8 @@
 		font-size: $FS_small;
 		line-height: $LH_standard;
 
-		margin-top: -$P_secondary;                                    // *2
-		padding: 0 ($P_secondary/$FS_small * 1em) ($P_secondary * 2); // *2
+		margin-top: -$P_secondary;                              // *2
+		padding: 0 ($P_secondary/$FS_small * 1em) $P_primary;   // *2
 
 		&:empty {     // *2
 			padding-bottom: 0; // *3
