@@ -323,7 +323,7 @@
 	.touchList-item--empty {
 		@extend %dividerBottom;
 		padding: ($P_secondary* 2) $P_secondary;
-		background-color: $C_gray96;
+		background-color: $C_backgroundNav;
 	}
 
 	.touchList-item--empty-label {

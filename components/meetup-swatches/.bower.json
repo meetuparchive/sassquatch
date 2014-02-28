@@ -18,13 +18,13 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/meetup/meetup-swatches",
-  "_release": "90c57045a9",
+  "_release": "fe104c3ccf",
   "_resolution": {
     "type": "branch",
-    "branch": "darker_colors",
-    "commit": "90c57045a942c677ae17886171b23cf173395f38"
+    "branch": "master",
+    "commit": "fe104c3ccfcbd20d317682d3df64338f1e8b23f3"
   },
-  "_source": "git@github.com:meetup/meetup-swatches.git",
-  "_target": "darker_colors",
-  "_originalSource": "git@github.com:meetup/meetup-swatches.git"
+  "_source": "git://github.com/meetup/meetup-swatches.git",
+  "_target": "master",
+  "_originalSource": "meetup-swatches"
 }
