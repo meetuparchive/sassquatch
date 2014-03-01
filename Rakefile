@@ -1,8 +1,6 @@
 COMPILER    = "sass"
 SOURCES     = "sass/"
 TARGET      = "css"
-JEKYLL_DIR  = "jekyll_docs"
-DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 # compile sass & copy files into build/
@@ -31,14 +29,6 @@ task :compile do
 	puts "#{HR}"
 	sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
 
-	# compile docs
-	puts
-	puts "#{HR}"
-	puts "Building docs"
-	puts "#{HR}"
-	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
-	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "jekyll build -s #{JEKYLL_DIR}"
 end
 
 
@@ -66,40 +56,40 @@ end
 
 # LAUNCH - syncs master with the gh-pages branch;
 # rebuilds LIVE github documentation page
-task :push_docs do
-	puts
-	puts "Rebuilding SassQuatch github pages"
-	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
+#task :push_docs do
+	#puts
+	#puts "Rebuilding SassQuatch github pages"
+	#puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
-	Rake::Task['compile'].execute
+	#Rake::Task['compile'].execute
 
-	branch = `git rev-parse --abbrev-ref HEAD`
+	#branch = `git rev-parse --abbrev-ref HEAD`
 
-	if "#{branch}" == "master\n"
-		sh "rm -rf .sass-cache"
-		sh "git checkout gh-pages"
-		sh "git pull"
-		sh "git checkout master _site/"
-		sh "cp -r _site/ ./"
-		sh "rm -rf _site/"
-		sh "git add ."
-		sh "git commit -a -m \"update live docs\""
-		sh "git push"
-		sh "git checkout master"
+	#if "#{branch}" == "master\n"
+		#sh "rm -rf .sass-cache"
+		#sh "git checkout gh-pages"
+		#sh "git pull"
+		#sh "git checkout master _site/"
+		#sh "cp -r _site/ ./"
+		#sh "rm -rf _site/"
+		#sh "git add ."
+		#sh "git commit -a -m \"update live docs\""
+		#sh "git push"
+		#sh "git checkout master"
 
-		puts
-		puts "#{HR}"
-		puts "Succesfully updated docs in gh-pages\n"
-		puts "Check http://meetup.github.io/sassquatch\n"
-		puts "(sometimes github takes a few minutes to rebuild the page)\n"
-		puts "#{HR}"
-		puts
-	else
-		puts
-		puts "WARNING: you're not on master."
-		puts "see launch instructions at https://github.com/meetup/sassquatch"
-		puts
-		puts "BUILD FAILED"
-		puts
-	end
-end
+		#puts
+		#puts "#{HR}"
+		#puts "Succesfully updated docs in gh-pages\n"
+		#puts "Check http://meetup.github.io/sassquatch\n"
+		#puts "(sometimes github takes a few minutes to rebuild the page)\n"
+		#puts "#{HR}"
+		#puts
+	#else
+		#puts
+		#puts "WARNING: you're not on master."
+		#puts "see launch instructions at https://github.com/meetup/sassquatch"
+		#puts
+		#puts "BUILD FAILED"
+		#puts
+	#end
+#end
