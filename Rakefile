@@ -74,7 +74,7 @@ task :push_docs do
 
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
-	do_it = branch != "master" and branch != "dev"
+	do_it = branch == "master" or branch == "dev"
 	if !do_it
 		puts "Do you want to build the docs for #{branch}? [y/n]"
 		do_it = $stdin.gets.chomp == "y"
