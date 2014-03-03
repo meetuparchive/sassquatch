@@ -86,11 +86,7 @@ task :push_docs do
 		sh "git checkout gh-pages"
 		sh "git pull"
 		sh "git checkout #{branch} _site/"
-		if branch == "master"
-			sh "cp -r _site/ ./"
-		else
-			sh "cp -r _site/ ./#{docs_path}"
-		end
+		sh "cp -r _site/ ./#{docs_path}"
 		sh "rm -rf _site/"
 		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
