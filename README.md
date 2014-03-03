@@ -80,6 +80,12 @@ This will approximate the [git-flow](http://nvie.com/posts/a-successful-git-bran
 
 If you use [hub](https://github.com/github/hub), you can target your pull requests to the `dev` branch. Otherwise, the repo maintainer will merge into `dev` when the pull request is ready.
 
+```sh
+$ hub pull-request -b Meetup:dev -h {sourceGitHubAccount}:{sourceGitHubBranch}
+```
+
+If you have push access, `{sourceGitHubAccount}` is usually `Meetup`.
+
 #### Updating live docs
 If you have push access, there's a separate task for launching new changes from master to the live github pages branch:
 
