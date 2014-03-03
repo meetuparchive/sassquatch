@@ -76,6 +76,8 @@ $tabSpacing: $spacing/2;
 		}
 		a {
 			@include round(0);
+			// needs to be a little taller to make bigger touch target
+			padding: $tabSpacing*1.5;
 			border-left-width: 0;
 		}
 		&:first-child {
