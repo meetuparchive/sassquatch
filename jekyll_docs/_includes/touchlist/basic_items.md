@@ -8,6 +8,13 @@
 <li class="touchList-item">
     <div class="ffbox ffbox--touchList-item">
         <div class="ffbox-flex">
+            <p>Multiline paragraph content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, accusantium deleniti iure quidem illum officiis.</p>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
             <span>Span content</span>
         </div>
     </div>
