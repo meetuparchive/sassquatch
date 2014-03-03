@@ -93,7 +93,7 @@ task :push_docs do
 		end
 		sh "rm -rf _site/"
 		sh "git add -A"
-		sh "git commit -a -m \"update live docs (#{branch} branch)\""
+		sh "git commit -m \"update live docs (#{branch} branch)\""
 		sh "git push"
 		sh "git checkout #{branch}"
 
