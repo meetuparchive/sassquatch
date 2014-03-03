@@ -116,11 +116,12 @@
 		// Having padding on all four sides would
 		// be a ton less work.
 
- 		.ffbox-flex {
- 			// don't have to worry about the ffbox-fix
- 			// follows sizing for .touchList-label--input
-			padding-top: $P_secondary / 2;
-			padding-bottom: $P_secondary / 2;
+ 		.ffbox-flex, .ffbox-fix {
+ 			// these are the likely suspects for content immediately inside
+ 			// .ffbox--touchList-item. This padding keeps multiline content
+ 			// spacing the same as single-line content
+ 			padding-top: $P_secondary;
+			padding-bottom: $P_secondary;
 		}
 	}
 
