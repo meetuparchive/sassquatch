@@ -92,7 +92,7 @@ task :push_docs do
 			sh "cp -r _site/ ./#{docs_path}"
 		end
 		sh "rm -rf _site/"
-		sh "git add ."
+		sh "git add -A"
 		sh "git commit -a -m \"update live docs (#{branch} branch)\""
 		sh "git push"
 		sh "git checkout #{branch}"
