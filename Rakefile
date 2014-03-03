@@ -88,7 +88,7 @@ task :push_docs, :branch do |t, args|
 		if requested_branch == "master"
 			sh "cp -r _site/ ./"
 		else
-			sh "cp -r _site/ ./#{requested_branch}"
+			sh "cp -r _site/ ./branches/#{requested_branch}"
 		end
 		sh "rm -rf _site/"
 		sh "git add ."
