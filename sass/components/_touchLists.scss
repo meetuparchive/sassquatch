@@ -11,6 +11,14 @@
 @import "../vars/touchList";
 @import "../util/touchList";
 
+%tl-blockLabel {
+	@include color_textSecondary;
+	font-size: $FS_small;
+	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
+	line-height: $LH_tall;
+	margin-bottom: -$P_secondary;
+}
+
 @if $platform == "mobile" {
 	/*  ======================================================================= */
 	/*  TOUCHLIST STYLES  */
@@ -55,10 +63,10 @@
 		padding: 0; // RESET
 		font-size: $FS_base;
 		line-height: $LH_standard;
-		.touchList & {
-			// RESET
-			color: $C_text_headline;  // overloaded selector to override link color
-		}
+	}
+	.touchList .touchList-blockLabel {
+		// extra specificity needed to override `.touchList label` styles
+		@extend %tl-blockLabel;
 	}
 
 	.touchList-text {
@@ -113,9 +121,6 @@
 		height: $H_touchTargetDefault;
 		// NOTE: Needed to provide height to input items wrapped in a fix-flex
 		// box, so they can have a consistent height with the other cells.
-		.touchList-input--hasBlockLabel & {
-			margin-top: -0.5em;  // snuggle up with block label
-		}
 	}
 
 
@@ -129,6 +134,10 @@
 	 */
 	.touchList-item {
 		@extend %dividerBottom;
+		@include color_textPrimary;
+		p:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.touchList-item--padded {
@@ -154,7 +163,7 @@
 		// like a normal link - it's just a list item that happens to be
 		// touchable. Extra specificity to override a:link
 		.touchList-item & {
-			color: $C_text;
+			@include color_textPrimary;
 			display: block;
 		}
 	}
