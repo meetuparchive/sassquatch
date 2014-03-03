@@ -64,10 +64,8 @@ task :default do
 end
 
 
-# LAUNCH - syncs master with the gh-pages branch;
-# rebuilds LIVE github documentation page
-task :push_docs, :branch do |t, args|
-	requested_branch = args[:branch] || false
+desc "rebuilds LIVE github documentation page, optional branch argument"
+task :push_docs do
 	puts
 	puts "Rebuilding SassQuatch github pages"
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
@@ -76,49 +74,35 @@ task :push_docs, :branch do |t, args|
 
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
-	if "#{branch}" == "master"
-		requested_branch = "master"
+	do_it = branch != "master" and branch != "dev"
+	if !do_it
+		puts "Do you want to build the docs for #{branch}? [y/n]"
+		do_it = $stdin.gets.chomp == "y"
 	end
 
-	if requested_branch
+	if do_it
+		docs_path = branch == "master" ? "" : "branches/#{branch}"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
 		sh "git pull"
-		sh "git checkout #{requested_branch} _site/"
-		if requested_branch == "master"
+		sh "git checkout #{branch} _site/"
+		if branch == "master"
 			sh "cp -r _site/ ./"
 		else
-			sh "cp -r _site/ ./branches/#{requested_branch}"
+			sh "cp -r _site/ ./#{docs_path}"
 		end
 		sh "rm -rf _site/"
 		sh "git add ."
-		sh "git commit -a -m \"update live docs (#{requested_branch} branch)\""
+		sh "git commit -a -m \"update live docs (#{branch} branch)\""
 		sh "git push"
 		sh "git checkout #{branch}"
 
 		puts
 		puts "#{HR}"
 		puts "Succesfully updated docs in gh-pages\n"
-		puts "Check http://meetup.github.io/sassquatch\n"
+		puts "Check http://meetup.github.io/sassquatch/#{docs_path}\n"
 		puts "(sometimes github takes a few minutes to rebuild the page)\n"
 		puts "#{HR}"
 		puts
-	else
-		puts
-		puts "WARNING: you're not on master."
-		puts "see launch instructions at https://github.com/meetup/sassquatch"
-		puts
-		puts "BUILD FAILED"
-		puts
 	end
-end
-
-desc "Basic call and response"
-task :call , :response do |t, args|
-	response = args[:response]
-	puts "When I say Rake, you say '#{response}'!"
-	sleep 1
-	puts "Rake!"
-	sleep 1
-	puts "#{response}!"
 end
