@@ -7,7 +7,7 @@ HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\
 
 # compile sass & copy files into build/
 task :compile do
-	
+
 	Dir.mkdir(TARGET) unless Dir.exists?(TARGET)
 
 	# desktop
@@ -66,26 +66,35 @@ end
 
 # LAUNCH - syncs master with the gh-pages branch;
 # rebuilds LIVE github documentation page
-task :push_docs do
+task :push_docs, :branch do |t, args|
+	requested_branch = args[:branch] || false
 	puts
 	puts "Rebuilding SassQuatch github pages"
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
 	Rake::Task['compile'].execute
 
-	branch = `git rev-parse --abbrev-ref HEAD`
+	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
-	if "#{branch}" == "master\n"
+	if "#{branch}" == "master"
+		requested_branch = "master"
+	end
+
+	if requested_branch
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
 		sh "git pull"
-		sh "git checkout master _site/"
-		sh "cp -r _site/ ./"
+		sh "git checkout #{requested_branch} _site/"
+		if requested_branch == "master"
+			sh "cp -r _site/ ./"
+		else
+			sh "cp -r _site/ ./#{requested_branch}"
+		end
 		sh "rm -rf _site/"
 		sh "git add ."
-		sh "git commit -a -m \"update live docs\""
+		sh "git commit -a -m \"update live docs (#{requested_branch} branch)\""
 		sh "git push"
-		sh "git checkout master"
+		sh "git checkout #{branch}"
 
 		puts
 		puts "#{HR}"
@@ -102,4 +111,14 @@ task :push_docs do
 		puts "BUILD FAILED"
 		puts
 	end
+end
+
+desc "Basic call and response"
+task :call , :response do |t, args|
+	response = args[:response]
+	puts "When I say Rake, you say '#{response}'!"
+	sleep 1
+	puts "Rake!"
+	sleep 1
+	puts "#{response}!"
 end
