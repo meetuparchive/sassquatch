@@ -1,9 +1,9 @@
 <div class="line-gutters">
 	<h2>Avatars</h2>
-	<p>You know, for people. Add .avatar--square for groups.</p>
-	<p><code>.avatar</code>, <code>.avatar--small</code>, <code>.avatar--big</code>, <code>.avatar avatar--square</code>, <code>.avatar--small avatar--square</code>, <code>.avatar--big avatar--square</code></p>
+	<p>You know, for people (avatar--person), and .avatar--chapter for groups.</p>
+	<p><code>.avatar--person</code>, <code>.avatar--personSmall</code>, <code>.avatar--personBig</code>, <code>.avatar--chapter</code>, <code>.avatar--chapterSmall</code>, <code>.avatar--chapterBig</code></p>
 	<div class="doc-content">
 		{% include content_patterns/avatar_example.md %}
 	</div>
-	{% highlight html %}{% include content_patterns/avatar_example.md %}{% endhighlight html %} 
+	{% highlight html %}{% include content_patterns/avatar_example.md %}{% endhighlight html %}
 </div>

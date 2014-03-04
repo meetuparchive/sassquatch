@@ -2039,7 +2039,12 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar--person, .avatar--personBig, .avatar--personSmall, .avatar--chapter, .avatar--chapterBig, .avatar--chapterSmall {
+.avatar--person, .avatar--personBig, .avatar--personSmall {
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px; }
+
+.avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -2052,11 +2057,6 @@ as well as a few different states/types:
   background-repeat: no-repeat;
   background-position: center 42%;
   background-color: rgba(0, 0, 0, 0.47); }
-
-.avatar--person, .avatar--personBig, .avatar--personSmall {
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px; }
 
 .avatar--person {
   width: 48px;
