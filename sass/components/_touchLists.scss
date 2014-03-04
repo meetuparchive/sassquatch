@@ -138,6 +138,16 @@
 		p:last-child {
 			margin-bottom: 0;
 		}
+		.touchList-item-action {
+			// the anchor just inside standard touchList-items shouldn't appear
+			// like a normal link - it's just a list item that happens to be
+			// touchable. Extra specificity to override a:link
+			@include color_textPrimary;
+			display: block;
+		}
+		.avatar {
+			margin: $P_secondary 0 $P_secondary $P_secondary;
+		}
 	}
 
 	.touchList-item--padded {
@@ -156,16 +166,6 @@
 	.touchList-item-ffbox {
 		padding: 0 $P_secondary;
 		height: $H_touchTargetDefault;
-	}
-
-	.touchList-item-action {
-		// the anchor just inside standard touchList-items shouldn't appear
-		// like a normal link - it's just a list item that happens to be
-		// touchable. Extra specificity to override a:link
-		.touchList-item & {
-			@include color_textPrimary;
-			display: block;
-		}
 	}
 
 
