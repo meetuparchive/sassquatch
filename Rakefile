@@ -90,7 +90,7 @@ task :push_docs do
 		sh "rm -rf _site/"
 		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
-		sh "git push"
+		sh "git push origin gh-pages"
 		sh "git checkout #{branch}"
 
 		puts
