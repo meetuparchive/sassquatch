@@ -6,7 +6,6 @@
 
 %_avatar_base {
 	@include background-size(cover);
-	@include round($media-xl);
 	display: block;
 	text-indent: 100%;
 	white-space: nowrap;
@@ -43,8 +42,8 @@
 }
 
 
-// Square modifier - use this class in addition to one of the
+// Round modifier - use this class in addition to one of the
 // basic avatar variants
-.avatar--square {
-	@include round(0);
+.avatar--round {
+	@include round($media-xl);
 }

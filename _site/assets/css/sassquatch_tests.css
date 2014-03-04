@@ -2044,9 +2044,6 @@ as well as a few different states/types:
   -webkit-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px;
   display: block;
   text-indent: 100%;
   white-space: nowrap;
@@ -2068,10 +2065,10 @@ as well as a few different states/types:
   width: 64px;
   height: 64px; }
 
-.avatar--square {
-  -moz-border-radius: 0 0 0 0;
-  -webkit-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0; }
+.avatar--round {
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px; }
 
 /**
 * ==============================================
