@@ -2039,14 +2039,16 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar, .avatar--small, .avatar--big {
+.avatar--person, .avatar--personBig, .avatar--personSmall {
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px; }
+
+.avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px;
   display: block;
   text-indent: 100%;
   white-space: nowrap;
@@ -2056,17 +2058,29 @@ as well as a few different states/types:
   background-position: center 42%;
   background-color: rgba(0, 0, 0, 0.47); }
 
-.avatar {
+.avatar--person {
   width: 48px;
   height: 48px; }
 
-.avatar--small {
+.avatar--personBig {
+  width: 64px;
+  height: 64px; }
+
+.avatar--personSmall {
   width: 32px;
   height: 32px; }
 
-.avatar--big {
+.avatar--chapter {
+  width: 48px;
+  height: 48px; }
+
+.avatar--chapterBig {
   width: 64px;
   height: 64px; }
+
+.avatar--chapterSmall {
+  width: 32px;
+  height: 32px; }
 
 /**
 * ==============================================
@@ -2179,37 +2193,47 @@ as well as a few different states/types:
 .nav-tabs {
   padding-top: 9px;
   padding-left: 9px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid;
+  border-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1);
   list-style: none;
-  margin-bottom: 18px; }
+  margin-bottom: 0; }
   .nav-tabs li {
     float: left;
     padding: 0;
     margin-right: 9px;
     margin-bottom: -1px; }
   .nav-tabs a {
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
     display: block;
     text-decoration: none;
-    color: #888888;
-    background-color: #f4f4f4;
-    border: 1px solid #f4f4f4;
-    border-bottom-color: #dddddd;
-    padding: 6px 12px; }
+    color: #545454;
+    color: rgba(0, 0, 0, 0.67);
+    background-color: #f7f7f7;
+    border: 1px solid;
+    border-color: #e6e6e6;
+    border-color: rgba(0, 0, 0, 0.1);
+    padding: 6px 13.5px; }
     .nav-tabs a:focus {
       outline-width: 0; }
     .nav-tabs a img {
       /*calendar icon*/
       margin-top: -5px; }
   .nav-tabs .selected a {
-    color: #555555;
-    background-color: #fff;
-    border-color: #dddddd;
+    color: #0d0d0d;
+    color: rgba(0, 0, 0, 0.95);
+    background-color: white;
+    border-color: #e6e6e6;
+    border-color: rgba(0, 0, 0, 0.1);
     border-bottom-color: white; }
   .nav-tabs .tabcount {
-    color: #888; }
+    color: #878787;
+    color: rgba(0, 0, 0, 0.47); }
 
 /**
 * override for ghome
