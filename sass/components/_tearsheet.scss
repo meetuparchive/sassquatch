@@ -40,35 +40,43 @@ as well as a few different states/types:
 	}
 }
 
-@mixin tearsheet($size: 40){
-	$size-px: $size * 1px;
-	.tearsheet-#{$size} {
-		@extend %tearsheet;
-		width: $size-px;
-		height: $size-px;
-		.month{
-			@include round-ne($defaultRadius);
-			@include round-nw($defaultRadius);
-			font-size: round( $size * 1.2/5 ) * 1px;
-			height: $size * 2/5 * 1px;
-			line-height: $size * 0.45 * 1px;
-		}
-		.day {
-			// might want to do something fancy here to go to 1px
-			// borders when $size < (some threshold)
-			line-height: $size * 3/5 * 1px;
-			font-size: $size * 2/5 * 1px;
-		}
+@mixin tearsheet($size: $media-m){
+	@extend %tearsheet;
+	width: $size;
+	height: $size;
+	.month{
+		@include round-ne($defaultRadius);
+		@include round-nw($defaultRadius);
+		font-size: round( $size * 1.2/5 );
+		height: $size * 2/5;
+		line-height: $size * 0.45;
+	}
+	.day {
+		// might want to do something fancy here to go to 1px
+		// borders when $size < (some threshold)
+		line-height: $size * 3/5;
+		font-size: $size * 2/5;
 	}
 }
 
 @if $platform == "desktop" {
 
-	@include tearsheet(25);
-	@include tearsheet(30);
-	@include tearsheet(40);
-	@include tearsheet(80);
+	// Deault Tearsheet (medium)
+	// --------------------------
 	.tearsheet {
-		@extend .tearsheet-40
+		@include tearsheet($media-m);
 	}
+
+	// Small Tearsheet
+	// --------------------------
+	.tearsheet--small {
+		@include tearsheet($media-s);
+	}
+
+	// Big Tearsheet
+	// --------------------------
+	.tearsheet--big {
+		@include tearsheet($media-xl);
+	}
+
 }
