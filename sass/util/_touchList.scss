@@ -66,7 +66,7 @@
 /*  ======================================================================= */
 /*  UI SPECIFIC EXTENDS AND MIXINS  */
 
-@mixin UIPlaceholder($color:$C_gray80) {
+@mixin UIPlaceholder($color: lighten($C_textTertiary, 40%)) {
 	// Why isn't this an @extend instead? Because when you cluster together
 	// uninterpretable CSS rules (like vendor-specific placeholder attributes)
 	// it will invalidate all of the ones it doesn't understand, including
