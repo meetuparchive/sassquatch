@@ -17,8 +17,7 @@
 	background-color: $C_tertiaryGray;
 }
 
-
-@mixin avatar( $size: $media-l ) {
+@mixin avatar( $size: $media-l, $isRound: true ) {
 	@extend %_avatar_base;
 	width: $size;
 	height: $size;
@@ -41,4 +40,11 @@
 // ---------------------------
 .avatar--big {
 	@include avatar($media-l);
+}
+
+
+// Square modifier - use this class in addition to one of the
+// basic avatar variants
+.avatar--square {
+	@include round(0);
 }
