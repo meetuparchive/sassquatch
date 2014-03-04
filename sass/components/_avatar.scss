@@ -15,9 +15,15 @@
 	background-position: center 42%;
 	background-color: $C_tertiaryGray;
 }
+%_avatar_round {
+	@include round($media-xl);
+}
 
-@mixin avatar( $size: $media-l, $isRound: true ) {
+@mixin avatar( $size: $media-m, $isRound: false ) {
 	@extend %_avatar_base;
+	@if $isRound {
+		@extend %_avatar_round;
+	}
 	width: $size;
 	height: $size;
 }
@@ -25,25 +31,41 @@
 
 // Default Avatar (medium)
 // ---------------------------
-.avatar {
+%avatar {
 	@include avatar($media-m);
 }
 
 // Small Avatar
 // ---------------------------
-.avatar--small {
+%avatar--small {
 	@include avatar($media-s);
 }
 
 // Big Avatar
 // ---------------------------
-.avatar--big {
+%avatar--big {
 	@include avatar($media-l);
 }
 
-
-// Round modifier - use this class in addition to one of the
+// Round variant - use this class in addition to one of the
 // basic avatar variants
-.avatar--round {
-	@include round($media-xl);
+.avatar--person {
+	@include avatar($isRound: true);
+}
+.avatar--personBig {
+	@include avatar($size: $media-l, $isRound: true);
+}
+.avatar--personSmall {
+	@include avatar($size: $media-s, $isRound: true);
+}
+
+// Square
+.avatar--chapter {
+	@include avatar;
+}
+.avatar--chapterBig {
+	@include avatar($size: $media-l);
+}
+.avatar--chapterSmall {
+	@include avatar($size: $media-s);
 }
