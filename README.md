@@ -53,10 +53,11 @@ http://meetup.github.io/sassquatch/
 SassQuatch development currently requires Python, Ruby and the ruby gems Rake, Sass, and Jekyll.
 
 #### Easy setup
-If you're using [rbenv](https://github.com/sstephenson/rbenv) (and you should be), just run this command to install all necessary development dependencies for Sassquatch:
 
 ```
-$ ./setup.sh
+$ brew update
+$ brew install rbenv ruby-build
+$ git clone git@github.com:meetup/sassquatch.git; ./setup.sh
 ```
 
 #### Editing sass source and documentation
