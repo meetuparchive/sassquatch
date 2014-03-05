@@ -88,7 +88,7 @@ task :push_docs do
 		sh "git checkout #{branch} _site/"
 		sh "cp -r _site/ ./#{docs_path}"
 		sh "rm -rf _site/"
-		sh "git add ."
+		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
 		sh "git push origin gh-pages"
 		sh "git checkout #{branch}"
