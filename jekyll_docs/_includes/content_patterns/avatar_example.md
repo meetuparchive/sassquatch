@@ -1,22 +1,42 @@
 <ul class="inlineblockList">
-	<li>
-	<a href="#" class="avatar"
-		style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
-			Chris
-	</a>
-	</li>
+<li>
+<a href="#" class="avatar avatar--person"
+  style="background-image: url(http://placekitten.com/g/120/120/);">
+    Chris
+</a>
+</li>
 
-	<li class="margin-left">
-	<a href="#" class="avatar--small"
-		style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">
-			Samantha
-	</a>
-	</li>
+<li class="margin-left">
+  <a href="#" class="avatar avatar--personSmall"
+    style="background-image: url(http://placekitten.com/g/120/122/);">
+      Samantha
+  </a>
+</li>
 
-	<li class="margin-left">
-	<a href="#" class="avatar--big"
-		style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
-			Larry
-	</a>
-	</li>
+<li class="margin-left">
+  <a href="#" class="avatar avatar--personBig"
+    style="background-image: url(http://placekitten.com/g/120/124/);">
+      Larry
+  </a>
+</li>
+<li class="margin-left">
+  <a href="#" class="avatar avatar--chapter"
+    style="background-image: url(http://placekitten.com/g/120/120/);">
+      Chris
+  </a>
+</li>
+
+<li class="margin-left">
+  <a href="#" class="avatar avatar--chapterSmall"
+    style="background-image: url(http://placekitten.com/g/120/122/);">
+      Samantha
+  </a>
+</li>
+
+<li class="margin-left">
+  <a href="#" class="avatar avatar--chapterBig"
+    style="background-image: url(http://placekitten.com/g/120/124/);">
+      Larry
+  </a>
+</li>
 </ul>
