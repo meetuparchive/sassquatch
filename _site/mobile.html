@@ -21,7 +21,6 @@
 		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
 		<script src="assets/js/closeable.js" type="text/javascript"></script>
 		<script src="assets/js/jquery.scrollbeacon.js" type="text/javascript"></script>
-		<script>function invertize(sel) { document.body.className = sel.options[sel.selectedIndex].value }</script>
 
 		<style>
 			/*
@@ -89,16 +88,6 @@
 	<body>
 
 		<ul id="guide-nav" class="inlineList">
-			<li>
-				<select name="inverter" id="inverter" onchange="invertize(this)">
-					<option selected="selected" value="">Normal</option>
-					<option value="bg_darkgray inverted">Dark gray</option>
-					<option value="bg_darkblue inverted">Blue</option>
-					<option value="bg_red inverted">Red</option>
-					<option value="bg_green inverted">Green</option>
-					<option value="bg_photo inverted">Photo</option>
-				</select>
-			</li>
 			<li><a href="index.html">&larr; Desktop</a></li>
 			<li><a href="#lists">Layout</a></li>
 			<li><a href="#touchlists-m">Touch Lists</a></li>
@@ -476,6 +465,7 @@
 						<div class="doc-content">
 	<div class="line-gutters">
 		<div class="unit size1of3">
+			
 			<h2>Tabs</h2>
 			<p>Rounded tab navigation. Used mostly as secondary navigation on Meetup; load the tab content with <code>web:ajax</code> where possible.</p>
 			<p><code>.nav-tabs</code></p>
