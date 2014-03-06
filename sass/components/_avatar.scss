@@ -33,23 +33,23 @@
 }
 
 // Round variant: person
-.avatar--person {
+.avatar-person {
 	@include avatar($isRound: true);
 }
-.avatar--personBig {
+.avatar-person--big {
 	@include avatar($size: $media-l, $isRound: true);
 }
-.avatar--personSmall {
+.avatar-person--small {
 	@include avatar($size: $media-s, $isRound: true);
 }
 
 // Square variant: chapter
-.avatar--chapter {
+.avatar-chapter {
 	@include avatar;
 }
-.avatar--chapterBig {
+.avatar-chapter--big {
 	@include avatar($size: $media-l);
 }
-.avatar--chapterSmall {
+.avatar-chapter--small {
 	@include avatar($size: $media-s);
 }

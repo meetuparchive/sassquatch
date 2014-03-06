@@ -319,7 +319,7 @@ html, body {
   color: #fff; }
 
 .inverted {
-  color: white;
+  color: #ababab;
   color: rgba(255, 255, 255, 0.67); }
   .inverted ::-moz-selection {
     background: white;
@@ -2038,7 +2038,7 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar--person, .avatar--personBig, .avatar--personSmall {
+.avatar-person, .avatar-person--big, .avatar-person--small {
   -moz-border-radius: 80px 80px 80px 80px;
   -webkit-border-radius: 80px 80px 80px 80px;
   border-radius: 80px 80px 80px 80px; }
@@ -2057,27 +2057,27 @@ as well as a few different states/types:
   background-position: center 42%;
   background-color: rgba(0, 0, 0, 0.47); }
 
-.avatar--person {
+.avatar-person {
   width: 48px;
   height: 48px; }
 
-.avatar--personBig {
+.avatar-person--big {
   width: 64px;
   height: 64px; }
 
-.avatar--personSmall {
+.avatar-person--small {
   width: 32px;
   height: 32px; }
 
-.avatar--chapter {
+.avatar-chapter {
   width: 48px;
   height: 48px; }
 
-.avatar--chapterBig {
+.avatar-chapter--big {
   width: 64px;
   height: 64px; }
 
-.avatar--chapterSmall {
+.avatar-chapter--small {
   width: 32px;
   height: 32px; }
 
@@ -3028,7 +3028,7 @@ as well as a few different states/types:
   color: #878787;
   color: rgba(0, 0, 0, 0.47); }
   .inverted .muted {
-    color: white;
+    color: #787878;
     color: rgba(255, 255, 255, 0.47); }
 
 .muted-opacity {
@@ -3078,7 +3078,7 @@ a.unlink:link, a.unlink:visited {
   color: #545454;
   color: rgba(0, 0, 0, 0.67); }
 .inverted a.unlink:link, .inverted a.unlink:visited {
-  color: white;
+  color: #ababab;
   color: rgba(255, 255, 255, 0.67); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
