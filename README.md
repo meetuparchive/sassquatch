@@ -52,7 +52,7 @@ http://meetup.github.io/sassquatch/
 ## How to contribute
 SassQuatch development currently requires Python, Ruby and the ruby gems Rake, Sass, and Jekyll.
 
-#### Easy setup
+#### Easy setup (Mac OS X)
 
 ```
 $ brew update
@@ -74,11 +74,15 @@ There are also specific rake targets for recompiling docs, launching jekyll, and
 
 
 #### Updating live docs
-If you have push access, there's a separate task for launching new changes from master to the live github pages branch:
+If you have push access, there's a separate task for sending new changes to the live github pages branch:
 
 	$ rake push_docs
 
-_NOTE_: this only works when run in the master branch.
+For the `master` branch docs, the style guide is here: http://meetup.github.io/sassquatch/
+
+For all other branches, the style guide will be built to http://meetup.github.io/sassquatch/branches/::yourbranchname::/
+
+_NOTE_: If you are not on the `master` or `dev` branch, you will be asked to confirm that you want to build docs for your branch.
 - - -
 
 
