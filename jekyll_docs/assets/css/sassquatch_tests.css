@@ -319,7 +319,7 @@ html, body {
   color: #fff; }
 
 .inverted {
-  color: white;
+  color: #ababab;
   color: rgba(255, 255, 255, 0.67); }
   .inverted ::-moz-selection {
     background: white;
@@ -1639,7 +1639,6 @@ input[type="submit"]:active {
   top: 12px;
   right: 12px;
   display: block;
-  background: url("/img/ui-dialog-close.png") no-repeat top left;
   width: 14px;
   height: 14px;
   cursor: pointer;
@@ -3028,7 +3027,7 @@ as well as a few different states/types:
   color: #878787;
   color: rgba(0, 0, 0, 0.47); }
   .inverted .muted {
-    color: white;
+    color: #787878;
     color: rgba(255, 255, 255, 0.47); }
 
 .muted-opacity {
@@ -3078,7 +3077,7 @@ a.unlink:link, a.unlink:visited {
   color: #545454;
   color: rgba(0, 0, 0, 0.67); }
 .inverted a.unlink:link, .inverted a.unlink:visited {
-  color: white;
+  color: #ababab;
   color: rgba(255, 255, 255, 0.67); }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
