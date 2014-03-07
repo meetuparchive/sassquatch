@@ -97,7 +97,7 @@
 		[disabled],
 		[disabled="disabled"],
 		.disabled {
-			background-color: $C_backgroundNav;
+			@include color_backgroundNav('background-color');
 		}
 
 		// Placeholders
@@ -393,7 +393,7 @@
 	.touchList-item--select-mask {
 		position: absolute;
 		height: 100%;
-		background-color: $C_backgroundContent;
+		@include color_backgroundContent('background-color');
 		top: 0;
 		right: 0;
 		padding: 0 $P_secondary;
@@ -404,7 +404,7 @@
 	[disabled] .touchList-item--select-mask,
 	[disabled="disabled"] .touchList-item--select-mask,
 	.disabled .touchList-item--select-mask {
-		background-color: $C_backgroundNav;
+		@include color_backgroundNav('background-color');
 	}
 
 
@@ -622,6 +622,7 @@
 	 */
 	label.touchList-helperText {     // *1
 		@include color_textTertiary;
+		.inverted & { @include color_textTertiaryInverted; }
 		font-size: $FS_small;
 		line-height: $LH_standard;
 
