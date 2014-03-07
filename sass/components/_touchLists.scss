@@ -120,6 +120,14 @@
 		//
 		// Having padding on all four sides would
 		// be a ton less work.
+
+ 		.ffbox-flex, .ffbox-fix {
+ 			// these are the likely suspects for content immediately inside
+ 			// .ffbox--touchList-item. This padding keeps multiline content
+ 			// spacing the same as single-line content
+ 			padding-top: $P_secondary;
+			padding-bottom: $P_secondary;
+		}
 	}
 
 	.ffbox--touchList-input {
@@ -178,12 +186,6 @@
 
 	/*  ======================================================================= */
 	/*  TOUCHLIST ATTENDEE ITEM */
-
-	.touchList-attendee-photo,
-	.touchList-attendee-info {
-		padding-top: $P_secondary;
-		padding-bottom: $P_secondary;
-	}
 
 	.touchList-attendee-info {
 		padding-left: $P_secondary;
