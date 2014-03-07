@@ -21,6 +21,7 @@
 		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
 		<script src="assets/js/closeable.js" type="text/javascript"></script>
 		<script src="assets/js/jquery.scrollbeacon.js" type="text/javascript"></script>
+		<script>function invertize(sel) { document.body.className = sel.options[sel.selectedIndex].value }</script>
 
 		<style>
 			/*
@@ -88,6 +89,16 @@
 	<body>
 
 		<ul id="guide-nav" class="inlineList">
+			<li>
+				<select name="inverter" id="inverter" onchange="invertize(this)">
+					<option selected="selected" value="">Normal</option>
+					<option value="bg_darkgray inverted">Dark gray</option>
+					<option value="bg_darkblue inverted">Blue</option>
+					<option value="bg_red inverted">Red</option>
+					<option value="bg_green inverted">Green</option>
+					<option value="bg_photo inverted">Photo</option>
+				</select>
+			</li>
 			<li><a href="index.html">&larr; Desktop</a></li>
 			<li><a href="#lists">Layout</a></li>
 			<li><a href="#touchlists-m">Touch Lists</a></li>
@@ -619,6 +630,13 @@
 <li class="touchList-item">
     <div class="ffbox ffbox--touchList-item">
         <div class="ffbox-flex">
+            <p>Multiline paragraph content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, accusantium deleniti iure quidem illum officiis.</p>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
             <span>Span content</span>
         </div>
     </div>
@@ -731,6 +749,13 @@
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;p&gt;</span>Paragraph content<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Multiline paragraph content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, accusantium deleniti iure quidem illum officiis.<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
@@ -1056,6 +1081,13 @@
     <div class="ffbox ffbox--touchList-item">
         <div class="ffbox-flex">
             <p>Paragraph content</p>
+        </div>
+    </div>
+</li>
+<li class="touchList-item">
+    <div class="ffbox ffbox--touchList-item">
+        <div class="ffbox-flex">
+            <p>Multiline paragraph content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, accusantium deleniti iure quidem illum officiis.</p>
         </div>
     </div>
 </li>

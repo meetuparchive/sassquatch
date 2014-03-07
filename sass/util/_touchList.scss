@@ -20,6 +20,7 @@
 	//	`.touchList-load-more-link`
 	//	`.touchList-jump-link`
 	border-bottom: 1px solid $C_line_less;
+	.inverted & { @include color_borderInverted('border-color'); }
 }
 
 %dividerLeft {
