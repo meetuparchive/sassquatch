@@ -2,7 +2,7 @@
 * GUIDE
 * this file is for styleguide document styles only
 *
-* NOTE: does NOT get compiled into the framework 
+* NOTE: does NOT get compiled into the framework
 */
 /**
 * MIXINS
@@ -33,37 +33,31 @@ body {
 
 .doc-page {
   border-top: 1px solid #cccccc;
+  width: 960px;
+  margin: 0 auto;
   padding: 12px 12px 0; }
-  .doc-page:first-child, .doc-page.first {
-    border-top: 0; }
-  .doc-page > .doc-content {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 1px solid #dddddd;
-    padding-left: 0;
-    padding-right: 0; }
-    .doc-page > .doc-content:first-child {
-      border-top: none; }
-    .doc-page > .doc-content > h1 {
-      margin-bottom: 12px; }
+#getstarted, #intro {
+  border-top: none;
+}
 
-code, pre {
-  color: #555555;
-  font-family: Monaco, "Andale Mono", "Courier New", monospace !important;
-  font-size: 12px;
-  margin: 0; }
-
-code {
+code { /* inline code */
+  font-family: Monaco, "Andale Mono", "Courier New", monospace;
   padding: 1px 4px;
   background: #fbe1e3;
   border-radius: 4px;
-  white-space: nowrap;
-  font-weight: normal !important; }
-
-.prettyprint code {
-  background: #555; }
-
+  font-size: 12px !important;
+  font-weight: normal !important;
+  color: #555;
+}
+.highlight pre { /* pretty printed via pygments */
+  padding: 1em 1.5em;
+  margin: 0 0 16px 0;
+  border-radius: 4px;
+}
+.highlight pre code {
+  font-family: Monaco, "Andale Mono", "Courier New", monospace;
+  padding: 0;
+}
 .prettyprint {
   margin-bottom: 12px; }
 
@@ -90,6 +84,10 @@ code {
 
 #guide-nav a:hover, #guide-nav a.selected {
   background: #E6304C; }
+
+#guide-nav select {
+  display: inline;
+}
 
 #guide-nav .guide-usage-nav a {
   background: #3987cb; }
@@ -134,6 +132,9 @@ code {
   -webkit-background-clip: content-box;
   background-clip: content-box; }
 
+.guide-table td[headers=color] {
+  color: #fff !important;
+}
 .guide-table td[headers=sass] {
   width: 60%; }
 
@@ -208,14 +209,11 @@ footer {
 .bg_darkgray_lighter {
   background-color: #555555; }
 
-.bg_darkgray {
-  background-color: #222222; }
+.bg_red_darker {
+  background-color: #CC1C32; }
 
-.bg_red {
-  background-color: #e6304c; }
-
-.bg_darkblue {
-  background-color: #3987cb; }
+.bg_lightblue {
+  background-color: #a5c8e7; }
 
 .bg_rsvpGoing {
   background-color: #62ac75; }
@@ -232,4 +230,46 @@ footer {
 .bg_warnText {
   background-color: #e6304c; }
 
+.bg_darkgray, .bg_darkgray .doc-box {
+  background-color: #222222; }
+
+.bg_red, .bg_red .doc-box {
+  background-color: #e6304c; }
+
+.bg_darkblue, .bg_darkblue .doc-box {
+  background-color: #3987cb; }
+
+.bg_green, .bg_green .doc-box {
+  background-color: #62ac75; }
+
+.bg_photo, .bg_photo .doc-box {
+  background-image: url(http://img1.meetup.com/img/jobs/slides/stars.jpg); }
+
+/* }}} */
+
+
+#thirdPartyColors dt {
+  color: #fff;
+  padding: 4px;
+  text-align: center;
+}
+.C_facebook dt {
+  background-color: #3B5998; }
+.C_twitter dt {
+  background-color: #33CCFF; }
+.C_linkedin dt {
+  background-color: #4875B4; }
+.C_tumblr dt {
+  background-color: #2B4964; }
+.C_flickr dt {
+  background-color: #FE0883; }
+.C_foursquare dt {
+  background-color: #0cbadf; }
+.C_googleplus dt {
+  background-color: #C63D2D; }
+.C_instagram dt {
+  background-color: #4E433C; }
+.C_reddit dt {
+  color: #555 !important;
+  background-color: #CEE3F8; }
 /* }}} */
