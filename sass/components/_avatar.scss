@@ -7,7 +7,7 @@
 // Default Avatars
 // media-m size; people are round
 // -------------------------------
-.avatar--person,
+.avatar,
 .avatar--chapter {
 	@include background-size(cover);
 	display: block;
@@ -21,6 +21,7 @@
 	width: $media-m;
 	height: $media-m;
 }
+
 .avatar--person {
 	@include round($media-xl);  // bigger than any acceptable radius
 										// => will become circle

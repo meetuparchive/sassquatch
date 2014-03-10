@@ -2037,7 +2037,7 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar--person,
+.avatar,
 .avatar--chapter {
   -moz-background-size: cover;
   -webkit-background-size: cover;
