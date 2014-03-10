@@ -2037,12 +2037,8 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar-person, .avatar-person--big, .avatar-person--small {
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px; }
-
-.avatar {
+.avatar--person,
+.avatar--chapter {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -2054,31 +2050,22 @@ as well as a few different states/types:
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: center 42%;
-  background-color: rgba(0, 0, 0, 0.47); }
-
-.avatar-person {
+  background-color: rgba(0, 0, 0, 0.47);
   width: 48px;
   height: 48px; }
 
-.avatar-person--big {
-  width: 64px;
-  height: 64px; }
+.avatar--person {
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px; }
 
-.avatar-person--small {
+.avatar--small {
   width: 32px;
   height: 32px; }
 
-.avatar-chapter {
-  width: 48px;
-  height: 48px; }
-
-.avatar-chapter--big {
+.avatar--big {
   width: 64px;
   height: 64px; }
-
-.avatar-chapter--small {
-  width: 32px;
-  height: 32px; }
 
 /**
 * ==============================================

@@ -4,23 +4,11 @@
 * (Member photos)
 */
 
-%_avatar_round {
-	@include round($media-xl);  // bigger than any acceptable radius
-								// => will become circle
-}
-
-@mixin avatar( $size: $media-m, $isRound: false ) {
-	// must have .avatar class in addition to selector with mixin
-	@if $isRound {
-		@extend %_avatar_round;
-	}
-	width: $size;
-	height: $size;
-}
-
-// Default Avatar - no size applied
-// ---------------------------
-.avatar {
+// Default Avatars
+// media-m size; people are round
+// -------------------------------
+.avatar--person,
+.avatar--chapter {
 	@include background-size(cover);
 	display: block;
 	text-indent: 100%;
@@ -30,26 +18,21 @@
 	background-repeat: no-repeat;
 	background-position: center 42%;
 	background-color: $C_tertiaryGray;
+	width: $media-m;
+	height: $media-m;
+}
+.avatar--person {
+	@include round($media-xl);  // bigger than any acceptable radius
+										// => will become circle
 }
 
-// Round variant: person
-.avatar-person {
-	@include avatar($isRound: true);
+// Avatar Size Variants
+// ---------------------------
+.avatar--small {
+	width: $media-s;
+	height: $media-s;
 }
-.avatar-person--big {
-	@include avatar($size: $media-l, $isRound: true);
-}
-.avatar-person--small {
-	@include avatar($size: $media-s, $isRound: true);
-}
-
-// Square variant: chapter
-.avatar-chapter {
-	@include avatar;
-}
-.avatar-chapter--big {
-	@include avatar($size: $media-l);
-}
-.avatar-chapter--small {
-	@include avatar($size: $media-s);
+.avatar--big {
+	width: $media-l;
+	height: $media-l;
 }

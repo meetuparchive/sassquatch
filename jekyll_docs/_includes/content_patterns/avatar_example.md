@@ -1,40 +1,40 @@
 <ul class="inlineblockList">
 <li>
-<a href="#" class="avatar avatar-person"
+<a href="#" class="avatar--person"
   style="background-image: url(http://placekitten.com/g/120/120/);">
     Chris
 </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-person--small"
+  <a href="#" class="avatar--person avatar--small"
     style="background-image: url(http://placekitten.com/g/120/122/);">
       Samantha
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-person--big"
+  <a href="#" class="avatar--person avatar--big"
     style="background-image: url(http://placekitten.com/g/120/124/);">
       Larry
   </a>
 </li>
 <li class="margin-left">
-  <a href="#" class="avatar avatar-chapter"
+  <a href="#" class="avatar--chapter"
     style="background-image: url(http://placekitten.com/g/120/120/);">
       Chris
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-chapter--small"
+  <a href="#" class="avatar--chapter avatar--small"
     style="background-image: url(http://placekitten.com/g/120/122/);">
       Samantha
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-chapter--big"
+  <a href="#" class="avatar--chapter avatar--big"
     style="background-image: url(http://placekitten.com/g/120/124/);">
       Larry
   </a>

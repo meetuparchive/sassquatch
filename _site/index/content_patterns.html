@@ -41,46 +41,49 @@
 
 <div class="line-gutters">
 	<h2>Avatars</h2>
-	<p>You know, for people (avatar-person), and .avatar-chapter for groups.</p>
-	<p><code>.avatar-person</code>, <code>.avatar-person--small</code>, <code>.avatar-person--big</code>, <code>.avatar-chapter</code>, <code>.avatar-chapter--small</code>, <code>.avatar-chapter--big</code></p>
+	<p>
+		You know, for people (avatar--person), and .avatar--chapter for groups.<br />
+		Avatars are 48px<sup>2</sup> by default, but you can use `avatar--[size]` variants for big or small avatars.
+	</p>
+	<p><code>.avatar--[person|chapter] (.avatar--[big|small])</code></p>
 	<div class="doc-content">
 		<ul class="inlineblockList">
 <li>
-<a href="#" class="avatar avatar-person"
+<a href="#" class="avatar--person"
   style="background-image: url(http://placekitten.com/g/120/120/);">
     Chris
 </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-person--small"
+  <a href="#" class="avatar--person avatar--small"
     style="background-image: url(http://placekitten.com/g/120/122/);">
       Samantha
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-person--big"
+  <a href="#" class="avatar--person avatar--big"
     style="background-image: url(http://placekitten.com/g/120/124/);">
       Larry
   </a>
 </li>
 <li class="margin-left">
-  <a href="#" class="avatar avatar-chapter"
+  <a href="#" class="avatar--chapter"
     style="background-image: url(http://placekitten.com/g/120/120/);">
       Chris
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-chapter--small"
+  <a href="#" class="avatar--chapter avatar--small"
     style="background-image: url(http://placekitten.com/g/120/122/);">
       Samantha
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar-chapter--big"
+  <a href="#" class="avatar--chapter avatar--big"
     style="background-image: url(http://placekitten.com/g/120/124/);">
       Larry
   </a>
@@ -90,41 +93,41 @@
 	</div>
 	<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;inlineblockList&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;li&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar avatar-person&quot;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar--person&quot;</span>
   <span class="na">style=</span><span class="s">&quot;background-image: url(http://placekitten.com/g/120/120/);&quot;</span><span class="nt">&gt;</span>
     Chris
 <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 
 <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;margin-left&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar avatar-person--small&quot;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar--person avatar--small&quot;</span>
     <span class="na">style=</span><span class="s">&quot;background-image: url(http://placekitten.com/g/120/122/);&quot;</span><span class="nt">&gt;</span>
       Samantha
   <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 
 <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;margin-left&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar avatar-person--big&quot;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar--person avatar--big&quot;</span>
     <span class="na">style=</span><span class="s">&quot;background-image: url(http://placekitten.com/g/120/124/);&quot;</span><span class="nt">&gt;</span>
       Larry
   <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;margin-left&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar avatar-chapter&quot;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar--chapter&quot;</span>
     <span class="na">style=</span><span class="s">&quot;background-image: url(http://placekitten.com/g/120/120/);&quot;</span><span class="nt">&gt;</span>
       Chris
   <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 
 <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;margin-left&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar avatar-chapter--small&quot;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar--chapter avatar--small&quot;</span>
     <span class="na">style=</span><span class="s">&quot;background-image: url(http://placekitten.com/g/120/122/);&quot;</span><span class="nt">&gt;</span>
       Samantha
   <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 
 <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;margin-left&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar avatar-chapter--big&quot;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;avatar--chapter avatar--big&quot;</span>
     <span class="na">style=</span><span class="s">&quot;background-image: url(http://placekitten.com/g/120/124/);&quot;</span><span class="nt">&gt;</span>
       Larry
   <span class="nt">&lt;/a&gt;</span>
