@@ -156,8 +156,7 @@
 			// the anchor just inside standard touchList-items shouldn't appear
 			// like a normal link - it's just a list item that happens to be
 			// touchable. Extra specificity to override a:link
-			@include color_textPrimary;
-			.inverted & { @include color_textPrimaryInverted; }
+			@extend unlink;
 			display: block;
 		}
 		.avatar {
