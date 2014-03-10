@@ -13,6 +13,7 @@
 
 %tl-blockLabel {
 	@include color_textSecondary;
+	.inverted & { @include color_textSecondaryInverted; }
 	font-size: $FS_small;
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
@@ -88,7 +89,7 @@
 	}
 
 	.icon-disclosure-right--touchList-item {
-		color: $C_line;
+		@include color_lineGray;
 		vertical-align: -0.2em;
 		// Arbitary value, optical alignment
 	}
@@ -147,6 +148,7 @@
 	.touchList-item {
 		@extend %dividerBottom;
 		@include color_textPrimary;
+		.inverted & { @include color_textPrimaryInverted; }
 		p:last-child {
 			margin-bottom: 0;
 		}
@@ -155,6 +157,7 @@
 			// like a normal link - it's just a list item that happens to be
 			// touchable. Extra specificity to override a:link
 			@include color_textPrimary;
+			.inverted & { @include color_textPrimaryInverted; }
 			display: block;
 		}
 		.avatar {
@@ -265,11 +268,11 @@
 	}
 
 	.touchList-event-reldate {
-		background-color: $C_backgroundContentAccent;
+		@include color_backgroundContentAccent('background-color');
 		padding:0.333em 0.417em;
 		@include color_textPrimaryInverted;
 		margin-right:0.167em;
-		 font-size:0.813em;
+		font-size:0.813em;
 	}
 
 	.touchList-event-dates {
@@ -337,8 +340,8 @@
 
 	.touchList-item--empty {
 		@extend %dividerBottom;
+		@include color_backgroundNav('background-color');
 		padding: ($P_secondary* 2) $P_secondary;
-		background-color: $C_backgroundNav;
 	}
 
 	.touchList-item--empty-label {
@@ -386,7 +389,7 @@
 		background: none;
 		border: none;
 		.touchList-item {
-			border-color: $C_border;
+			@include color_border('border-color');
 		}
 		.touchList-label {
 			@include color_textTertiary;
@@ -422,7 +425,7 @@
 		@extend %textDisableSelection;
 		@extend %dividerBottom;
 		@include color_textTertiary;
-		background-color: $C_backgroundNav;
+		@include color_backgroundNav('background-color');
 
 		font-size: $FS_small;
 		font-weight: bold;
@@ -462,7 +465,7 @@
 		padding: 0 $P_secondary;
 		.touchList-item & {
 			// extra specificity to override a:link
-			color: $C_line;
+			@include color_lineGray;
 		}
 	}
 
