@@ -48,7 +48,7 @@ task :jekyll do
 	puts "#{HR}"
 	puts "STARTING JEKYLL..."
 	puts "#{HR}"
-	sh "jekyll serve -s #{JEKYLL_DIR} --baseurl sassquatch --watch"
+	sh "jekyll serve -s #{JEKYLL_DIR} --watch"
 end
 
 
