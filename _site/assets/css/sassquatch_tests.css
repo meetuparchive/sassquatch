@@ -2807,6 +2807,7 @@ as well as a few different states/types:
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* icon gems are 16px with 0.5em padding */
+/* icon gems are square inside ffbox-fix */
 /* $FS_ : Font Size */
 /* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
  * be used with scoped resets in order to work properly. For touchList, this
@@ -2876,6 +2877,7 @@ as well as a few different states/types:
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* icon gems are 16px with 0.5em padding */
+/* icon gems are square inside ffbox-fix */
 /* $FS_ : Font Size */
 /* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
  * be used with scoped resets in order to work properly. For touchList, this
