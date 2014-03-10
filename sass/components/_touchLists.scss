@@ -66,7 +66,10 @@
 		line-height: $LH_standard;
 		.touchList & {
 			// RESET
-			@include color_textSecondary;  // overloaded selector to override link color
+			@include color_textSecondary;  // overloaded selector to override link color, h4 color
+		}
+		.linkify & {
+			color: inherit;  // typically inside a .touchList-item-action.linkify, which will be link-colored
 		}
 	}
 	.touchList .touchList-blockLabel {
@@ -156,8 +159,13 @@
 			// the anchor just inside standard touchList-items shouldn't appear
 			// like a normal link - it's just a list item that happens to be
 			// touchable. Extra specificity to override a:link
-			@include color_textPrimary;
-			.inverted & { @include color_textPrimaryInverted; }
+			//
+			// :not is supported in IE9+, and is the best way to support legacy
+			// markup with an optional 'linkify' class
+			&:not(.linkify) {
+				@include color_textPrimary;
+				.inverted & { @include color_textPrimaryInverted; }
+			}
 			display: block;
 		}
 		.avatar {
