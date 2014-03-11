@@ -83,6 +83,20 @@ $tabSpacing: $spacing/2;
 		&:first-child {
 			padding-top: $tabSpacing;
 		}
+		&.nav-tabs--subtle {
+			a {
+				@include color_backgroundCollection('background-color');
+				@include color_textTertiary;
+				font-weight: bold;
+			}
+			.selected {
+				a {
+					@include color_backgroundNav('background-color');
+					@include color_backgroundNav('border-bottom-color');
+					@include color_textSecondary;
+				}
+			}
+		}
 	}
 }
 
