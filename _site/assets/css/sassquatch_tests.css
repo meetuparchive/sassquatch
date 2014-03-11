@@ -1561,7 +1561,7 @@ input[type="submit"]:active {
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
   padding: 18px;
-  padding-bottom: 4.5px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
 
@@ -1710,7 +1710,7 @@ input[type="submit"]:active {
 .doc-content-big {
   border-top: 1px solid #dddddd;
   padding: 18px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
   .doc-content-big:first-child {
