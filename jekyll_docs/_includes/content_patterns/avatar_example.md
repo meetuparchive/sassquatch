@@ -7,14 +7,14 @@
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar--personSmall"
+  <a href="#" class="avatar avatar--person avatar--small"
     style="background-image: url(http://placekitten.com/g/120/122/);">
       Samantha
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar--personBig"
+  <a href="#" class="avatar avatar--person avatar--big"
     style="background-image: url(http://placekitten.com/g/120/124/);">
       Larry
   </a>
@@ -27,14 +27,14 @@
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar--chapterSmall"
+  <a href="#" class="avatar avatar--chapter avatar--small"
     style="background-image: url(http://placekitten.com/g/120/122/);">
       Samantha
   </a>
 </li>
 
 <li class="margin-left">
-  <a href="#" class="avatar avatar--chapterBig"
+  <a href="#" class="avatar avatar--chapter avatar--big"
     style="background-image: url(http://placekitten.com/g/120/124/);">
       Larry
   </a>
