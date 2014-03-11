@@ -1561,7 +1561,7 @@ input[type="submit"]:active {
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
   padding: 18px;
-  padding-bottom: 4.5px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
 
@@ -1710,7 +1710,7 @@ input[type="submit"]:active {
 .doc-content-big {
   border-top: 1px solid #dddddd;
   padding: 18px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
   .doc-content-big:first-child {
@@ -2037,11 +2037,6 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar--person, .avatar--personBig, .avatar--personSmall {
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px; }
-
 .avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -2054,31 +2049,22 @@ as well as a few different states/types:
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: center 42%;
-  background-color: rgba(0, 0, 0, 0.47); }
+  background-color: rgba(0, 0, 0, 0.47);
+  width: 48px;
+  height: 48px; }
 
 .avatar--person {
-  width: 48px;
-  height: 48px; }
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px; }
 
-.avatar--personBig {
-  width: 64px;
-  height: 64px; }
-
-.avatar--personSmall {
+.avatar--small {
   width: 32px;
   height: 32px; }
 
-.avatar--chapter {
-  width: 48px;
-  height: 48px; }
-
-.avatar--chapterBig {
+.avatar--big {
   width: 64px;
   height: 64px; }
-
-.avatar--chapterSmall {
-  width: 32px;
-  height: 32px; }
 
 /**
 * ==============================================
