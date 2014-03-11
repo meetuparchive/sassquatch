@@ -4,11 +4,10 @@
 * (Member photos)
 */
 
-// Default Avatars
-// media-m size; people are round
+// Avatar base class. Add in a variant!
+// media-m size
 // -------------------------------
-.avatar,
-.avatar--chapter {
+.avatar {
 	@include background-size(cover);
 	display: block;
 	text-indent: 100%;
@@ -22,9 +21,12 @@
 	height: $media-m;
 }
 
+.avatar--chapter {
+	// nothing special... yet.
+}
 .avatar--person {
 	@include round($media-xl);  // bigger than any acceptable radius
-										// => will become circle
+								// => will become circle
 }
 
 // Avatar Size Variants
