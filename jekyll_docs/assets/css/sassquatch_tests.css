@@ -1579,10 +1579,10 @@ input[type="submit"]:active {
   cursor: pointer;
   *cursor: hand;
   opacity: 0.5;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
   .close-me:hover {
     opacity: 1;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); }
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
 
 /**
 * into/outof
@@ -2358,7 +2358,6 @@ as well as a few different states/types:
     background: #f2f2f2;
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
     background: -moz-linear-gradient(top, white, #f2f2f2);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
     border: none;
     color: #555555;
@@ -2372,7 +2371,6 @@ as well as a few different states/types:
       background: #ededed;
       background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
       background: -moz-linear-gradient(top, white, #ededed);
-      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
     .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.active,
     .nav-buttons li > a:active,
@@ -2549,7 +2547,6 @@ as well as a few different states/types:
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
   background: -moz-linear-gradient(top, white, #f2f2f2);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -2576,7 +2573,6 @@ as well as a few different states/types:
     background: #ededed;
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
     background: -moz-linear-gradient(top, white, #ededed);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
   .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.active {
     background: #e6e6e6;
@@ -2904,7 +2900,7 @@ as well as a few different states/types:
 
 .muted-opacity {
   opacity: 0.8;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; }
 
 .bold {
   font-weight: 700; }
@@ -2925,7 +2921,7 @@ as well as a few different states/types:
 
 .opacity-quarter {
   opacity: 0.25;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25); }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; }
 
 .border-none {
   border-width: 0 !important; }
