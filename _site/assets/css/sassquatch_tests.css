@@ -993,7 +993,6 @@ input[type="submit"] {
     box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
   .button:hover,
   button:hover,
@@ -1022,7 +1021,6 @@ input[type="submit"] {
     input[type="submit"]:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
@@ -1042,7 +1040,6 @@ input[type="submit"] {
       box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
       -moz-transform: translate(0px, 2px);
       -webkit-transform: translate(0px, 2px);
-      -o-transform: translate(0px, 2px);
       transform: translate(0px, 2px); }
     .inverted
     .button:hover, .inverted
@@ -1076,7 +1073,6 @@ input[type="submit"].button--primary {
     box-shadow: #851518 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
   .primary:hover,
   .button.primary:hover,
@@ -1119,7 +1115,6 @@ input[type="submit"].button--primary {
     input[type="submit"].button--primary:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
@@ -1136,7 +1131,6 @@ input[type="submit"].button--black {
     box-shadow: black 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
   .button--black:hover,
   input[type="submit"].button--black:hover {
@@ -1158,7 +1152,6 @@ input[type="submit"].button--black {
     input[type="submit"].button--black:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
@@ -1175,7 +1168,6 @@ input[type="submit"].button--black {
     box-shadow: #bfbfbf 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
   .button--white:hover,
   input[type="submit"].button--black:hover {
@@ -1197,7 +1189,6 @@ input[type="submit"].button--black {
     input[type="submit"].button--black:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
@@ -1214,7 +1205,6 @@ input[type="submit"].button--blue {
     box-shadow: #005893 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
   .button--blue:hover,
   input[type="submit"].button--blue:hover {
@@ -1236,7 +1226,6 @@ input[type="submit"].button--blue {
     input[type="submit"].button--blue:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
