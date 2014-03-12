@@ -4,22 +4,9 @@
 * (Member photos)
 */
 
-%_avatar_round {
-	@include round($media-xl);  // bigger than any acceptable radius
-								// => will become circle
-}
-
-@mixin avatar( $size: $media-m, $isRound: false ) {
-	// must have .avatar class in addition to selector with mixin
-	@if $isRound {
-		@extend %_avatar_round;
-	}
-	width: $size;
-	height: $size;
-}
-
-// Default Avatar - no size applied
-// ---------------------------
+// Avatar base class. Add in a variant!
+// media-m size
+// -------------------------------
 .avatar {
 	@include background-size(cover);
 	display: block;
@@ -30,26 +17,25 @@
 	background-repeat: no-repeat;
 	background-position: center 42%;
 	background-color: $C_tertiaryGray;
+	width: $media-m;
+	height: $media-m;
 }
 
-// Round variant: person
-.avatar--person {
-	@include avatar($isRound: true);
-}
-.avatar--personBig {
-	@include avatar($size: $media-l, $isRound: true);
-}
-.avatar--personSmall {
-	@include avatar($size: $media-s, $isRound: true);
-}
-
-// Square variant: chapter
 .avatar--chapter {
-	@include avatar;
+	// nothing special... yet.
 }
-.avatar--chapterBig {
-	@include avatar($size: $media-l);
+.avatar--person {
+	@include round($media-xl);  // bigger than any acceptable radius
+								// => will become circle
 }
-.avatar--chapterSmall {
-	@include avatar($size: $media-s);
+
+// Avatar Size Variants
+// ---------------------------
+.avatar--small {
+	width: $media-s;
+	height: $media-s;
+}
+.avatar--big {
+	width: $media-l;
+	height: $media-l;
 }
