@@ -90,9 +90,9 @@
 			@warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
 			$full: $full inset; }
 	@if $color == none {
-		@include experimental(box-shadow, none, not -moz, -webkit, not -o, not -ms, not -khtml, official); }
+		@include experimental(box-shadow, none, $moz: false, $ms: false); }
 	@else {
-		@include experimental(box-shadow, $full, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+		@include experimental(box-shadow, $full, $moz: false, $ms: false);
 	}
 }
 
@@ -107,11 +107,10 @@
 	@include experimental(background-size, $size);
 }
 
-@mixin opacity($opacity) {
+@mixin opacity($opacity, $supportSimpleIE: true) {
 	opacity: $opacity;
-	@if true {
-		$value: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
-		@include experimental(filter, $value, not -moz, not -webkit, not -o, -ms, not -khtml, official);
+	@if $supportSimpleIE {
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)});
 	}
 }
 
@@ -189,7 +188,14 @@
 }
 
 
-@mixin experimental($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
+@mixin experimental($property,
+					$value,
+					$moz: true,
+					$webkit: true,
+					$o: false,
+					$ms: true,
+					$khtml: false,
+					$official: true) {
 	$value: unquote($value);
 	@if $moz {
 		-moz-#{$property}: $value; }
@@ -205,7 +211,14 @@
 		#{$property}: $value; } }
 
 
-@mixin experimental-value($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
+@mixin experimental-value($property,
+							$value,
+							$moz: true,
+							$webkit: true,
+							$o: false,
+							$ms: true,
+							$khtml: false,
+							$official: true) {
 	@if $moz {
 		#{$property}: -moz-#{$value}; }
 	@if $webkit {
