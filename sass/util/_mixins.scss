@@ -33,9 +33,8 @@
 	background: $second;
 	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
 	background: -moz-linear-gradient(top,  $first,  $second);
-		@if $simpleIE != true {
-				filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');
-				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";
+	@if $simpleIE != true {
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  // IE 8+
 	}
 }
 
@@ -110,7 +109,7 @@
 @mixin opacity($opacity, $supportSimpleIE: true) {
 	opacity: $opacity;
 	@if $supportSimpleIE {
-		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)});
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})";
 	}
 }
 
