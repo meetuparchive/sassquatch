@@ -6,33 +6,30 @@
 
 
 @mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
-	-moz-border-radius: $nw $ne $se $sw;
-	-webkit-border-radius: $nw $ne $se $sw;
+	-webkit-border-radius: $nw $ne $se $sw;  // Android 2.3
 	border-radius: $nw $ne $se $sw;
 }
 @mixin round-nw($r){
-	-moz-border-radius-topleft: $r;
 	-webkit-border-top-left-radius: $r;
 	border-top-left-radius: $r;
 }
 @mixin round-ne($r){
-	-moz-border-radius-topright: $r;
 	-webkit-border-top-right-radius: $r;
 	border-top-right-radius: $r;
 }
 @mixin round-sw($r){
-	-moz-border-radius-bottomleft: $r;
 	-webkit-border-bottom-left-radius: $r;
 	border-bottom-left-radius: $r;
 }
 
 @mixin round-se($r){
-	-moz-border-radius-bottomright: $r;
 	-webkit-border-bottom-right-radius: $r;
 	border-bottom-right-radius: $r;
 }
 
 @mixin gradient($first, $second, $simpleIE: false) {
+	// TODO: revise style rules to fit standard `linear-gradient` syntax with fallback
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
 	background: $second;
 	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
 	background: -moz-linear-gradient(top,  $first,  $second);
@@ -93,9 +90,9 @@
 			@warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
 			$full: $full inset; }
 	@if $color == none {
-		@include experimental(box-shadow, none, -moz, -webkit, -o, not -ms, not -khtml, official); }
+		@include experimental(box-shadow, none, not -moz, -webkit, not -o, not -ms, not -khtml, official); }
 	@else {
-		@include experimental(box-shadow, $full, -moz, -webkit, -o, not -ms, not -khtml, official);
+		@include experimental(box-shadow, $full, not -moz, -webkit, not -o, not -ms, not -khtml, official);
 	}
 }
 
