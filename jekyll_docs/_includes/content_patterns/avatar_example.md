@@ -39,4 +39,16 @@
       Larry
   </a>
 </li>
+<li>
+<a href="#" class="avatar avatar--person avatar--stack"
+  style="background-image: url(http://placekitten.com/g/120/120/);">
+    Chris
+</a>
+</li>
+<li>
+<a href="#" class="avatar avatar--chapter avatar--stack"
+  style="background-image: url(http://placekitten.com/g/120/120/);">
+    Chris
+</a>
+</li>
 </ul>

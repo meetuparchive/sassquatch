@@ -39,3 +39,7 @@
 	width: $media-l;
 	height: $media-l;
 }
+
+.avatar--stack {
+	@extend %blockStack;
+}
