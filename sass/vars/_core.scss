@@ -203,18 +203,18 @@ $no: 						null;
 	$headingFontStack: 		$baseFontStack; 
 	$uiControlFontStack: 	$baseFontStack;
 
-	$baseFontSize: 12px;
+	$baseFontSize: 16px;
 
-	$h1FontSize: 	24px;
-	$h2FontSize: 	20px;
-	$h3FontSize: 	16px;
-	$h4FontSize: 	14px;
+	$h1FontSize: 	$baseFontSize * 1.75;
+	$h2FontSize: 	$baseFontSize * 1.5;
+	$h3FontSize: 	$baseFontSize * 1.25;
+	$h4FontSize: 	$baseFontSize;
 	$h5FontSize: 	$baseFontSize;
 	$h6FontSize: 	$baseFontSize;
 
-	$baseline: 			12px;        	/*  unused, except for below  */
-	$spacing: 			9px;          	/*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 		8px; 
+	$baseline: 			16px;        	/*  unused, except for below  */
+	$spacing: 			$baseline / 2;          	/*  used, but has a lot of conditional overrides/modifications */
+	$basePadding: 		$spacing; 
 	$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
 	/*  }  */
 

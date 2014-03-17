@@ -238,9 +238,9 @@ a.unlink{
 		color: #444;
 	}
 	.small, small {
-		font-size: 11px;
+		//font-size: 11px;
 		&.caps {
-			font-size:10px;
+			font-size:$smallFontSize * .8;
 		}
 	}
 	.smaller {
