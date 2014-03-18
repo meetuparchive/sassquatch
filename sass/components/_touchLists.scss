@@ -74,8 +74,8 @@
 			// RESET
 			@include color_textSecondary;  // overloaded selector to override link color, h4 color
 		}
-		.touchlist-item-action.linkify & {
-			color: inherit;  // inherit color from .touchList-item-action.linkify
+		.linkify & {
+			color: inherit;  // inherit color from any .linkify wrapper
 		}
 	}
 	.touchList-item-heading {

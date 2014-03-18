@@ -292,7 +292,7 @@ $arrow-width: $baseline/2;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 
 	label.small {
-		font-size:13px;
+		font-size:$smallFontSize;
 	}
 	select {
 		height: $bigFontSize*2 - 2;
