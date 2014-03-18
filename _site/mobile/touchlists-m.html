@@ -390,6 +390,60 @@
 </div>
 
 
+<h2 class="section-subtitle">Avatar + Input TouchList</h2>
+<p>Want avatars with inputs? We've still got you covered.</p>
+
+<!-- EXTRA CSS -->
+<style type="text/css">
+	#members .ffbox--shaded { height: 3.75em; }
+	#members .pill-label--leader,
+	#members .pill-label--friend { font-size: 0.55em }
+	#members .pill-list li:first-child { margin-left: 0; }
+	#members .touchList-item-action .ffbox--touchList-item { padding-right: 0; }
+	#members .touchList input[type="checkbox"] { margin-right: 0; }
+	#member_content { padding-right: 0.375em; }
+	#member_content h4,
+	#member_content ul {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+</style>
+
+<!-- HTML -->
+<div class="doc-box">
+    <ul id="members" class="touchList">
+        <li id="member11130829_item" class="touchList-item ffbox">
+	<a href="#" id="member_action" class="touchList-item-action ffbox-flex unlink">
+		<div class="ffbox--touchList-item">
+			<div class="ffbox-fix">
+				<div class="avatar avatar--person margin-none" style="background-image:url(http://placekitten.com/g/90/100/);"></div>
+			</div>
+			<div class="ffbox-flex padding-none">
+				<div class="ffbox ffbox--touchList-item has-right-action">
+					<div id="member_content" class="ffbox-flex">
+						<h4 class="">Mr. Jinx</h4>
+						<ul class="inlineblockList pill-list"><li class="pill-label--leader">Event Organizer</li></ul>
+						<p class="small leading-top margin-none">Try to milk me and you'll be sorry.</p>
+					</div>
+					<label class="ffbox-fix ffbox--shaded">
+						<input type="checkbox" name="member" id="member11130829" class="" value="1" tabindex="0">
+						<i class="icon-s icon-checkbox pseudocheckbox"></i>
+					</label>
+				</div>
+				<div class="ffbox">
+					<div class="ffbox-flex touchList-helperTextWrap">
+						<label id="" for="member_input" class="touchList-helperText"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</a>
+</li>
+
+    </ul>
+</div>
+
+
 <h2 class="section-subtitle">Attendee Item TouchList</h2>
 <p> Initially designed for the Attendee/RSVP list on event details, 
     we can use this pattern whenever we need to display member data in a list.
