@@ -235,6 +235,9 @@ input[type="submit"].button--blue, .nav-buttons label,
  *  used with CSS animations.
  */
 /*  }   */
+.avatar--stack {
+  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47); }
+
 /*
 Animations
 ==========
@@ -358,7 +361,7 @@ table, dl, dd,
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   margin: 0;
   padding: 0;
-  margin-bottom: 18px; }
+  margin-bottom: 1px; }
 
 form, legend {
   margin-bottom: 0; }
@@ -542,16 +545,16 @@ td, tbody th {
     margin: 0; }
 
 .paddedList > li {
-  padding: 9px 0 0 0; }
+  padding: 0.5px 0 0 0; }
   .paddedList > li:first-child {
     padding: 0; }
 
 .dividedList > li {
-  padding: 18px 0 0;
+  padding: 1px 0 0;
   border-top: 1px solid #eeeeee; }
 
 .sectionList > li {
-  padding: 18px 18px 0px;
+  padding: 18px 18px 17px;
   border-top: 1px solid #eeeeee; }
 
 /* }}} */
@@ -590,7 +593,7 @@ fieldset {
   /* group like-fields together under headings (legends) with this! */
   border-width: 0;
   background: transparent;
-  padding: 7.2px 0 0;
+  padding: 0.4px 0 0;
   position: relative;
   margin-top: 2.25em; }
   fieldset legend {
@@ -620,7 +623,7 @@ input, select, textarea {
   padding: 4.5px;
   font-size: 16px;
   width: auto;
-  margin-bottom: 18px;
+  margin-bottom: 1px;
   color: #555555;
   border: 1px solid #dddddd;
   -webkit-border-radius: 1.5px 1.5px 1.5px 1.5px;
@@ -781,7 +784,7 @@ input.error, select.error, textarea.error {
   margin-bottom: 0.5em; }
 
 input.hasMaxLen, textarea.hasMaxLen {
-  margin-bottom: 18px; }
+  margin-bottom: 1px; }
 
 /* {{{ Form Modifiers */
 input.big,
@@ -1511,7 +1514,7 @@ input[type="submit"]:active {
 
 .doc-controls {
   background: #dddddd;
-  margin-bottom: 18px; }
+  margin-bottom: 1px; }
 
 /**
 * footer used for dialogs, but could potentially be used elsewhere
@@ -1868,7 +1871,7 @@ hr.double-line {
     border: 1px solid #dddddd;
     background: #fff;
     font-size: 16px;
-    margin: 0 18px 18px 0;
+    margin: 0 1px 1px 0;
     padding: 0;
     display: inline-block;
     zoom: 1;
@@ -1877,7 +1880,7 @@ hr.double-line {
     width: 223px; }
     .cardList > li .doc-content {
       border-top: 1px solid #eeeeee;
-      padding: 18px 18px 0; }
+      padding: 1px 1px 0; }
     .cardList > li .doc-content:first-child {
       border-top: 0; }
 
@@ -1903,7 +1906,7 @@ as well as a few different states/types:
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  margin-bottom: 18px;
+  margin-bottom: 1px;
   font-weight: 700; }
   .tearsheet .month, .tearsheet--small .month, .tearsheet--big .month {
     text-transform: uppercase;
@@ -2070,20 +2073,20 @@ as well as a few different states/types:
   background-color: #333; }
 
 .nametag-photo-name {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(22, 24, 27, 0)), color-stop(72px, rgba(22, 24, 27, 0.7)), color-stop(100%, rgba(22, 24, 27, 0.9)));
-  background: -webkit-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(22, 24, 27, 0)), color-stop(4px, rgba(22, 24, 27, 0.7)), color-stop(100%, rgba(22, 24, 27, 0.9)));
+  background: -webkit-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 4px, rgba(22, 24, 27, 0.9));
+  background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 4px, rgba(22, 24, 27, 0.9));
+  background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 4px, rgba(22, 24, 27, 0.9));
+  background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 4px, rgba(22, 24, 27, 0.9));
+  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 4px, rgba(22, 24, 27, 0.9));
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  line-height: 27px;
+  line-height: 1.5px;
   display: block;
   color: #fff;
-  padding: 81px 18px 0;
+  padding: 4.5px 1px 0;
   orphans: 2;
   vertical-align: bottom;
   width: 100%;
@@ -2103,8 +2106,8 @@ as well as a few different states/types:
 * Tabs Pattern
 */
 .nav-tabs {
-  padding-top: 9px;
-  padding-left: 9px;
+  padding-top: 0.5px;
+  padding-left: 0.5px;
   border-bottom: 1px solid;
   border-color: #e6e6e6;
   border-color: rgba(0, 0, 0, 0.1);
@@ -2113,7 +2116,7 @@ as well as a few different states/types:
   .nav-tabs li {
     float: left;
     padding: 0;
-    margin-right: 9px;
+    margin-right: 0.5px;
     margin-bottom: -1px; }
   .nav-tabs a {
     -webkit-border-top-left-radius: 3px;
@@ -2128,7 +2131,7 @@ as well as a few different states/types:
     border: 1px solid;
     border-color: #e6e6e6;
     border-color: rgba(0, 0, 0, 0.1);
-    padding: 6px 13.5px; }
+    padding: 0.33333px 0.75px; }
     .nav-tabs a:focus {
       outline-width: 0; }
     .nav-tabs a img {
@@ -2160,7 +2163,7 @@ as well as a few different states/types:
 .nav-pagination {
   font-size: 15px;
   list-style-type: none;
-  margin-bottom: 18px;
+  margin-bottom: 1px;
   padding: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
     border: 1px solid #dddddd;
@@ -2222,7 +2225,7 @@ as well as a few different states/types:
   letter-spacing: 0.04em;
   color: #2a9bc7;
   padding: 0.33em 0;
-  margin-bottom: 18px;
+  margin-bottom: 1px;
   cursor: pointer;
   *cursor: hand;
   /* IE, you're a complete idiot */
@@ -2265,7 +2268,7 @@ as well as a few different states/types:
   -ms-background-clip: padding-box;
   background-clip: padding-box;
   list-style-type: none;
-  margin-bottom: 18px;
+  margin-bottom: 1px;
   padding-left: 0;
   line-height: 1.5;
   border: 1px solid #dddddd;
@@ -2785,7 +2788,7 @@ as well as a few different states/types:
   background: pink;
   color: #555;
   font-family: Consolas, Monaco, monospace;
-  padding: 9px; }
+  padding: 0.5px; }
   .debug:before {
     color: blue;
     content: "DEBUG: "; }
@@ -2807,18 +2810,18 @@ as well as a few different states/types:
   background-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
 
 .leading-top {
-  padding-top: 18px; }
+  padding-top: 1px; }
 
 .leading-bottom {
-  padding-bottom: 18px; }
+  padding-bottom: 1px; }
 
 .leading-left,
 .padding-left {
-  padding-left: 18px; }
+  padding-left: 1px; }
 
 .leading-right,
 .padding-right {
-  padding-right: 18px; }
+  padding-right: 1px; }
 
 .leading-none,
 .padding-none {
@@ -2826,22 +2829,22 @@ as well as a few different states/types:
 
 .leading-all,
 .padding-all {
-  padding: 18px; }
+  padding: 1px; }
 
 .margin-all {
-  margin: 18px; }
+  margin: 1px; }
 
 .margin-top {
-  margin-top: 18px; }
+  margin-top: 1px; }
 
 .margin-bottom {
-  margin-bottom: 18px; }
+  margin-bottom: 1px; }
 
 .margin-left {
-  margin-left: 18px; }
+  margin-left: 1px; }
 
 .margin-right {
-  margin-right: 18px; }
+  margin-right: 1px; }
 
 .margin-none {
   margin: 0 !important; }

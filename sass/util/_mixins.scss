@@ -872,3 +872,12 @@
 	 }
 }
 /*  }   */
+
+%blockStack {
+	$thickness: 2px;
+	$spacing: 1px;
+	box-shadow: $spacing $spacing								0 $C_backgroundContent,
+				$spacing+$thickness $spacing+$thickness			0 $C_tertiaryGray,
+				$spacing*2+$thickness $spacing*2+$thickness		0 $C_backgroundContent,
+				($spacing+$thickness)*2 ($spacing+$thickness)*2 0 $C_tertiaryGray;
+}
