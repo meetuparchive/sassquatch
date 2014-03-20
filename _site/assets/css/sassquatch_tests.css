@@ -1043,21 +1043,6 @@ input[type="submit"] {
     input[type="submit"].disabled:hover,
     input[type="submit"]:disabled:hover {
       background: rgba(0, 0, 0, 0.1); }
-    .button.disabled.button--active,
-    .button:disabled.button--active,
-    button.disabled.button--active,
-    button:disabled.button--active,
-    input[type="submit"].disabled.button--active,
-    input[type="submit"]:disabled.button--active {
-      background: rgba(0, 0, 0, 0.1);
-      -moz-transform: translate(1px, 0px);
-      -webkit-transform: translate(1px, 0px);
-      -o-transform: translate(1px, 0px);
-      transform: translate(1px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
   .inverted
   .button, .inverted
   button, .inverted
@@ -1146,25 +1131,15 @@ input[type="submit"].button--primary {
   input[type="submit"].button--primary:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .primary.disabled.button--active,
     .primary.disabled:active,
-    .primary:disabled.button--active,
     .primary:disabled:active,
-    .button.primary.disabled.button--active,
     .button.primary.disabled:active,
-    .button.primary:disabled.button--active,
     .button.primary:disabled:active,
-    .button--primary.disabled.button--active,
     .button--primary.disabled:active,
-    .button--primary:disabled.button--active,
     .button--primary:disabled:active,
-    input[type="submit"].primary.disabled.button--active,
     input[type="submit"].primary.disabled:active,
-    input[type="submit"].primary:disabled.button--active,
     input[type="submit"].primary:disabled:active,
-    input[type="submit"].button--primary.disabled.button--active,
     input[type="submit"].button--primary.disabled:active,
-    input[type="submit"].button--primary:disabled.button--active,
     input[type="submit"].button--primary:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
@@ -1174,25 +1149,15 @@ input[type="submit"].button--primary {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
-    .primary.disabled.button--active,
     .primary.disabled:hover,
-    .primary:disabled.button--active,
     .primary:disabled:hover,
-    .button.primary.disabled.button--active,
     .button.primary.disabled:hover,
-    .button.primary:disabled.button--active,
     .button.primary:disabled:hover,
-    .button--primary.disabled.button--active,
     .button--primary.disabled:hover,
-    .button--primary:disabled.button--active,
     .button--primary:disabled:hover,
-    input[type="submit"].primary.disabled.button--active,
     input[type="submit"].primary.disabled:hover,
-    input[type="submit"].primary:disabled.button--active,
     input[type="submit"].primary:disabled:hover,
-    input[type="submit"].button--primary.disabled.button--active,
     input[type="submit"].button--primary.disabled:hover,
-    input[type="submit"].button--primary:disabled.button--active,
     input[type="submit"].button--primary:disabled:hover {
       background: #e0393e !important; }
 
@@ -1227,13 +1192,9 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--black.disabled.button--active,
     .button--black.disabled:active,
-    .button--black:disabled.button--active,
     .button--black:disabled:active,
-    input[type="submit"].button--black.disabled.button--active,
     input[type="submit"].button--black.disabled:active,
-    input[type="submit"].button--black:disabled.button--active,
     input[type="submit"].button--black:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
@@ -1243,13 +1204,9 @@ input[type="submit"].button--black {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
-    .button--black.disabled.button--active,
     .button--black.disabled:hover,
-    .button--black:disabled.button--active,
     .button--black:disabled:hover,
-    input[type="submit"].button--black.disabled.button--active,
     input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled.button--active,
     input[type="submit"].button--black:disabled:hover {
       background: black !important; }
 
@@ -1284,13 +1241,9 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--white.disabled.button--active,
     .button--white.disabled:active,
-    .button--white:disabled.button--active,
     .button--white:disabled:active,
-    input[type="submit"].button--black.disabled.button--active,
     input[type="submit"].button--black.disabled:active,
-    input[type="submit"].button--black:disabled.button--active,
     input[type="submit"].button--black:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
@@ -1300,13 +1253,9 @@ input[type="submit"].button--black {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
-    .button--white.disabled.button--active,
     .button--white.disabled:hover,
-    .button--white:disabled.button--active,
     .button--white:disabled:hover,
-    input[type="submit"].button--black.disabled.button--active,
     input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled.button--active,
     input[type="submit"].button--black:disabled:hover {
       background: white !important; }
 
@@ -1341,13 +1290,9 @@ input[type="submit"].button--blue {
   input[type="submit"].button--blue:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--blue.disabled.button--active,
     .button--blue.disabled:active,
-    .button--blue:disabled.button--active,
     .button--blue:disabled:active,
-    input[type="submit"].button--blue.disabled.button--active,
     input[type="submit"].button--blue.disabled:active,
-    input[type="submit"].button--blue:disabled.button--active,
     input[type="submit"].button--blue:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
@@ -1357,13 +1302,9 @@ input[type="submit"].button--blue {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
-    .button--blue.disabled.button--active,
     .button--blue.disabled:hover,
-    .button--blue:disabled.button--active,
     .button--blue:disabled:hover,
-    input[type="submit"].button--blue.disabled.button--active,
     input[type="submit"].button--blue.disabled:hover,
-    input[type="submit"].button--blue:disabled.button--active,
     input[type="submit"].button--blue:disabled:hover {
       background: #13a1ff !important; }
 

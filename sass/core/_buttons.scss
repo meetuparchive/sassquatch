@@ -47,11 +47,6 @@ input[type="submit"] {
 		&:hover {
 			background: $C_lineGray;
 		}
-		&.button--active {
-			background: $C_lineGray;
-			@include transform(translate(1px, 0px));
-			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
-		}
 	}
 
 	.inverted & {

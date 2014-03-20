@@ -110,12 +110,10 @@ $buttonFontSize: 16px;
 	&:disabled {
 		opacity: 0.4;
 		cursor: normal;
-		&.button--active,
 		&:active {
 			@include transform(translate(0px, 0px));
 			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 		}
-		&.button--active,
 		&:hover {
 			background: $bgColor !important;
 		}
