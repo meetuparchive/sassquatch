@@ -18,6 +18,9 @@
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
 	margin-bottom: -$P_secondary;
+	.ffbox--touchList-item & {
+		padding-top: 0;  // padding provided by ffbox
+	}
 }
 
 @if $platform == "mobile" {
