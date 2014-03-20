@@ -1965,6 +1965,10 @@ as well as a few different states/types:
 * (Member photos)
 */
 .avatar {
+  width: 48px;
+  height: 48px; }
+
+.avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -1976,9 +1980,7 @@ as well as a few different states/types:
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: center 42%;
-  background-color: rgba(0, 0, 0, 0.47);
-  width: 48px;
-  height: 48px; }
+  background-color: rgba(0, 0, 0, 0.47); }
 
 .avatar--person {
   -webkit-border-radius: 80px 80px 80px 80px;
