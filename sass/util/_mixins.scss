@@ -872,12 +872,3 @@
 	 }
 }
 /*  }   */
-
-%blockStack {
-	$frame_thickness: 2px;
-	$frame_spacing: 1px;
-	box-shadow: $frame_spacing $frame_spacing								0 $C_backgroundContent,
-				$frame_spacing+$frame_thickness $frame_spacing+$frame_thickness			0 $C_tertiaryGray,
-				$frame_spacing*2+$frame_thickness $frame_spacing*2+$frame_thickness		0 $C_backgroundContent,
-				($frame_spacing+$frame_thickness)*2 ($frame_spacing+$frame_thickness)*2 0 $C_tertiaryGray;
-}
