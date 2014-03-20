@@ -14,6 +14,10 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
+/* $LH_ : Line heights */
+/* 16/18.0 */
+/* 16/20.8 */
+/* 16/24.0 */
 .tearsheet .day, .tearsheet--small .day, .tearsheet--big .day, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
@@ -2687,10 +2691,6 @@ as well as a few different states/types:
 											*	enough legibility on low resolution
 											*	displays.
 											*/
-/* $LH_ : Line heights */
-/* 16/18.0 */
-/* 16/20.8 */
-/* 16/24.0 */
 /**
  *	touchlist placeholer classes
  */
@@ -2757,10 +2757,6 @@ as well as a few different states/types:
 											*	enough legibility on low resolution
 											*	displays.
 											*/
-/* $LH_ : Line heights */
-/* 16/18.0 */
-/* 16/20.8 */
-/* 16/24.0 */
 /**
  *	touchlist placeholer classes
  */
