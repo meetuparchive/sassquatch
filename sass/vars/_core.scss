@@ -205,11 +205,11 @@ $no: 						null;
 
 	$baseFontSize: 16px;
 
-	$h1FontSize: 	$baseFontSize * 1.75;
-	$h2FontSize: 	$baseFontSize * 1.5;
-	$h3FontSize: 	$baseFontSize * 1.25;
+	$h1FontSize: 	$baseFontSize * 1.5;
+	$h2FontSize: 	$baseFontSize * 1.25;
+	$h3FontSize: 	$baseFontSize;
 	$h4FontSize: 	$baseFontSize;
-	$h5FontSize: 	$baseFontSize;
+	$h5FontSize: 	$baseFontSize * .75;
 	$h6FontSize: 	$baseFontSize;
 
 	$baseline: 			16px;        	/*  unused, except for below  */
