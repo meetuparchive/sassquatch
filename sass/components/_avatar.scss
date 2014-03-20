@@ -8,8 +8,9 @@
 // media-m size
 // -------------------------------
 %avatar_base_size {
-	width: $avatarBaseSize;
-	height: $avatarBaseSize;
+	width: $media-m;
+	height: $media-m;
+	font-size: $media-m * 2/3;
 }
 .avatar {
 	@extend %avatar_base_size;
@@ -37,8 +38,10 @@
 .avatar--small {
 	width: $media-s;
 	height: $media-s;
+	font-size: $media-s;
 }
 .avatar--big {
 	width: $media-l;
 	height: $media-l;
+	font-size: $media-l * 2/3;
 }

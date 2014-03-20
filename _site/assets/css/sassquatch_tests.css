@@ -1969,7 +1969,8 @@ as well as a few different states/types:
 */
 .avatar {
   width: 48px;
-  height: 48px; }
+  height: 48px;
+  font-size: 32px; }
 
 .avatar {
   -moz-background-size: cover;
@@ -1991,11 +1992,13 @@ as well as a few different states/types:
 
 .avatar--small {
   width: 32px;
-  height: 32px; }
+  height: 32px;
+  font-size: 32px; }
 
 .avatar--big {
   width: 64px;
-  height: 64px; }
+  height: 64px;
+  font-size: 42.66667px; }
 
 /**
 * ==============================================
