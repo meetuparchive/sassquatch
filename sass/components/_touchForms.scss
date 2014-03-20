@@ -637,5 +637,8 @@
 		.error & {
 			color: $C_warnText;
 		}
+		.ffbox--touchList-item & {
+			padding-bottom: 0;  // padding provided by ffbox
+		}
 	}
 }
