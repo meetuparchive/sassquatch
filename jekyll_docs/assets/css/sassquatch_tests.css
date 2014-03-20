@@ -36,7 +36,7 @@
 *
 *   @note
 *   - color naming convention is really weird and difficult to remember. this
-*     is why i ended up defining my own colors everywhere in _new_styles, which is 
+*     is why i ended up defining my own colors everywhere in _new_styles, which is
 *     bad for consistency.
 *   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
 *     shrink the layout?
@@ -1971,6 +1971,11 @@ as well as a few different states/types:
 * (Member photos)
 */
 .avatar {
+  width: 48px;
+  height: 48px;
+  font-size: 32px; }
+
+.avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
@@ -1982,9 +1987,7 @@ as well as a few different states/types:
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: center 42%;
-  background-color: rgba(0, 0, 0, 0.47);
-  width: 48px;
-  height: 48px; }
+  background-color: rgba(0, 0, 0, 0.47); }
 
 .avatar--person {
   -webkit-border-radius: 80px 80px 80px 80px;
@@ -1992,11 +1995,13 @@ as well as a few different states/types:
 
 .avatar--small {
   width: 32px;
-  height: 32px; }
+  height: 32px;
+  font-size: 32px; }
 
 .avatar--big {
   width: 64px;
-  height: 64px; }
+  height: 64px;
+  font-size: 42.66667px; }
 
 /**
 * ==============================================

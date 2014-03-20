@@ -7,7 +7,13 @@
 // Avatar base class. Add in a variant!
 // media-m size
 // -------------------------------
+%avatar_base_size {
+	width: $media-m;
+	height: $media-m;
+	font-size: $media-m * 2/3;
+}
 .avatar {
+	@extend %avatar_base_size;
 	@include background-size(cover);
 	display: block;
 	text-indent: 100%;
@@ -17,8 +23,6 @@
 	background-repeat: no-repeat;
 	background-position: center 42%;
 	background-color: $C_tertiaryGray;
-	width: $media-m;
-	height: $media-m;
 }
 
 .avatar--chapter {
@@ -34,10 +38,12 @@
 .avatar--small {
 	width: $media-s;
 	height: $media-s;
+	font-size: $media-s;
 }
 .avatar--big {
 	width: $media-l;
 	height: $media-l;
+	font-size: $media-l * 2/3;
 }
 
 .avatar--stack {

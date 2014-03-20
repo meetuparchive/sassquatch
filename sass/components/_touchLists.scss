@@ -493,17 +493,13 @@
 		margin-bottom: 0.5em;
 	}
 
+
 	.touchList-avatar {
-		$avatar_square: 64px;
-		$avatar_font-size: 32px;  // for icons, must be same unit as avatar_square
-		@include box-sizing('border');  // makes padding + height calc easier
-		$margin: $P_secondary / px-to-em($avatar_font-size) * 1em;  // adjust desired margin by font-size factor
+		@extend %avatar_base_size;
 		@include color_textTertiary;
-		padding: (($avatar_square - $avatar_font-size) / 2) 0;  // height = width
-		height: $avatar_square;
-		width: $avatar_square;
-		font-size: $avatar_font-size;
 		text-align: center;
-		margin: $margin 0 $margin $margin;
+	}
+	.touchList-avatar--icon {
+		height: auto;
 	}
 }
