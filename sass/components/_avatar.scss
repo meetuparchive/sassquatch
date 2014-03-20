@@ -8,8 +8,8 @@
 // media-m size
 // -------------------------------
 %avatar_base_size {
-	width: $media-m;
-	height: $media-m;
+	width: $avatarBaseSize;
+	height: $avatarBaseSize;
 }
 .avatar {
 	@extend %avatar_base_size;

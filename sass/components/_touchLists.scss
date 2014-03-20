@@ -96,7 +96,7 @@
 
 
 	.ffbox--touchList-item {
-		height: $H_touchTargetDefault;
+		min-height: $H_touchTargetDefault;
 		padding: 0 $P_secondary;
 		// NOTE: For whatever mysterious reason, Safari 6 (iOS 6 and OS X) does
 		// not know how to display heights correctly with padding on an element
@@ -121,11 +121,11 @@
 		// Having padding on all four sides would
 		// be a ton less work.
 
- 		.ffbox-flex, .ffbox-fix {
- 			// these are the likely suspects for content immediately inside
- 			// .ffbox--touchList-item. This padding keeps multiline content
- 			// spacing the same as single-line content
- 			padding-top: $P_secondary;
+		> .ffbox-flex, > .ffbox-fix {
+			// these are the likely suspects for content immediately inside
+			// .ffbox--touchList-item. This padding keeps multiline content
+			// spacing the same as single-line content
+			padding-top: $P_secondary;
 			padding-bottom: $P_secondary;
 		}
 	}
@@ -476,7 +476,7 @@
 
 	.touchList-avatar {
 		@extend %avatar_base_size;
-		$avatar_square: $media-m;
+		$avatar_square: $avatarBaseSize;
 		$avatar_font-size: 32px;  // for icons, must be same unit as avatar_square
 		@include box-sizing('border');  // makes padding + height calc easier
 		$margin: $P_secondary / px-to-em($avatar_font-size) * 1em;  // adjust desired margin by font-size factor
