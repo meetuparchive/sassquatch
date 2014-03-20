@@ -238,8 +238,8 @@ a.unlink{
 		color: #444;
 	}
 	.small, small {
-		//font-size: 11px;
-		&.caps {
+		line-height: $LH_tall;
+        &.caps {
 			font-size:$smallFontSize * .8;
 		}
 	}
@@ -258,15 +258,13 @@ a.unlink{
 	// this one only lives in mobile land
 	// we should deprecate this or document &
 	// move it to both platforms
-	@if $platform == "mobile" {
-		.natural-text {
-			color: $C_text !important;
+    .natural-text {
+        color: $C_text !important;
 
-			.natural-text.light {
-				opacity:.7;
-			}
-		}
-	}
+        .natural-text.light {
+            opacity:.7;
+        }
+    }
 
 	.bold {
 		font-weight: $W_bold;
@@ -283,15 +281,13 @@ a.unlink{
 	// 'aliases' only exist for mobile
 	// we should deprecate these or document &
 	// move them to both platforms
-	@if $platform == "mobile" {
-		/* aliases */
-		.lighter { //muted 
-			color: $C_text_less;
-		}
-		.unpadded { //padded-none 
-			padding: 0 !important;
-		}
-	}
+    /* aliases */
+    .lighter { //muted 
+        color: $C_text_less;
+    }
+    .unpadded { //padded-none 
+        padding: 0 !important;
+    }
 
 	/* }}} */
 }

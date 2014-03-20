@@ -190,6 +190,7 @@
 	html, body {
 		font-size: $baseFontSize;
 		color: $C_secondaryGray;
+        line-height: $LH_standard; // or condensed?
 	} 
 
 	// Override default text color for "inverted" contexts
@@ -199,7 +200,7 @@
 	}
 
 	p {
-		line-height:1.5;
+		line-height:$LH_tall;
 	}
 
 	/* {{{ Block tag defaults */
@@ -255,7 +256,7 @@
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
-		line-height: 1.2;
+		line-height: $LH_standard;
 		
 		.inverted & {
 			color: $C_primaryGray;

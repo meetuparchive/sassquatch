@@ -13,12 +13,6 @@
 	// base font sizes
 	$baseFontSize: 	16px;
 	$baseLineHeight: 	1.4;
-    
-    /* $LH_ : Line heights */
-    $LH_condensed:			1.125;  /* 16/18.0 */
-    $LH_standard:			1.3;    /* 16/20.8 */
-    $LH_tall:				1.5;    /* 16/24.0 */
-	
 
 	// small font sizes
 	$smallFontSize: 	13px;
@@ -28,7 +22,12 @@
 	$bigFontSize: 		20px;
 	$bigLineHeight: 	1.33;
 	$bigBaseline: 		18px; // not actually used as line-height, we should rename
-
+    
+    /* $LH_ : Line heights */
+    $LH_condensed:			1.125;  /* 16/18.0 */
+    $LH_standard:			1.3;    /* 16/20.8 */
+    $LH_tall:				1.5;    /* 16/24.0 */
+	
 	// heading sizes
 	$h1FontSize: 	38px;
 	$h2FontSize: 	28px;
