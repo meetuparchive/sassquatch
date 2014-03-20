@@ -285,13 +285,23 @@ a.unlink{
 	// move them to both platforms
 	@if $platform == "mobile" {
 		/* aliases */
-		.lighter { //muted 
+		.lighter { //muted
 			color: $C_text_less;
 		}
-		.unpadded { //padded-none 
+		.unpadded { //padded-none
 			padding: 0 !important;
 		}
 	}
 
 	/* }}} */
+}
+
+%blockStack {
+	// set box-shadow to simulate a stack of elements
+	$frame_thickness: 2px;
+	$frame_spacing: 1px;
+	box-shadow: $frame_spacing $frame_spacing								0 $C_backgroundContent,
+				$frame_spacing+$frame_thickness $frame_spacing+$frame_thickness			0 $C_tertiaryGray,
+				$frame_spacing*2+$frame_thickness $frame_spacing*2+$frame_thickness		0 $C_backgroundContent,
+				($frame_spacing+$frame_thickness)*2 ($frame_spacing+$frame_thickness)*2 0 $C_tertiaryGray;
 }

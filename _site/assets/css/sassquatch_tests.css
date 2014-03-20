@@ -2966,6 +2966,9 @@ a.unlink:link, a.unlink:visited {
   display: inline-block; }
 
 /* }}} */
+.avatar--stack {
+  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47); }
+
 /**
 * TEST
 * brightness functions
