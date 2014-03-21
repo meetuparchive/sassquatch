@@ -25,11 +25,13 @@ input[type="submit"] {
 	background: $C_lineGray;
 	@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 
+	&.button--active,
 	&:active {
 		@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
 		@include transform(translate(0px, 2px));
 	}
 
+	&.button--active,
 	&:hover {
 		background: opacify($C_lineGray, 0.06);
 	}
@@ -38,12 +40,12 @@ input[type="submit"] {
 	&:disabled {
 		opacity: 0.4;
 		cursor: normal;
-		&:hover {
-			background: $C_lineGray;
-		}
 		&:active {
 			@include transform(translate(0px, 0px));
 			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+		}
+		&:hover {
+			background: $C_lineGray;
 		}
 	}
 
