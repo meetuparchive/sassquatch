@@ -11,10 +11,16 @@
 @import "../vars/touchList";
 @import "../util/touchList";
 
-%tl-blockLabel {
+%tl-item-heading {
 	@include color_textSecondary;
 	.inverted & { @include color_textSecondaryInverted; }
 	font-size: $FS_small;
+	// override padding for element, make visually equivalent to blockLabel spacing
+	padding-bottom: $P_secondary / 3;
+}
+
+%tl-blockLabel {
+	@extend %tl-item-heading;
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
 	margin-bottom: -$P_secondary;
@@ -68,6 +74,11 @@
 			// RESET
 			@include color_textSecondary;  // overloaded selector to override link color
 		}
+	}
+	.touchList-item-heading {
+		// should be .touchList-heading to follow BEM, but that selector already taken
+		// for incorrectly-named element (heading that sits outside TL)
+		@extend %tl-item-heading;
 	}
 	.touchList .touchList-blockLabel {
 		// extra specificity needed to override `.touchList label` styles

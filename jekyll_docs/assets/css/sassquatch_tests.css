@@ -606,13 +606,11 @@ fieldset {
     left: 0; }
 
 .ie8 input, .ie9 input {
-  -moz-border-radius: 0 0 0 0;
   -webkit-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0; }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   body input {
-    -moz-border-radius: 0 0 0 0;
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; } }
 input, select, textarea {
@@ -625,7 +623,6 @@ input, select, textarea {
   margin-bottom: 18px;
   color: #555555;
   border: 1px solid #dddddd;
-  -moz-border-radius: 1.5px 1.5px 1.5px 1.5px;
   -webkit-border-radius: 1.5px 1.5px 1.5px 1.5px;
   border-radius: 1.5px 1.5px 1.5px 1.5px; }
 
@@ -833,7 +830,6 @@ input[type="submit"].button--black,
 .button--white,
 .button--blue,
 input[type="submit"].button--blue {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   display: inline-block;
@@ -988,23 +984,24 @@ button,
 input[type="submit"] {
   color: rgba(0, 0, 0, 0.67) !important;
   background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+  .button.button--active,
   .button:active,
+  button.button--active,
   button:active,
+  input[type="submit"].button--active,
   input[type="submit"]:active {
-    -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button.button--active,
   .button:hover,
+  button.button--active,
   button:hover,
+  input[type="submit"].button--active,
   input[type="submit"]:hover {
     background: rgba(0, 0, 0, 0.16); }
   .button.disabled,
@@ -1015,13 +1012,6 @@ input[type="submit"] {
   input[type="submit"]:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button.disabled:hover,
-    .button:disabled:hover,
-    button.disabled:hover,
-    button:disabled:hover,
-    input[type="submit"].disabled:hover,
-    input[type="submit"]:disabled:hover {
-      background: rgba(0, 0, 0, 0.1); }
     .button.disabled:active,
     .button:disabled:active,
     button.disabled:active,
@@ -1030,33 +1020,32 @@ input[type="submit"] {
     input[type="submit"]:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button.disabled:hover,
+    .button:disabled:hover,
+    button.disabled:hover,
+    button:disabled:hover,
+    input[type="submit"].disabled:hover,
+    input[type="submit"]:disabled:hover {
+      background: rgba(0, 0, 0, 0.1); }
   .inverted
   .button, .inverted
   button, .inverted
   input[type="submit"] {
     color: rgba(255, 255, 255, 0.67) !important;
     background: rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
     .inverted
     .button:active, .inverted
     button:active, .inverted
     input[type="submit"]:active {
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
       -moz-transform: translate(0px, 2px);
       -webkit-transform: translate(0px, 2px);
-      -o-transform: translate(0px, 2px);
       transform: translate(0px, 2px); }
     .inverted
     .button:hover, .inverted
@@ -1077,29 +1066,34 @@ input[type="submit"] {
 .button--primary,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
-  -moz-box-shadow: #851518 0px 2px 0px 0px;
   -webkit-box-shadow: #851518 0px 2px 0px 0px;
-  -o-box-shadow: #851518 0px 2px 0px 0px;
   box-shadow: #851518 0px 2px 0px 0px;
   color: white !important;
   background: #e0393e; }
+  .primary.button--active,
   .primary:active,
+  .button.primary.button--active,
   .button.primary:active,
+  .button--primary.button--active,
   .button--primary:active,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:active,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:active {
-    -moz-box-shadow: #851518 0px 0px 0px 0px;
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
-    -o-box-shadow: #851518 0px 0px 0px 0px;
     box-shadow: #851518 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .primary.button--active,
   .primary:hover,
+  .button.primary.button--active,
   .button.primary:hover,
+  .button--primary.button--active,
   .button--primary:hover,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:hover,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:hover {
     background: #d02126; }
   .primary.disabled,
@@ -1114,17 +1108,6 @@ input[type="submit"].button--primary {
   input[type="submit"].button--primary:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .primary.disabled:hover,
-    .primary:disabled:hover,
-    .button.primary.disabled:hover,
-    .button.primary:disabled:hover,
-    .button--primary.disabled:hover,
-    .button--primary:disabled:hover,
-    input[type="submit"].primary.disabled:hover,
-    input[type="submit"].primary:disabled:hover,
-    input[type="submit"].button--primary.disabled:hover,
-    input[type="submit"].button--primary:disabled:hover {
-      background: #e0393e; }
     .primary.disabled:active,
     .primary:disabled:active,
     .button.primary.disabled:active,
@@ -1137,32 +1120,39 @@ input[type="submit"].button--primary {
     input[type="submit"].button--primary:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .primary.disabled:hover,
+    .primary:disabled:hover,
+    .button.primary.disabled:hover,
+    .button.primary:disabled:hover,
+    .button--primary.disabled:hover,
+    .button--primary:disabled:hover,
+    input[type="submit"].primary.disabled:hover,
+    input[type="submit"].primary:disabled:hover,
+    input[type="submit"].button--primary.disabled:hover,
+    input[type="submit"].button--primary:disabled:hover {
+      background: #e0393e !important; }
 
 .button--black,
 input[type="submit"].button--black {
-  -moz-box-shadow: black 0px 2px 0px 0px;
   -webkit-box-shadow: black 0px 2px 0px 0px;
-  -o-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
   color: white !important;
   background: black; }
+  .button--black.button--active,
   .button--black:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
-    -moz-box-shadow: black 0px 0px 0px 0px;
     -webkit-box-shadow: black 0px 0px 0px 0px;
-    -o-box-shadow: black 0px 0px 0px 0px;
     box-shadow: black 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--black.button--active,
   .button--black:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: black; }
   .button--black.disabled,
@@ -1171,43 +1161,39 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--black.disabled:hover,
-    .button--black:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: black; }
     .button--black.disabled:active,
     .button--black:disabled:active,
     input[type="submit"].button--black.disabled:active,
     input[type="submit"].button--black:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--black.disabled:hover,
+    .button--black:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: black !important; }
 
 .button--white,
 input[type="submit"].button--black {
-  -moz-box-shadow: #bfbfbf 0px 2px 0px 0px;
   -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
-  -o-box-shadow: #bfbfbf 0px 2px 0px 0px;
   box-shadow: #bfbfbf 0px 2px 0px 0px;
   color: #e0393e !important;
   background: white; }
+  .button--white.button--active,
   .button--white:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
-    -moz-box-shadow: #bfbfbf 0px 0px 0px 0px;
     -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
-    -o-box-shadow: #bfbfbf 0px 0px 0px 0px;
     box-shadow: #bfbfbf 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--white.button--active,
   .button--white:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: #ebebeb; }
   .button--white.disabled,
@@ -1216,43 +1202,39 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--white.disabled:hover,
-    .button--white:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: white; }
     .button--white.disabled:active,
     .button--white:disabled:active,
     input[type="submit"].button--black.disabled:active,
     input[type="submit"].button--black:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--white.disabled:hover,
+    .button--white:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: white !important; }
 
 .button--blue,
 input[type="submit"].button--blue {
-  -moz-box-shadow: #005893 0px 2px 0px 0px;
   -webkit-box-shadow: #005893 0px 2px 0px 0px;
-  -o-box-shadow: #005893 0px 2px 0px 0px;
   box-shadow: #005893 0px 2px 0px 0px;
   color: white !important;
   background: #13a1ff; }
+  .button--blue.button--active,
   .button--blue:active,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:active {
-    -moz-box-shadow: #005893 0px 0px 0px 0px;
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
-    -o-box-shadow: #005893 0px 0px 0px 0px;
     box-shadow: #005893 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
-    -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--blue.button--active,
   .button--blue:hover,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
   .button--blue.disabled,
@@ -1261,23 +1243,20 @@ input[type="submit"].button--blue {
   input[type="submit"].button--blue:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--blue.disabled:hover,
-    .button--blue:disabled:hover,
-    input[type="submit"].button--blue.disabled:hover,
-    input[type="submit"].button--blue:disabled:hover {
-      background: #13a1ff; }
     .button--blue.disabled:active,
     .button--blue:disabled:active,
     input[type="submit"].button--blue.disabled:active,
     input[type="submit"].button--blue:disabled:active {
       -moz-transform: translate(0px, 0px);
       -webkit-transform: translate(0px, 0px);
-      -o-transform: translate(0px, 0px);
       transform: translate(0px, 0px);
-      -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-      -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--blue.disabled:hover,
+    .button--blue:disabled:hover,
+    input[type="submit"].button--blue.disabled:hover,
+    input[type="submit"].button--blue:disabled:hover {
+      background: #13a1ff !important; }
 
 input[type="submit"]:active {
   -moz-transform: translate(0px, 0px) !important;
@@ -1468,7 +1447,6 @@ input[type="submit"]:active {
 /* }}} */
 /* {{{ Box Styles */
 .doc-box {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
@@ -1497,17 +1475,13 @@ input[type="submit"]:active {
   */
   /* see bug: 31893 */ }
   .doc-box > .doc-content:first-child {
-    -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
-    -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px; }
   .doc-box > .doc-content:last-child {
-    -moz-border-radius-bottomleft: 3px;
     -webkit-border-bottom-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    -moz-border-radius-bottomright: 3px;
     -webkit-border-bottom-right-radius: 3px;
     border-bottom-right-radius: 3px; }
   .doc-box .doc-content {
@@ -1525,27 +1499,22 @@ input[type="submit"]:active {
     border-right: 0;
     vertical-align: top; }
   .doc-box > .line .doc-content, .doc-box > .line-gutters .doc-content {
-    -moz-border-radius: 0 0 0 0;
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; }
   .doc-box > .line .unit:first-child .doc-content:first-child, .doc-box > .line-gutters .unit:first-child .doc-content:first-child {
-    -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px; }
   .doc-box > .line .unit:first-child .doc-content:last-child, .doc-box > .line-gutters .unit:first-child .doc-content:last-child {
-    -moz-border-radius-bottomleft: 3px;
     -webkit-border-bottom-left-radius: 3px;
     border-bottom-left-radius: 3px; }
   .doc-box > .line .unit:last-child .doc-content:first-child,
   .doc-box > .line .lastUnit .doc-content:first-child, .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
   .doc-box > .line-gutters .lastUnit .doc-content:first-child {
-    -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px; }
   .doc-box > .line .unit:last-child .doc-content:last-child,
   .doc-box > .line .lastUnit .doc-content:last-child, .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
   .doc-box > .line-gutters .lastUnit .doc-content:last-child {
-    -moz-border-radius-bottomright: 3px;
     -webkit-border-bottom-right-radius: 3px;
     border-bottom-right-radius: 3px; }
   .doc-box.D_box {
@@ -1561,7 +1530,7 @@ input[type="submit"]:active {
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
   padding: 18px;
-  padding-bottom: 4.5px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
 
@@ -1577,7 +1546,6 @@ input[type="submit"]:active {
 */
 .doc-content.footer {
   background: #eeeeee;
-  -moz-border-radius: 0 0 3px 3px 0;
   -webkit-border-radius: 0 0 3px 3px 0;
   border-radius: 0 0 3px 3px 0; }
 
@@ -1599,27 +1567,22 @@ input[type="submit"]:active {
   clear: both; }
 
 .rounded-top {
-  -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0; }
 
 .rounded-bottom {
-  -moz-border-radius: 0 0 3px 3px;
   -webkit-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px; }
 
 .rounded-all {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px; }
 
 .rounded-right {
-  -moz-border-radius: 0 3px 3px 0;
   -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0; }
 
 .rounded-left {
-  -moz-border-radius: 3px 0 0 3px;
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px; }
 
@@ -1644,12 +1607,10 @@ input[type="submit"]:active {
   cursor: pointer;
   *cursor: hand;
   opacity: 0.5;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
   .close-me:hover {
     opacity: 1;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); }
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
 
 /**
 * into/outof
@@ -1710,7 +1671,7 @@ input[type="submit"]:active {
 .doc-content-big {
   border-top: 1px solid #dddddd;
   padding: 18px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
   .doc-content-big:first-child {
@@ -1988,10 +1949,8 @@ as well as a few different states/types:
   width: 48px;
   height: 48px; }
   .tearsheet .month {
-    -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
-    -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
     font-size: 12px;
@@ -2005,10 +1964,8 @@ as well as a few different states/types:
   width: 32px;
   height: 32px; }
   .tearsheet--small .month {
-    -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
-    -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
     font-size: 8px;
@@ -2022,10 +1979,8 @@ as well as a few different states/types:
   width: 80px;
   height: 80px; }
   .tearsheet--big .month {
-    -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
-    -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
     font-size: 19px;
@@ -2040,11 +1995,6 @@ as well as a few different states/types:
 *
 * (Member photos)
 */
-.avatar--person, .avatar--personBig, .avatar--personSmall {
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px; }
-
 .avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -2057,31 +2007,21 @@ as well as a few different states/types:
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: center 42%;
-  background-color: rgba(0, 0, 0, 0.47); }
+  background-color: rgba(0, 0, 0, 0.47);
+  width: 48px;
+  height: 48px; }
 
 .avatar--person {
-  width: 48px;
-  height: 48px; }
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px; }
 
-.avatar--personBig {
-  width: 64px;
-  height: 64px; }
-
-.avatar--personSmall {
+.avatar--small {
   width: 32px;
   height: 32px; }
 
-.avatar--chapter {
-  width: 48px;
-  height: 48px; }
-
-.avatar--chapterBig {
+.avatar--big {
   width: 64px;
   height: 64px; }
-
-.avatar--chapterSmall {
-  width: 32px;
-  height: 32px; }
 
 /**
 * ==============================================
@@ -2095,7 +2035,6 @@ as well as a few different states/types:
 */
 .pill-label,
 .pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   font-size: 11px;
@@ -2205,10 +2144,8 @@ as well as a few different states/types:
     margin-right: 9px;
     margin-bottom: -1px; }
   .nav-tabs a {
-    -moz-border-radius-topleft: 3px;
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
-    -moz-border-radius-topright: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px;
     display: block;
@@ -2277,17 +2214,13 @@ as well as a few different states/types:
     padding: 0; }
     .nav-pagination li:first-child a, .nav-pagination .nav-pageitem:first-child a {
       border-left-width: 1px;
-      -moz-border-radius-topleft: 3px;
       -webkit-border-top-left-radius: 3px;
       border-top-left-radius: 3px;
-      -moz-border-radius-bottomleft: 3px;
       -webkit-border-bottom-left-radius: 3px;
       border-bottom-left-radius: 3px; }
     .nav-pagination li:last-child a, .nav-pagination .nav-pageitem:last-child a {
-      -moz-border-radius-topright: 3px;
       -webkit-border-top-right-radius: 3px;
       border-top-right-radius: 3px;
-      -moz-border-radius-bottomright: 3px;
       -webkit-border-bottom-right-radius: 3px;
       border-bottom-right-radius: 3px; }
     .nav-pagination li.selected a, .nav-pagination .nav-pageitem.selected a {
@@ -2295,9 +2228,7 @@ as well as a few different states/types:
       background-image: none !important;
       color: #888888 !important;
       filter: none;
-      -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       color: #888888; }
       .nav-pagination li.selected a:link, .nav-pagination li.selected a:hover, .nav-pagination li.selected a:vistied, .nav-pagination li.selected a:active, .nav-pagination .nav-pageitem.selected a:link, .nav-pagination .nav-pageitem.selected a:hover, .nav-pagination .nav-pageitem.selected a:vistied, .nav-pagination .nav-pageitem.selected a:active {
@@ -2308,7 +2239,6 @@ as well as a few different states/types:
 * append-style pagging at the bottom of a list
 */
 .nav-appendPager {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   border: 1px solid #dddddd;
@@ -2336,13 +2266,9 @@ as well as a few different states/types:
     background-image: none !important;
     color: #888888 !important;
     filter: none;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-    -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
     .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
       color: #888888 !important; }
@@ -2356,7 +2282,6 @@ as well as a few different states/types:
   display: inline-block;
   zoom: 1;
   *display: inline;
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   -moz-box-sizing: border-box;
@@ -2438,19 +2363,15 @@ as well as a few different states/types:
   .nav-buttons label:first-of-type,
   .nav-buttons li:first-child > a,
   .nav-buttons li:first-child > span {
-    -moz-border-radius-topleft: 2px;
     -webkit-border-top-left-radius: 2px;
     border-top-left-radius: 2px;
-    -moz-border-radius-bottomleft: 2px;
     -webkit-border-bottom-left-radius: 2px;
     border-bottom-left-radius: 2px; }
   .nav-buttons label:last-of-type,
   .nav-buttons li:last-child > a,
   .nav-buttons li:last-child > span {
-    -moz-border-radius-topright: 2px;
     -webkit-border-top-right-radius: 2px;
     border-top-right-radius: 2px;
-    -moz-border-radius-bottomright: 2px;
     -webkit-border-bottom-right-radius: 2px;
     border-bottom-right-radius: 2px; }
   .nav-buttons.vertical {
@@ -2462,15 +2383,12 @@ as well as a few different states/types:
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
-    -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-    -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     border: 1px solid rgba(0, 0, 0, 0.15);
     background: #f2f2f2;
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
     background: -moz-linear-gradient(top, white, #f2f2f2);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
     border: none;
     color: #555555;
@@ -2484,7 +2402,6 @@ as well as a few different states/types:
       background: #ededed;
       background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
       background: -moz-linear-gradient(top, white, #ededed);
-      filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
     .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.active,
     .nav-buttons li > a:active,
@@ -2498,9 +2415,7 @@ as well as a few different states/types:
       background-image: none !important;
       color: #888888 !important;
       filter: none;
-      -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-      -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
       box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
       .nav-buttons label:active:link, .nav-buttons label:active:hover, .nav-buttons label:active:vistied, .nav-buttons label:active:active, .nav-buttons label.selected:link, .nav-buttons label.selected:hover, .nav-buttons label.selected:vistied, .nav-buttons label.selected:active, .nav-buttons label.active:link, .nav-buttons label.active:hover, .nav-buttons label.active:vistied, .nav-buttons label.active:active,
       .nav-buttons li > a:active:link,
@@ -2535,9 +2450,7 @@ as well as a few different states/types:
     background-image: none !important;
     color: #888888 !important;
     filter: none;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
     .nav-buttons input[type=radio]:checked + label:link, .nav-buttons input[type=radio]:checked + label:hover, .nav-buttons input[type=radio]:checked + label:vistied, .nav-buttons input[type=radio]:checked + label:active, .nav-buttons input[attr="checked"] + label:link, .nav-buttons input[attr="checked"] + label:hover, .nav-buttons input[attr="checked"] + label:vistied, .nav-buttons input[attr="checked"] + label:active,
     .nav-buttons li > a:active:link,
@@ -2575,9 +2488,7 @@ as well as a few different states/types:
     background-image: none !important;
     color: #888888 !important;
     filter: none;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
     .nav-buttons li > a:active:link, .nav-buttons li > a:active:hover, .nav-buttons li > a:active:vistied, .nav-buttons li > a:active:active, .nav-buttons li > a.selected:link, .nav-buttons li > a.selected:hover, .nav-buttons li > a.selected:vistied, .nav-buttons li > a.selected:active, .nav-buttons li > a.push:link, .nav-buttons li > a.push:hover, .nav-buttons li > a.push:vistied, .nav-buttons li > a.push:active, .nav-buttons li > span:active:link, .nav-buttons li > span:active:hover, .nav-buttons li > span:active:vistied, .nav-buttons li > span:active:active, .nav-buttons li > span.selected:link, .nav-buttons li > span.selected:hover, .nav-buttons li > span.selected:vistied, .nav-buttons li > span.selected:active, .nav-buttons li > span.push:link, .nav-buttons li > span.push:hover, .nav-buttons li > span.push:vistied, .nav-buttons li > span.push:active, .nav-buttons li:first-child > a:active:link, .nav-buttons li:first-child > a:active:hover, .nav-buttons li:first-child > a:active:vistied, .nav-buttons li:first-child > a:active:active, .nav-buttons li:first-child > a.selected:link, .nav-buttons li:first-child > a.selected:hover, .nav-buttons li:first-child > a.selected:vistied, .nav-buttons li:first-child > a.selected:active, .nav-buttons li:first-child > a.push:link, .nav-buttons li:first-child > a.push:hover, .nav-buttons li:first-child > a.push:vistied, .nav-buttons li:first-child > a.push:active, .nav-buttons li:first-child > span:active:link, .nav-buttons li:first-child > span:active:hover, .nav-buttons li:first-child > span:active:vistied, .nav-buttons li:first-child > span:active:active, .nav-buttons li:first-child > span.selected:link, .nav-buttons li:first-child > span.selected:hover, .nav-buttons li:first-child > span.selected:vistied, .nav-buttons li:first-child > span.selected:active, .nav-buttons li:first-child > span.push:link, .nav-buttons li:first-child > span.push:hover, .nav-buttons li:first-child > span.push:vistied, .nav-buttons li:first-child > span.push:active, .nav-buttons li:last-child > a:active:link, .nav-buttons li:last-child > a:active:hover, .nav-buttons li:last-child > a:active:vistied, .nav-buttons li:last-child > a:active:active, .nav-buttons li:last-child > a.selected:link, .nav-buttons li:last-child > a.selected:hover, .nav-buttons li:last-child > a.selected:vistied, .nav-buttons li:last-child > a.selected:active, .nav-buttons li:last-child > a.push:link, .nav-buttons li:last-child > a.push:hover, .nav-buttons li:last-child > a.push:vistied, .nav-buttons li:last-child > a.push:active, .nav-buttons li:last-child > span:active:link, .nav-buttons li:last-child > span:active:hover, .nav-buttons li:last-child > span:active:vistied, .nav-buttons li:last-child > span:active:active, .nav-buttons li:last-child > span.selected:link, .nav-buttons li:last-child > span.selected:hover, .nav-buttons li:last-child > span.selected:vistied, .nav-buttons li:last-child > span.selected:active, .nav-buttons li:last-child > span.push:link, .nav-buttons li:last-child > span.push:hover, .nav-buttons li:last-child > span.push:vistied, .nav-buttons li:last-child > span.push:active {
       color: #888888 !important; }
@@ -2587,9 +2498,7 @@ as well as a few different states/types:
     background-image: none !important;
     color: #888888 !important;
     filter: none;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
     .nav-buttons input[type=radio]:checked + label:link, .nav-buttons input[type=radio]:checked + label:hover, .nav-buttons input[type=radio]:checked + label:vistied, .nav-buttons input[type=radio]:checked + label:active, .nav-buttons input[attr="checked"] + label:link, .nav-buttons input[attr="checked"] + label:hover, .nav-buttons input[attr="checked"] + label:vistied, .nav-buttons input[attr="checked"] + label:active {
       color: #888888 !important; }
@@ -2612,9 +2521,7 @@ as well as a few different states/types:
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   border: none; }
   .nav-buttons li.selected > a:link, .nav-buttons li.selected > a:hover, .nav-buttons li.selected > a:vistied, .nav-buttons li.selected > a:active, .nav-buttons li.selected > span:link, .nav-buttons li.selected > span:hover, .nav-buttons li.selected > span:vistied, .nav-buttons li.selected > span:active {
@@ -2665,15 +2572,12 @@ as well as a few different states/types:
   text-align: center; }
 
 .segmented-control-button {
-  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
   background: -moz-linear-gradient(top, white, #f2f2f2);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -2700,7 +2604,6 @@ as well as a few different states/types:
     background: #ededed;
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
     background: -moz-linear-gradient(top, white, #ededed);
-    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
   .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.active {
     background: #e6e6e6;
@@ -2708,9 +2611,7 @@ as well as a few different states/types:
     background-image: none !important;
     color: #888888 !important;
     filter: none;
-    -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-    -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
     box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
     .segmented-control-button:active:link, .segmented-control-button:active:hover, .segmented-control-button:active:vistied, .segmented-control-button:active:active, .segmented-control-button.selected:link, .segmented-control-button.selected:hover, .segmented-control-button.selected:vistied, .segmented-control-button.selected:active, .segmented-control-button.active:link, .segmented-control-button.active:hover, .segmented-control-button.active:vistied, .segmented-control-button.active:active {
       color: #888888 !important; }
@@ -2734,9 +2635,7 @@ as well as a few different states/types:
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   /* Here comes the !important train, due to !important up above. Choo Choo! */ }
   .segmented-control-input:checked + .segmented-control-button:link, .segmented-control-input:checked + .segmented-control-button:hover, .segmented-control-input:checked + .segmented-control-button:vistied, .segmented-control-input:checked + .segmented-control-button:active {
@@ -2748,9 +2647,7 @@ as well as a few different states/types:
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset; }
   .segmented-control-segment.checked .segmented-control-button:link, .segmented-control-segment.checked .segmented-control-button:hover, .segmented-control-segment.checked .segmented-control-button:vistied, .segmented-control-segment.checked .segmented-control-button:active {
     color: #888888 !important; }
@@ -2767,12 +2664,9 @@ as well as a few different states/types:
   vertical-align: baseline;
   background-color: #999;
   border: 2px solid #fff;
-  -moz-border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
   box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0; }
 
 /**
@@ -3037,8 +2931,7 @@ as well as a few different states/types:
 
 .muted-opacity {
   opacity: 0.8;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; }
 
 .bold {
   font-weight: 700; }
@@ -3059,8 +2952,7 @@ as well as a few different states/types:
 
 .opacity-quarter {
   opacity: 0.25;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25); }
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)"; }
 
 .border-none {
   border-width: 0 !important; }
