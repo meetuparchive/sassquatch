@@ -7,7 +7,10 @@
 			<code>.leading-top | .padding-top</code>, <code>.leading-bottom | .padding-bottom</code>, <code>.leading-left | .padding-left</code>, <code>.leading-right | .padding-right</code>, <code>.leading-all | .padding-all</code>, <code>.leading-none | .padding-none</code>
 		</p>
 		<p>
-			<code>.margin-top</code>, <code>.margin-bottom</code>, <code>.margin-left</code>, <code>.margin-right</code>, <code>.margin-none</code>
+			<code>.margin-[top|right|bottom|left|none]</code>
+		</p>
+		<p>
+			<code>.flush--[top|right|bottom|left|all]</code>
 		</p>
 		<p>
 			<code>.wrapNice</code>,
@@ -86,6 +89,12 @@
 			<p class="inline-block align-center guide-hasBackground margin-right">room on the right <code>.margin-right</code></p>
 			<p class="inline-block align-center guide-hasBackground">normal</p>
 			<p class="inline-block align-center guide-hasBackground margin-left">room on the left <code>.margin-left</code></p>
+		</div>
+
+		<h3>Making elements "flush" (remove all spacing)</h3>
+		<div class="doc-box doc-content">
+			<p class="align-center guide-hasBackground flush--bottom">All default bottom spacing of this paragraph has been removed by <code>.flush--bottom</code></p>
+			<p>You can also use <code>.flush--top</code>, <code>.flush--right</code>, <code>.flush--left</code>, and <code>.flush--all</code> to remove spacing on a given element.</p>
 		</div>
 
 		<h3 class="margin-top">Highlighted things <code>.highlighted</code></h3>

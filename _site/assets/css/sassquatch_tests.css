@@ -1451,7 +1451,8 @@ input[type="submit"]:active {
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
   margin-bottom: 18px;
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
+  /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
