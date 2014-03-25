@@ -237,6 +237,10 @@ a.unlink{
 	.spaced-left {
 		margin-left:$spacing;
 	}
+	.flush-bottom {
+		margin-bottom: 0 !important;
+		padding-bottom: 0 !important;
+	}
 	.darker {
 		color: $C_primaryGray;
 
