@@ -63,6 +63,38 @@
 .span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
 /* }}} */
 
+/* {{{ Doc Stripe */
+// usage: "doc-stripe (doc-stripe--[variant])"
+
+// default
+.doc-stripe {
+	@include color_lineGray('border-color');
+	border: 1px solid top;
+	background-color: #fff;
+}
+
+// for collections (cards, panels, etc)
+.doc-stripe--collection {
+	background-color: $C_backgroundCollection;
+}
+
+// TODO: what is this for?
+.doc-stripe--nav {
+	background-color: $C_backgroundNav;
+}
+
+// near-black stripe
+.doc-stripe--inverted {
+	background-color: $C_backgroundContentInverted;
+}
+
+// red accent stripe
+.doc-stripe--red {
+	background-color: $C_backgroundContentAccent;
+}
+
+/* }}} */
+
 /* {{{ Box Styles */
 .doc-box {
 	@include round($defaultRadius);
