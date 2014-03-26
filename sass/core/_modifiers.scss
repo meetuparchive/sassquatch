@@ -285,10 +285,10 @@ a.unlink{
 	// move them to both platforms
 	@if $platform == "mobile" {
 		/* aliases */
-		.lighter { //muted 
+		.lighter { //muted
 			color: $C_text_less;
 		}
-		.unpadded { //padded-none 
+		.unpadded { //padded-none
 			padding: 0 !important;
 		}
 	}
