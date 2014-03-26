@@ -15,21 +15,21 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling SassQuatch for desktop"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+	sh "#{COMPILER} #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
 
 	# mobile
 	puts
 	puts "#{HR}"
 	puts "Compiling SassQuatch for mobile"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
+	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
 
 	# tests
 	puts
 	puts "#{HR}"
 	puts "Compiling tests"
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
+	sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
 
 	# compile docs
 	puts
