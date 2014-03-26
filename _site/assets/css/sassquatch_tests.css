@@ -986,16 +986,22 @@ input[type="submit"] {
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+  .button.button--active,
   .button:active,
+  button.button--active,
   button:active,
+  input[type="submit"].button--active,
   input[type="submit"]:active {
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button.button--active,
   .button:hover,
+  button.button--active,
   button:hover,
+  input[type="submit"].button--active,
   input[type="submit"]:hover {
     background: rgba(0, 0, 0, 0.16); }
   .button.disabled,
@@ -1006,13 +1012,6 @@ input[type="submit"] {
   input[type="submit"]:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button.disabled:hover,
-    .button:disabled:hover,
-    button.disabled:hover,
-    button:disabled:hover,
-    input[type="submit"].disabled:hover,
-    input[type="submit"]:disabled:hover {
-      background: rgba(0, 0, 0, 0.1); }
     .button.disabled:active,
     .button:disabled:active,
     button.disabled:active,
@@ -1024,6 +1023,13 @@ input[type="submit"] {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button.disabled:hover,
+    .button:disabled:hover,
+    button.disabled:hover,
+    button:disabled:hover,
+    input[type="submit"].disabled:hover,
+    input[type="submit"]:disabled:hover {
+      background: rgba(0, 0, 0, 0.1); }
   .inverted
   .button, .inverted
   button, .inverted
@@ -1064,20 +1070,30 @@ input[type="submit"].button--primary {
   box-shadow: #851518 0px 2px 0px 0px;
   color: white !important;
   background: #e0393e; }
+  .primary.button--active,
   .primary:active,
+  .button.primary.button--active,
   .button.primary:active,
+  .button--primary.button--active,
   .button--primary:active,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:active,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:active {
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
     box-shadow: #851518 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .primary.button--active,
   .primary:hover,
+  .button.primary.button--active,
   .button.primary:hover,
+  .button--primary.button--active,
   .button--primary:hover,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:hover,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:hover {
     background: #d02126; }
   .primary.disabled,
@@ -1092,17 +1108,6 @@ input[type="submit"].button--primary {
   input[type="submit"].button--primary:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .primary.disabled:hover,
-    .primary:disabled:hover,
-    .button.primary.disabled:hover,
-    .button.primary:disabled:hover,
-    .button--primary.disabled:hover,
-    .button--primary:disabled:hover,
-    input[type="submit"].primary.disabled:hover,
-    input[type="submit"].primary:disabled:hover,
-    input[type="submit"].button--primary.disabled:hover,
-    input[type="submit"].button--primary:disabled:hover {
-      background: #e0393e; }
     .primary.disabled:active,
     .primary:disabled:active,
     .button.primary.disabled:active,
@@ -1118,6 +1123,17 @@ input[type="submit"].button--primary {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .primary.disabled:hover,
+    .primary:disabled:hover,
+    .button.primary.disabled:hover,
+    .button.primary:disabled:hover,
+    .button--primary.disabled:hover,
+    .button--primary:disabled:hover,
+    input[type="submit"].primary.disabled:hover,
+    input[type="submit"].primary:disabled:hover,
+    input[type="submit"].button--primary.disabled:hover,
+    input[type="submit"].button--primary:disabled:hover {
+      background: #e0393e !important; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1125,14 +1141,18 @@ input[type="submit"].button--black {
   box-shadow: black 0px 2px 0px 0px;
   color: white !important;
   background: black; }
+  .button--black.button--active,
   .button--black:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
     -webkit-box-shadow: black 0px 0px 0px 0px;
     box-shadow: black 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--black.button--active,
   .button--black:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: black; }
   .button--black.disabled,
@@ -1141,11 +1161,6 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--black.disabled:hover,
-    .button--black:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: black; }
     .button--black.disabled:active,
     .button--black:disabled:active,
     input[type="submit"].button--black.disabled:active,
@@ -1155,6 +1170,11 @@ input[type="submit"].button--black {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--black.disabled:hover,
+    .button--black:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: black !important; }
 
 .button--white,
 input[type="submit"].button--black {
@@ -1162,14 +1182,18 @@ input[type="submit"].button--black {
   box-shadow: #bfbfbf 0px 2px 0px 0px;
   color: #e0393e !important;
   background: white; }
+  .button--white.button--active,
   .button--white:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
     -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
     box-shadow: #bfbfbf 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--white.button--active,
   .button--white:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: #ebebeb; }
   .button--white.disabled,
@@ -1178,11 +1202,6 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--white.disabled:hover,
-    .button--white:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: white; }
     .button--white.disabled:active,
     .button--white:disabled:active,
     input[type="submit"].button--black.disabled:active,
@@ -1192,6 +1211,11 @@ input[type="submit"].button--black {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--white.disabled:hover,
+    .button--white:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: white !important; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -1199,14 +1223,18 @@ input[type="submit"].button--blue {
   box-shadow: #005893 0px 2px 0px 0px;
   color: white !important;
   background: #13a1ff; }
+  .button--blue.button--active,
   .button--blue:active,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:active {
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
     box-shadow: #005893 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--blue.button--active,
   .button--blue:hover,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
   .button--blue.disabled,
@@ -1215,11 +1243,6 @@ input[type="submit"].button--blue {
   input[type="submit"].button--blue:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--blue.disabled:hover,
-    .button--blue:disabled:hover,
-    input[type="submit"].button--blue.disabled:hover,
-    input[type="submit"].button--blue:disabled:hover {
-      background: #13a1ff; }
     .button--blue.disabled:active,
     .button--blue:disabled:active,
     input[type="submit"].button--blue.disabled:active,
@@ -1229,6 +1252,11 @@ input[type="submit"].button--blue {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--blue.disabled:hover,
+    .button--blue:disabled:hover,
+    input[type="submit"].button--blue.disabled:hover,
+    input[type="submit"].button--blue:disabled:hover {
+      background: #13a1ff !important; }
 
 input[type="submit"]:active {
   -moz-transform: translate(0px, 0px) !important;
