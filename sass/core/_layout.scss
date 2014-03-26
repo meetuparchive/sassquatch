@@ -64,32 +64,33 @@
 /* }}} */
 
 /* {{{ Doc Stripe */
+// TODO: PCV naming?
 // usage: "doc-stripe (doc-stripe--[variant])"
 
 // default
-.doc-stripe {
+.docStripe {
 	@include color_lineGray('border-color');
 	border: 1px solid top;
 	background-color: #fff;
 }
 
 // for collections (cards, panels, etc)
-.doc-stripe--collection {
+.docStripe--collection {
 	background-color: $C_backgroundCollection;
 }
 
 // TODO: what is this for?
-.doc-stripe--nav {
+.docStripe--nav {
 	background-color: $C_backgroundNav;
 }
 
 // near-black stripe
-.doc-stripe--inverted {
+.docStripe--inverted {
 	background-color: $C_backgroundContentInverted;
 }
 
 // red accent stripe
-.doc-stripe--red {
+.docStripe--red {
 	background-color: $C_backgroundContentAccent;
 }
 
@@ -98,7 +99,7 @@
 /* {{{ Doc bounds */
 // max-width constraint with media queries
 // has padding that adjusts down with smaller screens
-.doc-bounds {
+.docBounds {
 	@extends %clearfix
 	margin-left: auto;
 	margin-right: auto;
@@ -108,6 +109,7 @@
 /* }}} */
 
 /* {{{ Box Styles */
+.docBox,
 .doc-box {
 	@include round($defaultRadius);
 	background-color: #fff;
@@ -197,12 +199,15 @@
 	}
 }
 .ie6, .ie7{
+	.docBox .line .unit,
+	.docBox .line-gutters .unit,
 	.doc-box .line .unit,
 	.doc-box .line-gutters .unit{
 		float: left!important;
 	}
 }
 
+.docBox-section, /* PCV compliant name for doc-content */
 .doc-padding,	/* generic padding helper (does nothing else) */
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
