@@ -136,6 +136,7 @@
 	$media-m: 	48px;
 	$media-l: 	64px;
 	$media-xl: 	80px;
+
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
@@ -162,7 +163,7 @@
 *
 *   @note
 *   - color naming convention is really weird and difficult to remember. this
-*     is why i ended up defining my own colors everywhere in _new_styles, which is 
+*     is why i ended up defining my own colors everywhere in _new_styles, which is
 *     bad for consistency.
 *   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
 *     shrink the layout?
@@ -195,12 +196,12 @@ $no: 						null;
 
 
 	/*  @note
-	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all 
+	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
 	$baseFontStack: 			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-	$headingFontStack: 		$baseFontStack; 
+	$headingFontStack: 		$baseFontStack;
 	$uiControlFontStack: 	$baseFontStack;
 
 	$baseFontSize: 12px;
@@ -214,14 +215,14 @@ $no: 						null;
 
 	$baseline: 			12px;        	/*  unused, except for below  */
 	$spacing: 			9px;          	/*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 		8px; 
+	$basePadding: 		8px;
 	$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
 	/*  }  */
 
 
 
 	/*  ADDITIONS {
-	 *  
+	 *
 	 *  Additional UI Variables, mostly colors, used throughout MWeb.
 	 *  Maybe some of these should be localized to where they're used, like
 	 *  the topbar colors?

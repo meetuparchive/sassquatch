@@ -24,6 +24,9 @@
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
 	margin-bottom: -$P_secondary;
+	.ffbox--touchList-item & {
+		padding-top: 0;  // padding provided by ffbox
+	}
 }
 
 @if $platform == "mobile" {
@@ -170,9 +173,6 @@
 			@include color_textPrimary;
 			.inverted & { @include color_textPrimaryInverted; }
 			display: block;
-		}
-		.avatar {
-			margin: $P_secondary 0 $P_secondary $P_secondary;
 		}
 	}
 
@@ -486,5 +486,15 @@
 		@include color_textTertiary;
 		font-size: 16px;
 		margin-bottom: 0.5em;
+	}
+
+
+	.touchList-avatar {
+		@extend %avatar_base_size;
+		@include color_textTertiary;
+		text-align: center;
+	}
+	.touchList-avatar--icon {
+		height: auto;
 	}
 }
