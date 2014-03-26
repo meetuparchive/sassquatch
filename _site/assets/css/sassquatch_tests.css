@@ -1451,7 +1451,8 @@ input[type="submit"]:active {
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
   margin-bottom: 18px;
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
+  /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -2022,6 +2023,12 @@ as well as a few different states/types:
 .avatar--big {
   width: 64px;
   height: 64px; }
+
+.avatar--stack {
+  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47); }
+
+.avatar--stack {
+  margin-right: 3px; }
 
 /**
 * ==============================================
@@ -2873,6 +2880,26 @@ as well as a few different states/types:
 
 .margin-none {
   margin: 0 !important; }
+
+.flush--top {
+  margin-top: 0 !important;
+  padding-top: 0 !important; }
+
+.flush--right {
+  margin-right: 0 !important;
+  padding-right: 0 !important; }
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important; }
+
+.flush--left {
+  margin-left: 0 !important;
+  padding-left: 0 !important; }
+
+.flush--all {
+  margin: 0 !important;
+  padding: 0 !important; }
 
 .align-right {
   text-align: right; }
