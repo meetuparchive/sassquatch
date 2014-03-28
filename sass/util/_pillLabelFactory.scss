@@ -4,15 +4,14 @@
 */
 
 %_pill_label_base {
-	$size: 11px;
+	$labelSize: 11px;
 
 	@include round($defaultRadius);
 
-	font-size: $size;
+	font-size: $labelSize;
 	text-transform: uppercase;
 	font-variant: small-caps;
-	padding: $size/4 $size/2;
-	margin: 0 $size/4;
+	padding: $labelSize/4 $labelSize/2;
 }
 
 
@@ -23,11 +22,11 @@
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin solid_pill( $bgColor: $C_secondaryGray, $textColor: "" ) {
+@mixin solid_pill( $bgColor: $C_secondaryGray, $textColor: false ) {
 
 	@extend %_pill_label_base;
 
-	@if $textColor == "" {
+	@if not $textColor {
 		$textColor: getPrimaryTextColor($bgColor);
 	}
 
