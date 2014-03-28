@@ -180,6 +180,7 @@
 				@include color_textPrimary;
 				.inverted & { @include color_textPrimaryInverted; }
 			}
+			@include box-sizing('border');
 			display: block;
 		}
 	}
