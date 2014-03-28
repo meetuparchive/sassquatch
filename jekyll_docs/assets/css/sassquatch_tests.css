@@ -2042,7 +2042,8 @@ as well as a few different states/types:
   font-size: 11px;
   text-transform: uppercase;
   font-variant: small-caps;
-  padding: 2.75px 5.5px; }
+  padding: 2.75px 5.5px;
+  margin-right: 2.75px; }
 
 /**
 * Solid Pill
@@ -2063,8 +2064,8 @@ as well as a few different states/types:
   color: white; }
 
 .pill-label--hollow {
-  border: 1px solid rgba(0, 0, 0, 0.67);
-  color: rgba(0, 0, 0, 0.67); }
+  color: rgba(0, 0, 0, 0.67);
+  border: 1px solid; }
 
 .pill-label--friend {
   background-color: #3987cb;
@@ -2075,12 +2076,12 @@ as well as a few different states/types:
   color: white; }
 
 .pill-label--paid {
-  border: 1px solid #62ac75;
-  color: #62ac75; }
+  color: #62ac75;
+  border: 1px solid; }
 
 .pill-label--unpaid {
-  border: 1px solid #e0393e;
-  color: #e0393e; }
+  color: #e0393e;
+  border: 1px solid; }
 
 /**
 * Nametag Photo pattern
