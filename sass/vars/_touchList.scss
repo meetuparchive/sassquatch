@@ -37,7 +37,7 @@ $W_inlineBlockConstant:	4px;
 $H_pseudoradio:			$W_pseudoradio;
 $H_touchTargetDefault:	px-to-em(48px);
 $H_touchTargetMinimum:	px-to-em(32px);
-$H_gem:					px-to-em(24px);		/* icon gems are square inside ffbox-fix */
+$H_gem:					px-to-em(32px);
 
 
 /* $FS_ : Font Size */
@@ -61,4 +61,26 @@ $FS_micro:				px-to-em(9px);		/* use in superscript values (am/pm),
 											*/
 
 
+/* $LH_ : Line heights */
+$LH_condensed:			1.125;  /* 16/18.0 */
+$LH_standard:			1.3;    /* 16/20.8 */
+$LH_tall:				1.5;    /* 16/24.0 */
 
+/*  $C_ : Colors  */
+/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
+ *  at some point in the immediate future (Sassquatch >1.5), once touchList
+ *  is fully integrated into Sq.
+ *
+ *  @see https://github.com/meetup/meetup-swatches
+ */
+$C_gray00: black;		/* #000							*/
+$C_gray20: hsl(0,0,20);	/* #333	 == $C_darkgray			*/
+$C_gray40: hsl(0,0,40);	/* #666	 ≈≈ $C_darkgray_lighter	*/
+$C_gray60: hsl(0,0,60);	/* #999							*/
+$C_gray70: hsl(0,0,70);	/* #b3b3b3						*/
+$C_gray80: hsl(0,0,80);	/* #ccc							*/
+$C_gray90: hsl(0,0,90);	/* #e5e5e5						*/
+$C_gray94: hsl(0,0,94);	/* #f0f0f0  ≈≈ $C_gray_lighter	*/
+$C_gray96: hsl(0,0,96);	/* #f5f5f5  ≈≈ $C_gray_lightest	*/
+$C_gray98: hsl(0,0,98);	/* #fafafa						*/
+$C_gray100: white;		/* #fff							*/
