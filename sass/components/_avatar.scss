@@ -46,6 +46,18 @@
 	font-size: $media-l * 2/3;
 }
 
+// Avatar Stacks
+// ---------------------------
+$stack_frame_thickness: 2px;
+$stack_frame_spacing: 1px;
+%blockStack {
+	// set box-shadow to simulate a stack of elements
+	box-shadow: $stack_frame_spacing $stack_frame_spacing								0 $C_backgroundContent,
+				$stack_frame_spacing+$stack_frame_thickness $stack_frame_spacing+$stack_frame_thickness			0 $C_tertiaryGray,
+				$stack_frame_spacing*2+$stack_frame_thickness $stack_frame_spacing*2+$stack_frame_thickness		0 $C_backgroundContent,
+				($stack_frame_spacing+$stack_frame_thickness)*2 ($stack_frame_spacing+$stack_frame_thickness)*2 0 $C_tertiaryGray;
+}
 .avatar--stack {
 	@extend %blockStack;
+	margin-right: $stack_frame_spacing + $stack_frame_thickness;
 }

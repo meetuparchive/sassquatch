@@ -1446,7 +1446,8 @@ input[type="submit"]:active {
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
   margin-bottom: 18px;
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
+  /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -2023,6 +2024,12 @@ as well as a few different states/types:
   height: 64px;
   font-size: 42.66667px; }
 
+.avatar--stack {
+  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47); }
+
+.avatar--stack {
+  margin-right: 3px; }
+
 /**
 * ==============================================
 * PILL LABELS
@@ -2041,7 +2048,7 @@ as well as a few different states/types:
   text-transform: uppercase;
   font-variant: small-caps;
   padding: 2.75px 5.5px;
-  margin: 0 2.75px; }
+  margin-right: 2.75px; }
 
 /**
 * Solid Pill
@@ -2062,8 +2069,8 @@ as well as a few different states/types:
   color: white; }
 
 .pill-label--hollow {
-  border: 1px solid rgba(0, 0, 0, 0.67);
-  color: rgba(0, 0, 0, 0.67); }
+  color: rgba(0, 0, 0, 0.67);
+  border: 1px solid; }
 
 .pill-label--friend {
   background-color: #3987cb;
@@ -2074,12 +2081,12 @@ as well as a few different states/types:
   color: white; }
 
 .pill-label--paid {
-  border: 1px solid #62ac75;
-  color: #62ac75; }
+  color: #62ac75;
+  border: 1px solid; }
 
 .pill-label--unpaid {
-  border: 1px solid #e0393e;
-  color: #e0393e; }
+  color: #e0393e;
+  border: 1px solid; }
 
 /**
 * Nametag Photo pattern
@@ -2874,6 +2881,26 @@ as well as a few different states/types:
 .margin-none {
   margin: 0 !important; }
 
+.flush--top {
+  margin-top: 0 !important;
+  padding-top: 0 !important; }
+
+.flush--right {
+  margin-right: 0 !important;
+  padding-right: 0 !important; }
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important; }
+
+.flush--left {
+  margin-left: 0 !important;
+  padding-left: 0 !important; }
+
+.flush--all {
+  margin: 0 !important;
+  padding: 0 !important; }
+
 .align-right {
   text-align: right; }
 
@@ -2994,9 +3021,6 @@ a.unlink:link, a.unlink:visited {
   display: inline-block; }
 
 /* }}} */
-.avatar--stack {
-  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47); }
-
 /**
 * TEST
 * brightness functions

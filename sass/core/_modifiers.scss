@@ -76,6 +76,24 @@
 .margin-none {
 	margin: 0 !important;
 }
+
+// Flush
+// kills all spacing for a given side
+@mixin flush($direction) {
+	.flush--#{$direction} {
+		margin-#{$direction}: 0 !important;
+		padding-#{$direction}: 0 !important;
+	}
+}
+@include flush('top');
+@include flush('right');
+@include flush('bottom');
+@include flush('left');
+.flush--all {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 .align-right {
 	text-align: right;
 }
@@ -219,14 +237,10 @@ a.unlink{
 	.spaced-left {
 		margin-left:$spacing;
 	}
-	.flush-top { // TODO: document this or kill it
-		margin-top:0 !important;
-		padding-top:0 !important;
-	}
 	.flush-bottom {
-	  padding-bottom: 0 !important;
-	  margin-bottom: 0 !important; }
-
+		margin-bottom: 0 !important;
+		padding-bottom: 0 !important;
+	}
 	.darker {
 		color: $C_primaryGray;
 
@@ -294,14 +308,4 @@ a.unlink{
 	}
 
 	/* }}} */
-}
-
-%blockStack {
-	// set box-shadow to simulate a stack of elements
-	$frame_thickness: 2px;
-	$frame_spacing: 1px;
-	box-shadow: $frame_spacing $frame_spacing								0 $C_backgroundContent,
-				$frame_spacing+$frame_thickness $frame_spacing+$frame_thickness			0 $C_tertiaryGray,
-				$frame_spacing*2+$frame_thickness $frame_spacing*2+$frame_thickness		0 $C_backgroundContent,
-				($frame_spacing+$frame_thickness)*2 ($frame_spacing+$frame_thickness)*2 0 $C_tertiaryGray;
 }

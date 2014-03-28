@@ -68,8 +68,8 @@
 	@include round($defaultRadius);
 	background-color: #fff;
 	margin-bottom: $baseline;
-	border: 1px solid $C_line;
-    @include background-clip(padding);
+	border: 1px solid $C_line !important; /* !important to support .doc-box.doc-content multiple classes */
+ 	@include background-clip(padding);
 
 
 	/**
