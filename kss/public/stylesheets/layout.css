@@ -77,7 +77,7 @@ h1.styleguide {
   .styleguide-example .styleguide-element + .styleguide-element {
     margin-top: -5px;
     padding-top: 15px;
-    border-top: 1px solid #666; }
+    border-top: 1px solid #999; }
   .styleguide-example .styleguide-element .styleguide-modifier-name {
 	  font-family: "Monaco", "consolas", "courier new", monospace;
     display: block;
