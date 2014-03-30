@@ -11,9 +11,11 @@
       </ul>
     <% end %>
   </div>
-  <div class="styleguide-element">
-    <%= @example_html %>
-  </div>
+  <!--
+     -<div class="styleguide-element">
+     -  <%= @example_html %>
+     -</div>
+	  -->
   <% @section.modifiers.each do |modifier| %>
     <div class="styleguide-element styleguide-modifier">
       <span class="styleguide-modifier-name"><%= modifier.name %></span>

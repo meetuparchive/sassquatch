@@ -10,8 +10,9 @@
 Default button: for secondary actions.
 Slightly transparent in order to match background color.
 
-.button--active - active state modifier
-.button--disabled - disabled state modifier
+.button - base button class
+.button.button--active - active state modifier
+.button.button--disabled - disabled state modifier
 
 Styleguide 1.1
 */
@@ -83,8 +84,9 @@ input[type="submit"] {
 /*
 Primary button: for primary actions
 
-.button--active - active state modifier
-.button--disabled - disabled state modifier
+.button--primary - primary button
+.button--primary.button--active - active state modifier
+.button--primary.button--disabled - disabled state modifier
 .button--black - black button
 .button--black.button--active - active black button
 .button--black.button--disabled - disabled black button
@@ -150,6 +152,7 @@ input[type="submit"]:active {
 /*
 Flat buttons (good for link-like actions)
 
+.button-flat- default flat button
 .button-flat--white - white flat button
 .button-flat--black - white flat button
 .button-photo - white button for overlaying photos

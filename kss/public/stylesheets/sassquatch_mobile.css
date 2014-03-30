@@ -2164,8 +2164,9 @@ input.small[type="submit"],
 Default button: for secondary actions.
 Slightly transparent in order to match background color.
 
-.button--active - active state modifier
-.button--disabled - disabled state modifier
+.button - base button class
+.button.button--active - active state modifier
+.button.button--disabled - disabled state modifier
 
 Styleguide 1.1
 */
@@ -2276,8 +2277,9 @@ input[type="submit"]:disabled:hover {
 /*
 Primary button: for primary actions
 
-.button--active - active state modifier
-.button--disabled - disabled state modifier
+.button--primary - primary button
+.button--primary.button--active - active state modifier
+.button--primary.button--disabled - disabled state modifier
 .button--black - black button
 .button--black.button--active - active black button
 .button--black.button--disabled - disabled black button
@@ -2555,6 +2557,7 @@ input[type="submit"]:active {
 /*
 Flat buttons (good for link-like actions)
 
+.button-flat- default flat button
 .button-flat--white - white flat button
 .button-flat--black - white flat button
 .button-photo - white button for overlaying photos
@@ -5152,6 +5155,18 @@ label.touchList-helperText:empty {
 }
 
 /* {{{ Typography modifiers */
+/*
+Highlighting modifiers
+
+.debug - for debugging in dev
+.highlighted - for highlighting things
+.shaded - for shading things
+.shaded-lighter - lighter shading
+.shaded-red - red highlighting
+.shaded-pixelate - a weird thing we may not use again
+
+Styleguide 2.1
+*/
 .debug {
   outline: 1px dotted red;
   background: pink;
@@ -5185,83 +5200,15 @@ label.touchList-helperText:empty {
   background-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=");
 }
 
-.leading-top {
-  padding-top: 9px;
-}
+/*
+Text alignment
 
-.leading-bottom {
-  padding-bottom: 9px;
-}
+.align-right - text align right
+.align-left - text align left
+.align-center - text align center
 
-.leading-left,
-.padding-left {
-  padding-left: 9px;
-}
-
-.leading-right,
-.padding-right {
-  padding-right: 9px;
-}
-
-.leading-none,
-.padding-none {
-  padding: 0 !important;
-}
-
-.leading-all,
-.padding-all {
-  padding: 9px;
-}
-
-.margin-all {
-  margin: 9px;
-}
-
-.margin-top {
-  margin-top: 9px;
-}
-
-.margin-bottom {
-  margin-bottom: 9px;
-}
-
-.margin-left {
-  margin-left: 9px;
-}
-
-.margin-right {
-  margin-right: 9px;
-}
-
-.margin-none {
-  margin: 0 !important;
-}
-
-.flush--top {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.flush--right {
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-}
-
-.flush--bottom {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.flush--left {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
-
-.flush--all {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
+Styleguide 2.2
+*/
 .align-right {
   text-align: right;
 }
@@ -5274,6 +5221,15 @@ label.touchList-helperText:empty {
   text-align: center;
 }
 
+/*
+Vertical alignment
+
+.valign-top - vertical align top
+.valign-middle - vertical align middle
+.valign-bottom - vertical align bottom
+
+Styleguide 2.3
+*/
 .valign-top {
   vertical-align: top;
 }
@@ -5413,6 +5369,83 @@ a.unlink:link, a.unlink:visited {
 }
 
 /* }}} */
+.leading-top {
+  padding-top: 9px;
+}
+
+.leading-bottom {
+  padding-bottom: 9px;
+}
+
+.leading-left,
+.padding-left {
+  padding-left: 9px;
+}
+
+.leading-right,
+.padding-right {
+  padding-right: 9px;
+}
+
+.leading-none,
+.padding-none {
+  padding: 0 !important;
+}
+
+.leading-all,
+.padding-all {
+  padding: 9px;
+}
+
+.margin-all {
+  margin: 9px;
+}
+
+.margin-top {
+  margin-top: 9px;
+}
+
+.margin-bottom {
+  margin-bottom: 9px;
+}
+
+.margin-left {
+  margin-left: 9px;
+}
+
+.margin-right {
+  margin-right: 9px;
+}
+
+.margin-none {
+  margin: 0 !important;
+}
+
+.flush--top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.flush--right {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.flush--left {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.flush--all {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* typographic + layout additions {{{ */
 .left {
   float: left;
