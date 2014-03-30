@@ -5,5 +5,5 @@
 /css
 !README*
 bower_components/
-jekyll_docs/_site/
-jekyll_docs.sublime*
+components/
+node_modules/
