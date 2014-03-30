@@ -1,33 +1,31 @@
 COMPILER    = "sass"
 SOURCES     = "sass/"
-TARGET      = "css"
+TARGET      = "kss/public/stylesheets"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 # compile sass & copy files into build/
 task :compile do
-
-	Dir.mkdir(TARGET) unless Dir.exists?(TARGET)
 
 	# desktop
 	puts
 	puts "#{HR}"
 	puts "Compiling SassQuatch for desktop"
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+	sh "#{COMPILER} #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style expanded"
 
 	# mobile
 	puts
 	puts "#{HR}"
 	puts "Compiling SassQuatch for mobile"
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
+	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=expanded"
 
 	# tests
 	puts
 	puts "#{HR}"
 	puts "Compiling tests"
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
+	sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{TARGET}/sassquatch_tests.css"
 
 end
 
@@ -37,6 +35,9 @@ task :localdev do
 	puts
 	puts "#{HR}"
 	puts "STARTING SINATRA..."
+	Dir.chdir('.git') do
+		bundle exec doc.rb
+	end
 	puts "#{HR}"
 	sh ""
 end
