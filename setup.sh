@@ -12,6 +12,9 @@ gem install bundler
 echo "~~~~~~~~ installing required gems..."
 bundle install
 
+echo "~~~~~~~~ installing required node modules..."
+npm install
+
 echo "~~~~~~~~ installing bower components..."
 bower install
 
