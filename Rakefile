@@ -1,8 +1,6 @@
 COMPILER    = "sass"
 SOURCES     = "sass/"
 TARGET      = "css"
-JEKYLL_DIR  = "jekyll_docs"
-DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 # compile sass & copy files into build/
@@ -36,19 +34,6 @@ task :compile do
 	puts "#{HR}"
 	puts "Building docs"
 	puts "#{HR}"
-	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
-	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "jekyll build -s #{JEKYLL_DIR}"
-end
-
-
-# start jekyll
-task :jekyll do
-	puts
-	puts "#{HR}"
-	puts "STARTING JEKYLL..."
-	puts "#{HR}"
-	sh "jekyll serve -s #{JEKYLL_DIR} --watch"
 end
 
 
