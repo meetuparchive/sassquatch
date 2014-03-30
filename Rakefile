@@ -33,12 +33,12 @@ end
 
 
 # start jekyll
-task :jekyll do
+task :localdev do
 	puts
 	puts "#{HR}"
-	puts "STARTING JEKYLL..."
+	puts "STARTING SINATRA..."
 	puts "#{HR}"
-	sh "jekyll serve -s #{JEKYLL_DIR} --watch"
+	sh ""
 end
 
 
@@ -46,7 +46,6 @@ end
 task :default do
 
     Rake::Task['compile'].execute
-    Rake::Task['jekyll'].execute
 
     puts
     puts "YOU BUILD IS SUCCESS"
