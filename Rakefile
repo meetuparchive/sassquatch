@@ -21,11 +21,11 @@ task :compile do
 	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=expanded"
 
 	# tests
-	puts
-	puts "#{HR}"
-	puts "Compiling tests"
-	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{TARGET}/sassquatch_tests.css"
+	#puts
+	#puts "#{HR}"
+	#puts "Compiling tests"
+	#puts "#{HR}"
+	#sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{TARGET}/sassquatch_tests.css"
 
 end
 
@@ -47,6 +47,7 @@ end
 task :default do
 
     Rake::Task['compile'].execute
+    Rake::Task['run'].execute
 
     puts
     puts "YOU BUILD IS SUCCESS"

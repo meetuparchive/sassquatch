@@ -3,15 +3,22 @@
 * BOXY BUTTONS
 */
 
-// Default button (secondary)
-//
+@import "../util/buttonFactory";
+
+
+/*
+Default button: for secondary actions.
+Slightly transparent in order to match background color.
+
+.button--active - active state modifier
+.button--disabled - disabled state modifier
+
+Styleguide 1.1
+*/
+
 // this one doesn't use the button mixin
 // because it's transparent in order to visually
 // mix with any background color
-// ---------------------------
-
-@import "../util/buttonFactory";
-
 %button,
 .button,
 button,
@@ -36,6 +43,7 @@ input[type="submit"] {
 		background: opacify($C_lineGray, 0.06);
 	}
 
+	&.button--disabled,
 	&.disabled,
 	&:disabled {
 		opacity: 0.4;
@@ -62,6 +70,7 @@ input[type="submit"] {
 		&:hover {
 			background: transparentize($C_lineGrayInverted, 0.06);
 		}
+		&.button--disabled,
 		&.disabled,
 		&:disabled {
 			&:hover {
@@ -71,12 +80,26 @@ input[type="submit"] {
 	}
 }
 
-// Primary button
-//
+/*
+Primary button: for primary actions
+
+.button--active - active state modifier
+.button--disabled - disabled state modifier
+.button--black - black button
+.button--black.button--active - active black button
+.button--black.button--disabled - disabled black button
+.button--white - white button
+.button--white.button--active - active white button
+.button--white.button--disabled - disabled white button
+.button--blue - blue button
+.button--blue.button--active - active blue button
+.button--blue.button--disabled - disabled blue button
+
+Styleguide 1.2
+*/
 // this gets a bit lengthy to support
 // the legacy class "primary" on the higher
 // specificity 'input[type="submit"]'
-// ---------------------------
 %button--primary,
 .primary,
 .button.primary,
@@ -124,9 +147,15 @@ input[type="submit"]:active {
 }
 
 
-/**
-* ==============================================
-* FLAT BUTTONS
+/*
+Flat buttons (good for link-like actions)
+
+.button-flat - default flat button
+.button-flat--white - white flat button
+.button-flat--black - white flat button
+.button-photo - white button for overlaying photos
+
+Styleguide 1.3
 */
 
 // Flat button (gray) [DEFAULT]
@@ -160,12 +189,7 @@ input[type="submit"]:active {
 }
 
 
-/**
-* ==============================================
-* PHOTO OVERLAY BUTTONS
-*/
-
-// Flat button (use over most photo bgs)
+// Flat Photo button (use over most photo bgs)
 // ---------------------------
 %button-photo,
 %button-photo--white,

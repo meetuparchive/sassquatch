@@ -106,6 +106,7 @@ $buttonFontSize: 16px;
 	}
 
 
+	&.button--disabled,
 	&.disabled,
 	&:disabled {
 		opacity: 0.4;

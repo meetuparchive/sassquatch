@@ -76,7 +76,7 @@ h1.styleguide {
 
 .styleguide-example {
   margin: 15px 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5) url(checker-bg.png) repeat;
   border: 1px solid #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
   .styleguide-example > h3 {
@@ -107,22 +107,24 @@ h1.styleguide {
   .styleguide-example .styleguide-element + .styleguide-element {
     margin-top: -5px;
     padding-top: 15px;
-    border-top: 1px solid #eee; }
+    border-top: 1px solid #666; }
   .styleguide-example .styleguide-element .styleguide-modifier-name {
+	  font-family: "Monaco", "consolas", "courier new", monospace;
     display: block;
     position: absolute;
     top: 0;
     right: 0;
     padding: 5px 8px;
     font-size: 11px;
-    color: #999;
-    background: #f9f9f9;
-    border: 1px solid #eee;
+    background: #666;
+    color: #f9f9f9;
+    border: 1px solid #666;
     border-top: none; }
   .styleguide-example .styleguide-html {
     padding: 5px 10px;
     background: #edf6f8;
     border-top: 1px solid #dde7ea;
+  	font-size: 12px;
     overflow: auto; }
     .styleguide-example .styleguide-html .highlight {
       background: none; }
@@ -132,12 +134,12 @@ h1.styleguide {
       list-style-type: none;
       margin-left: 0; }
     .styleguide-example ul.styleguide-modifiers li strong {
-      font-family: Monaco, monospace;
+	  font-family: "Monaco", "consolas", "courier new", monospace;
       font-size: 12px;
       font-weight: normal;
       color: #222; }
   .styleguide-example > .styleguide-code {
-    font-family: Monaco, monospace;
+	  font-family: "Monaco", "consolas", "courier new", monospace;
   }
 
 /* @end */

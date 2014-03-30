@@ -904,18 +904,8 @@ select.big {
 
 /* }}} */
 /**
+* ==============================================
 * BOXY BUTTONS
-*
-* .button - 
-* .button--primary - asdf
-* .button--blue - asdf
-* :hover - asdf
-* :active - asdf
-* .button--active - asdf
-* :disabled - asdf
-* .disabled - asdf
-*
-* Styleguide 1.1
 */
 /**
 * Button factory mixins
@@ -1097,6 +1087,15 @@ input[type="submit"].button--blue:after {
 * @param $color - single border/text/hover color
 * -----------------------------------------------
 */
+/*
+Default button: for secondary actions.
+Slightly transparent in order to match background color.
+
+.button--active - active state modifier
+.button--disabled - disabled state modifier
+
+Styleguide 1.1
+*/
 .button,
 button,
 input[type="submit"] {
@@ -1125,19 +1124,25 @@ input[type="submit"].button--active,
 input[type="submit"]:hover {
   background: rgba(0, 0, 0, 0.16);
 }
+.button.button--disabled,
 .button.disabled,
 .button:disabled,
+button.button--disabled,
 button.disabled,
 button:disabled,
+input[type="submit"].button--disabled,
 input[type="submit"].disabled,
 input[type="submit"]:disabled {
   opacity: 0.4;
   cursor: normal;
 }
+.button.button--disabled:active,
 .button.disabled:active,
 .button:disabled:active,
+button.button--disabled:active,
 button.disabled:active,
 button:disabled:active,
+input[type="submit"].button--disabled:active,
 input[type="submit"].disabled:active,
 input[type="submit"]:disabled:active {
   -moz-transform: translate(0px, 0px);
@@ -1146,10 +1151,13 @@ input[type="submit"]:disabled:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
+.button.button--disabled:hover,
 .button.disabled:hover,
 .button:disabled:hover,
+button.button--disabled:hover,
 button.disabled:hover,
 button:disabled:hover,
+input[type="submit"].button--disabled:hover,
 input[type="submit"].disabled:hover,
 input[type="submit"]:disabled:hover {
   background: rgba(0, 0, 0, 0.1);
@@ -1180,15 +1188,35 @@ input[type="submit"]:hover {
   background: rgba(255, 255, 255, 0.14);
 }
 .inverted
+.button.button--disabled:hover, .inverted
 .button.disabled:hover, .inverted
 .button:disabled:hover, .inverted
+button.button--disabled:hover, .inverted
 button.disabled:hover, .inverted
 button:disabled:hover, .inverted
+input[type="submit"].button--disabled:hover, .inverted
 input[type="submit"].disabled:hover, .inverted
 input[type="submit"]:disabled:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/*
+Primary button: for primary actions
+
+.button--active - active state modifier
+.button--disabled - disabled state modifier
+.button--black - black button
+.button--black.button--active - active black button
+.button--black.button--disabled - disabled black button
+.button--white - white button
+.button--white.button--active - active white button
+.button--white.button--disabled - disabled white button
+.button--blue - blue button
+.button--blue.button--active - active blue button
+.button--blue.button--disabled - disabled blue button
+
+Styleguide 1.2
+*/
 .primary,
 .button.primary,
 .button--primary,
@@ -1227,27 +1255,37 @@ input[type="submit"].button--primary.button--active,
 input[type="submit"].button--primary:hover {
   background: #d02126;
 }
+.primary.button--disabled,
 .primary.disabled,
 .primary:disabled,
+.button.primary.button--disabled,
 .button.primary.disabled,
 .button.primary:disabled,
+.button--primary.button--disabled,
 .button--primary.disabled,
 .button--primary:disabled,
+input[type="submit"].primary.button--disabled,
 input[type="submit"].primary.disabled,
 input[type="submit"].primary:disabled,
+input[type="submit"].button--primary.button--disabled,
 input[type="submit"].button--primary.disabled,
 input[type="submit"].button--primary:disabled {
   opacity: 0.4;
   cursor: normal;
 }
+.primary.button--disabled:active,
 .primary.disabled:active,
 .primary:disabled:active,
+.button.primary.button--disabled:active,
 .button.primary.disabled:active,
 .button.primary:disabled:active,
+.button--primary.button--disabled:active,
 .button--primary.disabled:active,
 .button--primary:disabled:active,
+input[type="submit"].primary.button--disabled:active,
 input[type="submit"].primary.disabled:active,
 input[type="submit"].primary:disabled:active,
+input[type="submit"].button--primary.button--disabled:active,
 input[type="submit"].button--primary.disabled:active,
 input[type="submit"].button--primary:disabled:active {
   -moz-transform: translate(0px, 0px);
@@ -1256,14 +1294,19 @@ input[type="submit"].button--primary:disabled:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
+.primary.button--disabled:hover,
 .primary.disabled:hover,
 .primary:disabled:hover,
+.button.primary.button--disabled:hover,
 .button.primary.disabled:hover,
 .button.primary:disabled:hover,
+.button--primary.button--disabled:hover,
 .button--primary.disabled:hover,
 .button--primary:disabled:hover,
+input[type="submit"].primary.button--disabled:hover,
 input[type="submit"].primary.disabled:hover,
 input[type="submit"].primary:disabled:hover,
+input[type="submit"].button--primary.button--disabled:hover,
 input[type="submit"].button--primary.disabled:hover,
 input[type="submit"].button--primary:disabled:hover {
   background: #e0393e !important;
@@ -1292,15 +1335,19 @@ input[type="submit"].button--black.button--active,
 input[type="submit"].button--black:hover {
   background: black;
 }
+.button--black.button--disabled,
 .button--black.disabled,
 .button--black:disabled,
+input[type="submit"].button--black.button--disabled,
 input[type="submit"].button--black.disabled,
 input[type="submit"].button--black:disabled {
   opacity: 0.4;
   cursor: normal;
 }
+.button--black.button--disabled:active,
 .button--black.disabled:active,
 .button--black:disabled:active,
+input[type="submit"].button--black.button--disabled:active,
 input[type="submit"].button--black.disabled:active,
 input[type="submit"].button--black:disabled:active {
   -moz-transform: translate(0px, 0px);
@@ -1309,8 +1356,10 @@ input[type="submit"].button--black:disabled:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
+.button--black.button--disabled:hover,
 .button--black.disabled:hover,
 .button--black:disabled:hover,
+input[type="submit"].button--black.button--disabled:hover,
 input[type="submit"].button--black.disabled:hover,
 input[type="submit"].button--black:disabled:hover {
   background: black !important;
@@ -1339,15 +1388,19 @@ input[type="submit"].button--black.button--active,
 input[type="submit"].button--black:hover {
   background: #ebebeb;
 }
+.button--white.button--disabled,
 .button--white.disabled,
 .button--white:disabled,
+input[type="submit"].button--black.button--disabled,
 input[type="submit"].button--black.disabled,
 input[type="submit"].button--black:disabled {
   opacity: 0.4;
   cursor: normal;
 }
+.button--white.button--disabled:active,
 .button--white.disabled:active,
 .button--white:disabled:active,
+input[type="submit"].button--black.button--disabled:active,
 input[type="submit"].button--black.disabled:active,
 input[type="submit"].button--black:disabled:active {
   -moz-transform: translate(0px, 0px);
@@ -1356,8 +1409,10 @@ input[type="submit"].button--black:disabled:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
+.button--white.button--disabled:hover,
 .button--white.disabled:hover,
 .button--white:disabled:hover,
+input[type="submit"].button--black.button--disabled:hover,
 input[type="submit"].button--black.disabled:hover,
 input[type="submit"].button--black:disabled:hover {
   background: white !important;
@@ -1386,15 +1441,19 @@ input[type="submit"].button--blue.button--active,
 input[type="submit"].button--blue:hover {
   background: #008ce9;
 }
+.button--blue.button--disabled,
 .button--blue.disabled,
 .button--blue:disabled,
+input[type="submit"].button--blue.button--disabled,
 input[type="submit"].button--blue.disabled,
 input[type="submit"].button--blue:disabled {
   opacity: 0.4;
   cursor: normal;
 }
+.button--blue.button--disabled:active,
 .button--blue.disabled:active,
 .button--blue:disabled:active,
+input[type="submit"].button--blue.button--disabled:active,
 input[type="submit"].button--blue.disabled:active,
 input[type="submit"].button--blue:disabled:active {
   -moz-transform: translate(0px, 0px);
@@ -1403,8 +1462,10 @@ input[type="submit"].button--blue:disabled:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
+.button--blue.button--disabled:hover,
 .button--blue.disabled:hover,
 .button--blue:disabled:hover,
+input[type="submit"].button--blue.button--disabled:hover,
 input[type="submit"].button--blue.disabled:hover,
 input[type="submit"].button--blue:disabled:hover {
   background: #13a1ff !important;
@@ -1418,9 +1479,15 @@ input[type="submit"]:active {
   transform: translate(0px, 0px) !important;
 }
 
-/**
-* ==============================================
-* FLAT BUTTONS
+/*
+Flat buttons (good for link-like actions)
+
+.button-flat - default flat button
+.button-flat--white - white flat button
+.button-flat--black - white flat button
+.button-photo - white button for overlaying photos
+
+Styleguide 1.3
 */
 .button-flat,
 .button-flat--gray {
@@ -1464,10 +1531,6 @@ input[type="submit"]:active {
   color: white !important;
 }
 
-/**
-* ==============================================
-* PHOTO OVERLAY BUTTONS
-*/
 .button-photo,
 .button-photo--white {
   color: white !important;
