@@ -31,12 +31,12 @@ end
 
 
 # start jekyll
-task :localdev do
+task :run do
 	puts
 	puts "#{HR}"
 	puts "STARTING SINATRA..."
-	Dir.chdir('.git') do
-		bundle exec doc.rb
+	Dir.chdir('kss') do
+		sh "ruby doc.rb"
 	end
 	puts "#{HR}"
 	sh ""
