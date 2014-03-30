@@ -68,8 +68,8 @@
 	@include round($defaultRadius);
 	background-color: #fff;
 	margin-bottom: $baseline;
-	border: 1px solid $C_line;
-    @include background-clip(padding);
+	border: 1px solid $C_line !important; /* !important to support .doc-box.doc-content multiple classes */
+ 	@include background-clip(padding);
 
 
 	/**
@@ -163,7 +163,7 @@
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
 	padding: $baseline;
-	padding-bottom: $baseline * .25;
+	padding-bottom: 0;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
 
@@ -238,7 +238,6 @@
 	top: 12px;
 	right: 12px;
 	display: block;
-	background: url('/img/ui-dialog-close.png') no-repeat top left;
 	width: 14px;
 	height: 14px;
 	cursor: pointer;
@@ -284,23 +283,22 @@ $arrow-width: $baseline/2;
 * for forms and content that have the main focus on a page (registration flow, for example)
 */
 .doc-content-big {
-    border-top: 1px solid $C_line;
-    &:first-child{
-        border-top: none;
-    }
+	border-top: 1px solid $C_line;
+	&:first-child{
+		border-top: none;
+	}
 	padding: $bigBaseline;
-    padding-bottom: $bigBaseline - $spacing;
+	padding-bottom: 0;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 
-    label.small {
-      font-size:13px;
-    }
-
-    select {
-        height: $bigFontSize*2 - 2;
-        *height: auto;
-        line-height: $bigFontSize*2 - 2;
-    }
+	label.small {
+		font-size:$smallFontSize;
+	}
+	select {
+		height: $bigFontSize*2 - 2;
+		*height: auto;
+		line-height: $bigFontSize*2 - 2;
+	}
 }
 .doc-content-jagged {
 	$jagged-height: 8px;

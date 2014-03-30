@@ -1,0 +1,22 @@
+<!-- EXTRA CSS -->
+<style type="text/css">
+	#members .ffbox--shaded { height: 3.75em; }
+	#members .pill-label--leader,
+	#members .pill-label--friend { font-size: 0.55em }
+	#members .pill-list li:first-child { margin-left: 0; }
+	#members .touchList-item-action .ffbox--touchList-item { padding-right: 0; }
+	#members .touchList input[type="checkbox"] { margin-right: 0; }
+	#member_content { padding-right: 0.375em; }
+	#member_content h4,
+	#member_content ul {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+</style>
+
+<!-- HTML -->
+<div class="doc-box">
+    <ul id="members" class="touchList">
+        {% include touchlist/avatar_input_items.liquid %}
+    </ul>
+</div>

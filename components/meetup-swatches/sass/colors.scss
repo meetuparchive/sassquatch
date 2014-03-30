@@ -1,8 +1,8 @@
 // PRIMITIVE COLORS - used in multiple color aliases, try not to use these directly
 $C_red: rgb(226,55,60);
-@mixin color_red { color: $C_red; }
+@mixin color_red($style: 'color') { #{$style}: $C_red; }
 $C_blue: rgb(57,135,203);
-@mixin color_blue { color: $C_blue; }
+@mixin color_blue($style: 'color') { #{$style}: $C_blue; }
 $C_primaryGray: rgba(0,0,0,0.95);
 @mixin color_primaryGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 5%); #{$style}: $C_primaryGray; }
 $C_secondaryGray: rgba(0,0,0,0.67);
@@ -12,25 +12,25 @@ $C_tertiaryGray: rgba(0,0,0,0.47);
 $C_lineGray: rgba(0,0,0,0.1);
 @mixin color_lineGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 90%); #{$style}: $C_lineGray; }
 $C_primaryGrayInverted: rgb(255,255,255);
-@mixin color_primaryGrayInverted { color: $C_primaryGrayInverted; }
+@mixin color_primaryGrayInverted($style: 'color') { #{$style}: $C_primaryGrayInverted; }
 $C_secondaryGrayInverted: rgba(255,255,255,0.67);
-@mixin color_secondaryGrayInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_secondaryGrayInverted; }
+@mixin color_secondaryGrayInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 33%); #{$style}: $C_secondaryGrayInverted; }
 $C_tertiaryGrayInverted: rgba(255,255,255,0.47);
-@mixin color_tertiaryGrayInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_tertiaryGrayInverted; }
+@mixin color_tertiaryGrayInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 53%); #{$style}: $C_tertiaryGrayInverted; }
 $C_lineGrayInverted: rgba(255,255,255,0.2);
-@mixin color_lineGrayInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 80%); #{$style}: $C_lineGrayInverted; }
+@mixin color_lineGrayInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 80%); #{$style}: $C_lineGrayInverted; }
  
 // BACKGROUNDS - these are always 100% opacity
 $C_backgroundContent: rgb(255,255,255);
-@mixin color_backgroundContent { color: $C_backgroundContent; }
+@mixin color_backgroundContent($style: 'color') { #{$style}: $C_backgroundContent; }
 $C_backgroundCollection: rgb(231,231,231);
-@mixin color_backgroundCollection { color: $C_backgroundCollection; }
+@mixin color_backgroundCollection($style: 'color') { #{$style}: $C_backgroundCollection; }
 $C_backgroundNav: rgb(247,247,247);
-@mixin color_backgroundNav { color: $C_backgroundNav; }
+@mixin color_backgroundNav($style: 'color') { #{$style}: $C_backgroundNav; }
 $C_backgroundContentInverted: rgb(53,62,71);
-@mixin color_backgroundContentInverted { color: $C_backgroundContentInverted; }
+@mixin color_backgroundContentInverted($style: 'color') { #{$style}: $C_backgroundContentInverted; }
 $C_backgroundContentAccent: rgb(226,55,60);
-@mixin color_backgroundContentAccent { color: $C_backgroundContentAccent; }
+@mixin color_backgroundContentAccent($style: 'color') { #{$style}: $C_backgroundContentAccent; }
  
 // DEFAULT CONTEXT (content on light backgrounds)
 $C_textPrimary: rgba(0,0,0,0.95);
@@ -42,17 +42,17 @@ $C_textTertiary: rgba(0,0,0,0.47);
 $C_border: rgba(0,0,0,0.1);
 @mixin color_border($style: 'color') { #{$style}: lighten( rgb(0,0,0), 90%); #{$style}: $C_border; }
 $C_link: rgb(57,135,203);
-@mixin color_link { color: $C_link; }
+@mixin color_link($style: 'color') { #{$style}: $C_link; }
 $C_accent: rgb(226,55,60);
-@mixin color_accent { color: $C_accent; }
+@mixin color_accent($style: 'color') { #{$style}: $C_accent; }
 $C_yes: rgb(226,55,60);
-@mixin color_yes { color: $C_yes; }
+@mixin color_yes($style: 'color') { #{$style}: $C_yes; }
 $C_no: rgba(0,0,0,0.67);
 @mixin color_no($style: 'color') { #{$style}: lighten( rgb(0,0,0), 33%); #{$style}: $C_no; }
 $C_waitlist: rgba(0,0,0,0.67);
 @mixin color_waitlist($style: 'color') { #{$style}: lighten( rgb(0,0,0), 33%); #{$style}: $C_waitlist; }
 $C_buttonPrimary: rgb(226,55,60);
-@mixin color_buttonPrimary { color: $C_buttonPrimary; }
+@mixin color_buttonPrimary($style: 'color') { #{$style}: $C_buttonPrimary; }
 $C_buttonSecondary: rgba(0,0,0,0.47);
 @mixin color_buttonSecondary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 53%); #{$style}: $C_buttonSecondary; }
 $C_buttonTertiaryBorder: rgba(0,0,0,0.47);
@@ -60,27 +60,27 @@ $C_buttonTertiaryBorder: rgba(0,0,0,0.47);
  
 // INVERTED CONTEXT (content on dark backgrounds)
 $C_textPrimaryInverted: rgb(255,255,255);
-@mixin color_textPrimaryInverted { color: $C_textPrimaryInverted; }
+@mixin color_textPrimaryInverted($style: 'color') { #{$style}: $C_textPrimaryInverted; }
 $C_textSecondaryInverted: rgba(255,255,255,0.67);
-@mixin color_textSecondaryInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_textSecondaryInverted; }
+@mixin color_textSecondaryInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 33%); #{$style}: $C_textSecondaryInverted; }
 $C_textTertiaryInverted: rgba(255,255,255,0.47);
-@mixin color_textTertiaryInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_textTertiaryInverted; }
+@mixin color_textTertiaryInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 53%); #{$style}: $C_textTertiaryInverted; }
 $C_borderInverted: rgba(255,255,255,0.2);
-@mixin color_borderInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 80%); #{$style}: $C_borderInverted; }
+@mixin color_borderInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 80%); #{$style}: $C_borderInverted; }
 $C_linkInverted: rgb(57,135,203);
-@mixin color_linkInverted { color: $C_linkInverted; }
+@mixin color_linkInverted($style: 'color') { #{$style}: $C_linkInverted; }
 $C_accentInverted: rgb(226,55,60);
-@mixin color_accentInverted { color: $C_accentInverted; }
+@mixin color_accentInverted($style: 'color') { #{$style}: $C_accentInverted; }
 $C_yesInverted: rgb(226,55,60);
-@mixin color_yesInverted { color: $C_yesInverted; }
+@mixin color_yesInverted($style: 'color') { #{$style}: $C_yesInverted; }
 $C_noInverted: rgba(255,255,255,0.67);
-@mixin color_noInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_noInverted; }
+@mixin color_noInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 33%); #{$style}: $C_noInverted; }
 $C_waitlistInverted: rgba(255,255,255,0.67);
-@mixin color_waitlistInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 33%); #{$style}: $C_waitlistInverted; }
+@mixin color_waitlistInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 33%); #{$style}: $C_waitlistInverted; }
 $C_buttonPrimaryInverted: rgb(226,55,60);
-@mixin color_buttonPrimaryInverted { color: $C_buttonPrimaryInverted; }
+@mixin color_buttonPrimaryInverted($style: 'color') { #{$style}: $C_buttonPrimaryInverted; }
 $C_buttonSecondaryInverted: rgba(255,255,255,0.47);
-@mixin color_buttonSecondaryInverted($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_buttonSecondaryInverted; }
+@mixin color_buttonSecondaryInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 53%); #{$style}: $C_buttonSecondaryInverted; }
 $C_buttonTertiaryBorder: rgba(255,255,255,0.47);
 @mixin color_buttonTertiaryBorder($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_buttonTertiaryBorder; }
  
@@ -90,21 +90,21 @@ $C_overlayPressed: rgba(64,197,255,0.2);
  
 // SOCIAL (third party colors)
 $C_facebook: rgb(59,89,152);
-@mixin color_facebook { color: $C_facebook; }
+@mixin color_facebook($style: 'color') { #{$style}: $C_facebook; }
 $C_twitter: rgb(51,204,255);
-@mixin color_twitter { color: $C_twitter; }
+@mixin color_twitter($style: 'color') { #{$style}: $C_twitter; }
 $C_linkedin: rgb(72,117,180);
-@mixin color_linkedin { color: $C_linkedin; }
+@mixin color_linkedin($style: 'color') { #{$style}: $C_linkedin; }
 $C_tumblr: rgb(43,73,100);
-@mixin color_tumblr { color: $C_tumblr; }
+@mixin color_tumblr($style: 'color') { #{$style}: $C_tumblr; }
 $C_flickr: rgb(254,8,131);
-@mixin color_flickr { color: $C_flickr; }
+@mixin color_flickr($style: 'color') { #{$style}: $C_flickr; }
 $C_foursquare: rgb(12,186,223);
-@mixin color_foursquare { color: $C_foursquare; }
+@mixin color_foursquare($style: 'color') { #{$style}: $C_foursquare; }
 $C_googleplus: rgb(198,61,45);
-@mixin color_googleplus { color: $C_googleplus; }
+@mixin color_googleplus($style: 'color') { #{$style}: $C_googleplus; }
 $C_instagram: rgb(78,67,60);
-@mixin color_instagram { color: $C_instagram; }
+@mixin color_instagram($style: 'color') { #{$style}: $C_instagram; }
 $C_reddit: rgb(206,227,248);
-@mixin color_reddit { color: $C_reddit; }
+@mixin color_reddit($style: 'color') { #{$style}: $C_reddit; }
  

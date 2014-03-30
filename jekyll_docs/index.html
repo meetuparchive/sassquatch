@@ -1,0 +1,103 @@
+---
+title: Styleguide Home
+---
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sassquatch</title>
+
+		<link rel="stylesheet" type="text/css" href="//static2.meetupstatic.com/fonts/whitney.css" />
+		<link rel="stylesheet" href="assets/css/sassquatch.css" type="text/css" />
+
+		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
+		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
+		<link rel="stylesheet" href="assets/css/syntax.css" type="text/css" />
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" tpe="text/css" />
+
+		<script src="assets/js/Meetup.Base.jquery.js" type="text/javascript"></script>
+		<script src="assets/js/closeable.js" type="text/javascript"></script>
+		<script src="assets/js/jquery.scrollbeacon.js" type="text/javascript"></script>
+		<script src="assets/js/colors.js" type="text/javascript"></script>
+		<script>function invertize(sel) { document.body.className = sel.options[sel.selectedIndex].value }</script>
+	</head>
+
+
+	<body>
+
+		<ul id="guide-nav" class="inlineList">
+			<li class="margin-right">
+				<select name="inverter" id="inverter" onchange="invertize(this)" class="small margin-none">
+					<option selected="selected" value="">Normal</option>
+					<option value="bg_darkgray inverted">Dark gray</option>
+					<option value="bg_darkblue inverted">Blue</option>
+					<option value="bg_red inverted">Red</option>
+					<option value="bg_green inverted">Green</option>
+					<option value="bg_photo inverted">Photo</option>
+				</select>
+			</li>
+			<li><a href="#getstarted">Intro</a></li>
+			<li><a href="#layout">Layout</a></li>
+			<li><a href="#lists">Lists</a></li>
+			<li><a href="#forms">Forms</a></li>
+			<li><a href="#navigation">Navigation</a></li>
+			<li><a href="#modifiers">Modifiers</a></li>
+			<li><a href="#content_patterns">Content patterns</a></li>
+			{% comment %}<li><a href="#touchlists">Touch Lists</a></li>{% endcomment %}
+			<li><a href="#copy">Copy</a></li>
+			<li><a href="#colors">Colors</a></li>
+			<li><a href="#typography">Typography</a></li>
+			<li><a href="mobile.html">Mobile &rarr;</a></li>
+		</ul>
+
+
+		<!-- declare order of pages by id -->
+		{% assign sassquatch_section_names = "start,layout,lists,forms,navigation,modifiers,content_patterns,copy,colors,typography" | split: "," %}
+		<!-- tbd ,forms,navigation Modifiers Content patterns Copy Colors Typography Red Label Icons -->
+
+		<!-- loop through the ids -->
+
+		{% for pagetitle in sassquatch_section_names %}
+			{% for page in site.pages %}
+
+				{% if page.title == pagetitle %}
+
+					<div class="doc-page scrollbeacon" id="{{ page.section_id }}">
+						<h1>{{ page.section_title }}</h1>
+
+						{{ page.content }}
+
+					</div>
+
+				{% endif %}
+
+			{% endfor %}
+
+		{% endfor %}
+
+	</body>
+</html>
+
+<script>
+	$(document).ready(function(){
+		function highlight(ev){
+			var targetId = $(ev.target).attr('id');
+			$("#guide-nav a").removeClass('selected');
+			$("[href=#"+targetId+"]").addClass('selected');
+		}
+		$('.scrollbeacon').scrollbeacon({
+			appear: function (ev) {
+				if(ev.scrollbeacon.direction == 'up'){
+					highlight(ev);
+				}
+			},
+			topreached: function(ev){
+				if(ev.scrollbeacon.direction == 'down'){
+					highlight(ev);
+				}
+			}
+		});
+	});
+</script>
