@@ -359,6 +359,13 @@ hr.double-line {
 			margin-bottom:$baseline * .75;
 		}
 	}
+
+	.doc-box--wide {
+		@extend .doc-box;
+		@include round(0);
+		margin-left:0;
+		margin-right:0;
+	}
     // ah well, box margin should = content padding
     // so have to redefine
     .doc-content {
