@@ -22,12 +22,9 @@
 	$bigFontSize: 		20px;
 	$bigLineHeight: 	1.33;
 	$bigBaseline: 		18px; // not actually used as line-height, we should rename
-    
-    /* $LH_ : Line heights */
-    $LH_condensed:		1.125;  /* 16/18.0 */
-    $LH_standard:		1.3;    /* 16/20.8 */
-    $LH_tall:			1.5;    /* 16/24.0 */
-	
+	// TODO this might just need to be inited if full platform doesnt use
+	$condensedLineHeight:	1.125;
+
 	// heading sizes
 	$h1FontSize: 	    38px;
 	$h2FontSize: 	    28px;
@@ -110,7 +107,7 @@
 
 	// RSVP status colors
 	$C_rsvpGoing: 			$C_green;
-	$C_rsvpWating: 		    $C_blue;
+	$C_rsvpWaiting: 		$C_blue;
 	$C_rsvpNotGoing: 		$C_darkgray_lightest;
 
 	// Errors
@@ -208,22 +205,27 @@ $no: 					null;
 	$headingFontStack: 		$baseFontStack; 
 	$uiControlFontStack: 	$baseFontStack;
 
-	$baseFontSize: 16px;
+	// base sizes
+	$baseFontSize:		16px;
+	$baseLineHeight:	1.4;
 
-    $h1FontSize: 	$baseFontSize * 1.5;
-	$h2FontSize: 	$baseFontSize * 1.25;
-	$h3FontSize: 	$baseFontSize;
+	// small font sizes
+	$smallFontSize:		13px;
+	$smallLineHeight:	1.6;
+	$condensedLineHeight:	1.125;
+
+	$h1FontSize: 	$baseFontSize * 1.75;
+	$h2FontSize: 	$baseFontSize * 1.5;
+	$h3FontSize: 	$baseFontSize * 1.25;
 	$h4FontSize: 	$baseFontSize;
-	$h5FontSize: 	$baseFontSize * .75;
+	$h5FontSize: 	$baseFontSize;
 	$h6FontSize: 	$baseFontSize;
 
 	$baseline: 			16px;        	/*  unused, except for below  */
-	$spacing: 			$baseline / 2;          	/*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 		$spacing; 
-	$formLabelOffset:   $baseline * 9; /* horizontal offset of label/field */
+	$spacing: 			$baseline / 2;  /*  used, but has a lot of conditional overrides/modifications */
+	$basePadding: 		$spacing;
+	$formLabelOffset:   $baseline * 9;	/* horizontal offset of label/field */
 	/*  }  */
-
-
 
 	/*  ADDITIONS {
 	 *  
@@ -236,13 +238,13 @@ $no: 					null;
 
 	$C_darkGreen: 			#007B3D;  /* used 1x in global, after aliasing itself */
 	$C_rsvpGoing: 			#62AC75;
-	$C_rsvpWating: 		    #86c6ee;
+	$C_rsvpWaiting: 		#86c6ee;
 	$C_rsvpNotGoing: 		#999;
 
 	// RSVP status, aliases
 	$checkin: 				$C_darkGreen;
 	$yes: 					$C_rsvpGoing;
-	$waiting: 				$C_rsvpWating;
+	$waiting: 				$C_rsvpWaiting;
 	$no: 					$C_rsvpNotGoing;
 	/*  }  */
 }

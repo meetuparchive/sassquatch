@@ -189,8 +189,8 @@
 
 	html, body {
 		font-size: $baseFontSize;
+		line-height:$condensedLineHeight;
 		color: $C_secondaryGray;
-        line-height: $LH_standard; // or condensed?
 	} 
 
 	// Override default text color for "inverted" contexts
@@ -200,7 +200,7 @@
 	}
 
 	p {
-		line-height:$LH_tall;
+		line-height:$baseLineHeight;
 	}
 
 	/* {{{ Block tag defaults */
@@ -256,7 +256,7 @@
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
-		line-height: $LH_standard;
+		line-height: 1.2;
 		
 		.inverted & {
 			color: $C_primaryGray;
@@ -275,8 +275,15 @@
 		font-size: $h3FontSize; 
 	}
 	h4 { font-size: $h4FontSize }
-	h5 { font-weight: $W_normal; font-size: $h5FontSize; }
-	h6 { font-size: $h6FontSize; }  /* probably won't use it, but it's in the html spec, so worth defining a default */
+	h5 { 
+		font-weight: $W_normal; 
+		font-size: $h5FontSize; 
+	}
+	h6 { 
+		font-size: $h6FontSize; 
+		font-weight: $W_normal;
+		text-transform:uppercase;
+	}  /* probably won't use it, but it's in the html spec, so worth defining a default */
 
 	/* }}} */
 
