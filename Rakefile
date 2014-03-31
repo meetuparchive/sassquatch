@@ -14,11 +14,11 @@ task :compile do
 	sh "#{COMPILER} #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style expanded"
 
 	# mobile
-	puts
-	puts "#{HR}"
-	puts "Compiling SassQuatch for mobile"
-	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=expanded"
+	#puts
+	#puts "#{HR}"
+	#puts "Compiling SassQuatch for mobile"
+	#puts "#{HR}"
+	#sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=expanded"
 
 	# tests
 	#puts
