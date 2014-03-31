@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
 * TESTS (desktop)
 */
@@ -15,10 +14,6 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-/* $LH_ : Line heights */
-/* 16/18.0 */
-/* 16/20.8 */
-/* 16/24.0 */
 .tearsheet .day, .tearsheet--small .day, .tearsheet--big .day, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
@@ -81,15 +76,10 @@
 button,
 input[type="submit"],
 .primary,
-.button.primary,
 .button--primary,
-input[type="submit"].primary,
-input[type="submit"].button--primary,
 .button--black,
-input[type="submit"].button--black,
 .button--white,
-.button--blue,
-input[type="submit"].button--blue, .nav-buttons label,
+.button--blue, .nav-buttons label,
 .nav-buttons li > a,
 .nav-buttons li > span, .segmented-control-button {
   -moz-user-select: none;
@@ -97,7 +87,7 @@ input[type="submit"].button--blue, .nav-buttons label,
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  text-decoration: none!important; }
+  text-decoration: none !important; }
 
 .nav-tabs, .nav-pagination, .nav-buttons {
   /**
@@ -1464,7 +1454,7 @@ input[type="submit"]:active {
     border-top: 1px solid #dddddd; }
   .doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
     float: none;
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #ddd;
     display: table-cell;
     vertical-align: top; }
   .doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
@@ -1495,7 +1485,7 @@ input[type="submit"]:active {
 .ie6 .doc-box .line .unit,
 .ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
 .ie7 .doc-box .line-gutters .unit {
-  float: left!important; }
+  float: left !important; }
 
 .doc-padding,
 .doc-content,
@@ -1661,7 +1651,7 @@ input[type="submit"]:active {
   .doc-content-jagged:after {
     content: '';
     height: 8px;
-    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 			5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 			9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A 			AAAASUVORK5CYII=") repeat-x top left;
+    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo 5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q 9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A AAAASUVORK5CYII=") repeat-x top left;
     background-size: 8px;
     display: block;
     position: absolute;
@@ -1671,7 +1661,7 @@ input[type="submit"]:active {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   .doc-content-jagged:after {
-    background: transparent url("data:image/png;base64, 			iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 			8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh 			+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb 			iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
+    background: transparent url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy 8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh +lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC") repeat-x top left;
     background-size: 8px auto; } }
 /* }}} */
 hr.double-line {
@@ -2632,7 +2622,7 @@ as well as a few different states/types:
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #999;
-  border: 2px solid white;
+  border: 2px solid #fff;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
@@ -2673,6 +2663,7 @@ as well as a few different states/types:
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* icon gems are 16px with 0.5em padding */
+/* icon gems are square inside ffbox-fix */
 /* $FS_ : Font Size */
 /* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
  * be used with scoped resets in order to work properly. For touchList, this
@@ -2695,24 +2686,6 @@ as well as a few different states/types:
 /* 16/18.0 */
 /* 16/20.8 */
 /* 16/24.0 */
-/*  $C_ : Colors  */
-/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
- *  at some point in the immediate future (Sassquatch >1.5), once touchList
- *  is fully integrated into Sq.
- *
- *  @see https://github.com/meetup/meetup-swatches
- */
-/* #000							*/
-/* #333	 == $C_darkgray			*/
-/* #666	 ≈≈ $C_darkgray_lighter	*/
-/* #999							*/
-/* #b3b3b3						*/
-/* #ccc							*/
-/* #e5e5e5						*/
-/* #f0f0f0  ≈≈ $C_gray_lighter	*/
-/* #f5f5f5  ≈≈ $C_gray_lightest	*/
-/* #fafafa						*/
-/* #fff							*/
 /**
  *	touchlist placeholer classes
  */
@@ -2760,6 +2733,7 @@ as well as a few different states/types:
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* icon gems are 16px with 0.5em padding */
+/* icon gems are square inside ffbox-fix */
 /* $FS_ : Font Size */
 /* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
  * be used with scoped resets in order to work properly. For touchList, this
@@ -2782,24 +2756,6 @@ as well as a few different states/types:
 /* 16/18.0 */
 /* 16/20.8 */
 /* 16/24.0 */
-/*  $C_ : Colors  */
-/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
- *  at some point in the immediate future (Sassquatch >1.5), once touchList
- *  is fully integrated into Sq.
- *
- *  @see https://github.com/meetup/meetup-swatches
- */
-/* #000							*/
-/* #333	 == $C_darkgray			*/
-/* #666	 ≈≈ $C_darkgray_lighter	*/
-/* #999							*/
-/* #b3b3b3						*/
-/* #ccc							*/
-/* #e5e5e5						*/
-/* #f0f0f0  ≈≈ $C_gray_lighter	*/
-/* #f5f5f5  ≈≈ $C_gray_lightest	*/
-/* #fafafa						*/
-/* #fff							*/
 /**
  *	touchlist placeholer classes
  */
@@ -2835,7 +2791,7 @@ as well as a few different states/types:
   color: white; }
 
 .shaded-pixelate {
-  background-image: url("data:image/png;base64, 		iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA 		AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx 		DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K 		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
+  background-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII="); }
 
 .leading-top {
   padding-top: 18px; }
@@ -3006,7 +2962,7 @@ a.unlink:link, a.unlink:visited {
   bottom: -24px;
   left: 1px;
   font-size: 11px;
-  color: #333333 !important;
+  color: #333 !important;
   font-family: monaco, consolas, monospace; }
 
 .testSwatches {
