@@ -210,6 +210,7 @@ a.unlink{
 	.right {
 		float:right;
 	}
+
 	.spaced-right { // rename these spaced classes; not explicit about margin vs. padding
 		margin-right:$spacing;
 	}
@@ -219,13 +220,15 @@ a.unlink{
 	.spaced-left {
 		margin-left:$spacing;
 	}
+
 	.flush-top { // TODO: document this or kill it
 		margin-top:0 !important;
 		padding-top:0 !important;
 	}
 	.flush-bottom {
-	  padding-bottom: 0 !important;
-	  margin-bottom: 0 !important; }
+	 	padding-bottom: 0 !important;
+		margin-bottom: 0 !important; 
+	}
 
 	.darker {
 		color: $C_primaryGray;
@@ -237,12 +240,16 @@ a.unlink{
 	.light { // TODO: kill this
 		color: #444;
 	}
+
 	.small, small {
-		line-height: $LH_tall;
+		font-size:$smallFontSize;
+		line-height:$smallLineHeight;
+
         &.caps {
 			font-size:$smallFontSize * .8;
 		}
 	}
+	// TODO: remove smaller from chapstick
 	.smaller {
 		 font-size:.75em;
 	}
@@ -258,12 +265,23 @@ a.unlink{
 	// this one only lives in mobile land
 	// we should deprecate this or document &
 	// move it to both platforms
-    .natural-text {
-        color: $C_text !important;
+	.natural-text {
+		color: $C_text !important;
 
-        .natural-text.light {
-            opacity:.7;
-        }
+		.natural-text.light {
+			opacity:.7;
+		}
+	}
+
+	// 'aliases' only exist for mobile
+	// we should deprecate these or document &
+	// move them to both platforms
+    /* aliases */
+    .lighter { //muted 
+        color: $C_text_less;
+    }
+    .unpadded { //padded-none 
+        padding: 0 !important;
     }
 
 	.bold {
@@ -277,17 +295,6 @@ a.unlink{
 	.triple-spaced {
 		line-height:2.8;
 	}
-
-	// 'aliases' only exist for mobile
-	// we should deprecate these or document &
-	// move them to both platforms
-    /* aliases */
-    .lighter { //muted 
-        color: $C_text_less;
-    }
-    .unpadded { //padded-none 
-        padding: 0 !important;
-    }
 
 	/* }}} */
 }
