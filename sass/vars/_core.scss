@@ -39,12 +39,12 @@
 	$F_mono:				Monaco, "Andale Mono", "Courier New", monospace;
 	$baseFontStack:			$F_sans;
 	$headingFontStack:		$F_sans;
-	$uiControlFontStack: 	$F_sans;
+	$uiControlFontStack:	$F_sans;
 	$monoFontStack:			$F_mono;
 
 	// weights
-	$W_normal:  400;
-	$W_bold:    700;
+	$W_normal:	400;
+	$W_bold:	700;
 	$W_numeral: 750;
 
 	// numeral placeholder
@@ -141,8 +141,8 @@
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
-	$actionColor: 		#F1F3F1;
-	$redTextColor: 		#E51937;
+	$actionColor:		#F1F3F1;
+	$redTextColor:		#E51937;
 	$buttonColor:		#F10044;
 	$linkColor:			$C_link;
 	$basePadding:		8px;
@@ -159,21 +159,21 @@
 
 
 /**
-*   @description
-*   Sass vars for mobile. include variables and override the spacing ones
+*	@description
+*	Sass vars for mobile. include variables and override the spacing ones
 *
-*   @note
-*   - color naming convention is really weird and difficult to remember. this
-*     is why i ended up defining my own colors everywhere in _new_styles, which is 
-*     bad for consistency.
-*   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
-*     shrink the layout?
+*	@note
+*	- color naming convention is really weird and difficult to remember. this
+*	  is why i ended up defining my own colors everywhere in _new_styles, which is 
+*	  bad for consistency.
+*	- Fixed font sizes are bad for adaptive layouts. What happens when we need to
+*	  shrink the layout?
 *
-*   TODO
-*   - flexible font and padding sizes. Making it based off of a master `body {}`
-*     size will allow us to be responsive at multiple sizes without doing a lot
-*     of media-based overrides.
-*   - Standardized/saner gray values
+*	TODO
+*	- flexible font and padding sizes. Making it based off of a master `body {}`
+*	  size will allow us to be responsive at multiple sizes without doing a lot
+*	  of media-based overrides.
+*	- Standardized/saner gray values
 *
 * {{{
 */
@@ -189,18 +189,18 @@ $no:					null;
 
 @if $platform == "mobile" {
 
-	/*  OVERRIDES {
+	/*	OVERRIDES {
 	 *
-	 *  Generic overrides for the mobile site of variables in
-	 *  config/_variables.scss
+	 *	Generic overrides for the mobile site of variables in
+	 *	config/_variables.scss
 	 *
 	 */
 
 
-	/*  @note
-	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all 
-	 *  include typefaces that have multiple weights supported. This means
-	 *  we can do fancy things with headers.
+	/*	@note
+	 *	Devices from the major manufacturers (iOS, Android, WinPhone) all 
+	 *	include typefaces that have multiple weights supported. This means
+	 *	we can do fancy things with headers.
 	 */
 	$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
 	$headingFontStack:		$baseFontStack; 
@@ -223,17 +223,17 @@ $no:					null;
 	$h5FontSize:	$baseFontSize;
 	$h6FontSize:	$baseFontSize;
 
-	$baseline:			16px;			/*  unused, except for below  */
-	$spacing:			$baseline / 2;	/*  used, but has a lot of conditional overrides/modifications */
+	$baseline:			16px;			/*	unused, except for below  */
+	$spacing:			$baseline / 2;	/*	used, but has a lot of conditional overrides/modifications */
 	$basePadding:		$spacing;
 	$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
-	/*  }  */
+	/*	}  */
 
-	/*  ADDITIONS {
-	 *  
-	 *  Additional UI Variables, mostly colors, used throughout MWeb.
-	 *  Maybe some of these should be localized to where they're used, like
-	 *  the topbar colors?
+	/*	ADDITIONS {
+	 *	
+	 *	Additional UI Variables, mostly colors, used throughout MWeb.
+	 *	Maybe some of these should be localized to where they're used, like
+	 *	the topbar colors?
 	 */
 	$C_topbarRed:			#DA364B;
 	$C_topbarRed_dark:		#C2293F;
@@ -248,6 +248,6 @@ $no:					null;
 	$yes:					$C_rsvpGoing;
 	$waiting:				$C_rsvpWaiting;
 	$no:					$C_rsvpNotGoing;
-	/*  }  */
+	/*	}  */
 }
 /* }}} */
