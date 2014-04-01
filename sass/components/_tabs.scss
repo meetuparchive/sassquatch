@@ -61,8 +61,7 @@ $tabSpacing: $spacing/2;
 @if $platform == "mobile" {
 	.nav-tabs {
 		li {
-			//font-size:$smallFontSize;
-            margin-right: 0;
+			margin-right: 0;
 			&:first-child a {
 				border-left-width: 1px;
 				@include round-nw($defaultRadius);
