@@ -11,10 +11,16 @@
 @import "../vars/touchList";
 @import "../util/touchList";
 
-%tl-blockLabel {
+%tl-item-heading {
 	@include color_textSecondary;
 	.inverted & { @include color_textSecondaryInverted; }
 	font-size: $FS_small;
+	// override padding for element, make visually equivalent to blockLabel spacing
+	padding-bottom: $P_secondary / 3;
+}
+
+%tl-blockLabel {
+	@extend %tl-item-heading;
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
 	margin-bottom: -$P_secondary;
@@ -66,8 +72,16 @@
 		line-height: $LH_standard;
 		.touchList & {
 			// RESET
-			@include color_textSecondary;  // overloaded selector to override link color
+			@include color_textSecondary;  // overloaded selector to override link color, h4 color
 		}
+		.linkify & {
+			color: inherit;  // inherit color from any .linkify wrapper
+		}
+	}
+	.touchList-item-heading {
+		// should be .touchList-heading to follow BEM, but that selector already taken
+		// for incorrectly-named element (heading that sits outside TL)
+		@extend %tl-item-heading;
 	}
 	.touchList .touchList-blockLabel {
 		// extra specificity needed to override `.touchList label` styles
@@ -96,7 +110,7 @@
 
 
 	.ffbox--touchList-item {
-		height: $H_touchTargetDefault;
+		min-height: $H_touchTargetDefault;
 		padding: 0 $P_secondary;
 		// NOTE: For whatever mysterious reason, Safari 6 (iOS 6 and OS X) does
 		// not know how to display heights correctly with padding on an element
@@ -121,11 +135,11 @@
 		// Having padding on all four sides would
 		// be a ton less work.
 
- 		.ffbox-flex, .ffbox-fix {
- 			// these are the likely suspects for content immediately inside
- 			// .ffbox--touchList-item. This padding keeps multiline content
- 			// spacing the same as single-line content
- 			padding-top: $P_secondary;
+		> .ffbox-flex, > .ffbox-fix {
+			// these are the likely suspects for content immediately inside
+			// .ffbox--touchList-item. This padding keeps multiline content
+			// spacing the same as single-line content
+			padding-top: $P_secondary;
 			padding-bottom: $P_secondary;
 		}
 	}
@@ -156,8 +170,13 @@
 			// the anchor just inside standard touchList-items shouldn't appear
 			// like a normal link - it's just a list item that happens to be
 			// touchable. Extra specificity to override a:link
-			@include color_textPrimary;
-			.inverted & { @include color_textPrimaryInverted; }
+			//
+			// :not is supported in IE9+, and is the best way to support legacy
+			// markup with an optional 'linkify' class
+			&:not(.linkify) {
+				@include color_textPrimary;
+				.inverted & { @include color_textPrimaryInverted; }
+			}
 			display: block;
 		}
 		.avatar {

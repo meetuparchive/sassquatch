@@ -976,16 +976,22 @@ input[type="submit"] {
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+  .button.button--active,
   .button:active,
+  button.button--active,
   button:active,
+  input[type="submit"].button--active,
   input[type="submit"]:active {
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button.button--active,
   .button:hover,
+  button.button--active,
   button:hover,
+  input[type="submit"].button--active,
   input[type="submit"]:hover {
     background: rgba(0, 0, 0, 0.16); }
   .button.disabled,
@@ -996,13 +1002,6 @@ input[type="submit"] {
   input[type="submit"]:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button.disabled:hover,
-    .button:disabled:hover,
-    button.disabled:hover,
-    button:disabled:hover,
-    input[type="submit"].disabled:hover,
-    input[type="submit"]:disabled:hover {
-      background: rgba(0, 0, 0, 0.1); }
     .button.disabled:active,
     .button:disabled:active,
     button.disabled:active,
@@ -1014,6 +1013,13 @@ input[type="submit"] {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button.disabled:hover,
+    .button:disabled:hover,
+    button.disabled:hover,
+    button:disabled:hover,
+    input[type="submit"].disabled:hover,
+    input[type="submit"]:disabled:hover {
+      background: rgba(0, 0, 0, 0.1); }
   .inverted
   .button, .inverted
   button, .inverted
@@ -1054,20 +1060,30 @@ input[type="submit"].button--primary {
   box-shadow: #851518 0px 2px 0px 0px;
   color: white !important;
   background: #e0393e; }
+  .primary.button--active,
   .primary:active,
+  .button.primary.button--active,
   .button.primary:active,
+  .button--primary.button--active,
   .button--primary:active,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:active,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:active {
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
     box-shadow: #851518 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .primary.button--active,
   .primary:hover,
+  .button.primary.button--active,
   .button.primary:hover,
+  .button--primary.button--active,
   .button--primary:hover,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:hover,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:hover {
     background: #d02126; }
   .primary.disabled,
@@ -1082,17 +1098,6 @@ input[type="submit"].button--primary {
   input[type="submit"].button--primary:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .primary.disabled:hover,
-    .primary:disabled:hover,
-    .button.primary.disabled:hover,
-    .button.primary:disabled:hover,
-    .button--primary.disabled:hover,
-    .button--primary:disabled:hover,
-    input[type="submit"].primary.disabled:hover,
-    input[type="submit"].primary:disabled:hover,
-    input[type="submit"].button--primary.disabled:hover,
-    input[type="submit"].button--primary:disabled:hover {
-      background: #e0393e; }
     .primary.disabled:active,
     .primary:disabled:active,
     .button.primary.disabled:active,
@@ -1108,6 +1113,17 @@ input[type="submit"].button--primary {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .primary.disabled:hover,
+    .primary:disabled:hover,
+    .button.primary.disabled:hover,
+    .button.primary:disabled:hover,
+    .button--primary.disabled:hover,
+    .button--primary:disabled:hover,
+    input[type="submit"].primary.disabled:hover,
+    input[type="submit"].primary:disabled:hover,
+    input[type="submit"].button--primary.disabled:hover,
+    input[type="submit"].button--primary:disabled:hover {
+      background: #e0393e !important; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1115,14 +1131,18 @@ input[type="submit"].button--black {
   box-shadow: black 0px 2px 0px 0px;
   color: white !important;
   background: black; }
+  .button--black.button--active,
   .button--black:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
     -webkit-box-shadow: black 0px 0px 0px 0px;
     box-shadow: black 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--black.button--active,
   .button--black:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: black; }
   .button--black.disabled,
@@ -1131,11 +1151,6 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--black.disabled:hover,
-    .button--black:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: black; }
     .button--black.disabled:active,
     .button--black:disabled:active,
     input[type="submit"].button--black.disabled:active,
@@ -1145,6 +1160,11 @@ input[type="submit"].button--black {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--black.disabled:hover,
+    .button--black:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: black !important; }
 
 .button--white,
 input[type="submit"].button--black {
@@ -1152,14 +1172,18 @@ input[type="submit"].button--black {
   box-shadow: #bfbfbf 0px 2px 0px 0px;
   color: #e0393e !important;
   background: white; }
+  .button--white.button--active,
   .button--white:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
     -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
     box-shadow: #bfbfbf 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--white.button--active,
   .button--white:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: #ebebeb; }
   .button--white.disabled,
@@ -1168,11 +1192,6 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--white.disabled:hover,
-    .button--white:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: white; }
     .button--white.disabled:active,
     .button--white:disabled:active,
     input[type="submit"].button--black.disabled:active,
@@ -1182,6 +1201,11 @@ input[type="submit"].button--black {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--white.disabled:hover,
+    .button--white:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: white !important; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -1189,14 +1213,18 @@ input[type="submit"].button--blue {
   box-shadow: #005893 0px 2px 0px 0px;
   color: white !important;
   background: #13a1ff; }
+  .button--blue.button--active,
   .button--blue:active,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:active {
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
     box-shadow: #005893 0px 0px 0px 0px;
     -moz-transform: translate(0px, 2px);
     -webkit-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--blue.button--active,
   .button--blue:hover,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
   .button--blue.disabled,
@@ -1205,11 +1233,6 @@ input[type="submit"].button--blue {
   input[type="submit"].button--blue:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--blue.disabled:hover,
-    .button--blue:disabled:hover,
-    input[type="submit"].button--blue.disabled:hover,
-    input[type="submit"].button--blue:disabled:hover {
-      background: #13a1ff; }
     .button--blue.disabled:active,
     .button--blue:disabled:active,
     input[type="submit"].button--blue.disabled:active,
@@ -1219,6 +1242,11 @@ input[type="submit"].button--blue {
       transform: translate(0px, 0px);
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--blue.disabled:hover,
+    .button--blue:disabled:hover,
+    input[type="submit"].button--blue.disabled:hover,
+    input[type="submit"].button--blue:disabled:hover {
+      background: #13a1ff !important; }
 
 input[type="submit"]:active {
   -moz-transform: translate(0px, 0px) !important;
@@ -1413,7 +1441,8 @@ input[type="submit"]:active {
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
   margin-bottom: 18px;
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
+  /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -1753,26 +1782,26 @@ hr.double-line {
  *	  @since  2013-05-14
  *
  *	  @description
- *	  A collection of styles that allow us to do tabular internal layouts 
- *	  on list items, etc. It's particularly useful on responsive layouts, 
+ *	  A collection of styles that allow us to do tabular internal layouts
+ *	  on list items, etc. It's particularly useful on responsive layouts,
  *	  like we use for mobile.
- *	  
- *	  For semantics, it's important to always put `.ffbox-fix` and `.ffbox-flex` 
+ *
+ *	  For semantics, it's important to always put `.ffbox-fix` and `.ffbox-flex`
  *	  elements inside a `.ffbox`--because putting naked table cells inside other
- *	  table cells doesn't make semantic sense and won't necessarily be 
+ *	  table cells doesn't make semantic sense and won't necessarily be
  *	  predictable in layout across browsers.
  *
  *	  NOTE: There should be only one `.flex` per row.
  *
  *	  NOTE: If you want to set minimum heights on fix, flex or ffbox,
- *	  you'll need to use `height` rather than `min-height` because of the 
+ *	  you'll need to use `height` rather than `min-height` because of the
  *	  way table layouts are used in CSS.
  *
- *	  NOTE: In the future, we'll probably want to swap out tabular layouts 
+ *	  NOTE: In the future, we'll probably want to swap out tabular layouts
  *	  with flexbox.
  *
  *	  NOTE: If you want to use CSS text truncation with `ffbox`, you need to
- *	  use the `ffbox--fixed` class on the `ffbox`, then set a class with a 
+ *	  use the `ffbox--fixed` class on the `ffbox`, then set a class with a
  *	  width value on the nested `ffbox-fix`, like so:
  *
  *		<div class="ffbox ffbox--fixed">
@@ -1800,9 +1829,12 @@ hr.double-line {
   width: 100%; }
 
 /*  ======================================================================= */
-/*  FF BOX - FIXED LAYOUT */
+/*  FF BOX - MODIFIERS  */
 .ffbox--fixed {
   table-layout: fixed; }
+
+.ffbox--shaded {
+  background-color: #f7f7f7; }
 
 /**
  *  @file _pin-layout.scss
@@ -1981,6 +2013,12 @@ as well as a few different states/types:
 .avatar--big {
   width: 64px;
   height: 64px; }
+
+.avatar--stack {
+  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47); }
+
+.avatar--stack {
+  margin-right: 3px; }
 
 /**
 * ==============================================
@@ -2832,6 +2870,26 @@ as well as a few different states/types:
 
 .margin-none {
   margin: 0 !important; }
+
+.flush--top {
+  margin-top: 0 !important;
+  padding-top: 0 !important; }
+
+.flush--right {
+  margin-right: 0 !important;
+  padding-right: 0 !important; }
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important; }
+
+.flush--left {
+  margin-left: 0 !important;
+  padding-left: 0 !important; }
+
+.flush--all {
+  margin: 0 !important;
+  padding: 0 !important; }
 
 .align-right {
   text-align: right; }
