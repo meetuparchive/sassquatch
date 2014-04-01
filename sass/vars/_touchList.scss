@@ -49,19 +49,18 @@ $H_gem:					px-to-em(24px);		/* icon gems are square inside ffbox-fix */
  * LDPI/@1x displays.
  */
 
-$FS_hero:				px-to-em(36px);		/* for use in large banners */
-$FS_base:				px-to-em(17px);		/* replaces $FS_label as a std size */
-$FS_small:				px-to-em(14px);		/* replaces $FS_text as std text size */
-$FS_micro:				px-to-em(9px);		/* use in superscript values (am/pm),
-											*	currency, tab titles.
-											*	NOTE: this size should only be used
-											*	with small caps, which provide good-
-											*	enough legibility on low resolution
-											*	displays.
-											*/
+$FS_hero:			px-to-em(36px);	/* for use in large banners */
+$FS_base:			px-to-em(17px);	/* replaces $FS_label as a std size */
+$FS_small:			px-to-em(14px);	/* replaces $FS_text as std text size */
+$FS_micro:			px-to-em(9px);	/* use in superscript values (am/pm),
+									*	currency, tab titles.
+									*	NOTE: this size should only be used
+									*	with small caps, which provide good-
+									*	enough legibility on low resolution
+									*	displays.
+									*/
 
  /* $LH_ : Line heights */
 $LH_condensed:		1.125;  /* 16/18.0 */
 $LH_standard:		1.3;    /* 16/20.8 */
 $LH_tall:			1.5;    /* 16/24.0 */
-
