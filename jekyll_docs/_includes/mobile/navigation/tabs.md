@@ -5,7 +5,7 @@
 </div>
 	
 <div class="doc-box">
-	<div class="doc-content margin-bottom">
+	<div class="margin-bottom">
 		{% include navigation/tabs_example.md %}
 	</div>
 </div>
