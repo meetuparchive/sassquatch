@@ -64,29 +64,29 @@
 	$C_gray: 				#dddddd;
 
 	// midgray - it's right in the middle
-	$C_midgray: 			#aaa;
+	$C_midgray:				#aaa;
 
 	// darkgray - typically used for text
-	$C_darkgray_lightest: 	#888888;
-	$C_darkgray_lighter: 	#555555;
-	$C_darkgray: 			#333333;
+	$C_darkgray_lightest:	#888888;
+	$C_darkgray_lighter:	#555555;
+	$C_darkgray:			#333333;
 
 	// red - interface red, not the red *in* the logo
 	$C_red: 				#E0393E;
-	$C_red_darker: 			#CC1C32;
+	$C_red_darker:			#CC1C32;
 
 	// blues
 	$C_darkblue: 			#2A9BC7;	// darkblue - links and linked things
-	$C_lightblue: 			#a5c8e7; 	// brightblue - highlight borders, light blue bg
+	$C_lightblue:			#a5c8e7;	// brightblue - highlight borders, light blue bg
 
 	// green - success and yes
-	$C_green: 				#62AC75;
+	$C_green:				#62AC75;
 
 	// pink - error shading for now
 	$C_pink: 				#FBE1E3;
 
 	// yellow - highlighting. You love it.
-	$C_yellow: 				#FDF77B;
+	$C_yellow:				#FDF77B;
 
 	/* }}} */
 
@@ -94,50 +94,50 @@
 	/* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
 	// interface (bg)
-	$C_line: 				$C_gray;
-	$C_line_less: 			$C_gray_lighter;
-	$C_shade: 				$C_gray_lightest;
-	$C_accent: 				$C_red;
+	$C_line:				$C_gray;
+	$C_line_less:			$C_gray_lighter;
+	$C_shade:				$C_gray_lightest;
+	$C_accent:				$C_red;
 
 	// text
-	$C_text_headline:    	$C_darkgray;
-	$C_text: 				$C_darkgray_lighter;
-	$C_text_less: 			$C_darkgray_lightest;
-	$C_link: 				$C_darkblue;
+	$C_text_headline:		$C_darkgray;
+	$C_text:				$C_darkgray_lighter;
+	$C_text_less:			$C_darkgray_lightest;
+	$C_link:				$C_darkblue;
 
 	// RSVP status colors
-	$C_rsvpGoing: 			$C_green;
-	$C_rsvpWaiting: 		$C_blue;
-	$C_rsvpNotGoing: 		$C_darkgray_lightest;
+	$C_rsvpGoing:			$C_green;
+	$C_rsvpWaiting:			$C_blue;
+	$C_rsvpNotGoing:		$C_darkgray_lightest;
 
 	// Errors
-	$C_warnBg: 				$C_pink;
-	$C_warnText: 			$C_red;
+	$C_warnBg:				$C_pink;
+	$C_warnText:			$C_red;
 
 	// interface (nav)
-	$C_buttonBg: 			#fff;
-	$C_buttonTint: 		    #fff;
-	$C_buttonShade: 		darken($C_buttonBg, 10%);
-	$C_selectedBg: 		    $C_link;
-	$C_selectedTint: 		lighten($C_selectedBg, 5%);
-	$C_selectedShade: 	    #2264A0;
+	$C_buttonBg:			#fff;
+	$C_buttonTint:			#fff;
+	$C_buttonShade:			darken($C_buttonBg, 10%);
+	$C_selectedBg:			$C_link;
+	$C_selectedTint:		lighten($C_selectedBg, 5%);
+	$C_selectedShade:		#2264A0;
 
 	/* }}} */
 
 /* }}} */
 
 /* {{{ Layout */
-	$defaultRadius: 		3px;
-	$formLabelOffset: 	    $baseline * 9; /* horizontal offset of label/field */
-	$spacing: 				$baseline;
-	$Z_top: 				5000;
+	$defaultRadius:			3px;
+	$formLabelOffset:		$baseline * 9; /* horizontal offset of label/field */
+	$spacing:				$baseline;
+	$Z_top:					5000;
 
 	// standard media sizes
-	$media-xs: 	16px;
+	$media-xs:	16px;
 	$media-s: 	32px;
 	$media-m: 	48px;
 	$media-l: 	64px;
-	$media-xl: 	80px;
+	$media-xl:	80px;
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
@@ -148,13 +148,13 @@
 	$basePadding : 		8px;
 
 	$urgent-color: 	    #B53336;
-	$BG_STATUS: 		#F1F2ED;
-	$BG_BOLD: 			#2b6892;
-	$BG_META: 			#F0F2EC;
-	$BG_LIGHT: 			#F8F9F5;
-	$COLOR_XLIGHT: 	    #EEEEEE;
-	$COLOR_LIGHT: 		#CCCCCC;
-	$COLOR_MEDIUM: 	    #666666;
+	$BG_STATUS:			#F1F2ED;
+	$BG_BOLD:			#2b6892;
+	$BG_META:			#F0F2EC;
+	$BG_LIGHT:			#F8F9F5;
+	$COLOR_XLIGHT:		#EEEEEE;
+	$COLOR_LIGHT:		#CCCCCC;
+	$COLOR_MEDIUM:		#666666;
 /* }}} */
 
 
@@ -179,12 +179,13 @@
 */
 
 // WARNING: you have to initialize mobile-specific vars outside of the @if so they have global scope
-$C_topbarRed: 			null;
-$C_topbarRed_dark: 	    null;
-$checkin: 				null;
-$yes: 					null;
-$waiting: 				null;
-$no: 					null;
+
+$C_topbarRed:			null;
+$C_topbarRed_dark:		null;
+$checkin:				null;
+$yes:					null;
+$waiting:				null;
+$no:					null;
 
 @if $platform == "mobile" {
 
@@ -212,19 +213,20 @@ $no: 					null;
 	// small font sizes
 	$smallFontSize:		13px;
 	$smallLineHeight:	1.6;
+
 	$condensedLineHeight:	1.125;
 
-	$h1FontSize: 	$baseFontSize * 1.75;
-	$h2FontSize: 	$baseFontSize * 1.5;
-	$h3FontSize: 	$baseFontSize * 1.25;
-	$h4FontSize: 	$baseFontSize;
-	$h5FontSize: 	$baseFontSize;
-	$h6FontSize: 	$baseFontSize;
+	$h1FontSize:	$baseFontSize * 1.75;
+	$h2FontSize:	$baseFontSize * 1.5;
+	$h3FontSize:	$baseFontSize * 1.25;
+	$h4FontSize:	$baseFontSize;
+	$h5FontSize:	$baseFontSize;
+	$h6FontSize:	$baseFontSize;
 
-	$baseline: 			16px;        	/*  unused, except for below  */
-	$spacing: 			$baseline / 2;  /*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 		$spacing;
-	$formLabelOffset:   $baseline * 9;	/* horizontal offset of label/field */
+	$baseline:			16px;			/*  unused, except for below  */
+	$spacing:			$baseline / 2;	/*  used, but has a lot of conditional overrides/modifications */
+	$basePadding:		$spacing;
+	$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
 	/*  }  */
 
 	/*  ADDITIONS {
@@ -233,19 +235,19 @@ $no: 					null;
 	 *  Maybe some of these should be localized to where they're used, like
 	 *  the topbar colors?
 	 */
-	$C_topbarRed: 			#DA364B;
-	$C_topbarRed_dark: 	    #C2293F;
+	$C_topbarRed:			#DA364B;
+	$C_topbarRed_dark:		#C2293F;
 
-	$C_darkGreen: 			#007B3D;  /* used 1x in global, after aliasing itself */
-	$C_rsvpGoing: 			#62AC75;
-	$C_rsvpWaiting: 		#86c6ee;
-	$C_rsvpNotGoing: 		#999;
+	$C_darkGreen:			#007B3D;  /* used 1x in global, after aliasing itself */
+	$C_rsvpGoing:			#62AC75;
+	$C_rsvpWaiting:			#86c6ee;
+	$C_rsvpNotGoing:		#999;
 
 	// RSVP status, aliases
-	$checkin: 				$C_darkGreen;
-	$yes: 					$C_rsvpGoing;
-	$waiting: 				$C_rsvpWaiting;
-	$no: 					$C_rsvpNotGoing;
+	$checkin:				$C_darkGreen;
+	$yes:					$C_rsvpGoing;
+	$waiting:				$C_rsvpWaiting;
+	$no:					$C_rsvpNotGoing;
 	/*  }  */
 }
 /* }}} */

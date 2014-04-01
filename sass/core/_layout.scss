@@ -366,12 +366,13 @@ hr.double-line {
 		margin-left:0;
 		margin-right:0;
 	}
-    // ah well, box margin should = content padding
-    // so have to redefine
-    .doc-content {
-        padding:$baseline * .75;
-        padding-bottom:0px;
-    }
+
+	// ah well, doc-box margin should = doc-content padding
+	// so have to redefine
+	.doc-content {
+		padding:$baseline * .75;
+		padding-bottom:0px;
+	}
 
 	.doc-content.bordered {
 		border-top: 1px solid $C_line;
