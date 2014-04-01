@@ -189,7 +189,7 @@
 
 	html, body {
 		font-size: $baseFontSize;
-		line-height:$condensedLineHeight;
+		line-height:$baseLineHeight;
 		color: $C_secondaryGray;
 	} 
 
@@ -197,10 +197,6 @@
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
 		color: $C_secondaryGrayInverted;
-	}
-
-	p {
-		line-height:$baseLineHeight;
 	}
 
 	/* {{{ Block tag defaults */
