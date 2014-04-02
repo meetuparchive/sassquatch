@@ -8,155 +8,149 @@
 
 /* {{{ Type */
 
-	$baseline:		18px; // not actually used as line-height, we should rename
+$baseline:			18px;	// not actually used as line-height, we should rename
 
-	// base font sizes
-	$baseFontSize:		16px;
-	$baseLineHeight:	1.4;
+// base font sizes
+$baseFontSize:		16px;
+$baseLineHeight:	1.4;
 
-	// small font sizes
-	$smallFontSize:		13px;
-	$smallLineHeight:	1.6;
+// small font sizes
+$smallFontSize:		13px;
+$smallLineHeight:	1.6;
 
-	// big font sizes
-	$bigFontSize:		20px;
-	$bigLineHeight:		1.33;
-	$bigBaseline:		18px; // not actually used as line-height, we should rename
-	// TODO this might just need to be inited if full platform doesnt use
-	$condensedLineHeight:	1.125;
+// big font sizes
+$bigFontSize:		20px;
+$bigLineHeight:		1.33;
+$bigBaseline:		18px;	// not actually used as line-height, we should rename
 
-	// heading sizes
-	$h1FontSize:		38px;
-	$h2FontSize:		28px;
-	$h3FontSize:		20px;
-	$h4FontSize:		$baseFontSize;
-	$h5FontSize:		$baseFontSize;
-	$h6FontSize:		$baseFontSize;
+// heading sizes
+$h1FontSize:		38px;
+$h2FontSize:		28px;
+$h3FontSize:		20px;
+$h4FontSize:		$baseFontSize;
+$h5FontSize:		$baseFontSize;
+$h6FontSize:		$baseFontSize;
 
-	// font stacks
-	$F_sans:				'Whitney', helvetica, arial, sans-serif;
-	$F_num:					'Whitney', helvetica, arial, sans-serif ;
-	$F_mono:				Monaco, "Andale Mono", "Courier New", monospace;
-	$baseFontStack:			$F_sans;
-	$headingFontStack:		$F_sans;
-	$uiControlFontStack:	$F_sans;
-	$monoFontStack:			$F_mono;
+// font stacks
+$F_sans:			'Whitney', helvetica, arial, sans-serif;
+$F_num:				'Whitney', helvetica, arial, sans-serif ;
+$F_mono:			Monaco, "Andale Mono", "Courier New", monospace;
+$baseFontStack:		$F_sans;
+$headingFontStack:	$F_sans;
+$uiControlFontStack:$F_sans;
+$monoFontStack:		$F_mono;
 
-	// weights
-	$W_normal:	400;
-	$W_bold:	700;
-	$W_numeral: 750;
+// weights
+$W_normal:			400;
+$W_bold:			700;
+$W_numeral:			750;
 
-	// numeral placeholder
-	%numerialFont {
-		font-family: $F_num;
-		font-weight: $W_numeral;
-	}
+// numeral placeholder
+%numerialFont {
+font-family:		$F_num;
+font-weight:		$W_numeral;
+}
 /* }}} */
 
 /* {{{ Colors (legacy - try to use the bower swatches component) */
 
-	/* {{{ Hex definitions ( define new ones sparingly ) */
+/* {{{ Hex definitions ( define new ones sparingly ) */
 
-	// gray - typically used for interface shading
-	$C_gray_lightest:		#f4f4f4;
-	$C_gray_lighter:		#eeeeee;
-	$C_gray:				#dddddd;
+// gray - typically used for interface shading
+$C_gray_lightest:		#f4f4f4;
+$C_gray_lighter:		#eeeeee;
+$C_gray:				#dddddd;
 
-	// midgray - it's right in the middle
-	$C_midgray:				#aaa;
+// midgray - it's right in the middle
+$C_midgray:				#aaa;
 
-	// darkgray - typically used for text
-	$C_darkgray_lightest:	#888888;
-	$C_darkgray_lighter:	#555555;
-	$C_darkgray:			#333333;
+// darkgray - typically used for text
+$C_darkgray_lightest:	#888888;
+$C_darkgray_lighter:	#555555;
+$C_darkgray:			#333333;
 
-	// red - interface red, not the red *in* the logo
-	$C_red:					#E0393E;
-	$C_red_darker:			#CC1C32;
+// red - interface red, not the red *in* the logo
+$C_red:					#E0393E;
+$C_red_darker:			#CC1C32;
 
-	// blues
-	$C_darkblue:			#2A9BC7;	// darkblue - links and linked things
-	$C_lightblue:			#a5c8e7;	// brightblue - highlight borders, light blue bg
+// blues
+$C_darkblue:			#2A9BC7;	// darkblue - links and linked things
+$C_lightblue:			#a5c8e7;	// brightblue - highlight borders, light blue bg
 
-	// green - success and yes
-	$C_green:				#62AC75;
+// green - success and yes
+$C_green:				#62AC75;
 
-	// pink - error shading for now
-	$C_pink:				#FBE1E3;
+// pink - error shading for now
+$C_pink:				#FBE1E3;
 
-	// yellow - highlighting. You love it.
-	$C_yellow:				#FDF77B;
+// yellow - highlighting. You love it.
+$C_yellow:				#FDF77B;
 
-	/* }}} */
+/* }}} */* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
+// interface (bg)
+$C_line:				$C_gray;
+$C_line_less:			$C_gray_lighter;
+$C_shade:				$C_gray_lightest;
+$C_accent:				$C_red;
 
-	/* {{{ Color aliases ( shouldn't be any hex codes here ) */
+// text
+$C_text_headline:		$C_darkgray;
+$C_text:				$C_darkgray_lighter;
+$C_text_less:			$C_darkgray_lightest;
+$C_link:				$C_darkblue;
 
-	// interface (bg)
-	$C_line:				$C_gray;
-	$C_line_less:			$C_gray_lighter;
-	$C_shade:				$C_gray_lightest;
-	$C_accent:				$C_red;
+// RSVP status colors
+$C_rsvpGoing:			$C_green;
+$C_rsvpWaiting:			$C_blue;
+$C_rsvpNotGoing:		$C_darkgray_lightest;
 
-	// text
-	$C_text_headline:		$C_darkgray;
-	$C_text:				$C_darkgray_lighter;
-	$C_text_less:			$C_darkgray_lightest;
-	$C_link:				$C_darkblue;
+// Errors
+$C_warnBg:				$C_pink;
+$C_warnText:			$C_red;
 
-	// RSVP status colors
-	$C_rsvpGoing:			$C_green;
-	$C_rsvpWaiting:			$C_blue;
-	$C_rsvpNotGoing:		$C_darkgray_lightest;
+// interface (nav)
+$C_buttonBg:			#fff;
+$C_buttonTint:			#fff;
+$C_buttonShade:			darken($C_buttonBg, 10%);
+$C_selectedBg:			$C_link;
+$C_selectedTint:		lighten($C_selectedBg, 5%);
+$C_selectedShade:		#2264A0;
 
-	// Errors
-	$C_warnBg:				$C_pink;
-	$C_warnText:			$C_red;
-
-	// interface (nav)
-	$C_buttonBg:			#fff;
-	$C_buttonTint:			#fff;
-	$C_buttonShade:			darken($C_buttonBg, 10%);
-	$C_selectedBg:			$C_link;
-	$C_selectedTint:		lighten($C_selectedBg, 5%);
-	$C_selectedShade:		#2264A0;
-
-	/* }}} */
+/* }}} */
 
 /* }}} */
 
 /* {{{ Layout */
-	$defaultRadius:			3px;
-	$formLabelOffset:		$baseline * 9; /* horizontal offset of label/field */
-	$spacing:				$baseline;
-	$Z_top:					5000;
+$defaultRadius:		3px;
+$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
+$spacing:			$baseline;
+$Z_top:				5000;
 
-	// standard media sizes
-	$media-xs:	16px;
-	$media-s:	32px;
-	$media-m:	48px;
-	$media-l:	64px;
-	$media-xl:	80px;
+// standard media sizes
+$media-xs:	16px;
+$media-s:	32px;
+$media-m:	48px;
+$media-l:   64px;
+$media-xl:  80px;
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
-	$actionColor:		#F1F3F1;
-	$redTextColor:		#E51937;
-	$buttonColor:		#F10044;
-	$linkColor:			$C_link;
-	$basePadding:		8px;
+$actionColor:		#F1F3F1;
+$redTextColor:		#E51937;
+$buttonColor:		#F10044;
+$linkColor:			$C_link;
+$basePadding:		8px;
 
-	$urgent-color:		#B53336;
-	$BG_STATUS:			#F1F2ED;
-	$BG_BOLD:			#2b6892;
-	$BG_META:			#F0F2EC;
-	$BG_LIGHT:			#F8F9F5;
-	$COLOR_XLIGHT:		#EEEEEE;
-	$COLOR_LIGHT:		#CCCCCC;
-	$COLOR_MEDIUM:		#666666;
+$urgent-color:		#B53336;
+$BG_STATUS:			#F1F2ED;
+$BG_BOLD:			#2b6892;
+$BG_META:			#F0F2EC;
+$BG_LIGHT:			#F8F9F5;
+$COLOR_XLIGHT:		#EEEEEE;
+$COLOR_LIGHT:		#CCCCCC;
+$COLOR_MEDIUM:		#666666;
 /* }}} */
-
 
 /**
 *	@description
@@ -164,15 +158,15 @@
 *
 *	@note
 *	- color naming convention is really weird and difficult to remember. this
-*	  is why i ended up defining my own colors everywhere in _new_styles, which is 
-*	  bad for consistency.
+*	is why i ended up defining my own colors everywhere in _new_styles, which is 
+*	bad for consistency.
 *	- Fixed font sizes are bad for adaptive layouts. What happens when we need to
-*	  shrink the layout?
+*	shrink the layout?
 *
 *	TODO
 *	- flexible font and padding sizes. Making it based off of a master `body {}`
-*	  size will allow us to be responsive at multiple sizes without doing a lot
-*	  of media-based overrides.
+*	size will allow us to be responsive at multiple sizes without doing a lot
+*	of media-based overrides.
 *	- Standardized/saner gray values
 *
 * {{{
@@ -184,70 +178,69 @@ $C_topbarRed:			null;
 $C_topbarRed_dark:		null;
 $checkin:				null;
 $yes:					null;
-$waiting:				null;
+$waiting: 				null;
 $no:					null;
+$condensedLineHeight:	null;
 
 @if $platform == "mobile" {
 
-	/*	OVERRIDES {
-	 *
-	 *	Generic overrides for the mobile site of variables in
-	 *	config/_variables.scss
-	 *
-	 */
+/*OVERRIDES {
+*
+*	Generic overrides for the mobile site of variables in
+*	config/_variables.scss
+*
+*	@note
+*	Devices from the major manufacturers (iOS, Android, WinPhone) all 
+*	include typefaces that have multiple weights supported. This means
+*	we can do fancy things with headers.
+*/
+$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+$headingFontStack:		$baseFontStack; 
+$uiControlFontStack:	$baseFontStack;
 
+// base sizes
+$baseFontSize:			16px;
+$baseLineHeight:		1.4;
 
-	/*	@note
-	 *	Devices from the major manufacturers (iOS, Android, WinPhone) all 
-	 *	include typefaces that have multiple weights supported. This means
-	 *	we can do fancy things with headers.
-	 */
-	$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-	$headingFontStack:		$baseFontStack; 
-	$uiControlFontStack:	$baseFontStack;
+// small font sizes
+$smallFontSize:			13px;
+$smallLineHeight:		1.6;
 
-	// base sizes
-	$baseFontSize:		16px;
-	$baseLineHeight:	1.4;
+$condensedLineHeight:	1.125;
 
-	// small font sizes
-	$smallFontSize:		13px;
-	$smallLineHeight:	1.6;
+$h1FontSize:	$baseFontSize * 1.75;
+$h2FontSize:	$baseFontSize * 1.5;
+$h3FontSize:	$baseFontSize * 1.25;
+$h4FontSize:	$baseFontSize;
+$h5FontSize:	$baseFontSize;
+$h6FontSize:	$baseFontSize;
 
-	$condensedLineHeight:	1.125;
+$baseline:			16px;
+$spacing:			$baseline / 2;	/*  used, but has a lot of conditional overrides/modifications */
+$basePadding:		$spacing;
+$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
+/*}  */
 
-	$h1FontSize:	$baseFontSize * 1.75;
-	$h2FontSize:	$baseFontSize * 1.5;
-	$h3FontSize:	$baseFontSize * 1.25;
-	$h4FontSize:	$baseFontSize;
-	$h5FontSize:	$baseFontSize;
-	$h6FontSize:	$baseFontSize;
+/*ADDITIONS {
+*   
+*   Additional UI Variables, mostly colors, used throughout MWeb.
+*   Maybe some of these should be localized to where they're used, like
+*   the topbar colors?
+*/
+$C_topbarRed:			#DA364B;
+$C_topbarRed_dark:		#C2293F;
 
-	$baseline:			16px;			/*	unused, except for below  */
-	$spacing:			$baseline / 2;	/*	used, but has a lot of conditional overrides/modifications */
-	$basePadding:		$spacing;
-	$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
-	/*	}  */
+// RSVP status, aliases
+$C_rsvpGoing:			#62AC75;
+$C_rsvpWaiting:			#86c6ee;
+$C_rsvpNotGoing:		#999;
 
-	/*	ADDITIONS {
-	 *	
-	 *	Additional UI Variables, mostly colors, used throughout MWeb.
-	 *	Maybe some of these should be localized to where they're used, like
-	 *	the topbar colors?
-	 */
-	$C_topbarRed:			#DA364B;
-	$C_topbarRed_dark:		#C2293F;
+$yes:					$C_rsvpGoing;
+$waiting:				$C_rsvpWaiting;
+$no:					$C_rsvpNotGoing;
 
-	$C_darkGreen:			#007B3D;  /* used 1x in global, after aliasing itself */
-	$C_rsvpGoing:			#62AC75;
-	$C_rsvpWaiting:			#86c6ee;
-	$C_rsvpNotGoing:		#999;
+/* } */
 
-	// RSVP status, aliases
-	$checkin:				$C_darkGreen;
-	$yes:					$C_rsvpGoing;
-	$waiting:				$C_rsvpWaiting;
-	$no:					$C_rsvpNotGoing;
-	/*	}  */
-}
+}	// end mobile platform specific
+
 /* }}} */

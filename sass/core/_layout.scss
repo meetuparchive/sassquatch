@@ -360,13 +360,6 @@ hr.double-line {
 		}
 	}
 
-	.doc-box--wide {
-		@extend .doc-box;
-		@include round(0);
-		margin-left:0;
-		margin-right:0;
-	}
-
 	// ah well, doc-box margin should = doc-content padding
 	// so have to redefine
 	.doc-content {
