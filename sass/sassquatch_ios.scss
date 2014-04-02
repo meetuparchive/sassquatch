@@ -20,7 +20,8 @@ $platform: "ios";
 
 // IOS NATIVE CONTROLS
 @import "ios/native_controls/UIButton";
-@import "ios/native_controls/UIButton";
+@import "ios/native_controls/UITableView";
+@import "ios/native_controls/UITableViewCell";
 
 
 // MODIFIERS (last in cascade to allow component overrides)
