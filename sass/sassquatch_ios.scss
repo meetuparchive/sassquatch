@@ -3,4 +3,31 @@
 */
 $platform: "ios";
 
-@import "base";
+// VARS
+@import "vars/core";
+
+
+// FUNCTIONS
+@import "util/functions/px-to-em";
+@import "util/functions/brightness";
+
+
+// UTIL
+@import "util/mixins";
+@import "util/animation";
+@import "util/media";
+
+// CORE
+@import "core/element_defaults";
+@import "core/tables";
+@import "core/lists";
+@import "core/forms";
+@import "core/buttons";
+@import "core/layout";
+
+
+// IOS COMPONENTS
+
+
+// MODIFIERS (last in cascade to allow component overrides)
+@import "core/modifiers";
