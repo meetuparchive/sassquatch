@@ -17,17 +17,10 @@ $platform: "ios";
 @import "util/animation";
 @import "util/media";
 
-// CORE
-@import "core/element_defaults";
-@import "core/tables";
-@import "core/lists";
-@import "core/forms";
-@import "core/buttons";
-@import "core/layout";
 
-
-// IOS COMPONENTS
-@import "ios_components/UIButton";
+// IOS NATIVE CONTROLS
+@import "ios/native_controls/UIButton";
+@import "ios/native_controls/UIButton";
 
 
 // MODIFIERS (last in cascade to allow component overrides)
