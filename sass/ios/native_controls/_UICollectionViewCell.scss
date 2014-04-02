@@ -1,0 +1,11 @@
+/**
+* UICollectionViewCell
+*/
+
+@if $platform == "ios" {
+
+	collection-view-cell {
+		& content-view {}
+	}
+
+}

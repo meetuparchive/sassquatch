@@ -15,13 +15,19 @@ $platform: "ios";
 // UTIL
 @import "util/mixins";
 @import "util/animation";
-@import "util/media";
 
 
 // IOS NATIVE CONTROLS
 @import "ios/native_controls/UIButton";
+@import "ios/native_controls/UISwitch";
 @import "ios/native_controls/UITableView";
 @import "ios/native_controls/UITableViewCell";
+@import "ios/native_controls/UICollectionView";
+@import "ios/native_controls/UICollectionViewCell";
+
+
+// IOS CUSTOM (selecting classes & ids; may be shared with desktop web sassquatch)
+@import "components/avatar";
 
 
 // MODIFIERS (last in cascade to allow component overrides)
