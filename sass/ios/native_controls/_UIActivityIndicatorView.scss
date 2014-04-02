@@ -1,0 +1,12 @@
+/**
+* UIActivityIndicatorView
+*/
+
+@if $platform == "ios" {
+
+	activity-indicator-view {
+		& tab-bar-item {}
+		& selection {}
+	}
+
+}

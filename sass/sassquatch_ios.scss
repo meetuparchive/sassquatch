@@ -18,6 +18,8 @@ $platform: "ios";
 
 
 // IOS NATIVE CONTROLS
+@import "ios/native_controls/UIActivityIndicatorView";
+@import "ios/native_controls/UITabBar";
 @import "ios/native_controls/UIButton";
 @import "ios/native_controls/UISwitch";
 @import "ios/native_controls/UITableView";

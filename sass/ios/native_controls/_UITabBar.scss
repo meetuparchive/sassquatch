@@ -1,0 +1,12 @@
+/**
+* UITabBar.scss
+*/
+
+@if $platform == "ios" {
+
+	tab-bar {
+		& tab-bar-item {}
+		& selection {}
+	}
+
+}
