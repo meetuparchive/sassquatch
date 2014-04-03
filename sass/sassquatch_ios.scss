@@ -18,14 +18,14 @@ $platform: "ios";
 
 
 // IOS NATIVE CONTROLS
-@import "ios/native_controls/UIActivityIndicatorView";
-@import "ios/native_controls/UITabBar";
-@import "ios/native_controls/UIButton";
-@import "ios/native_controls/UISwitch";
-@import "ios/native_controls/UITableView";
-@import "ios/native_controls/UITableViewCell";
-@import "ios/native_controls/UICollectionView";
-@import "ios/native_controls/UICollectionViewCell";
+@import "ios/UIActivityIndicatorView";
+@import "ios/UITabBar";
+@import "ios/UIButton";
+@import "ios/UISwitch";
+@import "ios/UITableView";
+@import "ios/UITableViewCell";
+@import "ios/UICollectionView";
+@import "ios/UICollectionViewCell";
 
 
 // IOS CUSTOM (selecting classes & ids; may be shared with desktop web sassquatch)
