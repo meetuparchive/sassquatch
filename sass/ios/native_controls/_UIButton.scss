@@ -5,8 +5,8 @@
 @if $platform == "ios" {
 
 	button {
-		& icon {}
-		& attributed-text {}
+		icon {}
+		attributed-text {}
 	}
 
 }

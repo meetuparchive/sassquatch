@@ -5,9 +5,9 @@
 @if $platform == "ios" {
 
 	switch {
-		& thumb {}
-		& on {}
-		& off {}
+		thumb {}
+		on {}
+		off {}
 	}
 
 }

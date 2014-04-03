@@ -5,8 +5,8 @@
 @if $platform == "ios" {
 
 	tab-bar {
-		& tab-bar-item {}
-		& selection {}
+		tab-bar-item {}
+		selection {}
 	}
 
 }

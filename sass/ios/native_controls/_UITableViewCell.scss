@@ -5,10 +5,10 @@
 @if $platform == "ios" {
 
 	table-view-cell {
-		& content-view {}
-		& text-label {} 
-		& detail-text-label {}
-		& attributed-text {}
+		content-view {}
+		text-label {} 
+		detail-text-label {}
+		attributed-text {}
 	}
 
 }

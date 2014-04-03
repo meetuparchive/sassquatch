@@ -5,8 +5,8 @@
 @if $platform == "ios" {
 
 	activity-indicator-view {
-		& tab-bar-item {}
-		& selection {}
+		tab-bar-item {}
+		selection {}
 	}
 
 }

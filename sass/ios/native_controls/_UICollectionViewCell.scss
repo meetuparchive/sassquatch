@@ -5,7 +5,7 @@
 @if $platform == "ios" {
 
 	collection-view-cell {
-		& content-view {}
+		content-view {}
 	}
 
 }
