@@ -63,13 +63,59 @@
 .span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
 /* }}} */
 
+/* {{{ Doc Stripe */
+// TODO: PCV naming?
+// usage: "doc-stripe (doc-stripe--[variant])"
+
+// default
+.docStripe {
+	@include color_lineGray('border-color');
+	border: 1px solid top;
+	background-color: #fff;
+}
+
+// for collections (cards, panels, etc)
+.docStripe--collection {
+	background-color: $C_backgroundCollection;
+}
+
+// TODO: what is this for?
+.docStripe--nav {
+	background-color: $C_backgroundNav;
+}
+
+// near-black stripe
+.docStripe--inverted {
+	background-color: $C_backgroundContentInverted;
+}
+
+// red accent stripe
+.docStripe--red {
+	background-color: $C_backgroundContentAccent;
+}
+
+/* }}} */
+
+/* {{{ Doc bounds */
+// max-width constraint with media queries
+// has padding that adjusts down with smaller screens
+.docBounds {
+	@extend %clearfix;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 720px; // TODO: decide what this should be?
+	padding: $spacing*2 $spacing*2 $spacing $spacing*2;
+}
+/* }}} */
+
 /* {{{ Box Styles */
+.docBox,
 .doc-box {
 	@include round($defaultRadius);
 	background-color: #fff;
 	margin-bottom: $baseline;
-	border: 1px solid $C_line;
-    @include background-clip(padding);
+	border: 1px solid $C_line !important; /* !important to support .doc-box.doc-content multiple classes */
+ 	@include background-clip(padding);
 
 
 	/**
@@ -153,17 +199,20 @@
 	}
 }
 .ie6, .ie7{
+	.docBox .line .unit,
+	.docBox .line-gutters .unit,
 	.doc-box .line .unit,
 	.doc-box .line-gutters .unit{
 		float: left!important;
 	}
 }
 
+.docBox-section, /* PCV compliant name for doc-content */
 .doc-padding,	/* generic padding helper (does nothing else) */
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
 	padding: $baseline;
-	padding-bottom: $baseline * .25;
+	padding-bottom: 0;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
 
@@ -283,23 +332,22 @@ $arrow-width: $baseline/2;
 * for forms and content that have the main focus on a page (registration flow, for example)
 */
 .doc-content-big {
-    border-top: 1px solid $C_line;
-    &:first-child{
-        border-top: none;
-    }
+	border-top: 1px solid $C_line;
+	&:first-child{
+		border-top: none;
+	}
 	padding: $bigBaseline;
-    padding-bottom: $bigBaseline - $spacing;
+	padding-bottom: 0;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 
-    label.small {
-      font-size:13px;
-    }
-
-    select {
-        height: $bigFontSize*2 - 2;
-        *height: auto;
-        line-height: $bigFontSize*2 - 2;
-    }
+	label.small {
+		font-size:13px;
+	}
+	select {
+		height: $bigFontSize*2 - 2;
+		*height: auto;
+		line-height: $bigFontSize*2 - 2;
+	}
 }
 .doc-content-jagged {
 	$jagged-height: 8px;

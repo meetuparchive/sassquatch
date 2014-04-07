@@ -48,8 +48,7 @@ task :default do
 end
 
 
-# LAUNCH - syncs master with the gh-pages branch;
-# rebuilds LIVE github documentation page
+desc "rebuilds LIVE github documentation page, optional branch argument"
 task :push_docs do
 	puts
 	puts "Rebuilding SassQuatch github pages"
@@ -57,33 +56,33 @@ task :push_docs do
 
 	Rake::Task['compile'].execute
 
-	branch = `git rev-parse --abbrev-ref HEAD`
+	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
-	if "#{branch}" == "master\n"
+	do_it = branch == "master" or branch == "dev"
+	if !do_it
+		puts "Do you want to build the docs for #{branch}? [y/n]"
+		do_it = $stdin.gets.chomp == "y"
+	end
+
+	if do_it
+		docs_path = branch == "master" ? "" : "branches/#{branch}"
 		sh "rm -rf .sass-cache"
 		sh "git checkout gh-pages"
-		sh "git pull"
-		sh "git checkout master _site/"
-		sh "cp -r _site/ ./"
+		sh "git pull origin gh-pages"
+		sh "git checkout #{branch} _site/"
+		sh "cp -r _site/ ./#{docs_path}"
 		sh "rm -rf _site/"
-		sh "git add ."
-		sh "git commit -a -m \"update live docs\""
-		sh "git push"
-		sh "git checkout master"
+		sh "git add -A"
+		sh "git commit -m \"update live docs (#{branch} branch)\""
+		sh "git push origin gh-pages"
+		sh "git checkout #{branch}"
 
 		puts
 		puts "#{HR}"
 		puts "Succesfully updated docs in gh-pages\n"
-		puts "Check http://meetup.github.io/sassquatch\n"
+		puts "Check http://meetup.github.io/sassquatch/#{docs_path}\n"
 		puts "(sometimes github takes a few minutes to rebuild the page)\n"
 		puts "#{HR}"
-		puts
-	else
-		puts
-		puts "WARNING: you're not on master."
-		puts "see launch instructions at https://github.com/meetup/sassquatch"
-		puts
-		puts "BUILD FAILED"
 		puts
 	end
 end

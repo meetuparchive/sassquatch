@@ -4,6 +4,9 @@ Hues at my Meetup?
 
 Here they are - standardized and design-approved Meetup colors. For web, mobile web, iOS, and Android.
 
+## Documentation
+http://meetup.github.io/meetup-swatches/
+
 ----
 
 ### Development setup
@@ -15,8 +18,14 @@ Here they are - standardized and design-approved Meetup colors. For web, mobile 
 
 ```
 	$ bundle install
-	$ cd src
-	$ edit colors.yaml
+	$ edit src/colors.yaml
 	...
-	$ ruby build.rb
+	$ rake
+```
+
+### Updating live documentation
+To update the github page for this projcet, run:
+
+```
+	$ rake push_docs
 ```
