@@ -7,7 +7,6 @@ HR          	= "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~
 
 # compile sass & copy files into build/
 task :compile do
-
 	# compass compile
 	puts
 	puts "#{HR}"

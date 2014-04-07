@@ -320,6 +320,9 @@
 			vertical-align: top;
 			padding-top: $topOffset;
 		}
+		.touchList-label--input {
+			padding-top: 0;  // top padding taken care of by label.ffbox-fix
+		}
 	}
 
 
@@ -439,12 +442,9 @@
 	/*  ======================================================================= */
 	/*  TEXTAREA STYLES  */
 
-	.touchList-label--textarea {
-		line-height: $LH_tall;
-		padding: $P_secondary $P_secondary 0;
-		// NOTE: this expanded line height value bumps the overall height of this
-		// element to 32px (aka 2em), which arguably makes it fit better into our
-		// 16pt rhythm (16-24-32-48-64, etc). I also just think it looks nicer.
+	.touchList .touchList-label--textarea {
+		// using `.touchList` parent for font-size override
+		@extend %tl-blockLabel;
 	}
 
 	.ffbox--textareaWrapper {
@@ -455,7 +455,6 @@
 
 	%touchListItemTextarea {
 		line-height: $LH_standard;
-		font-size: $FS_base;
 
 		padding: $P_secondary $P_secondary 0;
 		margin-bottom: ($LH_standard / 2) * 1em;
@@ -604,29 +603,34 @@
 	}
 
 
-	/* Helper Text */
-	label.touchList-helperText {
-		// NOTE: extra label in selector is from the global font size overrides
-		// scoped to labels and h4s. If that's cleaned up, this selector can be
-		// simplified.
-
+	/**
+	 * Helper Text
+	 * Text applied below an input that provides contextual information
+	 * (like "Your email will never be shared" below an email <input>) or
+	 * validation information.
+	 *
+	 * Can also have an "error state" when enclosude in an element with an
+	 * `.error` class.
+	 *
+	 * Notes:
+	 * 1.	Extra <label> in selector is from the global font size overrides
+	 *		scoped to <label> and <h4> els on mobile web. When that's cleaned,
+	 *		this selector can be simplified.
+	 * 2.	Helper text should have bottom padding when populated, but not
+	 *		affect layout when empty. Hence, the :empty selector.
+	 * 3.	IE > 8, make sure there's no whitespace.
+	 */
+	label.touchList-helperText {     // *1
+		@include color_textTertiary;
 		font-size: $FS_small;
-		font-weight: 300;
-		letter-spacing: 0.05em;
-		color: $C_gray70;
 		line-height: $LH_standard;
-		// NOTE: These font styles are pretty idiosyncratic/one-off, and should
-		// probably be cleaned up.
-		// -john
 
-		margin-top: -0.8em;
-		padding: 0 ($P_secondary/$FS_small * 1em) ($P_secondary * 2);
-		// helperText is tricky - it should have bottom padding when it is populated,
-		// but not affect layout when empty
-		&:empty {
-			// IE > 8 - make sure there's no whitespace
-			padding-bottom: 0;
-			margin: 0;
+		margin-top: -$P_secondary;                              // *2
+		padding: 0 ($P_secondary/$FS_small * 1em) $P_primary;   // *2
+
+		&:empty {     // *2
+			padding-bottom: 0; // *3
+			margin: 0;         // *3
 		}
 
 		.error & {

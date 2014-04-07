@@ -15,7 +15,7 @@
 */
 /* Import color vars from meetup-swatches */
 /* {{{ Type */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .nav-pagination {
+.tearsheet .day, .tearsheet--small .day, .tearsheet--big .day, .nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
 
@@ -944,29 +944,27 @@ input[type="submit"].button--black,
 .button--white,
 .button--blue,
 input[type="submit"].button--blue {
-  position: relative;
-  z-index: 4999; }
-  .button:before,
-  button:before,
-  input[type="submit"]:before,
-  .primary:before,
-  .button.primary:before,
-  .button--primary:before,
-  input[type="submit"].primary:before,
-  input[type="submit"].button--primary:before,
-  .button--black:before,
-  input[type="submit"].button--black:before,
-  .button--white:before,
-  .button--blue:before,
-  input[type="submit"].button--blue:before {
+  position: relative; }
+  .button:after,
+  button:after,
+  input[type="submit"]:after,
+  .primary:after,
+  .button.primary:after,
+  .button--primary:after,
+  input[type="submit"].primary:after,
+  input[type="submit"].button--primary:after,
+  .button--black:after,
+  input[type="submit"].button--black:after,
+  .button--white:after,
+  .button--blue:after,
+  input[type="submit"].button--blue:after {
     content: '';
     background: transparent;
     position: absolute;
     top: -4px;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 4998; }
+    bottom: 0; }
 
 /**
 * Default button
@@ -995,8 +993,11 @@ input[type="submit"] {
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+  .button.button--active,
   .button:active,
+  button.button--active,
   button:active,
+  input[type="submit"].button--active,
   input[type="submit"]:active {
     -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
@@ -1006,8 +1007,11 @@ input[type="submit"] {
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button.button--active,
   .button:hover,
+  button.button--active,
   button:hover,
+  input[type="submit"].button--active,
   input[type="submit"]:hover {
     background: rgba(0, 0, 0, 0.16); }
   .button.disabled,
@@ -1018,13 +1022,6 @@ input[type="submit"] {
   input[type="submit"]:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button.disabled:hover,
-    .button:disabled:hover,
-    button.disabled:hover,
-    button:disabled:hover,
-    input[type="submit"].disabled:hover,
-    input[type="submit"]:disabled:hover {
-      background: rgba(0, 0, 0, 0.1); }
     .button.disabled:active,
     .button:disabled:active,
     button.disabled:active,
@@ -1039,6 +1036,13 @@ input[type="submit"] {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button.disabled:hover,
+    .button:disabled:hover,
+    button.disabled:hover,
+    button:disabled:hover,
+    input[type="submit"].disabled:hover,
+    input[type="submit"]:disabled:hover {
+      background: rgba(0, 0, 0, 0.1); }
   .inverted
   .button, .inverted
   button, .inverted
@@ -1086,10 +1090,15 @@ input[type="submit"].button--primary {
   box-shadow: #851518 0px 2px 0px 0px;
   color: white !important;
   background: #e0393e; }
+  .primary.button--active,
   .primary:active,
+  .button.primary.button--active,
   .button.primary:active,
+  .button--primary.button--active,
   .button--primary:active,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:active,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:active {
     -moz-box-shadow: #851518 0px 0px 0px 0px;
     -webkit-box-shadow: #851518 0px 0px 0px 0px;
@@ -1099,10 +1108,15 @@ input[type="submit"].button--primary {
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .primary.button--active,
   .primary:hover,
+  .button.primary.button--active,
   .button.primary:hover,
+  .button--primary.button--active,
   .button--primary:hover,
+  input[type="submit"].primary.button--active,
   input[type="submit"].primary:hover,
+  input[type="submit"].button--primary.button--active,
   input[type="submit"].button--primary:hover {
     background: #d02126; }
   .primary.disabled,
@@ -1117,17 +1131,6 @@ input[type="submit"].button--primary {
   input[type="submit"].button--primary:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .primary.disabled:hover,
-    .primary:disabled:hover,
-    .button.primary.disabled:hover,
-    .button.primary:disabled:hover,
-    .button--primary.disabled:hover,
-    .button--primary:disabled:hover,
-    input[type="submit"].primary.disabled:hover,
-    input[type="submit"].primary:disabled:hover,
-    input[type="submit"].button--primary.disabled:hover,
-    input[type="submit"].button--primary:disabled:hover {
-      background: #e0393e; }
     .primary.disabled:active,
     .primary:disabled:active,
     .button.primary.disabled:active,
@@ -1146,6 +1149,17 @@ input[type="submit"].button--primary {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .primary.disabled:hover,
+    .primary:disabled:hover,
+    .button.primary.disabled:hover,
+    .button.primary:disabled:hover,
+    .button--primary.disabled:hover,
+    .button--primary:disabled:hover,
+    input[type="submit"].primary.disabled:hover,
+    input[type="submit"].primary:disabled:hover,
+    input[type="submit"].button--primary.disabled:hover,
+    input[type="submit"].button--primary:disabled:hover {
+      background: #e0393e !important; }
 
 .button--black,
 input[type="submit"].button--black {
@@ -1155,7 +1169,9 @@ input[type="submit"].button--black {
   box-shadow: black 0px 2px 0px 0px;
   color: white !important;
   background: black; }
+  .button--black.button--active,
   .button--black:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
     -moz-box-shadow: black 0px 0px 0px 0px;
     -webkit-box-shadow: black 0px 0px 0px 0px;
@@ -1165,7 +1181,9 @@ input[type="submit"].button--black {
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--black.button--active,
   .button--black:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: black; }
   .button--black.disabled,
@@ -1174,11 +1192,6 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--black.disabled:hover,
-    .button--black:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: black; }
     .button--black.disabled:active,
     .button--black:disabled:active,
     input[type="submit"].button--black.disabled:active,
@@ -1191,6 +1204,11 @@ input[type="submit"].button--black {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--black.disabled:hover,
+    .button--black:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: black !important; }
 
 .button--white,
 input[type="submit"].button--black {
@@ -1200,7 +1218,9 @@ input[type="submit"].button--black {
   box-shadow: #bfbfbf 0px 2px 0px 0px;
   color: #e0393e !important;
   background: white; }
+  .button--white.button--active,
   .button--white:active,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:active {
     -moz-box-shadow: #bfbfbf 0px 0px 0px 0px;
     -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
@@ -1210,7 +1230,9 @@ input[type="submit"].button--black {
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--white.button--active,
   .button--white:hover,
+  input[type="submit"].button--black.button--active,
   input[type="submit"].button--black:hover {
     background: #ebebeb; }
   .button--white.disabled,
@@ -1219,11 +1241,6 @@ input[type="submit"].button--black {
   input[type="submit"].button--black:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--white.disabled:hover,
-    .button--white:disabled:hover,
-    input[type="submit"].button--black.disabled:hover,
-    input[type="submit"].button--black:disabled:hover {
-      background: white; }
     .button--white.disabled:active,
     .button--white:disabled:active,
     input[type="submit"].button--black.disabled:active,
@@ -1236,6 +1253,11 @@ input[type="submit"].button--black {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--white.disabled:hover,
+    .button--white:disabled:hover,
+    input[type="submit"].button--black.disabled:hover,
+    input[type="submit"].button--black:disabled:hover {
+      background: white !important; }
 
 .button--blue,
 input[type="submit"].button--blue {
@@ -1245,7 +1267,9 @@ input[type="submit"].button--blue {
   box-shadow: #005893 0px 2px 0px 0px;
   color: white !important;
   background: #13a1ff; }
+  .button--blue.button--active,
   .button--blue:active,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:active {
     -moz-box-shadow: #005893 0px 0px 0px 0px;
     -webkit-box-shadow: #005893 0px 0px 0px 0px;
@@ -1255,7 +1279,9 @@ input[type="submit"].button--blue {
     -webkit-transform: translate(0px, 2px);
     -o-transform: translate(0px, 2px);
     transform: translate(0px, 2px); }
+  .button--blue.button--active,
   .button--blue:hover,
+  input[type="submit"].button--blue.button--active,
   input[type="submit"].button--blue:hover {
     background: #008ce9; }
   .button--blue.disabled,
@@ -1264,11 +1290,6 @@ input[type="submit"].button--blue {
   input[type="submit"].button--blue:disabled {
     opacity: 0.4;
     cursor: normal; }
-    .button--blue.disabled:hover,
-    .button--blue:disabled:hover,
-    input[type="submit"].button--blue.disabled:hover,
-    input[type="submit"].button--blue:disabled:hover {
-      background: #13a1ff; }
     .button--blue.disabled:active,
     .button--blue:disabled:active,
     input[type="submit"].button--blue.disabled:active,
@@ -1281,6 +1302,18 @@ input[type="submit"].button--blue {
       -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
       box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px; }
+    .button--blue.disabled:hover,
+    .button--blue:disabled:hover,
+    input[type="submit"].button--blue.disabled:hover,
+    input[type="submit"].button--blue:disabled:hover {
+      background: #13a1ff !important; }
+
+input[type="submit"]:active {
+  -moz-transform: translate(0px, 0px) !important;
+  -ms-transform: translate(0px, 0px) !important;
+  -o-transform: translate(0px, 0px) !important;
+  -webkit-transform: translate(0px, 0px) !important;
+  transform: translate(0px, 0px) !important; }
 
 /**
 * ==============================================
@@ -1635,7 +1668,6 @@ input[type="submit"].button--blue {
   top: 12px;
   right: 12px;
   display: block;
-  background: url("/img/ui-dialog-close.png") no-repeat top left;
   width: 14px;
   height: 14px;
   cursor: pointer;
@@ -1960,139 +1992,167 @@ as well as a few different states/types:
 * extends and mixins for creating a
 * tearsheet class for a given px size
 */
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time, .tearsheet-25 .month, .tearsheet-30 .month, .tearsheet-40 .month, .tearsheet .month, .tearsheet-80 .month {
-  -webkit-transition: all 150ms ease-in-out;
-  -moz-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out; }
-
-.tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day, .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week, .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time {
-  background-color: #f4f4f4;
-  display: block;
-  border: 1px solid #dddddd;
-  font-weight: 700;
-  color: #555555 !important;
-  /* ignore link colors, theme */ }
-
-.tearsheet-25, .tearsheet-30, .tearsheet-40, .tearsheet, .tearsheet-80 {
-  border-radius: 2px;
+.tearsheet, .tearsheet--small, .tearsheet--big {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  margin-bottom: 18px; }
-  .tearsheet-expandable.tearsheet-25, .tearsheet-expandable.tearsheet-30, .tearsheet-expandable.tearsheet-40, .tearsheet-expandable.tearsheet, .tearsheet-expandable.tearsheet-80 {
-    height: auto; }
-  a:hover .tearsheet-25 .month, a:hover .tearsheet-30 .month, a:hover .tearsheet-40 .month, a:hover .tearsheet .month, a:hover .tearsheet-80 .month {
-    background-color: #c71f24; }
-  a:hover .tearsheet-25 .time, a:hover .tearsheet-30 .time, a:hover .tearsheet-40 .time, a:hover .tearsheet .time, a:hover .tearsheet-80 .time {
-    background-color: #f4f4f4;
-    color: black !important; }
-  a:hover .tearsheet-25 .day, a:hover .tearsheet-30 .day, a:hover .tearsheet-40 .day, a:hover .tearsheet .day, a:hover .tearsheet-80 .day, a:hover .tearsheet-25 .day-of-week, a:hover .tearsheet-30 .day-of-week, a:hover .tearsheet-40 .day-of-week, a:hover .tearsheet .day-of-week, a:hover .tearsheet-80 .day-of-week {
-    background-color: white;
-    color: black !important; }
-  .tearsheet-25 .month, .tearsheet-30 .month, .tearsheet-40 .month, .tearsheet .month, .tearsheet-80 .month {
+  margin-bottom: 18px;
+  font-weight: 700; }
+  .tearsheet .month, .tearsheet--small .month, .tearsheet--big .month {
+    text-transform: uppercase;
     background-color: #e0393e;
-    display: block;
     color: white;
-    border-radius: 2px 2px 0 0; }
-  .tearsheet-25 .day, .tearsheet-30 .day, .tearsheet-40 .day, .tearsheet .day, .tearsheet-80 .day {
-    border-radius: 0 0 2px 2px;
-    border-width: 0 1px 1px; }
-  .tearsheet-25 .day-of-week, .tearsheet-30 .day-of-week, .tearsheet-40 .day-of-week, .tearsheet .day-of-week, .tearsheet-80 .day-of-week {
-    border-width: 0 1px;
-    font-size: 11px;
-    margin-bottom: -0.8em;
-    padding-top: .4em;
-    height: 1.4em;
-    line-height: 1.2; }
-  .tearsheet-25 .time, .tearsheet-30 .time, .tearsheet-40 .time, .tearsheet .time, .tearsheet-80 .time {
-    -moz-border-radius: 0 0 2px 2px;
-    -webkit-border-radius: 0 0 2px 2px;
-    border-radius: 0 0 2px 2px;
-    margin-top: -2px;
-    padding: 3px;
-    font-size: 11px;
-    background-color: #eeeeee; }
-
-a:hover .tearsheet-disabled .month {
-  background-color: #c4c4c4; }
-.tearsheet-disabled .month {
-  background-color: #dddddd; }
-
-a:hover .tearsheet-add .time {
-  background-color: white; }
-.tearsheet-add .month {
-  position: relative; }
-  .tearsheet-add .month:after {
-    content: '+';
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 38px;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    text-align: center;
+    display: block; }
+  .tearsheet .day, .tearsheet--small .day, .tearsheet--big .day {
     display: block;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    line-height: 0.8;
-    margin-left: -14px;
-    margin-bottom: -15px;
-    margin-top: 12.5px;
-    background-color: inherit;
-    color: inherit; }
-.tearsheet-add .day-of-week {
-  padding-top: 2em;
-  margin-bottom: -2.5em; }
-.tearsheet-add .time {
-  background-color: #f4f4f4;
-  font-weight: bold;
-  border-width: 0 1px 1px; }
+    border: 2px solid #dddddd;
+    color: #555555 !important;
+    background-color: #fff;
+    border-top-width: 0; }
 
-.tearsheet-25 {
-  width: 25px;
-  height: 25px; }
-  .tearsheet-25 .month {
-    font-size: 7px;
-    height: 10px;
-    line-height: 11.25px; }
-  .tearsheet-25 .day {
-    line-height: 15px;
-    font-size: 10px; }
+.tearsheet {
+  width: 48px;
+  height: 48px; }
+  .tearsheet .month {
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 12px;
+    height: 19.2px;
+    line-height: 21.6px; }
+  .tearsheet .day {
+    line-height: 28.8px;
+    font-size: 19.2px; }
 
-.tearsheet-30 {
-  width: 30px;
-  height: 30px; }
-  .tearsheet-30 .month {
+.tearsheet--small {
+  width: 32px;
+  height: 32px; }
+  .tearsheet--small .month {
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
     font-size: 8px;
-    height: 12px;
-    line-height: 13.5px; }
-  .tearsheet-30 .day {
-    line-height: 18px;
-    font-size: 12px; }
+    height: 12.8px;
+    line-height: 14.4px; }
+  .tearsheet--small .day {
+    line-height: 19.2px;
+    font-size: 12.8px; }
 
-.tearsheet-40, .tearsheet {
-  width: 40px;
-  height: 40px; }
-  .tearsheet-40 .month, .tearsheet .month {
-    font-size: 11px;
-    height: 16px;
-    line-height: 18px; }
-  .tearsheet-40 .day, .tearsheet .day {
-    line-height: 24px;
-    font-size: 16px; }
-
-.tearsheet-80 {
+.tearsheet--big {
   width: 80px;
   height: 80px; }
-  .tearsheet-80 .month {
-    font-size: 22px;
+  .tearsheet--big .month {
+    -moz-border-radius-topright: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -webkit-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 19px;
     height: 32px;
     line-height: 36px; }
-  .tearsheet-80 .day {
+  .tearsheet--big .day {
     line-height: 48px;
     font-size: 32px; }
+
+/**
+* Avatars
+*
+* (Member photos)
+*/
+.avatar, .avatar--small, .avatar--big {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  -moz-border-radius: 80px 80px 80px 80px;
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px;
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: center 42%;
+  background-color: rgba(0, 0, 0, 0.47); }
+
+.avatar {
+  width: 48px;
+  height: 48px; }
+
+.avatar--small {
+  width: 32px;
+  height: 32px; }
+
+.avatar--big {
+  width: 64px;
+  height: 64px; }
+
+/**
+* ==============================================
+* PILL LABELS
+*
+* labels for members (ie. "ORG", "FRIEND", etc.)
+*/
+/**
+* Pill Label factory mixins
+* ------------------------------------------
+*/
+.pill-label,
+.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  padding: 2.75px 5.5px;
+  margin: 0 2.75px; }
+
+/**
+* Solid Pill
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+/**
+* Hollow Pill
+*
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+.pill-label {
+  background-color: rgba(0, 0, 0, 0.67);
+  color: white; }
+
+.pill-label--hollow {
+  border: 1px solid rgba(0, 0, 0, 0.67);
+  color: rgba(0, 0, 0, 0.67); }
+
+.pill-label--friend {
+  background-color: #3987cb;
+  color: white; }
+
+.pill-label--leader {
+  background-color: #e0393e;
+  color: white; }
+
+.pill-label--paid {
+  border: 1px solid #62ac75;
+  color: #62ac75; }
+
+.pill-label--unpaid {
+  border: 1px solid #e0393e;
+  color: #e0393e; }
 
 /**
 * Nametag Photo pattern

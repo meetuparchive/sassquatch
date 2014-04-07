@@ -25,11 +25,13 @@ input[type="submit"] {
 	background: $C_lineGray;
 	@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 
+	&.button--active,
 	&:active {
 		@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
 		@include transform(translate(0px, 2px));
 	}
 
+	&.button--active,
 	&:hover {
 		background: opacify($C_lineGray, 0.06);
 	}
@@ -38,12 +40,12 @@ input[type="submit"] {
 	&:disabled {
 		opacity: 0.4;
 		cursor: normal;
-		&:hover {
-			background: $C_lineGray;
-		}
 		&:active {
 			@include transform(translate(0px, 0px));
 			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+		}
+		&:hover {
+			background: $C_lineGray;
 		}
 	}
 
@@ -106,6 +108,19 @@ input[type="submit"].button--black {
 .button--blue,
 input[type="submit"].button--blue {
 	@include button( #13a1ff );
+}
+
+
+// input translation fix
+//
+// we can't fix the chrome double click issue
+// without pseudo elements, which don't work on input els
+input[type="submit"]:active {
+	-moz-transform: translate(0px, 0px) !important;
+	-ms-transform: translate(0px, 0px) !important;
+	-o-transform: translate(0px, 0px) !important;
+	-webkit-transform: translate(0px, 0px) !important;
+	transform: translate(0px, 0px) !important;
 }
 
 

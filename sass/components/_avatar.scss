@@ -1,0 +1,44 @@
+/**
+* Avatars
+*
+* (Member photos)
+*/
+
+%_avatar_base {
+	@include background-size(cover);
+	@include round($media-xl);
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: top;
+	background-repeat: no-repeat;
+	background-position: center 42%;
+	background-color: $C_tertiaryGray;
+}
+
+
+@mixin avatar( $size: $media-l ) {
+	@extend %_avatar_base;
+	width: $size;
+	height: $size;
+}
+
+
+// Default Avatar (medium)
+// ---------------------------
+.avatar {
+	@include avatar($media-m);
+}
+
+// Small Avatar
+// ---------------------------
+.avatar--small {
+	@include avatar($media-s);
+}
+
+// Big Avatar
+// ---------------------------
+.avatar--big {
+	@include avatar($media-l);
+}

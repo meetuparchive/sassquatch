@@ -1,6 +1,6 @@
 <p>Examples of what we have right now</p>
  
-<h2 class="section-subtitle">Html5 Form field types <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Html5 Form field types</h2>
 
 <div class="doc-box">
 	<ul class="touchList">
@@ -39,6 +39,12 @@
 					</label>
 				</div>
 			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="" for="" class="touchList-helperText">This is helper text.</label>
+				</div>
+			</div>
+
 		</li>
 
 		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="" >
@@ -308,7 +314,7 @@
 </code></pre></div>
 </div>
 
-<h2 class="section-subtitle">Radio buttons <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Radio buttons</h2>
 <p>This is an example of the radio buttons touchlist.</p>
 
 
@@ -382,24 +388,27 @@
 </code></pre></div>
 </div>
 
-<h2 class="section-subtitle">Checkboxes <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Checkboxes</h2>
 <p>This is an example of the checkbox touchlist.</p>
 
 <div class="doc-box">
 	<ul class="touchList">
 		<!-- HTML example -->
-<li class="touchList-item touchList-item--input-checkbox" id="" >
+<li id="check_name_item" class="touchList-item touchList-item--input-checkbox">
 	<label class="ffbox ffbox--touchList-input">
-        <div class="ffbox-flex">
-			<h4 class="touchList-label touchList-label--input">Yay! Kittens</h4>
-        </div>
+		<div class="ffbox-flex">
+			<h4 class="touchList-label touchList-label--input">Require photo</h4>
+		</div>
 		<div class="ffbox-fix">
-			<input type="checkbox" name="f3_3" value="0" id="" tabindex="0">
-			<div class="pseudocheckbox">
-				<i class="icon-s icon-check pseudocheckbox-check"></i> 
-			</div>
+			<input type="checkbox" name="check_name" id="check_name" class="" value="1" tabindex="0">
+			<i class="icon-s icon-checkbox pseudocheckbox"></i>
 		</div>
 	</label>
+	<div class="ffbox">
+		<div class="ffbox-flex touchList-helperTextWrap">
+			<label id="check_name_helper" for="check_name" class="touchList-helperText"></label>
+		</div>
+	</div>
 </li>
 
 	</ul>
@@ -411,23 +420,26 @@
 <span class="nt">&lt;li:checkbox</span> <span class="na">name=</span><span class="s">&quot;kittttteennnnnssss&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="err">...</span> <span class="nt">/&gt;</span>
 </code></pre></div>
     <div class="highlight"><pre><code class="html"><span class="c">&lt;!-- HTML example --&gt;</span>
-<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;check_name_item&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input-checkbox&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Yay! Kittens<span class="nt">&lt;/h4&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>Require photo<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_3&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudocheckbox&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-check pseudocheckbox-check&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> 
-			<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;check_name&quot;</span> <span class="na">id=</span><span class="s">&quot;check_name&quot;</span> <span class="na">class=</span><span class="s">&quot;&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-checkbox pseudocheckbox&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/label&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;check_name_helper&quot;</span> <span class="na">for=</span><span class="s">&quot;check_name&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 </code></pre></div>
 </div>
 
-<h2 class="section-subtitle">Select <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Select</h2>
 
 <div class="doc-box">
 	<ul class="touchList">
@@ -506,7 +518,7 @@
 </div>
    
 
-<h2 class="section-subtitle">Textareas <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Textareas</h2>
 
 <div class="doc-box">
 	<ul class="touchList">
@@ -552,7 +564,7 @@
 </code></pre></div>
 </div>
 
-<h2 class="section-subtitle">Expander <span class='candidate'></span></h2>
+<h2 class="section-subtitle">Expander</h2>
 <p>Looks like a regular input, but wait, there's more! On focus, input expands to multiple-line textarea.</p>
 
 <div class="doc-box">
@@ -574,6 +586,26 @@
 	</div>
 </li>
 
+
+<li class="touchList-item touchList-item--input touchList-item--expander">
+	<div class="ffbox ffbox--touchList-input">
+		<label class="ffbox-fix" for="the_input_name">
+			<h4 class="touchList-label touchList-label--input">1.</h4>
+		</label>
+		<div class="ffbox-flex">
+			<textarea id="the_input_name" name="the_input_name" placeholder="Ask a question" class="touchList-input  touchList-input--expander"></textarea>
+			<label for="the_input_name" id="the_input_name_placeholder" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+				Ask a question
+			</label>
+		</div>
+	</div>
+	<div class="ffbox">
+		<div class="ffbox-flex touchList-helperTextWrap">
+			<label id="the_input_name_helper" for="the_input_name" class="touchList-helperText"></label>
+		</div>
+	</div>
+</li>
+
 	</ul>
 </div>
 <div class="doc-content j-code">
@@ -590,6 +622,26 @@
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
 			<span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">for=</span><span class="s">&quot;tx_expander_input&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+
+
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--input touchList-item--expander&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-input&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span> <span class="na">for=</span><span class="s">&quot;the_input_name&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label touchList-label--input&quot;</span><span class="nt">&gt;</span>1.<span class="nt">&lt;/h4&gt;</span>
+		<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">name=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Ask a question&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-input  touchList-input--expander&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">id=</span><span class="s">&quot;the_input_name_placeholder&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-pseudoplaceholder j-pseudoplaceholder&quot;</span><span class="nt">&gt;</span>
+				Ask a question
+			<span class="nt">&lt;/label&gt;</span>
+		<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-helperTextWrap&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;label</span> <span class="na">id=</span><span class="s">&quot;the_input_name_helper&quot;</span> <span class="na">for=</span><span class="s">&quot;the_input_name&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-helperText&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
