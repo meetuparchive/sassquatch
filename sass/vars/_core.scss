@@ -194,7 +194,6 @@ $condensedLineHeight:	null;
 	 *
 	 */
 
-
 	/*  @note
 	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all 
 	 *  include typefaces that have multiple weights supported. This means
@@ -203,14 +202,6 @@ $condensedLineHeight:	null;
 	$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
 	$headingFontStack:		$baseFontStack; 
 	$uiControlFontStack:	$baseFontStack;
-
-	// base sizes
-	$baseFontSize:			16px;
-	$baseLineHeight:		1.4;
-
-	// small font sizes
-	$smallFontSize:			13px;
-	$smallLineHeight:		1.6;
 
 	$condensedLineHeight:	1.125;
 
@@ -225,9 +216,8 @@ $condensedLineHeight:	null;
 	$spacing:			$baseline / 2;	/*  used, but has a lot of conditional overrides/modifications */
 	$basePadding:		$spacing;
 	$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
+
 	/*  }  */
-
-
 
 	/*  ADDITIONS {
 	 *  
