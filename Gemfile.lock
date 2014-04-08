@@ -27,6 +27,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  hologram (~> 1.0.1)
+  hologram
   rake (~> 10.1.0)
   sass (= 3.2.6)
