@@ -12,6 +12,34 @@ as well as a few different states/types:
 
 */
 
+/*doc
+---
+title: Tearsheet
+name: tearsheet
+category: Content Patterns
+---
+
+Tearsheets are basically date displays that look like daily calendar tearsheets
+
+```html_example
+	<time class="tearsheet">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+
+	<time class="tearsheet--big">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+
+	<time class="tearsheet--small">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+```
+
+*/
+
 /**
 * Tearsheet utils
 * extends and mixins for creating a

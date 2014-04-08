@@ -21,13 +21,13 @@ name: highlightModifiers
 title: Highlighting
 ---
 
-Example                                           | Class
-------------------------------------------------- | ----------------- 
-<p class="debug">Example paragraph</p>            | `debug`
-<p class="highlighted">Example paragraph</p>      | `highlighted`
-<p class="shaded">Example paragraph</p>           | `shaded`
-<p class="shaded-lighter">Example paragraph</p>   | `shaded-lighter`
-<p class="shaded-red">Example paragraph</p>       | `shaded-red`
+Class               | Example
+--------------------| -----------------------------------------------
+`debug`             | <p class="debug">Example paragraph</p>
+`highlighted`       | <p class="highlighted">Example paragraph</p>
+`shaded`            | <p class="shaded">Example paragraph</p>
+`shaded-lighter`    | <p class="shaded-lighter">Example paragraph</p>
+`shaded-red`        | <p class="shaded-red">Example paragraph</p>
 
 */
 .debug {
@@ -75,14 +75,14 @@ name: paddingModifiers
 title: Padding
 ---
 
-Example                                                                  | Class
--------------------------------------------------------------------------| ----------------- 
-<div class="inline-block guide-shade padding-left">Example div</div>     | `padding-left`
-<div class="inline-block guide-shade padding-right">Example div</div>    | `padding-right`
-<div class="inline-block guide-shade padding-top">Example div</div>      | `padding-top`
-<div class="inline-block guide-shade padding-bottom">Example div</div>   | `padding-bottom`
-<div class="inline-block guide-shade padding-all">Example div</div>      | `papdding-all`
-<div class="inline-block guide-shade padding-none">Example div</div>     | `papdding-none`
+Class            | Example
+-----------------| -------------------------------------------------------------------------
+`padding-left`   | <div class="inline-block guide-shade padding-left">Example div</div>
+`padding-right`  | <div class="inline-block guide-shade padding-right">Example div</div>
+`padding-top`    | <div class="inline-block guide-shade padding-top">Example div</div>
+`padding-bottom` | <div class="inline-block guide-shade padding-bottom">Example div</div>
+`papdding-all`   | <div class="inline-block guide-shade padding-all">Example div</div>
+`papdding-none`  | <div class="inline-block guide-shade padding-none">Example div</div>
 
 */
 .padding-top,
@@ -118,14 +118,14 @@ name: marginModifiers
 title: Margin
 ---
 
-Example                                                                  | Class
--------------------------------------------------------------------------| ----------------- 
-<div class="inline-block guide-shade margin-left">Example dif</div>      | `margin-left`
-<div class="inline-block guide-shade margin-right">Example dif</div>     | `margin-right`
-<div class="inline-block guide-shade margin-top">Example dif</div>       | `margin-top`
-<div class="inline-block guide-shade margin-bottom">Example div</div>    | `margin-bottom`
-<div class="inline-block guide-shade margin-all">Example div</div>       | `margin-all`
-<div class="inline-block guide-shade margin-none">Example div</div>      | `margin-none`
+Class           | Example
+----------------| ---------------------------------------------------------------------
+`margin-left`   | <div class="inline-block guide-shade margin-left">Example dif</div>
+`margin-right`  | <div class="inline-block guide-shade margin-right">Example dif</div>
+`margin-top`    | <div class="inline-block guide-shade margin-top">Example dif</div>
+`margin-bottom` | <div class="inline-block guide-shade margin-bottom">Example div</div>
+`margin-all`    | <div class="inline-block guide-shade margin-all">Example div</div>
+`margin-none`   | <div class="inline-block guide-shade margin-none">Example div</div>
 
 */
 .margin-top {
@@ -155,11 +155,11 @@ name: talignModifiers
 title: Text alignment
 ---
 
-Example                                                    | Class
------------------------------------------------------------| ----------------- 
-<p class="align-right">Example paragraph</p>               | `align-right`
-<p class="align-center">Example paragraph</p>              | `align-center`
-<p class="align-left">Example paragraph</p>                | `align-left`
+Class          | Example
+---------------| ----------------------------------------------------
+`align-right`  | <p class="align-right">Example paragraph</p>
+`align-center` | <p class="align-center">Example paragraph</p>
+`align-left`   | <p class="align-left">Example paragraph</p>
 
 */
 .align-right {

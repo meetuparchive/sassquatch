@@ -1,7 +1,36 @@
-/**
-* Avatars
-*
-* (Member photos)
+/*doc
+---
+title: Avatar
+name: avatar
+category: Content Patterns
+---
+
+You know, for people.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+				Chris
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar--small"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">
+				Samantha
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar--big"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+				Larry
+			</a>
+		</li>
+	</ul>
+```
 */
 
 %_avatar_base {
