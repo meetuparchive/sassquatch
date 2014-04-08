@@ -259,24 +259,23 @@
 		}
 	}
 	h1 { 
-		font-size: $h1FontSize; 
-		letter-spacing: -0.75px; 
+		font-size: $h1FontSize;
+		letter-spacing: -0.75px;
 	}
 	h2 { 
-		font-size: $h2FontSize; 
-		letter-spacing: -0.5px; 
+		font-size: $h2FontSize;
+		letter-spacing: -0.5px;
 	}
 	h3 { 
-		font-weight: $W_normal;
-		font-size: $h3FontSize; 
+		font-size: $h3FontSize;
 	}
 	h4 { font-size: $h4FontSize }
 	h5 { 
-		font-weight: $W_normal; 
-		font-size: $h5FontSize; 
+		font-size: $h5FontSize;
+		font-weight: $W_normal;
 	}
 	h6 { 
-		font-size: $h6FontSize; 
+		font-size: $h6FontSize;
 		font-weight: $W_normal;
 		text-transform:uppercase;
 	}  /* probably won't use it, but it's in the html spec, so worth defining a default */

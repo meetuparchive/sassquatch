@@ -258,12 +258,8 @@ a.unlink{
 	.small, small {
 		font-size:$smallFontSize;
 		line-height:$smallLineHeight;
-
-        &.caps {
-			font-size:$smallFontSize * .8;
-		}
 	}
-	// TODO: remove smaller from chapstick
+
 	.smaller {
 		 font-size:.75rem;
 	}
