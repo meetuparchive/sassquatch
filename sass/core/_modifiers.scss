@@ -1,24 +1,10 @@
-/*doc
----
-title: Modifiers
-name: modifiers
-category: Modifiers
----
-
-Sometimes you need to nudge alignment and/or spacing of elements byeond 
-what the framework defaults handle. These modifiers should help you do this 
-without the need to write new styles for minor tasks.
-
-*/
-
-
 /* {{{ Typography modifiers */
 
 /*doc
 ---
-parent: modifiers
-name: highlightModifiers
 title: Highlighting
+name: highlightModifiers
+category: Modifiers
 ---
 
 Class               | Example
@@ -70,9 +56,9 @@ Class               | Example
 
 /*doc
 ---
-parent: modifiers
-name: paddingModifiers
 title: Padding
+name: paddingModifiers
+category: Modifiers
 ---
 
 Class            | Example
@@ -113,9 +99,9 @@ Class            | Example
 
 /*doc
 ---
-parent: modifiers
-name: marginModifiers
 title: Margin
+name: marginModifiers
+category: Modifiers
 ---
 
 Class           | Example
@@ -150,9 +136,9 @@ Class           | Example
 
 /*doc
 ---
-parent: modifiers
-name: talignModifiers
 title: Text alignment
+name: talignModifiers
+category: Modifiers
 ---
 
 Class          | Example
