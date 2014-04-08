@@ -1,4 +1,35 @@
+/*doc
+---
+title: Modifiers
+name: modifiers
+category: Modifiers
+---
+
+Sometimes you need to nudge alignment and/or spacing of elements byeond 
+what the framework defaults handle. These modifiers should help you do this 
+without the need to write new styles for minor tasks.
+
+*/
+
+
 /* {{{ Typography modifiers */
+
+/*doc
+---
+parent: modifiers
+name: highlightModifiers
+title: Highlighting
+---
+
+Example                                           | Class
+------------------------------------------------- | ----------------- 
+<p class="debug">Example paragraph</p>            | `debug`
+<p class="highlighted">Example paragraph</p>      | `highlighted`
+<p class="shaded">Example paragraph</p>           | `shaded`
+<p class="shaded-lighter">Example paragraph</p>   | `shaded-lighter`
+<p class="shaded-red">Example paragraph</p>       | `shaded-red`
+
+*/
 .debug {
 	outline: 1px dotted red;
 	background: pink;
@@ -10,7 +41,6 @@
         content: "DEBUG: ";
     }
 }
-
 .highlighted {
 	background: $C_yellow;
 }
@@ -36,9 +66,30 @@
 		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b
 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
 }
+
+
+/*doc
+---
+parent: modifiers
+name: paddingModifiers
+title: Padding
+---
+
+Example                                                                  | Class
+-------------------------------------------------------------------------| ----------------- 
+<div class="inline-block guide-shade padding-left">Example div</div>     | `padding-left`
+<div class="inline-block guide-shade padding-right">Example div</div>    | `padding-right`
+<div class="inline-block guide-shade padding-top">Example div</div>      | `padding-top`
+<div class="inline-block guide-shade padding-bottom">Example div</div>   | `padding-bottom`
+<div class="inline-block guide-shade padding-all">Example div</div>      | `papdding-all`
+<div class="inline-block guide-shade padding-none">Example div</div>     | `papdding-none`
+
+*/
+.padding-top,
 .leading-top {
 	padding-top: $spacing;
 }
+.padding-bottom,
 .leading-bottom {
 	padding-bottom: $spacing;
 }
@@ -58,9 +109,25 @@
 .padding-all {
 	padding: $spacing;
 }
-.margin-all{
-	margin:$spacing;
-}
+
+
+/*doc
+---
+parent: modifiers
+name: marginModifiers
+title: Margin
+---
+
+Example                                                                  | Class
+-------------------------------------------------------------------------| ----------------- 
+<div class="inline-block guide-shade margin-left">Example dif</div>      | `margin-left`
+<div class="inline-block guide-shade margin-right">Example dif</div>     | `margin-right`
+<div class="inline-block guide-shade margin-top">Example dif</div>       | `margin-top`
+<div class="inline-block guide-shade margin-bottom">Example div</div>    | `margin-bottom`
+<div class="inline-block guide-shade margin-all">Example div</div>       | `margin-all`
+<div class="inline-block guide-shade margin-none">Example div</div>      | `margin-none`
+
+*/
 .margin-top {
 	margin-top: $spacing;
 }
@@ -76,6 +143,25 @@
 .margin-none {
 	margin: 0 !important;
 }
+.margin-all{
+	margin:$spacing;
+}
+
+
+/*doc
+---
+parent: modifiers
+name: talignModifiers
+title: Text alignment
+---
+
+Example                                                    | Class
+-----------------------------------------------------------| ----------------- 
+<p class="align-right">Example paragraph</p>               | `align-right`
+<p class="align-center">Example paragraph</p>              | `align-center`
+<p class="align-left">Example paragraph</p>                | `align-left`
+
+*/
 .align-right {
 	text-align: right;
 }
@@ -85,6 +171,8 @@
 .align-center {
 	text-align: center;
 }
+
+
 .valign-top {
 	vertical-align: top;
 }
