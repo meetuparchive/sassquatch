@@ -12,6 +12,27 @@
 
 @import "../util/buttonFactory";
 
+
+/*doc
+---
+title: Secondary Button
+name: secondaryButton
+category: basics
+---
+
+Button styles can be applied to any element. Typically you'll want
+to use either a `<button>` or an `<a>` element:
+
+```html_example
+	<button class="button">Button</button>
+	<a class="button" href="#">Anchor</a>
+```
+
+If your button is actually a link to another page, please use the
+`<a>` element, while if your button performs an action, such as
+submitting a form or triggering some javascript event, then use a
+`<button>` element.
+ */
 %button,
 .button,
 button,
