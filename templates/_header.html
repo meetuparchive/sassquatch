@@ -16,9 +16,9 @@
 	<div id="pageWrap" class="line">
 
 		<nav class="unit size1of4">
-			<ul class="inlineblockList">
+			<ul class="dividedList">
 				<% @categories.each do |category, file_name| %>
-					<li class="margin-right"><a href="<%= file_name %>"><%= category %></a></li>
+					<li><a href="<%= file_name %>"><%= category %></a></li>
 				<% end %>
 			</ul>
 		</nav>
