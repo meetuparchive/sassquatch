@@ -230,7 +230,6 @@
 		// Bump it up a hair, because parentheses are all dangly.
 	}
 
-	.touchList-attendee-role,
 	.touchList-attendee-bio,
 	.touchList-attendee-funfact-description,
 	.touchList-attendee-ledger {
@@ -239,11 +238,14 @@
 
 	.touchList-attendee-role {
 		@extend %textTruncate;
+		@extend small;
+		@include color_textTertiary;	
 		line-height: $LH_standard;
 	}
 
 	.touchList-attendee-funfact-description {
 		padding-left: $P_secondary;
+		font-size: $smallFontSize;
 	}
 
 	.touchList-attendee-actions {
