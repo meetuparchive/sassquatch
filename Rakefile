@@ -1,9 +1,11 @@
+require 'colorize'
+
 COMPILER    = "sass"
 SOURCES     = "sass/"
-TARGET      = "css"
-JEKYLL_DIR  = "jekyll_docs"
-DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
+DOC_ASSETS  = "templates/"
+TARGET      = "#{DOC_ASSETS}/style/"
 HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+
 
 # compile sass & copy files into build/
 task :compile do
@@ -13,16 +15,24 @@ task :compile do
 	# desktop
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for desktop"
+	puts "Compiling Sassquatch for desktop".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style=compressed" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch (status = #{status.exitstatus})".red
+		end
+	end
 
 	# mobile
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for mobile"
+	puts "Compiling Sassquatch for mobile".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch Mobile (status = #{status.exitstatus})"
+		end
+	end
 
 	## tests
 	#puts
@@ -34,12 +44,17 @@ end
 
 
 # start jekyll
-task :jekyll do
+task :docs do
 	puts
 	puts "#{HR}"
-	puts "STARTING JEKYLL..."
+	puts "Building Hologram Docs...".yellow
 	puts "#{HR}"
-	sh "jekyll serve -s #{JEKYLL_DIR} --watch"
+	sh "hologram" do |ok, status|
+		if ! ok
+			puts "#{status}"
+			fail "Could not build hologram docs (status = #{status.exitstatus})"
+		end
+	end
 end
 
 
@@ -47,10 +62,10 @@ end
 task :default do
 
     Rake::Task['compile'].execute
-    Rake::Task['jekyll'].execute
+    Rake::Task['docs'].execute
 
     puts
-    puts "YOU BUILD IS SUCCESS"
+    puts "BUILD COMPLETE".green
     puts
 end
 
