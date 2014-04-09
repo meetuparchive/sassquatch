@@ -159,6 +159,20 @@ Class          | Example
 }
 
 
+/*doc
+---
+title: Vertical alignment
+name: valignModifiers
+category: Modifiers
+---
+
+Class           | Example
+----------------| ----------------------------------------------------
+`valign-top`    | <div class="inline-block guide-shade valign-top">Example div</div>
+`valign-middle` | <div class="inline-block guide-shade valign-middle">Example div</div>
+`valign-bottom` | <div class="inline-block guide-shade valign-bottom">Example div</div>
+
+*/
 .valign-top {
 	vertical-align: top;
 }
