@@ -27,7 +27,7 @@
 			</div>
 
 			<h4><%= title %></h4>
-			<ul class="resetList">
+			<ul id="categoryList" class="resetList small">
 				<% @blocks.each do |b| %>
 					<li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
 				<% end %>

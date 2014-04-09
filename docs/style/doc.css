@@ -79,7 +79,7 @@ code {
   margin-bottom: 8px;
 }
 
-.codeExample .line > div:after {
+.codeExample > .line > div:after {
 content: attr(class);
 display: block;
 min-height: 40px;
@@ -126,6 +126,7 @@ header h1 {
 }
 #content {
 	width: 68%;
+	margin-top: -58px;
 }
 
 #mainNav a {
@@ -140,6 +141,10 @@ header h1 {
 	text-decoration: none;
 	background-color: rgb(226,55,60);
 	color: white;
+}
+
+#categoryList li {
+	padding-top: 4px;
 }
 
 #content > h1 {
