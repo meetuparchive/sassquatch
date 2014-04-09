@@ -1,3 +1,7 @@
+body {
+	background: rgb(240,240,240);
+}
+
 code, pre {
   font-family: "Monaco", "Consolas", "OpenSans", monospace;
   font-size: 13px;
@@ -93,6 +97,10 @@ table, table tr, table td, table th {
 
 table th {
   font-weight: bold;
+}
+
+tbody td {
+	background-color: #f7f7f7;
 }
 
 header {
