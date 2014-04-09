@@ -133,6 +133,71 @@ Useful classes for setting percentage widths on arbitary elements.
 /* }}} */
 
 /* {{{ Box Styles */
+
+/*doc
+---
+title: Doc Box
+name: docBox
+category: Layout
+---
+
+Draw rounded corner white box with default block content `margin-bottom`.
+
+```html_example
+	<div class="doc-box">
+		<p>I'm a box</p>
+	</div>
+```
+
+*/
+
+/*doc
+---
+title: Doc Content
+name: docContent
+parent: docBox
+---
+
+Provides padding for content; acts as a vertical content divider.
+
+```html_example
+	<div class="doc-box">
+		<div class="doc-content">
+			<p>first content container</p>
+		</div>
+		<div class="doc-content">
+			<p>second content container</p>
+		</div>
+	</div>
+```
+
+*/
+
+/*doc
+---
+title: Full width lists and doc-content
+name: docLists
+parent: docBox
+---
+
+You can add a `sectionList` directly inside the `doc-box` in order to
+to span the full width of the box, and use `doc-content` for padded content:
+
+```html_example
+	<div class="doc-box">
+		<div class="doc-content">
+			<h3>Cat name ideas</h3>
+		</div>
+		<ul class="sectionList">
+			<li><p>Jennifer</p></li>
+			<li><p>Sergei</p></li>
+			<li><p>Bruce Springsteen</p></li>
+			<li><p>Mittens</p></li>
+		</ul>
+	</div>
+```
+
+*/
 .doc-box {
 	@include round($defaultRadius);
 	background-color: #fff;
@@ -257,7 +322,32 @@ Useful classes for setting percentage widths on arbitary elements.
 
 /* {{{ layout  modifiers */
 
-/* clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ */
+/*doc 
+---
+title: Float Clearing
+name: clearfix
+category: Layout
+---
+
+Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ 
+
+```html_example
+
+	<!-- preferred method -->
+	<div class="clearfix">
+		<div style="float: left;" class="shaded-red">Floated div</div>
+		<div style="float: right;" class="shaded-red">Floated div</div>
+	</div>
+
+	<!-- optional method -->
+	<div>
+		<div style="float: left;" class="shaded-red">Floated div</div>
+		<div style="float: right;" class="shaded-red">Floated div</div>
+		<br class="clear-both" />
+	</div>
+```
+ 
+*/
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -274,6 +364,22 @@ Useful classes for setting percentage widths on arbitary elements.
 	clear: both;
 }
 
+
+/*doc
+---
+title: Rounding Corners
+name: rounding
+category: Layout
+---
+
+```html_example
+	<div class="rounded-top shaded-red align-center"><p>rounded-top</p></div>
+	<div class="rounded-bottom shaded-red align-center"><p>rounded-bottom</p></div>
+	<div class="rounded-left shaded-red align-center"><p>rounded-left</p></div>
+	<div class="rounded-right shaded-red align-center"><p>rounded-right</p></div>
+	<div class="rounded-all shaded-red align-center"><p>rounded-all</p></div>
+```
+*/
 .rounded-top {
 	@include round($defaultRadius,$defaultRadius,0,0);
 }
@@ -291,7 +397,7 @@ Useful classes for setting percentage widths on arbitary elements.
 }
 /* }}} */
 
-/* {{{ doc-content types */
+/* {{{ doc-content types TODO: DEPRECATE THIS */
 
 /**
 * Notice
