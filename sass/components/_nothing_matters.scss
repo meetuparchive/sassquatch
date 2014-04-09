@@ -1,0 +1,26 @@
+/**
+* COOL NEW COMPONENT
+* (or an old component we never documented)
+*/
+
+.willh {
+	display: block;
+	margin: 16px;
+	outline: 3px dotted lime;
+	text-indent: -100%;
+	width: 400px;
+	height: 400px;
+	background: url(http://photos1.meetupstatic.com/photos/event/2/f/4/c/600_17292108.jpeg) no-repeat left center;
+}
+
+.willh--dance {
+	width: 497px;
+	height: 316px;
+	background: url(https://gimmebar-assets.s3.amazonaws.com/5231fbcef02da.gif) no-repeat center center;
+}
+
+.willh--existential {
+	width: 364px;
+	height: 273px;
+	background: url(https://gimmebar-assets.s3.amazonaws.com/52e6d3e6115ce.gif) no-repeat center center;
+}
