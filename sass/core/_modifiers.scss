@@ -159,6 +159,20 @@ Class          | Example
 }
 
 
+/*doc
+---
+title: Vertical alignment
+name: valignModifiers
+category: Modifiers
+---
+
+Class           | Example
+----------------| ----------------------------------------------------
+`valign-top`    | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-top">inline-block span</span></p>
+`valign-middle` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-middle">inline-block span</span></p>
+`valign-bottom` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-bottom">inline-block span</span></p>
+
+*/
 .valign-top {
 	vertical-align: top;
 }
@@ -181,6 +195,23 @@ Class          | Example
 	vertical-align:middle;
 }
 /* }}} */
+
+
+/*doc
+---
+title: Display
+name: displayModifiers
+category: Modifiers
+---
+
+Class          | Description
+---------------| ----------------------------------------------------
+`display-none` | Sets `display` property of eleement to `none`
+`inline`       | Sets `display` property of element to `inline`
+`inline-block` | Sets `display` property of element to `inline-block`
+`hidden`       | Sets `visibility` property of element to `hidden`
+
+*/
 .display-none {
 	display: none;
 }
@@ -196,6 +227,25 @@ Class          | Example
 .inline-block {
     @include inlineblock();
 }
+
+
+/*doc
+---
+title: Typography
+name: typographyModifiers
+category: Modifiers
+---
+
+Class          | Example
+---------------| ----------------------------------------------------
+`muted`        | <p class="muted">Example paragraph</p>
+`bold`         | <p class="bold">Example paragraph</p>
+`italic`       | <p class="italic">Example paragraph</p>
+`caps`         | <p class="caps">Example paragraph</p>
+`small`        | <p class="small">Example paragraph</p>
+`big`          | <p class="big">Example paragraph</p>
+
+*/
 .muted {
 	@include color_textTertiary();
 
@@ -228,12 +278,44 @@ Class          | Example
     // what is this used for?
 	@include opacity(.25);
 }
+
 .border-none {
 	border-width: 0 !important;
 }
-// http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
-// Removed the `word-break: break-all` because it breaks ALL the words, not just
-// the long ones.
+
+
+/*doc
+---
+title: Text Wrap
+name: textwrapModifiers
+category: Modifiers
+---
+
+#### Wrap Nice
+Removed the `word-break: break-all` because it breaks ALL the words, not just
+the long ones.
+(http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)
+
+```html_example
+	<p class="wrapNice" style="width: 460px;">
+		Beef ribs voluptate kevin pork chop pastrami dolore est. 
+		Spare ribs leberkas cow dolore pork loin reallyLongWordThatWeWantToWrapWhenUsingTheWrapNiceClass 
+		exercitation dolore shoulder. T-bone capicola corned beef, aliqua quis tri-tip exercitation tenderloin. 
+	</p>
+```
+
+#### Ellipsize
+Useful for truncating text in fixed or variable-width elements with only enough room
+for one line of text.
+
+```html_example
+	<p class="ellipsize" style="width: 340px;">
+		Beef ribs voluptate kevin pork chop pastrami dolore est.
+		Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+	</p>
+```
+
+*/
 .wrapNice {
  // Non standard for webkit
  word-break: break-word;
@@ -243,7 +325,6 @@ Class          | Example
     -ms-hyphens: auto;
         hyphens: auto;
 }
-
 .ellipsize{
     display: block;
     overflow: hidden;
@@ -251,6 +332,21 @@ Class          | Example
     white-space: nowrap;
 }
 
+
+/*doc
+---
+title: Links
+name: linkModifiers
+category: Modifiers
+---
+
+TODO: this looks broken
+
+```html_example
+	<a class="unlink">It's a link, but it doesn't look like one</a>
+```
+
+*/
 a.unlink{
 	&:link, &:visited {
 		@include color_textSecondary();
@@ -262,6 +358,22 @@ a.unlink{
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
+
+/*doc
+---
+title: JS Helpers
+name: jsModifiers
+category: Modifiers
+---
+
+Class                | Description
+---------------------| ----------------------------------------------------
+`block-if-js`        | Sets `display` property to `block` if user has JS
+`inline-if-js`       | Sets `display` property to `inline` if user has JS
+`inline-block-if-js` | Sets `display` property to `inline-block` if user has JS
+`hide-if-js`         | Sets `display` property to `none` if user has JS
+
+*/
 .block-if-js,
 .inline-if-js,
 .inline-block-if-js,

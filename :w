@@ -21,25 +21,22 @@ A `.line` or `.line-gutters` is a row, and a `.unit` is a column.
 ```html_example
 	<div class="line">
 		<div class="unit size1of3">
-			<p class="shaded">...first column...</p>
+			<p class="highlighted">...first column...</p>
 		</div>
 		<div class="unit size1of3">
 			<p class="highlighted">...second column...</p>
 		</div>
 		<div class="lastUnit">
-			<p class="shaded-red">...third column...</p>
+			<p class="highlighted">...third column...</p>
 		</div>
 	</div>
 
 	<div class="line-gutters">
-		<div class="unit size1of3">
-			<p class="shaded">...first column...</p>
-		</div>
-		<div class="unit size1of3">
-			<p class="highlighted">...second column...</p>
+		<div class="unit size2of3">
+			<p class="highlighted">...first column...</p>
 		</div>
 		<div class="lastUnit">
-			<p class="shaded-red">...third column...</p>
+			<p class="highlighted">...third column...</p>
 		</div>
 	</div>
 ```
@@ -103,26 +100,8 @@ A number of size classes are available:
 }
 /* }}} */
 
-/* {{{ Width Modifiers */
-
-/*doc
----
-title: Width Modifiers
-name: widthModifiers
-category: Layout
----
-
-Useful classes for setting percentage widths on arbitary elements.
-
-```html_example
-	<p class="span-25 shaded-red">span-25</p>
-	<p class="span-30 shaded-red">span-30</p>
-	<p class="span-50 shaded-red">span-50</p>
-	<p class="span-60 shaded-red">span-60</p>
-	<p class="span-75 shaded-red">span-75</p>
-	<p class="span-100 shaded-red">span-100</p>
-```
-
+/** {{{ Width Modifiers
+* (arbitrary percentage of parent; outside grid system patterns)
 */
 .span-25 { width: 25%; }
 .span-30 { width: 30%; }

@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Sassquatch: Lists</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/2515859023212528392/whitney.css" type="text/css" />
+		<link rel="stylesheet" href="./style/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body>
+
+	<header>
+		<h1>Sassquatch</h1>
+	</header>
+
+	<div id="pageWrap" class="clearfix">
+
+		<nav id="mainNav">
+			<div class="doc-box">
+				<ul class="resetList">
+					
+						<li class="">
+							<a href="content_patterns.html">Content Patterns</a>
+						</li>
+					
+						<li class="">
+							<a href="modifiers.html">Modifiers</a>
+						</li>
+					
+						<li class="selected">
+							<a href="lists.html">Lists</a>
+						</li>
+					
+						<li class="">
+							<a href="buttons.html">Buttons</a>
+						</li>
+					
+						<li class="">
+							<a href="layout.html">Layout</a>
+						</li>
+					
+				</ul>
+			</div>
+
+			<h4>Lists</h4>
+			<ul id="categoryList" class="resetList small">
+				
+					<li><a href="#dividedList">Divided List</a></li>
+				
+					<li><a href="#paddedList">Padded List</a></li>
+				
+					<li><a href="#secitonList">Secion List</a></li>
+				
+					<li><a href="#list">Standard List</a></li>
+				
+					<li><a href="#crumbList">Breadcrumb List</a></li>
+				
+					<li><a href="#inlineBlockList">Inline-block List</a></li>
+				
+					<li><a href="#inlineList">Inline List</a></li>
+				
+					<li><a href="#pipeList">Pipe List</a></li>
+				
+					<li><a href="#resetList">Reset List</a></li>
+				
+			</ul>
+		</nav>
+
+		<section id="content">
+<h1 id="dividedList">Divided List</h1>
+
+<p>List items in <code>dividedList</code> expect block-level elements, like <code>p</code> or <code>img</code>.
+<code>dividedList</code> and <code>paddedList</code> usually live inside a <code>doc-content</code> wrapper.</p>
+<div class="codeExample"><div class="exampleOutput">    <div class="doc-box">
+        <div class="doc-content">
+            <ul class="dividedList">
+                <li><p>Eggs</p></li>
+                <li><p>Milk</p></li>
+                <li><p>Beer</p></li>
+            </ul>
+        </div>
+    </div>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-content&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dividedList&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;p&gt;</span>Eggs<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;p&gt;</span>Milk<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;p&gt;</span>Beer<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2 id="paddedList">Padded List</h2>
+
+<p>The <code>paddedList</code> pattern is the same as <code>dividedList</code>, but without borders.</p>
+<div class="codeExample"><div class="exampleOutput">    <div class="doc-box">
+        <div class="doc-content">
+            <ul class="paddedList">
+                <li><p>Eggs</p></li>
+                <li><p>Milk</p></li>
+                <li><p>Beer</p></li>
+            </ul>
+        </div>
+    </div>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-content&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;paddedList&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;p&gt;</span>Eggs<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;p&gt;</span>Milk<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;p&gt;</span>Beer<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2 id="secitonList">Secion List</h2>
+
+<p>A type of <code>dividedList</code> pattern that directly divides a <code>doc-box</code> without a <code>doc-content</code> element.</p>
+<div class="codeExample"><div class="exampleOutput">    <div class="doc-box">
+        <ul class="dividedList">
+            <li><p>Eggs</p></li>
+            <li><p>Milk</p></li>
+            <li><p>Beer</p></li>
+        </ul>
+    </div>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;doc-box&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dividedList&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Eggs<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Milk<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Beer<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h1 id="list">Standard List</h1>
+<div class="codeExample"><div class="exampleOutput">    <ul>
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Beer</li>
+    </ul>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Beer<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h2 id="crumbList">Breadcrumb List</h2>
+<div class="codeExample"><div class="exampleOutput">    <ul class="crumbList">
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Beer</li>
+    </ul>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;crumbList&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Beer<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h2 id="inlineBlockList">Inline-block List</h2>
+<div class="codeExample"><div class="exampleOutput">    <ul class="inlineblockList">
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Beer</li>
+    </ul>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;inlineblockList&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Beer<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h2 id="inlineList">Inline List</h2>
+<div class="codeExample"><div class="exampleOutput">    <ul class="inlineList">
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Beer</li>
+    </ul>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;inlineList&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Beer<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h2 id="pipeList">Pipe List</h2>
+<div class="codeExample"><div class="exampleOutput">    <ul class="pipeList">
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Beer</li>
+    </ul>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pipeList&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Beer<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h2 id="resetList">Reset List</h2>
+<div class="codeExample"><div class="exampleOutput">    <ul class="resetList">
+        <li>Eggs</li>
+        <li>Milk</li>
+        <li>Beer</li>
+    </ul>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;resetList&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Beer<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>			</section>
+		</div>
+	</body>
+</html>
