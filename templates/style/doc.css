@@ -129,11 +129,14 @@ header h1 {
 }
 
 #mainNav a {
-	display: block;
-	padding: 8px 16px;
 	color: rgb(226,55,60);
 }
-#mainNav a:hover {
+#mainNav .doc-box a {
+	display: block;
+	padding: 8px 16px;
+}
+#mainNav .doc-box a:hover,
+#mainNav .doc-box .selected a {
 	text-decoration: none;
 	background-color: rgb(226,55,60);
 	color: white;
