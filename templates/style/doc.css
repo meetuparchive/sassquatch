@@ -38,6 +38,8 @@ code {
 }
 
 .codeExample:before {
+  font-family: "Monaco", "Consolas", "OpenSans", monospace;
+  font-size: 13px;
   content: "Example";
   background-color: #f9f9f9;
   width: 60px;
