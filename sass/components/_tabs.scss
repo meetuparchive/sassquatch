@@ -1,5 +1,32 @@
-/**
-* Tabs Pattern
+/*doc
+---
+title: Tabs
+name: tabs
+category: Navigation
+---
+
+Rounded tab navigation. Used mostly as secondary navigation on Meetup.
+
+```html_example
+	<ul class="nav-tabs">
+		<li><a href="#">Upcoming Meetups</a></li>
+		<li><a href="#">Past Meetups</a></li>
+		<li class="selected"><a href="#">Selected tab</a></li>
+	</ul>
+
+	<div class="doc-box">
+		<div class="doc-content">
+			<ul class="nav-tabs">
+				<li><a href="#">Upcoming Meetups</a></li>
+				<li><a href="#">Past Meetups</a></li>
+				<li class="selected"><a href="#">Selected tab</a></li>
+			</ul>
+			<h4>Look at this tab content</h4>
+			<p>Just look at it</p>
+		</div>
+	</div>
+```
+
 */
 
 $tabSpacing: $spacing/2;
