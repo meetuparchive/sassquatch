@@ -13,9 +13,8 @@ $pillBaseSize: 11px;
 %_pill_label_base {
 	@extend %_pill_text_base;
 	@include round($defaultRadius);
-
 	padding: $pillBaseSize/4 $pillBaseSize/2;
-	margin: 0 $pillBaseSize/4;
+	margin-right: $pillBaseSize/4;
 }
 
 
@@ -26,11 +25,11 @@ $pillBaseSize: 11px;
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin solid_pill( $bgColor: $C_secondaryGray, $textColor: "" ) {
+@mixin solid_pill( $bgColor: $C_secondaryGray, $textColor: false ) {
 
 	@extend %_pill_label_base;
 
-	@if $textColor == "" {
+	@if not $textColor {
 		$textColor: getPrimaryTextColor($bgColor);
 	}
 
@@ -50,6 +49,6 @@ $pillBaseSize: 11px;
 
 	@extend %_pill_label_base;
 
-	border: 1px solid $color;
 	color: $color;
+	border: 1px solid;
 }
