@@ -2,15 +2,17 @@
 * Pill Label factory mixins
 * ------------------------------------------
 */
-
-%_pill_label_base {
+%_pill_text_base {
 	$size: 11px;
-
-	@include round($defaultRadius);
-
 	font-size: $size;
 	text-transform: uppercase;
 	font-variant: small-caps;
+}
+
+%_pill_label_base {
+	@extend %_pill_text_base;
+	@include round($defaultRadius);
+
 	padding: $size/4 $size/2;
 	margin: 0 $size/4;
 }
