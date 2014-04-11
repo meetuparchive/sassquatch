@@ -46,18 +46,18 @@ end
 task :hologram do
 	
 	# desktop
-	#Dir.chdir("#{DOC_SRC_DESKTOP}") do
-		#puts
-		#puts "#{HR}"
-		#puts "Building Hologram docs for desktop...".yellow
-		#puts "#{HR}"
-		#sh "hologram" do |ok, status|
-			#if ! ok
-				#puts "#{status}"
-				#fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
-			#end
-		#end
-	#end
+	Dir.chdir("#{DOC_SRC_DESKTOP}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for desktop...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
 
 	# mobile
 	Dir.chdir("#{DOC_SRC_MOBILE}") do
