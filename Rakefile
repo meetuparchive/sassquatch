@@ -1,23 +1,20 @@
 require 'colorize'
 
-COMPILER    = "sass"
-SOURCES     = "sass/"
-DOC_ASSETS  = "templates/"
-TARGET      = "#{DOC_ASSETS}/style/"
-HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
-
+COMPILER          = "sass"
+SOURCES           = "sass/"
+DOC_SRC_DESKTOP   = "hologram/desktop/"
+DOC_SRC_MOBILE    = "hologram/mobile/"
+HR                = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 # compile sass & copy files into build/
-task :compile do
-	
-	Dir.mkdir(TARGET) unless Dir.exists?(TARGET)
+task :sass do
 
 	# desktop
 	puts
 	puts "#{HR}"
 	puts "Compiling Sassquatch for desktop".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style=compressed" do |ok, status|
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{DOC_SRC_DESKTOP}/sassquatch.css --style=expanded" do |ok, status|
 		if ! ok
 			fail "Could not compile Sassquatch (status = #{status.exitstatus})".red
 		end
@@ -28,7 +25,7 @@ task :compile do
 	puts "#{HR}"
 	puts "Compiling Sassquatch for mobile".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed" do |ok, status|
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{DOC_SRC_MOBILE}/sassquatch.css --style=expanded" do |ok, status|
 		if ! ok
 			fail "Could not compile Sassquatch Mobile (status = #{status.exitstatus})"
 		end
@@ -43,26 +40,45 @@ task :compile do
 end
 
 
-# start jekyll
-task :docs do
-	puts
-	puts "#{HR}"
-	puts "Building Hologram Docs...".yellow
-	puts "#{HR}"
-	sh "hologram" do |ok, status|
-		if ! ok
-			puts "#{status}"
-			fail "Could not build hologram docs (status = #{status.exitstatus})"
+# compile hologram docs
+task :hologram do
+	
+	# desktop
+	Dir.chdir("#{DOC_SRC_DESKTOP}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for desktop...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
+			end
 		end
 	end
+
+	# mobile
+	Dir.chdir("#{DOC_SRC_MOBILE}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for mobile...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build mobile hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
+
 end
 
 
 # local dev build
 task :default do
 
-    Rake::Task['compile'].execute
-    Rake::Task['docs'].execute
+    Rake::Task['sass'].execute
+    Rake::Task['hologram'].execute
 
     puts
     puts "BUILD COMPLETE".green
