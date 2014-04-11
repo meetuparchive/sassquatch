@@ -1,10 +1,12 @@
 require 'colorize'
 
-COMPILER          = "sass"
-SOURCES           = "sass/"
-DOC_SRC_DESKTOP   = "hologram/desktop/"
-DOC_SRC_MOBILE    = "hologram/mobile/"
-HR                = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+COMPILER           = "sass"
+SOURCES            = "sass/"
+DOC_SRC_DESKTOP    = "hologram/desktop/"
+DOC_SRC_MOBILE     = "hologram/mobile/"
+CSS_TARGET_DESKTOP = "#{DOC_SRC_DESKTOP}sassquatch/sassquatch.css"
+CSS_TARGET_MOBILE  = "#{DOC_SRC_MOBILE}sassquatch/sassquatch.css"
+HR                 = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 # compile sass & copy files into build/
 task :sass do
@@ -14,7 +16,7 @@ task :sass do
 	puts "#{HR}"
 	puts "Compiling Sassquatch for desktop".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{DOC_SRC_DESKTOP}/sassquatch.css --style=expanded" do |ok, status|
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{CSS_TARGET_DESKTOP} --style=expanded" do |ok, status|
 		if ! ok
 			fail "Could not compile Sassquatch (status = #{status.exitstatus})".red
 		end
@@ -25,7 +27,7 @@ task :sass do
 	puts "#{HR}"
 	puts "Compiling Sassquatch for mobile".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{DOC_SRC_MOBILE}/sassquatch.css --style=expanded" do |ok, status|
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{CSS_TARGET_MOBILE} --style=expanded" do |ok, status|
 		if ! ok
 			fail "Could not compile Sassquatch Mobile (status = #{status.exitstatus})"
 		end
@@ -44,18 +46,18 @@ end
 task :hologram do
 	
 	# desktop
-	Dir.chdir("#{DOC_SRC_DESKTOP}") do
-		puts
-		puts "#{HR}"
-		puts "Building Hologram docs for desktop...".yellow
-		puts "#{HR}"
-		sh "hologram" do |ok, status|
-			if ! ok
-				puts "#{status}"
-				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
-			end
-		end
-	end
+	#Dir.chdir("#{DOC_SRC_DESKTOP}") do
+		#puts
+		#puts "#{HR}"
+		#puts "Building Hologram docs for desktop...".yellow
+		#puts "#{HR}"
+		#sh "hologram" do |ok, status|
+			#if ! ok
+				#puts "#{status}"
+				#fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
+			#end
+		#end
+	#end
 
 	# mobile
 	Dir.chdir("#{DOC_SRC_MOBILE}") do
