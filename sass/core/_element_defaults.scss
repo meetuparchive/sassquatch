@@ -243,6 +243,45 @@ the whitespace on the bottom).
 }
 
 @if $platform == "mobile" {
+
+/*doc
+---
+title: Element defaults
+name: defaults
+category: Base CSS
+---
+
+We don't reset base tags, we _set_ them. For good typography, just
+use good markup. The approprite semantic heading level, for example, should
+match up with the appropriate visual style.
+
+All block level content tags, like `<p>` have the same `margin-bottom`. This
+ensures good vertical flow, and also gives us a standard for our content
+containers. The `doc-content` content container for example, has padding on
+all sides but the bottom (because the margin on the last block element provides
+the whitespace on the bottom).
+
+<p class="highlighted">For a full example of element defaults see the Sassquatch <a href="#">type specimen</a>.</p>
+
+```html_example
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 5</h6>
+	<img src="http://placekitten.com/80/80" />
+	<p>I'm a paragraph with <strong>strong</strong> things to say with <em>emphasis</em></p>
+	<ul>
+		<li>list item</li>
+		<li>list item</li>
+	</ul>
+	<p>Another paragraph with some <sup>super</sup> inline tags. We take the <sub>sub</sub>way to work. Let's put a <a href="#">link</a> in here.</p>
+```
+
+*/
+
+
 	/* {{{ RESETS, 	NOTE: this is most likely diff from full site sassquatch, 
 					we are using boilerplate that comes with mobile resets */
 
