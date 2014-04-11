@@ -7,6 +7,8 @@
 
 	<span class="pill-label--paid">paid</span>
 	<span class="pill-label--unpaid">unpaid</span>
+
+	<span class="pill-label--text">plain text</span>
 </p>
 
 	
