@@ -238,7 +238,7 @@
 
 	.touchList-attendee-role {
 		@extend %textTruncate;
-		font-size: $smallFontSize
+		font-size: $smallFontSize;
 		@include color_textTertiary;
 		line-height: $LH_standard;
 	}
