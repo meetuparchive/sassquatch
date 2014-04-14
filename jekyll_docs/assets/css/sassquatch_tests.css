@@ -2985,7 +2985,6 @@ as well as a few different states/types:
   border-width: 0 !important; }
 
 .wrapNice {
-  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
