@@ -1,9 +1,56 @@
-/* List modifiers */
+/*doc
+---
+title: Standard List
+name: list
+category: Lists
+---
+
+```html_example
+	<ul>
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+
+
+/*doc
+---
+title: Reset List
+name: resetList
+parent: list
+---
+
+```html_example
+	<ul class="resetList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 .resetList {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 }
+
+/*doc
+---
+title: Inline List
+name: inlineList
+parent: list
+---
+
+```html_example
+	<ul class="inlineList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 .inlineList, .inlineblockList, .pipeList, .crumbList {
 	padding-left: 0;
 }
@@ -11,10 +58,42 @@
 	display: inline;
 	list-style: none;
 }
+
+/*doc
+---
+title: Inline-block List
+name: inlineBlockList
+parent: list
+---
+
+```html_example
+	<ul class="inlineblockList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 .inlineblockList > li {
     display: inline-block;
 	list-style: none;
 }
+
+/*doc
+---
+title: Pipe List
+name: pipeList
+parent: list
+---
+
+```html_example
+	<ul class="pipeList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 .pipeList > li {
 	margin-right: 0.5em;
 	padding-right: 0.5em;
@@ -23,6 +102,22 @@
 		border-right-width: 0;	
 	}
 }
+
+/*doc
+---
+title: Breadcrumb List
+name: crumbList
+parent: list
+---
+
+```html_example
+	<ul class="crumbList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 .crumbList > li {
 	margin-right: 0.75em;
 	&:after {
@@ -35,6 +130,28 @@
 	}
 }
 
+/*doc
+---
+title: Divided List
+name: dividedList
+category: Lists
+---
+
+List items in `dividedList` expect block-level elements, like `p` or `img`.
+`dividedList` and `paddedList` usually live inside a `doc-content` wrapper.
+
+```html_example
+	<div class="doc-box">
+		<div class="doc-content">
+			<ul class="dividedList">
+				<li><p>Eggs</p></li>
+				<li><p>Milk</p></li>
+				<li><p>Beer</p></li>
+			</ul>
+		</div>
+	</div>
+```
+*/
 .paddedList, .dividedList, .sectionList {
 	list-style: none;
 	padding: 0;
@@ -43,6 +160,28 @@
 		margin: 0;
 	}
 }
+
+/*doc
+---
+title: Padded List
+name: paddedList
+parent: dividedList
+---
+
+The `paddedList` pattern is the same as `dividedList`, but without borders.
+
+```html_example
+	<div class="doc-box">
+		<div class="doc-content">
+			<ul class="paddedList">
+				<li><p>Eggs</p></li>
+				<li><p>Milk</p></li>
+				<li><p>Beer</p></li>
+			</ul>
+		</div>
+	</div>
+```
+*/
 .paddedList > li {
 	padding: $spacing/2 0 0 0;
 	&:first-child {
@@ -55,6 +194,25 @@
 	border-top: 1px solid $C_line_less;
 }
 
+/*doc
+---
+title: Secion List
+name: secitonList
+parent: dividedList
+---
+
+A type of `dividedList` pattern that directly divides a `doc-box` without a `doc-content` element.
+
+```html_example
+	<div class="doc-box">
+		<ul class="dividedList">
+			<li><p>Eggs</p></li>
+			<li><p>Milk</p></li>
+			<li><p>Beer</p></li>
+		</ul>
+	</div>
+```
+*/
 .sectionList > li{
 	padding: $baseline $baseline ($baseline - $spacing);
 	border-top: 1px solid $C_line_less;

@@ -1,65 +1,89 @@
-COMPILER    = "sass"
-SOURCES     = "sass/"
-TARGET      = "css"
-JEKYLL_DIR  = "jekyll_docs"
-DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
-HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+require 'colorize'
 
-# compile sass & copy files into build/
-task :compile do
+COMPILER           = "sass"
+SOURCES            = "sass/"
+DOC_SRC_DESKTOP    = "hologram/desktop/"
+DOC_SRC_MOBILE     = "hologram/mobile/"
+CSS_TARGET_DESKTOP = "#{DOC_SRC_DESKTOP}sassquatch/sassquatch.css"
+CSS_TARGET_MOBILE  = "#{DOC_SRC_MOBILE}sassquatch/sassquatch.css"
+HR                 = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
-	Dir.mkdir(TARGET) unless Dir.exists?(TARGET)
+desc "compiles sass"
+task :sass do
 
 	# desktop
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for desktop"
+	puts "Compiling Sassquatch for desktop".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{CSS_TARGET_DESKTOP} --style=expanded" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch (status = #{status.exitstatus})".red
+		end
+	end
 
 	# mobile
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for mobile"
+	puts "Compiling Sassquatch for mobile".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{CSS_TARGET_MOBILE} --style=expanded" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch Mobile (status = #{status.exitstatus})"
+		end
+	end
 
-	# tests
-	puts
-	puts "#{HR}"
-	puts "Compiling tests"
-	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
-
-	# compile docs
-	puts
-	puts "#{HR}"
-	puts "Building docs"
-	puts "#{HR}"
-	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
-	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "jekyll build -s #{JEKYLL_DIR}"
+	## tests
+	#puts
+	#puts "#{HR}"
+	#puts "Compiling tests"
+	#puts "#{HR}"
+	#sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
 end
 
 
-# start jekyll
-task :jekyll do
-	puts
-	puts "#{HR}"
-	puts "STARTING JEKYLL..."
-	puts "#{HR}"
-	sh "jekyll serve -s #{JEKYLL_DIR} --watch"
+desc "compiles hologram docs"
+task :hologram do
+	
+	# desktop
+	Dir.chdir("#{DOC_SRC_DESKTOP}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for desktop...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
+
+	# mobile
+	Dir.chdir("#{DOC_SRC_MOBILE}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for mobile...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build mobile hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
+
 end
 
 
-# local dev build
+desc "local dev build (compile sass and hologram docs)"
 task :default do
 
-    Rake::Task['compile'].execute
-    Rake::Task['jekyll'].execute
+    Rake::Task['sass'].execute
+    Rake::Task['hologram'].execute
 
     puts
-    puts "YOU BUILD IS SUCCESS"
+    puts "BUILD COMPLETE".green
     puts
 end
 

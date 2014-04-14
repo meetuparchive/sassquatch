@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Sassquatch: Buttons</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/2515859023212528392/whitney.css" type="text/css" />
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body>
+
+	<header>
+		<h1>Sassquatch</h1>
+	</header>
+
+	<div id="pageWrap" class="clearfix">
+
+		<nav id="mainNav">
+			<div class="doc-box">
+				<ul class="resetList">
+					
+						<li class="">
+							<a href="navigation.html">Navigation</a>
+						</li>
+					
+						<li class="">
+							<a href="content_patterns.html">Content Patterns</a>
+						</li>
+					
+						<li class="">
+							<a href="layout.html">Layout</a>
+						</li>
+					
+						<li class="">
+							<a href="base_css.html">Base CSS</a>
+						</li>
+					
+						<li class="">
+							<a href="modifiers.html">Modifiers</a>
+						</li>
+					
+						<li class="">
+							<a href="lists.html">Lists</a>
+						</li>
+					
+						<li class="selected">
+							<a href="buttons.html">Buttons</a>
+						</li>
+					
+						<li class="">
+							<a href="forms.html">Forms</a>
+						</li>
+					
+				</ul>
+			</div>
+
+			<h4>Buttons</h4>
+			<ul id="categoryList" class="resetList small">
+				
+					<li><a href="#flatButton">Flat Buttons</a></li>
+				
+					<li><a href="#photoButton">Photo Overlay Buttons</a></li>
+				
+					<li><a href="#primaryButton">Primary Buttons</a></li>
+				
+					<li><a href="#secondaryButton">Secondary Buttons</a></li>
+				
+			</ul>
+		</nav>
+
+		<section id="content">
+<h1 id="flatButton">Flat Buttons</h1>
+
+<p>Flat buttons should almost always be used for <code>&lt;a&gt;</code> elements.</p>
+<div class="codeExample"><div class="exampleOutput">    <a href="#" class="button-flat">Button</a>
+    <a href="#" class="button-flat--white">Button</a>
+    <a href="#" class="button-flat--black">Button</a>
+    <a href="#" class="button-flat--red">Button</a>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;button-flat&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;button-flat--white&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;button-flat--black&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;button-flat--red&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+</pre></div></div></div>
+<h1 id="photoButton">Photo Overlay Buttons</h1>
+
+<p>Use the photo overlay buttons on <code>&lt;a&gt;</code> elements that sit on
+top of a background photo.</p>
+<div class="codeExample"><div class="exampleOutput">    <a href="#" class="button-photo">Button</a>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;button-photo&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+</pre></div></div></div>
+<h1 id="primaryButton">Primary Buttons</h1>
+
+<p>Button styles can be applied to any element. Typically you&#39;ll want
+to use either a <code>&lt;button&gt;</code> or an <code>&lt;a&gt;</code> element:</p>
+
+<p>Use primary buttons for primary actions.</p>
+<div class="codeExample"><div class="exampleOutput">    <button class="button--primary">Button</button>
+    <button class="button--black">Button</button>
+    <button class="button--white">Button</button>
+    <button class="button--blue">Button</button>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;button--primary&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;button--black&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;button--white&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;button--blue&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+</pre></div></div></div>
+<h1 id="secondaryButton">Secondary Buttons</h1>
+
+<p>Button styles can be applied to any element. Typically you&#39;ll want
+to use either a <code>&lt;button&gt;</code> or an <code>&lt;a&gt;</code> element:</p>
+
+<p>Secondary buttons are slightly transparent so they appear to take on
+a little bit of the background color behind them.</p>
+<div class="codeExample"><div class="exampleOutput">    <button class="button">Button</button>
+    <a class="button" href="#">Anchor</a>
+</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Anchor<span class="nt">&lt;/a&gt;</span>
+</pre></div></div></div>			</section>
+		</div>
+	</body>
+</html>

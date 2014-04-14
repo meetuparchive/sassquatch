@@ -1,4 +1,21 @@
 /* {{{ Typography modifiers */
+
+/*doc
+---
+title: Highlighting
+name: highlightModifiers
+category: Modifiers
+---
+
+Class               | Example
+--------------------| -----------------------------------------------
+`debug`             | <p class="debug">Example paragraph</p>
+`highlighted`       | <p class="highlighted">Example paragraph</p>
+`shaded`            | <p class="shaded">Example paragraph</p>
+`shaded-lighter`    | <p class="shaded-lighter">Example paragraph</p>
+`shaded-red`        | <p class="shaded-red">Example paragraph</p>
+
+*/
 .debug {
 	outline: 1px dotted red;
 	background: pink;
@@ -10,7 +27,6 @@
         content: "DEBUG: ";
     }
 }
-
 .highlighted {
 	background: $C_yellow;
 }
@@ -36,9 +52,30 @@
 		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b
 		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
 }
+
+
+/*doc
+---
+title: Padding
+name: paddingModifiers
+category: Modifiers
+---
+
+Class            | Example
+-----------------| -------------------------------------------------------------------------
+`padding-left`   | <div class="inline-block guide-shade padding-left">Example div</div>
+`padding-right`  | <div class="inline-block guide-shade padding-right">Example div</div>
+`padding-top`    | <div class="inline-block guide-shade padding-top">Example div</div>
+`padding-bottom` | <div class="inline-block guide-shade padding-bottom">Example div</div>
+`papdding-all`   | <div class="inline-block guide-shade padding-all">Example div</div>
+`papdding-none`  | <div class="inline-block guide-shade padding-none">Example div</div>
+
+*/
+.padding-top,
 .leading-top {
 	padding-top: $spacing;
 }
+.padding-bottom,
 .leading-bottom {
 	padding-bottom: $spacing;
 }
@@ -58,9 +95,25 @@
 .padding-all {
 	padding: $spacing;
 }
-.margin-all{
-	margin:$spacing;
-}
+
+
+/*doc
+---
+title: Margin
+name: marginModifiers
+category: Modifiers
+---
+
+Class           | Example
+----------------| ---------------------------------------------------------------------
+`margin-left`   | <div class="inline-block guide-shade margin-left">Example dif</div>
+`margin-right`  | <div class="inline-block guide-shade margin-right">Example dif</div>
+`margin-top`    | <div class="inline-block guide-shade margin-top">Example dif</div>
+`margin-bottom` | <div class="inline-block guide-shade margin-bottom">Example div</div>
+`margin-all`    | <div class="inline-block guide-shade margin-all">Example div</div>
+`margin-none`   | <div class="inline-block guide-shade margin-none">Example div</div>
+
+*/
 .margin-top {
 	margin-top: $spacing;
 }
@@ -76,9 +129,29 @@
 .margin-none {
 	margin: 0 !important;
 }
+.margin-all{
+	margin:$spacing;
+}
 
-// Flush
-// kills all spacing for a given side
+
+/*doc
+---
+title: Flushing Elements
+name: flushModifiers
+category: Modifiers
+---
+
+Removes all margin and padding on an element for a given direction.
+
+Class          | Description
+---------------| ----------------------------------------------------
+`flush--top`   | Sets `margin` and `padding` to `0` for element top
+`flush--right` | Sets `margin` and `padding` to `0` for element right
+`flush--bottom`| Sets `margin` and `padding` to `0` for element bottom
+`flush--left`  | Sets `margin` and `padding` to `0` for element left
+`flush--all`   | Sets `margin` and `padding` to `0` for all sides
+
+*/
 @mixin flush($direction) {
 	.flush--#{$direction} {
 		margin-#{$direction}: 0 !important;
@@ -94,6 +167,21 @@
 	padding: 0 !important;
 }
 
+
+/*doc
+---
+title: Text alignment
+name: talignModifiers
+category: Modifiers
+---
+
+Class          | Example
+---------------| ----------------------------------------------------
+`align-right`  | <p class="align-right">Example paragraph</p>
+`align-center` | <p class="align-center">Example paragraph</p>
+`align-left`   | <p class="align-left">Example paragraph</p>
+
+*/
 .align-right {
 	text-align: right;
 }
@@ -103,6 +191,22 @@
 .align-center {
 	text-align: center;
 }
+
+
+/*doc
+---
+title: Vertical alignment
+name: valignModifiers
+category: Modifiers
+---
+
+Class           | Example
+----------------| ----------------------------------------------------
+`valign-top`    | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-top">inline-block span</span></p>
+`valign-middle` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-middle">inline-block span</span></p>
+`valign-bottom` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-bottom">inline-block span</span></p>
+
+*/
 .valign-top {
 	vertical-align: top;
 }
@@ -125,6 +229,23 @@
 	vertical-align:middle;
 }
 /* }}} */
+
+
+/*doc
+---
+title: Display
+name: displayModifiers
+category: Modifiers
+---
+
+Class          | Description
+---------------| ----------------------------------------------------
+`display-none` | Sets `display` property of eleement to `none`
+`inline`       | Sets `display` property of element to `inline`
+`inline-block` | Sets `display` property of element to `inline-block`
+`hidden`       | Sets `visibility` property of element to `hidden`
+
+*/
 .display-none {
 	display: none;
 }
@@ -140,6 +261,25 @@
 .inline-block {
     @include inlineblock();
 }
+
+
+/*doc
+---
+title: Typography
+name: typographyModifiers
+category: Modifiers
+---
+
+Class          | Example
+---------------| ----------------------------------------------------
+`muted`        | <p class="muted">Example paragraph</p>
+`bold`         | <p class="bold">Example paragraph</p>
+`italic`       | <p class="italic">Example paragraph</p>
+`caps`         | <p class="caps">Example paragraph</p>
+`small`        | <p class="small">Example paragraph</p>
+`big`          | <p class="big">Example paragraph</p>
+
+*/
 .muted {
 	@include color_textTertiary();
 
@@ -172,12 +312,44 @@
     // what is this used for?
 	@include opacity(.25);
 }
+
 .border-none {
 	border-width: 0 !important;
 }
-// http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
-// Removed the `word-break: break-all` because it breaks ALL the words, not just
-// the long ones.
+
+
+/*doc
+---
+title: Text Wrap
+name: textwrapModifiers
+category: Modifiers
+---
+
+#### Wrap Nice
+Removed the `word-break: break-all` because it breaks ALL the words, not just
+the long ones.
+(http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)
+
+```html_example
+	<p class="wrapNice" style="width: 460px;">
+		Beef ribs voluptate kevin pork chop pastrami dolore est. 
+		Spare ribs leberkas cow dolore pork loin reallyLongWordThatWeWantToWrapWhenUsingTheWrapNiceClass 
+		exercitation dolore shoulder. T-bone capicola corned beef, aliqua quis tri-tip exercitation tenderloin. 
+	</p>
+```
+
+#### Ellipsize
+Useful for truncating text in fixed or variable-width elements with only enough room
+for one line of text.
+
+```html_example
+	<p class="ellipsize" style="width: 340px;">
+		Beef ribs voluptate kevin pork chop pastrami dolore est.
+		Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+	</p>
+```
+
+*/
 .wrapNice {
  // Non standard for webkit
  word-break: break-word;
@@ -187,7 +359,6 @@
     -ms-hyphens: auto;
         hyphens: auto;
 }
-
 .ellipsize{
     display: block;
     overflow: hidden;
@@ -195,6 +366,21 @@
     white-space: nowrap;
 }
 
+
+/*doc
+---
+title: Links
+name: linkModifiers
+category: Modifiers
+---
+
+TODO: this looks broken
+
+```html_example
+	<a class="unlink">It's a link, but it doesn't look like one</a>
+```
+
+*/
 a.unlink{
 	&:link, &:visited {
 		@include color_textSecondary();
@@ -206,6 +392,22 @@ a.unlink{
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
+
+/*doc
+---
+title: JS Helpers
+name: jsModifiers
+category: Modifiers
+---
+
+Class                | Description
+---------------------| ----------------------------------------------------
+`block-if-js`        | Sets `display` property to `block` if user has JS
+`inline-if-js`       | Sets `display` property to `inline` if user has JS
+`inline-block-if-js` | Sets `display` property to `inline-block` if user has JS
+`hide-if-js`         | Sets `display` property to `none` if user has JS
+
+*/
 .block-if-js,
 .inline-if-js,
 .inline-block-if-js,

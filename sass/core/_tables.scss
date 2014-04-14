@@ -1,5 +1,86 @@
 /* {{{ Tables */
 
+/*doc
+---
+title: Tables
+name: tables
+parent: defaults
+---
+
+Data tables should be used for tabular data.
+
+### Default table
+
+```html_example
+	<div class="doc-box">
+		<div class="doc-content">
+			<table>
+				<thead>
+					<tr>
+						<th>Event Name</th>
+						<th>RSVPs</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>2 attending</td>
+						<td><a aref="#">Nov 28, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>0 attending</td>
+						<td><a href="#">Nov 30, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>12 attending</td>
+						<td><a href="#">Dec 3, 4:30 AM</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+```
+
+### Striped Table
+
+```html_example
+	<div class="doc-box">
+		<div class="doc-content">
+			<table class="stripedTable">
+				<thead>
+					<tr>
+						<th>Event Name</th>
+						<th>RSVPs</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>2 attending</td>
+						<td><a href="#">Nov 28, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>0 attending</td>
+						<td><a href="#">Nov 30, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>12 attending</td>
+						<td><a href="#">Dec 3, 4:30 AM</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+```
+
+*/
+
 table {
 	width: 100%;
 	font-size: $baseFontSize;
