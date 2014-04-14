@@ -99,8 +99,9 @@ task :push_docs do
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
 	do_it = branch == "master" or branch == "dev"
+
 	if !do_it
-		puts "Do you want to build the docs for #{branch}? [y/n]".yellow
+		puts "do you want to build the docs for #{branch}? [y/n]".yellow
 		do_it = $stdin.gets.chomp == "y"
 	end
 
@@ -117,8 +118,8 @@ task :push_docs do
 		Rake::Task['sass'].execute
 		Rake::Task['hologram'].execute
 
-		sh "cp -r #{COMPILED_DESKTOP_DOCS} ./#{docs_path}"
-		sh "cp -r #{COMPILED_MOBILE_DOCS} ./#{docs_path}"
+		sh "mv -r #{COMPILED_DESKTOP_DOCS} ./#{docs_path}"
+		sh "mv -r #{COMPILED_MOBILE_DOCS} ./#{docs_path}"
 
 		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
