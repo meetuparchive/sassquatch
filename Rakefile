@@ -97,8 +97,8 @@ task :push_docs do
 
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
-	if branch == "master"
-		sh "git pull origin master"
+	#if branch == "master"
+		sh "git pull origin #{branch}"
 		sh "git checkout gh-pages"
 		sh "git pull origin gh-pages"
 
@@ -108,7 +108,7 @@ task :push_docs do
 		sh "git add -A"
 		sh "git commit -m \"update live docs\""
 		sh "git push origin gh-pages"
-		sh "git checkout master"
+		sh "git checkout #{branch}"
 
 
 		puts
@@ -118,9 +118,9 @@ task :push_docs do
 		puts "(sometimes github takes a few minutes to rebuild the page)\n"
 		puts "#{HR}"
 		puts
-	else
-		puts "You must be in master in order to push docs".red
-	end
+	#else
+		#puts "You must be in master in order to push docs".red
+	#end
 end
 
 #desc "rebuilds LIVE github documentation page, optional branch argument"
