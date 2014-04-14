@@ -1,12 +1,14 @@
 require 'colorize'
 
-COMPILER           = "sass"
-SOURCES            = "sass/"
-DOC_SRC_DESKTOP    = "hologram/desktop/"
-DOC_SRC_MOBILE     = "hologram/mobile/"
-CSS_TARGET_DESKTOP = "#{DOC_SRC_DESKTOP}sassquatch/sassquatch.css"
-CSS_TARGET_MOBILE  = "#{DOC_SRC_MOBILE}sassquatch/sassquatch.css"
-HR                 = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+COMPILER               = "sass"
+SOURCES                = "sass/"
+DOC_SRC_DESKTOP        = "hologram/desktop/"
+DOC_SRC_MOBILE         = "hologram/mobile/"
+CSS_TARGET_DESKTOP     = "#{DOC_SRC_DESKTOP}sassquatch/sassquatch.css"
+CSS_TARGET_MOBILE      = "#{DOC_SRC_MOBILE}sassquatch/sassquatch.css"
+COMPILED_DESKTOP_DOCS  = "doc_desktop/"
+COMPILED_MOBILE_DOCS   = "doc_mobile/"
+HR                     = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
 desc "compiles sass"
 task :sass do
@@ -111,10 +113,12 @@ task :push_docs do
 		sh "git pull origin gh-pages"
 
 		sh "git checkout #{branch} hologram/"
-		sh "cp -r hologram/ ./#{docs_path}"
 
 		Rake::Task['sass'].execute
 		Rake::Task['hologram'].execute
+
+		sh "cp -r #{COMPILED_DESKTOP_DOCS} ./#{docs_path}"
+		sh "cp -r #{COMPILED_MOBILE_DOCS} ./#{docs_path}"
 
 		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
