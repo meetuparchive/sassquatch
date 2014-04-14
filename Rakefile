@@ -94,8 +94,6 @@ task :push_docs do
 	puts "Rebuilding SassQuatch github pages"
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
-	Rake::Task['compile'].execute
-
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
 	do_it = branch == "master" or branch == "dev"
