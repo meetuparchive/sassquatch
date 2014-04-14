@@ -98,7 +98,7 @@ task :push_docs do
 
 	do_it = branch == "master" or branch == "dev"
 	if !do_it
-		puts "Do you want to build the docs for #{branch}? [y/n]"
+		puts "Do you want to build the docs for #{branch}? [y/n]".yellow
 		do_it = $stdin.gets.chomp == "y"
 	end
 
