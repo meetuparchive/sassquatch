@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
 * SASSQUATCH (desktop)
 */
@@ -354,7 +353,7 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 
 */
 .inverted {
-  color: white;
+  color: #ababab;
   color: rgba(255, 255, 255, 0.67);
 }
 .inverted ::-moz-selection {
@@ -1039,14 +1038,12 @@ fieldset legend {
 }
 
 .ie8 input, .ie9 input {
-  -moz-border-radius: 0 0 0 0;
   -webkit-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   body input {
-    -moz-border-radius: 0 0 0 0;
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0;
   }
@@ -1061,7 +1058,6 @@ input, select, textarea {
   margin-bottom: 18px;
   color: #555555;
   border: 1px solid #dddddd;
-  -moz-border-radius: 1.5px 1.5px 1.5px 1.5px;
   -webkit-border-radius: 1.5px 1.5px 1.5px 1.5px;
   border-radius: 1.5px 1.5px 1.5px 1.5px;
 }
@@ -1322,7 +1318,6 @@ input[type="submit"].button--black,
 .button--white,
 .button--blue,
 input[type="submit"].button--blue {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   display: inline-block;
@@ -1503,9 +1498,7 @@ button,
 input[type="submit"] {
   color: rgba(0, 0, 0, 0.67) !important;
   background: rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .button.button--active,
@@ -1514,13 +1507,10 @@ button.button--active,
 button:active,
 input[type="submit"].button--active,
 input[type="submit"]:active {
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
   -moz-transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
   transform: translate(0px, 2px);
 }
 .button.button--active,
@@ -1548,11 +1538,8 @@ input[type="submit"].disabled:active,
 input[type="submit"]:disabled:active {
   -moz-transform: translate(0px, 0px);
   -webkit-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .button.disabled:hover,
@@ -1569,22 +1556,17 @@ button, .inverted
 input[type="submit"] {
   color: rgba(255, 255, 255, 0.67) !important;
   background: rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .inverted
 .button:active, .inverted
 button:active, .inverted
 input[type="submit"]:active {
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 0px 0px 0px;
   -moz-transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
   transform: translate(0px, 2px);
 }
 .inverted
@@ -1628,9 +1610,7 @@ Use primary buttons for primary actions.
 .button--primary,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
-  -moz-box-shadow: #851518 0px 2px 0px 0px;
   -webkit-box-shadow: #851518 0px 2px 0px 0px;
-  -o-box-shadow: #851518 0px 2px 0px 0px;
   box-shadow: #851518 0px 2px 0px 0px;
   color: white !important;
   background: #e0393e;
@@ -1645,13 +1625,10 @@ input[type="submit"].primary.button--active,
 input[type="submit"].primary:active,
 input[type="submit"].button--primary.button--active,
 input[type="submit"].button--primary:active {
-  -moz-box-shadow: #851518 0px 0px 0px 0px;
   -webkit-box-shadow: #851518 0px 0px 0px 0px;
-  -o-box-shadow: #851518 0px 0px 0px 0px;
   box-shadow: #851518 0px 0px 0px 0px;
   -moz-transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
   transform: translate(0px, 2px);
 }
 .primary.button--active,
@@ -1691,11 +1668,8 @@ input[type="submit"].button--primary.disabled:active,
 input[type="submit"].button--primary:disabled:active {
   -moz-transform: translate(0px, 0px);
   -webkit-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .primary.disabled:hover,
@@ -1713,9 +1687,7 @@ input[type="submit"].button--primary:disabled:hover {
 
 .button--black,
 input[type="submit"].button--black {
-  -moz-box-shadow: black 0px 2px 0px 0px;
   -webkit-box-shadow: black 0px 2px 0px 0px;
-  -o-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
   color: white !important;
   background: black;
@@ -1724,13 +1696,10 @@ input[type="submit"].button--black {
 .button--black:active,
 input[type="submit"].button--black.button--active,
 input[type="submit"].button--black:active {
-  -moz-box-shadow: black 0px 0px 0px 0px;
   -webkit-box-shadow: black 0px 0px 0px 0px;
-  -o-box-shadow: black 0px 0px 0px 0px;
   box-shadow: black 0px 0px 0px 0px;
   -moz-transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
   transform: translate(0px, 2px);
 }
 .button--black.button--active,
@@ -1752,11 +1721,8 @@ input[type="submit"].button--black.disabled:active,
 input[type="submit"].button--black:disabled:active {
   -moz-transform: translate(0px, 0px);
   -webkit-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .button--black.disabled:hover,
@@ -1768,9 +1734,7 @@ input[type="submit"].button--black:disabled:hover {
 
 .button--white,
 input[type="submit"].button--black {
-  -moz-box-shadow: #bfbfbf 0px 2px 0px 0px;
   -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
-  -o-box-shadow: #bfbfbf 0px 2px 0px 0px;
   box-shadow: #bfbfbf 0px 2px 0px 0px;
   color: #e0393e !important;
   background: white;
@@ -1779,13 +1743,10 @@ input[type="submit"].button--black {
 .button--white:active,
 input[type="submit"].button--black.button--active,
 input[type="submit"].button--black:active {
-  -moz-box-shadow: #bfbfbf 0px 0px 0px 0px;
   -webkit-box-shadow: #bfbfbf 0px 0px 0px 0px;
-  -o-box-shadow: #bfbfbf 0px 0px 0px 0px;
   box-shadow: #bfbfbf 0px 0px 0px 0px;
   -moz-transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
   transform: translate(0px, 2px);
 }
 .button--white.button--active,
@@ -1807,11 +1768,8 @@ input[type="submit"].button--black.disabled:active,
 input[type="submit"].button--black:disabled:active {
   -moz-transform: translate(0px, 0px);
   -webkit-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .button--white.disabled:hover,
@@ -1823,9 +1781,7 @@ input[type="submit"].button--black:disabled:hover {
 
 .button--blue,
 input[type="submit"].button--blue {
-  -moz-box-shadow: #005893 0px 2px 0px 0px;
   -webkit-box-shadow: #005893 0px 2px 0px 0px;
-  -o-box-shadow: #005893 0px 2px 0px 0px;
   box-shadow: #005893 0px 2px 0px 0px;
   color: white !important;
   background: #13a1ff;
@@ -1834,13 +1790,10 @@ input[type="submit"].button--blue {
 .button--blue:active,
 input[type="submit"].button--blue.button--active,
 input[type="submit"].button--blue:active {
-  -moz-box-shadow: #005893 0px 0px 0px 0px;
   -webkit-box-shadow: #005893 0px 0px 0px 0px;
-  -o-box-shadow: #005893 0px 0px 0px 0px;
   box-shadow: #005893 0px 0px 0px 0px;
   -moz-transform: translate(0px, 2px);
   -webkit-transform: translate(0px, 2px);
-  -o-transform: translate(0px, 2px);
   transform: translate(0px, 2px);
 }
 .button--blue.button--active,
@@ -1862,11 +1815,8 @@ input[type="submit"].button--blue.disabled:active,
 input[type="submit"].button--blue:disabled:active {
   -moz-transform: translate(0px, 0px);
   -webkit-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .button--blue.disabled:hover,
@@ -2260,12 +2210,12 @@ to span the full width of the box, and use `doc-content` for padded content:
 
 */
 .doc-box {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   background-color: #fff;
   margin-bottom: 18px;
-  border: 1px solid #dddddd;
+  border: 1px solid #dddddd !important;
+  /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -2290,18 +2240,14 @@ to span the full width of the box, and use `doc-content` for padded content:
   /* see bug: 31893 */
 }
 .doc-box > .doc-content:first-child {
-  -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
-  -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
 .doc-box > .doc-content:last-child {
-  -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -2325,31 +2271,26 @@ to span the full width of the box, and use `doc-content` for padded content:
   vertical-align: top;
 }
 .doc-box > .line .doc-content, .doc-box > .line-gutters .doc-content {
-  -moz-border-radius: 0 0 0 0;
   -webkit-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
 }
 .doc-box > .line .unit:first-child .doc-content:first-child, .doc-box > .line-gutters .unit:first-child .doc-content:first-child {
-  -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
 }
 .doc-box > .line .unit:first-child .doc-content:last-child, .doc-box > .line-gutters .unit:first-child .doc-content:last-child {
-  -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 .doc-box > .line .unit:last-child .doc-content:first-child,
 .doc-box > .line .lastUnit .doc-content:first-child, .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
 .doc-box > .line-gutters .lastUnit .doc-content:first-child {
-  -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
 .doc-box > .line .unit:last-child .doc-content:last-child,
 .doc-box > .line .lastUnit .doc-content:last-child, .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
 .doc-box > .line-gutters .lastUnit .doc-content:last-child {
-  -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -2368,7 +2309,7 @@ to span the full width of the box, and use `doc-content` for padded content:
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
   padding: 18px;
-  padding-bottom: 4.5px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
@@ -2387,7 +2328,6 @@ to span the full width of the box, and use `doc-content` for padded content:
 */
 .doc-content.footer {
   background: #eeeeee;
-  -moz-border-radius: 0 0 3px 3px 0;
   -webkit-border-radius: 0 0 3px 3px 0;
   border-radius: 0 0 3px 3px 0;
 }
@@ -2453,31 +2393,26 @@ category: Layout
 ```
 */
 .rounded-top {
-  -moz-border-radius: 3px 3px 0 0;
   -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
 
 .rounded-bottom {
-  -moz-border-radius: 0 0 3px 3px;
   -webkit-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
 
 .rounded-all {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
 }
 
 .rounded-right {
-  -moz-border-radius: 0 3px 3px 0;
   -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
 
 .rounded-left {
-  -moz-border-radius: 3px 0 0 3px;
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
@@ -2504,13 +2439,11 @@ category: Layout
   cursor: pointer;
   *cursor: hand;
   opacity: 0.5;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 .close-me:hover {
   opacity: 1;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 /**
@@ -2580,7 +2513,7 @@ category: Layout
 .doc-content-big {
   border-top: 1px solid #dddddd;
   padding: 18px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
@@ -2759,26 +2692,26 @@ Figureset with figure on the right.
  *	  @since  2013-05-14
  *
  *	  @description
- *	  A collection of styles that allow us to do tabular internal layouts 
- *	  on list items, etc. It's particularly useful on responsive layouts, 
+ *	  A collection of styles that allow us to do tabular internal layouts
+ *	  on list items, etc. It's particularly useful on responsive layouts,
  *	  like we use for mobile.
- *	  
- *	  For semantics, it's important to always put `.ffbox-fix` and `.ffbox-flex` 
+ *
+ *	  For semantics, it's important to always put `.ffbox-fix` and `.ffbox-flex`
  *	  elements inside a `.ffbox`--because putting naked table cells inside other
- *	  table cells doesn't make semantic sense and won't necessarily be 
+ *	  table cells doesn't make semantic sense and won't necessarily be
  *	  predictable in layout across browsers.
  *
  *	  NOTE: There should be only one `.flex` per row.
  *
  *	  NOTE: If you want to set minimum heights on fix, flex or ffbox,
- *	  you'll need to use `height` rather than `min-height` because of the 
+ *	  you'll need to use `height` rather than `min-height` because of the
  *	  way table layouts are used in CSS.
  *
- *	  NOTE: In the future, we'll probably want to swap out tabular layouts 
+ *	  NOTE: In the future, we'll probably want to swap out tabular layouts
  *	  with flexbox.
  *
  *	  NOTE: If you want to use CSS text truncation with `ffbox`, you need to
- *	  use the `ffbox--fixed` class on the `ffbox`, then set a class with a 
+ *	  use the `ffbox--fixed` class on the `ffbox`, then set a class with a
  *	  width value on the nested `ffbox-fix`, like so:
  *
  *		<div class="ffbox ffbox--fixed">
@@ -2809,9 +2742,13 @@ Figureset with figure on the right.
 }
 
 /*  ======================================================================= */
-/*  FF BOX - FIXED LAYOUT */
+/*  FF BOX - MODIFIERS  */
 .ffbox--fixed {
   table-layout: fixed;
+}
+
+.ffbox--shaded {
+  background-color: #f7f7f7;
 }
 
 /**
@@ -2957,10 +2894,8 @@ Tearsheets are basically date displays that look like daily calendar tearsheets
   height: 48px;
 }
 .tearsheet .month {
-  -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
   font-size: 12px;
@@ -2977,10 +2912,8 @@ Tearsheets are basically date displays that look like daily calendar tearsheets
   height: 32px;
 }
 .tearsheet--small .month {
-  -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
   font-size: 8px;
@@ -2997,10 +2930,8 @@ Tearsheets are basically date displays that look like daily calendar tearsheets
   height: 80px;
 }
 .tearsheet--big .month {
-  -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
   font-size: 19px;
@@ -3046,14 +2977,11 @@ You know, for people.
 	</ul>
 ```
 */
-.avatar, .avatar--small, .avatar--big {
+.avatar {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;
-  -moz-border-radius: 80px 80px 80px 80px;
-  -webkit-border-radius: 80px 80px 80px 80px;
-  border-radius: 80px 80px 80px 80px;
   display: block;
   text-indent: 100%;
   white-space: nowrap;
@@ -3062,11 +2990,13 @@ You know, for people.
   background-repeat: no-repeat;
   background-position: center 42%;
   background-color: rgba(0, 0, 0, 0.47);
-}
-
-.avatar {
   width: 48px;
   height: 48px;
+}
+
+.avatar--person {
+  -webkit-border-radius: 80px 80px 80px 80px;
+  border-radius: 80px 80px 80px 80px;
 }
 
 .avatar--small {
@@ -3077,6 +3007,14 @@ You know, for people.
 .avatar--big {
   width: 64px;
   height: 64px;
+}
+
+.avatar--stack {
+  box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47);
+}
+
+.avatar--stack {
+  margin-right: 3px;
 }
 
 /*doc
@@ -3109,15 +3047,18 @@ Class                  | Example
 * ------------------------------------------
 */
 .pill-label,
-.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
-  -moz-border-radius: 3px 3px 3px 3px;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px;
+.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid, .pill-label--text {
   font-size: 11px;
   text-transform: uppercase;
   font-variant: small-caps;
+}
+
+.pill-label,
+.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
   padding: 2.75px 5.5px;
-  margin: 0 2.75px;
+  margin-right: 2.75px;
 }
 
 /**
@@ -3140,8 +3081,8 @@ Class                  | Example
 }
 
 .pill-label--hollow {
-  border: 1px solid rgba(0, 0, 0, 0.67);
   color: rgba(0, 0, 0, 0.67);
+  border: 1px solid;
 }
 
 .pill-label--friend {
@@ -3155,13 +3096,13 @@ Class                  | Example
 }
 
 .pill-label--paid {
-  border: 1px solid #62ac75;
   color: #62ac75;
+  border: 1px solid;
 }
 
 .pill-label--unpaid {
-  border: 1px solid #e0393e;
   color: #e0393e;
+  border: 1px solid;
 }
 
 /*doc
@@ -3261,9 +3202,11 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 .nav-tabs {
   padding-top: 9px;
   padding-left: 9px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid;
+  border-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1);
   list-style: none;
-  margin-bottom: 18px;
+  margin-bottom: 0;
 }
 .nav-tabs li {
   float: left;
@@ -3272,16 +3215,19 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   margin-bottom: -1px;
 }
 .nav-tabs a {
-  -moz-border-radius: 3px 3px 3px 3px;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  border-radius: 3px 3px 3px 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
   display: block;
   text-decoration: none;
-  color: #888888;
-  background-color: #f4f4f4;
-  border: 1px solid #f4f4f4;
-  border-bottom-color: #dddddd;
-  padding: 6px 12px;
+  color: #545454;
+  color: rgba(0, 0, 0, 0.67);
+  background-color: #f7f7f7;
+  border: 1px solid;
+  border-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1);
+  padding: 6px 13.5px;
 }
 .nav-tabs a:focus {
   outline-width: 0;
@@ -3291,13 +3237,16 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   margin-top: -5px;
 }
 .nav-tabs .selected a {
-  color: #555555;
-  background-color: #fff;
-  border-color: #dddddd;
+  color: #0d0d0d;
+  color: rgba(0, 0, 0, 0.95);
+  background-color: white;
+  border-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1);
   border-bottom-color: white;
 }
 .nav-tabs .tabcount {
-  color: #888;
+  color: #878787;
+  color: rgba(0, 0, 0, 0.47);
 }
 
 /**
@@ -3379,18 +3328,14 @@ category: Navigation
 }
 .nav-pagination li:first-child a, .nav-pagination .nav-pageitem:first-child a {
   border-left-width: 1px;
-  -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 .nav-pagination li:last-child a, .nav-pagination .nav-pageitem:last-child a {
-  -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -3399,9 +3344,7 @@ category: Navigation
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   color: #888888;
 }
@@ -3424,7 +3367,6 @@ For "see more" type append paging.
 
 */
 .nav-appendPager {
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   border: 1px solid #dddddd;
@@ -3454,13 +3396,9 @@ For "see more" type append paging.
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
-  -o-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
 }
 .nav-appendPager:active:link, .nav-appendPager:active:hover, .nav-appendPager:active:vistied, .nav-appendPager:active:active {
@@ -3492,7 +3430,6 @@ DEPRECATED: you should probably use segmented control instead
   display: inline-block;
   zoom: 1;
   *display: inline;
-  -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
   -moz-box-sizing: border-box;
@@ -3577,20 +3514,16 @@ DEPRECATED: you should probably use segmented control instead
 .nav-buttons label:first-of-type,
 .nav-buttons li:first-child > a,
 .nav-buttons li:first-child > span {
-  -moz-border-radius-topleft: 2px;
   -webkit-border-top-left-radius: 2px;
   border-top-left-radius: 2px;
-  -moz-border-radius-bottomleft: 2px;
   -webkit-border-bottom-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 .nav-buttons label:last-of-type,
 .nav-buttons li:last-child > a,
 .nav-buttons li:last-child > span {
-  -moz-border-radius-topright: 2px;
   -webkit-border-top-right-radius: 2px;
   border-top-right-radius: 2px;
-  -moz-border-radius-bottomright: 2px;
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
@@ -3605,15 +3538,12 @@ DEPRECATED: you should probably use segmented control instead
 .nav-buttons label,
 .nav-buttons li > a,
 .nav-buttons li > span {
-  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
   background: -moz-linear-gradient(top, white, #f2f2f2);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   border: none;
   color: #555555;
@@ -3628,7 +3558,6 @@ DEPRECATED: you should probably use segmented control instead
   background: #ededed;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
   background: -moz-linear-gradient(top, white, #ededed);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')";
 }
 .nav-buttons label:active, .nav-buttons label.selected, .nav-buttons label.active,
@@ -3643,9 +3572,7 @@ DEPRECATED: you should probably use segmented control instead
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
 }
 .nav-buttons label:active:link, .nav-buttons label:active:hover, .nav-buttons label:active:vistied, .nav-buttons label:active:active, .nav-buttons label.selected:link, .nav-buttons label.selected:hover, .nav-buttons label.selected:vistied, .nav-buttons label.selected:active, .nav-buttons label.active:link, .nav-buttons label.active:hover, .nav-buttons label.active:vistied, .nav-buttons label.active:active,
@@ -3682,9 +3609,7 @@ DEPRECATED: you should probably use segmented control instead
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
 }
 .nav-buttons input[type=radio]:checked + label:link, .nav-buttons input[type=radio]:checked + label:hover, .nav-buttons input[type=radio]:checked + label:vistied, .nav-buttons input[type=radio]:checked + label:active, .nav-buttons input[attr="checked"] + label:link, .nav-buttons input[attr="checked"] + label:hover, .nav-buttons input[attr="checked"] + label:vistied, .nav-buttons input[attr="checked"] + label:active,
@@ -3727,9 +3652,7 @@ DEPRECATED: you should probably use segmented control instead
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
 }
 .nav-buttons li > a:active:link, .nav-buttons li > a:active:hover, .nav-buttons li > a:active:vistied, .nav-buttons li > a:active:active, .nav-buttons li > a.selected:link, .nav-buttons li > a.selected:hover, .nav-buttons li > a.selected:vistied, .nav-buttons li > a.selected:active, .nav-buttons li > a.push:link, .nav-buttons li > a.push:hover, .nav-buttons li > a.push:vistied, .nav-buttons li > a.push:active, .nav-buttons li > span:active:link, .nav-buttons li > span:active:hover, .nav-buttons li > span:active:vistied, .nav-buttons li > span:active:active, .nav-buttons li > span.selected:link, .nav-buttons li > span.selected:hover, .nav-buttons li > span.selected:vistied, .nav-buttons li > span.selected:active, .nav-buttons li > span.push:link, .nav-buttons li > span.push:hover, .nav-buttons li > span.push:vistied, .nav-buttons li > span.push:active, .nav-buttons li:first-child > a:active:link, .nav-buttons li:first-child > a:active:hover, .nav-buttons li:first-child > a:active:vistied, .nav-buttons li:first-child > a:active:active, .nav-buttons li:first-child > a.selected:link, .nav-buttons li:first-child > a.selected:hover, .nav-buttons li:first-child > a.selected:vistied, .nav-buttons li:first-child > a.selected:active, .nav-buttons li:first-child > a.push:link, .nav-buttons li:first-child > a.push:hover, .nav-buttons li:first-child > a.push:vistied, .nav-buttons li:first-child > a.push:active, .nav-buttons li:first-child > span:active:link, .nav-buttons li:first-child > span:active:hover, .nav-buttons li:first-child > span:active:vistied, .nav-buttons li:first-child > span:active:active, .nav-buttons li:first-child > span.selected:link, .nav-buttons li:first-child > span.selected:hover, .nav-buttons li:first-child > span.selected:vistied, .nav-buttons li:first-child > span.selected:active, .nav-buttons li:first-child > span.push:link, .nav-buttons li:first-child > span.push:hover, .nav-buttons li:first-child > span.push:vistied, .nav-buttons li:first-child > span.push:active, .nav-buttons li:last-child > a:active:link, .nav-buttons li:last-child > a:active:hover, .nav-buttons li:last-child > a:active:vistied, .nav-buttons li:last-child > a:active:active, .nav-buttons li:last-child > a.selected:link, .nav-buttons li:last-child > a.selected:hover, .nav-buttons li:last-child > a.selected:vistied, .nav-buttons li:last-child > a.selected:active, .nav-buttons li:last-child > a.push:link, .nav-buttons li:last-child > a.push:hover, .nav-buttons li:last-child > a.push:vistied, .nav-buttons li:last-child > a.push:active, .nav-buttons li:last-child > span:active:link, .nav-buttons li:last-child > span:active:hover, .nav-buttons li:last-child > span:active:vistied, .nav-buttons li:last-child > span:active:active, .nav-buttons li:last-child > span.selected:link, .nav-buttons li:last-child > span.selected:hover, .nav-buttons li:last-child > span.selected:vistied, .nav-buttons li:last-child > span.selected:active, .nav-buttons li:last-child > span.push:link, .nav-buttons li:last-child > span.push:hover, .nav-buttons li:last-child > span.push:vistied, .nav-buttons li:last-child > span.push:active {
@@ -3741,9 +3664,7 @@ DEPRECATED: you should probably use segmented control instead
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
 }
 .nav-buttons input[type=radio]:checked + label:link, .nav-buttons input[type=radio]:checked + label:hover, .nav-buttons input[type=radio]:checked + label:vistied, .nav-buttons input[type=radio]:checked + label:active, .nav-buttons input[attr="checked"] + label:link, .nav-buttons input[attr="checked"] + label:hover, .nav-buttons input[attr="checked"] + label:vistied, .nav-buttons input[attr="checked"] + label:active {
@@ -3773,9 +3694,7 @@ DEPRECATED: you should probably use segmented control instead
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   border: none;
 }
@@ -3852,15 +3771,12 @@ Element type       | Use
 }
 
 .segmented-control-button {
-  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
   background: -moz-linear-gradient(top, white, #f2f2f2);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -3888,7 +3804,6 @@ Element type       | Use
   background: #ededed;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
   background: -moz-linear-gradient(top, white, #ededed);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')";
 }
 .segmented-control-button:active, .segmented-control-button.selected, .segmented-control-button.active {
@@ -3897,9 +3812,7 @@ Element type       | Use
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
 }
 .segmented-control-button:active:link, .segmented-control-button:active:hover, .segmented-control-button:active:vistied, .segmented-control-button:active:active, .segmented-control-button.selected:link, .segmented-control-button.selected:hover, .segmented-control-button.selected:vistied, .segmented-control-button.selected:active, .segmented-control-button.active:link, .segmented-control-button.active:hover, .segmented-control-button.active:vistied, .segmented-control-button.active:active {
@@ -3928,9 +3841,7 @@ Element type       | Use
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   /* Here comes the !important train, due to !important up above. Choo Choo! */
 }
@@ -3944,9 +3855,7 @@ Element type       | Use
   background-image: none !important;
   color: #888888 !important;
   filter: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px -1px inset;
 }
 .segmented-control-segment.checked .segmented-control-button:link, .segmented-control-segment.checked .segmented-control-button:hover, .segmented-control-segment.checked .segmented-control-button:vistied, .segmented-control-segment.checked .segmented-control-button:active {
@@ -3965,12 +3874,9 @@ Element type       | Use
   vertical-align: baseline;
   background-color: #999;
   border: 2px solid #fff;
-  -moz-border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   border-radius: 11px 11px 11px 11px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
   box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 2px 0;
 }
 
@@ -4009,6 +3915,7 @@ Element type       | Use
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* icon gems are 16px with 0.5em padding */
+/* icon gems are square inside ffbox-fix */
 /* $FS_ : Font Size */
 /* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
  * be used with scoped resets in order to work properly. For touchList, this
@@ -4031,24 +3938,6 @@ Element type       | Use
 /* 16/18.0 */
 /* 16/20.8 */
 /* 16/24.0 */
-/*  $C_ : Colors  */
-/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
- *  at some point in the immediate future (Sassquatch >1.5), once touchList
- *  is fully integrated into Sq.
- *
- *  @see https://github.com/meetup/meetup-swatches
- */
-/* #000							*/
-/* #333	 == $C_darkgray			*/
-/* #666	 ≈≈ $C_darkgray_lighter	*/
-/* #999							*/
-/* #b3b3b3						*/
-/* #ccc							*/
-/* #e5e5e5						*/
-/* #f0f0f0  ≈≈ $C_gray_lighter	*/
-/* #f5f5f5  ≈≈ $C_gray_lightest	*/
-/* #fafafa						*/
-/* #fff							*/
 /**
  *	touchlist placeholer classes
  */
@@ -4097,6 +3986,7 @@ Element type       | Use
 /* $W_, $H_ : Height and Width */
 /* For iOS/Samsung: Hard coded because fixed width */
 /* icon gems are 16px with 0.5em padding */
+/* icon gems are square inside ffbox-fix */
 /* $FS_ : Font Size */
 /* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
  * be used with scoped resets in order to work properly. For touchList, this
@@ -4119,24 +4009,6 @@ Element type       | Use
 /* 16/18.0 */
 /* 16/20.8 */
 /* 16/24.0 */
-/*  $C_ : Colors  */
-/*  NOTE: use discouraged; will be deprecated in favor of using Meetup-Swatches
- *  at some point in the immediate future (Sassquatch >1.5), once touchList
- *  is fully integrated into Sq.
- *
- *  @see https://github.com/meetup/meetup-swatches
- */
-/* #000							*/
-/* #333	 == $C_darkgray			*/
-/* #666	 ≈≈ $C_darkgray_lighter	*/
-/* #999							*/
-/* #b3b3b3						*/
-/* #ccc							*/
-/* #e5e5e5						*/
-/* #f0f0f0  ≈≈ $C_gray_lighter	*/
-/* #f5f5f5  ≈≈ $C_gray_lightest	*/
-/* #fafafa						*/
-/* #fff							*/
 /**
  *	touchlist placeholer classes
  */
@@ -4288,6 +4160,49 @@ Class           | Example
 
 /*doc
 ---
+title: Flushing Elements
+name: flushModifiers
+category: Modifiers
+---
+
+Removes all margin and padding on an element for a given direction.
+
+Class          | Description
+---------------| ----------------------------------------------------
+`flush--top`   | Sets `margin` and `padding` to `0` for element top
+`flush--right` | Sets `margin` and `padding` to `0` for element right
+`flush--bottom`| Sets `margin` and `padding` to `0` for element bottom
+`flush--left`  | Sets `margin` and `padding` to `0` for element left
+`flush--all`   | Sets `margin` and `padding` to `0` for all sides
+
+*/
+.flush--top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.flush--right {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.flush--left {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.flush--all {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/*doc
+---
 title: Text alignment
 name: talignModifiers
 category: Modifiers
@@ -4412,14 +4327,13 @@ Class          | Example
   color: rgba(0, 0, 0, 0.47);
 }
 .inverted .muted {
-  color: white;
+  color: #787878;
   color: rgba(255, 255, 255, 0.47);
 }
 
 .muted-opacity {
   opacity: 0.8;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 }
 
 .bold {
@@ -4446,8 +4360,7 @@ Class          | Example
 
 .opacity-quarter {
   opacity: 0.25;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
 }
 
 .border-none {
@@ -4520,7 +4433,7 @@ a.unlink:link, a.unlink:visited {
   color: rgba(0, 0, 0, 0.67);
 }
 .inverted a.unlink:link, .inverted a.unlink:visited {
-  color: white;
+  color: #ababab;
   color: rgba(255, 255, 255, 0.67);
 }
 
