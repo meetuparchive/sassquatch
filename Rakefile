@@ -88,76 +88,48 @@ task :default do
 end
 
 
-desc "rebuilds LIVE github documentation page (master only)"
+desc "rebuilds LIVE github documentation page, optional branch argument"
 task :push_docs do
 	puts
 	puts "Rebuilding SassQuatch github pages"
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
+	Rake::Task['compile'].execute
 
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
-	#if branch == "master"
+	do_it = branch == "master" or branch == "dev"
+	if !do_it
+		puts "Do you want to build the docs for #{branch}? [y/n]"
+		do_it = $stdin.gets.chomp == "y"
+	end
+
+	if do_it
+
+		docs_path = branch == "master" ? "" : "branches/#{branch}"
+
 		sh "git pull origin #{branch}"
 		sh "git checkout gh-pages"
 		sh "git pull origin gh-pages"
+
+		sh "git checkout #{branch} hologram/"
+		sh "cp -r holgram/ ./#{docs_path}"
 
 		Rake::Task['sass'].execute
 		Rake::Task['hologram'].execute
 
 		sh "git add -A"
-		sh "git commit -m \"update live docs\""
+		sh "git commit -m \"update live docs (#{branch} branch)\""
 		sh "git push origin gh-pages"
 		sh "git checkout #{branch}"
-
 
 		puts
 		puts "#{HR}"
 		puts "Succesfully updated docs in gh-pages\n".green
-		puts "Check http://meetup.github.io/sassquatch/#{docs_path}\n".yellow
+		puts "http://meetup.github.io/sassquatch/#{docs_path}/doc_desktop\n".yellow
+		puts "http://meetup.github.io/sassquatch/#{docs_path}/doc_mobile\n".yellow
 		puts "(sometimes github takes a few minutes to rebuild the page)\n"
 		puts "#{HR}"
 		puts
-	#else
-		#puts "You must be in master in order to push docs".red
-	#end
+	end
 end
-
-#desc "rebuilds LIVE github documentation page, optional branch argument"
-#task :push_docs do
-	#puts
-	#puts "Rebuilding SassQuatch github pages"
-	#puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
-
-	#Rake::Task['compile'].execute
-
-	#branch = `git rev-parse --abbrev-ref HEAD`.strip
-
-	#do_it = branch == "master" or branch == "dev"
-	#if !do_it
-		#puts "Do you want to build the docs for #{branch}? [y/n]"
-		#do_it = $stdin.gets.chomp == "y"
-	#end
-
-	#if do_it
-		#docs_path = branch == "master" ? "" : "branches/#{branch}"
-		#sh "rm -rf .sass-cache"
-		#sh "git checkout gh-pages"
-		#sh "git pull origin gh-pages"
-		#sh "git checkout #{branch} _site/"
-		#sh "cp -r _site/ ./#{docs_path}"
-		#sh "rm -rf _site/"
-		#sh "git add -A"
-		#sh "git commit -m \"update live docs (#{branch} branch)\""
-		#sh "git push origin gh-pages"
-		#sh "git checkout #{branch}"
-
-		#puts
-		#puts "#{HR}"
-		#puts "Succesfully updated docs in gh-pages\n"
-		#puts "Check http://meetup.github.io/sassquatch/#{docs_path}\n"
-		#puts "(sometimes github takes a few minutes to rebuild the page)\n"
-		#puts "#{HR}"
-		#puts
-	#end
-#end
