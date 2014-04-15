@@ -24,7 +24,7 @@
 // FB FRIEND pill label
 // ---------------------------
 .pill-label--friend {
-	@include solid_pill( $C_blue );
+	@include solid_pill( $bgColor: lighten($C_facebook, 45%), $textColor: $C_facebook );
 }
 
 // ORG pill label
