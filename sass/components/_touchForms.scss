@@ -308,6 +308,9 @@
 
 	.touchList-item--rightInput .ffbox--touchList-item {
 		padding-right: 0;
+		& label.ffbox-fix.ffbox--shaded {
+			height: $H_touchTargetDefault;
+		}
 	}
 
 
