@@ -2041,12 +2041,15 @@ as well as a few different states/types:
 * ------------------------------------------
 */
 .pill-label,
+.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid, .pill-label--text {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-variant: small-caps; }
+
+.pill-label,
 .pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  font-size: 11px;
-  text-transform: uppercase;
-  font-variant: small-caps;
   padding: 2.75px 5.5px;
   margin-right: 2.75px; }
 
