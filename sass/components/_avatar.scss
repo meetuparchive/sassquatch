@@ -7,7 +7,13 @@
 // Avatar base class. Add in a variant!
 // media-m size
 // -------------------------------
+%avatar_base_size {
+	width: $media-m;
+	height: $media-m;
+	font-size: $media-m * 2/3;
+}
 .avatar {
+	@extend %avatar_base_size;
 	@include background-size(cover);
 	display: block;
 	text-indent: 100%;
@@ -17,8 +23,6 @@
 	background-repeat: no-repeat;
 	background-position: center 42%;
 	background-color: $C_tertiaryGray;
-	width: $media-m;
-	height: $media-m;
 }
 
 .avatar--chapter {
@@ -34,10 +38,12 @@
 .avatar--small {
 	width: $media-s;
 	height: $media-s;
+	font-size: $media-s;
 }
 .avatar--big {
 	width: $media-l;
 	height: $media-l;
+	font-size: $media-l * 2/3;
 }
 
 // Avatar Stacks
@@ -54,4 +60,50 @@ $stack_frame_spacing: 1px;
 .avatar--stack {
 	@extend %blockStack;
 	margin-right: $stack_frame_spacing + $stack_frame_thickness;
+}
+
+// Avatar Badges
+// ---------------------------
+%avatarBadge {
+	overflow: visible;
+	position: relative;
+	text-indent: 0;
+	&:before {
+		@include color_textPrimaryInverted('border-color');
+		@include color_textPrimaryInverted;
+		@include color_accent('background-color');
+		@include round(100%);
+		font-size: 14px;
+		position: absolute;
+		border-style: solid;
+		border-width: 2px;
+		bottom: -0.45em;
+		right: -0.45em;
+		display: block;
+		height: 1.45em;
+		width: 1.45em;
+		text-align: center;
+		font-family: 'RedLabel';
+		font-weight: normal !important;
+		font-style: normal !important;
+		-webkit-font-smoothing: antialiased;
+		text-decoration: none !important;
+		line-height: 1.45em;
+		vertical-align: -0.125em;
+	}
+}
+.avatar-badge--leadTeam {
+	@extend %avatarBadge;
+	&:before {
+		content: "\E0AF";
+	}
+	&:after {
+		content: "Lead Team Member";
+		font: 0/0 a !important;
+		color: transparent;
+		text-shadow: none;
+		display: block;
+		height: 0;
+		width: 1px;
+	}
 }

@@ -136,6 +136,7 @@
 	$media-m: 	48px;
 	$media-l: 	64px;
 	$media-xl: 	80px;
+
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
@@ -162,7 +163,7 @@
 *
 *   @note
 *   - color naming convention is really weird and difficult to remember. this
-*     is why i ended up defining my own colors everywhere in _new_styles, which is 
+*     is why i ended up defining my own colors everywhere in _new_styles, which is
 *     bad for consistency.
 *   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
 *     shrink the layout?
@@ -195,7 +196,7 @@ $condensedLineHeight:	null;
 	 */
 
 	/*  @note
-	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all 
+	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
@@ -220,7 +221,7 @@ $condensedLineHeight:	null;
 	/*  }  */
 
 	/*  ADDITIONS {
-	 *  
+	 *
 	 *  Additional UI Variables, mostly colors, used throughout MWeb.
 	 *  Maybe some of these should be localized to where they're used, like
 	 *  the topbar colors?
