@@ -306,6 +306,11 @@
 	}
 
 
+	.touchList-item--rightInput .ffbox--touchList-item {
+		padding-right: 0;
+	}
+
+
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
