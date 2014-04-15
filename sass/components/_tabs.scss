@@ -60,7 +60,6 @@ $tabSpacing: $spacing/2;
 
 @if $platform == "mobile" {
 	.nav-tabs {
-		padding-left: 0;
 		li {
 			margin-right: 0;
 			&:first-child a {

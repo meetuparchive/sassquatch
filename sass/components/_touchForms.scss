@@ -26,7 +26,6 @@
 		// Generic Resets
 		h4,
 		label {
-			font-size: 16px;
 			font-weight: normal;
 			// This needs to be reset on top of the .touchList, because label
 			// is sized using PX, not ems.
@@ -54,7 +53,6 @@
 			margin: 0;
 			padding: 0;
 			border: none;
-			font-size: 16px;
 			line-height: 1;
 
 			background-color: transparent;
