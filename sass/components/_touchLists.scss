@@ -180,6 +180,7 @@
 				@include color_textPrimary;
 				.inverted & { @include color_textPrimaryInverted; }
 			}
+			@include box-sizing('border');
 			display: block;
 		}
 	}
@@ -230,7 +231,6 @@
 		// Bump it up a hair, because parentheses are all dangly.
 	}
 
-	.touchList-attendee-role,
 	.touchList-attendee-bio,
 	.touchList-attendee-funfact-description,
 	.touchList-attendee-ledger {
@@ -239,11 +239,14 @@
 
 	.touchList-attendee-role {
 		@extend %textTruncate;
+		font-size: $smallFontSize;
+		@include color_textTertiary;
 		line-height: $LH_standard;
 	}
 
 	.touchList-attendee-funfact-description {
 		padding-left: $P_secondary;
+		font-size: $smallFontSize;
 	}
 
 	.touchList-attendee-actions {
@@ -492,7 +495,6 @@
 		heading style but it just looks so nice with touchLists */
 	.touchList-heading {
 		@include color_textTertiary;
-		font-size: 16px;
 		margin-bottom: 0.5em;
 	}
 

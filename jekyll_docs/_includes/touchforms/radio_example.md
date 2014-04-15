@@ -6,9 +6,7 @@
 		</div>
 		<div class="ffbox-fix">
 			<input type="radio" name="f3_5" value="1" id="" tabindex="0" checked="checked">
-			<div class="pseudoradio">
-				<div class="pseudoradio-dot"></div>
-			</div>
+			<i class="icon-s icon-radio pseudocheckbox"></i>
 		</div>
 	</label>
 </li>
@@ -19,9 +17,7 @@
 		</div>
 		<div class="ffbox-fix">
 			<input type="radio" name="f3_5" value="1" id="" tabindex="0">
-			<div class="pseudoradio">
-				<div class="pseudoradio-dot"></div>
-			</div>
+			<i class="icon-s icon-radio pseudocheckbox"></i>
 		</div>
 	</label>
 </li>
