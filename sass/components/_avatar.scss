@@ -55,3 +55,49 @@ $stack_frame_spacing: 1px;
 	@extend %blockStack;
 	margin-right: $stack_frame_spacing + $stack_frame_thickness;
 }
+
+// Avatar Badges
+// ---------------------------
+%avatarBadge {
+	overflow: visible;
+	position: relative;
+	text-indent: 0;
+	&:before {
+		@include color_textPrimaryInverted('border-color');
+		@include color_textPrimaryInverted;
+		@include color_accent('background-color');
+		@include round(100%);
+		font-size: 14px;
+		position: absolute;
+		border-style: solid;
+		border-width: 2px;
+		bottom: -0.45em;
+		right: -0.45em;
+		display: block;
+		height: 1.45em;
+		width: 1.45em;
+		text-align: center;
+		font-family: 'RedLabel';
+		font-weight: normal !important;
+		font-style: normal !important;
+		-webkit-font-smoothing: antialiased;
+		text-decoration: none !important;
+		line-height: 1.45em;
+		vertical-align: -0.125em;
+	}
+}
+.avatar-badge--leadTeam {
+	@extend %avatarBadge;
+	&:before {
+		content: "\E0AF";
+	}
+	&:after {
+		content: "Lead Team Member";
+		font: 0/0 a !important;
+		color: transparent;
+		text-shadow: none;
+		display: block;
+		height: 0;
+		width: 1px;
+	}
+}
