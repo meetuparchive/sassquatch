@@ -115,7 +115,6 @@ task :push_docs do
 		sh "git pull origin gh-pages"
 
 		sh "git checkout #{branch} -- hologram/"
-		sh "git checkout #{branch} -- sass/"
 
 		Rake::Task['sass'].execute
 		Rake::Task['hologram'].execute
