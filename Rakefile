@@ -100,12 +100,13 @@ task :push_docs do
 
 	do_it = branch == "master" or branch == "dev"
 
-	if !do_it
-		puts "do you want to build the docs for #{branch}? [y/n]".yellow
-		do_it = $stdin.gets.chomp == "y"
-	end
+	#if !do_it
+		#puts "do you want to build the docs for #{branch}? [y/n]".yellow
+		#do_it = $stdin.gets.chomp == "y"
+	#end
 
-	if do_it
+	#if branch == "master"
+	if true
 
 		docs_path = branch == "master" ? "" : "branches/#{branch}"
 
@@ -118,9 +119,6 @@ task :push_docs do
 		Rake::Task['sass'].execute
 		Rake::Task['hologram'].execute
 
-		sh "mv -r #{COMPILED_DESKTOP_DOCS} ./#{docs_path}"
-		sh "mv -r #{COMPILED_MOBILE_DOCS} ./#{docs_path}"
-
 		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
 		sh "git push origin gh-pages"
@@ -129,10 +127,14 @@ task :push_docs do
 		puts
 		puts "#{HR}"
 		puts "Succesfully updated docs in gh-pages\n".green
-		puts "http://meetup.github.io/sassquatch/#{docs_path}/doc_desktop\n".yellow
-		puts "http://meetup.github.io/sassquatch/#{docs_path}/doc_mobile\n".yellow
+		puts "http://meetup.github.io/sassquatch/doc_desktop\n".yellow
+		puts "http://meetup.github.io/sassquatch/doc_mobile\n".yellow
 		puts "(sometimes github takes a few minutes to rebuild the page)\n"
 		puts "#{HR}"
 		puts
+
+	else
+		puts "You can only push to gh-pages docs from master".red
 	end
+
 end
