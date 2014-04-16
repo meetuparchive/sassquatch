@@ -21,11 +21,12 @@ $pillBaseSize: 11px;
 /**
 * Solid Pill
 *
+* @param $color - base color
 * @param $bgColor - background color
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin solid_pill( $bgColor: $C_secondaryGray, $textColor: false ) {
+@mixin solid_pill( $color: $C_secondaryGray, $bgColor: lighten($color, 40%), $textColor: false ) {
 
 	@extend %_pill_label_base;
 
@@ -34,15 +35,14 @@ $pillBaseSize: 11px;
 	}
 
 	background-color: $bgColor;
-	color: $textColor;
+	color: $color;
 }
 
 
 /**
 * Hollow Pill
 *
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
+* @param $color - base color
 * -----------------------------------------------
 */
 @mixin hollow_pill( $color: $C_secondaryGray ) {
