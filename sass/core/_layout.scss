@@ -352,14 +352,20 @@ hr.double-line {
 	}
 
 	.doc-box {
-		margin: $baseline;
+		margin: $baseline * .75;
 		margin-bottom:0;
 
 		&:last-child {
-			margin-bottom:$baseline*.75;
+			margin-bottom:$baseline * .75;
 		}
 	}
 
+	// ah well, doc-box margin should = doc-content padding
+	// so have to redefine
+	.doc-content {
+		padding:$baseline * .75;
+		padding-bottom:0px;
+	}
 
 	.doc-content.bordered {
 		border-top: 1px solid $C_line;
@@ -367,7 +373,7 @@ hr.double-line {
 
 	//* warnings & messages
 	.doc-box-notice {
-		padding:$spacing;
+		padding:$baseline * .75;
 	}
 
 

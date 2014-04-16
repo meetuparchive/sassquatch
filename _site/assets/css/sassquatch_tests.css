@@ -76,10 +76,15 @@
 button,
 input[type="submit"],
 .primary,
+.button.primary,
 .button--primary,
+input[type="submit"].primary,
+input[type="submit"].button--primary,
 .button--black,
+input[type="submit"].button--black,
 .button--white,
-.button--blue, .nav-buttons label,
+.button--blue,
+input[type="submit"].button--blue, .nav-buttons label,
 .nav-buttons li > a,
 .nav-buttons li > span, .segmented-control-button {
   -moz-user-select: none;
@@ -939,10 +944,15 @@ input[type="submit"].button--blue {
   button:after,
   input[type="submit"]:after,
   .primary:after,
+  .button.primary:after,
   .button--primary:after,
+  input[type="submit"].primary:after,
+  input[type="submit"].button--primary:after,
   .button--black:after,
+  input[type="submit"].button--black:after,
   .button--white:after,
-  .button--blue:after {
+  .button--blue:after,
+  input[type="submit"].button--blue:after {
     content: '';
     background: transparent;
     position: absolute;
