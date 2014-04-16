@@ -2955,21 +2955,21 @@ You know, for people.
 ```html_example
 	<ul class="inlineblockList">
 		<li>
-			<a href="#" class="avatar"
+			<a href="#" class="avatar avatar--person"
 				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
 				Chris
 			</a>
 		</li>
 
 		<li>
-			<a href="#" class="avatar--small"
+			<a href="#" class="avatar avatar--person avatar--small"
 				style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">
 				Samantha
 			</a>
 		</li>
 
 		<li>
-			<a href="#" class="avatar--big"
+			<a href="#" class="avatar avatar--person avatar--big"
 				style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
 				Larry
 			</a>
@@ -2999,6 +2999,41 @@ You know, for people.
   border-radius: 80px 80px 80px 80px;
 }
 
+/*doc
+---
+title: Chapter avatar
+name: chapterAvatar
+parent: avatar
+---
+
+Sometimes you want to represent a chapter, not a member. For that, there's `avatar--chapter`.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--chapter"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Awesome group
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--small"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Some group
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--big"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Some other group
+			</a>
+		</li>
+	</ul>
+```
+
+*/
 .avatar--small {
   width: 32px;
   height: 32px;
@@ -3009,6 +3044,34 @@ You know, for people.
   height: 64px;
 }
 
+/*doc
+---
+title: Avatar Stacks
+name: avatarStack
+parent: avatar
+---
+
+You can represent multiple people or chapters with the `avatar--stack` class.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--person avatar--stack"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+				Chris and friends
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--stack"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Cool groups
+			</a>
+		</li>
+	</ul>
+```
+
+*/
 .avatar--stack {
   box-shadow: 1px 1px 0 white, 3px 3px 0 rgba(0, 0, 0, 0.47), 4px 4px 0 white, 6px 6px 0 rgba(0, 0, 0, 0.47);
 }
@@ -3064,6 +3127,7 @@ Class                  | Example
 /**
 * Solid Pill
 *
+* @param $color - base color
 * @param $bgColor - background color
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
@@ -3071,13 +3135,12 @@ Class                  | Example
 /**
 * Hollow Pill
 *
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
+* @param $color - base color
 * -----------------------------------------------
 */
 .pill-label {
-  background-color: rgba(0, 0, 0, 0.67);
-  color: white;
+  background-color: rgba(102, 102, 102, 0.67);
+  color: rgba(0, 0, 0, 0.67);
 }
 
 .pill-label--hollow {
@@ -3086,13 +3149,13 @@ Class                  | Example
 }
 
 .pill-label--friend {
-  background-color: #3987cb;
-  color: white;
+  background-color: #cdd7ec;
+  color: rgba(0, 0, 0, 0.67);
 }
 
 .pill-label--leader {
-  background-color: #e0393e;
-  color: white;
+  background-color: #fce9ea;
+  color: #e0393e;
 }
 
 .pill-label--paid {
