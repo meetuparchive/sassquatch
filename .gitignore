@@ -4,5 +4,7 @@
 *.swp
 !README*
 bower_components/
+hologram/desktop/sassquatch/sassquatch.css
+hologram/mobile/sassquatch/sassquatch.css
 doc_desktop/
 doc_mobile/
