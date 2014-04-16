@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Sassquatch: <%= title %></title>
+		<title>Sassquatch <%= (title.empty? ? "" : ": #{title}") %></title>
 		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/2515859023212528392/whitney.css" type="text/css" />
 		<link rel="stylesheet" href="sassquatch/sassquatch.css">
 		<link rel="stylesheet" href="style/doc.css">
