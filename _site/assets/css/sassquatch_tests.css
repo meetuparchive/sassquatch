@@ -2041,18 +2041,22 @@ as well as a few different states/types:
 * ------------------------------------------
 */
 .pill-label,
+.pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid, .pill-label--text {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-variant: small-caps; }
+
+.pill-label,
 .pill-label--hollow, .pill-label--friend, .pill-label--leader, .pill-label--paid, .pill-label--unpaid {
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
-  font-size: 11px;
-  text-transform: uppercase;
-  font-variant: small-caps;
   padding: 2.75px 5.5px;
   margin-right: 2.75px; }
 
 /**
 * Solid Pill
 *
+* @param $color - base color
 * @param $bgColor - background color
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
@@ -2060,25 +2064,24 @@ as well as a few different states/types:
 /**
 * Hollow Pill
 *
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
+* @param $color - base color
 * -----------------------------------------------
 */
 .pill-label {
-  background-color: rgba(0, 0, 0, 0.67);
-  color: white; }
+  background-color: rgba(102, 102, 102, 0.67);
+  color: rgba(0, 0, 0, 0.67); }
 
 .pill-label--hollow {
   color: rgba(0, 0, 0, 0.67);
   border: 1px solid; }
 
 .pill-label--friend {
-  background-color: #3987cb;
-  color: white; }
+  background-color: #cdd7ec;
+  color: rgba(0, 0, 0, 0.67); }
 
 .pill-label--leader {
-  background-color: #e0393e;
-  color: white; }
+  background-color: #fce9ea;
+  color: #e0393e; }
 
 .pill-label--paid {
   color: #62ac75;
