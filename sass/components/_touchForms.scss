@@ -552,7 +552,7 @@
 		@extend %textDisableSelection;
 		margin: 0 $P_secondary;
 		text-align: center;
-		@include color_textTertiary; // *1
+		@include color_border; // *1
 	}
 
 	input:checked + .icon-radio,	// *2
