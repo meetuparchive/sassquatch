@@ -5882,8 +5882,8 @@ label.touchList-pseudoplaceholder--textarea {
 .pseudoradio {
   margin: 0 0.75em;
   text-align: center;
-  color: #878787;
-  color: rgba(0, 0, 0, 0.47);
+  color: #e6e6e6;
+  color: rgba(0, 0, 0, 0.1);
 }
 
 input:checked + .icon-radio,
