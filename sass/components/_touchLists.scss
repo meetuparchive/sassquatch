@@ -72,7 +72,10 @@
 		line-height: $LH_standard;
 		.touchList & {
 			// RESET
-			@include color_textSecondary;  // overloaded selector to override link color
+			@include color_textSecondary;  // overloaded selector to override link color, h4 color
+		}
+		.linkify & {
+			color: inherit;  // inherit color from any .linkify wrapper
 		}
 	}
 	.touchList-item-heading {
@@ -167,8 +170,13 @@
 			// the anchor just inside standard touchList-items shouldn't appear
 			// like a normal link - it's just a list item that happens to be
 			// touchable. Extra specificity to override a:link
-			@include color_textPrimary;
-			.inverted & { @include color_textPrimaryInverted; }
+			//
+			// :not is supported in IE9+, and is the best way to support legacy
+			// markup with an optional 'linkify' class
+			&:not(.linkify) {
+				@include color_textPrimary;
+				.inverted & { @include color_textPrimaryInverted; }
+			}
 			display: block;
 		}
 		.avatar {
@@ -222,7 +230,6 @@
 		// Bump it up a hair, because parentheses are all dangly.
 	}
 
-	.touchList-attendee-role,
 	.touchList-attendee-bio,
 	.touchList-attendee-funfact-description,
 	.touchList-attendee-ledger {
@@ -231,11 +238,14 @@
 
 	.touchList-attendee-role {
 		@extend %textTruncate;
+		font-size: $smallFontSize;
+		@include color_textTertiary;
 		line-height: $LH_standard;
 	}
 
 	.touchList-attendee-funfact-description {
 		padding-left: $P_secondary;
+		font-size: $smallFontSize;
 	}
 
 	.touchList-attendee-actions {
@@ -484,7 +494,6 @@
 		heading style but it just looks so nice with touchLists */
 	.touchList-heading {
 		@include color_textTertiary;
-		font-size: 16px;
 		margin-bottom: 0.5em;
 	}
 }

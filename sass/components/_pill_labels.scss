@@ -7,7 +7,6 @@
 
 @import "../util/pillLabelFactory.scss";
 
-
 // Generic pill label
 // ---------------------------
 %pill-label,
@@ -25,7 +24,7 @@
 // FB FRIEND pill label
 // ---------------------------
 .pill-label--friend {
-	@include solid_pill( $C_blue );
+	@include solid_pill( $bgColor: lighten($C_facebook, 45%), $textColor: $C_facebook );
 }
 
 // ORG pill label
@@ -44,4 +43,10 @@
 // ---------------------------
 .pill-label--unpaid {
 	@include hollow_pill( $C_red );
+}
+
+// Text only - no shape, no colors
+// ---------------------------
+.pill-label--text {
+	@extend %_pill_text_base;
 }

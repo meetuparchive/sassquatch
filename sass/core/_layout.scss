@@ -341,7 +341,7 @@ $arrow-width: $baseline/2;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 
 	label.small {
-		font-size:13px;
+		font-size:$smallFontSize;
 	}
 	select {
 		height: $bigFontSize*2 - 2;
@@ -401,14 +401,20 @@ hr.double-line {
 	}
 
 	.doc-box {
-		margin: $baseline;
+		margin: $baseline * .75;
 		margin-bottom:0;
 
 		&:last-child {
-			margin-bottom:$baseline*.75;
+			margin-bottom:$baseline * .75;
 		}
 	}
 
+	// ah well, doc-box margin should = doc-content padding
+	// so have to redefine
+	.doc-content {
+		padding:$baseline * .75;
+		padding-bottom:0px;
+	}
 
 	.doc-content.bordered {
 		border-top: 1px solid $C_line;
@@ -416,7 +422,7 @@ hr.double-line {
 
 	//* warnings & messages
 	.doc-box-notice {
-		padding:$spacing;
+		padding:$baseline * .75;
 	}
 
 
