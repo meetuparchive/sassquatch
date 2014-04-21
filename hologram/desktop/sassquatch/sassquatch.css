@@ -2174,13 +2174,8 @@ and content wrapper.
 	</div>
 	<div class="docStripe--red inverted">
 		<div class="docBounds">
-			<div class="docSection">
-				<h3>I'm in a red stripe</h3>
-				<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
-			</div>
-			<div class="docSection">
-				<h3>Stripes can contain <code>docSection</code> elements</h3>
-			</div>
+			<h3>I'm in a red stripe</h3>
+			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
 		</div>
 	</div>
 
