@@ -1314,7 +1314,7 @@ match up with the appropriate visual style.
 
 All block level content tags, like `<p>` have the same `margin-bottom`. This
 ensures good vertical flow, and also gives us a standard for our content
-containers. The `docContent` content container for example, has padding on
+containers. The `docSection` content container for example, has padding on
 all sides but the bottom (because the margin on the last block element provides
 the whitespace on the bottom).
 
@@ -1495,7 +1495,7 @@ Data tables should be used for tabular data.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<table>
 				<thead>
 					<tr>
@@ -1530,7 +1530,7 @@ Data tables should be used for tabular data.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<table class="stripedTable">
 				<thead>
 					<tr>
@@ -1742,11 +1742,11 @@ category: Lists
 ---
 
 List items in `dividedList` expect block-level elements, like `p` or `img`.
-`dividedList` and `paddedList` usually live inside a `docContent` wrapper.
+`dividedList` and `paddedList` usually live inside a `docSection` wrapper.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<ul class="dividedList">
 				<li><p>Eggs</p></li>
 				<li><p>Milk</p></li>
@@ -1776,7 +1776,7 @@ The `paddedList` pattern is the same as `dividedList`, but without borders.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<ul class="paddedList">
 				<li><p>Eggs</p></li>
 				<li><p>Milk</p></li>
@@ -1805,7 +1805,7 @@ name: secitonList
 parent: dividedList
 ---
 
-A type of `dividedList` pattern that directly divides a `docBox` without a `docContent` element.
+A type of `dividedList` pattern that directly divides a `docBox` without a `docSection` element.
 
 ```html_example
 	<div class="docBox">
@@ -2338,7 +2338,7 @@ button,
   margin: 0;
   /* OVERRIDE */
   /* NOTE: For mobile buttons in general, they're probably going to be in a
-   * section of something like a ff-box, or a `.docContent` (for padding)
+   * section of something like a ff-box, or a `docSection` (for padding)
    * when placed directly on the background.
    *
    * The bottom margin isn't as useful here, and can lead to some cascade
@@ -3208,6 +3208,8 @@ sets a full width background. The `docBounds` class is used as a padding helper
 and content wrapper.
 
 ```html_example
+
+	<!-- default stripe and color stripe -->
 	<div class="docStripe">
 		<div class="docBounds">
 			<h3>I'm in a stripe</h3>
@@ -3216,8 +3218,36 @@ and content wrapper.
 	</div>
 	<div class="docStripe--red inverted">
 		<div class="docBounds">
-			<h3>I'm in a red stripe</h3>
-			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+			<div class="docSection">
+				<h3>I'm in a red stripe</h3>
+				<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+			</div>
+			<div class="docSection">
+				<h3>Stripes can contain <code>docSection</code> elements</h3>
+			</div>
+		</div>
+	</div>
+
+	<!-- "collections" -->
+	<div class="docStripe--collection">
+		<div class="docBounds">
+			<h3>I contain a collection (of docBoxes)</h3>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
 		</div>
 	</div>
 ```
@@ -3293,8 +3323,8 @@ Draw rounded corner white box with default block content `margin-bottom`.
 */
 /*doc
 ---
-title: Doc Content
-name: docContent
+title: Doc Section (formerly doc content)
+name: docSection
 parent: docBox
 ---
 
@@ -3302,10 +3332,10 @@ Provides padding for content; acts as a vertical content divider.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<p>first content container</p>
 		</div>
-		<div class="docContent">
+		<div class="docSection">
 			<p>second content container</p>
 		</div>
 	</div>
@@ -3314,17 +3344,17 @@ Provides padding for content; acts as a vertical content divider.
 */
 /*doc
 ---
-title: Full width lists and doc-content
+title: Full width lists and docSection
 name: docLists
 parent: docBox
 ---
 
 You can add a `sectionList` directly inside the `docBox` in order to
-to span the full width of the box, and use `docContent` for padded content:
+to span the full width of the box, and use `docSection` for padded content:
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<h3>Cat name ideas</h3>
 		</div>
 		<ul class="sectionList">
@@ -3371,29 +3401,29 @@ to span the full width of the box, and use `docContent` for padded content:
   */
   /* see bug: 31893 */
 }
-.docBox > .docContent:first-child, .docBox > .doc-content:first-child,
-.doc-box > .docContent:first-child,
+.docBox > .docSection:first-child, .docBox > .doc-content:first-child,
+.doc-box > .docSection:first-child,
 .doc-box > .doc-content:first-child {
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
-.docBox > .docContent:last-child, .docBox > .doc-content:last-child,
-.doc-box > .docContent:last-child,
+.docBox > .docSection:last-child, .docBox > .doc-content:last-child,
+.doc-box > .docSection:last-child,
 .doc-box > .doc-content:last-child {
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.docBox .docContent, .docBox .doc-content,
-.doc-box .docContent,
+.docBox .docSection, .docBox .doc-content,
+.doc-box .docSection,
 .doc-box .doc-content {
   border-top: 1px solid #dddddd;
 }
-.docBox .docContent:first-child, .docBox .doc-content:first-child,
-.doc-box .docContent:first-child,
+.docBox .docSection:first-child, .docBox .doc-content:first-child,
+.doc-box .docSection:first-child,
 .doc-box .doc-content:first-child {
   border-top: none;
 }
@@ -4315,7 +4345,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 	</ul>
 
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<ul class="navTabs">
 				<li><a href="#">Upcoming Meetups</a></li>
 				<li><a href="#">Past Meetups</a></li>

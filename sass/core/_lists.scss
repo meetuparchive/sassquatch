@@ -138,11 +138,11 @@ category: Lists
 ---
 
 List items in `dividedList` expect block-level elements, like `p` or `img`.
-`dividedList` and `paddedList` usually live inside a `docContent` wrapper.
+`dividedList` and `paddedList` usually live inside a `docSection` wrapper.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<ul class="dividedList">
 				<li><p>Eggs</p></li>
 				<li><p>Milk</p></li>
@@ -172,7 +172,7 @@ The `paddedList` pattern is the same as `dividedList`, but without borders.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<ul class="paddedList">
 				<li><p>Eggs</p></li>
 				<li><p>Milk</p></li>
@@ -201,7 +201,7 @@ name: secitonList
 parent: dividedList
 ---
 
-A type of `dividedList` pattern that directly divides a `docBox` without a `docContent` element.
+A type of `dividedList` pattern that directly divides a `docBox` without a `docSection` element.
 
 ```html_example
 	<div class="docBox">

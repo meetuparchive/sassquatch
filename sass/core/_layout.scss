@@ -147,6 +147,8 @@ sets a full width background. The `docBounds` class is used as a padding helper
 and content wrapper.
 
 ```html_example
+
+	<!-- default stripe and color stripe -->
 	<div class="docStripe">
 		<div class="docBounds">
 			<h3>I'm in a stripe</h3>
@@ -157,6 +159,29 @@ and content wrapper.
 		<div class="docBounds">
 			<h3>I'm in a red stripe</h3>
 			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+		</div>
+	</div>
+
+	<!-- "collections" -->
+	<div class="docStripe--collection">
+		<div class="docBounds">
+			<h3>I contain a collection (of docBoxes)</h3>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
 		</div>
 	</div>
 ```
@@ -244,8 +269,8 @@ Draw rounded corner white box with default block content `margin-bottom`.
 
 /*doc
 ---
-title: Doc Content
-name: docContent
+title: Doc Section (formerly doc content)
+name: docSection
 parent: docBox
 ---
 
@@ -253,10 +278,10 @@ Provides padding for content; acts as a vertical content divider.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<p>first content container</p>
 		</div>
-		<div class="docContent">
+		<div class="docSection">
 			<p>second content container</p>
 		</div>
 	</div>
@@ -266,17 +291,17 @@ Provides padding for content; acts as a vertical content divider.
 
 /*doc
 ---
-title: Full width lists and doc-content
+title: Full width lists and docSection
 name: docLists
 parent: docBox
 ---
 
 You can add a `sectionList` directly inside the `docBox` in order to
-to span the full width of the box, and use `docContent` for padded content:
+to span the full width of the box, and use `docSection` for padded content:
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent">
+		<div class="docSection">
 			<h3>Cat name ideas</h3>
 		</div>
 		<ul class="sectionList">
@@ -303,12 +328,12 @@ to span the full width of the box, and use `docContent` for padded content:
 	* allows the doc-content to be shaded without conflicting with .doc-box rounding
 	*/
 
-	& > .docContent:first-child,
+	& > .docSection:first-child,
 	& > .doc-content:first-child {
 		@include round-nw($defaultRadius);
 		@include round-ne($defaultRadius);
 	}
-	& > .docContent:last-child,
+	& > .docSection:last-child,
 	& > .doc-content:last-child {
 		@include round-sw($defaultRadius);
 		@include round-se($defaultRadius);
@@ -318,7 +343,7 @@ to span the full width of the box, and use `docContent` for padded content:
 	* doc-content elemenmts inside doc-box get a dividing border by default
 	* (override with .border-none if you need to)
 	*/
-	& .docContent,
+	& .docSection,
 	& .doc-content {
 		border-top: 1px solid $C_line;
 		&:first-child{

@@ -36,7 +36,7 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 
 ```html_example
 	<div class="docBox">
-		<div class="docContent inverted" style="background-color: #5D87B0;">
+		<div class="docSection inverted" style="background-color: #5D87B0;">
 			<h3>Yay, I'm inverted</h3>
 			<p>
 				All the text flips to light colors<br />
@@ -74,7 +74,7 @@ match up with the appropriate visual style.
 
 All block level content tags, like `<p>` have the same `margin-bottom`. This
 ensures good vertical flow, and also gives us a standard for our content
-containers. The `docContent` content container for example, has padding on
+containers. The `docSection` content container for example, has padding on
 all sides but the bottom (because the margin on the last block element provides
 the whitespace on the bottom).
 
@@ -257,7 +257,7 @@ match up with the appropriate visual style.
 
 All block level content tags, like `<p>` have the same `margin-bottom`. This
 ensures good vertical flow, and also gives us a standard for our content
-containers. The `docContent` content container for example, has padding on
+containers. The `docSection` content container for example, has padding on
 all sides but the bottom (because the margin on the last block element provides
 the whitespace on the bottom).
 
