@@ -2,6 +2,7 @@
 .sass-cache
 .bundle
 *.swp
+*.swo
 !README*
 bower_components/
 hologram/desktop/sassquatch/sassquatch.css
