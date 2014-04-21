@@ -96,20 +96,24 @@ input[type="submit"].button--blue, .nav-buttons label,
   text-decoration: none !important;
 }
 
-.docBounds, .nav-tabs, .nav-pagination, .nav-buttons {
+.docBounds, .navTabs,
+.nav-tabs, .nav-pagination, .nav-buttons {
   /**
    * For IE 6/7 only
    * Include this rule to trigger hasLayout and contain floats.
    */
   *zoom: 1;
 }
-.docBounds:before, .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .docBounds:after, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+.docBounds:before, .navTabs:before,
+.nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .docBounds:after, .navTabs:after,
+.nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.docBounds:after, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+.docBounds:after, .navTabs:after,
+.nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
   clear: both;
 }
 
@@ -339,8 +343,8 @@ The `inverted` class creates a context in which text colors and secondary
 buttons are inverted to light colors to work on dark backgrounds or photos.
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content inverted" style="background-color: #5D87B0;">
+	<div class="docBox">
+		<div class="docContent inverted" style="background-color: #5D87B0;">
 			<h3>Yay, I'm inverted</h3>
 			<p>
 				All the text flips to light colors<br />
@@ -378,7 +382,7 @@ match up with the appropriate visual style.
 
 All block level content tags, like `<p>` have the same `margin-bottom`. This
 ensures good vertical flow, and also gives us a standard for our content
-containers. The `doc-content` content container for example, has padding on
+containers. The `docContent` content container for example, has padding on
 all sides but the bottom (because the margin on the last block element provides
 the whitespace on the bottom).
 
@@ -579,8 +583,8 @@ Data tables should be used for tabular data.
 ### Default table
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<table>
 				<thead>
 					<tr>
@@ -614,8 +618,8 @@ Data tables should be used for tabular data.
 ### Striped Table
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<table class="stripedTable">
 				<thead>
 					<tr>
@@ -827,11 +831,11 @@ category: Lists
 ---
 
 List items in `dividedList` expect block-level elements, like `p` or `img`.
-`dividedList` and `paddedList` usually live inside a `doc-content` wrapper.
+`dividedList` and `paddedList` usually live inside a `docContent` wrapper.
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<ul class="dividedList">
 				<li><p>Eggs</p></li>
 				<li><p>Milk</p></li>
@@ -860,8 +864,8 @@ parent: dividedList
 The `paddedList` pattern is the same as `dividedList`, but without borders.
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<ul class="paddedList">
 				<li><p>Eggs</p></li>
 				<li><p>Milk</p></li>
@@ -890,10 +894,10 @@ name: secitonList
 parent: dividedList
 ---
 
-A type of `dividedList` pattern that directly divides a `doc-box` without a `doc-content` element.
+A type of `dividedList` pattern that directly divides a `docBox` without a `docContent` element.
 
 ```html_example
-	<div class="doc-box">
+	<div class="docBox">
 		<ul class="dividedList">
 			<li><p>Eggs</p></li>
 			<li><p>Milk</p></li>
@@ -2155,7 +2159,7 @@ category: Layout
 ---
 
 Used for newer and more responsive layouts, where content lives on top of
-a full-width background instead of `doc-box` modules. The `docStripe` container
+a full-width background instead of `docBox` modules. The `docStripe` container
 sets a full width background. The `docBounds` class is used as a padding helper
 and content wrapper.
 
@@ -2164,6 +2168,12 @@ and content wrapper.
 		<div class="docBounds">
 			<h3>I'm in a stripe</h3>
 			<p>Any arbitrary content can go here</p>
+		</div>
+	</div>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<h3>I'm in a red stripe</h3>
+			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
 		</div>
 	</div>
 ```
@@ -2231,7 +2241,7 @@ category: Layout
 Draw rounded corner white box with default block content `margin-bottom`.
 
 ```html_example
-	<div class="doc-box">
+	<div class="docBox">
 		<p>I'm a box</p>
 	</div>
 ```
@@ -2247,11 +2257,11 @@ parent: docBox
 Provides padding for content; acts as a vertical content divider.
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<p>first content container</p>
 		</div>
-		<div class="doc-content">
+		<div class="docContent">
 			<p>second content container</p>
 		</div>
 	</div>
@@ -2265,8 +2275,8 @@ name: docLists
 parent: docBox
 ---
 
-You can add a `sectionList` directly inside the `doc-box` in order to
-to span the full width of the box, and use `doc-content` for padded content:
+You can add a `sectionList` directly inside the `docBox` in order to
+to span the full width of the box, and use `docContent` for padded content:
 
 ```html_example
 	<div class="docBox">
@@ -3353,15 +3363,15 @@ category: Navigation
 Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 
 ```html_example
-	<ul class="nav-tabs">
+	<ul class="navTabs">
 		<li><a href="#">Upcoming Meetups</a></li>
 		<li><a href="#">Past Meetups</a></li>
 		<li class="selected"><a href="#">Selected tab</a></li>
 	</ul>
 
-	<div class="doc-box">
-		<div class="doc-content">
-			<ul class="nav-tabs">
+	<div class="docBox">
+		<div class="docContent">
+			<ul class="navTabs">
 				<li><a href="#">Upcoming Meetups</a></li>
 				<li><a href="#">Past Meetups</a></li>
 				<li class="selected"><a href="#">Selected tab</a></li>
@@ -3373,6 +3383,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 ```
 
 */
+.navTabs,
 .nav-tabs {
   padding-top: 9px;
   padding-left: 9px;
@@ -3382,12 +3393,14 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   list-style: none;
   margin-bottom: 0;
 }
+.navTabs li,
 .nav-tabs li {
   float: left;
   padding: 0;
   margin-right: 9px;
   margin-bottom: -1px;
 }
+.navTabs a,
 .nav-tabs a {
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
@@ -3403,13 +3416,16 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   border-color: rgba(0, 0, 0, 0.1);
   padding: 6px 13.5px;
 }
+.navTabs a:focus,
 .nav-tabs a:focus {
   outline-width: 0;
 }
+.navTabs a img,
 .nav-tabs a img {
   /*calendar icon*/
   margin-top: -5px;
 }
+.navTabs .selected a,
 .nav-tabs .selected a {
   color: #0d0d0d;
   color: rgba(0, 0, 0, 0.95);
@@ -3418,6 +3434,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   border-color: rgba(0, 0, 0, 0.1);
   border-bottom-color: white;
 }
+.navTabs .tabcount,
 .nav-tabs .tabcount {
   color: #878787;
   color: rgba(0, 0, 0, 0.47);

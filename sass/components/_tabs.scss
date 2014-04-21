@@ -8,15 +8,15 @@ category: Navigation
 Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 
 ```html_example
-	<ul class="nav-tabs">
+	<ul class="navTabs">
 		<li><a href="#">Upcoming Meetups</a></li>
 		<li><a href="#">Past Meetups</a></li>
 		<li class="selected"><a href="#">Selected tab</a></li>
 	</ul>
 
-	<div class="doc-box">
-		<div class="doc-content">
-			<ul class="nav-tabs">
+	<div class="docBox">
+		<div class="docContent">
+			<ul class="navTabs">
 				<li><a href="#">Upcoming Meetups</a></li>
 				<li><a href="#">Past Meetups</a></li>
 				<li class="selected"><a href="#">Selected tab</a></li>
@@ -31,6 +31,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 
 $tabSpacing: $spacing/2;
 
+.navTabs,
 .nav-tabs {
 	@extend %clearfix;
 	padding-top: $tabSpacing;
@@ -86,6 +87,7 @@ $tabSpacing: $spacing/2;
 }
 
 @if $platform == "mobile" {
+	.navTabs,
 	.nav-tabs {
 		li {
 			margin-right: 0;

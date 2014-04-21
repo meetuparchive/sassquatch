@@ -142,7 +142,7 @@ category: Layout
 ---
 
 Used for newer and more responsive layouts, where content lives on top of
-a full-width background instead of `doc-box` modules. The `docStripe` container
+a full-width background instead of `docBox` modules. The `docStripe` container
 sets a full width background. The `docBounds` class is used as a padding helper
 and content wrapper.
 
@@ -151,6 +151,12 @@ and content wrapper.
 		<div class="docBounds">
 			<h3>I'm in a stripe</h3>
 			<p>Any arbitrary content can go here</p>
+		</div>
+	</div>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<h3>I'm in a red stripe</h3>
+			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
 		</div>
 	</div>
 ```
@@ -229,7 +235,7 @@ category: Layout
 Draw rounded corner white box with default block content `margin-bottom`.
 
 ```html_example
-	<div class="doc-box">
+	<div class="docBox">
 		<p>I'm a box</p>
 	</div>
 ```
@@ -246,11 +252,11 @@ parent: docBox
 Provides padding for content; acts as a vertical content divider.
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<p>first content container</p>
 		</div>
-		<div class="doc-content">
+		<div class="docContent">
 			<p>second content container</p>
 		</div>
 	</div>
@@ -265,8 +271,8 @@ name: docLists
 parent: docBox
 ---
 
-You can add a `sectionList` directly inside the `doc-box` in order to
-to span the full width of the box, and use `doc-content` for padded content:
+You can add a `sectionList` directly inside the `docBox` in order to
+to span the full width of the box, and use `docContent` for padded content:
 
 ```html_example
 	<div class="docBox">
