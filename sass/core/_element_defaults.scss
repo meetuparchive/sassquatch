@@ -246,16 +246,15 @@
 	/* {{{ Headings */
 
 	h1,h2,h3,h4,h5,h6 {
+		@include color_textPrimary();
 		font-family: $headingFontStack;
 		font-weight: $W_bold;
-		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
 		line-height: 1.2;
-		
 		.inverted & {
-			color: $C_primaryGray;
+			@include color_textPrimaryInverted();
 		}
 	}
 	h1 { 
