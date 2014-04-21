@@ -94,18 +94,18 @@ input[type="submit"].button--blue, .nav-buttons label,
   cursor: pointer;
   text-decoration: none !important; }
 
-.nav-tabs, .nav-pagination, .nav-buttons {
+.docBounds, .nav-tabs, .nav-pagination, .nav-buttons {
   /**
    * For IE 6/7 only
    * Include this rule to trigger hasLayout and contain floats.
    */
   *zoom: 1; }
-  .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+  .docBounds:before, .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .docBounds:after, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+  .docBounds:after, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
     clear: both; }
 
 /* TODO: check usage */
@@ -1445,7 +1445,36 @@ input[type="submit"]:active {
 
 /*ya rly (thanks, IE)*/
 /* }}} */
+/* {{{ Doc Stripe */
+.docStripe {
+  border-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid top;
+  background-color: #fff; }
+
+.docStripe--collection {
+  background-color: #e7e7e7; }
+
+.docStripe--nav {
+  background-color: #f7f7f7; }
+
+.docStripe--inverted {
+  background-color: #353e47; }
+
+.docStripe--red {
+  background-color: #e2373c; }
+
+/* }}} */
+/* {{{ Doc bounds */
+.docBounds {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  padding: 36px 36px 18px 36px; }
+
+/* }}} */
 /* {{{ Box Styles */
+.docBox,
 .doc-box {
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -1475,57 +1504,86 @@ input[type="submit"]:active {
   * allows the borders to span the full height of the .doc-box
   */
   /* see bug: 31893 */ }
+  .docBox > .doc-content:first-child,
   .doc-box > .doc-content:first-child {
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px; }
+  .docBox > .doc-content:last-child,
   .doc-box > .doc-content:last-child {
     -webkit-border-bottom-left-radius: 3px;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
     border-bottom-right-radius: 3px; }
+  .docBox .doc-content,
   .doc-box .doc-content {
     border-top: 1px solid #dddddd; }
+    .docBox .doc-content:first-child,
     .doc-box .doc-content:first-child {
       border-top: none; }
+  .docBox .doc-content.doc-content-border,
   .doc-box .doc-content.doc-content-border {
     border-top: 1px solid #dddddd; }
-  .doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
+  .docBox > .line > .unit, .docBox > .line-gutters > .unit,
+  .doc-box > .line > .unit,
+  .doc-box > .line-gutters > .unit {
     float: none;
     border-right: 1px solid #ddd;
     display: table-cell;
     vertical-align: top; }
-  .doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
+  .docBox > .line > .lastUnit, .docBox > .line-gutters > .lastUnit,
+  .doc-box > .line > .lastUnit,
+  .doc-box > .line-gutters > .lastUnit {
     border-right: 0;
     vertical-align: top; }
-  .doc-box > .line .doc-content, .doc-box > .line-gutters .doc-content {
+  .docBox > .line .doc-content, .docBox > .line-gutters .doc-content,
+  .doc-box > .line .doc-content,
+  .doc-box > .line-gutters .doc-content {
     -webkit-border-radius: 0 0 0 0;
     border-radius: 0 0 0 0; }
-  .doc-box > .line .unit:first-child .doc-content:first-child, .doc-box > .line-gutters .unit:first-child .doc-content:first-child {
+  .docBox > .line .unit:first-child .doc-content:first-child, .docBox > .line-gutters .unit:first-child .doc-content:first-child,
+  .doc-box > .line .unit:first-child .doc-content:first-child,
+  .doc-box > .line-gutters .unit:first-child .doc-content:first-child {
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px; }
-  .doc-box > .line .unit:first-child .doc-content:last-child, .doc-box > .line-gutters .unit:first-child .doc-content:last-child {
+  .docBox > .line .unit:first-child .doc-content:last-child, .docBox > .line-gutters .unit:first-child .doc-content:last-child,
+  .doc-box > .line .unit:first-child .doc-content:last-child,
+  .doc-box > .line-gutters .unit:first-child .doc-content:last-child {
     -webkit-border-bottom-left-radius: 3px;
     border-bottom-left-radius: 3px; }
+  .docBox > .line .unit:last-child .doc-content:first-child,
+  .docBox > .line .lastUnit .doc-content:first-child, .docBox > .line-gutters .unit:last-child .doc-content:first-child,
+  .docBox > .line-gutters .lastUnit .doc-content:first-child,
   .doc-box > .line .unit:last-child .doc-content:first-child,
-  .doc-box > .line .lastUnit .doc-content:first-child, .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
+  .doc-box > .line .lastUnit .doc-content:first-child,
+  .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
   .doc-box > .line-gutters .lastUnit .doc-content:first-child {
     -webkit-border-top-right-radius: 3px;
     border-top-right-radius: 3px; }
+  .docBox > .line .unit:last-child .doc-content:last-child,
+  .docBox > .line .lastUnit .doc-content:last-child, .docBox > .line-gutters .unit:last-child .doc-content:last-child,
+  .docBox > .line-gutters .lastUnit .doc-content:last-child,
   .doc-box > .line .unit:last-child .doc-content:last-child,
-  .doc-box > .line .lastUnit .doc-content:last-child, .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
+  .doc-box > .line .lastUnit .doc-content:last-child,
+  .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
   .doc-box > .line-gutters .lastUnit .doc-content:last-child {
     -webkit-border-bottom-right-radius: 3px;
     border-bottom-right-radius: 3px; }
+  .docBox.D_box,
   .doc-box.D_box {
     border: 0; }
 
+.ie6 .docBox .line .unit,
+.ie6 .docBox .line-gutters .unit,
 .ie6 .doc-box .line .unit,
-.ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
+.ie6 .doc-box .line-gutters .unit, .ie7 .docBox .line .unit,
+.ie7 .docBox .line-gutters .unit,
+.ie7 .doc-box .line .unit,
 .ie7 .doc-box .line-gutters .unit {
   float: left !important; }
 
+.docBox-section,
 .doc-padding,
 .doc-content,
 .doc-controls {
