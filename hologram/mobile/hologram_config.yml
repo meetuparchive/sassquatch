@@ -10,7 +10,7 @@ destination: ../../doc_mobile
 # The assets needed to build the docs (includes header.html,
 # footer.html, etc)
 # You may put doc related assets here too: images, css, etc.
-documentation_assets: ../templates
+documentation_assets: ./templates
 
 # Any other asset folders that need to be copied to the destination folder
 # # This where you should include your full stylesheets, component javascript,
