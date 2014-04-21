@@ -111,7 +111,6 @@ header {
 	background-color: rgb(226,55,60);
 }
 header h1 {
-	color: #fff;
 	font-size: 32px;
 }
 
@@ -134,13 +133,19 @@ header h1 {
 #mainNav a {
 	display: inline-block;
 	padding: 8px 16px;
-	color: rgb(226,55,60);
+	color: white;
 }
 #mainNav a:hover,
 #mainNav .selected a {
 	text-decoration: none;
-	background-color: rgb(226,55,60);
 	color: white;
+}
+#mainNav a:hover {
+	background-color: rgb(266,95,110);
+}
+#mainNav .selected a {
+	background-color: rgb(240,240,240);
+	color: rgb(226,55,60);
 }
 
 #categoryList li {

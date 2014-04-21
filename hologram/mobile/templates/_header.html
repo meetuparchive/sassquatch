@@ -10,11 +10,11 @@
 	</head>
 	<body class="<%= isIndex ? 'home' : '' %>">
 
-	<header>
+	<header class="inverted">
 		<h1>Sassquatch Mobile</h1>
 		<% if not isIndex %>
 			<nav id="mainNav">
-				<ul class="pipeList">
+				<ul class="inlineblockList">
 					<% @categories.each do |category, file_name| %>
 						<li class="<%= title == category ? 'selected' : '' %>">
 							<a href="<%= file_name %>"><%= category %></a>
