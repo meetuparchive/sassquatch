@@ -132,6 +132,91 @@ Useful classes for setting percentage widths on arbitary elements.
 .span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
 /* }}} */
 
+/* {{{ Doc Stripe */
+
+/*doc
+---
+title: Document Stripe Layout
+name: docstar
+category: Layout
+---
+
+Used for newer and more responsive layouts, where content lives on top of
+a full-width background instead of `doc-box` modules. The `docStripe` container
+sets a full width background. The `docBounds` class is used as a padding helper
+and content wrapper.
+
+```html_example
+	<div class="docStripe">
+		<div class="docBounds">
+			<h3>I'm in a stripe</h3>
+			<p>Any arbitrary content can go here</p>
+		</div>
+	</div>
+```
+
+*/
+
+// default
+.docStripe {
+	@include color_lineGray('border-color');
+	border: 1px solid top;
+	background-color: #fff;
+}
+
+/*doc
+---
+title: Stripe variants
+name: docStripe
+parent: docstar
+---
+
+`docStripe` has a white background and slight border top by default,
+but there are a number of other variants:
+
+Class                   | Description
+------------------------| ------------------------------------------------------
+`docStripe--collection` | For a stripe containing a collection of cards or boxes
+`docStripe--nav`        | A stripe with navingation (see rick, elaboration TK)
+`docStripe--inverted`   | Dark stripe color - use with `inverted` class to style children
+`docStripe--red`        | A Meetupy red stripe
+
+*/
+
+// for collections (cards, panels, etc)
+.docStripe--collection {
+	background-color: $C_backgroundCollection;
+}
+
+// TODO: what is this for?
+.docStripe--nav {
+	background-color: $C_backgroundNav;
+}
+
+// near-black stripe
+.docStripe--inverted {
+	background-color: $C_backgroundContentInverted;
+}
+
+// red accent stripe
+.docStripe--red {
+	background-color: $C_backgroundContentAccent;
+}
+
+/* }}} */
+
+/* {{{ Doc bounds */
+// max-width constraint with media queries
+// has padding that adjusts down with smaller screens
+.docBounds {
+	@extend %clearfix;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 720px; // TODO: decide what this should be?
+	padding: $spacing*2 $spacing*2 $spacing $spacing*2;
+}
+/* }}} */
+
 /* {{{ Box Styles */
 
 /*doc
@@ -184,8 +269,8 @@ You can add a `sectionList` directly inside the `doc-box` in order to
 to span the full width of the box, and use `doc-content` for padded content:
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<h3>Cat name ideas</h3>
 		</div>
 		<ul class="sectionList">
@@ -198,7 +283,8 @@ to span the full width of the box, and use `doc-content` for padded content:
 ```
 
 */
-.doc-box {
+.docBox,   // NEW SELECTOR
+.doc-box { // DEPRECATED SELECTOR
 	@include round($defaultRadius);
 	background-color: #fff;
 	margin-bottom: $baseline;
@@ -211,11 +297,13 @@ to span the full width of the box, and use `doc-content` for padded content:
 	* allows the doc-content to be shaded without conflicting with .doc-box rounding
 	*/
 
-	& > .doc-content:first-child{
+	& > .docContent:first-child,
+	& > .doc-content:first-child {
 		@include round-nw($defaultRadius);
 		@include round-ne($defaultRadius);
 	}
-	& > .doc-content:last-child{
+	& > .docContent:last-child,
+	& > .doc-content:last-child {
 		@include round-sw($defaultRadius);
 		@include round-se($defaultRadius);
 	}
@@ -224,6 +312,7 @@ to span the full width of the box, and use `doc-content` for padded content:
 	* doc-content elemenmts inside doc-box get a dividing border by default
 	* (override with .border-none if you need to)
 	*/
+	& .docContent,
 	& .doc-content {
 		border-top: 1px solid $C_line;
 		&:first-child{
@@ -242,6 +331,9 @@ to span the full width of the box, and use `doc-content` for padded content:
 	/**
 	* Vertical box divisions (when direct child is an OOCSS "line")
 	* allows the borders to span the full height of the .doc-box
+	* 
+	* DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
+	* This will now only work with deprecated selectors
 	*/
 	& > .line,
 	& > .line-gutters{
@@ -255,8 +347,6 @@ to span the full width of the box, and use `doc-content` for padded content:
 			border-right: 0;
 			vertical-align: top;
 		}
-
-
 
 		// magically correct rounded corners when in full-height columns
 		.doc-content{
@@ -287,12 +377,15 @@ to span the full width of the box, and use `doc-content` for padded content:
 	}
 }
 .ie6, .ie7{
+	.docBox .line .unit,
+	.docBox .line-gutters .unit,
 	.doc-box .line .unit,
 	.doc-box .line-gutters .unit{
 		float: left!important;
 	}
 }
 
+.docSection, /* PCV compliant name for doc-content */
 .doc-padding,	/* generic padding helper (does nothing else) */
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */

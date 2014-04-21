@@ -626,20 +626,20 @@ input[type="submit"].button--blue, .nav-buttons label,
   text-decoration: none !important;
 }
 
-.nav-tabs, .nav-pagination, .nav-buttons, .touchList--withInlineChildren {
+.docBounds, .nav-tabs, .nav-pagination, .nav-buttons, .touchList--withInlineChildren {
   /**
    * For IE 6/7 only
    * Include this rule to trigger hasLayout and contain floats.
    */
   *zoom: 1;
 }
-.nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .touchList--withInlineChildren:before, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after, .touchList--withInlineChildren:after {
+.docBounds:before, .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .touchList--withInlineChildren:before, .docBounds:after, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after, .touchList--withInlineChildren:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.nav-tabs:after, .nav-pagination:after, .nav-buttons:after, .touchList--withInlineChildren:after {
+.docBounds:after, .nav-tabs:after, .nav-pagination:after, .nav-buttons:after, .touchList--withInlineChildren:after {
   clear: both;
 }
 
@@ -3190,6 +3190,80 @@ Useful classes for setting percentage widths on arbitary elements.
 
 /*ya rly (thanks, IE)*/
 /* }}} */
+/* {{{ Doc Stripe */
+/*doc
+---
+title: Document Stripe Layout
+name: docstar
+category: Layout
+---
+
+Used for newer and more responsive layouts, where content lives on top of
+a full-width background instead of `doc-box` modules. The `docStripe` container
+sets a full width background. The `docBounds` class is used as a padding helper
+and content wrapper.
+
+```html_example
+	<div class="docStripe">
+		<div class="docBounds">
+			<h3>I'm in a stripe</h3>
+			<p>Any arbitrary content can go here</p>
+		</div>
+	</div>
+```
+
+*/
+.docStripe {
+  border-color: #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid top;
+  background-color: #fff;
+}
+
+/*doc
+---
+title: Stripe variants
+name: docStripe
+parent: docstar
+---
+
+`docStripe` has a white background and slight border top by default,
+but there are a number of other variants:
+
+Class                   | Description
+------------------------| ------------------------------------------------------
+`docStripe--collection` | For a stripe containing a collection of cards or boxes
+`docStripe--nav`        | A stripe with navingation (see rick, elaboration TK)
+`docStripe--inverted`   | Dark stripe color - use with `inverted` class to style children
+`docStripe--red`        | A Meetupy red stripe
+
+*/
+.docStripe--collection {
+  background-color: #e7e7e7;
+}
+
+.docStripe--nav {
+  background-color: #f7f7f7;
+}
+
+.docStripe--inverted {
+  background-color: #353e47;
+}
+
+.docStripe--red {
+  background-color: #e2373c;
+}
+
+/* }}} */
+/* {{{ Doc bounds */
+.docBounds {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  padding: 16px 16px 8px 16px;
+}
+
+/* }}} */
 /* {{{ Box Styles */
 /*doc
 ---
@@ -3239,8 +3313,8 @@ You can add a `sectionList` directly inside the `doc-box` in order to
 to span the full width of the box, and use `doc-content` for padded content:
 
 ```html_example
-	<div class="doc-box">
-		<div class="doc-content">
+	<div class="docBox">
+		<div class="docContent">
 			<h3>Cat name ideas</h3>
 		</div>
 		<ul class="sectionList">
@@ -3253,6 +3327,7 @@ to span the full width of the box, and use `doc-content` for padded content:
 ```
 
 */
+.docBox,
 .doc-box {
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
@@ -3280,74 +3355,110 @@ to span the full width of the box, and use `doc-content` for padded content:
   /**
   * Vertical box divisions (when direct child is an OOCSS "line")
   * allows the borders to span the full height of the .doc-box
+  * 
+  * DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
+  * This will now only work with deprecated selectors
   */
   /* see bug: 31893 */
 }
+.docBox > .docContent:first-child, .docBox > .doc-content:first-child,
+.doc-box > .docContent:first-child,
 .doc-box > .doc-content:first-child {
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
+.docBox > .docContent:last-child, .docBox > .doc-content:last-child,
+.doc-box > .docContent:last-child,
 .doc-box > .doc-content:last-child {
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+.docBox .docContent, .docBox .doc-content,
+.doc-box .docContent,
 .doc-box .doc-content {
   border-top: 1px solid #dddddd;
 }
+.docBox .docContent:first-child, .docBox .doc-content:first-child,
+.doc-box .docContent:first-child,
 .doc-box .doc-content:first-child {
   border-top: none;
 }
+.docBox .doc-content.doc-content-border,
 .doc-box .doc-content.doc-content-border {
   border-top: 1px solid #dddddd;
 }
-.doc-box > .line > .unit, .doc-box > .line-gutters > .unit {
+.docBox > .line > .unit, .docBox > .line-gutters > .unit,
+.doc-box > .line > .unit,
+.doc-box > .line-gutters > .unit {
   float: none;
   border-right: 1px solid #ddd;
   display: table-cell;
   vertical-align: top;
 }
-.doc-box > .line > .lastUnit, .doc-box > .line-gutters > .lastUnit {
+.docBox > .line > .lastUnit, .docBox > .line-gutters > .lastUnit,
+.doc-box > .line > .lastUnit,
+.doc-box > .line-gutters > .lastUnit {
   border-right: 0;
   vertical-align: top;
 }
-.doc-box > .line .doc-content, .doc-box > .line-gutters .doc-content {
+.docBox > .line .doc-content, .docBox > .line-gutters .doc-content,
+.doc-box > .line .doc-content,
+.doc-box > .line-gutters .doc-content {
   -webkit-border-radius: 0 0 0 0;
   border-radius: 0 0 0 0;
 }
-.doc-box > .line .unit:first-child .doc-content:first-child, .doc-box > .line-gutters .unit:first-child .doc-content:first-child {
+.docBox > .line .unit:first-child .doc-content:first-child, .docBox > .line-gutters .unit:first-child .doc-content:first-child,
+.doc-box > .line .unit:first-child .doc-content:first-child,
+.doc-box > .line-gutters .unit:first-child .doc-content:first-child {
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
 }
-.doc-box > .line .unit:first-child .doc-content:last-child, .doc-box > .line-gutters .unit:first-child .doc-content:last-child {
+.docBox > .line .unit:first-child .doc-content:last-child, .docBox > .line-gutters .unit:first-child .doc-content:last-child,
+.doc-box > .line .unit:first-child .doc-content:last-child,
+.doc-box > .line-gutters .unit:first-child .doc-content:last-child {
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+.docBox > .line .unit:last-child .doc-content:first-child,
+.docBox > .line .lastUnit .doc-content:first-child, .docBox > .line-gutters .unit:last-child .doc-content:first-child,
+.docBox > .line-gutters .lastUnit .doc-content:first-child,
 .doc-box > .line .unit:last-child .doc-content:first-child,
-.doc-box > .line .lastUnit .doc-content:first-child, .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
+.doc-box > .line .lastUnit .doc-content:first-child,
+.doc-box > .line-gutters .unit:last-child .doc-content:first-child,
 .doc-box > .line-gutters .lastUnit .doc-content:first-child {
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
+.docBox > .line .unit:last-child .doc-content:last-child,
+.docBox > .line .lastUnit .doc-content:last-child, .docBox > .line-gutters .unit:last-child .doc-content:last-child,
+.docBox > .line-gutters .lastUnit .doc-content:last-child,
 .doc-box > .line .unit:last-child .doc-content:last-child,
-.doc-box > .line .lastUnit .doc-content:last-child, .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
+.doc-box > .line .lastUnit .doc-content:last-child,
+.doc-box > .line-gutters .unit:last-child .doc-content:last-child,
 .doc-box > .line-gutters .lastUnit .doc-content:last-child {
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+.docBox.D_box,
 .doc-box.D_box {
   border: 0;
 }
 
+.ie6 .docBox .line .unit,
+.ie6 .docBox .line-gutters .unit,
 .ie6 .doc-box .line .unit,
-.ie6 .doc-box .line-gutters .unit, .ie7 .doc-box .line .unit,
+.ie6 .doc-box .line-gutters .unit, .ie7 .docBox .line .unit,
+.ie7 .docBox .line-gutters .unit,
+.ie7 .doc-box .line .unit,
 .ie7 .doc-box .line-gutters .unit {
   float: left !important;
 }
 
+.docSection,
 .doc-padding,
 .doc-content,
 .doc-controls {
