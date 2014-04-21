@@ -1824,6 +1824,21 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 
 /* }}} */
 /* lists additions and overrides {{{ */
+/*doc
+---
+title: Clearing list style
+name: noneList
+parent: list
+---
+
+```html_example
+	<ul class="noneList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 .noneList {
   list-style-type: none;
 }
@@ -1838,6 +1853,21 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
   border-top: 0px;
 }
 
+/*doc
+---
+title: Linked list
+name: linkedList
+parent: list
+---
+
+```html_example
+	<ul class="linkedList">
+		<li><a href="#">Eggs</a></li>
+		<li><a href="#">Milk</a></li>
+		<li><a href="#">Beer</a></li>
+	</ul>
+```
+*/
 .linkedList {
   list-style: none;
   padding: 0;
@@ -2346,7 +2376,20 @@ button,
    */
 }
 
-/* Small == 24pt */
+/*doc
+---
+title: Small button
+name: smallButton
+parent: secondaryButton
+---
+
+Small == 24pt
+
+```html_example
+	<button class="small">cute lil' small button</button>
+```
+
+*/
 button.small,
 .button.small {
   font-size: 12px;
@@ -2354,7 +2397,6 @@ button.small,
   padding-bottom: 0.41667em;
 }
 
-/* Big == 48pt */
 button.big,
 .button.big {
   font-size: 16px !important;
@@ -2367,8 +2409,20 @@ button.big,
   padding-bottom: 0.9375em;
 }
 
-/* ======================================================================== */
-/* BUTTON LAYOUT */
+/*doc
+---
+title: Full-width buttons
+name: fullWidthButton
+parent: secondaryButton
+---
+
+Mobile Sassquatch includes a special class for full-width buttons:
+
+```html_example
+	<button class="full-width">Wide load</button>
+```
+
+*/
 button.full-width,
 .button.full-width,
 .segmented-control.full-width {

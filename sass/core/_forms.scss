@@ -411,7 +411,20 @@ select.big {
 		 */
 	}
 
-	/* Small == 24pt */
+/*doc
+---
+title: Small button
+name: smallButton
+parent: secondaryButton
+---
+
+Small == 24pt
+
+```html_example
+	<button class="small">cute lil' small button</button>
+```
+
+*/
 	button.small,
 	.button.small {
 		font-size: 12px;
@@ -422,7 +435,7 @@ select.big {
 	}
 
 
-	/* Big == 48pt */
+	// TODO: deprecate - this doesn't seem to do anything
 	button.big,
 	.button.big {
 		font-size: 16px !important;
@@ -437,9 +450,20 @@ select.big {
 	}
 
 
-	/* ======================================================================== */
-	/* BUTTON LAYOUT */
+/*doc
+---
+title: Full-width buttons
+name: fullWidthButton
+parent: secondaryButton
+---
 
+Mobile Sassquatch includes a special class for full-width buttons:
+
+```html_example
+	<button class="full-width">Wide load</button>
+```
+
+*/
 	button.full-width,
 	.button.full-width,
 	.segmented-control.full-width {

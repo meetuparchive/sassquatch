@@ -222,6 +222,21 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 @if $platform == "mobile" {
 	/* lists additions and overrides {{{ */
 
+/*doc
+---
+title: Clearing list style
+name: noneList
+parent: list
+---
+
+```html_example
+	<ul class="noneList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
 	.noneList {
 		list-style-type: none;
 		& > li {
@@ -229,6 +244,7 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 		}
 	}
 
+	//TODO: this basically breaks normal list behavior
 	.dividedList, .paddedList {
 		& > li {
 			padding: $spacing*1.5 $spacing*1.5 0;
@@ -238,6 +254,21 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 		}
 	}
 
+/*doc
+---
+title: Linked list
+name: linkedList
+parent: list
+---
+
+```html_example
+	<ul class="linkedList">
+		<li><a href="#">Eggs</a></li>
+		<li><a href="#">Milk</a></li>
+		<li><a href="#">Beer</a></li>
+	</ul>
+```
+*/
 	.linkedList {
 		list-style: none;
 		padding: 0;
@@ -261,6 +292,7 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 		}
 	}
 
+	// TODO: deprecate this or move to modifiers?
 	.linkedBlock {
 		display:block;
 		padding: $spacing $spacing ;
