@@ -2275,27 +2275,6 @@ Draw rounded corner white box with default block content `margin-bottom`.
 */
 /*doc
 ---
-title: Doc Section (formerly doc content)
-name: docSection
-parent: docBox
----
-
-Provides padding for content; acts as a vertical content divider.
-
-```html_example
-	<div class="docBox">
-		<div class="docSection">
-			<p>first content container</p>
-		</div>
-		<div class="docSection">
-			<p>second content container</p>
-		</div>
-	</div>
-```
-
-*/
-/*doc
----
 title: Full width lists and docSection
 name: docLists
 parent: docBox
@@ -2369,13 +2348,11 @@ to span the full width of the box, and use `docSection` for padded content:
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.docBox .docSection, .docBox .doc-content,
-.doc-box .docSection,
+.docBox .doc-content,
 .doc-box .doc-content {
   border-top: 1px solid #dddddd;
 }
-.docBox .docSection:first-child, .docBox .doc-content:first-child,
-.doc-box .docSection:first-child,
+.docBox .doc-content:first-child,
 .doc-box .doc-content:first-child {
   border-top: none;
 }
@@ -2450,7 +2427,6 @@ to span the full width of the box, and use `docSection` for padded content:
   float: left !important;
 }
 
-.docSection,
 .doc-padding,
 .doc-content,
 .doc-controls {
@@ -2459,6 +2435,60 @@ to span the full width of the box, and use `docSection` for padded content:
   padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
+}
+
+/*doc
+---
+title: Doc Section (formerly doc content)
+name: docSection
+parent: docBox
+---
+
+Vertical content divider.
+__Note:__ This replaces the deprecated `doc-content` class
+
+```html_example
+
+	<h5>Sections in a docBox</h5>
+	<div class="docBox">
+		<div class="docSection">
+			<p>first content container</p>
+		</div>
+		<div class="docSection">
+			<p>second content container</p>
+		</div>
+	</div>
+
+	<h5>Sections in a docStripe layout</h5>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<div class="docSection">
+				<p>I'm a section in a docStripe</p>
+			</div>
+			<div class="docSection">
+				<p>I'm another section in a docStripe</p>
+			</div>
+		</div>
+	</div>
+```
+
+*/
+.docSection {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid transparent;
+  /* avoids margin collapse, hence this border... (takashi is a genius) */
+  padding-top: 18px;
+}
+.docSection:first-child {
+  border-top: none;
+}
+.inverted .docSection {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.docBox > .docSection {
+  padding: 18px;
+  padding-bottom: 0;
 }
 
 .suppress-hover-underline:hover {

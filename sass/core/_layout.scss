@@ -267,27 +267,6 @@ Draw rounded corner white box with default block content `margin-bottom`.
 
 */
 
-/*doc
----
-title: Doc Section (formerly doc content)
-name: docSection
-parent: docBox
----
-
-Provides padding for content; acts as a vertical content divider.
-
-```html_example
-	<div class="docBox">
-		<div class="docSection">
-			<p>first content container</p>
-		</div>
-		<div class="docSection">
-			<p>second content container</p>
-		</div>
-	</div>
-```
-
-*/
 
 /*doc
 ---
@@ -343,7 +322,6 @@ to span the full width of the box, and use `docSection` for padded content:
 	* doc-content elemenmts inside doc-box get a dividing border by default
 	* (override with .border-none if you need to)
 	*/
-	& .docSection,
 	& .doc-content {
 		border-top: 1px solid $C_line;
 		&:first-child{
@@ -416,13 +394,64 @@ to span the full width of the box, and use `docSection` for padded content:
 	}
 }
 
-.docSection, /* PCV compliant name for doc-content */
 .doc-padding,	/* generic padding helper (does nothing else) */
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
 	padding: $baseline;
 	padding-bottom: 0;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+}
+
+/*doc
+---
+title: Doc Section (formerly doc content)
+name: docSection
+parent: docBox
+---
+
+Vertical content divider.
+__Note:__ This replaces the deprecated `doc-content` class
+
+```html_example
+
+	<h5>Sections in a docBox</h5>
+	<div class="docBox">
+		<div class="docSection">
+			<p>first content container</p>
+		</div>
+		<div class="docSection">
+			<p>second content container</p>
+		</div>
+	</div>
+
+	<h5>Sections in a docStripe layout</h5>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<div class="docSection">
+				<p>I'm a section in a docStripe</p>
+			</div>
+			<div class="docSection">
+				<p>I'm another section in a docStripe</p>
+			</div>
+		</div>
+	</div>
+```
+
+*/
+.docSection {
+	border-top: 1px solid $C_lineGray;
+	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+	padding-top: $baseline;
+	&:first-child{
+		border-top: none;
+	}
+	.inverted & {
+		border-top-color: $C_lineGrayInverted;
+	}
+}
+.docBox > .docSection {
+	padding: $baseline;
+	padding-bottom: 0;
 }
 
 .suppress-hover-underline:hover {
