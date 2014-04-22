@@ -424,6 +424,24 @@ Class                | Description
 @if $platform == "mobile" {
 	/* typographic + layout additions {{{ */
 
+
+/*doc
+---
+title: Floating
+name: floatMobile
+category: Layout
+---
+
+Mobile Sassquatch includes these classes for floating elements.
+
+```html_example
+	<div class="clearfix">
+		<div class="left shaded-red">floated left</div>
+		<div class="right shaded-red">floated right</div>
+	</div>
+```
+
+*/
 	.left {
 		float:left;
 	}
@@ -431,6 +449,8 @@ Class                | Description
 		float:right;
 	}
 
+	// DEPRECATED
+	// use "[padding|margin]-[direciton]" classes
 	.spaced-right { // rename these spaced classes; not explicit about margin vs. padding
 		margin-right:$spacing;
 	}
@@ -440,12 +460,28 @@ Class                | Description
 	.spaced-left {
 		margin-left:$spacing;
 	}
-	
+
+	// DEPRECATED
 	.flush-bottom {
-		margin-bottom: 0 !important;
-		padding-bottom: 0 !important;
+		margin-bottom: 0px !important;
+		padding-bottom: 0px !important;
 	}
 	
+/*doc
+---
+title: Darkening text
+name: darkenModifer
+parent: typographyModifiers
+---
+
+Darkens text color to match heading color (primary text color)
+
+```html_example
+	<h3>I'm a heading, using primary text color</h3>
+	<p class="darken">I'm a paragraph, darkened to match the primary text color</p>
+```
+
+*/
 	.darker {
 		color: $C_primaryGray;
 
@@ -453,27 +489,66 @@ Class                | Description
 			color: $C_primaryGrayInverted;
 		}
 	}
+
 	.light { // TODO: kill this
 		color: #444;
 	}
 
-	.small, small {
-		font-size:$smallFontSize;
-		line-height:$smallLineHeight;
-	}
+/*doc
+---
+title: Extra small text
+name: tinyModifier
+parent: typographyModifiers
+---
 
+```html_example
+	<p class="smaller">I'm extra small, for mobile</p>
+```
+
+*/
 	.smaller {
 		 font-size:.75rem;
 	}
 
+/*doc
+---
+title: Margin gutters
+name: gutterModifiers
+parent: marginModifiers
+---
+
+Mobile Sassquatch provides a gutter helper that uses `margin-right`:
+
+```html_example
+	<ul class="inlineblockList">
+		<li class="gutter-right guide-shade">Guttered el</li>
+		<li class="gutter-right guide-shade">Guttered el</li>
+		<li class="gutter-right guide-shade">Guttered el</li>
+		<li class="gutter-right guide-shade">Guttered el</li>
+	</ul>
+```
+
+*/
 	.gutter-right {
 		margin-right:$spacing/4;
 	}
 
-	.italic {
-		font-style:italic;
-	}
 
+/*doc
+---
+title: Natural text color
+name: neaturalTextModifier
+parent: typographyModifiers
+---
+
+Sets text color to body text color
+
+```html_example
+	<h3 class="natural-text">I'm a heading getting overriden to natural (body) text color</h3>
+	<p>I'm a normal paragraph</p>
+```
+
+*/
 	// this one only lives in mobile land
 	// we should deprecate this or document &
 	// move it to both platforms
@@ -493,10 +568,25 @@ Class                | Description
         color: $C_text_less;
     }
 
-	.bold {
-		font-weight: $W_bold;
-	}
 
+
+/*doc
+---
+title: Line Spacing
+name: lineSpacing
+cateogry: Modifiers
+---
+
+It's best to rely on default typography line heights, but
+if you absolutely need to set an explicit line height, these
+classes will help:
+
+Class            | Description
+-----------------| ------------------------
+`double-spaced`  | sets line-height to 1.8
+`triple-spaced`  | sets line-height to 2.8
+
+*/
 	.double-spaced {
 		line-height:1.8;
 	}
