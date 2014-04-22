@@ -107,58 +107,43 @@ font-size: 13px;
 }
 
 header {
-	padding: 8px 16px 0 64px;
+	padding: 8px 24px 0 24px;
 	background-color: rgb(226,55,60);
 }
 header h1 {
-	font-size: 32px;
+	font-size: 24px;
 }
 
 #pageWrap {
-	padding: 32px 64px 16px 64px;
+	padding: 32px 24px 16px 24px;
 }
 
-#content, #secondaryNav {
-	float: left;
+#mainNav, #secondaryNav {
+	padding: 4px 24px;
 }
 
 #mainNav {
+	background: #444;
 }
-
-#content {
-	width: 68%;
-	margin-top: -58px;
-}
-
-#mainNav a {
-	display: inline-block;
-	padding: 8px 16px;
-	color: white;
+#mainNav a,
+#mainNav a:visited {
+	display: block;
+	margin: 2px 0;
+	padding: 4px 6px;
+	color: rgb(240,240,240);
+	border: 1px solid transparent;
 }
 #mainNav a:hover,
 #mainNav .selected a {
-	text-decoration: none;
+	border-radius: 5px;
+	border: 1px solid rgb(240,240,240);
 	color: white;
-}
-#mainNav a:hover {
-	background-color: rgb(266,95,110);
-}
-#mainNav .selected a {
-	background-color: rgb(240,240,240);
-	color: rgb(226,55,60);
-}
-
-#categoryList li {
-	padding-top: 4px;
+	background: #666;
 }
 
 #content > h1 {
 	margin-top: 48px;
 	padding-top: 5px;
-	/*
-	 *border-top: 3px solid rgb(226,55,60);
-	 *color: rgb(226,55,60);
-	 */
 }
 
 #content > h2 {
