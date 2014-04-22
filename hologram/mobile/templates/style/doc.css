@@ -1,6 +1,13 @@
 body {
 	background: rgb(240,240,240);
 }
+body.home {
+	background: #444;
+}
+body.home a:link,
+body.home a:visited {
+	color: white;
+}
 
 code, pre {
   font-family: "Monaco", "Consolas", "OpenSans", monospace;
@@ -107,6 +114,7 @@ font-size: 13px;
 }
 
 header {
+	text-align: center;
 	padding: 8px 24px 0 24px;
 	background-color: rgb(226,55,60);
 }
@@ -115,11 +123,26 @@ header h1 {
 }
 
 #pageWrap {
-	padding: 32px 24px 16px 24px;
+	padding: 0px 24px 16px 24px;
 }
 
 #mainNav, #secondaryNav {
+	text-align: center;
 	padding: 4px 24px;
+}
+
+body.home #mainNav {
+	padding: 32px;
+}
+body.home #mainNav a,
+body.home #mainNav li {
+	margin: 0 !important;
+}
+body.home #mainNav a {
+	background: #555;
+}
+body.home .paddedList > li:first-child { /* hack hack hack */
+	padding: 12px 12px 0;
 }
 
 #mainNav {
@@ -149,4 +172,25 @@ header h1 {
 #content > h2 {
 	padding-top: 16px;
 	font-weight: normal;
+}
+
+body.home .docStripe--red {
+	margin-bottom: -50px;
+}
+#squatchContainer {
+	display: table-cell;
+	width: 100%;
+	min-height: 1024px;
+	vertical-align: bottom;
+	text-align: center;
+	margin-bottom: -80px;
+}
+#squatch {
+	width: 80%;
+	margin: 0 auto;
+}
+#github {
+	margin: 0 auto;
+	position: relative;
+	top: -78px;
 }

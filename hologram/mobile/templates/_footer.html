@@ -1,4 +1,23 @@
+<% isIndex = title.empty? %>
+
+	<% if isIndex %>
+		<nav id="mainNav" class="inverted margin-none big" style="text-align: left !important;">
+			<h1>Documentation</h1>
+			<ul class="paddedList margin-none padding-none">
+				<% @categories.each do |category, file_name| %>
+					<li class="<%= title == category ? 'selected' : '' %>">
+						<a href="<%= file_name %>"><%= category %></a>
+					</li>
+				<% end %>
+			</ul>
+		</nav>
+	<% end %>
+
+
+	<% if not isIndex %>
 			</section>
 		</div>
+	<% end %>
+
 	</body>
 </html>
