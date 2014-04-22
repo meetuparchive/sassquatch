@@ -148,6 +148,9 @@ body.home .paddedList > li:first-child { /* hack hack hack */
 #mainNav {
 	background: #444;
 }
+#mainNav li {
+	margin-right: 6px;
+}
 #mainNav a,
 #mainNav a:visited {
 	display: block;
