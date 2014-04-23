@@ -2095,6 +2095,7 @@ as well as a few different states/types:
 /**
 * Solid Pill
 *
+* @param $color - base color
 * @param $bgColor - background color
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
@@ -2102,25 +2103,24 @@ as well as a few different states/types:
 /**
 * Hollow Pill
 *
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
+* @param $color - base color
 * -----------------------------------------------
 */
 .pill-label {
-  background-color: rgba(0, 0, 0, 0.67);
-  color: white; }
+  background-color: rgba(102, 102, 102, 0.67);
+  color: rgba(0, 0, 0, 0.67); }
 
 .pill-label--hollow {
   color: rgba(0, 0, 0, 0.67);
   border: 1px solid; }
 
 .pill-label--friend {
-  background-color: #3987cb;
-  color: white; }
+  background-color: #cdd7ec;
+  color: rgba(0, 0, 0, 0.67); }
 
 .pill-label--leader {
-  background-color: #e0393e;
-  color: white; }
+  background-color: #fce9ea;
+  color: #e0393e; }
 
 .pill-label--paid {
   color: #62ac75;
