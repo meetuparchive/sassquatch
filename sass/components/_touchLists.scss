@@ -25,7 +25,7 @@
 	line-height: $LH_tall;
 	margin-bottom: -$P_secondary;
 	.ffbox--touchList-item & {
-		padding-top: 0;  // padding provided by ffbox
+		padding: 0;  // padding provided by ffbox
 	}
 }
 
@@ -97,7 +97,7 @@
 		}
 	}
 	.touchList-label--item {
-		@include color_textSecondary;
+		@extend %tl-blockLabel;
 	}
 	.touchList-item-heading {
 		// should be .touchList-heading to follow BEM, but that selector already taken
@@ -163,6 +163,14 @@
 			padding-top: $P_secondary;
 			padding-bottom: $P_secondary;
 		}
+	}
+	.ffbox--touchList-avatar {
+		padding: 0 $P_secondary;
+	}
+	.ffbox-fix--avatar {
+		// give it room to breathe - l/r padding provide by wrappers/siblings
+		padding-top: $P_secondary;
+		padding-bottom: $P_secondary;
 	}
 
 	.ffbox--touchList-input {
