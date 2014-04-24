@@ -92,7 +92,7 @@ $stack_frame_spacing: 1px;
 		vertical-align: -0.125em;
 	}
 }
-.avatar-badge--leadTeam {
+.avatarBadge--leadTeam {
 	@extend %avatarBadge;
 	&:before {
 		content: "\E0AF";
