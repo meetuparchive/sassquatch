@@ -124,10 +124,11 @@ header h1 {
 
 #mainNav {
 	width: 16%;
+	min-width: 172px;
 	margin-right: 32px;
 }
 #content {
-	width: 68%;
+	width: 76%;
 	margin-top: -58px;
 }
 
