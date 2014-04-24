@@ -2030,11 +2030,11 @@ as well as a few different states/types:
 .avatar--stack {
   margin-right: 3px; }
 
-.avatar-badge--leadTeam {
+.avatarBadge--leadTeam {
   overflow: visible;
   position: relative;
   text-indent: 0; }
-  .avatar-badge--leadTeam:before {
+  .avatarBadge--leadTeam:before {
     border-color: white;
     color: white;
     background-color: #e0393e;
@@ -2058,9 +2058,9 @@ as well as a few different states/types:
     line-height: 1.45em;
     vertical-align: -0.125em; }
 
-.avatar-badge--leadTeam:before {
+.avatarBadge--leadTeam:before {
   content: "\E0AF"; }
-.avatar-badge--leadTeam:after {
+.avatarBadge--leadTeam:after {
   content: "Lead Team Member";
   font: 0/0 a !important;
   color: transparent;
