@@ -164,9 +164,6 @@ body.home a:link,
 body.home a:visited {
 	color: white;
 }
-body.home .docStripe--red {
-	margin-bottom: -50px;
-}
 body.home #mainNav {
 	padding: 32px;
 }
@@ -184,17 +181,16 @@ body.home .paddedList > li:first-child { /* hack hack hack */
 #squatchContainer {
 	display: table-cell;
 	width: 100%;
-	min-height: 1024px;
+	min-height: 800px;
 	vertical-align: bottom;
 	text-align: center;
-	margin-bottom: -90px;
 }
 #squatch {
 	width: 90%;
-	margin: 0 auto;
+	margin: 0 auto -42px auto;
 }
 #github {
 	margin: 0 auto;
 	position: relative;
-	top: -80px;
+	bottom: 32px;
 }

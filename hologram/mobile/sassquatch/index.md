@@ -1,5 +1,5 @@
-<div class="docStripe--red padding-top inverted">
-	<div class="docBounds align-center margin-top">
+<div class="docStripe--red padding-top inverted flush--bottom">
+	<div class="docBounds align-center margin-top flush--bottom">
 
 		<div class="docSection">
 			<h1 class="padding-bottom">Meet Mobile Sassquatch</h1>
