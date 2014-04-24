@@ -1,13 +1,6 @@
 body {
 	background: rgb(240,240,240);
 }
-body.home {
-	background: #444;
-}
-body.home a:link,
-body.home a:visited {
-	color: white;
-}
 
 code, pre {
   font-family: "Monaco", "Consolas", "OpenSans", monospace;
@@ -131,20 +124,6 @@ header h1 {
 	padding: 4px 24px;
 }
 
-body.home #mainNav {
-	padding: 32px;
-}
-body.home #mainNav a,
-body.home #mainNav li {
-	margin: 0 !important;
-}
-body.home #mainNav a {
-	background: #555;
-}
-body.home .paddedList > li:first-child { /* hack hack hack */
-	padding: 12px 12px 0;
-}
-
 #mainNav {
 	background: #444;
 }
@@ -177,23 +156,45 @@ body.home .paddedList > li:first-child { /* hack hack hack */
 	font-weight: normal;
 }
 
+/* HOME PAGE */
+body.home {
+	background: #444;
+}
+body.home a:link,
+body.home a:visited {
+	color: white;
+}
 body.home .docStripe--red {
 	margin-bottom: -50px;
 }
+body.home #mainNav {
+	padding: 32px;
+}
+body.home #mainNav a,
+body.home #mainNav li {
+	margin: 0 !important;
+}
+body.home #mainNav a {
+	background: #555;
+}
+body.home .paddedList > li:first-child { /* hack hack hack */
+	padding: 12px 12px 0;
+}
+
 #squatchContainer {
 	display: table-cell;
 	width: 100%;
 	min-height: 1024px;
 	vertical-align: bottom;
 	text-align: center;
-	margin-bottom: -80px;
+	margin-bottom: -90px;
 }
 #squatch {
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 }
 #github {
 	margin: 0 auto;
 	position: relative;
-	top: -78px;
+	top: -80px;
 }

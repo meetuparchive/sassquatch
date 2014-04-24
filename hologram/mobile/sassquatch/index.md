@@ -1,4 +1,4 @@
-<div class="docStripe--red padding-top">
+<div class="docStripe--red padding-top inverted">
 	<div class="docBounds align-center margin-top">
 
 		<div class="docSection">

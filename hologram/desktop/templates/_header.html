@@ -10,20 +10,13 @@
 	</head>
 	<body class="<%= isIndex ? 'home' : '' %>">
 
-	<header class="inverted">
-		<h1>Sassquatch</h1>
-	</header>
+	<% if not isIndex %>
+		<header class="inverted">
+			<h1>Sassquatch</h1>
+		</header>
 
-	<div id="pageWrap" class="clearfix">
+		<div id="pageWrap" class="clearfix">
 
-		<%# {{{ INDEX %>
-		<% if isIndex %>
-			<h1>woooo lol index page yeah</h1>
-			<section id="content">
-		<%# }}} %>
-
-		<%# {{{ API DOC PAGES %>
-		<% else %>
 			<nav id="mainNav">
 				<div class="doc-box">
 					<ul class="resetList">
@@ -44,6 +37,4 @@
 			</nav>
 
 			<section id="content">
-		<% end %>
-		<%# }}} %>
-
+	<% end %>
