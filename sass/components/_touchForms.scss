@@ -26,7 +26,6 @@
 		// Generic Resets
 		h4,
 		label {
-			font-size: 16px;
 			font-weight: normal;
 			// This needs to be reset on top of the .touchList, because label
 			// is sized using PX, not ems.
@@ -54,7 +53,6 @@
 			margin: 0;
 			padding: 0;
 			border: none;
-			font-size: 16px;
 			line-height: 1;
 
 			background-color: transparent;
@@ -308,6 +306,14 @@
 	}
 
 
+	.touchList-item--rightInput .ffbox--touchList-item {
+		padding-right: 0;
+		& label.ffbox-fix.ffbox--shaded {
+			height: $H_touchTargetDefault;
+		}
+	}
+
+
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
@@ -554,7 +560,7 @@
 		@extend %textDisableSelection;
 		margin: 0 $P_secondary;
 		text-align: center;
-		@include color_textTertiary; // *1
+		@include color_border; // *1
 	}
 
 	input:checked + .icon-radio,	// *2
@@ -636,6 +642,9 @@
 
 		.error & {
 			color: $C_warnText;
+		}
+		.ffbox--touchList-item & {
+			padding-bottom: 0;  // padding provided by ffbox
 		}
 	}
 }
