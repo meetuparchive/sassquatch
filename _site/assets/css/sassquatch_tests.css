@@ -36,7 +36,7 @@
 *
 *   @note
 *   - color naming convention is really weird and difficult to remember. this
-*     is why i ended up defining my own colors everywhere in _new_styles, which is 
+*     is why i ended up defining my own colors everywhere in _new_styles, which is
 *     bad for consistency.
 *   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
 *     shrink the layout?
