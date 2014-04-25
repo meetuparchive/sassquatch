@@ -351,8 +351,8 @@ for one line of text.
 
 */
 .wrapNice {
- // Non standard for webkit
- word-break: break-word;
+ // Because sometimes hyphenations don't get calculated properly...
+ word-wrap: break-word;
 
 -webkit-hyphens: auto;
    -moz-hyphens: auto;
