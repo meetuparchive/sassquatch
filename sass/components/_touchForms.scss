@@ -306,6 +306,14 @@
 	}
 
 
+	.touchList-item--rightInput .ffbox--touchList-item {
+		padding-right: 0;
+		& label.ffbox-fix.ffbox--shaded {
+			height: $H_touchTargetDefault;
+		}
+	}
+
+
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
@@ -634,6 +642,9 @@
 
 		.error & {
 			color: $C_warnText;
+		}
+		.ffbox--touchList-item & {
+			padding-bottom: 0;  // padding provided by ffbox
 		}
 	}
 }

@@ -4,7 +4,7 @@
 			
 			<h2>Tabs</h2>
 			<p>Rounded tab navigation. Used mostly as secondary navigation on Meetup; load the tab content with <code>web:ajax</code> where possible.</p>
-			<p><code>.nav-tabs</code></p>
+			<p><code>.nav-tabs</code>, <code>.nav-tabs--subtle</code></p>
 		</div>
 		<div class="unit lastUnit">
 			<div class="doc-box">

@@ -24,6 +24,9 @@
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
 	margin-bottom: -$P_secondary;
+	.ffbox--touchList-item & {
+		padding: 0;  // padding provided by ffbox
+	}
 }
 
 @if $platform == "mobile" {
@@ -63,6 +66,21 @@
 	}
 
 
+	.touchList--memberList {
+		.memberList-item-content {
+			@include color_textSecondary;
+			padding-right: $P_secondary / 2;
+			&:last-child {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+		.touchList-item .touchList-item-action:not(.linkify) {
+			@include color_textSecondary;
+		}
+	}
+
+
 	/*  ======================================================================= */
 	/*  TOUCHLIST COMMON STYLES */
 
@@ -77,6 +95,9 @@
 		.linkify & {
 			color: inherit;  // inherit color from any .linkify wrapper
 		}
+	}
+	.touchList-label--item {
+		@extend %tl-blockLabel;
 	}
 	.touchList-item-heading {
 		// should be .touchList-heading to follow BEM, but that selector already taken
@@ -143,6 +164,14 @@
 			padding-bottom: $P_secondary;
 		}
 	}
+	.ffbox--touchList-avatar {
+		padding: 0 $P_secondary;
+	}
+	.ffbox-fix--avatar {
+		// give it room to breathe - l/r padding provide by wrappers/siblings
+		padding-top: $P_secondary;
+		padding-bottom: $P_secondary;
+	}
 
 	.ffbox--touchList-input {
 		height: $H_touchTargetDefault;
@@ -177,10 +206,8 @@
 				@include color_textPrimary;
 				.inverted & { @include color_textPrimaryInverted; }
 			}
+			@include box-sizing('border');
 			display: block;
-		}
-		.avatar {
-			margin: $P_secondary 0 $P_secondary $P_secondary;
 		}
 	}
 
@@ -495,5 +522,15 @@
 	.touchList-heading {
 		@include color_textTertiary;
 		margin-bottom: 0.5em;
+	}
+
+
+	.touchList-avatar {
+		@extend %avatar_base_size;
+		@include color_textTertiary;
+		text-align: center;
+	}
+	.touchList-avatar--icon {
+		height: auto;
 	}
 }
