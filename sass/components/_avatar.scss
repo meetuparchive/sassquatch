@@ -4,9 +4,11 @@
 * (Member photos)
 */
 
-%_avatar_base {
+// Avatar base class. Add in a variant!
+// media-m size
+// -------------------------------
+.avatar {
 	@include background-size(cover);
-	@include round($media-xl);
 	display: block;
 	text-indent: 100%;
 	white-space: nowrap;
@@ -15,30 +17,25 @@
 	background-repeat: no-repeat;
 	background-position: center 42%;
 	background-color: $C_tertiaryGray;
+	width: $media-m;
+	height: $media-m;
 }
 
-
-@mixin avatar( $size: $media-l ) {
-	@extend %_avatar_base;
-	width: $size;
-	height: $size;
+.avatar--chapter {
+	// nothing special... yet.
+}
+.avatar--person {
+	@include round($media-xl);  // bigger than any acceptable radius
+								// => will become circle
 }
 
-
-// Default Avatar (medium)
-// ---------------------------
-.avatar {
-	@include avatar($media-m);
-}
-
-// Small Avatar
+// Avatar Size Variants
 // ---------------------------
 .avatar--small {
-	@include avatar($media-s);
+	width: $media-s;
+	height: $media-s;
 }
-
-// Big Avatar
-// ---------------------------
 .avatar--big {
-	@include avatar($media-l);
+	width: $media-l;
+	height: $media-l;
 }

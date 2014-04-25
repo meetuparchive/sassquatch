@@ -13,6 +13,7 @@
 
 %tl-blockLabel {
 	@include color_textSecondary;
+	.inverted & { @include color_textSecondaryInverted; }
 	font-size: $FS_small;
 	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
 	line-height: $LH_tall;
@@ -63,6 +64,10 @@
 		padding: 0; // RESET
 		font-size: $FS_base;
 		line-height: $LH_standard;
+		.touchList & {
+			// RESET
+			@include color_textSecondary;  // overloaded selector to override link color
+		}
 	}
 	.touchList .touchList-blockLabel {
 		// extra specificity needed to override `.touchList label` styles
@@ -84,7 +89,7 @@
 	}
 
 	.icon-disclosure-right--touchList-item {
-		color: $C_line;
+		@include color_lineGray;
 		vertical-align: -0.2em;
 		// Arbitary value, optical alignment
 	}
@@ -115,6 +120,14 @@
 		//
 		// Having padding on all four sides would
 		// be a ton less work.
+
+ 		.ffbox-flex, .ffbox-fix {
+ 			// these are the likely suspects for content immediately inside
+ 			// .ffbox--touchList-item. This padding keeps multiline content
+ 			// spacing the same as single-line content
+ 			padding-top: $P_secondary;
+			padding-bottom: $P_secondary;
+		}
 	}
 
 	.ffbox--touchList-input {
@@ -135,8 +148,20 @@
 	.touchList-item {
 		@extend %dividerBottom;
 		@include color_textPrimary;
+		.inverted & { @include color_textPrimaryInverted; }
 		p:last-child {
 			margin-bottom: 0;
+		}
+		.touchList-item-action {
+			// the anchor just inside standard touchList-items shouldn't appear
+			// like a normal link - it's just a list item that happens to be
+			// touchable. Extra specificity to override a:link
+			@include color_textPrimary;
+			.inverted & { @include color_textPrimaryInverted; }
+			display: block;
+		}
+		.avatar {
+			margin: $P_secondary 0 $P_secondary $P_secondary;
 		}
 	}
 
@@ -158,25 +183,9 @@
 		height: $H_touchTargetDefault;
 	}
 
-	.touchList-item-action {
-		// the anchor just inside standard touchList-items shouldn't appear
-		// like a normal link - it's just a list item that happens to be
-		// touchable. Extra specificity to override a:link
-		.touchList-item & {
-			@include color_textPrimary;
-			display: block;
-		}
-	}
-
 
 	/*  ======================================================================= */
 	/*  TOUCHLIST ATTENDEE ITEM */
-
-	.touchList-attendee-photo,
-	.touchList-attendee-info {
-		padding-top: $P_secondary;
-		padding-bottom: $P_secondary;
-	}
 
 	.touchList-attendee-info {
 		padding-left: $P_secondary;
@@ -197,7 +206,7 @@
 		// We need to multiply by an em to make sure this number is in ems.
 
 		font-weight: normal;
-		color: $C_gray60;
+		@include color_textSecondary;
 		vertical-align: 1px;
 		// Bump it up a hair, because parentheses are all dangly.
 	}
@@ -206,7 +215,7 @@
 	.touchList-attendee-bio,
 	.touchList-attendee-funfact-description,
 	.touchList-attendee-ledger {
-		color: $C_gray60;
+		@include color_textSecondary;
 	}
 
 	.touchList-attendee-role {
@@ -250,20 +259,20 @@
 	}
 
 	.touchList-event-groupname {
-		color: $C_gray70;
+		@include color_textSecondary;
 	}
 
 	.touchList-event-datetime,
 	.touchList-event-name {
-		color: $C_darkgray_lighter;
+		@include color_textTertiary;
 	}
 
 	.touchList-event-reldate {
-		background-color: $C_red;
+		@include color_backgroundContentAccent('background-color');
 		padding:0.333em 0.417em;
-		color:#FFF;
+		@include color_textPrimaryInverted;
 		margin-right:0.167em;
-		 font-size:0.813em;
+		font-size:0.813em;
 	}
 
 	.touchList-event-dates {
@@ -287,7 +296,7 @@
 		// Red Label.
 		//
 		i {
-			color: $C_darkgray_lighter;
+			@include color_textTertiary;
 			vertical-align: middle;
 		}
 
@@ -331,14 +340,14 @@
 
 	.touchList-item--empty {
 		@extend %dividerBottom;
+		@include color_backgroundNav('background-color');
 		padding: ($P_secondary* 2) $P_secondary;
-		background-color: $C_gray96;
 	}
 
 	.touchList-item--empty-label {
 		font-size: $FS_base;
 		line-height: $LH_standard;
-		color: $C_gray70;
+		@include color_textSecondary;
 		text-align: center;
 		text-shadow: 0 1px 0 white;
 	}
@@ -361,7 +370,7 @@
 	}
 
 	.touchList-text--disclosure {
-		color: $C_gray60;
+		@include color_textSecondary;
 		white-space: nowrap;
 		// NOTE: Needed to prevent the value from folding over each other when
 		// packed tightly in a ffbox-fix cell.
@@ -380,10 +389,10 @@
 		background: none;
 		border: none;
 		.touchList-item {
-			border-color: $C_gray;
+			@include color_border('border-color');
 		}
 		.touchList-label {
-			color: $C_darkgray_lighter;
+			@include color_textTertiary;
 			font-size: $FS_base * $scaleFactor;
 			font-weight: bold;
 		}
@@ -400,7 +409,7 @@
 
 	.touchList-label--loadMore {
 		text-align: center;
-		color: $C_darkgray_lighter;
+		@include color_textTertiary;
 	}
 
 
@@ -416,7 +425,7 @@
 		@extend %textDisableSelection;
 		@extend %dividerBottom;
 		@include color_textTertiary;
-		background-color: $C_backgroundNav;
+		@include color_backgroundNav('background-color');
 
 		font-size: $FS_small;
 		font-weight: bold;
@@ -456,14 +465,14 @@
 		padding: 0 $P_secondary;
 		.touchList-item & {
 			// extra specificity to override a:link
-			color: $C_line;
+			@include color_lineGray;
 		}
 	}
 
 	/*  list heading - sits outside touchList, might be better as more generic
 		heading style but it just looks so nice with touchLists */
 	.touchList-heading {
-		color: $C_darkgray_lighter;
+		@include color_textTertiary;
 		font-size: 16px;
 		margin-bottom: 0.5em;
 	}
