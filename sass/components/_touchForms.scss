@@ -26,7 +26,6 @@
 		// Generic Resets
 		h4,
 		label {
-			font-size: 16px;
 			font-weight: normal;
 			// This needs to be reset on top of the .touchList, because label
 			// is sized using PX, not ems.
@@ -54,7 +53,6 @@
 			margin: 0;
 			padding: 0;
 			border: none;
-			font-size: 16px;
 			line-height: 1;
 
 			background-color: transparent;
@@ -97,7 +95,7 @@
 		[disabled],
 		[disabled="disabled"],
 		.disabled {
-			background-color: $C_gray94;
+			@include color_backgroundNav('background-color');
 		}
 
 		// Placeholders
@@ -308,6 +306,14 @@
 	}
 
 
+	.touchList-item--rightInput .ffbox--touchList-item {
+		padding-right: 0;
+		& label.ffbox-fix.ffbox--shaded {
+			height: $H_touchTargetDefault;
+		}
+	}
+
+
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
@@ -350,7 +356,7 @@
 		padding-left: 0.5em;
 		/* NOTE: arbitrary optical value */
 
-		color: $C_gray70;
+		@include color_textSecondary;
 		/* NOTE: Same color as placeholder, see:
 		 * _tl_extends.scss : @mixin UIPlaceholder
 		 */
@@ -393,7 +399,7 @@
 	.touchList-item--select-mask {
 		position: absolute;
 		height: 100%;
-		background-color: white;
+		@include color_backgroundContent('background-color');
 		top: 0;
 		right: 0;
 		padding: 0 $P_secondary;
@@ -404,7 +410,7 @@
 	[disabled] .touchList-item--select-mask,
 	[disabled="disabled"] .touchList-item--select-mask,
 	.disabled .touchList-item--select-mask {
-		background-color: $C_gray94;
+		@include color_backgroundNav('background-color');
 	}
 
 
@@ -415,7 +421,7 @@
 	.touchList-item--select-mask-arrow {
 		@extend %textDisableSelection;
 		display: block;
-		color: $C_gray80;
+		@include color_textSecondary;
 		// NOTE: Same as border of radio/checkbox.
 
 		margin-top: ($H_touchTargetDefault - 1) / 2;
@@ -554,12 +560,12 @@
 		@extend %textDisableSelection;
 		margin: 0 $P_secondary;
 		text-align: center;
-		color: $C_tertiaryGray; // *1
+		@include color_border; // *1
 	}
 
 	input:checked + .icon-radio,	// *2
 	input.checked + .icon-radio {	// *3
-		color: $C_link;
+		@include color_link;
 		&:before {
 			content: "\E0D1";
 		}
@@ -570,7 +576,7 @@
 
 	input:checked + .icon-checkbox,		// *2
 	input.checked + .icon-checkbox {	// *3
-		color: $C_link;
+		@include color_link;
 		&:before {
 			content: "\E0D3";
 		}
@@ -622,6 +628,7 @@
 	 */
 	label.touchList-helperText {     // *1
 		@include color_textTertiary;
+		.inverted & { @include color_textTertiaryInverted; }
 		font-size: $FS_small;
 		line-height: $LH_standard;
 
@@ -635,6 +642,9 @@
 
 		.error & {
 			color: $C_warnText;
+		}
+		.ffbox--touchList-item & {
+			padding-bottom: 0;  // padding provided by ffbox
 		}
 	}
 }
