@@ -53,10 +53,10 @@ parent: list
 */
 .inlineList, .inlineblockList, .pipeList, .crumbList {
 	padding-left: 0;
-}
-.inlineList > li, .pipeList > li, .crumbList > li {
-	display: inline;
-	list-style: none;
+	> li {
+		display: inline;
+		list-style: none;
+	}
 }
 
 /*doc
@@ -76,7 +76,6 @@ parent: list
 */
 .inlineblockList > li {
     display: inline-block;
-	list-style: none;
 }
 
 /*doc
@@ -99,7 +98,7 @@ parent: list
 	padding-right: 0.5em;
 	border-right: 1px solid;
 	&:last-child, &.last {
-		border-right-width: 0;	
+		border-right-width: 0;
 	}
 }
 
@@ -125,7 +124,7 @@ parent: list
 		margin-left: 0.75em;
 	}
 	&:last-child:after, &.last:after {
-		margin-left: 0;	
+		margin-left: 0;
 		content: '';
 	}
 }
@@ -156,7 +155,7 @@ List items in `dividedList` expect block-level elements, like `p` or `img`.
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	& > li {
+	> li {
 		margin: 0;
 	}
 }
@@ -239,18 +238,18 @@ parent: list
 */
 	.noneList {
 		list-style-type: none;
-		& > li {
+		> li {
 			list-style: none;
 		}
 	}
 
 	//TODO: this basically breaks normal list behavior
 	.dividedList, .paddedList {
-		& > li {
+		> li {
 			padding: $spacing*1.5 $spacing*1.5 0;
-		}
-		& > li:first-child, & > li.first {
-			border-top:0px;
+			&:first-child, &.first {
+				border-top: 0;
+			}
 		}
 	}
 
@@ -273,12 +272,14 @@ parent: list
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		& > li {
+		> li {
 			margin: 0;
 			padding: 0;
 			border-top: 1px solid $C_line_less;
-
-			& > a {
+			&:first-child, &.first {
+				border-top: 0;
+			}
+			> a {
 				display:block;
 				padding: $spacing $spacing;
 				color:$C_text;
@@ -286,9 +287,6 @@ parent: list
 					color:$C_text;
 				}
 			}
-		}
-		& > li:first-child, & > li.first {
-			border-top:0px;
 		}
 	}
 
@@ -317,36 +315,35 @@ parent: list
 	/* another list */
 	.shadedList {
 		list-style: none;
-
-		& > li {
-			padding:$spacing;
-			@include shaded(darken($C_gray_lighter, 4%));
-			margin-bottom:1px;
-		}
 		&.last-child,  &:last-child{
 			border:0;
 			margin-bottom:$baseline;
 		}
+
+		> li {
+			padding:$spacing;
+			@include shaded(darken($C_gray_lighter, 4%));
+			margin-bottom:1px;
+		}
 	}
 
 	.shadedList.inline {
-		& > li {
+		> li {
 			display: inline;
 			list-style: none;
-			margin-bottom:0px;
+			margin-bottom: 0;
 			margin-right:1px;
 			padding: 2px 5px;
-		}	
-		& > li:first-child {
-			@include round(3px, 0px, 0px, 3px);
-		}
-		
-		& > li:last-child {
-			@include round(0px, 3px, 3px, 0px);
+			&:first-child {
+				border-radius: $defaultRadius 0 0 $defaultRadius;
+			}
+			&:last-child {
+				border-radius: 0 $defaultRadius $defaultRadius 0;
+			}
 		}
 
 		&.last-child,  &:last-child {
-			margin-right:0px;
+			margin-right: 0;
 		}
 	}
 

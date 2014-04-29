@@ -12,7 +12,7 @@ $pillBaseSize: 11px;
 
 %_pill_label_base {
 	@extend %_pill_text_base;
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 	padding: $pillBaseSize/4 $pillBaseSize/2;
 	margin-right: $pillBaseSize/4;
 }

@@ -68,12 +68,12 @@ category: Navigation
 		padding: 0;
 		&:first-child a {
 			border-left-width: 1px;
-			@include round-nw($defaultRadius);
-			@include round-sw($defaultRadius);
+			border-top-left-radius: $defaultRadius;
+			border-bottom-left-radius: $defaultRadius;
 		}
 		&:last-child a {
-			@include round-ne($defaultRadius);
-			@include round-se($defaultRadius);
+			border-top-right-radius: $defaultRadius;
+			border-bottom-right-radius: $defaultRadius;
 		}
 		&.selected a {
 			@include punched_in_box_shadow;

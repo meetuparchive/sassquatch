@@ -7,7 +7,7 @@ $buttonFontSize: 16px;
 
 %_button_base {
 	@include button_personality();
-	@include round(3px);
+	border-radius: $defaultRadius;
 	@include inlineblock();
 	@include box-sizing("border");
 	@if $platform == "desktop" {

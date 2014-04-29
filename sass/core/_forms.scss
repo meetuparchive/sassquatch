@@ -129,12 +129,12 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 
 .ie8, .ie9 {
 	input {
-		@include round(0);
+		border-radius: 0;
 	}
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	body input {
-		@include round(0);
+		border-radius: 0;
 	}
 }
 
@@ -148,7 +148,7 @@ input, select, textarea {
 	margin-bottom: $spacing;
 	color: $C_text;
 	border: 1px solid $C_line;
-	@include round($defaultRadius/2);
+	border-radius: $defaultRadius/2;
 }
 
 

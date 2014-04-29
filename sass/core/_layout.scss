@@ -10,8 +10,8 @@ name: grids
 category: Layout
 ---
 
-OOCSS Grids are used to break any space into fractions, they can be nested and stacked. 
-A unit can contain another line or it can contain other objects directly. Grids control 
+OOCSS Grids are used to break any space into fractions, they can be nested and stacked.
+A unit can contain another line or it can contain other objects directly. Grids control
 width, content controls height.
 
 A `.line` or `.line-gutters` is a row, and a `.unit` is a column.
@@ -48,7 +48,7 @@ A number of size classes are available:
 
 * `size1of1`
 * `size1of2`
-* `size1of3`, `size2of3`, 
+* `size1of3`, `size2of3`,
 * `size1of4`, `size3of4`
 * `size1of5`, `size2of5`, `size3of5`, `size4of5`
 * `size1of7`, `size2of7`, `size3of7`, `size4of7`, `size5of7`, `size6of7`
@@ -93,7 +93,7 @@ A number of size classes are available:
 .line-gutters {
     margin-bottom: $baseline;
     margin-right: $baseline*-1; /* pull last child to the right to meet the right edge of the page */
-    & > .unit, & > .lastUnit {
+    > .unit, > .lastUnit {
         padding-right: $baseline;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -295,7 +295,7 @@ to span the full width of the box, and use `docSection` for padded content:
 */
 .docBox,   // NEW SELECTOR
 .doc-box { // DEPRECATED SELECTOR
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 	background-color: #fff;
 	margin-bottom: $baseline;
 	border: 1px solid $C_line !important; /* !important to support .doc-box.doc-content multiple classes */
@@ -307,15 +307,15 @@ to span the full width of the box, and use `docSection` for padded content:
 	* allows the doc-content to be shaded without conflicting with .doc-box rounding
 	*/
 
-	& > .docSection:first-child,
-	& > .doc-content:first-child {
-		@include round-nw($defaultRadius);
-		@include round-ne($defaultRadius);
+	> .docSection:first-child,
+	> .doc-content:first-child{
+		border-top-left-radius: $defaultRadius;
+		border-top-right-radius: $defaultRadius;
 	}
-	& > .docSection:last-child,
-	& > .doc-content:last-child {
-		@include round-sw($defaultRadius);
-		@include round-se($defaultRadius);
+	> .docSection:last-child,
+	> .doc-content:last-child{
+		border-bottom-left-radius: $defaultRadius;
+		border-bottom-right-radius: $defaultRadius;
 	}
 
 	/**
@@ -340,42 +340,42 @@ to span the full width of the box, and use `docSection` for padded content:
 	/**
 	* Vertical box divisions (when direct child is an OOCSS "line")
 	* allows the borders to span the full height of the .doc-box
-	* 
+	*
 	* DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
 	* This will now only work with deprecated selectors
 	*/
-	& > .line,
-	& > .line-gutters{
-		& > .unit{
+	> .line,
+	> .line-gutters{
+		> .unit{
 			float: none;
 			border-right: 1px solid #ddd;
 			display: table-cell;
 			vertical-align: top;
 		}
-		& > .lastUnit{
+		> .lastUnit{
 			border-right: 0;
 			vertical-align: top;
 		}
 
 		// magically correct rounded corners when in full-height columns
 		.doc-content{
-			@include round(0);
+			border-radius: 0;
 		}
 		.unit:first-child .doc-content{
 			&:first-child{
-				@include round-nw($defaultRadius);
+				border-top-left-radius: $defaultRadius;
 			}
 			&:last-child{
-				@include round-sw($defaultRadius);
+				border-bottom-left-radius: $defaultRadius;
 			}
 		}
 		.unit:last-child .doc-content,
 		.lastUnit .doc-content{
 			&:first-child{
-				@include round-ne($defaultRadius);
+				border-top-right-radius: $defaultRadius;
 			}
 			&:last-child{
-				@include round-se($defaultRadius);
+				border-bottom-right-radius: $defaultRadius;
 			}
 		}
 	}
@@ -468,21 +468,21 @@ __Note:__ This replaces the deprecated `doc-content` class
 */
 .doc-content.footer {
 	background: $C_gray_lighter;
-	@include round(0, 0 $defaultRadius, $defaultRadius);
+	border-radius: 0 0 $defaultRadius $defaultRadius;
 }
 
 /* }}} */
 
 /* {{{ layout  modifiers */
 
-/*doc 
+/*doc
 ---
 title: Float Clearing
 name: clearfix
 category: Layout
 ---
 
-Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ 
+Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/
 
 ```html_example
 
@@ -501,7 +501,7 @@ Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-ha
 		<br class="clear-both" />
 	</div>
 ```
- 
+
 */
 .clearfix:after {
   visibility: hidden;
@@ -536,19 +536,19 @@ category: Layout
 ```
 */
 .rounded-top {
-	@include round($defaultRadius,$defaultRadius,0,0);
+	border-radius: $defaultRadius $defaultRadius 0 0;
 }
 .rounded-bottom {
-	@include round(0,0,$defaultRadius,$defaultRadius);
+	border-radius: 0 0 $defaultRadius $defaultRadius;
 }
 .rounded-all {
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 }
 .rounded-right {
-	@include round(0,$defaultRadius,$defaultRadius,0);
+	border-radius: 0 $defaultRadius $defaultRadius 0;
 }
 .rounded-left {
-	@include round($defaultRadius,0,0,$defaultRadius);
+	border-radius: $defaultRadius 0 0 $defaultRadius;
 }
 /* }}} */
 

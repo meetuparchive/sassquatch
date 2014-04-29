@@ -423,13 +423,9 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 			@include box-shadow(none);
 			// The full, non-diet-mobile mixin has to be used to erase the full
 			// SQ statements
-
 			@include transition(none);
-			@include round(0);
-			// Needs to be here to override all full SQ statements.
-
 			@include box-sizing('border');
-
+			border-radius: 0;
 			margin: 0;
 			padding: 0;
 			border: none;

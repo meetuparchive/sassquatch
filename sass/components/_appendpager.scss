@@ -14,7 +14,7 @@ For "see more" type append paging.
 */
 
 .nav-appendPager {
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 	border: 1px solid $C_line;
 	display: block;
 	text-align: center;

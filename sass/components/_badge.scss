@@ -11,6 +11,6 @@
     vertical-align: baseline;
     background-color: #999;
     border: 2px solid #fff;
-    @include round(11px);
+    border-radius: 11px;
     @include box-shadow(rgba(0,0,0,0.75), 0px, 0px, 2px);
 }
