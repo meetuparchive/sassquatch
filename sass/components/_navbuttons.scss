@@ -1,7 +1,23 @@
-/**
-* NAVBUTTONS
-* buttons uses for navigation purposes, not for taking actions and submitting stuff
-* list filtering, for example
+/*doc
+---
+title: Toggle Buttons
+name: navButtons
+category: Navigation
+---
+
+Using a list of `<a>` elements; for toggling/filtering controls.
+
+DEPRECATED: you should probably use segmented control instead
+
+```html_example
+	<ul class="nav-buttons">
+		<li><a >Date Joined</a></li>
+		<li><a class="selected">Size</a></li>
+		<li><a >Name</a></li>
+		<li><a >Role</a></li>
+	</ul>
+```
+
 */
 
 

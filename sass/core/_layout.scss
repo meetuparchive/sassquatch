@@ -3,6 +3,57 @@
 * oocss grids, modifier classes for layout
 */
 
+/*doc
+---
+title: OOCSS Grids
+name: grids
+category: Layout
+---
+
+OOCSS Grids are used to break any space into fractions, they can be nested and stacked.
+A unit can contain another line or it can contain other objects directly. Grids control
+width, content controls height.
+
+A `.line` or `.line-gutters` is a row, and a `.unit` is a column.
+
+`lastUnit` flexes to fit the remaining space in the row.
+
+```html_example
+	<div class="line">
+		<div class="unit size1of3">
+			<p class="shaded">...first column...</p>
+		</div>
+		<div class="unit size1of3">
+			<p class="highlighted">...second column...</p>
+		</div>
+		<div class="lastUnit">
+			<p class="shaded-red">...third column...</p>
+		</div>
+	</div>
+
+	<div class="line-gutters">
+		<div class="unit size1of3">
+			<p class="shaded">...first column...</p>
+		</div>
+		<div class="unit size1of3">
+			<p class="highlighted">...second column...</p>
+		</div>
+		<div class="lastUnit">
+			<p class="shaded-red">...third column...</p>
+		</div>
+	</div>
+```
+
+A number of size classes are available:
+
+* `size1of1`
+* `size1of2`
+* `size1of3`, `size2of3`,
+* `size1of4`, `size3of4`
+* `size1of5`, `size2of5`, `size3of5`, `size4of5`
+* `size1of7`, `size2of7`, `size3of7`, `size4of7`, `size5of7`, `size6of7`
+
+*/
 /* {{{ OOCSS Grids (see https://github.com/stubbornella/oocss/wiki/grids) */
 .line:after,.line-gutters:after,.lastUnit:after{clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";speak:none;}
 .line,.line-gutters{*zoom:1;}
@@ -52,8 +103,26 @@
 }
 /* }}} */
 
-/** {{{ Width Modifiers
-* (arbitrary percentage of parent; outside grid system patterns)
+/* {{{ Width Modifiers */
+
+/*doc
+---
+title: Width Modifiers
+name: widthModifiers
+category: Layout
+---
+
+Useful classes for setting percentage widths on arbitary elements.
+
+```html_example
+	<p class="span-25 shaded-red">span-25</p>
+	<p class="span-30 shaded-red">span-30</p>
+	<p class="span-50 shaded-red">span-50</p>
+	<p class="span-60 shaded-red">span-60</p>
+	<p class="span-75 shaded-red">span-75</p>
+	<p class="span-100 shaded-red">span-100</p>
+```
+
 */
 .span-25 { width: 25%; }
 .span-30 { width: 30%; }
@@ -63,8 +132,169 @@
 .span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
 /* }}} */
 
+/* {{{ Doc Stripe */
+
+/*doc
+---
+title: Stripe Layout
+name: docstar
+category: Layout
+---
+
+Used for newer and more responsive layouts, where content lives on top of
+a full-width background instead of `docBox` modules. The `docStripe` container
+sets a full width background. The `docBounds` class is used as a padding helper
+and content wrapper.
+
+```html_example
+
+	<!-- default stripe and color stripe -->
+	<div class="docStripe">
+		<div class="docBounds">
+			<h3>I'm in a stripe</h3>
+			<p>Any arbitrary content can go here</p>
+		</div>
+	</div>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<h3>I'm in a red stripe</h3>
+			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+		</div>
+	</div>
+
+	<!-- "collections" -->
+	<div class="docStripe--collection">
+		<div class="docBounds">
+			<h3>I contain a collection (of docBoxes)</h3>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
+		</div>
+	</div>
+```
+
+*/
+
+// default
+.docStripe {
+	@include color_lineGray('border-color');
+	border: 1px solid top;
+	background-color: #fff;
+}
+
+/*doc
+---
+title: Stripe variants
+name: docStripe
+parent: docstar
+---
+
+`docStripe` has a white background and slight border top by default,
+but there are a number of other variants:
+
+Class                   | Description
+------------------------| ------------------------------------------------------
+`docStripe--collection` | For a stripe containing a collection of cards or boxes
+`docStripe--nav`        | A stripe with navingation (see rick, elaboration TK)
+`docStripe--inverted`   | Dark stripe color - use with `inverted` class to style children
+`docStripe--red`        | A Meetupy red stripe
+
+*/
+
+// for collections (cards, panels, etc)
+.docStripe--collection {
+	background-color: $C_backgroundCollection;
+}
+
+// TODO: what is this for?
+.docStripe--nav {
+	background-color: $C_backgroundNav;
+}
+
+// near-black stripe
+.docStripe--inverted {
+	background-color: $C_backgroundContentInverted;
+}
+
+// red accent stripe
+.docStripe--red {
+	background-color: $C_backgroundContentAccent;
+}
+
+/* }}} */
+
+/* {{{ Doc bounds */
+// max-width constraint with media queries
+// has padding that adjusts down with smaller screens
+.docBounds {
+	@extend %clearfix;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 720px; // TODO: decide what this should be?
+	padding: $spacing*2 $spacing*2 $spacing $spacing*2;
+}
+/* }}} */
+
 /* {{{ Box Styles */
-.doc-box {
+
+/*doc
+---
+title: Doc Box
+name: docBox
+category: Layout
+---
+
+Draw rounded corner white box with default block content `margin-bottom`.
+
+```html_example
+	<div class="docBox">
+		<p>I'm a box</p>
+	</div>
+```
+
+*/
+
+
+/*doc
+---
+title: Full width lists and docSection
+name: docLists
+parent: docBox
+---
+
+You can add a `sectionList` directly inside the `docBox` in order to
+to span the full width of the box, and use `docSection` for padded content:
+
+```html_example
+	<div class="docBox">
+		<div class="docSection">
+			<h3>Cat name ideas</h3>
+		</div>
+		<ul class="sectionList">
+			<li><p>Jennifer</p></li>
+			<li><p>Sergei</p></li>
+			<li><p>Bruce Springsteen</p></li>
+			<li><p>Mittens</p></li>
+		</ul>
+	</div>
+```
+
+*/
+.docBox,   // NEW SELECTOR
+.doc-box { // DEPRECATED SELECTOR
 	border-radius: $defaultRadius;
 	background-color: #fff;
 	margin-bottom: $baseline;
@@ -77,10 +307,12 @@
 	* allows the doc-content to be shaded without conflicting with .doc-box rounding
 	*/
 
+	& > .docSection:first-child,
 	& > .doc-content:first-child{
 		border-top-left-radius: $defaultRadius;
 		border-top-right-radius: $defaultRadius;
 	}
+	& > .docSection:last-child,
 	& > .doc-content:last-child{
 		border-bottom-left-radius: $defaultRadius;
 		border-bottom-right-radius: $defaultRadius;
@@ -108,6 +340,9 @@
 	/**
 	* Vertical box divisions (when direct child is an OOCSS "line")
 	* allows the borders to span the full height of the .doc-box
+	*
+	* DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
+	* This will now only work with deprecated selectors
 	*/
 	& > .line,
 	& > .line-gutters{
@@ -121,8 +356,6 @@
 			border-right: 0;
 			vertical-align: top;
 		}
-
-
 
 		// magically correct rounded corners when in full-height columns
 		.doc-content{
@@ -153,6 +386,8 @@
 	}
 }
 .ie6, .ie7{
+	.docBox .line .unit,
+	.docBox .line-gutters .unit,
 	.doc-box .line .unit,
 	.doc-box .line-gutters .unit{
 		float: left!important;
@@ -165,6 +400,58 @@
 	padding: $baseline;
 	padding-bottom: 0;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+}
+
+/*doc
+---
+title: Doc Section (formerly doc content)
+name: docSection
+parent: docBox
+---
+
+Vertical content divider.
+__Note:__ This replaces the deprecated `doc-content` class
+
+```html_example
+
+	<h5>Sections in a docBox</h5>
+	<div class="docBox">
+		<div class="docSection">
+			<p>first content container</p>
+		</div>
+		<div class="docSection">
+			<p>second content container</p>
+		</div>
+	</div>
+
+	<h5>Sections in a docStripe layout</h5>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<div class="docSection">
+				<p>I'm a section in a docStripe</p>
+			</div>
+			<div class="docSection">
+				<p>I'm another section in a docStripe</p>
+			</div>
+		</div>
+	</div>
+```
+
+*/
+.docSection {
+	border-top: 1px solid $C_lineGray;
+	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+	padding-top: $baseline;
+	&:first-child{
+		border-top: none;
+	}
+	.inverted & {
+		border-top-color: $C_lineGrayInverted;
+	}
+}
+.docBox > .docSection {
+	padding: $baseline;
+	padding-bottom: 0;
 }
 
 .suppress-hover-underline:hover {
@@ -188,7 +475,34 @@
 
 /* {{{ layout  modifiers */
 
-/* clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ */
+/*doc
+---
+title: Float Clearing
+name: clearfix
+category: Layout
+---
+
+Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/
+
+```html_example
+
+	<!-- preferred method -->
+	<div class="clearfix">
+		<div style="float: left;" class="shaded-red">Floated div</div>
+		<div style="float: right;" class="shaded-red">Floated div</div>
+	</div>
+
+	<hr />
+
+	<!-- optional method -->
+	<div>
+		<div style="float: left;" class="shaded-red">Floated div</div>
+		<div style="float: right;" class="shaded-red">Floated div</div>
+		<br class="clear-both" />
+	</div>
+```
+
+*/
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -205,6 +519,22 @@
 	clear: both;
 }
 
+
+/*doc
+---
+title: Rounding Corners
+name: rounding
+category: Layout
+---
+
+```html_example
+	<div class="rounded-top shaded-red align-center"><p>rounded-top</p></div>
+	<div class="rounded-bottom shaded-red align-center"><p>rounded-bottom</p></div>
+	<div class="rounded-left shaded-red align-center"><p>rounded-left</p></div>
+	<div class="rounded-right shaded-red align-center"><p>rounded-right</p></div>
+	<div class="rounded-all shaded-red align-center"><p>rounded-all</p></div>
+```
+*/
 .rounded-top {
 	border-radius: $defaultRadius $defaultRadius 0 0;
 }
@@ -222,7 +552,7 @@
 }
 /* }}} */
 
-/* {{{ doc-content types */
+/* {{{ doc-content types TODO: DEPRECATE THIS */
 
 /**
 * Notice

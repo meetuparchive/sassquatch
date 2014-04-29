@@ -1,0 +1,19 @@
+# Hologram will run from same directory where this config file resides
+# All paths should be relative to there
+
+# The directory containing the source files to parse recursively
+source: ./sassquatch
+
+# The directory that hologram will build to
+destination: ../../doc_desktop
+
+# The assets needed to build the docs (includes header.html,
+# footer.html, etc)
+# You may put doc related assets here too: images, css, etc.
+documentation_assets: ./templates
+
+# Any other asset folders that need to be copied to the destination folder
+# # This where you should include your full stylesheets, component javascript,
+# # libraries and any other dependencies your style guide will have
+dependencies:
+   - ./sassquatch
