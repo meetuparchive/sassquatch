@@ -16,6 +16,6 @@ echo "~~~~~~~~ installing bower components..."
 bower install
 
 echo "~~~~~~~~ recompile sassquatch..."
-rake compile
+rake
 
 exit 0
