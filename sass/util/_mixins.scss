@@ -255,7 +255,7 @@
 @mixin circle($color: black, $size: 12px){
 	width: $size;
 	height: $size;
-	border-radius: $size/2);
+	border-radius: $size/2;
 	background: $color;
 }
 
@@ -467,7 +467,7 @@
 	$base_color: $C_facebook;
 
 	@include button_primary_color($C_facebook);
-	border-radius: $defaultRadius);
+	border-radius: $defaultRadius;
 
 	position: relative;
 	padding-top: $paddingTop;

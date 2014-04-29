@@ -93,7 +93,7 @@ A number of size classes are available:
 .line-gutters {
     margin-bottom: $baseline;
     margin-right: $baseline*-1; /* pull last child to the right to meet the right edge of the page */
-    & > .unit, & > .lastUnit {
+    > .unit, > .lastUnit {
         padding-right: $baseline;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -307,13 +307,13 @@ to span the full width of the box, and use `docSection` for padded content:
 	* allows the doc-content to be shaded without conflicting with .doc-box rounding
 	*/
 
-	& > .docSection:first-child,
-	& > .doc-content:first-child{
+	> .docSection:first-child,
+	> .doc-content:first-child{
 		border-top-left-radius: $defaultRadius;
 		border-top-right-radius: $defaultRadius;
 	}
-	& > .docSection:last-child,
-	& > .doc-content:last-child{
+	> .docSection:last-child,
+	> .doc-content:last-child{
 		border-bottom-left-radius: $defaultRadius;
 		border-bottom-right-radius: $defaultRadius;
 	}
@@ -344,15 +344,15 @@ to span the full width of the box, and use `docSection` for padded content:
 	* DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
 	* This will now only work with deprecated selectors
 	*/
-	& > .line,
-	& > .line-gutters{
-		& > .unit{
+	> .line,
+	> .line-gutters{
+		> .unit{
 			float: none;
 			border-right: 1px solid #ddd;
 			display: table-cell;
 			vertical-align: top;
 		}
-		& > .lastUnit{
+		> .lastUnit{
 			border-right: 0;
 			vertical-align: top;
 		}
