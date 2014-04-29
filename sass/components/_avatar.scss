@@ -163,7 +163,7 @@ $stack_frame_spacing: 1px;
 		@include color_textPrimaryInverted('border-color');
 		@include color_textPrimaryInverted;
 		@include color_accent('background-color');
-		border-radius: 100%;
+		border-radius: $media-xl;
 		font-size: 14px;
 		position: absolute;
 		border-style: solid;
