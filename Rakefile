@@ -105,7 +105,8 @@ task :push_docs do
 		#do_it = $stdin.gets.chomp == "y"
 	#end
 
-	if branch == "master"
+	#if branch == "master"
+	if true
 
 		docs_path = branch == "master" ? "" : "branches/#{branch}"
 
