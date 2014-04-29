@@ -29,7 +29,7 @@
 	// nothing special... yet.
 }
 .avatar--person {
-	@include round($media-xl);  // bigger than any acceptable radius
+	border-radius: $media-xl;   // bigger than any acceptable radius
 								// => will become circle
 }
 
@@ -72,7 +72,7 @@ $stack_frame_spacing: 1px;
 		@include color_textPrimaryInverted('border-color');
 		@include color_textPrimaryInverted;
 		@include color_accent('background-color');
-		@include round(100%);
+		border-radius: 100%;
 		font-size: 14px;
 		position: absolute;
 		border-style: solid;

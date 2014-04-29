@@ -7,7 +7,7 @@
 
 .nav-buttons {
 	@include inlineblock;
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 	@include experimental(box-sizing, border-box);
 	@include experimental(background-clip, padding-box);
 	@extend %clearfix;
@@ -41,15 +41,15 @@
 	label:first-of-type,
 	li:first-child > a,
 	li:first-child > span {
-		@include round-nw($defaultRadius - 1px);
-		@include round-sw($defaultRadius - 1px);
+		border-top-left-radius: $defaultRadius - 1px;
+		border-bottom-left-radius: $defaultRadius - 1px;
 	}
 
 	label:last-of-type,
 	li:last-child > a,
 	li:last-child > span {
-		@include round-ne($defaultRadius - 1px);
-		@include round-se($defaultRadius - 1px);
+		border-top-right-radius: $defaultRadius - 1px;
+		border-bottom-right-radius: $defaultRadius - 1px;
 	}
 
 	&.vertical{

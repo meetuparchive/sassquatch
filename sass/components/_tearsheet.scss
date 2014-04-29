@@ -45,8 +45,8 @@ as well as a few different states/types:
 	width: $size;
 	height: $size;
 	.month{
-		@include round-ne($defaultRadius);
-		@include round-nw($defaultRadius);
+		border-top-right-radius: $defaultRadius;
+		border-top-left-radius: $defaultRadius;
 		font-size: round( $size * 1.2/5 );
 		height: $size * 2/5;
 		line-height: $size * 0.45;

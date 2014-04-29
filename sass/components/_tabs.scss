@@ -19,8 +19,8 @@ $tabSpacing: $spacing/2;
 		margin-bottom: -1px;
 	}
 	a {
-		@include round-nw($defaultRadius);
-		@include round-ne($defaultRadius);
+		border-top-left-radius: $defaultRadius;
+		border-top-right-radius: $defaultRadius;
 		display: block;
 		text-decoration: none;
 		@include color_textSecondary;
@@ -64,17 +64,17 @@ $tabSpacing: $spacing/2;
 			margin-right: 0;
 			&:first-child a {
 				border-left-width: 1px;
-				@include round-nw($defaultRadius);
+				border-top-left-radius: $defaultRadius;
 			}
 			&:last-child a {
-				@include round-ne($defaultRadius);
+				border-top-right-radius: $defaultRadius);
 			}
 			&.selected + li a {
 				border-left-width: 1px;
 			}
 		}
 		a {
-			@include round(0);
+			border-radius: 0;
 			// needs to be a little taller to make bigger touch target
 			padding: $tabSpacing*1.5;
 			border-left-width: 0;
