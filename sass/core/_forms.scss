@@ -3,6 +3,80 @@
 * all form defaults and modifiers, to be included in foundation.scss
 */
 
+/*doc
+---
+title: Base Form Elements
+name: formsBase
+category: Forms
+---
+
+```html_example
+<form>
+	<label for="name">Name</label>
+	<input id="name" type="text">
+
+	<label for="color">Favorite color</label>
+	<select name="color">
+		<option>Midnight Saffron</option>
+		<option>Seabreeze Brown</option>
+		<option>Fragrant Forest Ochre</option>
+	</select>
+
+	<fieldset class="line-gutters">
+		<legend>Where are you?</legend>
+		<div class="unit size1of2">
+			<label for="city">City</label>
+			<input type="text" id="city">
+		</div>
+		<div class="lastUnit">
+			<label for="state">State</label>
+			<select>
+				<option>New York</option>
+				<option>New Jersey</option>
+				<option>New Mexico</option>
+				<option>New Oregon</option>
+			</select>
+		</div>
+	</fieldset>
+
+	<label for="unicorn">Describe your unicorn</label>
+	<textarea name="unicorn"></textarea>
+</form>
+```
+
+### Checkboxes and radios
+
+```html_example
+<form>
+	<fieldset>
+		<legend>I'm interested in...</legend>
+		<label><input type="checkbox" /> Cats</label>
+		<label><input type="checkbox" checked="checked" /> Honey Badgers</label>
+		<label><input type="checkbox" /> Quails</label>
+		<label><input type="checkbox" checked="checked" /> Goats</label>
+		<label><input type="checkbox"  checked="checked" /> Red Pandas</label>
+	</fieldset>
+</form>
+```
+
+### Controling field width
+
+You can use the width modifiers (ie. `span-50`) to modify
+widths of form fields.
+
+```html_example
+	<input type="text"> <!-- DEFAULT - width: auto -->
+	<input type="text" class="span-25">
+	<input type="text" class="span-30">
+	<input type="text" class="span-50">
+	<input type="text" class="span-60">
+	<input type="text" class="span-75">
+	<input type="text" class="span-100">
+```
+
+*/
+
+
 /* {{{ first, some normalization */
 button, input, select, textarea {
 	margin: 0 0 $baseline 0;
@@ -89,7 +163,6 @@ label {
 	}
 }
 
-/* radios and checkboxes */
 input[type=checkbox], input[type=radio] {
 	font-size: $baseFontSize;
 	width: $baseFontSize;
@@ -198,7 +271,34 @@ input, textarea {
 [disabled="disabled"] {
     background-color: $C_line_less;
 }
+
 /* {{{ Feedback/Error states */
+
+/*doc
+---
+title: Form Errors
+name: errors
+parent: formsBase
+---
+
+Required field labels can be marked as required with the `required` class. 
+Error states are applied with an `error` class on the input element.
+
+```html_example
+<form class="span-60">
+	<label for="address">Address</label>
+	<input id="address" value="123 Fake St." type="text" />
+
+	<label class="required" for="name">Name</label>
+	<input class="error" id="name" value="Keith Hernandez" type="text" />
+	<p class="italic">You are not Keith Hernandez.</p>
+
+	<label for="address">Profession</label>
+	<input id="address" value="Blimp Captain" type="text" />
+</form>
+```
+
+*/
 label.required:after {
 	margin-left: 0.15em;
 	content: "*";
@@ -303,7 +403,7 @@ select.big {
 
 		margin: 0; /* OVERRIDE */
 		/* NOTE: For mobile buttons in general, they're probably going to be in a
-		 * section of something like a ff-box, or a `.doc-content` (for padding)
+		 * section of something like a ff-box, or a `docSection` (for padding)
 		 * when placed directly on the background.
 		 *
 		 * The bottom margin isn't as useful here, and can lead to some cascade
@@ -311,7 +411,20 @@ select.big {
 		 */
 	}
 
-	/* Small == 24pt */
+/*doc
+---
+title: Small button
+name: smallButton
+parent: secondaryButton
+---
+
+Small == 24pt
+
+```html_example
+	<button class="small">cute lil' small button</button>
+```
+
+*/
 	button.small,
 	.button.small {
 		font-size: 12px;
@@ -322,7 +435,7 @@ select.big {
 	}
 
 
-	/* Big == 48pt */
+	// TODO: deprecate - this doesn't seem to do anything
 	button.big,
 	.button.big {
 		font-size: 16px !important;
@@ -337,9 +450,20 @@ select.big {
 	}
 
 
-	/* ======================================================================== */
-	/* BUTTON LAYOUT */
+/*doc
+---
+title: Full-width buttons
+name: fullWidthButton
+parent: secondaryButton
+---
 
+Mobile Sassquatch includes a special class for full-width buttons:
+
+```html_example
+	<button class="full-width">Wide load</button>
+```
+
+*/
 	button.full-width,
 	.button.full-width,
 	.segmented-control.full-width {

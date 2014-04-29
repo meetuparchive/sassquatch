@@ -1,7 +1,36 @@
-/**
-* Avatars
-*
-* (Member photos)
+/*doc
+---
+title: Avatar
+name: avatar
+category: Content Patterns
+---
+
+You know, for people.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--person"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+				Chris
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--person avatar--small"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">
+				Samantha
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--person avatar--big"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+				Larry
+			</a>
+		</li>
+	</ul>
+```
 */
 
 // Avatar base class. Add in a variant!
@@ -25,12 +54,48 @@
 	background-color: $C_tertiaryGray;
 }
 
-.avatar--chapter {
-	// nothing special... yet.
-}
 .avatar--person {
 	@include round($media-xl);  // bigger than any acceptable radius
 								// => will become circle
+}
+
+/*doc
+---
+title: Chapter avatar
+name: chapterAvatar
+parent: avatar
+---
+
+Sometimes you want to represent a chapter, not a member. For that, there's `avatar--chapter`.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--chapter"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Awesome group
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--small"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Some group
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--big"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Some other group
+			</a>
+		</li>
+	</ul>
+```
+
+*/
+.avatar--chapter {
+	// nothing special... yet.
 }
 
 // Avatar Size Variants
@@ -46,8 +111,34 @@
 	font-size: $media-l * 2/3;
 }
 
-// Avatar Stacks
-// ---------------------------
+/*doc
+---
+title: Avatar Stacks
+name: avatarStack
+parent: avatar
+---
+
+You can represent multiple people or chapters with the `avatar--stack` class.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--person avatar--stack"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+				Chris and friends
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--stack"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Cool groups
+			</a>
+		</li>
+	</ul>
+```
+
+*/
 $stack_frame_thickness: 2px;
 $stack_frame_spacing: 1px;
 %blockStack {

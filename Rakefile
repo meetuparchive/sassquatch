@@ -1,65 +1,91 @@
-COMPILER    = "sass"
-SOURCES     = "sass/"
-TARGET      = "css"
-JEKYLL_DIR  = "jekyll_docs"
-DOC_ASSETS  = "#{JEKYLL_DIR}/assets/css"
-HR          = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+require 'colorize'
 
-# compile sass & copy files into build/
-task :compile do
+COMPILER               = "sass"
+SOURCES                = "sass/"
+DOC_SRC_DESKTOP        = "hologram/desktop/"
+DOC_SRC_MOBILE         = "hologram/mobile/"
+CSS_TARGET_DESKTOP     = "#{DOC_SRC_DESKTOP}sassquatch/sassquatch.css"
+CSS_TARGET_MOBILE      = "#{DOC_SRC_MOBILE}sassquatch/sassquatch.css"
+COMPILED_DESKTOP_DOCS  = "doc_desktop/"
+COMPILED_MOBILE_DOCS   = "doc_mobile/"
+HR                     = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 
-	Dir.mkdir(TARGET) unless Dir.exists?(TARGET)
+desc "compiles sass"
+task :sass do
 
 	# desktop
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for desktop"
+	puts "Compiling Sassquatch for desktop".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch.scss #{TARGET}/sassquatch.css --style compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{CSS_TARGET_DESKTOP} --style=expanded" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch (status = #{status.exitstatus})".red
+		end
+	end
 
 	# mobile
 	puts
 	puts "#{HR}"
-	puts "Compiling SassQuatch for mobile"
+	puts "Compiling Sassquatch for mobile".yellow
 	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_mobile.scss #{TARGET}/sassquatch_mobile.css --style=compressed"
+	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{CSS_TARGET_MOBILE} --style=expanded" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch Mobile (status = #{status.exitstatus})"
+		end
+	end
 
-	# tests
-	puts
-	puts "#{HR}"
-	puts "Compiling tests"
-	puts "#{HR}"
-	sh "#{COMPILER} #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
-
-	# compile docs
-	puts
-	puts "#{HR}"
-	puts "Building docs"
-	puts "#{HR}"
-	sh "cp #{TARGET}/sassquatch.css #{DOC_ASSETS}/sassquatch.css"
-	sh "cp #{TARGET}/sassquatch_mobile.css #{DOC_ASSETS}/sassquatch_mobile.css"
-	sh "jekyll build -s #{JEKYLL_DIR}"
+	## tests
+	#puts
+	#puts "#{HR}"
+	#puts "Compiling tests"
+	#puts "#{HR}"
+	#sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
 end
 
 
-# start jekyll
-task :jekyll do
-	puts
-	puts "#{HR}"
-	puts "STARTING JEKYLL..."
-	puts "#{HR}"
-	sh "jekyll serve -s #{JEKYLL_DIR} --watch"
+desc "compiles hologram docs"
+task :hologram do
+	
+	# desktop
+	Dir.chdir("#{DOC_SRC_DESKTOP}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for desktop...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
+
+	# mobile
+	Dir.chdir("#{DOC_SRC_MOBILE}") do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for mobile...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build mobile hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
+
 end
 
 
-# local dev build
+desc "local dev build (compile sass and hologram docs)"
 task :default do
 
-    Rake::Task['compile'].execute
-    Rake::Task['jekyll'].execute
+    Rake::Task['sass'].execute
+    Rake::Task['hologram'].execute
 
     puts
-    puts "YOU BUILD IS SUCCESS"
+    puts "BUILD COMPLETE".green
     puts
 end
 
@@ -70,24 +96,29 @@ task :push_docs do
 	puts "Rebuilding SassQuatch github pages"
 	puts "\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\="
 
-	Rake::Task['compile'].execute
-
 	branch = `git rev-parse --abbrev-ref HEAD`.strip
 
 	do_it = branch == "master" or branch == "dev"
-	if !do_it
-		puts "Do you want to build the docs for #{branch}? [y/n]"
-		do_it = $stdin.gets.chomp == "y"
-	end
 
-	if do_it
+	#if !do_it
+		#puts "do you want to build the docs for #{branch}? [y/n]".yellow
+		#do_it = $stdin.gets.chomp == "y"
+	#end
+
+	if branch == "master"
+
 		docs_path = branch == "master" ? "" : "branches/#{branch}"
-		sh "rm -rf .sass-cache"
+
+		sh "git pull origin #{branch}"
 		sh "git checkout gh-pages"
 		sh "git pull origin gh-pages"
-		sh "git checkout #{branch} _site/"
-		sh "cp -r _site/ ./#{docs_path}"
-		sh "rm -rf _site/"
+
+		sh "git checkout #{branch} -- sass/"
+		sh "git checkout #{branch} -- hologram/"
+
+		Rake::Task['sass'].execute
+		Rake::Task['hologram'].execute
+
 		sh "git add -A"
 		sh "git commit -m \"update live docs (#{branch} branch)\""
 		sh "git push origin gh-pages"
@@ -95,10 +126,15 @@ task :push_docs do
 
 		puts
 		puts "#{HR}"
-		puts "Succesfully updated docs in gh-pages\n"
-		puts "Check http://meetup.github.io/sassquatch/#{docs_path}\n"
+		puts "Succesfully updated docs in gh-pages\n".green
+		puts "http://meetup.github.io/sassquatch/doc_desktop\n".yellow
+		puts "http://meetup.github.io/sassquatch/doc_mobile\n".yellow
 		puts "(sometimes github takes a few minutes to rebuild the page)\n"
 		puts "#{HR}"
 		puts
+
+	else
+		puts "You can only push to gh-pages docs from master".red
 	end
+
 end

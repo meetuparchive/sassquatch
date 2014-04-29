@@ -1,7 +1,23 @@
-/**
-* Figureset Pattern
-* 
-* floated image with descriptive text
+/*doc
+---
+title: Figureset
+name: figureset
+category: Content Patterns
+---
+
+Figure with description. Similar to OOCSS "media block".
+
+```html_example
+	<div class="figureset">
+		<div class="figureset-figure">
+			<img src="http://placekitten.com/60/80/" />
+		</div>
+		<div class="figureset-description">
+			<h4>This is a fluffy kitten</h4>
+			<p>Maybe not the fluffiest, but he'll do.</p>
+		</div>
+	</div>
+```
 */
 
 $figuresetGutter: $baseline * 0.75;
@@ -60,6 +76,27 @@ $figuresetGutter: $baseline * 0.75;
 /* }}} */
 
 
+/*doc
+---
+title: Figureset (right hand figure)
+name: figuresetRight
+parent: figureset
+---
+
+Figureset with figure on the right.
+
+```html_example
+	<div class="figureset-right">
+		<div class="figureset-description">
+			<h4>This is a fluffy kitten</h4>
+			<p>Maybe not the fluffiest, but he'll do.</p>
+		</div>
+		<div class="figureset-figure">
+			<img src="http://placekitten.com/60/80/" />
+		</div>
+	</div>
+```
+*/
 /* {{{ Right side figure */
 .figureset-right {
     .figureset-description {
