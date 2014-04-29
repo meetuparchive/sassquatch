@@ -1,32 +1,29 @@
-.days{
-	& > li{
+.days {
+	> li {
 		list-style: none;
 		border-top: 1px solid $C_line;
-		.dayLabel{
-		}
 	}
-	.times{
-		& > li{
+	.times {
+		> li {
 			list-style: none;
 			border-top: 1px solid $C_line_less;
-			.timeLabel{
+			.timeLabel {
 				position: absolute;
 				padding-top: $spacing;
 				color: $C_text_less;
 			}
 		}
 	}
-	.events{
+	.events {
 		margin-left: 100px;
-		& > li{
+		> li {
 			list-style: none;
 			padding: $spacing 0 0;
 			border-top: 1px solid $C_line_less;
-			&:first-child{
+			&:first-child {
 				border-top: none;
 			}
 		}
 	}
-
 }
 
