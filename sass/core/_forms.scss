@@ -39,6 +39,9 @@ category: Forms
 		</div>
 	</fieldset>
 
+	<label for="yourPhoto">File input <span class="error">(needs work)</span></label>
+	<input type="file" id="yourPhoto" name="yourPhoto" />
+
 	<label for="unicorn">Describe your unicorn</label>
 	<textarea name="unicorn"></textarea>
 </form>
@@ -190,8 +193,7 @@ select[multiple] {
 
 input[type=file] {
 	background-color: #fff;
-	padding: initial;
-	border: initial;
+	padding: $spacing/3;
 	*height: auto;
 	*margin-top: 4px; /* IE7 - helps alignment with inline-style labels */
 }
@@ -281,7 +283,7 @@ name: errors
 parent: formsBase
 ---
 
-Required field labels can be marked as required with the `required` class. 
+Required field labels can be marked as required with the `required` class.
 Error states are applied with an `error` class on the input element.
 
 ```html_example
