@@ -9,6 +9,8 @@ Visually similar to `sectionList`, but has its own
 spacing rules to accommodate block anchors, vertical centering,
 and mobile browser quirks.
 
+**Note**: Don't build these manually - use Meetstache. Docs forthcoming.
+
 ```html_example
 <div class="docBox">
 <ul class="touchList">
@@ -720,6 +722,93 @@ parent: touchList
 	}
 
 
+/*doc
+---
+title: Avatar touch List
+name: avatarTouchList
+parent: touchList
+---
+
+For lists of people and chapters, throw an Avatar in it.
+
+```html_example
+<ul class="touchList docBox">
+	<li class="touchList-item ffbox">
+		<a href="#avatarTouchList" class="touchList-item-action ffbox--touchList-avatar">
+			<div class="ffbox-fix ffbox-fix--avatar">
+				<div class="avatar touchList-avatar avatar--chapter" style="background-image:url(http://placekitten.com/g/180/100)"></div>
+			</div>
+			<div class="ffbox-flex">
+				<div class="ffbox ffbox--touchList-item ">
+					<div id="_content" class="ffbox-flex">
+						<h4 class="touchList-label--item">itemContent.header</h4>
+						<p>itemContent.content (unescaped HTML)</p>
+					</div>
+				</div>
+				<div class="ffbox">
+					<div class="ffbox-flex touchList-helperTextWrap">
+						<label id="_helper" for="" class="touchList-helperText">good old helperText</label>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li class="touchList-item ffbox ffbox--touchList-avatar">
+		<div class="ffbox-fix ffbox-fix--avatar">
+			<div class="avatar touchList-avatar avatar--person" style="background-image:url(http://placekitten.com/g/180/100)"></div>
+		</div>
+		<div class="ffbox-flex">
+			<div class="ffbox ffbox--touchList-item ">
+				<div id="_content" class="ffbox-flex">
+					<p>itemContent.content (unescaped HTML)</p>
+				</div>
+			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="_helper" for="" class="touchList-helperText">good old helperText</label>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="touchList-item ffbox ffbox--touchList-avatar">
+		<div class="ffbox-fix ffbox-fix--avatar">
+			<div class="avatar touchList-avatar avatar--person" style="background-image:url(http://placekitten.com/g/180/100)"></div>
+		</div>
+		<div class="ffbox-flex">
+			<div class="ffbox ffbox--touchList-item ">
+				<div id="_content" class="ffbox-flex">
+					<h4 class="touchList-label--item">itemContent.header</h4>
+					<p>itemContent.content (unescaped HTML)</p>
+				</div>
+			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="_helper" for="" class="touchList-helperText"></label>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="touchList-item ffbox ffbox--touchList-avatar">
+		<div class="ffbox-fix ffbox-fix--avatar">
+			<div class="avatar touchList-avatar avatar--person" style="background-image:url(http://placekitten.com/g/180/100)"></div>
+		</div>
+		<div class="ffbox-flex">
+			<div class="ffbox ffbox--touchList-item ">
+				<div id="_content" class="ffbox-flex">
+					<p>itemContent.content (unescaped HTML)</p>
+				</div>
+			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="_helper" for="" class="touchList-helperText"></label>
+				</div>
+			</div>
+		</div>
+	</li>
+</ul>
+```
+
+*/
 	.touchList-avatar {
 		@extend %avatar_base_size;
 		@include color_textTertiary;
