@@ -43,7 +43,7 @@ category: Forms
 	<input type="file" id="yourPhoto" name="yourPhoto" />
 
 	<label for="unicorn">Describe your unicorn</label>
-	<textarea name="unicorn"></textarea>
+	<textarea id="unicorn" name="unicorn"></textarea>
 </form>
 ```
 

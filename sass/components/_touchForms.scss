@@ -243,10 +243,8 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 					<h4 class="touchList-label touchList-label--input">Cats</h4>
 				</div>
 				<div class="ffbox-fix">
-					<input type="radio" name="f3_5" value="1" id="" tabindex="0" checked="checked">
-					<div class="pseudoradio">
-						<div class="pseudoradio-dot"></div>
-					</div>
+					<input type="radio" name="payment_method_type" value="cash" id="" tabindex="0" checked="checked">
+					<i class="icon-s icon-radio pseudocheckbox"></i>
 				</div>
 			</label>
 		</li>
@@ -256,10 +254,8 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 					<h4 class="touchList-label touchList-label--input">Dogs</h4>
 				</div>
 				<div class="ffbox-fix">
-					<input type="radio" name="f3_5" value="1" id="" tabindex="0">
-					<div class="pseudoradio">
-						<div class="pseudoradio-dot"></div>
-					</div>
+					<input type="radio" name="payment_method_type" value="credit">
+					<i class="icon-s icon-radio pseudocheckbox"></i>
 				</div>
 			</label>
 		</li>
