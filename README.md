@@ -50,27 +50,27 @@ http://meetup.github.io/sassquatch/
 - - -
 
 ## How to contribute
-SassQuatch development currently requires Python, Ruby and the ruby gems Rake, Sass, and Jekyll.
+SassQuatch development currently requires Ruby 2.0.0 and the [bundler](http://bundler.io/) gem.
 
-#### Easy setup (Mac OS X)
-
+#### (Recommended) Installing rbenv
 ```
 $ brew update
 $ brew install rbenv ruby-build
+```
+
+#### Easy setup
+```
 $ git clone git@github.com:meetup/sassquatch.git; ./setup.sh
 ```
 
 #### Editing sass source and documentation
-To modify sassquatch, edit scss source files and/or liquid templates in jekyll docs.
-After editing, run `rake` in the root directory of the repo and point your browser at `localhost:4000`.
+To modify sassquatch, edit scss source files in `sass/`. We document our Sass components using [hologram](http://trulia.github.io/hologram/).
 
-There are also specific rake targets for recompiling docs, launching jekyll, and recompiling Sass individually:
+```
+	(compile sass and rebuild docs) $ rake
+```
 
-	(compile sass and rebuild docs) $ rake compile
-
-	(build jekyll docs only) $ rake docs
-
-	(start jekyll) $ rake jekyll
+Hologram builds static documentation to `doc_mobile/` and `doc_desktop/`; open these in your favorite browser locally to test during development.
 
 
 #### Submitting changes
@@ -92,11 +92,7 @@ If you have push access, there's a separate task for sending new changes to the 
 
 	$ rake push_docs
 
-For the `master` branch docs, the style guide is here: http://meetup.github.io/sassquatch/
-
-For all other branches, the style guide will be built to http://meetup.github.io/sassquatch/branches/::yourbranchname::/
-
-_NOTE_: If you are not on the `master` or `dev` branch, you will be asked to confirm that you want to build docs for your branch.
+_NOTE_: Currently, you must be in `master` to push updates to live documentation.
 - - -
 
 
