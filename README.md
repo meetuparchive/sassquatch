@@ -49,7 +49,7 @@ http://meetup.github.io/sassquatch/
 
 - - -
 
-## How to contribute
+## Development
 SassQuatch development currently requires Ruby 2.0.0 and the [bundler](http://bundler.io/) gem.
 
 #### (Recommended) Installing rbenv
