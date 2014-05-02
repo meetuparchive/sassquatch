@@ -299,7 +299,7 @@ and mobile browser quirks.
 		}
 	}
 
-	.touchList--actionList {
+	.touchList--iconToolbar {
 		@extend %clearfix;
 		@include color_backgroundCollection('background-color');
 		text-align: center;
