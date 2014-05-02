@@ -307,14 +307,14 @@ and mobile browser quirks.
 		border-bottom: 0;
 	}
 
-	.touchList-item-actionIcon {
+	.touchList-item-toolbarIcon {
 		float: right;
 		margin-left: $P_secondary;
 		display: block;
 		padding: $P_secondary;
 	}
 
-	a.touchList-item-actionIcon {
+	a.touchList-item-toolbarIcon {
 		@include color_textSecondary();
 	}
 
