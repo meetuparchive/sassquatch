@@ -677,14 +677,18 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 		}
 	}
 
-
-	.touchList-item--rightInput .ffbox--touchList-item {
-		padding-right: 0;
-		& label.ffbox-fix.ffbox--shaded {
-			height: $H_touchTargetDefault;
+	.touchList-item--rightInput {
+		.ffbox--touchList-avatar,
+		.ffbox--touchList-item.has-right-action {
+			padding-right: 0;
+			label.ffbox-fix.ffbox--shaded {
+				height: $H_touchTargetDefault;
+			}
+			input[type="checkbox"] {
+				margin-right: 0;
+			}
 		}
 	}
-
 
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
@@ -954,6 +958,15 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 		}
 		&:after {
 			content: "Selected Checkbox";
+		}
+	}
+
+	// Could potentially be replaced by a modifier, but $C_gray_* do no
+	// use meetup-swatches right now
+	.ffbox--shaded {
+		@include color_backgroundNav('background-color');
+		&.selected {
+			background-color: transparent;
 		}
 	}
 
