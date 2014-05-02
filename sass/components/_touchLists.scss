@@ -299,6 +299,25 @@ and mobile browser quirks.
 		}
 	}
 
+	.touchList--actionList {
+		@extend %clearfix;
+		@include color_backgroundCollection('background-color');
+		text-align: center;
+		border-top: 0;
+		border-bottom: 0;
+	}
+
+	.touchList-item-actionIcon {
+		float: right;
+		margin-left: $P_secondary;
+		display: block;
+		padding: $P_secondary;
+	}
+
+	a.touchList-item-actionIcon {
+		@include color_textSecondary();
+	}
+
 	.touchList-item-ffbox {
 		padding: 0 $P_secondary;
 		height: $H_touchTargetDefault;
@@ -521,6 +540,32 @@ and mobile browser quirks.
 		}
 	}
 
+	/* ======================================================================== */
+	/* TOUCHLIST ALERT MODIFIER */
+	.touchList-item--alert {
+		@include color_backgroundNav('background-color');
+		.touchList-label {
+			@include color_accent();
+			font-weight: bold;
+			padding-bottom: 0;
+		}
+		i {
+			@include color_textSecondary;
+		}
+		.touchList-gem {
+			display: table;
+			height: auto;
+		}
+	}
+
+	/* ======================================================================== */
+	/* TOUCHLIST TOOLBAR MODIFIER */
+	.touchList-item--toolbar {
+		@include color_backgroundCollection('background-color');
+		.touchList-item--select-mask {
+			@include color_backgroundCollection('background-color');
+		}
+	}
 
 	/*  ======================================================================= */
 	/*  TOUCHLIST JUMP LINKS AND LOAD MORE LINKS  */
