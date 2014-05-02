@@ -678,6 +678,7 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 	}
 
 	.touchList-item--rightInput {
+		.ffbox--touchList-avatar,
 		.ffbox--touchList-item.has-right-action {
 			padding-right: 0;
 			label.ffbox-fix.ffbox--shaded {
