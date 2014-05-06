@@ -163,7 +163,7 @@
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
 	padding: $baseline;
-	padding-bottom: $baseline * .25;
+	padding-bottom: $baseline;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
 
