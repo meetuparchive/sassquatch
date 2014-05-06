@@ -1589,7 +1589,7 @@ input[type="submit"]:active {
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
   padding: 18px;
-  padding-bottom: 18px;
+  padding-bottom: 4.5px;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */ }
 
