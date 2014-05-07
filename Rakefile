@@ -116,6 +116,8 @@ task :push_docs do
 		sh "git checkout #{branch} -- sass/"
 		sh "git checkout #{branch} -- hologram/"
 
+		sh "cp hologram/index.html ./index.html"
+
 		Rake::Task['sass'].execute
 		Rake::Task['hologram'].execute
 
