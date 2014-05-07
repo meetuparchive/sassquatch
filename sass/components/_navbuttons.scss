@@ -168,8 +168,8 @@ DEPRECATED: you should probably use segmented control instead
 	 ****************************/
 
 	li, li:first-child, li:last-child{
-		& > a,
-		& > span {
+		> a,
+		> span {
 			&:active, &.selected, &.push {
 				@include punched_in_box_shadow;
 			}
@@ -202,7 +202,7 @@ DEPRECATED: you should probably use segmented control instead
 			display: none;
 		}
 
-		& > label, & > a, & > li {
+		> label, > a, > li {
 			float: none;
 			display: table-cell;
 		}

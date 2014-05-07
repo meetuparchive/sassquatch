@@ -5,7 +5,7 @@
 	margin: 0 (-1*$baseline) 0 0;
 	font-size: 0; // inline-block whitespace spacing fix
 
-	& > li {
+	> li {
         @include experimental('box-sizing', 'border-box');
         border: 1px solid $C_line;
         background: #fff;
@@ -20,7 +20,7 @@
 			padding: $spacing $spacing 0;
 		}
 		.doc-content:first-child{
-			border-top: 0;		
+			border-top: 0;
 		}
 	}
 }
