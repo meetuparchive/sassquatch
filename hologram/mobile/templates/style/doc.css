@@ -145,7 +145,7 @@ header h1 {
 	font-size: 24px;
 }
 header .version {
-	font-size: normal;
+	font-weight: normal;
 }
 
 #pageWrap {
