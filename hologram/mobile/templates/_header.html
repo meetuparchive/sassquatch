@@ -11,6 +11,10 @@
 	</head>
 	<body class="<%= isIndex ? 'home inverted' : '' %>">
 
+	<% if isIndex %>
+		<p id="indexVersion" class="version muted"> </p>
+	<% end %>
+
 	<% if not isIndex %>
 		<header class="inverted margin-none">
 			<h1>Sassquatch Mobile <span class="version margin-left"> </span></h1>

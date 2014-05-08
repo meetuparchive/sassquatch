@@ -206,6 +206,7 @@ header .version {
 /* HOME PAGE */
 body.home {
 	background: #353e47;
+	position: relative;
 }
 body.home .docStripe--red a:link,
 body.home .docStripe--red a:visited {
@@ -233,4 +234,9 @@ body.home .docStripe--inverted a:visited {
 	margin: 0 auto;
 	position: relative;
 	bottom: 32px;
+}
+#indexVersion {
+	position: absolute;
+	top: 16px;
+	right: 24px;
 }

@@ -192,6 +192,7 @@ header .version {
 /* HOME PAGE */
 body.home {
 	background: #444;
+	position: relative;
 }
 body.home a:link,
 body.home a:visited {
@@ -227,11 +228,8 @@ body.home .paddedList > li:first-child { /* hack hack hack */
 	position: relative;
 	bottom: 32px;
 }
-#indexContent {
-	position: relative;
-}
-#indexContent .version {
+#indexVersion {
 	position: absolute;
 	top: 16px;
-	right: 16px;
+	right: 24px;
 }

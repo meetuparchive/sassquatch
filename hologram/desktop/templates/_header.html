@@ -9,7 +9,11 @@
 		<link rel="stylesheet" href="style/doc.css">
 		<link rel="stylesheet" href="style/github.css">
 	</head>
-	<body class="<%= isIndex ? 'home' : '' %>">
+	<body class="<%= isIndex ? 'home inverted' : '' %>">
+
+	<% if isIndex %>
+		<p id="indexVersion" class="version muted"> </p>
+	<% end %>
 
 	<% if not isIndex %>
 		<header class="inverted">

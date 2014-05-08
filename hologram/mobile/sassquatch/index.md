@@ -1,6 +1,4 @@
-<div id="indexContent" class="docStripe--red padding-top inverted flush--bottom">
-	<p class="version muted"> </p>
-
+<div class="docStripe--red padding-top inverted flush--bottom">
 	<div class="docBounds align-center margin-top flush--bottom">
 
 		<div class="docSection">
