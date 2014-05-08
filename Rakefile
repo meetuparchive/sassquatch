@@ -11,82 +11,57 @@ CSS_TARGET_MOBILE      = "#{DOC_SRC_MOBILE}sassquatch/sassquatch.css"
 COMPILED_DESKTOP_DOCS  = "doc_desktop/"
 COMPILED_MOBILE_DOCS   = "doc_mobile/"
 HR                     = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
+Pkg                    = JSON.parse( File.read('bower.json') )
+
+
+def doSass( platform, source, target )
+	puts
+	puts "#{HR}"
+	puts "Compiling Sassquatch for #{platform}".yellow
+	puts "#{HR}"
+	sh "#{COMPILER} -q #{source}/sassquatch.scss #{target} --style=expanded" do |ok, status|
+		if ! ok
+			fail "Could not compile Sassquatch #{platform} (status = #{status.exitstatus})".red
+		end
+	end
+end
+
+def doHologram( platform, source, target )
+	Dir.chdir(source) do
+		puts
+		puts "#{HR}"
+		puts "Building Hologram docs for #{platform}...".yellow
+		puts "#{HR}"
+		sh "hologram" do |ok, status|
+			if ! ok
+				puts "#{status}"
+				fail "Could not build #{platform} hologram docs (status = #{status.exitstatus})"
+			end
+		end
+	end
+	Dir.chdir(target) do
+		FileList.new('*.html').each do |file|
+			doc = Nokogiri::HTML(open(file))
+			doc.css('.version').xpath('text()').each do |el|
+				el.content = "#{Pkg['version']}"
+			end
+			doc.write_to(open(file, 'w'))
+		end
+	end
+end
+
 
 desc "compiles sass"
 task :sass do
-
-	# desktop
-	puts
-	puts "#{HR}"
-	puts "Compiling Sassquatch for desktop".yellow
-	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch.scss #{CSS_TARGET_DESKTOP} --style=expanded" do |ok, status|
-		if ! ok
-			fail "Could not compile Sassquatch (status = #{status.exitstatus})".red
-		end
-	end
-
-	# mobile
-	puts
-	puts "#{HR}"
-	puts "Compiling Sassquatch for mobile".yellow
-	puts "#{HR}"
-	sh "#{COMPILER} -q #{SOURCES}/sassquatch_mobile.scss #{CSS_TARGET_MOBILE} --style=expanded" do |ok, status|
-		if ! ok
-			fail "Could not compile Sassquatch Mobile (status = #{status.exitstatus})"
-		end
-	end
-
-	## tests
-	#puts
-	#puts "#{HR}"
-	#puts "Compiling tests"
-	#puts "#{HR}"
-	#sh "#{COMPILER} -q #{SOURCES}/sassquatch_tests.scss #{DOC_ASSETS}/sassquatch_tests.css"
+	doSass( "desktop", SOURCES, CSS_TARGET_DESKTOP )
+	doSass( "mobile", SOURCES, CSS_TARGET_MOBILE )
 end
 
 
 desc "compiles hologram docs"
 task :hologram do
-
-	bowerJSON = File.read('bower.json')
-	pkg = JSON.parse(bowerJSON)
-	
-	# desktop
-	Dir.chdir("#{DOC_SRC_DESKTOP}") do
-		puts
-		puts "#{HR}"
-		puts "Building Hologram docs for desktop...".yellow
-		puts "#{HR}"
-		sh "hologram" do |ok, status|
-			if ! ok
-				puts "#{status}"
-				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
-			end
-		end
-	end
-	Dir.chdir("#{COMPILED_DESKTOP_DOCS}") do
-		page = Nokogiri::HTML(open("index.html"))
-		page.css('.sassquatch-version').xpath('text()').each do |el|
-			el.content = "#{pkg['version']}"
-		end
-		page.write_to(open('index.html', 'w'))
-	end
-
-	# mobile
-	Dir.chdir("#{DOC_SRC_MOBILE}") do
-		puts
-		puts "#{HR}"
-		puts "Building Hologram docs for mobile...".yellow
-		puts "#{HR}"
-		sh "hologram" do |ok, status|
-			if ! ok
-				puts "#{status}"
-				fail "Could not build mobile hologram docs (status = #{status.exitstatus})"
-			end
-		end
-	end
-
+	doHologram( "desktop", DOC_SRC_DESKTOP, COMPILED_DESKTOP_DOCS )
+	doHologram( "mobile", DOC_SRC_MOBILE, COMPILED_MOBILE_DOCS )
 end
 
 
@@ -102,7 +77,7 @@ task :default do
 end
 
 
-desc "rebuilds LIVE github documentation page, optional branch argument"
+desc "rebuilds LIVE github documentation page"
 task :push_docs do
 	puts
 	puts "Rebuilding SassQuatch github pages"
