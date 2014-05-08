@@ -227,3 +227,11 @@ body.home .paddedList > li:first-child { /* hack hack hack */
 	position: relative;
 	bottom: 32px;
 }
+#indexContent {
+	position: relative;
+}
+#indexContent .version {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+}
