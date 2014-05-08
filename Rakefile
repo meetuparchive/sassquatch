@@ -1,4 +1,6 @@
 require 'colorize'
+require 'json'
+require 'nokogiri'
 
 COMPILER               = "sass"
 SOURCES                = "sass/"
@@ -46,6 +48,9 @@ end
 
 desc "compiles hologram docs"
 task :hologram do
+
+	bowerJSON = File.read('bower.json')
+	pkg = JSON.parse(bowerJSON)
 	
 	# desktop
 	Dir.chdir("#{DOC_SRC_DESKTOP}") do
@@ -59,6 +64,13 @@ task :hologram do
 				fail "Could not build desktop hologram docs (status = #{status.exitstatus})"
 			end
 		end
+	end
+	Dir.chdir("#{COMPILED_DESKTOP_DOCS}") do
+		page = Nokogiri::HTML(open("index.html"))
+		page.css('.sassquatch-version').xpath('text()').each do |el|
+			el.content = "#{pkg['version']}"
+		end
+		page.write_to(open('index.html', 'w'))
 	end
 
 	# mobile

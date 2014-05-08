@@ -3,6 +3,7 @@
 
 		<div id="intro" class="big unit size4of7 docSection">
 			<h1>Meet Sassquatch</h1>
+			<h5 class="sassquatch-version">fuck xml</h5>
 			<p>Sassquatch is a CSS foundation and framework for <a href="http://www.meetup.com">Meetup</a>, built with <a href="http://sass-lang.com/">Sass</a>.</p>
 		</div>
 
