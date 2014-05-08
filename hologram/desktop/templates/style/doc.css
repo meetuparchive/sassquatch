@@ -145,7 +145,7 @@ header h1 {
 	position: relative;
 	padding-right: 80px;
 }
-header span {
+header .version {
 	position: absolute;
 	bottom: 8px;
 	right: 64px;

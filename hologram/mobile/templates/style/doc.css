@@ -144,6 +144,9 @@ header {
 header h1 {
 	font-size: 24px;
 }
+header .version {
+	font-size: normal;
+}
 
 #pageWrap {
 	padding: 0px 24px 16px 24px;
