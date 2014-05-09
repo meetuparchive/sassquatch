@@ -13,12 +13,13 @@ COMPILED_MOBILE_DOCS   = "doc_mobile/"
 HR                     = "\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~"
 Pkg                    = JSON.parse( File.read('bower.json') )
 
+def prettyPrint( message )
+	puts ["", "#{HR}", message.yellow, "#{HR}"]
+end
 
 def doSass( platform, source, target )
-	puts
-	puts "#{HR}"
-	puts "Compiling Sassquatch for #{platform}".yellow
-	puts "#{HR}"
+	prettyPrint( "Compiling Sassquatch for #{platform}" )
+
 	sh "#{COMPILER} -q #{source}/sassquatch.scss #{target} --style=expanded" do |ok, status|
 		if ! ok
 			fail "Could not compile Sassquatch #{platform} (status = #{status.exitstatus})".red
@@ -28,10 +29,8 @@ end
 
 def doHologram( platform, source, target )
 	Dir.chdir(source) do
-		puts
-		puts "#{HR}"
-		puts "Building Hologram docs for #{platform}...".yellow
-		puts "#{HR}"
+		prettyPrint( "Building Hologram docs for #{platform}..." )
+
 		sh "hologram" do |ok, status|
 			if ! ok
 				puts "#{status}"
@@ -71,9 +70,7 @@ task :default do
     Rake::Task['sass'].execute
     Rake::Task['hologram'].execute
 
-    puts
-    puts "BUILD COMPLETE".green
-    puts
+    puts ["", "BUILD COMPLETE".green, ""]
 end
 
 
