@@ -20,9 +20,8 @@
 @import "util/mixins";
 @import "util/animation";
 @import "util/media";
+@import "util/ui-indicator";
 
-// COMPONENTS USED IN CORE
-@import "components/ui-indicator";
 
 // CORE
 @import "core/element_defaults";
