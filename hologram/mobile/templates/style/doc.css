@@ -144,6 +144,9 @@ header {
 header h1 {
 	font-size: 24px;
 }
+header .version {
+	font-weight: normal;
+}
 
 #pageWrap {
 	padding: 0px 24px 16px 24px;
@@ -189,6 +192,7 @@ header h1 {
 /* HOME PAGE */
 body.home {
 	background: #444;
+	position: relative;
 }
 body.home a:link,
 body.home a:visited {
@@ -223,4 +227,9 @@ body.home .paddedList > li:first-child { /* hack hack hack */
 	margin: 0 auto;
 	position: relative;
 	bottom: 32px;
+}
+#indexVersion {
+	position: absolute;
+	top: 16px;
+	right: 24px;
 }
