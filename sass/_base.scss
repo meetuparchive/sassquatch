@@ -20,9 +20,8 @@
 @import "util/mixins";
 @import "util/animation";
 @import "util/media";
+@import "util/ui-indicator";
 
-// COMPONENTS USED IN CORE
-@import "components/ui-indicator";
 
 // CORE
 @import "core/element_defaults";
@@ -47,7 +46,6 @@
 @import "components/appendpager";
 @import "components/navbuttons";
 @import "components/segmentedcontrol";
-@import "components/badge"; // TODO: need to check with mobile first... most likely deprecated by doc-* updates
 @import 'components/touchLists';
 @import 'components/touchForms';
 

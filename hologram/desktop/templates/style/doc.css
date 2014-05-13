@@ -18,6 +18,31 @@ code {
 
 pre {
 	white-space: pre;
+	word-wrap: normal !important;
+}
+
+iframe::-webkit-scrollbar,
+.codeBlock::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+iframe::-webkit-scrollbar:vertical,
+.codeBlock::-webkit-scrollbar:vertical {
+	width: 11px;
+}
+iframe::-webkit-scrollbar:horizontal,
+.codeBlock::-webkit-scrollbar:horizontal {
+	height: 11px;
+}
+iframe::-webkit-scrollbar-thumb,
+.codeBlock::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 2px solid white; /* should match background, can't be transparent */
+	background-color: rgba(0, 0, 0, .5);
+}
+iframe::-webkit-scrollbar-track,
+.codeBlock::-webkit-scrollbar-track {
+	background-color: #fff;
+	border-radius: 8px;
 }
 
 .guide-shade {
@@ -117,6 +142,14 @@ header {
 }
 header h1 {
 	font-size: 32px;
+	position: relative;
+	padding-right: 80px;
+}
+header .version {
+	position: absolute;
+	bottom: 8px;
+	right: 64px;
+	font-weight: normal;
 }
 
 #pageWrap {
@@ -173,6 +206,7 @@ header h1 {
 /* HOME PAGE */
 body.home {
 	background: #353e47;
+	position: relative;
 }
 body.home .docStripe--red a:link,
 body.home .docStripe--red a:visited {
@@ -200,4 +234,9 @@ body.home .docStripe--inverted a:visited {
 	margin: 0 auto;
 	position: relative;
 	bottom: 32px;
+}
+#indexVersion {
+	position: absolute;
+	top: 16px;
+	right: 24px;
 }

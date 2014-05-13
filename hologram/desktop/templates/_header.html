@@ -9,11 +9,15 @@
 		<link rel="stylesheet" href="style/doc.css">
 		<link rel="stylesheet" href="style/github.css">
 	</head>
-	<body class="<%= isIndex ? 'home' : '' %>">
+	<body class="<%= isIndex ? 'home inverted' : '' %>">
+
+	<% if isIndex %>
+		<p id="indexVersion" class="version muted"> </p>
+	<% end %>
 
 	<% if not isIndex %>
 		<header class="inverted">
-			<h1>Sassquatch</h1>
+			<h1>Sassquatch <span class="version"> </span></h1>
 		</header>
 
 		<div id="pageWrap" class="clearfix">

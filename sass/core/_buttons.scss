@@ -37,6 +37,7 @@ a little bit of the background color behind them.
 button,
 input[type="submit"] {
 	@extend %_button_base;
+	margin-bottom: 2px;
 	@if $platform == "desktop" {
 		@extend %_chrome_button_fix;
 	}
