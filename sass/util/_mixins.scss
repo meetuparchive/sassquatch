@@ -6,39 +6,35 @@
 
 
 @mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
-	-moz-border-radius: $nw $ne $se $sw;
-	-webkit-border-radius: $nw $ne $se $sw;
+	-webkit-border-radius: $nw $ne $se $sw;  // Android 2.3
 	border-radius: $nw $ne $se $sw;
 }
 @mixin round-nw($r){
-	-moz-border-radius-topleft: $r;
 	-webkit-border-top-left-radius: $r;
 	border-top-left-radius: $r;
 }
 @mixin round-ne($r){
-	-moz-border-radius-topright: $r;
 	-webkit-border-top-right-radius: $r;
 	border-top-right-radius: $r;
 }
 @mixin round-sw($r){
-	-moz-border-radius-bottomleft: $r;
 	-webkit-border-bottom-left-radius: $r;
 	border-bottom-left-radius: $r;
 }
 
 @mixin round-se($r){
-	-moz-border-radius-bottomright: $r;
 	-webkit-border-bottom-right-radius: $r;
 	border-bottom-right-radius: $r;
 }
 
 @mixin gradient($first, $second, $simpleIE: false) {
+	// TODO: revise style rules to fit standard `linear-gradient` syntax with fallback
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
 	background: $second;
 	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
 	background: -moz-linear-gradient(top,  $first,  $second);
-		@if $simpleIE != true {
-				filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');
-				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";
+	@if $simpleIE != true {
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  // IE 8+
 	}
 }
 
@@ -93,9 +89,9 @@
 			@warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
 			$full: $full inset; }
 	@if $color == none {
-		@include experimental(box-shadow, none, -moz, -webkit, -o, not -ms, not -khtml, official); }
+		@include experimental(box-shadow, none, $moz: false, $ms: false); }
 	@else {
-		@include experimental(box-shadow, $full, -moz, -webkit, -o, not -ms, not -khtml, official);
+		@include experimental(box-shadow, $full, $moz: false, $ms: false);
 	}
 }
 
@@ -110,11 +106,10 @@
 	@include experimental(background-size, $size);
 }
 
-@mixin opacity($opacity) {
+@mixin opacity($opacity, $supportSimpleIE: true) {
 	opacity: $opacity;
-	@if true {
-		$value: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
-		@include experimental(filter, $value, not -moz, not -webkit, not -o, -ms, not -khtml, official);
+	@if $supportSimpleIE {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})";
 	}
 }
 
@@ -162,37 +157,25 @@
 @mixin button_color_base($base_color, $isLight: false){
 	@include box-shadow( rgba(255,255,255,.2), 1px, 1px, 0, 0, true);
 	border: 1px solid rgba(0,0,0,.15);
-	@if $isLight{
-		@include gradient($base_color, darken($base_color, 5%));
-	}
-	@else{
-		@include gradient($base_color, darken($base_color, 10%));
-	}
+	@include gradient($base_color, darken($base_color, if($isLight, 5%, 10%)));
 }
 @mixin button_color_hover($base_color, $isLight: false){
-	@if $isLight{
-		$lighter_base_color: lighten($base_color, 5%);
-		$darker: darken($base_color, 7%);
-		@include gradient($lighter_base_color, $darker);
-	}
-	@else{
-		$lighter_base_color: lighten($base_color, 5%);
-		$darker: darken($base_color, 10%);
-		@include gradient($lighter_base_color, $darker);
-	}
+	@include gradient(lighten($base_color, 5%), darken($base_color, if($isLight, 7%, 10%)));
 }
 @mixin button_color_active($base_color, $isLight: false){
-	@if $isLight{
-		background: darken($base_color, 10%);
-	}
-	@else{
-		background: darken($base_color, 15%);
-	}
+	background: darken($base_color, if($isLight, 10%, 15%));
 	@include punched_in_box_shadow;
 }
 
 
-@mixin experimental($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
+@mixin experimental($property,
+					$value,
+					$moz: true,
+					$webkit: true,
+					$o: false,
+					$ms: true,
+					$khtml: false,
+					$official: true) {
 	$value: unquote($value);
 	@if $moz {
 		-moz-#{$property}: $value; }
@@ -208,7 +191,14 @@
 		#{$property}: $value; } }
 
 
-@mixin experimental-value($property, $value, $moz: true, $webkit: true, $o: false, $ms: true, $khtml: false, $official: true) {
+@mixin experimental-value($property,
+							$value,
+							$moz: true,
+							$webkit: true,
+							$o: false,
+							$ms: true,
+							$khtml: false,
+							$official: true) {
 	@if $moz {
 		#{$property}: -moz-#{$value}; }
 	@if $webkit {
@@ -283,44 +273,35 @@
 	-moz-transform: rotate($deg);
 }
 
-@mixin transform($transform, $only3d: false) {
-	@if $only3d {
-		@include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
-	}
-	@else {
-		@include experimental(transform, $transform, -moz, -webkit, -o, -ms, not -khtml, official);
-	}
-}
-
 @mixin transform-origin($t) {
-	@include experimental(transform-origin, $t, -moz, -webkit, -o, -ms, not -khtml, official);
+	@include experimental(transform-origin, $t);
 }
 
 @mixin transform-style($t) {
-	@include experimental(transform-style, $t, -moz, -webkit, -o, -ms, not -khtml, official);
+	@include experimental(transform-style, $t);
 }
 
 @mixin perspective($p) {
-	@include experimental(perspective, $p, -moz, -webkit, -o, -ms, not -khtml, official);
+	@include experimental(perspective, $p);
 }
 
 @mixin transition($t) {
-	@include experimental(transition, $t, -moz, -webkit, -o, -ms, not -khtml, official);
+	@include experimental(transition, $t);
 }
 
 @mixin transform ($t) {
-	@include experimental(transform, $t, -moz, -webkit, -o, not -ms, not -khtml, official);
+	@include experimental(transform, $t, $ms: false);
 }
 
 @mixin backface-visibility($t) {
-	@include experimental(backface-visibility, $t, -moz, -webkit, -o, not -ms, not -khtml, official);
+	@include experimental(backface-visibility, $t, $ms: false);
 }
 
 @mixin transition-transform ($t) {
 	-webkit-transition: -webkit-transform $t;
 	-moz-transition: -moz-transform $t;
 	-o-transition: -o-transform $t;
-	transition: tranform $t;
+	transition: transform $t;
 }
 
 
@@ -411,16 +392,17 @@
 // #############################################################################################
 
 @mixin button_primary_color($base_color){
+	$darker: darken($base_color, 10%);
+	$lighter_base_color: lighten($base_color, 5%);
+
 	@include gradient($base_color, darken($base_color, 10%));
 	@include box-shadow(mix(#ffffff, $base_color, 30%), 1px, 1px, 0, 0, true);
 	border: 1px solid darken($base_color, 20%);
 	&:hover {
-			$lighter_base_color: lighten($base_color, 5%);
-			$darker: darken($base_color, 10%);
 			@include gradient($lighter_base_color, $darker);
 	}
 	&:active {
-			background: darken($base_color, 10%);
+			background: $darker;
 			@include box-shadow(mix(#000000, $base_color, 40%), 1px, 1px, 0, 0, true);
 	}
 }
@@ -549,10 +531,10 @@
 	 @if $color == none {
 		  $full: none;
 	 } @else {
-		  $full: $color $hoff $voff $blur $spread;
-		  @if $inset {
+			$full: $color $hoff $voff $blur $spread;
+			@if $inset {
 				$full: $full inset;
-		  }
+			}
 	 }
 
 	 -webkit-box-shadow: $full;

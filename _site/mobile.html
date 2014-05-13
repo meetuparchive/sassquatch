@@ -7,10 +7,12 @@
 
 		<title>Meetup Mobile Styleguide</title>
 		<link rel="stylesheet" type="text/css" href="//static2.meetupstatic.com/fonts/whitney.css" />
+		<link rel="stylesheet" href="//static1.meetupstatic.com/style/red-label.css" type="text/css" />
 
 		<!-- our mobile standalone for now -->
 		<link rel="stylesheet" href="assets/css/sassquatch_mobile.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/candidates_mobile.css" type="text/css" />
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" tpe="text/css" />
 
 		<!-- GUIDE STYLES (not part of the framework, just the visual style guide) -->
 		<link rel="stylesheet" href="assets/css/guide.css" type="text/css" />
@@ -104,6 +106,7 @@
 			<li><a href="#touchlists-m">Touch Lists</a></li>
 			<li><a href="#forms">Forms</a></li>
 			<li><a href="#navigation">Nav</a></li>
+			<li><a href="#typography">Typography</a></li>
 		</ul>
 
 
@@ -183,6 +186,14 @@
 
 
 					</div>
+
+				
+
+			
+
+				
+
+			
 
 				
 
@@ -399,6 +410,14 @@
 
 			
 
+				
+
+			
+
+				
+
+			
+
 		
 
 			
@@ -474,37 +493,44 @@
 						<h1>Navigation</h1>
 
 						<div class="doc-content">
-	<div class="line-gutters">
-		<div class="unit size1of3">
-			
-			<h2>Tabs</h2>
-			<p>Rounded tab navigation. Used mostly as secondary navigation on Meetup; load the tab content with <code>web:ajax</code> where possible.</p>
-			<p><code>.nav-tabs</code></p>
-		</div>
-		<div class="unit lastUnit">
-			<div class="doc-box">
-				<div class="doc-content">
-					<ul class="nav-tabs">
-	<li><a href="#">Upcoming Meetups</a></li>
-	<li><a href="#">Past  Meetups</a></li>
-	<li class="selected"><a href="#">Selected tab</a></li>
+	<h2>Tabs</h2>
+	<p>Rounded tab navigation. Used mostly as secondary navigation on Meetup; load the tab content with <code>web:ajax</code> where possible.</p>
+	<p><code>.nav-tabs</code></p>
+</div>
+	
+<div class="doc-box">
+	<div class="margin-bottom">
+		<a name="tabs"></a>
+<ul class="nav-tabs">
+	<li><a href="#tabs">Upcoming</a></li>
+	<li><a href="#tabs">Past</a></li>
+	<li class="selected"><a href="#tabs">Selected tab</a></li>
 </ul>
 
-				</div>
-			</div>
-			<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-tabs&quot;</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Past  Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre></div>		
-		</div>
 	</div>
 </div>
+<div class="j-code">
+	<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">&quot;tabs&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav-tabs&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#tabs&quot;</span><span class="nt">&gt;</span>Upcoming<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#tabs&quot;</span><span class="nt">&gt;</span>Past<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#tabs&quot;</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+</div>		
+		
 
 
 
 					</div>
+
+				
+
+			
+
+				
+
+			
 
 				
 
@@ -608,7 +634,7 @@
 
 				
 
-					<div class="doc-page scrollbeacon" id="touchlists-m">
+					<div class="doc-page scrollbeacon" id="touchlists">
 
 						<h1>Touch Lists</h1>
 
@@ -646,6 +672,15 @@
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
                 <p>Paragraph with link wrap</p>
+            </div>
+        </div>
+    </a>
+</li>
+<li class="touchList-item">
+    <a href="#" class="touchList-item-action linkify">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-flex">
+                <p>Paragraph with link wrap, with <code>linkify</code> class.</p>
             </div>
         </div>
     </a>
@@ -689,6 +724,36 @@
             <label id="" for="" class="touchList-helperText">Helper text</label>
         </div>
     </div>
+</li>
+<li class="touchList-item touchList-item--disclosure">
+    <a href="/" class="touchList-item-action">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-fix">
+                <div class="touchList-gem">ico</div>
+            </div>
+            <div class="ffbox-flex touchList-item--disclosure-label">
+                <h4 class="touchList-label">Disclosure label (dummy icons)</h4>
+            </div>
+            <div class="ffbox-fix">
+                ><!-- <i class="icon-s icon-disclosure-right icon-disclosure-right--touchList-item"></i> -->
+            </div>
+        </div>
+    </a>
+</li>
+<li class="touchList-item touchList-item--disclosure">
+    <a href="/" class="touchList-item-action linkify">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-fix">
+                <div class="touchList-gem">ico</div>
+            </div>
+            <div class="ffbox-flex touchList-item--disclosure-label">
+                <h4 class="touchList-label">Disclosure label inside <code>linkify</code> action</h4>
+            </div>
+            <div class="ffbox-fix">
+                ><!-- <i class="icon-s icon-disclosure-right icon-disclosure-right--touchList-item"></i> -->
+            </div>
+        </div>
+    </a>
 </li>
 
     </ul>
@@ -776,6 +841,15 @@
     <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item-action linkify&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Paragraph with link wrap, with <span class="nt">&lt;code&gt;</span>linkify<span class="nt">&lt;/code&gt;</span> class.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;p&gt;</span>Paragraph content<span class="nt">&lt;/p&gt;</span>
@@ -815,6 +889,36 @@
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--disclosure&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item-action&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-gem&quot;</span><span class="nt">&gt;</span>ico<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-item--disclosure-label&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label&quot;</span><span class="nt">&gt;</span>Disclosure label (dummy icons)<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+                &gt;<span class="c">&lt;!-- &lt;i class=&quot;icon-s icon-disclosure-right icon-disclosure-right--touchList-item&quot;&gt;&lt;/i&gt; --&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;touchList-item touchList-item--disclosure&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="na">class=</span><span class="s">&quot;touchList-item-action linkify&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox ffbox--touchList-item&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;touchList-gem&quot;</span><span class="nt">&gt;</span>ico<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-flex touchList-item--disclosure-label&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;touchList-label&quot;</span><span class="nt">&gt;</span>Disclosure label inside <span class="nt">&lt;code&gt;</span>linkify<span class="nt">&lt;/code&gt;</span> action<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
+                &gt;<span class="c">&lt;!-- &lt;i class=&quot;icon-s icon-disclosure-right icon-disclosure-right--touchList-item&quot;&gt;&lt;/i&gt; --&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
 
     <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -829,24 +933,24 @@
     <ul class="touchList">
         <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/90/100/)"></div>
+        <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/90/100/)"></div>
     </div>
     <div class="ffbox-flex">
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-chapter)</p>
+                <p>Paragraph content (avatar--chapter)</p>
             </div>
         </div>
     </div>
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-chapter" style="background-image:url(http://placekitten.com/g/100/150/)"></div>
+        <div class="avatar avatar--chapter" style="background-image:url(http://placekitten.com/g/100/150/)"></div>
     </div>
     <div class="ffbox-flex">
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <span>Span content (avatar-chapter)</span>
+                <span>Span content (avatar--chapter)</span>
             </div>
         </div>
     </div>
@@ -854,12 +958,12 @@
 <li class="touchList-item ffbox">
     <a href="#" class="touchList-item-action">
         <div class="ffbox-fix">
-            <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/110/100/)"></div>
+            <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/110/100/)"></div>
         </div>
         <div class="ffbox-flex">
             <div class="ffbox ffbox--touchList-item">
                 <div class="ffbox-flex">
-                    <p>Paragraph with link wrap (avatar-person)</p>
+                    <p>Paragraph with link wrap (avatar--person)</p>
                 </div>
             </div>
         </div>
@@ -867,12 +971,12 @@
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/120/100/)"></div>
+        <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/120/100/)"></div>
     </div>
     <div class="ffbox-flex">
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-person)</p>
+                <p>Paragraph content (avatar--person)</p>
             </div>
         </div>
         <div class="ffbox">
@@ -886,13 +990,13 @@
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/100/120/)"></div>
+        <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/100/120/)"></div>
     </div>
     <div class="ffbox-flex">
         <label for="" class="touchList-blockLabel">Block label used as a heading</label>
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-person)</p>
+                <p>Paragraph content (avatar--person)</p>
             </div>
         </div>
         <div class="ffbox">
@@ -904,14 +1008,14 @@
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-chapter" style="background-image:url(http://placekitten.com/g/80/100/)"></div>
+        <div class="avatar avatar--chapter" style="background-image:url(http://placekitten.com/g/80/100/)"></div>
     </div>
     <div class="ffbox-flex">
         <label for="" class="touchList-blockLabel">Block label heading</label>
         <div class="ffbox ffbox--touchList-item">
 
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-chapter)</p>
+                <p>Paragraph content (avatar--chapter)</p>
             </div>
         </div>
         <div class="ffbox">
@@ -920,6 +1024,79 @@
             </div>
         </div>
     </div>
+</li>
+<li class="touchList-item ffbox">
+    <div class="ffbox-fix">
+        <div class="avatar avatar--chapter avatar--stack" style="background-image:url(http://placekitten.com/g/80/100/)"></div>
+    </div>
+    <div class="ffbox-flex">
+        <label for="" class="touchList-blockLabel">Block label heading</label>
+        <div class="ffbox ffbox--touchList-item">
+
+            <div class="ffbox-flex">
+                <p>avatar--chapter, avatar--stack</p>
+            </div>
+        </div>
+        <div class="ffbox">
+            <div class="ffbox-flex touchList-helperTextWrap">
+                <label id="" for="" class="touchList-helperText">Helper text</label>
+            </div>
+        </div>
+    </div>
+</li>
+
+    </ul>
+</div>
+
+
+<h2 class="section-subtitle">Avatar + Input TouchList</h2>
+<p>Want avatars with inputs? We've still got you covered.</p>
+
+<!-- EXTRA CSS -->
+<style type="text/css">
+	#members .ffbox--shaded { height: 3.75em; }
+	#members .pill-label--leader,
+	#members .pill-label--friend { font-size: 0.55em }
+	#members .pill-list li:first-child { margin-left: 0; }
+	#members .touchList-item-action .ffbox--touchList-item { padding-right: 0; }
+	#members .touchList input[type="checkbox"] { margin-right: 0; }
+	#member_content { padding-right: 0.375em; }
+	#member_content h4,
+	#member_content ul {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+</style>
+
+<!-- HTML -->
+<div class="doc-box">
+    <ul id="members" class="touchList">
+        <li id="member11130829_item" class="touchList-item ffbox">
+	<a href="#" id="member_action" class="touchList-item-action ffbox-flex unlink">
+		<div class="ffbox--touchList-item">
+			<div class="ffbox-fix">
+				<div class="avatar avatar--person margin-none" style="background-image:url(http://placekitten.com/g/90/100/);"></div>
+			</div>
+			<div class="ffbox-flex padding-none">
+				<div class="ffbox ffbox--touchList-item has-right-action">
+					<div id="member_content" class="ffbox-flex">
+						<h4 class="">Mr. Jinx</h4>
+						<ul class="inlineblockList pill-list"><li class="pill-label--leader">Event Organizer</li></ul>
+						<p class="small leading-top margin-none">Try to milk me and you'll be sorry.</p>
+					</div>
+					<label class="ffbox-fix ffbox--shaded">
+						<input type="checkbox" name="member" id="member11130829" class="" value="1" tabindex="0">
+						<i class="icon-s icon-checkbox pseudocheckbox"></i>
+					</label>
+				</div>
+				<div class="ffbox">
+					<div class="ffbox-flex touchList-helperTextWrap">
+						<label id="" for="member_input" class="touchList-helperText"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</a>
 </li>
 
     </ul>
@@ -1108,6 +1285,15 @@
     </a>
 </li>
 <li class="touchList-item">
+    <a href="#" class="touchList-item-action linkify">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-flex">
+                <p>Paragraph with link wrap, with <code>linkify</code> class.</p>
+            </div>
+        </div>
+    </a>
+</li>
+<li class="touchList-item">
     <div class="ffbox ffbox--touchList-item">
         <div class="ffbox-flex">
             <p>Paragraph content</p>
@@ -1147,6 +1333,36 @@
         </div>
     </div>
 </li>
+<li class="touchList-item touchList-item--disclosure">
+    <a href="/" class="touchList-item-action">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-fix">
+                <div class="touchList-gem">ico</div>
+            </div>
+            <div class="ffbox-flex touchList-item--disclosure-label">
+                <h4 class="touchList-label">Disclosure label (dummy icons)</h4>
+            </div>
+            <div class="ffbox-fix">
+                ><!-- <i class="icon-s icon-disclosure-right icon-disclosure-right--touchList-item"></i> -->
+            </div>
+        </div>
+    </a>
+</li>
+<li class="touchList-item touchList-item--disclosure">
+    <a href="/" class="touchList-item-action linkify">
+        <div class="ffbox ffbox--touchList-item">
+            <div class="ffbox-fix">
+                <div class="touchList-gem">ico</div>
+            </div>
+            <div class="ffbox-flex touchList-item--disclosure-label">
+                <h4 class="touchList-label">Disclosure label inside <code>linkify</code> action</h4>
+            </div>
+            <div class="ffbox-fix">
+                ><!-- <i class="icon-s icon-disclosure-right icon-disclosure-right--touchList-item"></i> -->
+            </div>
+        </div>
+    </a>
+</li>
 
 			</ul>
 		</li>
@@ -1155,24 +1371,24 @@
 			<ul class="touchList-segment-content">
 				<li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/90/100/)"></div>
+        <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/90/100/)"></div>
     </div>
     <div class="ffbox-flex">
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-chapter)</p>
+                <p>Paragraph content (avatar--chapter)</p>
             </div>
         </div>
     </div>
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-chapter" style="background-image:url(http://placekitten.com/g/100/150/)"></div>
+        <div class="avatar avatar--chapter" style="background-image:url(http://placekitten.com/g/100/150/)"></div>
     </div>
     <div class="ffbox-flex">
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <span>Span content (avatar-chapter)</span>
+                <span>Span content (avatar--chapter)</span>
             </div>
         </div>
     </div>
@@ -1180,12 +1396,12 @@
 <li class="touchList-item ffbox">
     <a href="#" class="touchList-item-action">
         <div class="ffbox-fix">
-            <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/110/100/)"></div>
+            <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/110/100/)"></div>
         </div>
         <div class="ffbox-flex">
             <div class="ffbox ffbox--touchList-item">
                 <div class="ffbox-flex">
-                    <p>Paragraph with link wrap (avatar-person)</p>
+                    <p>Paragraph with link wrap (avatar--person)</p>
                 </div>
             </div>
         </div>
@@ -1193,12 +1409,12 @@
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/120/100/)"></div>
+        <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/120/100/)"></div>
     </div>
     <div class="ffbox-flex">
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-person)</p>
+                <p>Paragraph content (avatar--person)</p>
             </div>
         </div>
         <div class="ffbox">
@@ -1212,13 +1428,13 @@
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-person" style="background-image:url(http://placekitten.com/g/100/120/)"></div>
+        <div class="avatar avatar--person" style="background-image:url(http://placekitten.com/g/100/120/)"></div>
     </div>
     <div class="ffbox-flex">
         <label for="" class="touchList-blockLabel">Block label used as a heading</label>
         <div class="ffbox ffbox--touchList-item">
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-person)</p>
+                <p>Paragraph content (avatar--person)</p>
             </div>
         </div>
         <div class="ffbox">
@@ -1230,14 +1446,33 @@
 </li>
 <li class="touchList-item ffbox">
     <div class="ffbox-fix">
-        <div class="avatar avatar-chapter" style="background-image:url(http://placekitten.com/g/80/100/)"></div>
+        <div class="avatar avatar--chapter" style="background-image:url(http://placekitten.com/g/80/100/)"></div>
     </div>
     <div class="ffbox-flex">
         <label for="" class="touchList-blockLabel">Block label heading</label>
         <div class="ffbox ffbox--touchList-item">
 
             <div class="ffbox-flex">
-                <p>Paragraph content (avatar-chapter)</p>
+                <p>Paragraph content (avatar--chapter)</p>
+            </div>
+        </div>
+        <div class="ffbox">
+            <div class="ffbox-flex touchList-helperTextWrap">
+                <label id="" for="" class="touchList-helperText">Helper text</label>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="touchList-item ffbox">
+    <div class="ffbox-fix">
+        <div class="avatar avatar--chapter avatar--stack" style="background-image:url(http://placekitten.com/g/80/100/)"></div>
+    </div>
+    <div class="ffbox-flex">
+        <label for="" class="touchList-blockLabel">Block label heading</label>
+        <div class="ffbox ffbox--touchList-item">
+
+            <div class="ffbox-flex">
+                <p>avatar--chapter, avatar--stack</p>
             </div>
         </div>
         <div class="ffbox">
@@ -1334,6 +1569,14 @@
 
 
 					</div>
+
+				
+
+			
+
+				
+
+			
 
 				
 
@@ -1751,9 +1994,7 @@
 		</div>
 		<div class="ffbox-fix">
 			<input type="radio" name="f3_5" value="1" id="" tabindex="0" checked="checked">
-			<div class="pseudoradio">
-				<div class="pseudoradio-dot"></div>
-			</div>
+			<i class="icon-s icon-radio pseudocheckbox"></i>
 		</div>
 	</label>
 </li>
@@ -1764,9 +2005,7 @@
 		</div>
 		<div class="ffbox-fix">
 			<input type="radio" name="f3_5" value="1" id="" tabindex="0">
-			<div class="pseudoradio">
-				<div class="pseudoradio-dot"></div>
-			</div>
+			<i class="icon-s icon-radio pseudocheckbox"></i>
 		</div>
 	</label>
 </li>
@@ -1789,9 +2028,7 @@
 		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
 			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_5&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-			<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-radio pseudocheckbox&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
@@ -1802,9 +2039,7 @@
 		<span class="nt">&lt;/div&gt;</span>
 		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ffbox-fix&quot;</span><span class="nt">&gt;</span>
 			<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;f3_5&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">id=</span><span class="s">&quot;&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-			<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio&quot;</span><span class="nt">&gt;</span>
-				<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pseudoradio-dot&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-			<span class="nt">&lt;/div&gt;</span>
+			<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;icon-s icon-radio pseudocheckbox&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
 		<span class="nt">&lt;/div&gt;</span>
 	<span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;/li&gt;</span>
@@ -2089,6 +2324,150 @@
 				
 
 			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					<div class="doc-page scrollbeacon" id="typography">
+
+						<h1>Typography</h1>
+
+						<div class="doc-content">
+	<h6>Needmore Road?</h6>
+	<p>Take a look at the <a href="specimen-type-m.html">typography specimen</a></p>
+
+	<h1>h1. Heading One</h1>
+	<h2>h2. Heading Two</h2>
+	<h3>h3. Heading Three</h3>
+	<h4>h4. Heading Four</h4>
+	<h5>h5. Heading Five</h5>
+	<h6>h6. Heading Six</h6>
+
+	<h1>Big text</h1>
+	<p class="big">Limitation of Liability. In no event unless required by applicable law or agreed to in writing of such work; and (b) any additional terms or conditions of this software in source and binary forms, with or without Modifications, and/or any respective portions thereof.</p>
+	
+	<h2>Just text</h2>
+	<p>Limitation of Liability. In no event unless required by applicable law or agreed to in writing of such work; and (b) any additional terms or conditions of this software in source and binary forms, with or without Modifications, and/or any respective portions thereof.</p>
+	
+	<h3>Small text</h3>
+	<p class="small">Limitation of Liability. In no event unless required by applicable law or agreed to in writing of such work; and (b) any additional terms or conditions of this software in source and binary forms, with or without Modifications, and/or any respective portions thereof.</p>
+
+</div>
+
+
+
+					</div>
 
 				
 

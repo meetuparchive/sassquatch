@@ -177,12 +177,13 @@
 */
 
 // WARNING: you have to initialize mobile-specific vars outside of the @if so they have global scope
-$C_topbarRed: 			null;
-$C_topbarRed_dark: 	null;
-$checkin: 				null;
-$yes: 					null;
+$C_topbarRed:			null;
+$C_topbarRed_dark:		null;
+$checkin:				null;
+$yes:					null;
 $waiting: 				null;
-$no: 						null;
+$no:					null;
+$condensedLineHeight:	null;
 
 @if $platform == "mobile" {
 
@@ -193,32 +194,30 @@ $no: 						null;
 	 *
 	 */
 
-
 	/*  @note
 	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all 
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
-	$baseFontStack: 			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-	$headingFontStack: 		$baseFontStack; 
-	$uiControlFontStack: 	$baseFontStack;
+	$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+	$headingFontStack:		$baseFontStack; 
+	$uiControlFontStack:	$baseFontStack;
 
-	$baseFontSize: 12px;
+	$condensedLineHeight:	1.125;
 
-	$h1FontSize: 	24px;
-	$h2FontSize: 	20px;
-	$h3FontSize: 	16px;
-	$h4FontSize: 	14px;
-	$h5FontSize: 	$baseFontSize;
-	$h6FontSize: 	$baseFontSize;
+	$h1FontSize:	$baseFontSize * 1.625; 	//26px
+	$h2FontSize:	$baseFontSize * 1.5;	//24px
+	$h3FontSize:	$baseFontSize * 1.25;	//20px
+	$h4FontSize:	$baseFontSize;
+	$h5FontSize:	$baseFontSize;
+	$h6FontSize:	$baseFontSize;
 
-	$baseline: 			12px;        	/*  unused, except for below  */
-	$spacing: 			9px;          	/*  used, but has a lot of conditional overrides/modifications */
-	$basePadding: 		8px; 
-	$formLabelOffset: $baseline * 9; /* horizontal offset of label/field */
+	$baseline:			16px;
+	$spacing:			$baseline / 2;	/*  used, but has a lot of conditional overrides/modifications */
+	$basePadding:		$spacing;
+	$formLabelOffset:	$baseline * 9;	/* horizontal offset of label/field */
+
 	/*  }  */
-
-
 
 	/*  ADDITIONS {
 	 *  
@@ -229,16 +228,14 @@ $no: 						null;
 	$C_topbarRed: 			#DA364B;
 	$C_topbarRed_dark: 	#C2293F;
 
-	$C_darkGreen: 			#007B3D;  /* used 1x in global, after aliasing itself */
 	$C_rsvpGoing: 			#62AC75;
-	$C_rsvpWating: 		#86c6ee;
+	$C_rsvpWaiting: 		#86c6ee;
 	$C_rsvpNotGoing: 		#999;
 
 	// RSVP status, aliases
-	$checkin: 				$C_darkGreen;
 	$yes: 					$C_rsvpGoing;
-	$waiting: 				$C_rsvpWating;
-	$no: 						$C_rsvpNotGoing;
+	$waiting: 				$C_rsvpWaiting;
+	$no: 					$C_rsvpNotGoing;
 	/*  }  */
 }
 /* }}} */
