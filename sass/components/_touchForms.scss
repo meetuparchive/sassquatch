@@ -575,6 +575,9 @@
 		&:after {
 			content: "Selected Checkbox";
 		}
+		&.icon-checkbox--filled:before {
+				content: "\E0D5";
+		}
 	}
 
 
