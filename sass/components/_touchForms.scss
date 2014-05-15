@@ -575,8 +575,16 @@
 		&:after {
 			content: "Selected Checkbox";
 		}
-		&.icon-checkbox--filled:before {
-				content: "\E0D5";
+	}
+
+	input:checked + .icon-checkbox-filled,		// *2
+	input.checked + .icon-checkbox-filled {	// *3
+		@include color_link;
+		&:before {
+			content: "\E0D5";
+		}
+		&:after {
+			content: "Selected Checkbox";
 		}
 	}
 
