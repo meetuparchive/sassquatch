@@ -1,6 +1,14 @@
 // Breakpoints
 
-@mixin media($breakpoint) {
+$breakpoints:
+	(
+		smallest  "only screen and (max-width: #{$breakpoint-small-max})"
+	),
+	(
+	),
+;
+
+@mixin respond-to($breakpoint) {
     @if $breakpoint == "default" {
         @content;
     } @else {
