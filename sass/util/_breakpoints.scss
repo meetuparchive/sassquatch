@@ -1,0 +1,15 @@
+// Breakpoints
+
+@mixin media($breakpoint) {
+    @if $breakpoint == "default" {
+        @content;
+    } @else {
+        @each $query in $breakpoints {
+            @if $breakpoint == nth($query, 1) {
+                @media #{nth($query, 2)} {
+                    @content;
+                }
+            }
+        }
+    }
+}
