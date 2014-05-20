@@ -1,0 +1,23 @@
+// Breakpoints
+
+$breakpoints:
+	(
+		smallest  "only screen and (max-width: #{$breakpoint-small-max})"
+	),
+	(
+	),
+;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "default" {
+        @content;
+    } @else {
+        @each $query in $breakpoints {
+            @if $breakpoint == nth($query, 1) {
+                @media #{nth($query, 2)} {
+                    @content;
+                }
+            }
+        }
+    }
+}
