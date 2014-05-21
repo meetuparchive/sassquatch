@@ -208,32 +208,9 @@
 	@if $official {
 		#{$property}: #{$value}; } }
 
-%button_personality {
-	@include experimental('user-select', 'none');
-	cursor: pointer;
-	text-decoration: none!important;
-}
 @mixin button_personality() {
 	// mixin for legacy support of @include button_personality
 	@extend %button_personality;
-}
-
-%clearfix {
-	&:before,
-	&:after {
-		content: " "; /* 1 */
-		display: table; /* 2 */
-	}
-
-	&:after {
-		clear: both;
-	}
-
-	/**
-	 * For IE 6/7 only
-	 * Include this rule to trigger hasLayout and contain floats.
-	 */
-	*zoom: 1;
 }
 
 @mixin clearfix {
@@ -359,13 +336,6 @@
 
 
 // TYPOGRAPHY
-
-// various tricks to produce nice header text across browsers
-%nice-type {
-	text-rendering: optimizeLegibility;
-	// -webkit-font-smoothing: subpixel-antialiased;  // this is the default value for webkit
-	//-webkit-text-stroke: .5px;  // bad for scrolling performance on lots of text
-}
 @mixin nice-type {
 	@extend %nice-type;
 }

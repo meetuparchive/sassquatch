@@ -18,6 +18,7 @@
 
 // UTIL
 @import "util/mixins";
+@import "util/placeholders";
 @import "util/animation";
 @import "util/breakpoints";
 @import "util/media";
@@ -49,7 +50,7 @@
 @import "components/segmentedcontrol";
 @import 'components/touchLists';
 @import 'components/touchForms';
-@import 'components/docCards';
+@import 'components/cardGrid';
 
 
 // MODIFIERS (last in cascade to allow component overrides)

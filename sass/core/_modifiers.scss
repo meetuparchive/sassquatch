@@ -434,9 +434,9 @@ category: Modifiers
 TK
 
 */
-._mq_small--center {}
-._mq_small--displayNone {}
-._mq_small--displayBlock {}
+.at_small--center {}
+.at_small--displayNone {}
+.at_small--displayBlock {}
 
 
 @if $platform == "mobile" {
