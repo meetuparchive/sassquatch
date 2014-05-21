@@ -109,6 +109,9 @@ Use primary buttons for primary actions.
 	<button class="button--black">Button</button>
 	<button class="button--white">Button</button>
 	<button class="button--blue">Button</button>
+
+	<h5 class="padding-top">There's also an !important primary button, for overridin' dirty</h5>
+	<button class="button--primary--important">Important primary button</button>
 ```
 
  */
@@ -126,6 +129,9 @@ Use primary buttons for primary actions.
 input[type="submit"].primary,
 input[type="submit"].button--primary {
 	@include button( $C_red, #fff );
+}
+.button--primary--important {
+	@include button( $C_red, #fff, true );
 }
 
 // Black button

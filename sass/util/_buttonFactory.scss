@@ -77,9 +77,10 @@ $buttonFontSize: 16px;
 *
 * @param $bgColor - background color
 * @param $textColor - text color (calculated from bgColor if unspecified)
+* @param $important - use !important (for overriding local css, like themes)
 * -----------------------------------------------
 */
-@mixin button( $bgColor: $C_tertiaryGray, $textColor: "" ) {
+@mixin button( $bgColor: $C_tertiaryGray, $textColor: "", $important: false ) {
 	$borderOffset: 25%;
 
 	@if $textColor == "" {
@@ -90,20 +91,35 @@ $buttonFontSize: 16px;
 	@if $platform == "desktop" {
 		@extend %_chrome_button_fix;
 	}
-	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
+
+	@if $important {
+		@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px !important);
+		background: $bgColor !important;
+	} @else {
+		@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
+		background: $bgColor;
+	}
+
 	color: $textColor !important; // need this for chapstick
-	background: $bgColor;
 	margin-bottom: 2px;
 
 	&.button--active,
 	&:active {
-		@include box-shadow(darken($bgColor, $borderOffset), 0px, 0px, 0px, 0px);
+		@if $important {
+			@include box-shadow(darken($bgColor, $borderOffset) !important, 0px, 0px, 0px, 0px);
+		} @else {
+			@include box-shadow(darken($bgColor, $borderOffset), 0px, 0px, 0px, 0px);
+		}
 		@include transform(translate(0px, 2px));
 	}
 
 	&.button--active,
 	&:hover {
-		background:  darken($bgColor, 8%);
+		@if $important {
+			background:  darken($bgColor, 8%) !important;
+		} @else {
+			background:  darken($bgColor, 8%);
+		}
 	}
 
 
