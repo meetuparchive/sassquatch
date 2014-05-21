@@ -79,14 +79,15 @@ $columns: 6, 5, 4, 3, 2, 1;
 
 
 .cardGrid {
-	@include box-sizing(border-box);
-	@extend %shrinkWhitespace;
+	@include box-sizing();
+	font-size: 0; //whitespace hack
 	margin: 0 #{-($spacing)} 0 0;
 	padding: 0;
 	list-style: none;
 
 	li {
-		@extend %resetWhitespace;
+		@include box-sizing();
+		font-size: $baseFontSize; //reset font size from whitespace hack
 		vertical-align: top;
 		display: inline-block;
 		width: 50%;

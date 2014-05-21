@@ -11,8 +11,6 @@ Placeholder                    | Description
 -------------------------------| -------------------------------------------------
 `@extend %clearfix;`           | adds clearfix pseudoclass hack to clear children
 `@extend %nice-type;`          | optimizeLegibility text rendering
-`@extend %shrinkWhitespace;`   | shrinks whitespace in inline-block layouts (use on parent)
-`@extend %resetWhitespace;`    | resets whitespace to normal (use on inline-block children)
 `@extend %button_personality;` | sets user-select, cursor, and link styles for button-like elements
 
 */
@@ -42,20 +40,6 @@ Placeholder                    | Description
 	text-rendering: optimizeLegibility;
 	// -webkit-font-smoothing: subpixel-antialiased;  // this is the default value for webkit
 	//-webkit-text-stroke: .5px;  // bad for scrolling performance on lots of text
-}
-
-%shrinkWhitespace {
-	letter-spacing: -0.31em; /* webkit */
-	.ie8 & {
-		letter-spacing: normal; /* reset IE < 8 */
-	}
-	word-spacing: -0.43em; /* IE < 8 && gecko */
-}
-
-%resetWhitespace {
-	letter-spacing: normal;
-	word-spacing: normal;
-	vertical-align: top;
 }
 
 %button_personality {
