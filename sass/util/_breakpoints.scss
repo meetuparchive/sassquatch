@@ -34,13 +34,13 @@ Breakpoint name    | Description
 
 $breakpoints:
 	(
-		'small' "only screen and (max-width: #{$breakpoint-xs})"
+		'small' "only screen and (max-width: #{$breakpoint-s})"
 	),
 	(
-		'medium' "only screen and (max-width: #{$breakpoint-s}))"
+		'medium' "only screen and (max-width: #{$breakpoint-m}))"
 	),
 	(
-		'large' "only screen and (max-width: #{$breakpoint-m})"
+		'large' "only screen and (max-width: #{$breakpoint-l})"
 	),
 	(
 		'huge' "only screen and (max-width: #{$breakpoint-xl})"
