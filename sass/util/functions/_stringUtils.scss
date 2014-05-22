@@ -1,6 +1,9 @@
 // Sass string utilities
-//
-// some helpers for transforming strings
+
+
+
+// capitalizeFirstLetter
+// "foobar" - > "Foobar"
 // -------------------------------------------------------------
 
 @function capitalizeFirstLetter( $string ) {
