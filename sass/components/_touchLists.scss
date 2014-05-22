@@ -1,3 +1,26 @@
+@import "../vars/touchList";
+@import "../util/touchList";
+
+%tl-item-heading {
+	@include color_textSecondary;
+	.inverted & { @include color_textSecondaryInverted; }
+	font-size: $FS_small;
+	// override padding for element, make visually equivalent to blockLabel spacing
+	padding-bottom: $P_secondary / 3;
+}
+
+%tl-blockLabel {
+	@extend %tl-item-heading;
+	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
+	line-height: $LH_tall;
+	margin-bottom: -$P_secondary;
+	.ffbox--touchList-item & {
+		padding: 0;  // padding provided by ffbox
+	}
+}
+
+@if $platform == "mobile" {
+
 /*doc
 ---
 title: Touch List
@@ -83,28 +106,9 @@ and mobile browser quirks.
 
 */
 
-@import "../vars/touchList";
-@import "../util/touchList";
 
-%tl-item-heading {
-	@include color_textSecondary;
-	.inverted & { @include color_textSecondaryInverted; }
-	font-size: $FS_small;
-	// override padding for element, make visually equivalent to blockLabel spacing
-	padding-bottom: $P_secondary / 3;
-}
 
-%tl-blockLabel {
-	@extend %tl-item-heading;
-	padding: ($P_secondary/$FS_small * 1em) ($P_secondary/$FS_small * 1em) 0;
-	line-height: $LH_tall;
-	margin-bottom: -$P_secondary;
-	.ffbox--touchList-item & {
-		padding: 0;  // padding provided by ffbox
-	}
-}
 
-@if $platform == "mobile" {
 	/*  ======================================================================= */
 	/*  TOUCHLIST STYLES  */
 

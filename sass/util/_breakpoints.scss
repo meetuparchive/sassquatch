@@ -5,7 +5,7 @@ name: breakpoints
 category: Sass Utilities
 ---
 
-You can use the `respond-to` mixin to write styles
+You can use the `atMedia` mixin to write styles
 specific to a given viewport size.
 
 Building elastic layouts is encouraged, as most
@@ -16,7 +16,7 @@ Use breakpoints only when stretching and squeezing
 a component starts to look broken.
 
 ```scss
-	@include respond-to(small) {
+	@include atMedia(small) {
 		body::after {
 			content: "only small screens can read me";
 		}
@@ -47,14 +47,12 @@ $breakpoints:
 	)
 ;
 
-@mixin respond-to($breakpoint: "") {
+@mixin atMedia($breakpoint: "") {
 	@each $query in $breakpoints {
 		@if $breakpoint == nth($query, 1) {
 			@media #{nth($query, 2)} {
 				@content;
 			}
-		} @else {
-			@content;
 		}
 	}
 }

@@ -5,26 +5,19 @@ name: tileGrid
 category: Content Patterns
 ---
 
-For a grid-like collection of items.
+For a grid-like collection of items. You can control the number of columns 
+with class modifiers. By default, tile content is vertical aligned top. For
+equal height tiles, you must set a min-height in page-specific CSS.
+
+This type of collection view is best placed over a background of `$C_backgroundCollection`.
 
 ```html_example
-	<ul class="tileGrid tileGrid--3col">
+	<ul class="tileGrid tileGrid--2col tileGrid_atMedium--1col">
 		<li class="tileGrid-tile">
 			<div class="docBox">
 				<div class="docSection">
 					<h4>I'm a tile with a doxBox</h4>
 					<p>Doner boudin meatloaf biltong, landjaeger sausage short ribs. Pig brisket ham hock, frankfurter pastrami ribeye short loin leberkas hamburger. Boudin bacon brisket, beef ribs short loin pork venison.</p>
-				</div>
-			</div>
-		</li>
-		<li class="tileGrid-tile">
-			<div class="docBox">
-				<div class="docSection">
-					<p>This one has an image</p>
-				</div>
-				<img class="display-block" src="http://placekitten.com/200/60" style="width: 100%; display: block;" />
-				<div class="docSection">
-					<p class="muted small">It also contains multiple docSection elements</p>
 				</div>
 			</div>
 		</li>
@@ -39,7 +32,7 @@ For a grid-like collection of items.
 							</time>
 						</div>
 						<div class="figureset-description">
-							<h5>Here's something else</h5>
+							<h4>Here's something else</h4>
 							<p>This tile has a tearsheet</p>
 						</div>
 					</div>
@@ -49,8 +42,11 @@ For a grid-like collection of items.
 		<li class="tileGrid-tile">
 			<div class="docBox">
 				<div class="docSection">
-					<h4>I'm a tile</h4>
-					<p>I can contain any kind of content</p>
+					<p>This one has an image</p>
+				</div>
+				<img class="display-block" src="http://placekitten.com/200/60" style="width: 100%; display: block;" />
+				<div class="docSection">
+					<p class="muted small">It also contains multiple docSection elements</p>
 				</div>
 			</div>
 		</li>
@@ -120,7 +116,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 }
 
 // at-media variants (medium)
-@include respond-to(medium) {
+@include atMedia(medium) {
 	@each $n in $columns {
 		.tileGrid_atMedium--#{$n}col .tileGrid-tile {
 			width: percentage(1/$n);
@@ -129,7 +125,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 }
 
 // at-media variants (small)
-@include respond-to(small) {
+@include atMedia(small) {
 	@each $n in $columns {
 		.tileGrid_atSmall--#{$n}col .tileGrid-tile {
 			width: percentage(1/$n);
