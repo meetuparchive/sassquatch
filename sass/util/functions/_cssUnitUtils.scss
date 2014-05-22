@@ -5,3 +5,12 @@
 @function px-to-em($pxSize, $basePxSize: 16px){
 	@return ($pxSize / $basePxSize) * 1em;
 }
+
+
+// PX to REM
+// root em converter (assuming html/body is using $baseFontSize)
+// -------------------------------------------------------------
+
+@function px-to-rem($pxSize){
+	@return ($pxSize / $baseFontSize) * 1rem;
+}
