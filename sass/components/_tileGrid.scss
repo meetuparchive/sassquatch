@@ -96,16 +96,16 @@ $columns: 6, 5, 4, 3, 2, 1;
 	margin: 0 #{-($spacing)} 0 0;
 	padding: 0;
 	list-style: none;
+}
 
-	.tileGrid-tile {
-		@include box-sizing();
-		font-size: $baseFontSize; //reset font size from whitespace hack
-		vertical-align: top;
-		display: inline-block;
-		width: 50%;
-		padding: 0 $spacing 0 0;
-		margin: 0;
-	}
+.tileGrid-tile {
+	@include box-sizing();
+	font-size: $baseFontSize; //reset font size from whitespace hack
+	vertical-align: top;
+	display: inline-block;
+	width: 50%;
+	padding: 0 $spacing 0 0;
+	margin: 0;
 }
 
 // explicit column variants
