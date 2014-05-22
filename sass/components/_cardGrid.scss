@@ -1,45 +1,61 @@
 /*doc
 ---
-title: Card Grid
-name: cardGrid
+title: Tile Grid
+name: tileGrid
 category: Content Patterns
 ---
 
 For a grid-like collection of items.
 
 ```html_example
-	<ul class="cardGrid cardGrid--3col">
-		<li>
+	<ul class="tileGrid tileGrid--3col">
+		<li class="tileGrid-tile">
 			<div class="docBox">
 				<div class="docSection">
-					<h4>I'm a card</h4>
+					<h4>I'm a tile with a doxBox</h4>
+					<p>Doner boudin meatloaf biltong, landjaeger sausage short ribs. Pig brisket ham hock, frankfurter pastrami ribeye short loin leberkas hamburger. Boudin bacon brisket, beef ribs short loin pork venison.</p>
+				</div>
+			</div>
+		</li>
+		<li class="tileGrid-tile">
+			<div class="docBox">
+				<div class="docSection">
+					<p>This one has an image</p>
+				</div>
+				<img class="display-block" src="http://placekitten.com/200/60" style="width: 100%; display: block;" />
+				<div class="docSection">
+					<p class="muted small">It also contains multiple docSection elements</p>
+				</div>
+			</div>
+		</li>
+		<li class="tileGrid-tile">
+			<div class="docBox">
+				<div class="docSection">
+					<div class="figureset">
+						<div class="figureset-figure">
+							<time class="tearsheet--big">
+								<span class="month">Oct</span>
+								<span class="day">15</span>
+							</time>
+						</div>
+						<div class="figureset-description">
+							<h5>Here's something else</h5>
+							<p>This tile has a tearsheet</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="tileGrid-tile">
+			<div class="docBox">
+				<div class="docSection">
+					<h4>I'm a tile</h4>
 					<p>I can contain any kind of content</p>
 				</div>
 			</div>
 		</li>
-		<li>
-			<div class="docBox">
-				<div class="docSection">
-					<h4>I'm a card</h4>
-					<p>I can contain any kind of content</p>
-				</div>
-			</div>
-		</li>
-		<li>
-			<div class="docBox">
-				<div class="docSection">
-					<h4>I'm a card</h4>
-					<p>I can contain any kind of content</p>
-				</div>
-			</div>
-		</li>
-		<li>
-			<div class="docBox">
-				<div class="docSection">
-					<h4>I'm a card</h4>
-					<p>I can contain any kind of content</p>
-				</div>
-			</div>
+		<li class="tileGrid-tile">
+			<img src="http://placekitten.com/200/100" style="width: 100%; display: block;" />
 		</li>
 	</ul>
 ```
@@ -51,41 +67,41 @@ You can set the default number of columns from 1 to
 
 Class                       | Description
 ----------------------------| ------------------------
-`cardGrid cardGrid--1col`   | single column of cards
-`cardGrid cardGrid--2col`   | two columns of cards
-`cardGrid cardGrid--3col`   | three columns of cards
-`cardGrid cardGrid--4col`   | you get the idea
+`tileGrid tileGrid--1col`   | single column of cards
+`tileGrid tileGrid--2col`   | two columns of cards
+`tileGrid tileGrid--3col`   | three columns of cards
+`tileGrid tileGrid--4col`   | you get the idea
 
 
 ### Media Query Modifiers
 
-cardGrid also supports media query column modifiers. You can declare
-a sepcific number of columns for:
+tileGrid also supports media query column modifiers. You can declare
+a specific number of columns for:
 
 - 1-6 columns at the "medium" breakpoint
 - 1-6 columns at the "small" breakpoint
 
 #### Examples:
 
-Example                                                   | Description
-----------------------------------------------------------| --------------------------------------
-`cardGrid at_small--1col`                                 | snap to 1 column at "small" breakpoint
-`cardGrid at_medium--3col`                                | snap to 3 columns at "medium" breakpoint
-`cardGrid cardGrid--6col at_medium--3col at_small--1col`  | 6 columns by default, 3 columns at medium, 1 column at small
+Example                                                                  | Description
+-------------------------------------------------------------------------| --------------------------------------
+`tileGrid tileGrid_atSmall--1col`                                        | snap to 1 column at "small" breakpoint
+`tileGrid tileGrid_atMedium--3col`                                       | snap to 3 columns at "medium" breakpoint
+`tileGrid tileGrid--6col tileGrid_atMedium--3col tilegrid_atSmall--1col` | 6 columns by default, 3 columns at medium, 1 column at small
 
 */
 
 $columns: 6, 5, 4, 3, 2, 1;
 
 
-.cardGrid {
+.tileGrid {
 	@include box-sizing();
 	font-size: 0; //whitespace hack
 	margin: 0 #{-($spacing)} 0 0;
 	padding: 0;
 	list-style: none;
 
-	li {
+	.tileGrid-tile {
 		@include box-sizing();
 		font-size: $baseFontSize; //reset font size from whitespace hack
 		vertical-align: top;
@@ -98,7 +114,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 
 // explicit column variants
 @each $n in $columns {
-	.cardGrid--#{$n}col li {
+	.tileGrid--#{$n}col .tileGrid-tile {
 		width: percentage(1/$n);
 	}
 }
@@ -106,7 +122,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 // at-media variants (medium)
 @include respond-to(medium) {
 	@each $n in $columns {
-		.at_medium--#{$n}col li {
+		.tileGrid_atMedium--#{$n}col .tileGrid-tile {
 			width: percentage(1/$n);
 		}
 	}
@@ -115,7 +131,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 // at-media variants (small)
 @include respond-to(small) {
 	@each $n in $columns {
-		.at_small--#{$n}col li {
+		.tileGrid_atSmall--#{$n}col .tileGrid-tile {
 			width: percentage(1/$n);
 		}
 	}
