@@ -1,0 +1,8 @@
+// Sass string utilities
+//
+// some helpers for transforming strings
+// -------------------------------------------------------------
+
+@function capitalizeFirstLetter( $string ) {
+	@return #{to-upper-case(str-slice($string, 1, 1))}#{str-slice($string, 2, -1)};
+}
