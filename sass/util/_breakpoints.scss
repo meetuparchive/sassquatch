@@ -1,23 +1,58 @@
-// Breakpoints
+/*doc
+---
+title: Media Query Breakpoints
+name: breakpoints
+category: Sass Utilities
+---
+
+You can use the `atMedia` mixin to write styles
+specific to a given viewport size.
+
+Building elastic layouts is encouraged, as most
+Sassquatch components are designed to fit 100%
+width of their parent container.
+
+Use breakpoints only when stretching and squeezing
+a component starts to look broken.
+
+```scss
+	@include atMedia(small) {
+		body::after {
+			content: "only small screens can read me";
+		}
+	}
+```
+
+Breakpoint name    | Description
+-------------------| ---------------------------------------------
+`small`            | Small screens and under; portrait on most mobile devices
+`medium`           | Landscape on most phones and under; portrait on some phablets
+`large`            | Landscape on phabelts and under; portrait on most tablets or old desktops
+`huge`             | Modern desktop viewports and under or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
+
+*/
 
 $breakpoints:
 	(
-		smallest  "only screen and (max-width: #{$breakpoint-small-max})"
+		small "only screen and (max-width: #{$breakpoint-s})"
 	),
 	(
+		medium "only screen and (max-width: #{$breakpoint-m})"
 	),
+	(
+		large "only screen and (max-width: #{$breakpoint-l})"
+	),
+	(
+		huge "only screen and (max-width: #{$breakpoint-xl})"
+	)
 ;
 
-@mixin respond-to($breakpoint) {
-    @if $breakpoint == "default" {
-        @content;
-    } @else {
-        @each $query in $breakpoints {
-            @if $breakpoint == nth($query, 1) {
-                @media #{nth($query, 2)} {
-                    @content;
-                }
-            }
-        }
-    }
+@mixin atMedia($breakpoint: "") {
+	@each $query in $breakpoints {
+		@if $breakpoint == nth($query, 1) {
+			@media #{nth($query, 2)} {
+				@content;
+			}
+		}
+	}
 }

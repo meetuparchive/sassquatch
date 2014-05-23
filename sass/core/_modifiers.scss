@@ -431,12 +431,41 @@ name: mediaModifiers
 category: Modifiers
 ---
 
-TK
+You can apply certain modifiers for specific screen sizes when needed.
+The format is `._at[Breakpoint Name]--[modification]`. For example:
+
+```html
+	<div class="_atSmall--center">
+		<p>I'm usually default-aligned, but at the small breakpoint, I'm centered</p>
+	</div>
+```
+
+Supported Modifiers (small breakpoint shown)    | Description
+------------------------------------------------| -----------------------------------------------
+`_atSmall--center`                              | sets text-align to center at given breakpoint
+`_atSmall--displayBlock`                        | sets display to block at given breakpoint
+`_atSmall--displayNone`                         | sets display to none at given breakpoint
 
 */
-._mq_small--center {}
-._mq_small--displayNone {}
-._mq_small--displayBlock {}
+@each $point in $breakpoints {
+	$pointName: #{nth($point, 1)};
+
+	@include atMedia(#{$pointName}) {
+
+		._at#{capitalizeFirstLetter($pointName)}--center {
+			text-align: center;
+		}
+
+		._at#{capitalizeFirstLetter($pointName)}--displayBlock {
+			display: block;
+		}
+
+		._at#{capitalizeFirstLetter($pointName)}--displayNone {
+			display: none;
+		}
+
+	}
+}
 
 
 @if $platform == "mobile" {
