@@ -19,5 +19,17 @@
 		</div>
 	<% end %>
 
+	<script type="text/javascript">
+		// links in code examples shouldn't be followable
+		window.onload = function() {
+			var links = document.querySelectorAll('.codeExample a');
+			for ( i=0; i<links.length; i++ ) {
+				links[i].onclick = function() {
+					return false;
+				};
+			}
+		};
+	</script>
+
 	</body>
 </html>
