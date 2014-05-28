@@ -441,8 +441,7 @@ __Note:__ This replaces the deprecated `doc-content` class
 .docSection {
 	border-top: 1px solid $C_lineGray;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
-	padding: $baseline;
-	padding-bottom: 0;
+	padding: $baseline $baseline 0 $baseline;
 	&:first-child{
 		border-top: none;
 	}
