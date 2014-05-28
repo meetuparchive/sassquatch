@@ -1,3 +1,21 @@
+%clearfix {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	*zoom: 1;
+}
+
 @mixin clearfix {
 	@extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
 }

@@ -18,8 +18,10 @@
 
 
 // UTIL
-@import "util/mixins";
+@import "util/deprecated";
+@import "util/compassUtils";
 @import "util/layout";
+@import "util/typography";
 @import "util/border";
 @import "util/shapes";
 @import "util/images";

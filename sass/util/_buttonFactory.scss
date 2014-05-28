@@ -5,6 +5,16 @@
 
 $buttonFontSize: 16px;
 
+%button_personality {
+	@include experimental('user-select', 'none');
+	cursor: pointer;
+	text-decoration: none!important;
+}
+@mixin button_personality() {
+	// mixin for legacy support of @include button_personality
+	@extend %button_personality;
+}
+
 %_button_base {
 	@include button_personality();
 	border-radius: $defaultRadius;

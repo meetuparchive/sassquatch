@@ -12,6 +12,26 @@
 	}
 }
 
+
+
+
+
+@mixin input-placeholder(){
+	$selectors: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder');
+	@each $s in $selectors{
+		&#{$s}{
+			@content;
+		}
+	}
+}
+
+
+
+
+
+// #############################################################################################
+// CRUSTYBASE MIXINS - DEPRECATED
+// #############################################################################################
 // BUTTON COLOR
 // Can be used for all clickable 3d affordance elements
 @mixin button_color($base_color, $isLight: false){
@@ -46,121 +66,6 @@
 	background: darken($base_color, if($isLight, 10%, 15%));
 	@include punched_in_box_shadow;
 }
-
-
-@mixin experimental($property,
-					$value,
-					$moz: true,
-					$webkit: true,
-					$o: false,
-					$ms: true,
-					$khtml: false,
-					$official: true) {
-	$value: unquote($value);
-	@if $moz {
-		-moz-#{$property}: $value; }
-	@if $webkit {
-		-webkit-#{$property}: $value; }
-	@if $o {
-		-o-#{$property}: $value; }
-	@if $ms {
-		-ms-#{$property}: $value; }
-	@if $khtml {
-		-khtml-#{$property}: $value; }
-	@if $official {
-		#{$property}: $value; } }
-
-
-@mixin experimental-value($property,
-							$value,
-							$moz: true,
-							$webkit: true,
-							$o: false,
-							$ms: true,
-							$khtml: false,
-							$official: true) {
-	@if $moz {
-		#{$property}: -moz-#{$value}; }
-	@if $webkit {
-		#{$property}: -webkit-#{$value}; }
-	@if $o {
-		#{$property}: -o-#{$value}; }
-	@if $ms {
-		#{$property}: -ms-#{$value}; }
-	@if $khtml {
-		#{$property}: -khtml-#{$value}; }
-	@if $official {
-		#{$property}: #{$value}; } }
-
-%button_personality {
-	@include experimental('user-select', 'none');
-	cursor: pointer;
-	text-decoration: none!important;
-}
-@mixin button_personality() {
-	// mixin for legacy support of @include button_personality
-	@extend %button_personality;
-}
-
-%clearfix {
-	&:before,
-	&:after {
-		content: " "; /* 1 */
-		display: table; /* 2 */
-	}
-
-	&:after {
-		clear: both;
-	}
-
-	/**
-	 * For IE 6/7 only
-	 * Include this rule to trigger hasLayout and contain floats.
-	 */
-	*zoom: 1;
-}
-
-
-
-@mixin input-placeholder(){
-	$selectors: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder');
-	@each $s in $selectors{
-		&#{$s}{
-			@content;
-		}
-	}
-}
-
-
-
-// TYPOGRAPHY
-
-// various tricks to produce nice header text across browsers
-%nice-type {
-	text-rendering: optimizeLegibility;
-	// -webkit-font-smoothing: subpixel-antialiased;  // this is the default value for webkit
-	//-webkit-text-stroke: .5px;  // bad for scrolling performance on lots of text
-}
-@mixin nice-type {
-	@extend %nice-type;
-}
-
-@mixin font-face($font-family, $url, $weight: $W_normal, $style: normal) {
-	@font-face {
-		font-family: '#{$font-family}';
-		font-weight: $weight;
-		font-style: $style;
-		src: url('#{$url}.eot?') format('eot'), url('#{$url}.woff') format('woff'), url('#{$url}.ttf') format('truetype');
-	}
-}
-
-
-
-
-
-// #############################################################################################
-// CRUSTYBASE MIXINS - DEPRECATED
-// #############################################################################################
 
 @mixin button_primary_color($base_color){
 	$darker: darken($base_color, 10%);
@@ -224,18 +129,16 @@
 	font-family: arial, sans-serif;
 	*cursor: hand;
 
-&:hover {
-	$lighter_base_color: $base_color + #0a0a0a;
-	$darker: $lighter_base_color - #444;
-	@include gradient($lighter_base_color, $darker);
-	border: 2px solid $darker;
-	text-decoration: none; }
+	&:hover {
+		$lighter_base_color: $base_color + #0a0a0a;
+		$darker: $lighter_base_color - #444;
+		@include gradient($lighter_base_color, $darker);
+		border: 2px solid $darker;
+		text-decoration: none; }
 
-&:active {
-	background: $darker; }
+	&:active {
+		background: $darker; }
 }
-
-
 
 @mixin facebookButton($paddingTop, $paddingBottom) {
 	color: #fff !important;

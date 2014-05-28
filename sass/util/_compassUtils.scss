@@ -1,0 +1,43 @@
+@mixin experimental($property,
+					$value,
+					$moz: true,
+					$webkit: true,
+					$o: false,
+					$ms: true,
+					$khtml: false,
+					$official: true) {
+	$value: unquote($value);
+	@if $moz {
+		-moz-#{$property}: $value; }
+	@if $webkit {
+		-webkit-#{$property}: $value; }
+	@if $o {
+		-o-#{$property}: $value; }
+	@if $ms {
+		-ms-#{$property}: $value; }
+	@if $khtml {
+		-khtml-#{$property}: $value; }
+	@if $official {
+		#{$property}: $value; } }
+
+
+@mixin experimental-value($property,
+							$value,
+							$moz: true,
+							$webkit: true,
+							$o: false,
+							$ms: true,
+							$khtml: false,
+							$official: true) {
+	@if $moz {
+		#{$property}: -moz-#{$value}; }
+	@if $webkit {
+		#{$property}: -webkit-#{$value}; }
+	@if $o {
+		#{$property}: -o-#{$value}; }
+	@if $ms {
+		#{$property}: -ms-#{$value}; }
+	@if $khtml {
+		#{$property}: -khtml-#{$value}; }
+	@if $official {
+		#{$property}: #{$value}; } }
