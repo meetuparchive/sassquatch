@@ -1,130 +1,14 @@
 /**
  * MIXINS
- * Sass mixins (including compass mixins)
+ * Sass mixins (including compass mixin shims)
+ * 
+ * TODO: organize these into concern-specific individual files in ./mixins/
  */
-
-
-/**
- * round *deprecated* in favor of non-prefixed CSS3 border-radius declarations
- */
-@mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
-	border-radius: $nw $ne $se $sw;  // broken on Samsung Galaxy S4 - might be fixed by now?
-}
-@mixin round-nw($r){
-	border-top-left-radius: $r;
-}
-@mixin round-ne($r){
-	border-top-right-radius: $r;
-}
-@mixin round-sw($r){
-	border-bottom-left-radius: $r;
-}
-@mixin round-se($r){
-	border-bottom-right-radius: $r;
-}
-
-@mixin gradient($first, $second, $simpleIE: false) {
-	// TODO: revise style rules to fit standard `linear-gradient` syntax with fallback
-	// https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
-	background: $second;
-	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
-	background: -moz-linear-gradient(top,  $first,  $second);
-	@if $simpleIE != true {
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  // IE 8+
-	}
-}
-
-@mixin background-centering() {
-	background-repeat: no-repeat;
-	background-position: center top;
-}
-
-@mixin squarethumb($width){
-	vertical-align: middle;
-	display: inline-block;
-	overflow: hidden;
-	width: $width;
-	height: $width;
-	img{
-		max-width: $width;
-		min-height: $width;
-	}
-}
-
-/**
-* overflow-y becomes scrollable,
-* fixes OSX vanishing scrollbar
-*/
-@mixin scrollable($bgColor: #fff) {
-		overflow-y: auto;
-
-		/* hide the default UA scrollbar */
-		&::-webkit-scrollbar {
-				-webkit-appearance: none;
-				width: 11px;
-				height: 30px;
-		}
-
-		/* fake the UA scrollbar (this one doesn't hide) */
-		&::-webkit-scrollbar-thumb {
-				border-radius: 8px;
-				border: 2px solid $bgColor;
-				background-color: rgba(0, 0, 0, .5);
-		}
-}
-
-@mixin inlineblock() {
-	display: inline-block;
-	zoom: 1;
-	*display: inline; }
-
-@mixin box-shadow($color: #333333, $hoff: 1px, $voff: 1px, $blur: 5px, $spread: 0, $inset: false) {
-	$full: $color $hoff $voff $blur $spread;
-	@if $inset {
-		@if not ($inset == true or $inset == inset) {
-			@warn "$inset expected to be true or the inset keyword. Got #{$inset} instead. The box shadow will be inset."; }
-			$full: $full inset; }
-	@if $color == none {
-		@include experimental(box-shadow, none, $moz: false, $ms: false); }
-	@else {
-		@include experimental(box-shadow, $full, $moz: false, $ms: false);
-	}
-}
-
-@mixin box-sizing($type : "border") {
-	/* Acceptable values are border, content, and padding - content is the default W3C model */
-	box-sizing: #{$type}-box;
-	-webkit-box-sizing: #{$type}-box;
-	-moz-box-sizing: #{$type}-box;
-}
-
-@mixin background-size( $size) {
-	@include experimental(background-size, $size);
-}
 
 @mixin opacity($opacity, $supportSimpleIE: true) {
 	opacity: $opacity;
 	@if $supportSimpleIE {
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})";
-	}
-}
-
-/**
-* punched_in_box_shadow
-*
-* selected state for nav items
-* looks flat, and "punched in"
-* overrides gradients, etc.
-*/
-@mixin punched_in_box_shadow {
-	background-color: $C_line_less !important;
-	background-image: none !important;;
-	color: $C_darkgray_lightest !important;
-	filter: none;
-	@include box-shadow(rgba(0,0,0,.5), 1px, 1px, 3px, -1px, true);
-
-	&:link, &:hover, &:vistied, &:active {
-		color: $C_darkgray_lightest !important;
 	}
 }
 
@@ -236,104 +120,6 @@
 	*zoom: 1;
 }
 
-@mixin clearfix {
-	@extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
-}
-
-@mixin squarethumb($width){
-	vertical-align: middle;
-	display: inline-block;
-	overflow: hidden;
-	width: $width;
-	height: $width;
-	img{
-		max-width: $width;
-		min-height: $width;
-	}
-}
-
-@mixin circle($color: black, $size: 12px){
-	width: $size;
-	height: $size;
-	border-radius: $size/2;
-	background: $color;
-}
-
-@mixin rotate($deg) {
-	/* gave up on figuring out experimental mixin for now... */
-	transform: rotate($deg);
-	-ms-transform: rotate($deg);
-	-webkit-transform-style: preserve-3d;
-	-webkit-transform: rotateZ($deg);
-	-o-transform: rotate($deg);
-	-moz-transform: rotate($deg);
-}
-
-@mixin transform-origin($t) {
-	@include experimental(transform-origin, $t);
-}
-
-@mixin transform-style($t) {
-	@include experimental(transform-style, $t);
-}
-
-@mixin perspective($p) {
-	@include experimental(perspective, $p);
-}
-
-@mixin transition($t) {
-	@include experimental(transition, $t);
-}
-
-@mixin transform ($t) {
-	@include experimental(transform, $t, $ms: false);
-}
-
-@mixin backface-visibility($t) {
-	@include experimental(backface-visibility, $t, $ms: false);
-}
-
-@mixin transition-transform ($t) {
-	-webkit-transition: -webkit-transform $t;
-	-moz-transition: -moz-transform $t;
-	-o-transition: -o-transform $t;
-	transition: transform $t;
-}
-
-
-@mixin background-clip($value:padding){
-	-moz-background-clip: $value;
-	-webkit-background-clip: $value;
-	-o-background-clip: #{$value}-box;
-	-ms-background-clip: #{$value}-box;
-	-khtml-background-clip: #{$value}-box;
-	background-clip: #{$value}-box;
-}
-
-@mixin triangle($direction: 'n', $color: black, $size: 6px){
-	width: 0;
-	height: 0;
-	@if $direction == 'n'{
-		border-left: $size solid transparent;
-		border-right: $size solid transparent;
-		border-bottom: $size solid $color;
-	}
-	@else if $direction == 'e'{
-		border-top: $size solid transparent;
-		border-bottom: $size solid transparent;
-		border-left: $size solid $color;
-	}
-	@else if $direction == 's'{
-		border-left: $size solid transparent;
-		border-right: $size solid transparent;
-		border-top: $size solid $color;
-	}
-	@else if $direction == 'w'{
-		border-top: $size solid transparent;
-		border-bottom: $size solid transparent;
-		border-right: $size solid $color;
-	}
-}
 
 
 @mixin input-placeholder(){
@@ -345,17 +131,6 @@
 	}
 }
 
-@mixin image-2x($image, $width, $height) {
-	@media (min--moz-device-pixel-ratio: 1.3),
-	(-o-min-device-pixel-ratio: 2.6/2),
-	(-webkit-min-device-pixel-ratio: 1.3),
-	(min-device-pixel-ratio: 1.3),
-	(min-resolution: 1.3dppx) {
-		/* on retina, use image that's scaled by 2 */
-		background-image: url($image);
-		background-size: $width $height;
-	}
-}
 
 
 // TYPOGRAPHY
