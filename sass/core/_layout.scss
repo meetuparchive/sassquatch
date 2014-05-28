@@ -678,7 +678,7 @@ hr.double-line {
 
 @if $platform == "mobile" {
 	body {
-		background-color: #e7e7e7; /* $C_gray90 */
+		background-color: $C_backgroundCollection;
 	}
 
 	.doc-box {
