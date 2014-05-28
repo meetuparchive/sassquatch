@@ -17,9 +17,10 @@ $buttonFontSize: 16px;
 
 %_button_base {
 	@include button_personality();
-	border-radius: $defaultRadius;
 	@include inlineblock();
 	@include box-sizing("border");
+	@extend %niceFocus;
+	border-radius: $defaultRadius;
 	@if $platform == "desktop" {
 		padding: 9px 18px 7px 18px;
 	} @else {
@@ -43,9 +44,6 @@ $buttonFontSize: 16px;
 	-ms-text-shadow: none;
 	-o-text-shadow: none;
 	text-shadow: none;
-	&:focus {
-		outline-width: 0;
-	}
 	&.small {
 		font-size: 12px;
 		padding: 5px 14px;

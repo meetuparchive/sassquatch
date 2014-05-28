@@ -5,7 +5,7 @@
 // (useful for button-like things)
 %niceFocus {
 	
-	&::focus {
+	&:focus {
 		// default
 		outline: thin dotted;
 
@@ -14,8 +14,8 @@
 		outline-offset: -2px;
 	}
 
-	&::active {
-		outline: none;
+	&:active {
+		outline: none !important; // important because extends directive
 	}
 
 }
