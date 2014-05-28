@@ -677,9 +677,6 @@ hr.double-line {
 }
 
 @if $platform == "mobile" {
-	body {
-		background-color: $C_backgroundCollection;
-	}
 
 	.doc-box {
 		margin: $baseline * .75;
