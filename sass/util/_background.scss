@@ -27,6 +27,15 @@
 	@include experimental(background-size, $size);
 }
 
+/*  shaded()
+ *
+ *  Not sure what this really does; used once, and appeared
+ *  naked in _sassquatch_m.scss     -j
+ */
+@mixin shaded($color: $C_shade) {
+	background:$color;
+}
+
 
 /*  m-gradient()
  *

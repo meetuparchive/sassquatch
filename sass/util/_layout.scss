@@ -32,6 +32,22 @@
 	-moz-box-sizing: #{$type}-box;
 }
 
+/*  border-box()
+ *
+ *  Used to do an x-browser border-box layout.
+ *  Most likely redundant somewhere.
+ *
+ *  NOTE
+ *  Should be deprecated in favor of `@box-sizing('border')`
+ *
+ *  TODO Kill on cleanup. This is redundant.
+ */
+@mixin border-box {
+	 -webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	 box-sizing: border-box;
+};
+
 /**
 * overflow-y becomes scrollable,
 * fixes OSX vanishing scrollbar
