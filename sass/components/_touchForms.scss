@@ -1,3 +1,7 @@
+@import "../vars/touchList";
+@import "../util/touchList";
+
+@if $platform == "mobile" {
 /*doc
 ---
 title: Touch Forms
@@ -385,11 +389,6 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 
 */
 
-
-@import "../vars/touchList";
-@import "../util/touchList";
-
-@if $platform == "mobile" {
 	/*  ======================================================================= */
 	/*  SCOPED RESETS TO FORM ELEMENTS  */
 	/*  NOTE: We can get rid of most of these resets once we switch over to using
