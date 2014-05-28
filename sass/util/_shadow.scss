@@ -30,3 +30,49 @@
 	}
 }
 
+
+/*
+ *
+ *  @author     John Cockrell
+ *  @date       2013-3-20
+ *  @requires   SASS 3.2 or greater to compile. (`sass --version`)
+ *
+ *  @description
+ *  For now, this is a separate place to stash useful mixins that are
+ *  currently only part of the mobile experience.
+ *
+ *  If they're useful enough, merge this file in with _mixins.scss--
+ *  I just don't want to add things that may complicate the fullsite
+ *  implementation.
+ *
+ */
+
+
+
+/*  m-box-shadow()
+ *
+ *  A variant of the main SQ mixin found in `_mixins.scss`. Based on our
+ *  current browser support profile, the only extensions we need to support
+ *  are old IE and old Webkit.
+ *
+ *  BB OS 6 ........ -webkit
+ *  BB OS 7 ........ -webkit
+ *  iOS 4.3 ........ -webkit
+ *
+ *  As our support profile changes, we can phase these vendor prefixes out
+ *  of this mixin.
+ */
+@mixin m-box-shadow($color: #333333, $hoff: 1px, $voff: 1px, $blur: 5px, $spread: 0, $inset: false) {
+
+	 @if $color == none {
+		  $full: none;
+	 } @else {
+			$full: $color $hoff $voff $blur $spread;
+			@if $inset {
+				$full: $full inset;
+			}
+	 }
+
+	 -webkit-box-shadow: $full;
+	 box-shadow: $full;
+}
