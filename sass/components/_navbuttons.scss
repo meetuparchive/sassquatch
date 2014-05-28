@@ -11,10 +11,10 @@ DEPRECATED: you should probably use segmented control instead
 
 ```html_example
 	<ul class="nav-buttons">
-		<li><a >Date Joined</a></li>
-		<li><a class="selected">Size</a></li>
-		<li><a >Name</a></li>
-		<li><a >Role</a></li>
+		<li><a href="#">Date Joined</a></li>
+		<li><a href="#" class="selected">Size</a></li>
+		<li><a href="#">Name</a></li>
+		<li><a href="#">Role</a></li>
 	</ul>
 ```
 
