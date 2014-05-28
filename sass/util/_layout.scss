@@ -1,0 +1,37 @@
+@mixin clearfix {
+	@extend %clearfix;   // This is the goal state. Currently messes with mobile tabs and such if enabled. cleanup.
+}
+
+@mixin inlineblock() {
+	display: inline-block;
+	zoom: 1;
+	*display: inline; }
+
+@mixin box-sizing($type : "border") {
+	/* Acceptable values are border, content, and padding - content is the default W3C model */
+	box-sizing: #{$type}-box;
+	-webkit-box-sizing: #{$type}-box;
+	-moz-box-sizing: #{$type}-box;
+}
+
+/**
+* overflow-y becomes scrollable,
+* fixes OSX vanishing scrollbar
+*/
+@mixin scrollable($bgColor: #fff) {
+		overflow-y: auto;
+
+		/* hide the default UA scrollbar */
+		&::-webkit-scrollbar {
+				-webkit-appearance: none;
+				width: 11px;
+				height: 30px;
+		}
+
+		/* fake the UA scrollbar (this one doesn't hide) */
+		&::-webkit-scrollbar-thumb {
+				border-radius: 8px;
+				border: 2px solid $bgColor;
+				background-color: rgba(0, 0, 0, .5);
+		}
+}

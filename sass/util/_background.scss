@@ -1,0 +1,29 @@
+@mixin gradient($first, $second, $simpleIE: false) {
+	// TODO: revise style rules to fit standard `linear-gradient` syntax with fallback
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+	background: $second;
+	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
+	background: -moz-linear-gradient(top,  $first,  $second);
+	@if $simpleIE != true {
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  // IE 8+
+	}
+}
+
+@mixin background-centering() {
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+@mixin background-clip($value:padding){
+	-moz-background-clip: $value;
+	-webkit-background-clip: $value;
+	-o-background-clip: #{$value}-box;
+	-ms-background-clip: #{$value}-box;
+	-khtml-background-clip: #{$value}-box;
+	background-clip: #{$value}-box;
+}
+
+@mixin background-size( $size) {
+	@include experimental(background-size, $size);
+}
+

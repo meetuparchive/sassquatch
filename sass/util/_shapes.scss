@@ -1,0 +1,32 @@
+@mixin triangle($direction: 'n', $color: black, $size: 6px){
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+}
+
+@mixin circle($color: black, $size: 12px){
+	width: $size;
+	height: $size;
+	border-radius: $size/2;
+	background: $color;
+}
+
