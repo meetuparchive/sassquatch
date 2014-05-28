@@ -441,17 +441,17 @@ __Note:__ This replaces the deprecated `doc-content` class
 .docSection {
 	border-top: 1px solid $C_lineGray;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
-	padding-top: $baseline;
+	padding: $baseline;
+	padding-bottom: 0;
 	&:first-child{
 		border-top: none;
 	}
 	.inverted & {
 		border-top-color: $C_lineGrayInverted;
 	}
-}
-.docBox > .docSection {
-	padding: $baseline;
-	padding-bottom: 0;
+	.docBounds > & { // don't pad sides when directly inside a docBounds
+		padding: $baseline 0 0 0;
+	}
 }
 
 .suppress-hover-underline:hover {
