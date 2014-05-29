@@ -1,3 +1,7 @@
+@import "../vars/touchList";
+@import "../util/touchList";
+
+@if $platform == "mobile" {
 /*doc
 ---
 title: Touch Forms
@@ -385,11 +389,6 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 
 */
 
-
-@import "../vars/touchList";
-@import "../util/touchList";
-
-@if $platform == "mobile" {
 	/*  ======================================================================= */
 	/*  SCOPED RESETS TO FORM ELEMENTS  */
 	/*  NOTE: We can get rid of most of these resets once we switch over to using
@@ -959,6 +958,16 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 		&:after {
 			content: "Selected Checkbox";
 		}
+	}
+
+	input:checked + .icon-checkbox-filled,		// *2
+	input.checked + .icon-checkbox-filled {	// *3
+		@include color_link;
+		&:before {
+			content: "\E0D5";
+		}
+		&:after {
+			content: "Selected Checkbox";
 	}
 
 	// Could potentially be replaced by a modifier, but $C_gray_* do no

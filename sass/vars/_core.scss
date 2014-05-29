@@ -152,10 +152,10 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 /* }}} */
 
 /* {{{ Breakpoints */
-	$breakpoint-xs: 440px;
-	$breakpoint-s: 640px;
-	$breakpoint-m: 960px;
-	$breakpoint-l: 1280px;
+	$breakpoint-s: 440px;
+	$breakpoint-m: 640px;
+	$breakpoint-l: 960px;
+	$breakpoint-xl: 1280px;
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
