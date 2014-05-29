@@ -24,8 +24,30 @@
 		color: #fff;
 	}
 
-	// Override default text color for "inverted" contexts
-	// (over deark backgrounds, photos, etc.)
+/*doc
+---
+title: Inverted Context
+name: inverted
+category: Base CSS
+---
+
+The `inverted` class creates a context in which text colors and secondary
+buttons are inverted to light colors to work on dark backgrounds or photos.
+
+```html_example
+	<div class="docBox">
+		<div class="docSection inverted" style="background-color: #5D87B0;">
+			<h3>Yay, I'm inverted</h3>
+			<p>
+				All the text flips to light colors<br />
+				<span class="muted">We handle different shades of gray using opacity</span>
+			</p>
+			<button>Default (secondary) button</button>
+		</div>
+	</div>
+```
+
+*/
 	.inverted {
 		@include color_textSecondaryInverted();
 
@@ -38,6 +60,43 @@
 			color: $C_red;
 		}
 	}
+
+/*doc
+---
+title: Element defaults
+name: defaults
+category: Base CSS
+---
+
+We don't reset base tags, we _set_ them. For good typography, just
+use good markup. The approprite semantic heading level, for example, should
+match up with the appropriate visual style.
+
+All block level content tags, like `<p>` have the same `margin-bottom`. This
+ensures good vertical flow, and also gives us a standard for our content
+containers. The `docSection` content container for example, has padding on
+all sides but the bottom (because the margin on the last block element provides
+the whitespace on the bottom).
+
+<p class="highlighted">For a full example of element defaults see the Sassquatch <a href="#">type specimen</a>.</p>
+
+```html_example
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 5</h6>
+	<img src="http://placekitten.com/80/80" />
+	<p>I'm a paragraph with <strong>strong</strong> things to say with <em>emphasis</em></p>
+	<ul>
+		<li>list item</li>
+		<li>list item</li>
+	</ul>
+	<p>Another paragraph with some <sup>super</sup> inline tags. We take the <sub>sub</sub>way to work. Let's put a <a href="#">link</a> in here.</p>
+```
+
+*/
 
 	/* {{{ Inline tag defaults */
 	abbr, strong, acronym, span, small, time, strike, sub, sup, a {
@@ -184,6 +243,45 @@
 }
 
 @if $platform == "mobile" {
+
+/*doc
+---
+title: Element defaults
+name: defaults
+category: Base CSS
+---
+
+We don't reset base tags, we _set_ them. For good typography, just
+use good markup. The approprite semantic heading level, for example, should
+match up with the appropriate visual style.
+
+All block level content tags, like `<p>` have the same `margin-bottom`. This
+ensures good vertical flow, and also gives us a standard for our content
+containers. The `docSection` content container for example, has padding on
+all sides but the bottom (because the margin on the last block element provides
+the whitespace on the bottom).
+
+<p class="highlighted">For a full example of element defaults see the Sassquatch <a href="#">type specimen</a>.</p>
+
+```html_example
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 5</h6>
+	<img src="http://placekitten.com/80/80" />
+	<p>I'm a paragraph with <strong>strong</strong> things to say with <em>emphasis</em></p>
+	<ul>
+		<li>list item</li>
+		<li>list item</li>
+	</ul>
+	<p>Another paragraph with some <sup>super</sup> inline tags. We take the <sub>sub</sub>way to work. Let's put a <a href="#">link</a> in here.</p>
+```
+
+*/
+
+
 	/* {{{ RESETS, 	NOTE: this is most likely diff from full site sassquatch, 
 					we are using boilerplate that comes with mobile resets */
 
@@ -246,16 +344,15 @@
 	/* {{{ Headings */
 
 	h1,h2,h3,h4,h5,h6 {
+		@include color_textPrimary();
 		font-family: $headingFontStack;
 		font-weight: $W_bold;
-		color: $C_primaryGray;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
 		line-height: 1.2;
-		
 		.inverted & {
-			color: $C_primaryGray;
+			@include color_textPrimaryInverted();
 		}
 	}
 	h1 { 

@@ -1,6 +1,5 @@
 /* Tearsheets
 
-Tearsheets are basically date displays that look like daily calendar tearsheets
 
 The styles here provide a few different sizes (see the @includes at the bottom),
 as well as a few different states/types:
@@ -9,6 +8,36 @@ as well as a few different states/types:
 		click and enter their own date
 	- .tearsheet-expandable: instead of the fixed-height default, an
 		expandable tearsheet has height: auto;
+
+*/
+
+/*doc
+---
+title: Tearsheet
+name: tearsheet
+category: Content Patterns
+---
+
+Tearsheets act as a universal companion icon to upcoming Meetups. 
+They contain the date of the event, but should never be relied on 
+as the only conveyance of the event date.
+
+```html_example
+	<time class="tearsheet">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+
+	<time class="tearsheet--big">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+
+	<time class="tearsheet--small">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+```
 
 */
 
@@ -45,8 +74,8 @@ as well as a few different states/types:
 	width: $size;
 	height: $size;
 	.month{
-		@include round-ne($defaultRadius);
-		@include round-nw($defaultRadius);
+		border-top-right-radius: $defaultRadius;
+		border-top-left-radius: $defaultRadius;
 		font-size: round( $size * 1.2/5 );
 		height: $size * 2/5;
 		line-height: $size * 0.45;

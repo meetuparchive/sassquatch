@@ -7,7 +7,7 @@ $buttonFontSize: 16px;
 
 %_button_base {
 	@include button_personality();
-	@include round(3px);
+	border-radius: $defaultRadius;
 	@include inlineblock();
 	@include box-sizing("border");
 	@if $platform == "desktop" {
@@ -93,6 +93,7 @@ $buttonFontSize: 16px;
 	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
 	color: $textColor !important; // need this for chapstick
 	background: $bgColor;
+	margin-bottom: 2px;
 
 	&.button--active,
 	&:active {

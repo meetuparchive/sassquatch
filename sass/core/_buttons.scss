@@ -12,11 +12,32 @@
 
 @import "../util/buttonFactory";
 
+
+/*doc
+---
+title: Secondary Buttons
+name: secondaryButton
+category: Buttons
+---
+
+Button styles can be applied to any element. Typically you'll want
+to use either a `<button>` or an `<a>` element:
+
+Secondary buttons are slightly transparent so they appear to take on
+a little bit of the background color behind them.
+
+```html_example
+	<button class="button">Button</button>
+	<a class="button" href="#">Anchor</a>
+```
+
+*/
 %button,
 .button,
 button,
 input[type="submit"] {
 	@extend %_button_base;
+	margin-bottom: 2px;
 	@if $platform == "desktop" {
 		@extend %_chrome_button_fix;
 	}
@@ -71,6 +92,27 @@ input[type="submit"] {
 	}
 }
 
+/*doc
+---
+title: Primary Buttons
+name: primaryButton
+category: Buttons
+---
+
+Button styles can be applied to any element. Typically you'll want
+to use either a `<button>` or an `<a>` element:
+
+Use primary buttons for primary actions.
+
+```html_example
+	<button class="button--primary">Button</button>
+	<button class="button--black">Button</button>
+	<button class="button--white">Button</button>
+	<button class="button--blue">Button</button>
+```
+
+ */
+
 // Primary button
 //
 // this gets a bit lengthy to support
@@ -124,9 +166,22 @@ input[type="submit"]:active {
 }
 
 
-/**
-* ==============================================
-* FLAT BUTTONS
+/*doc
+---
+title: Flat Buttons
+name: flatButton
+category: Buttons
+---
+
+Flat buttons should almost always be used for `<a>` elements.
+
+```html_example
+	<a href="#" class="button-flat">Button</a>
+	<a href="#" class="button-flat--white">Button</a>
+	<a href="#" class="button-flat--black">Button</a>
+	<a href="#" class="button-flat--red">Button</a>
+```
+
 */
 
 // Flat button (gray) [DEFAULT]
@@ -160,9 +215,20 @@ input[type="submit"]:active {
 }
 
 
-/**
-* ==============================================
-* PHOTO OVERLAY BUTTONS
+/*doc
+---
+title: Photo Overlay Buttons
+name: photoButton
+category: Buttons
+---
+
+Use the photo overlay buttons on `<a>` elements that sit on
+top of a background photo.
+
+```html_example
+	<a href="#" class="button-photo">Button</a>
+```
+
 */
 
 // Flat button (use over most photo bgs)

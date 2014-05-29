@@ -1,13 +1,29 @@
-/**
-* NAVBUTTONS
-* buttons uses for navigation purposes, not for taking actions and submitting stuff
-* list filtering, for example
+/*doc
+---
+title: Toggle Buttons
+name: navButtons
+category: Navigation
+---
+
+Using a list of `<a>` elements; for toggling/filtering controls.
+
+DEPRECATED: you should probably use segmented control instead
+
+```html_example
+	<ul class="nav-buttons">
+		<li><a >Date Joined</a></li>
+		<li><a class="selected">Size</a></li>
+		<li><a >Name</a></li>
+		<li><a >Role</a></li>
+	</ul>
+```
+
 */
 
 
 .nav-buttons {
 	@include inlineblock;
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 	@include experimental(box-sizing, border-box);
 	@include experimental(background-clip, padding-box);
 	@extend %clearfix;
@@ -41,15 +57,15 @@
 	label:first-of-type,
 	li:first-child > a,
 	li:first-child > span {
-		@include round-nw($defaultRadius - 1px);
-		@include round-sw($defaultRadius - 1px);
+		border-top-left-radius: $defaultRadius - 1px;
+		border-bottom-left-radius: $defaultRadius - 1px;
 	}
 
 	label:last-of-type,
 	li:last-child > a,
 	li:last-child > span {
-		@include round-ne($defaultRadius - 1px);
-		@include round-se($defaultRadius - 1px);
+		border-top-right-radius: $defaultRadius - 1px;
+		border-bottom-right-radius: $defaultRadius - 1px;
 	}
 
 	&.vertical{
@@ -152,8 +168,8 @@
 	 ****************************/
 
 	li, li:first-child, li:last-child{
-		& > a,
-		& > span {
+		> a,
+		> span {
 			&:active, &.selected, &.push {
 				@include punched_in_box_shadow;
 			}
@@ -186,7 +202,7 @@
 			display: none;
 		}
 
-		& > label, & > a, & > li {
+		> label, > a, > li {
 			float: none;
 			display: table-cell;
 		}

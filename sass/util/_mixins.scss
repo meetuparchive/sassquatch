@@ -4,26 +4,22 @@
  */
 
 
-
+/**
+ * round *deprecated* in favor of non-prefixed CSS3 border-radius declarations
+ */
 @mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
-	-webkit-border-radius: $nw $ne $se $sw;  // Android 2.3
-	border-radius: $nw $ne $se $sw;
+	border-radius: $nw $ne $se $sw;  // broken on Samsung Galaxy S4 - might be fixed by now?
 }
 @mixin round-nw($r){
-	-webkit-border-top-left-radius: $r;
 	border-top-left-radius: $r;
 }
 @mixin round-ne($r){
-	-webkit-border-top-right-radius: $r;
 	border-top-right-radius: $r;
 }
 @mixin round-sw($r){
-	-webkit-border-bottom-left-radius: $r;
 	border-bottom-left-radius: $r;
 }
-
 @mixin round-se($r){
-	-webkit-border-bottom-right-radius: $r;
 	border-bottom-right-radius: $r;
 }
 
@@ -259,7 +255,7 @@
 @mixin circle($color: black, $size: 12px){
 	width: $size;
 	height: $size;
-	@include round($size/2);
+	border-radius: $size/2;
 	background: $color;
 }
 
@@ -471,7 +467,7 @@
 	$base_color: $C_facebook;
 
 	@include button_primary_color($C_facebook);
-	@include round($defaultRadius);
+	border-radius: $defaultRadius;
 
 	position: relative;
 	padding-top: $paddingTop;

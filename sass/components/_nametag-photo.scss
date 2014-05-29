@@ -1,10 +1,24 @@
 @if $platform == "desktop" {
-	/**
-	* Nametag Photo pattern
-	*
-	* a member photo with a caption in
-	* white text over a dark gradient
-	*/
+/*doc
+---
+title: Nametag Photo
+name: nametagPhoto
+category: Content Patterns
+---
+
+An element with a member or chapter background photo and bottom 
+dark gradient for text overlay.
+
+```html_example
+<div class="nametag-photo" style="background-image: url(http://photos2.dev.meetupstatic.com/photos/member/3/f/f/9/member_5596377.jpeg);">
+	<div class="nametag-photo-name">
+		<strong>Takashi</strong> <br />
+		<small>Has a square photo</small>
+	</div>
+</div> 
+```
+
+*/
 
 	$size: 180px;
 

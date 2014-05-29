@@ -1,5 +1,36 @@
-/**
-* Pagination Pattern
+/*doc
+---
+title: Pagination
+name: pagination
+category: Navigation
+---
+
+
+```html_example
+	<ul class="nav-pagination">
+		<!-- ideally, you'd use an icon font for the arrows -->
+		<li class="nav-pageitem">
+			<a rel="prev" class="nav-prev" href="#">&larr;</a>
+		</li>
+		<li class="nav-pageitem">
+			<a href="#">1</a>
+		</li>
+		<li class="nav-pageitem selected">
+			<a href="#">2</a>
+		</li>
+		<!-- snip -->
+		<li class="nav-pageitem">
+			<a href="#">8</a>
+		</li>
+		<li class="nav-pageitem">
+			<a href="#">9</a>
+		</li>
+		<li class="nav-pageitem">
+			<a rel="next" class="nav-next" href="#">&rarr;</a>
+		</li>
+	</ul>
+```
+
 */
 
 .nav-pagination {
@@ -37,12 +68,12 @@
 		padding: 0;
 		&:first-child a {
 			border-left-width: 1px;
-			@include round-nw($defaultRadius);
-			@include round-sw($defaultRadius);
+			border-top-left-radius: $defaultRadius;
+			border-bottom-left-radius: $defaultRadius;
 		}
 		&:last-child a {
-			@include round-ne($defaultRadius);
-			@include round-se($defaultRadius);
+			border-top-right-radius: $defaultRadius;
+			border-bottom-right-radius: $defaultRadius;
 		}
 		&.selected a {
 			@include punched_in_box_shadow;

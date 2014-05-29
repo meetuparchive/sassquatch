@@ -2,8 +2,20 @@
 * VARIABLES
 * Sass vars
 */
+$platform: "desktop" !default;
 
-/* Import color vars from meetup-swatches */
+/*doc
+---
+title: Color Variables
+name: colorVars
+category: Base CSS
+---
+
+Color variables are provided via the [meetup-swatches](https://github.com/meetup/meetup-swatches) cross-platform colors project.
+
+<iframe src="http://meetup.github.io/meetup-swatches/" width="100%" height="724" style="border: 1px solid #999;"></iframe>
+
+*/
 @import "../../components/meetup-swatches/sass/colors";
 
 /* {{{ Type */
@@ -136,6 +148,14 @@
 	$media-m: 	48px;
 	$media-l: 	64px;
 	$media-xl: 	80px;
+
+/* }}} */
+
+/* {{{ Breakpoints */
+	$breakpoint-s: 440px;
+	$breakpoint-m: 640px;
+	$breakpoint-l: 960px;
+	$breakpoint-xl: 1280px;
 /* }}} */
 
 /* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
@@ -162,7 +182,7 @@
 *
 *   @note
 *   - color naming convention is really weird and difficult to remember. this
-*     is why i ended up defining my own colors everywhere in _new_styles, which is 
+*     is why i ended up defining my own colors everywhere in _new_styles, which is
 *     bad for consistency.
 *   - Fixed font sizes are bad for adaptive layouts. What happens when we need to
 *     shrink the layout?
@@ -195,12 +215,12 @@ $condensedLineHeight:	null;
 	 */
 
 	/*  @note
-	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all 
+	 *  Devices from the major manufacturers (iOS, Android, WinPhone) all
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
 	$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
-	$headingFontStack:		$baseFontStack; 
+	$headingFontStack:		$baseFontStack;
 	$uiControlFontStack:	$baseFontStack;
 
 	$condensedLineHeight:	1.125;
@@ -220,7 +240,7 @@ $condensedLineHeight:	null;
 	/*  }  */
 
 	/*  ADDITIONS {
-	 *  
+	 *
 	 *  Additional UI Variables, mostly colors, used throughout MWeb.
 	 *  Maybe some of these should be localized to where they're used, like
 	 *  the topbar colors?
