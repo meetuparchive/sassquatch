@@ -93,7 +93,6 @@ $buttonFontSize: 16px;
 	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
 	color: $textColor !important; // need this for chapstick
 	background: $bgColor;
-	margin-bottom: 2px;
 
 	&.button--active,
 	&:active {
