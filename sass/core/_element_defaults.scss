@@ -399,17 +399,4 @@ the whitespace on the bottom).
 	}
 	/* }}} */
 
-
-	/* {{{ Widget helpers (graceful degradation for JS features) */
-	.block-if-js,
-	.inline-if-js,
-	.inline-block-if-js,
-	.hasJS .hide-if-js {	
-		display: none;
-	}
-
-	.hasJS .block-if-js			{ display: block; }
-	.hasJS .inline-if-js		{ display: inline; }
-	.hasJS .inline-block-if-js	{ display: inline-block; }
-	/* }}} */
 }
