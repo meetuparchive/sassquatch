@@ -20,10 +20,6 @@
 	@include experimental(perspective, $p);
 }
 
-@mixin transition($t) {
-	@include experimental(transition, $t);
-}
-
 @mixin transform ($t) {
 	@include experimental(transform, $t, $ms: false);
 }
