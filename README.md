@@ -14,7 +14,7 @@ Sassquatch will be installed in `./components/sassquatch` unless you've customiz
 
 - - -
 
-## Usagef
+## Usage
 
 ### Using Sassquatch with CSS
 
