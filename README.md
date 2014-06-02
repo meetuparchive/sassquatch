@@ -39,7 +39,7 @@ You'll need to compile Sass in order to link to a CSS file:
 
 ### Using Sassquatch with Sass
 
-You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass file:
+You can import `_sassquatch.scss` or `_sassquatch_mobile.scss` into your base Sass file:
 	
 #### Desktop Sass include
 
@@ -47,7 +47,7 @@ You can import `_sassquatch.scss` or `_sassquatch_m.scss` into your base Sass fi
 	
 #### Mobile Sass include
 
-	@import "components/sassquatch/mobile/sassquatch_m.scss";
+	@import "components/sassquatch/mobile/sassquatch_mobile.scss";
 
 - - -
 
