@@ -1,0 +1,18 @@
+/**
+ * round *deprecated* in favor of non-prefixed CSS3 border-radius declarations
+ */
+@mixin round($nw, $ne: $nw, $se: $nw, $sw: $nw){
+	border-radius: $nw $ne $se $sw;  // broken on Samsung Galaxy S4 - might be fixed by now?
+}
+@mixin round-nw($r){
+	border-top-left-radius: $r;
+}
+@mixin round-ne($r){
+	border-top-right-radius: $r;
+}
+@mixin round-sw($r){
+	border-bottom-left-radius: $r;
+}
+@mixin round-se($r){
+	border-bottom-right-radius: $r;
+}

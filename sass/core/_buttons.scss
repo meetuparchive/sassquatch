@@ -46,15 +46,15 @@ input[type="submit"] {
 	background: $C_lineGray;
 	@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 
+	&:focus,
+	&:hover {
+		background: opacify($C_lineGray, 0.06);
+	}
+
 	&.button--active,
 	&:active {
 		@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
 		@include transform(translate(0px, 2px));
-	}
-
-	&.button--active,
-	&:hover {
-		background: opacify($C_lineGray, 0.06);
 	}
 
 	&.disabled,
@@ -75,14 +75,16 @@ input[type="submit"] {
 		background: $C_lineGrayInverted;
 		@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 
+		&:focus,
+		&:hover {
+			background: transparentize($C_lineGrayInverted, 0.06);
+		}
+
 		&:active {
 			@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
 			@include transform(translate(0px, 2px));
 		}
 
-		&:hover {
-			background: transparentize($C_lineGrayInverted, 0.06);
-		}
 		&.disabled,
 		&:disabled {
 			&:hover {
