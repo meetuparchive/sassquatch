@@ -14,11 +14,19 @@ Sassquatch will be installed in `./components/sassquatch` unless you've customiz
 
 - - -
 
-## Usage
+## Usagef
 
 ### Using Sassquatch with CSS
 
-This package contains a minified compiled CSS file for both mobile and desktop Sassquatch.
+You'll need to compile Sass in order to link to a CSS file:
+
+```
+ (desktop)
+ $ sass -q sass/sassquatch.scss [TARGET_DIR]
+ 
+  (mobile)
+ $ sass -q sass/sassquatch_mobile.scss [TARGET_DIR]
+```
 
 #### Desktop CSS
 
