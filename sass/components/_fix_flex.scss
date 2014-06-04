@@ -25,9 +25,9 @@ use the `ffbox--fixed` class on the `ffbox`, then set a class with a
 width value on the nested `ffbox-fix`, like so:
 
 ```html_example
-	<div class="ffbox ffbox--fixed">
-		<div class="ffbox-fix avatar-m shaded-red">fix</div>
-		<div class="ffbox-flex guide-shade">flex</div>
+	<div class="ffbox">
+		<div class="ffbox-fix shaded-red"> fix </div>
+		<div class="ffbox-flex guide-shade"> flex </div>
 	</div>
 ```
 
