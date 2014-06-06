@@ -7,33 +7,8 @@
 */
 
 
-// VARS
-@import "vars/core";
-
-
-// FUNCTIONS
-@import "util/functions/brightness";
-@import "util/functions/cssUnitUtils";
-@import "util/functions/stringUtils";
-
-
-// UTIL
-@import "util/deprecated";
-@import "util/propertyValue";
-@import "util/layout";
-@import "util/typography";
-@import "util/forms";
-@import "util/focus";
-@import "util/border";
-@import "util/shapes";
-@import "util/images";
-@import "util/background";
-@import "util/opacity";
-@import "util/shadow";
-@import "util/transform";
-@import "util/animation";
-@import "util/breakpoints";
-@import "util/avatar";
+// UTILS
+@import "utils";
 
 
 // CORE
