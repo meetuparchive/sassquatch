@@ -1,0 +1,84 @@
+@mixin experimental($property,
+					$value,
+					$moz: true,
+					$webkit: true,
+					$o: false,
+					$ms: true,
+					$khtml: false,
+					$official: true) {
+	$value: unquote($value);
+	@if $moz {
+		-moz-#{$property}: $value; }
+	@if $webkit {
+		-webkit-#{$property}: $value; }
+	@if $o {
+		-o-#{$property}: $value; }
+	@if $ms {
+		-ms-#{$property}: $value; }
+	@if $khtml {
+		-khtml-#{$property}: $value; }
+	@if $official {
+		#{$property}: $value; } }
+
+
+@mixin experimental-value($property,
+							$value,
+							$moz: true,
+							$webkit: true,
+							$o: false,
+							$ms: true,
+							$khtml: false,
+							$official: true) {
+	@if $moz {
+		#{$property}: -moz-#{$value}; }
+	@if $webkit {
+		#{$property}: -webkit-#{$value}; }
+	@if $o {
+		#{$property}: -o-#{$value}; }
+	@if $ms {
+		#{$property}: -ms-#{$value}; }
+	@if $khtml {
+		#{$property}: -khtml-#{$value}; }
+	@if $official {
+		#{$property}: #{$value}; } }
+
+
+/*  loop_prop_list()
+ *
+ *  This function is an awesome utility helper for more complex
+ *  SASS mixins, where you might need to loop through property-value
+ *  pairs stored in SASS arrays.
+ *
+ *  Outputs CSS attr/value pairs constructed from a property list.
+ *  Total time saver, and should be used elsewhere.
+ */
+@mixin loop_prop_list($prop_list, $with_prefix:false) {
+
+	 $prefixable_css3_attributes: 'transform';
+
+	 $i: 1;
+	 $max: length($prop_list) + 1;
+
+	 @while $i < $max {
+		  $a: nth($prop_list, $i);
+		  $b: nth($prop_list, $i+1);
+		  $i: $i+2;
+
+		  $is_prefixable: false;
+
+		  @if $with_prefix {
+				@each $ix in $prefixable_css3_attributes {
+					 @if $a == $ix {
+						  $is_prefixable: true;
+					 }
+				}
+		  }
+
+		  @if $is_prefixable  {
+				#{$with_prefix}-#{$a}: #{$b};
+
+		  } @else {
+				#{$a}: #{$b};
+		  }
+	 }
+}

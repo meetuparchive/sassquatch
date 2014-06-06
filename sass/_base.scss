@@ -18,11 +18,22 @@
 
 
 // UTIL
-@import "util/mixins";
+@import "util/deprecated";
+@import "util/propertyValue";
+@import "util/layout";
+@import "util/typography";
+@import "util/forms";
+@import "util/focus";
+@import "util/border";
+@import "util/shapes";
+@import "util/images";
+@import "util/background";
+@import "util/opacity";
+@import "util/shadow";
+@import "util/transform";
 @import "util/animation";
 @import "util/breakpoints";
-@import "util/media";
-@import "util/ui-indicator";
+@import "util/avatar";
 
 
 // CORE

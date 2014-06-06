@@ -1,0 +1,7 @@
+
+@mixin opacity($opacity, $supportSimpleIE: true) {
+	opacity: $opacity;
+	@if $supportSimpleIE {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})";
+	}
+}

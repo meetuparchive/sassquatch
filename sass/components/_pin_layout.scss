@@ -17,17 +17,17 @@ Class            | Description
 
 ```html_example
 	<!-- Pinning cells -->
-	<div class="ffbox ffbox--fixed" style="min-height: 40px;">
-		<div class="pintop ffbox-fix avatar-m shaded-red">fix</div>
-		<div class="ffbox-flex guide-shade">flex</div>
+	<div class="ffbox" style="min-height: 40px;">
+		<div class="pintop ffbox-fix shaded-red"> fix </div>
+		<div class="ffbox-flex guide-shade"> flex </div>
 	</div>
 
 	<hr />
 
 	<!-- Pinning whole ffbox units-->
-	<div class="ffbox pintop ffbox--fixed" style="min-height: 40px;">
-		<div class="ffbox-fix avatar-m shaded-red">fix</div>
-		<div class="ffbox-flex guide-shade">flex</div>
+	<div class="ffbox pintop" style="min-height:40px;">
+		<div class="ffbox-fix shaded-red"> fix </div>
+		<div class="ffbox-flex guide-shade"> flex </div>
 	</div>
 ```
 

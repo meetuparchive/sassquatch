@@ -1,0 +1,36 @@
+@mixin rotate($deg) {
+	/* gave up on figuring out experimental mixin for now... */
+	transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateZ($deg);
+	-o-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+}
+
+@mixin transform-origin($t) {
+	@include experimental(transform-origin, $t);
+}
+
+@mixin transform-style($t) {
+	@include experimental(transform-style, $t);
+}
+
+@mixin perspective($p) {
+	@include experimental(perspective, $p);
+}
+
+@mixin transform ($t) {
+	@include experimental(transform, $t, $ms: false);
+}
+
+@mixin backface-visibility($t) {
+	@include experimental(backface-visibility, $t, $ms: false);
+}
+
+@mixin transition-transform ($t) {
+	-webkit-transition: -webkit-transform $t;
+	-moz-transition: -moz-transform $t;
+	-o-transition: -o-transform $t;
+	transition: transform $t;
+}

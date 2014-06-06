@@ -11,6 +11,7 @@
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
 		font-weight: $W_normal;
+		background-color: $C_backgroundCollection;
 		margin: 0;
 		padding: 0;
 	}
@@ -398,17 +399,4 @@ the whitespace on the bottom).
 	}
 	/* }}} */
 
-
-	/* {{{ Widget helpers (graceful degradation for JS features) */
-	.block-if-js,
-	.inline-if-js,
-	.inline-block-if-js,
-	.hasJS .hide-if-js {	
-		display: none;
-	}
-
-	.hasJS .block-if-js			{ display: block; }
-	.hasJS .inline-if-js		{ display: inline; }
-	.hasJS .inline-block-if-js	{ display: inline-block; }
-	/* }}} */
 }

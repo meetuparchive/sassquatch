@@ -47,6 +47,7 @@ $tabSpacing: $spacing/2;
 		margin-bottom: -1px;
 	}
 	a {
+		@extend %niceFocus;
 		border-top-left-radius: $defaultRadius;
 		border-top-right-radius: $defaultRadius;
 		display: block;
@@ -56,9 +57,6 @@ $tabSpacing: $spacing/2;
 		border: 1px solid;
 		@include color_border('border-color');
 		padding: $tabSpacing/1.5 $tabSpacing*1.5;
-		&:focus {
-			outline-width: 0;
-		}
 		img { /*calendar icon*/
 			margin-top: -5px;
 		}
