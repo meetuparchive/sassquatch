@@ -19,7 +19,7 @@
 	],
 	"dependencies": {
 		"meetup-swatches": "#master",
-		"bourbon": "4.0.2"
+		"bourbon": "3.2.1"
 	},
 	"license": "MIT"
 }
