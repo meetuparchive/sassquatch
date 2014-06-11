@@ -51,7 +51,7 @@ parent: list
 	</ul>
 ```
 */
-.inlineList, .inlineblockList, .pipeList, .crumbList {
+.inlineList, .inlineblockList, .pipeList, .crumbList, .commaList {
 	padding-left: 0;
 	> li {
 		display: inline;
@@ -125,6 +125,30 @@ parent: list
 	}
 	&:last-child:after, &.last:after {
 		margin-left: 0;
+		content: '';
+	}
+}
+
+/*doc
+---
+title: Comma List
+name: commaList
+parent: list
+---
+
+```html_example
+	<ul class="commaList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.commaList > li {
+	&:after {
+		content: ', ';
+	}
+	&:last-child:after, &.last:after {
 		content: '';
 	}
 }
