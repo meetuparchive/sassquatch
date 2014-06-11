@@ -69,7 +69,7 @@ $buttonFontSize: 16px;
 // is translated down 2px
 %_chrome_button_fix {
 	position: relative;
-	&:before {
+	&:after {
 		content: '';
 		background: transparent;
 		position: absolute;
