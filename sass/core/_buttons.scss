@@ -125,6 +125,10 @@ Use primary buttons for primary actions.
 .primary,
 .button.primary,
 .button--primary,
+button.D_submit,
+button.primary,
+button.button--primary,
+input[type="submit"].D_submit,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
 	@include button( $C_red, #fff );
