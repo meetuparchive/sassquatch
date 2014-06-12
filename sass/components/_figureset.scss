@@ -23,7 +23,8 @@ Figure with description. Similar to OOCSS "media block".
 $figuresetGutter: $baseline * 0.75;
 
 .figureset, .figureset-right {
-    *zoom: 1; 
+	display: table-row;
+    *zoom: 1;
     &:after {
       visibility: hidden;
       display: block;
