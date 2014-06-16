@@ -136,6 +136,7 @@ input[type="submit"].button--primary {
 // ---------------------------
 %button--black,
 .button--black,
+button.button--black,
 input[type="submit"].button--black {
 	@include button( #000, #fff );
 }
@@ -144,6 +145,7 @@ input[type="submit"].button--black {
 // ---------------------------
 %button--white,
 .button--white,
+button.button--white,
 input[type="submit"].button--black {
 	@include button( #fff, $C_red );
 }
@@ -152,6 +154,7 @@ input[type="submit"].button--black {
 // ---------------------------
 %button--blue,
 .button--blue,
+button.button--blue,
 input[type="submit"].button--blue {
 	@include button( #13a1ff );
 }
