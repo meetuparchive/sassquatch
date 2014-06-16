@@ -108,6 +108,11 @@ $buttonFontSize: 16px;
 		@include transform(translate(0px, 2px));
 	}
 
+	&.button--active,
+	&:hover {
+		background:  darken($bgColor, 8%);
+	}
+
 	&.disabled,
 	&:disabled {
 		opacity: 0.4;
