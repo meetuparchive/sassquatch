@@ -34,6 +34,7 @@ def doSass( platform, source, target )
 end
 
 def doHologram( platform, source, target )
+
 	Dir.chdir(source) do
 		prettyPrint( "Building Hologram docs for #{platform}..." )
 
@@ -43,7 +44,10 @@ def doHologram( platform, source, target )
 				fail "Could not build #{platform} hologram docs (status = #{status.exitstatus})"
 			end
 		end
+
+		sh "cp -r pages/. #{target}"
 	end
+
 	Dir.chdir(target) do
 		FileList.new('*.html').each do |file|
 			doc = Nokogiri::HTML(open(file))
