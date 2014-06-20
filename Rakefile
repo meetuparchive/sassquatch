@@ -45,7 +45,6 @@ def doHologram( platform, source, target )
 			end
 		end
 
-		sh "cp -r pages/. #{target}"
 	end
 
 	Dir.chdir(target) do
@@ -57,6 +56,8 @@ def doHologram( platform, source, target )
 			doc.write_to(open(file, 'w'))
 		end
 	end
+
+	sh "cp -r #{source}pages/. #{target}"
 end
 
 
