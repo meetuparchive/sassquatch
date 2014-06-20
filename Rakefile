@@ -20,7 +20,13 @@ end
 def doSass( platform, source, target )
 	prettyPrint( "Compiling Sassquatch for #{platform}" )
 
-	sh "#{COMPILER} -q #{source}/sassquatch.scss #{target} --style=expanded" do |ok, status|
+	if platform.eql? "mobile"
+		basefile = "sassquatch_mobile.scss"
+	else
+		basefile = "sassquatch.scss"
+	end
+
+	sh "#{COMPILER} -q #{source}/#{basefile} #{target} --style=expanded" do |ok, status|
 		if ! ok
 			fail "Could not compile Sassquatch #{platform} (status = #{status.exitstatus})".red
 		end
