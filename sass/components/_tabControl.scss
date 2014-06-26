@@ -1,0 +1,99 @@
+/*doc
+---
+title: Tab Control
+name: tabControl
+category: Navigation
+---
+
+### Horizontal tabs
+```html_example
+	<ul class="tabControl">
+		<li class="tabControl-tab"><a href="#">Upcoming Meetups</a></li>
+		<li class="tabControl-tab"><a href="#">Past Meetups</a></li>
+		<li class="tabControl-tab tabControl-tab--selected"><a href="#">Selected tab</a></li>
+	</ul>
+	<div class="docSection" style="min-height: 200px;">
+		<p>Look at this tab conent. Just look at it.</p>
+	</div>
+```
+
+### Left side tabs
+```html_example
+	<ul class="tabControl tabControl--left">
+		<li class="tabControl-tab"><a href="#">Upcoming Meetups</a></li>
+		<li class="tabControl-tab"><a href="#">Past Meetups</a></li>
+		<li class="tabControl-tab tabControl-tab--selected"><a href="#">Selected tab</a></li>
+	</ul>
+```
+
+### Right side tabs
+```html_example
+	<ul class="tabControl tabControl--right">
+		<li class="tabControl-tab"><a href="#">Upcoming Meetups</a></li>
+		<li class="tabControl-tab"><a href="#">Past Meetups</a></li>
+		<li class="tabControl-tab tabControl-tab--selected"><a href="#">Selected tab</a></li>
+	</ul>
+```
+
+*/
+
+$selectedStripeWidth: 4px;
+$tabHeight: $baseline*2;
+
+
+.tabControl {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: $C_red;
+}
+
+.tabControl-tab {
+	@extend %button_personality;
+	display: inline-block;
+	padding: 0 $baseline/2;
+	line-height: $tabHeight;
+
+	a {
+		display: block;
+		color: $C_textSecondary;
+		text-decoration: none;
+
+	}
+	&:hover,
+	&:hover a {
+		color: $C_red;
+	}
+}
+
+.tabControl-tab--selected {
+	border-bottom: $selectedStripeWidth solid $C_red;
+	color: $C_red;
+	a {
+		color: $C_red;
+	}
+}
+
+.tabControl--left {
+	.tabControl-tab {
+		display: block;
+		text-align: right;
+	}
+	.tabControl-tab--selected {
+		border-bottom: 0;
+		border-right: $selectedStripeWidth solid $C_red;
+	}
+}
+
+.tabControl--right {
+	.tabControl-tab {
+		display: block;
+		text-align: left;
+	}
+	.tabControl-tab--selected {
+		border-bottom: 0;
+		border-left: $selectedStripeWidth solid $C_red;
+	}
+}
+
+
