@@ -1,0 +1,8 @@
+@mixin input-placeholder(){
+	$selectors: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder');
+	@each $s in $selectors{
+		&#{$s}{
+			@content;
+		}
+	}
+}

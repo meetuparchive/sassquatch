@@ -424,21 +424,6 @@ Class                | Description
 /* }}} */
 
 
-/*doc
----
-title: Media Query Helpers
-name: mediaModifiers
-category: Modifiers
----
-
-TK
-
-*/
-._mq_small--center {}
-._mq_small--displayNone {}
-._mq_small--displayBlock {}
-
-
 @if $platform == "mobile" {
 	/* typographic + layout additions {{{ */
 

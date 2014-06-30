@@ -8,12 +8,14 @@ category: Navigation
 For "see more" type append paging.
 
 ```html_example
-	<a class="nav-appendPager">See more</a>
+	<a href="#" class="nav-appendPager">See more</a>
 ```
 
 */
 
 .nav-appendPager {
+	@extend %button_personality;
+	@extend %niceFocus;
 	border-radius: $defaultRadius;
 	border: 1px solid $C_line;
 	display: block;
@@ -25,9 +27,7 @@ For "see more" type append paging.
 	color: $C_link;
 	padding: 0.33em 0;
 	margin-bottom: $spacing;
-	cursor: pointer;
-	*cursor: hand; /* IE, you're a complete idiot */
-	@include experimental('user-select', 'none');
+	&:focus,
 	&:hover {
 		background-color: $C_line_less;
 		text-decoration: none !important;

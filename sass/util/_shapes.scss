@@ -1,3 +1,39 @@
+@mixin triangle($direction: 'n', $color: black, $size: 6px){
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+}
+
+@mixin circle($color: black, $size: 12px){
+	width: $size;
+	height: $size;
+	border-radius: $size/2;
+	background: $color;
+}
+
+
+//--------- UI INDICATOR
+
+// TODO add to documentation under "Sass" category for utils
 @mixin get-indicator-borders($arrow_pointing_toward, $size, $color) {
 	border: $size solid $color;
 	@if $arrow_pointing_toward == top or $arrow_pointing_toward == bottom {
@@ -21,8 +57,6 @@
 	#{$offset-type}: $offset-size;
 	margin-#{$offset-type}: -$size;
 }
-
-// TODO add to documentation under "Sass" category for utils
 
 /* Indicators
 	Author: MikeM, Nov 2012

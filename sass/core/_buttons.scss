@@ -37,7 +37,7 @@ a little bit of the background color behind them.
 button,
 input[type="submit"] {
 	@extend %_button_base;
-	margin-bottom: 2px;
+	margin-bottom: $baseline + 2;
 	@if $platform == "desktop" {
 		@extend %_chrome_button_fix;
 	}
@@ -46,15 +46,14 @@ input[type="submit"] {
 	background: $C_lineGray;
 	@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 
+	&:hover {
+		background: opacify($C_lineGray, 0.06);
+	}
+
 	&.button--active,
 	&:active {
 		@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
 		@include transform(translate(0px, 2px));
-	}
-
-	&.button--active,
-	&:hover {
-		background: opacify($C_lineGray, 0.06);
 	}
 
 	&.disabled,
@@ -75,14 +74,15 @@ input[type="submit"] {
 		background: $C_lineGrayInverted;
 		@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
 
+		&:hover {
+			background: transparentize($C_lineGrayInverted, 0.06);
+		}
+
 		&:active {
 			@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
 			@include transform(translate(0px, 2px));
 		}
 
-		&:hover {
-			background: transparentize($C_lineGrayInverted, 0.06);
-		}
 		&.disabled,
 		&:disabled {
 			&:hover {
@@ -123,6 +123,7 @@ Use primary buttons for primary actions.
 .primary,
 .button.primary,
 .button--primary,
+input[type="submit"].D_submit,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
 	@include button( $C_red, #fff );

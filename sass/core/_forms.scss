@@ -194,6 +194,7 @@ select[multiple] {
 input[type=file] {
 	background-color: #fff;
 	padding: $spacing/3;
+	max-width: 100%;
 	*height: auto;
 	*margin-top: 4px; /* IE7 - helps alignment with inline-style labels */
 }
