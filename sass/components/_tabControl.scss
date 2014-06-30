@@ -38,9 +38,10 @@ category: Navigation
 */
 
 $selectedStripeWidth: 4px;
-$tabHeight: $baseline*2;
 
 
+// base UL class
+// -------------------
 .tabControl {
 	list-style-type: none;
 	margin: 0;
@@ -48,52 +49,76 @@ $tabHeight: $baseline*2;
 	border-bottom: $C_red;
 }
 
-.tabControl-tab {
-	@extend %button_personality;
-	display: inline-block;
-	padding: 0 $baseline/2;
-	line-height: $tabHeight;
 
+// base LI class
+// -------------------
+.tabControl-tab {
+	display: inline-block;
 	a {
+		@extend %button_personality;
+		@include color_textSecondary();
+		padding: $baseline/3 $baseline/2;
 		display: block;
-		color: $C_textSecondary;
 		text-decoration: none;
 
+		&:hover {
+			color: $C_red;
+		}
 	}
-	&:hover,
-	&:hover a {
-		color: $C_red;
+
+	.inverted & a {
+		@include color_textSecondaryInverted();
+		&:hover {
+			color: #fff;
+		}
 	}
 }
 
+
+// LI selected state
+// -------------------
 .tabControl-tab--selected {
-	border-bottom: $selectedStripeWidth solid $C_red;
-	color: $C_red;
+	border-color: $C_red; /* separate property for easy override in .inverted context */
+	border-style: solid;
+	border-width: 0;
+	border-bottom-width: $selectedStripeWidth;
 	a {
 		color: $C_red;
 	}
+
+	.inverted & {
+		border-color: #fff;
+		a {
+			color: #fff;
+		}
+	}
 }
 
+
+
+// UL "left" variant
+// -------------------
 .tabControl--left {
 	.tabControl-tab {
 		display: block;
 		text-align: right;
 	}
 	.tabControl-tab--selected {
-		border-bottom: 0;
-		border-right: $selectedStripeWidth solid $C_red;
+		border-width: 0; // reset all borders
+		border-right-width: $selectedStripeWidth;
 	}
 }
 
+
+// UL "right" variant
+// -------------------
 .tabControl--right {
 	.tabControl-tab {
 		display: block;
 		text-align: left;
 	}
 	.tabControl-tab--selected {
-		border-bottom: 0;
-		border-left: $selectedStripeWidth solid $C_red;
+		border-width: 0; // reset all borders
+		border-left-width: $selectedStripeWidth;
 	}
 }
-
-
