@@ -1,0 +1,26 @@
+{
+  "name": "bourbon",
+  "homepage": "http://bourbon.io/",
+  "version": "3.2.1",
+  "main": "dist/_bourbon.scss",
+  "ignore": [
+    "app",
+    "bin",
+    "features",
+    "lib",
+    ".gitignore",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
+    "bourbon.gemspec"
+  ],
+  "_release": "3.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.2.1",
+    "commit": "3bde311bf46ba2b9f12746d9216ad643225270c3"
+  },
+  "_source": "git://github.com/thoughtbot/bourbon.git",
+  "_target": "3.2.1",
+  "_originalSource": "bourbon"
+}
