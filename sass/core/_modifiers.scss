@@ -377,20 +377,21 @@ name: linkModifiers
 category: Modifiers
 ---
 
-TODO: this looks broken
+Styles a link as body text color.
 
 ```html_example
 	<a class="unlink">It's a link, but it doesn't look like one</a>
 ```
 
 */
-a.unlink{
-	&:link, &:visited {
-		@include color_textSecondary();
-	}
-	.inverted &:link,
-	.inverted &:visited {
-		@include color_textSecondaryInverted();
+.unlink {
+	color: lighten( rgb(0,0,0), 33%) !important;
+	color: $C_textSecondary !important;
+	text-decoration: none !important;
+
+	.inverted & {
+		color: darken( rgb(255,255,255), 33%) !important;
+		color: $C_textSecondaryInverted !important;
 	}
 }
 
