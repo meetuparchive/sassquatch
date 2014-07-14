@@ -116,8 +116,7 @@ $selectedStripeWidth: 4px;
 		text-align: right;
 	}
 	.tabControl-tab--selected {
-		border-width: 0; // reset all borders
-		border-right-width: $selectedStripeWidth;
+		border-width: 0 $selectedStripeWidth 0 0;
 	}
 }
 
@@ -130,7 +129,6 @@ $selectedStripeWidth: 4px;
 		text-align: left;
 	}
 	.tabControl-tab--selected {
-		border-width: 0; // reset all borders
-		border-left-width: $selectedStripeWidth;
+		border-width: 0 0 0 $selectedStripeWidth;
 	}
 }
