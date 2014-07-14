@@ -8,9 +8,9 @@ category: Navigation
 ### Horizontal tabs
 ```html_example
 	<ul class="tabControl">
-		<li class="tabControl-tab"><a href="#">Upcoming Meetups</a></li>
-		<li class="tabControl-tab"><a href="#">Past Meetups</a></li>
-		<li class="tabControl-tab tabControl-tab--selected"><a href="#">Selected tab</a></li>
+		<li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+		<li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+		<li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
 	</ul>
 	<div class="docSection" style="min-height: 180px;">
 		<p>Look at this tab conent. Just look at it.</p>
@@ -20,18 +20,18 @@ category: Navigation
 ### Left side tabs
 ```html_example
 	<ul class="tabControl tabControl--left">
-		<li class="tabControl-tab"><a href="#">Upcoming Meetups</a></li>
-		<li class="tabControl-tab"><a href="#">Past Meetups</a></li>
-		<li class="tabControl-tab tabControl-tab--selected"><a href="#">Selected tab</a></li>
+		<li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+		<li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+		<li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
 	</ul>
 ```
 
 ### Right side tabs
 ```html_example
 	<ul class="tabControl tabControl--right">
-		<li class="tabControl-tab"><a href="#">Upcoming Meetups</a></li>
-		<li class="tabControl-tab"><a href="#">Past Meetups</a></li>
-		<li class="tabControl-tab tabControl-tab--selected"><a href="#">Selected tab</a></li>
+		<li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+		<li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+		<li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
 	</ul>
 ```
 
@@ -54,26 +54,37 @@ $selectedStripeWidth: 4px;
 // -------------------
 .tabControl-tab {
 	display: inline-block;
-	a {
-		@extend %button_personality;
-		@include color_textSecondary();
-		padding: $baseline/3 $baseline/2;
-		display: block;
-		text-decoration: none;
+}
 
-		&:hover {
-			color: $C_red;
-		}
+// base A class
+// -------------------
+.tabControl-link {
+	@extend %button_personality;
+	padding: $baseline/3 $baseline/2;
+	display: block;
+	text-decoration: none;
+
+	&:link,
+	&:visited {
+		@include color_textSecondary();
 	}
 
-	.inverted & a {
-		@include color_textSecondaryInverted();
-		&:hover {
+	&:hover,
+	&:active {
+		color: $C_red;
+	}
+
+	.inverted & {
+		&:link,
+		&:visited {
+			@include color_textSecondaryInverted();
+		}
+		&:hover,
+		&:visited {
 			color: #fff;
 		}
 	}
 }
-
 
 // LI selected state
 // -------------------
@@ -82,13 +93,14 @@ $selectedStripeWidth: 4px;
 	border-style: solid;
 	border-width: 0;
 	border-bottom-width: $selectedStripeWidth;
-	a {
+
+	.tabControl-link {
 		color: $C_red;
 	}
 
 	.inverted & {
 		border-color: #fff;
-		a {
+		.tabControl-link {
 			color: #fff;
 		}
 	}
