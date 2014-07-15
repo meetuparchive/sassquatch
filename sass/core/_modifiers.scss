@@ -56,6 +56,23 @@ Class               | Example
 
 /*doc
 ---
+title: Focus
+name: focusModifiers
+category: Modifiers
+---
+
+Class            | Example
+-----------------| -------------------------------------------------------------------------
+`noFocus`        | <a href="#" class="button--primary noFocus">No focus style</a>
+
+*/
+.noFocus:focus {
+	outline: none;
+}
+
+
+/*doc
+---
 title: Padding
 name: paddingModifiers
 category: Modifiers
