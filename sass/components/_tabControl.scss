@@ -92,8 +92,7 @@ $selectedStripeWidth: 4px;
 
 	.tabControl-link {
 		color: $C_red;
-		border-style: solid;
-		border-width: 0;
+		border: solid 0;
 		border-bottom-width: $selectedStripeWidth;
 	}
 
