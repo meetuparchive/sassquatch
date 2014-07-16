@@ -637,11 +637,7 @@ $arrow-width: $baseline/2;
 		// note, the jagged edge image is based on a WHITE BACKGROUND
 		content: '';
 		height: $jagged-height;
-		background: transparent url('data:image/png;base64,
-			iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo
-			5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q
-			9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8A
-			AAAASUVORK5CYII=') repeat-x top left;
+		background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHBAMAAADHdxFtAAAAMFBMVEXo5+jo5+jo5+jo5+jo5+jo5+jo5+jo5+jo5+gAAAD8/Pzs6+z39/fw8PDp6On///82YZQ+AAAACnRSTlPvQICv3zAQv3AAem7q9gAAACtJREFUCB1jua/A8JeFl4FhE8sixQBOFlaBf/4szH38wizMgiINLAxW0xUAlmIHoor1uT8AAAAASUVORK5CYII=') repeat-x top left;
 		background-size: $jagged-height;
 		display: block;
 		position: absolute;
@@ -657,11 +653,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 	// worth it.
 	.doc-content-jagged {
 		&:after {
-			background: transparent url('data:image/png;base64,
-			iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy
-			8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh
-			+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVb
-			iNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC') repeat-x top left;
+			background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAMAAAA1b9QjAAAAGFBMVEXo5+jo5+jo5+jo5+gAAADy8fLp6On////wezdbAAAABXRSTlOvMG3hAMddbIkAAABVSURBVHjaXczRCsAwCEPRWNPs//94EMXh+lQO5kLP70F3g6BNV0itnYRIHw0keLwbCJCQJqJDkJyUBFrCO29Y4pQ30eJURVoq5cgnIUdGKhVbiNOfFxVwBT1o5t0MAAAAAElFTkSuQmCC') repeat-x top left;
 			background-size: 8px auto;
 		}
 	}
