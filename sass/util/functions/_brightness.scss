@@ -25,7 +25,7 @@ $brightness_threshold: 160;
 }
 
 @function isLight( $color, $threshold: $brightness_threshold ) {
-	@return not isDark( $color, $threshold );
+	@return not(isDark( $color, $threshold ));
 }
 
 

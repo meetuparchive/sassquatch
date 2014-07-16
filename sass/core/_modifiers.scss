@@ -45,12 +45,7 @@ Class               | Example
 .shaded-pixelate {
 	// this is a translucent 128x128 overlay that darkens squares of the underlying color
 	// to make it appear blocky/giant-pixelated. It's a cool effect, show your friends!
-	background-image: url('data:image/png;base64,
-		iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAA
-		AAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWx
-		DQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8K
-		AAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6b
-		AwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWxDQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8KAAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6bAwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
 }
 
 
@@ -335,9 +330,9 @@ the long ones.
 
 ```html_example
 	<p class="wrapNice" style="width: 460px;">
-		Beef ribs voluptate kevin pork chop pastrami dolore est. 
-		Spare ribs leberkas cow dolore pork loin reallyLongWordThatWeWantToWrapWhenUsingTheWrapNiceClass 
-		exercitation dolore shoulder. T-bone capicola corned beef, aliqua quis tri-tip exercitation tenderloin. 
+		Beef ribs voluptate kevin pork chop pastrami dolore est.
+		Spare ribs leberkas cow dolore pork loin reallyLongWordThatWeWantToWrapWhenUsingTheWrapNiceClass
+		exercitation dolore shoulder. T-bone capicola corned beef, aliqua quis tri-tip exercitation tenderloin.
 	</p>
 ```
 
@@ -470,7 +465,7 @@ Mobile Sassquatch includes these classes for floating elements.
 		margin-bottom: 0px !important;
 		padding-bottom: 0px !important;
 	}
-	
+
 /*doc
 ---
 title: Darkening text
@@ -568,7 +563,7 @@ Sets text color to body text color
 	// we should deprecate these or document &
 	// move them to both platforms
     /* aliases */
-    .lighter { //muted 
+    .lighter { //muted
         color: $C_text_less;
     }
 
