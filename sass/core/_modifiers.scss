@@ -116,14 +116,15 @@ name: marginModifiers
 category: Modifiers
 ---
 
-Class           | Example
-----------------| ---------------------------------------------------------------------
-`margin-left`   | <div class="inline-block guide-shade margin-left">Example dif</div>
-`margin-right`  | <div class="inline-block guide-shade margin-right">Example dif</div>
-`margin-top`    | <div class="inline-block guide-shade margin-top">Example dif</div>
-`margin-bottom` | <div class="inline-block guide-shade margin-bottom">Example div</div>
-`margin-all`    | <div class="inline-block guide-shade margin-all">Example div</div>
-`margin-none`   | <div class="inline-block guide-shade margin-none">Example div</div>
+Class               | Example
+--------------------| ---------------------------------------------------------------------
+`margin-left`       | <div class="inline-block guide-shade margin-left">Example dif</div>
+`margin-right`      | <div class="inline-block guide-shade margin-right">Example dif</div>
+`margin-top`        | <div class="inline-block guide-shade margin-top">Example dif</div>
+`margin-bottom`     | <div class="inline-block guide-shade margin-bottom">Example div</div>
+`margin-all`        | <div class="inline-block guide-shade margin-all">Example div</div>
+`margin-none`       | <div class="inline-block guide-shade margin-none">Example div</div>
+`margin-centered`   | <div class="span-50 guide-shade margin-centered">Example div</div>
 
 */
 .margin-top {
@@ -143,6 +144,9 @@ Class           | Example
 }
 .margin-all{
 	margin:$spacing;
+}
+.margin-centered {
+	margin: 0 auto;
 }
 
 
