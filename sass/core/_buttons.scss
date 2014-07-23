@@ -108,6 +108,7 @@ Use primary buttons for primary actions.
 	<button class="button--primary">Button</button>
 	<button class="button--black">Button</button>
 	<button class="button--white">Button</button>
+	<button class="button--green">Button</button>
 	<button class="button--blue">Button</button>
 ```
 
@@ -153,6 +154,14 @@ input[type="submit"].button--blue {
 	@include button( #13a1ff );
 }
 
+// Green button (money-related)
+// ---------------------------
+%button--green,
+.button--green,
+input[type="submit"].button--green {
+	@include button( $C_green );
+}
+
 
 // input translation fix
 //
@@ -181,6 +190,7 @@ Flat buttons should almost always be used for `<a>` elements.
 	<a href="#" class="button-flat--white">Button</a>
 	<a href="#" class="button-flat--black">Button</a>
 	<a href="#" class="button-flat--red">Button</a>
+	<a href="#" class="button-flat--green">Button</a>
 ```
 
 */
@@ -213,6 +223,13 @@ Flat buttons should almost always be used for `<a>` elements.
 %button-flat--red,
 .button-flat--red {
 	@include button-flat( $C_red );
+}
+
+// Flat button (green/money)
+// ---------------------------
+%button-flat--green,
+.button-flat--green {
+	@include button-flat( $C_green );
 }
 
 
