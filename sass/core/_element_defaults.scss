@@ -4,6 +4,7 @@
 		font-size: 100%;
 		-webkit-text-size-adjust: 100%;
 		-ms-text-size-adjust: 100%;
+		text-rendering: optimizeLegibility;
 	}
 	html, body {
 		@include color_textSecondary();
