@@ -29,10 +29,10 @@ $P_secondary:			em(12px);		/* In the new dimension schema, this
 
 
 /* $W_, $H_ : Height and Width */
-$W_mobileCursor:			em(4px);				/* For iOS/Samsung: Hard coded because fixed width */
+$W_mobileCursor:			4px;				/* For iOS/Samsung: Hard coded because fixed width */
 $W_pseudoradio:			em(22px);
 $W_gem:						em(24px);		/* icon gems are 16px with 0.5em padding */
-$W_inlineBlockConstant:	em(4px);
+$W_inlineBlockConstant:	4px;
 
 $H_pseudoradio:			$W_pseudoradio;
 $H_touchTargetDefault:	em(48px);
