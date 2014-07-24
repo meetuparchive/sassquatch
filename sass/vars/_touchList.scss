@@ -16,11 +16,11 @@
 
 
 /* $P_ : Padding */
-$P_primary:				px-to-em(16px);		/* In the new dimension schema, this
+$P_primary:				16px;		/* In the new dimension schema, this
 											* is primarily used for internal padding on
 											* cards and boxes.
 											*/
-$P_secondary:			px-to-em(12px);		/* In the new dimension schema, this
+$P_secondary:			12px;		/* In the new dimension schema, this
 											* is value and its multiples (2x, 3x) are
 											* primarily used for external margins around
 											* cards, and separating content from the
@@ -29,15 +29,15 @@ $P_secondary:			px-to-em(12px);		/* In the new dimension schema, this
 
 
 /* $W_, $H_ : Height and Width */
-$W_mobileCursor:		4px;				/* For iOS/Samsung: Hard coded because fixed width */
-$W_pseudoradio:			px-to-em(22px);
-$W_gem:					px-to-em(24px);		/* icon gems are 16px with 0.5em padding */
+$W_mobileCursor:			4px;				/* For iOS/Samsung: Hard coded because fixed width */
+$W_pseudoradio:			22px;
+$W_gem:						24px;		/* icon gems are 16px with 0.5em padding */
 $W_inlineBlockConstant:	4px;
 
 $H_pseudoradio:			$W_pseudoradio;
-$H_touchTargetDefault:	px-to-em(48px);
-$H_touchTargetMinimum:	px-to-em(32px);
-$H_gem:					px-to-em(24px);		/* icon gems are square inside ffbox-fix */
+$H_touchTargetDefault:	48px;
+$H_touchTargetMinimum:	32px;
+$H_gem:						24px;		/* icon gems are square inside ffbox-fix */
 
 
 /* $FS_ : Font Size */
@@ -49,10 +49,10 @@ $H_gem:					px-to-em(24px);		/* icon gems are square inside ffbox-fix */
  * LDPI/@1x displays.
  */
 
-$FS_hero:				px-to-em(36px);		/* for use in large banners */
-$FS_base:				px-to-em(17px);		/* replaces $FS_label as a std size */
-$FS_small:				px-to-em(14px);		/* replaces $FS_text as std text size */
-$FS_micro:				px-to-em(9px);		/* use in superscript values (am/pm),
+$FS_hero:				36px;		/* for use in large banners */
+$FS_base:				17px;		/* replaces $FS_label as a std size */
+$FS_small:				14px;		/* replaces $FS_text as std text size */
+$FS_micro:				9px;		/* use in superscript values (am/pm),
 											*	currency, tab titles.
 											*	NOTE: this size should only be used
 											*	with small caps, which provide good-

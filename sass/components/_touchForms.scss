@@ -692,7 +692,7 @@ as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
 	.touchList-item--expander label.ffbox-fix {
 		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
 		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
-		$topOffset: ($H_touchTargetDefault - $LH_standard*1em) / 2;
+		$topOffset: ($H_touchTargetDefault - $LH_standard) / 2;
 		// override the middle vertical alignment for expander labels - they should
 		// remain aligned to the first line of text in the input
 		vertical-align: top;
