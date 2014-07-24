@@ -29,3 +29,12 @@
 	 overflow: hidden;
 	 text-overflow: ellipsis;
 }
+
+// fontSize
+// sets a font size in rems
+// - takes a px value
+// - sets IE8 fallback
+// -------------------------------------
+@mixin fontSize($pxSize) {
+	@include remProp('font-size', $pxSize);
+}
