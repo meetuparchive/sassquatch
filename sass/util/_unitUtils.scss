@@ -1,0 +1,9 @@
+// remProp
+// set a property with rems
+// - uses bourbon rem converter, which assumes 16px root size
+// - sets IE8 fallback
+// -------------------------------------------------------------
+@mixin remProp($property, $pxSize){
+	#{$property}: $pxSize;
+	#{$property}: rem($pxSize);
+}
