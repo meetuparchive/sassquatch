@@ -143,8 +143,11 @@ category: Layout
 
 Used for newer and more responsive layouts, where content lives on top of
 a full-width background instead of `docBox` modules. The `docStripe` container
-sets a full width background. The `docBounds` class is used as a padding helper
-and content wrapper.
+sets a full width background. 
+
+The `docBounds` class is used as a padding helper and content wrapper; it uses
+a max-width and min-width, but will otherwise flex to fit the width of the parent
+container.
 
 ```html_example
 
@@ -424,7 +427,7 @@ __Note:__ This replaces the deprecated `doc-content` class
 		</div>
 	</div>
 
-	<h5>Sections in a docStripe layout</h5>
+	<h5>Sections in a <a data-follow="true" href="#docstar">docStripe layout</a></h5>
 	<div class="docStripe--red inverted">
 		<div class="docBounds">
 			<div class="docSection">
