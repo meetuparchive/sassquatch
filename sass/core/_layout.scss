@@ -154,8 +154,8 @@ container.
 	<!-- default stripe and color stripe -->
 	<div class="docStripe">
 		<div class="docBounds">
-			<h3>I'm in a stripe</h3>
-			<p>Any arbitrary content can go here</p>
+			<h3>I'm in a docBounds within a stripe</h3>
+			<p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
 		</div>
 	</div>
 	<div class="docStripe--red inverted">
