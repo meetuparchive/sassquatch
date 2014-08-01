@@ -79,6 +79,41 @@ Data tables should be used for tabular data.
 	</div>
 ```
 
+### Reset Table
+
+```html_example
+	<div class="docBox">
+		<div class="docSection">
+			<table class="resetTable">
+				<thead>
+					<tr>
+						<th>Event Name</th>
+						<th>RSVPs</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>2 attending</td>
+						<td><a href="#">Nov 28, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>0 attending</td>
+						<td><a href="#">Nov 30, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>12 attending</td>
+						<td><a href="#">Dec 3, 4:30 AM</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+```
+
 */
 
 table {
@@ -118,6 +153,14 @@ td, tbody th {
 		tr:nth-child(odd) th {
 			background-color: $C_gray_lightest;		
 		}
+	}
+}
+
+/* reset */
+.resetTable {
+	width: auto;
+	td, tbody, th {
+		border-width: 0;
 	}
 }
 
