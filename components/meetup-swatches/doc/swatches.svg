@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Meetup_Swatches" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1264" height="858" viewBox="0 0 1264 858" xml:space="preserve" >
+	 
+	 <defs>
+		 <pattern id="dark_grid" width="16" height="16" patternUnits="userSpaceOnUse">
+	      <rect fill="#111" x="0" y="0" width="8" height="8" />
+	      <rect fill="#222" x="8" y="0" width="8" height="8" />
+	      <rect fill="#222" x="0" y="8" width="8" height="8" />
+	      <rect fill="#111" x="8" y="8" width="8" height="8" />
+	    </pattern>
+		 <pattern id="light_grid" width="16" height="16" patternUnits="userSpaceOnUse">
+	      <rect fill="#fff" x="0" y="0" width="8" height="8" />
+	      <rect fill="#eee" x="8" y="0" width="8" height="8" />
+	      <rect fill="#eee" x="0" y="8" width="8" height="8" />
+	      <rect fill="#fff" x="8" y="8" width="8" height="8" />
+	    </pattern>
+     </defs>
+	 
+
+	
+
+	
+
+		<text x="0" y="25" font-size="14" >
+			<tspan x="0" dy="1.2em" font-weight="bold">BACKGROUNDS</tspan>
+			<tspan x="0" dy="1.2em">these are always 100% opacity</tspan>
+		</text>
+		
+		
+		
+		
+			<rect fill="url(#light_grid)" x="0" y="66" width="66" height="330" />		
+		
+		
+		
+			<circle cx="33" cy="99" r="25" fill="rgb(255, 255, 255)" opacity="1" />
+			<text x="74" y="74" font-size="12" >
+				<tspan x="74" dy="1.2em" font-weight="bold">backgroundContent</tspan>
+				<tspan x="74" dy="1.2em">rgb(255, 255, 255) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="33" cy="165" r="25" fill="rgb(231, 231, 231)" opacity="1" />
+			<text x="74" y="140" font-size="12" >
+				<tspan x="74" dy="1.2em" font-weight="bold">backgroundCollection</tspan>
+				<tspan x="74" dy="1.2em">rgb(231, 231, 231) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="33" cy="231" r="25" fill="rgb(247, 247, 247)" opacity="1" />
+			<text x="74" y="206" font-size="12" >
+				<tspan x="74" dy="1.2em" font-weight="bold">backgroundNav</tspan>
+				<tspan x="74" dy="1.2em">rgb(247, 247, 247) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="33" cy="297" r="25" fill="rgb(53, 62, 71)" opacity="1" />
+			<text x="74" y="272" font-size="12" >
+				<tspan x="74" dy="1.2em" font-weight="bold">backgroundContentInverted</tspan>
+				<tspan x="74" dy="1.2em">rgb(53, 62, 71) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="33" cy="363" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="74" y="338" font-size="12" >
+				<tspan x="74" dy="1.2em" font-weight="bold">backgroundContentAccent</tspan>
+				<tspan x="74" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+		
+	
+
+	
+
+		<text x="316" y="25" font-size="14" >
+			<tspan x="316" dy="1.2em" font-weight="bold">DEFAULT CONTEXT</tspan>
+			<tspan x="316" dy="1.2em">content on light backgrounds"</tspan>
+		</text>
+		
+		
+		
+		
+			<rect fill="url(#light_grid)" x="316" y="66" width="66" height="792" />		
+		
+		
+		
+			<circle cx="349" cy="99" r="25" fill="rgb(0, 0, 0)" opacity="0.95" />
+			<text x="390" y="74" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">textPrimary</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.95)</tspan>
+			</text>
+		
+			<circle cx="349" cy="165" r="25" fill="rgb(0, 0, 0)" opacity="0.67" />
+			<text x="390" y="140" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">textSecondary</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.67)</tspan>
+			</text>
+		
+			<circle cx="349" cy="231" r="25" fill="rgb(0, 0, 0)" opacity="0.47" />
+			<text x="390" y="206" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">textTertiary</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.47)</tspan>
+			</text>
+		
+			<circle cx="349" cy="297" r="25" fill="rgb(0, 0, 0)" opacity="0.1" />
+			<text x="390" y="272" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">border</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.1)</tspan>
+			</text>
+		
+			<circle cx="349" cy="363" r="25" fill="rgb(57, 135, 203)" opacity="1" />
+			<text x="390" y="338" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">link</tspan>
+				<tspan x="390" dy="1.2em">rgb(57, 135, 203) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="349" cy="429" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="390" y="404" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">accent</tspan>
+				<tspan x="390" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="349" cy="495" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="390" y="470" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">yes</tspan>
+				<tspan x="390" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="349" cy="561" r="25" fill="rgb(0, 0, 0)" opacity="0.67" />
+			<text x="390" y="536" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">no</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.67)</tspan>
+			</text>
+		
+			<circle cx="349" cy="627" r="25" fill="rgb(0, 0, 0)" opacity="0.67" />
+			<text x="390" y="602" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">waitlist</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.67)</tspan>
+			</text>
+		
+			<circle cx="349" cy="693" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="390" y="668" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">buttonPrimary</tspan>
+				<tspan x="390" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="349" cy="759" r="25" fill="rgb(0, 0, 0)" opacity="0.47" />
+			<text x="390" y="734" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">buttonSecondary</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.47)</tspan>
+			</text>
+		
+			<circle cx="349" cy="825" r="25" fill="rgb(0, 0, 0)" opacity="0.47" />
+			<text x="390" y="800" font-size="12" >
+				<tspan x="390" dy="1.2em" font-weight="bold">buttonTertiaryBorder</tspan>
+				<tspan x="390" dy="1.2em">rgb(0, 0, 0) opacity(0.47)</tspan>
+			</text>
+		
+		
+	
+
+	
+
+		<text x="632" y="25" font-size="14" >
+			<tspan x="632" dy="1.2em" font-weight="bold">INVERTED CONTEXT</tspan>
+			<tspan x="632" dy="1.2em">content on dark backgrounds</tspan>
+		</text>
+		
+		
+		
+		
+			<rect fill="url(#dark_grid)" x="632" y="66" width="66" height="792" />
+		
+		
+		
+			<circle cx="665" cy="99" r="25" fill="rgb(255, 255, 255)" opacity="1" />
+			<text x="706" y="74" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">textPrimaryInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="665" cy="165" r="25" fill="rgb(255, 255, 255)" opacity="0.67" />
+			<text x="706" y="140" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">textSecondaryInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.67)</tspan>
+			</text>
+		
+			<circle cx="665" cy="231" r="25" fill="rgb(255, 255, 255)" opacity="0.47" />
+			<text x="706" y="206" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">textTertiaryInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.47)</tspan>
+			</text>
+		
+			<circle cx="665" cy="297" r="25" fill="rgb(255, 255, 255)" opacity="0.2" />
+			<text x="706" y="272" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">borderInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.2)</tspan>
+			</text>
+		
+			<circle cx="665" cy="363" r="25" fill="rgb(57, 135, 203)" opacity="1" />
+			<text x="706" y="338" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">linkInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(57, 135, 203) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="665" cy="429" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="706" y="404" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">accentInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="665" cy="495" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="706" y="470" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">yesInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="665" cy="561" r="25" fill="rgb(255, 255, 255)" opacity="0.67" />
+			<text x="706" y="536" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">noInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.67)</tspan>
+			</text>
+		
+			<circle cx="665" cy="627" r="25" fill="rgb(255, 255, 255)" opacity="0.67" />
+			<text x="706" y="602" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">waitlistInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.67)</tspan>
+			</text>
+		
+			<circle cx="665" cy="693" r="25" fill="rgb(226, 55, 60)" opacity="1" />
+			<text x="706" y="668" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">buttonPrimaryInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(226, 55, 60) opacity(1)</tspan>
+			</text>
+		
+			<circle cx="665" cy="759" r="25" fill="rgb(255, 255, 255)" opacity="0.47" />
+			<text x="706" y="734" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">buttonSecondaryInverted</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.47)</tspan>
+			</text>
+		
+			<circle cx="665" cy="825" r="25" fill="rgb(255, 255, 255)" opacity="0.47" />
+			<text x="706" y="800" font-size="12" >
+				<tspan x="706" dy="1.2em" font-weight="bold">buttonTertiaryBorder</tspan>
+				<tspan x="706" dy="1.2em">rgb(255, 255, 255) opacity(0.47)</tspan>
+			</text>
+		
+		
+	
+
+	
+
+		<text x="948" y="25" font-size="14" >
+			<tspan x="948" dy="1.2em" font-weight="bold">MISC</tspan>
+			<tspan x="948" dy="1.2em"></tspan>
+		</text>
+		
+		
+		
+		
+			<rect fill="url(#light_grid)" x="948" y="66" width="66" height="132" />		
+		
+		
+		
+			<circle cx="981" cy="99" r="25" fill="rgb(64, 197, 255)" opacity="0.2" />
+			<text x="1022" y="74" font-size="12" >
+				<tspan x="1022" dy="1.2em" font-weight="bold">overlayPressed</tspan>
+				<tspan x="1022" dy="1.2em">rgb(64, 197, 255) opacity(0.2)</tspan>
+			</text>
+		
+			<circle cx="981" cy="165" r="25" fill="rgb(98, 172, 117)" opacity="1" />
+			<text x="1022" y="140" font-size="12" >
+				<tspan x="1022" dy="1.2em" font-weight="bold">money</tspan>
+				<tspan x="1022" dy="1.2em">rgb(98, 172, 117) opacity(1)</tspan>
+			</text>
+		
+		
+	
+
+	
+
+</svg>

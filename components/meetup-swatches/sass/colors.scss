@@ -1,8 +1,10 @@
-// PRIMITIVE COLORS - used in multiple color aliases, try not to use these directly
+// PRIMITIVE COLORS (used in multiple color aliases, try not to use these directly)
 $C_red: rgb(226,55,60);
 @mixin color_red($style: 'color') { #{$style}: $C_red; }
 $C_blue: rgb(57,135,203);
 @mixin color_blue($style: 'color') { #{$style}: $C_blue; }
+$C_green: rgb(98,172,117);
+@mixin color_green($style: 'color') { #{$style}: $C_green; }
 $C_primaryGray: rgba(0,0,0,0.95);
 @mixin color_primaryGray($style: 'color') { #{$style}: lighten( rgb(0,0,0), 5%); #{$style}: $C_primaryGray; }
 $C_secondaryGray: rgba(0,0,0,0.67);
@@ -20,7 +22,7 @@ $C_tertiaryGrayInverted: rgba(255,255,255,0.47);
 $C_lineGrayInverted: rgba(255,255,255,0.2);
 @mixin color_lineGrayInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 80%); #{$style}: $C_lineGrayInverted; }
  
-// BACKGROUNDS - these are always 100% opacity
+// BACKGROUNDS (these are always 100% opacity)
 $C_backgroundContent: rgb(255,255,255);
 @mixin color_backgroundContent($style: 'color') { #{$style}: $C_backgroundContent; }
 $C_backgroundCollection: rgb(231,231,231);
@@ -32,7 +34,7 @@ $C_backgroundContentInverted: rgb(53,62,71);
 $C_backgroundContentAccent: rgb(226,55,60);
 @mixin color_backgroundContentAccent($style: 'color') { #{$style}: $C_backgroundContentAccent; }
  
-// DEFAULT CONTEXT (content on light backgrounds)
+// DEFAULT CONTEXT (content on light backgrounds")
 $C_textPrimary: rgba(0,0,0,0.95);
 @mixin color_textPrimary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 5%); #{$style}: $C_textPrimary; }
 $C_textSecondary: rgba(0,0,0,0.67);
@@ -84,9 +86,11 @@ $C_buttonSecondaryInverted: rgba(255,255,255,0.47);
 $C_buttonTertiaryBorder: rgba(255,255,255,0.47);
 @mixin color_buttonTertiaryBorder($style: 'color') { #{$style}: lighten( rgb(255,255,255), 53%); #{$style}: $C_buttonTertiaryBorder; }
  
-// MISC
+// MISC ()
 $C_overlayPressed: rgba(64,197,255,0.2);
 @mixin color_overlayPressed($style: 'color') { #{$style}: lighten( rgb(64,197,255), 80%); #{$style}: $C_overlayPressed; }
+$C_money: rgb(98,172,117);
+@mixin color_money($style: 'color') { #{$style}: $C_money; }
  
 // SOCIAL (third party colors)
 $C_facebook: rgb(59,89,152);

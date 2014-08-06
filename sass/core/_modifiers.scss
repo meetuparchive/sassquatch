@@ -345,7 +345,8 @@ name: textwrapModifiers
 category: Modifiers
 ---
 
-#### Wrap Nice
+
+### Wrap Nice
 Removed the `word-break: break-all` because it breaks ALL the words, not just
 the long ones.
 (http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)
@@ -358,12 +359,25 @@ the long ones.
 	</p>
 ```
 
-#### Ellipsize
+
+### Ellipsize
 Useful for truncating text in fixed or variable-width elements with only enough room
 for one line of text.
 
 ```html_example
 	<p class="ellipsize" style="width: 340px;">
+		Beef ribs voluptate kevin pork chop pastrami dolore est.
+		Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+	</p>
+```
+
+
+### No wrap
+Use `.noWrap` to prevent text from wrapping (can be useful for buttons, tabs, etc.).
+Sassquatch also provieds a `.wrap` class for overriding elements that are `no-wrap` by default.
+
+```html_example
+	<p class="noWrap" style="width: 340px; outline: 1px solid pink;">
 		Beef ribs voluptate kevin pork chop pastrami dolore est.
 		Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
 	</p>
@@ -384,6 +398,12 @@ for one line of text.
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.noWrap {
+    white-space: nowrap;
+}
+.wrap {
+    white-space: normal;
 }
 
 
