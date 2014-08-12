@@ -420,15 +420,35 @@ Styles a link as body text color.
 	<a class="unlink">It's a link, but it doesn't look like one</a>
 ```
 
+```html_example
+	<div class="docBox docSection span-25">
+		<a class="unlink">
+			<h3>Block level anchors...</h3>
+			<p>How do they work?</p>
+		</a>
+	</div>
+```
+
 */
-.unlink {
-	color: lighten( rgb(0,0,0), 33%) !important;
+.unlink,
+.unlink:link,
+.unlink:visited,
+.unlink:hover,
+.unlink:active {
 	color: $C_textSecondary !important;
 	text-decoration: none !important;
+
+	h1,h2,h3,h4,h5,h6 {
+		color: $C_textPrimary !important;
+	}
 
 	.inverted & {
 		color: darken( rgb(255,255,255), 33%) !important;
 		color: $C_textSecondaryInverted !important;
+
+		h1,h2,h3,h4,h5,h6 {
+			color: $C_textPrimaryInverted !important;
+		}
 	}
 }
 
