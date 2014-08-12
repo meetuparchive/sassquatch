@@ -17,15 +17,6 @@
 		padding: 0;
 	}
 
-	::-moz-selection {
-		background: $C_red;
-		color: #fff;
-	}
-	::selection {
-		background: $C_red;
-		color: #fff;
-	}
-
 /*doc
 ---
 title: Inverted Context
@@ -52,15 +43,6 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 */
 	.inverted {
 		@include color_textSecondaryInverted();
-
-		::-moz-selection {
-			background: opacify(#fff, 1);
-			color: $C_red;
-		}
-		::selection {
-			background: opacify(#fff, 1);
-			color: $C_red;
-		}
 	}
 
 /*doc
