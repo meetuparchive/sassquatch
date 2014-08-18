@@ -431,6 +431,7 @@ Styles a link as body text color.
 
 */
 @mixin unlinker() {
+	&,
 	&:link,
 	&:visited,
 	&:hover,
