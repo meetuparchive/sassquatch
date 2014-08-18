@@ -345,7 +345,8 @@ name: textwrapModifiers
 category: Modifiers
 ---
 
-#### Wrap Nice
+
+### Wrap Nice
 Removed the `word-break: break-all` because it breaks ALL the words, not just
 the long ones.
 (http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)
@@ -358,12 +359,25 @@ the long ones.
 	</p>
 ```
 
-#### Ellipsize
+
+### Ellipsize
 Useful for truncating text in fixed or variable-width elements with only enough room
 for one line of text.
 
 ```html_example
 	<p class="ellipsize" style="width: 340px;">
+		Beef ribs voluptate kevin pork chop pastrami dolore est.
+		Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+	</p>
+```
+
+
+### No wrap
+Use `.noWrap` to prevent text from wrapping (can be useful for buttons, tabs, etc.).
+Sassquatch also provieds a `.wrap` class for overriding elements that are `no-wrap` by default.
+
+```html_example
+	<p class="noWrap" style="width: 340px; outline: 1px solid pink;">
 		Beef ribs voluptate kevin pork chop pastrami dolore est.
 		Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
 	</p>
@@ -385,6 +399,12 @@ for one line of text.
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.noWrap {
+    white-space: nowrap;
+}
+.wrap {
+    white-space: normal;
+}
 
 
 /*doc
@@ -400,16 +420,41 @@ Styles a link as body text color.
 	<a class="unlink">It's a link, but it doesn't look like one</a>
 ```
 
-*/
-.unlink {
-	color: lighten( rgb(0,0,0), 33%) !important;
-	color: $C_textSecondary !important;
-	text-decoration: none !important;
+```html_example
+	<div class="docBox docSection span-25">
+		<a class="unlink">
+			<h3>Block level anchors...</h3>
+			<p>How do they work?</p>
+		</a>
+	</div>
+```
 
-	.inverted & {
-		color: darken( rgb(255,255,255), 33%) !important;
-		color: $C_textSecondaryInverted !important;
+*/
+@mixin unlinker() {
+	&,
+	&:link,
+	&:visited,
+	&:hover,
+	&:active {
+		color: $C_textSecondary !important;
+		text-decoration: none !important;
+
+		h1,h2,h3,h4,h5,h6 {
+			color: $C_textPrimary !important;
+		}
+
+		.inverted & {
+			color: darken( rgb(255,255,255), 33%) !important;
+			color: $C_textSecondaryInverted !important;
+
+			h1,h2,h3,h4,h5,h6 {
+				color: $C_textPrimaryInverted !important;
+			}
+		}
 	}
+}
+.unlink {
+	@include unlinker();
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
