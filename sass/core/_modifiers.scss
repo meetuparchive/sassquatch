@@ -430,26 +430,30 @@ Styles a link as body text color.
 ```
 
 */
-.unlink,
-.unlink:link,
-.unlink:visited,
-.unlink:hover,
-.unlink:active {
-	color: $C_textSecondary !important;
-	text-decoration: none !important;
-
-	h1,h2,h3,h4,h5,h6 {
-		color: $C_textPrimary !important;
-	}
-
-	.inverted & {
-		color: darken( rgb(255,255,255), 33%) !important;
-		color: $C_textSecondaryInverted !important;
+@mixin unlinker() {
+	&:link,
+	&:visited,
+	&:hover,
+	&:active {
+		color: $C_textSecondary !important;
+		text-decoration: none !important;
 
 		h1,h2,h3,h4,h5,h6 {
-			color: $C_textPrimaryInverted !important;
+			color: $C_textPrimary !important;
+		}
+
+		.inverted & {
+			color: darken( rgb(255,255,255), 33%) !important;
+			color: $C_textSecondaryInverted !important;
+
+			h1,h2,h3,h4,h5,h6 {
+				color: $C_textPrimaryInverted !important;
+			}
 		}
 	}
+}
+.unlink {
+	@include unlinker();
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
