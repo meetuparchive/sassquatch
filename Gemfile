@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "sass", "=3.3.10"
+gem "sass", "=3.3.8"
 
 group :development do
 	gem "colorize"
