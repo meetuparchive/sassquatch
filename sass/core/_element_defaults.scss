@@ -177,34 +177,34 @@ the whitespace on the bottom).
 		}
 	}
 	h1 {
-		@include fontSize($h1FontSize);
+		@include remProp('font-size', $h1FontSize);
 		letter-spacing: -0.75px;
 	}
 	h2 {
-		@include fontSize($h2FontSize);
+		@include remProp('font-size', $h2FontSize);
 		letter-spacing: -0.5px;
 	}
 	h3 {
-		@include fontSize($h3FontSize);
+		@include remProp('font-size', $h3FontSize);
 		padding-bottom: $baseline/3;
 		line-height: 1.2;
 		letter-spacing: -0.25px;
 	}
 	h4{
-		@include fontSize($h4FontSize);
+		@include remProp('font-size', $h4FontSize);
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
 		letter-spacing: -0.05px;
 	}
 	h5 {
-		@include fontSize($h5FontSize);
+		@include remProp('font-size', $h5FontSize);
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
 
 		font-weight: $W_normal;
 	}
 	h6 {
-		@include fontSize($h6FontSize);
+		@include remProp('font-size', $h6FontSize);
 		padding-bottom: 0;
 		line-height: $baseLineHeight;
 
@@ -340,23 +340,23 @@ the whitespace on the bottom).
 		}
 	}
 	h1 { 
-		@include fontSize($h1FontSize);
+		@include remProp('font-size', $h1FontSize);
 		letter-spacing: -0.75px;
 	}
 	h2 { 
-		@include fontSize($h2FontSize);
+		@include remProp('font-size', $h2FontSize);
 		letter-spacing: -0.5px;
 	}
 	h3 { 
-		@include fontSize($h3FontSize);
+		@include remProp('font-size', $h3FontSize);
 	}
-	h4 { @include fontSize($h4FontSize) }
+	h4 { @include remProp('font-size', $h4FontSize) }
 	h5 { 
-		@include fontSize($h5FontSize);
+		@include remProp('font-size', $h5FontSize);
 		font-weight: $W_normal;
 	}
 	h6 { 
-		@include fontSize($h6FontSize);
+		@include remProp('font-size', $h6FontSize);
 		font-weight: $W_normal;
 		text-transform:uppercase;
 	}  /* probably won't use it, but it's in the html spec, so worth defining a default */
