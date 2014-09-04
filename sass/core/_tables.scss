@@ -1,0 +1,124 @@
+/* {{{ Tables */
+
+/*doc
+---
+title: Tables
+name: tables
+parent: defaults
+---
+
+Data tables should be used for tabular data.
+
+### Default table
+
+```html_example
+	<div class="docBox">
+		<div class="docSection">
+			<table>
+				<thead>
+					<tr>
+						<th>Event Name</th>
+						<th>RSVPs</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>2 attending</td>
+						<td><a href="#">Nov 28, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>0 attending</td>
+						<td><a href="#">Nov 30, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>12 attending</td>
+						<td><a href="#">Dec 3, 4:30 AM</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+```
+
+### Striped Table
+
+```html_example
+	<div class="docBox">
+		<div class="docSection">
+			<table class="stripedTable">
+				<thead>
+					<tr>
+						<th>Event Name</th>
+						<th>RSVPs</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>2 attending</td>
+						<td><a href="#">Nov 28, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>0 attending</td>
+						<td><a href="#">Nov 30, 7:30 PM</a></td>
+					</tr>
+					<tr>
+						<td><a href="#">Play Pinball</a></td>
+						<td>12 attending</td>
+						<td><a href="#">Dec 3, 4:30 AM</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+```
+
+*/
+
+table {
+	width: 100%;
+	font-size: $baseFontSize;
+	border-collapse: collapse;
+}
+caption, td, th { 
+	padding: $baseline/2;
+	text-align: left;
+}
+caption {
+	vertical-align: middle;
+	padding-left: 0;
+}
+th {
+	font-weight: $W_bold;
+	vertical-align: middle;
+}
+td, tbody th {
+	vertical-align: top;
+	border-top: 1px solid $C_line;
+}
+
+/* bordered */
+.borderedTable {
+	border: 1px solid $C_line;
+	th + th, td + td, th + td {
+		border-left: 1px solid $C_line; 
+	}
+}
+
+/* striped */
+.stripedTable {
+	tbody {
+		tr:nth-child(odd) td,
+		tr:nth-child(odd) th {
+			background-color: $C_gray_lightest;		
+		}
+	}
+}
+
+/* }}} */

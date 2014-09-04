@@ -1,0 +1,200 @@
+/*doc
+---
+title: Avatar
+name: avatar
+category: Content Patterns
+---
+
+You know, for people.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--person"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+				Chris
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--person avatar--small"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">
+				Samantha
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--person avatar--big"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+				Larry
+			</a>
+		</li>
+	</ul>
+```
+*/
+
+// Avatar base class. Add in a variant!
+// media-m size
+// -------------------------------
+%avatar_base_size {
+	width: $media-m;
+	height: $media-m;
+	font-size: $media-m * 2/3;
+}
+.avatar {
+	@extend %avatar_base_size;
+	@include background-size(cover);
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: top;
+	background-repeat: no-repeat;
+	background-position: center 42%;
+	background-color: $C_tertiaryGray;
+}
+
+.avatar--person {
+	border-radius: $media-xl;   // bigger than any acceptable radius
+								// => will become circle
+}
+
+/*doc
+---
+title: Chapter avatar
+name: chapterAvatar
+parent: avatar
+---
+
+Sometimes you want to represent a chapter, not a member. For that, there's `avatar--chapter`.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--chapter"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Awesome group
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--small"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Some group
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--big"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Some other group
+			</a>
+		</li>
+	</ul>
+```
+
+*/
+.avatar--chapter {
+	// nothing special... yet.
+}
+
+// Avatar Size Variants
+// ---------------------------
+.avatar--small {
+	width: $media-s;
+	height: $media-s;
+	font-size: $media-s;
+}
+.avatar--big {
+	width: $media-xl;
+	height: $media-xl;
+	font-size: $media-xl * 2/3;
+}
+
+/*doc
+---
+title: Avatar Stacks
+name: avatarStack
+parent: avatar
+---
+
+You can represent multiple people or chapters with the `avatar--stack` class.
+
+```html_example
+	<ul class="inlineblockList">
+		<li>
+			<a href="#" class="avatar avatar--person avatar--stack"
+				style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+				Chris and friends
+			</a>
+		</li>
+
+		<li>
+			<a href="#" class="avatar avatar--chapter avatar--stack"
+				style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+				Cool groups
+			</a>
+		</li>
+	</ul>
+```
+
+*/
+$stack_frame_thickness: 2px;
+$stack_frame_spacing: 1px;
+%blockStack {
+	// set box-shadow to simulate a stack of elements
+	box-shadow: $stack_frame_spacing $stack_frame_spacing								0 $C_backgroundContent,
+				$stack_frame_spacing+$stack_frame_thickness $stack_frame_spacing+$stack_frame_thickness			0 $C_tertiaryGray,
+				$stack_frame_spacing*2+$stack_frame_thickness $stack_frame_spacing*2+$stack_frame_thickness		0 $C_backgroundContent,
+				($stack_frame_spacing+$stack_frame_thickness)*2 ($stack_frame_spacing+$stack_frame_thickness)*2 0 $C_tertiaryGray;
+}
+.avatar--stack {
+	@extend %blockStack;
+	margin-right: $stack_frame_spacing + $stack_frame_thickness;
+}
+
+// Avatar Badges
+// ---------------------------
+%avatarBadge {
+	overflow: visible;
+	position: relative;
+	text-indent: 0;
+	&:before {
+		@include color_textPrimaryInverted('border-color');
+		@include color_textPrimaryInverted;
+		@include color_accent('background-color');
+		border-radius: $media-xl;
+		font-size: 14px;
+		position: absolute;
+		border-style: solid;
+		border-width: 2px;
+		bottom: -0.45em;
+		right: -0.45em;
+		display: block;
+		height: 1.45em;
+		width: 1.45em;
+		text-align: center;
+		font-family: 'RedLabel';
+		font-weight: normal !important;
+		font-style: normal !important;
+		-webkit-font-smoothing: antialiased;
+		text-decoration: none !important;
+		line-height: 1.45em;
+		vertical-align: -0.125em;
+	}
+}
+.avatarBadge--leadTeam {
+	@extend %avatarBadge;
+	&:before {
+		content: "\E0AF";
+	}
+	&:after {
+		content: "Lead Team Member";
+		font: 0/0 a !important;
+		color: transparent;
+		text-shadow: none;
+		display: block;
+		height: 0;
+		width: 1px;
+	}
+}

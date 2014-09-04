@@ -1,0 +1,475 @@
+/**
+* FORMS
+* all form defaults and modifiers, to be included in foundation.scss
+*/
+
+/*doc
+---
+title: Base Form Elements
+name: formsBase
+category: Forms
+---
+
+```html_example
+<form>
+	<label for="name">Name</label>
+	<input id="name" type="text">
+
+	<label for="color">Favorite color</label>
+	<select name="color">
+		<option>Midnight Saffron</option>
+		<option>Seabreeze Brown</option>
+		<option>Fragrant Forest Ochre</option>
+	</select>
+
+	<fieldset class="line-gutters">
+		<legend>Where are you?</legend>
+		<div class="unit size1of2">
+			<label for="city">City</label>
+			<input type="text" id="city">
+		</div>
+		<div class="lastUnit">
+			<label for="state">State</label>
+			<select>
+				<option>New York</option>
+				<option>New Jersey</option>
+				<option>New Mexico</option>
+				<option>New Oregon</option>
+			</select>
+		</div>
+	</fieldset>
+
+	<label for="yourPhoto">File input <span class="error">(needs work)</span></label>
+	<input type="file" id="yourPhoto" name="yourPhoto" />
+
+	<label for="unicorn">Describe your unicorn</label>
+	<textarea id="unicorn" name="unicorn"></textarea>
+</form>
+```
+
+### Checkboxes and radios
+
+```html_example
+<form>
+	<fieldset>
+		<legend>I'm interested in...</legend>
+		<label><input type="checkbox" /> Cats</label>
+		<label><input type="checkbox" checked="checked" /> Honey Badgers</label>
+		<label><input type="checkbox" /> Quails</label>
+		<label><input type="checkbox" checked="checked" /> Goats</label>
+		<label><input type="checkbox"  checked="checked" /> Red Pandas</label>
+	</fieldset>
+</form>
+```
+
+### Controling field width
+
+You can use the width modifiers (ie. `span-50`) to modify
+widths of form fields.
+
+```html_example
+	<input type="text"> <!-- DEFAULT - width: auto -->
+	<input type="text" class="span-25">
+	<input type="text" class="span-30">
+	<input type="text" class="span-50">
+	<input type="text" class="span-60">
+	<input type="text" class="span-75">
+	<input type="text" class="span-100">
+```
+
+*/
+
+
+/* {{{ first, some normalization */
+button, input, select, textarea {
+	margin: 0 0 $baseline 0;
+	vertical-align: baseline;
+	*vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+button, input {
+	line-height: normal;
+	*overflow: visible;
+}
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner {
+	padding: 0 !important;
+	border: 0 none !important;
+}
+button, input[type=button], input[type=reset], input[type=submit] {
+	cursor: pointer;
+	*cursor: hand;
+	-webkit-appearance: button;
+}
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+/* }}} */
+
+fieldset { /* group like-fields together under headings (legends) with this! */
+	//background: $C_shade;
+	//border-bottom: 1px solid $C_line;
+	//border-top: 1px solid $C_line;
+	border-width: 0;
+	background: transparent;
+	padding: $spacing/2.5 0 0;
+	position: relative;
+	margin-top: 2.25em;
+	legend {
+		display: block;
+		font-size: $baseFontSize;
+		line-height: 1;
+		color: $C_text;
+		*line-height: 1.5; /* IE7 */
+		margin-bottom: 0;
+		position: absolute;
+		top: -1em;
+		left: 0;
+	}
+}
+
+.ie8, .ie9 {
+	input {
+		border-radius: 0;
+	}
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	body input {
+		border-radius: 0;
+	}
+}
+
+input, select, textarea {
+	font-family: $baseFontStack;
+	display: block;
+	line-height: $baseLineHeight;
+	padding: $baseline/4;
+	font-size: $baseFontSize;
+	width: auto;
+	margin-bottom: $spacing;
+	color: $C_text;
+	border: 1px solid $C_line;
+	border-radius: $defaultRadius/2;
+}
+
+
+/* start with horizontal, inline type 	s as default */
+label {
+	font-size: $baseFontSize;
+	color: $C_text;
+	display: block;
+	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
+	&.small {
+		font-size: $smallFontSize;
+	}
+}
+
+input[type=checkbox], input[type=radio] {
+	font-size: $baseFontSize;
+	width: $baseFontSize;
+	height: $baseFontSize;
+	display: inline;
+	cursor: pointer;
+	padding: 0;
+	margin: 3px;
+	*margin-top: 0; /* IE7 */
+	line-height: normal;
+	border: none;
+}
+
+select {
+	height: $baseline*1.75;
+	*height: auto;
+	line-height: $baseline*2;
+	*margin-top: 4px; /* IE7 - helps alignment with inline-style labels */
+}
+
+select[multiple] {
+	height: inherit;
+	background-color: #fff;
+}
+
+input[type=file] {
+	background-color: #fff;
+	padding: $spacing/3;
+	max-width: 100%;
+	*height: auto;
+	*margin-top: 4px; /* IE7 - helps alignment with inline-style labels */
+}
+
+textarea {
+	height: auto;
+	width: 100%;
+}
+
+/**
+* Placeholder styles
+*/
+input, textarea {
+	@include input-placeholder {
+		color: $C_text;
+		font-style: italic;
+		opacity: .3;
+	}
+}
+
+
+/**
+* Focus states
+* applies box shadow in normal state;
+* declares transition for any border & box shadow changes (set below in focus)
+*/
+input, textarea {
+	// transition-all() is too blunt - should only transition border
+	/*transition*/
+	-webkit-transition: border linear 0.1s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.1s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.1s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.1s, box-shadow linear 0.2s;
+	transition: border linear 0.1s, box-shadow linear 0.2s;
+
+
+	/*default state*/
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+
+	/*focus border & outline*/
+	&:focus {
+		outline: 0;
+		border-color: $C_darkblue;
+		-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+		-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+		box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+	}
+}
+
+/* just let the image handle the presentation for type=image */
+[type="image"] {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-width: 0px;
+}
+
+/**
+* disabled state
+*/
+[disabled],
+[disabled="disabled"],
+.disabled {
+	opacity: 0.7;
+	color: $C_text_less;
+	cursor: auto !important;
+	&:focus {
+		border-color: $C_line;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+[disabled],
+[disabled="disabled"] {
+    background-color: $C_line_less;
+}
+
+/* {{{ Feedback/Error states */
+
+/*doc
+---
+title: Form Errors
+name: errors
+parent: formsBase
+---
+
+Required field labels can be marked as required with the `required` class.
+Error states are applied with an `error` class on the input element.
+
+```html_example
+<form class="span-60">
+	<label for="address">Address</label>
+	<input id="address" value="123 Fake St." type="text" />
+
+	<label class="required" for="name">Name</label>
+	<input class="error" id="name" value="Keith Hernandez" type="text" />
+	<p class="italic">You are not Keith Hernandez.</p>
+
+	<label for="address">Profession</label>
+	<input id="address" value="Blimp Captain" type="text" />
+</form>
+```
+
+*/
+label.required:after {
+	margin-left: 0.15em;
+	content: "*";
+	color: $C_red;
+}
+
+input.error, select.error, textarea.error {
+	background-color: $C_warnBg;
+	border-color: $C_warnText;
+	font-style: normal;
+	font-weight: $W_bold;
+	margin-bottom: 0;
+}
+
+.fieldError {
+	font-style: italic;
+}
+
+/* legacy support */
+.inlineErrorMsgs {
+	padding-left: 0;
+	li {
+		list-style: none;
+	}
+}
+/* }}} */
+
+/* {{{ char counter */
+.counter { /*new style*/
+	font-size: 10px;
+	color: $C_text_less;
+}
+.counter,
+
+.limit-container { /*legacy char counter*/
+	font-size: $smallFontSize;
+	margin-bottom: 0.5em;
+}
+input.hasMaxLen, textarea.hasMaxLen {
+	margin-bottom: $spacing;
+}
+/* {{{ Form Modifiers */
+input.big,
+button.big,
+select.big,
+.button.big,
+input[type=submit].big {
+    font-size: $baseFontSize;
+}
+label.big,
+legend.big {
+	font-size: $bigFontSize - 2;
+	font-family: $headingFontStack;
+}
+select.big {
+	height: $bigFontSize*2 - 2;
+	*height: auto;
+	line-height: $bigFontSize*2 -2;
+}
+/* }}} */
+
+@if $platform == "mobile" {
+	/**
+	 *	@author John Cockrell <john@meetup.com>
+	 *	@since  2013-06-24
+	 *
+	 *	@description
+	 *	Extension of standard styles; this treatment has to do with button
+	 *	sizing on mobile, in particular.
+	 */
+
+
+
+	/* ======================================================================== */
+	/* BUTTON SIZING
+	 * Working with a 16pt grid, we can make small buttons 24pt (1.5x)
+	 * normal buttons 32pt (2x), and big buttons 48pt (3x). This is in keeping
+	 * with our 16pt media grid draft that icons and avatars also use (at
+	 * least on mobile).
+	 */
+
+	/* Medium/Normal == 32pt */
+	button,
+	.button {
+		@include box-sizing('border');
+		font-size: 14px;
+		/* TODO Cleanup font-size and replace with ems */
+
+		color: $C_text !important;
+		/* TODO: This is due to some overrides in mobile CSS that need cleaning up.
+		 *
+		 * See: lib/m/_defaults_m.scss : Line 57
+		 */
+
+		/* Formula : desired height - font size - combined top and bottom border
+		 * widths / font size to convert to ems, then halved to get top and bottom
+		 */
+		padding: (((32 - 14 - 2)/14) * 0.5em) 0.75em;
+		/* NOTE: `0.75em` value comes from the original button layout dimensions in
+		 * sassquatch/lib/_forms.scss
+		 */
+
+		margin: 0; /* OVERRIDE */
+		/* NOTE: For mobile buttons in general, they're probably going to be in a
+		 * section of something like a ff-box, or a `docSection` (for padding)
+		 * when placed directly on the background.
+		 *
+		 * The bottom margin isn't as useful here, and can lead to some cascade
+		 * issues and overrides--so it's set to zero here.
+		 */
+	}
+
+/*doc
+---
+title: Small button
+name: smallButton
+parent: secondaryButton
+---
+
+Small == 24pt
+
+```html_example
+	<button class="small">cute lil' small button</button>
+```
+
+*/
+	button.small,
+	.button.small {
+		font-size: 12px;
+
+		padding-top: ((24 - 12 - 2) / 12) * 0.5em;
+		padding-bottom: ((24 - 12 - 2) / 12) * 0.5em;
+
+	}
+
+
+	// TODO: deprecate - this doesn't seem to do anything
+	button.big,
+	.button.big {
+		font-size: 16px !important;
+		/* TODO this !important is necessary due to class scoping in the
+		 * full sassquatch buttons, where !important is originally used.
+		 *
+		 * See: lib/_forms.scss : Line 297
+		 */
+
+		padding-top: ((48 - 16 - 2) / 16) * 0.5em;
+		padding-bottom: ((48 - 16 - 2) / 16) * 0.5em;
+	}
+
+
+/*doc
+---
+title: Full-width buttons
+name: fullWidthButton
+parent: secondaryButton
+---
+
+Mobile Sassquatch includes a special class for full-width buttons:
+
+```html_example
+	<button class="full-width">Wide load</button>
+```
+
+*/
+	button.full-width,
+	.button.full-width,
+	.segmented-control.full-width {
+		width: 100%;
+	}
+}

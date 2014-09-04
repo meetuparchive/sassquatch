@@ -1,0 +1,292 @@
+/*
+Animations
+==========
+
+This is kind of a placeholder file until we transfer over to Compass, which
+provides a more complete and flexible system of mixins for animations.
+
+Once Compass is in place, we should be able to remove or replace the following
+functions with Compass equivalents, although we should try to maintain the
+@extend-based setup as much as possible
+*/
+
+
+/*  ANIMATION MIXINS {{{
+ *
+ *  A collection of mixins that are used to generate keyframe
+ *  animation in CSS. Used on mobile to make animations
+ *  buttery smooth.
+ *
+ *  animate() ................. Creates complete animation statement
+ *                              with a keyframe animation, easing, and
+ *                              duration reference.
+ *  transition() .............. CSS Transition maker
+ *  loop_keyframe_list() ...... SASS list helper for keyframe()
+ *  keyframe()  ............... keyframe animations
+ */
+
+@mixin animate($name, $duration, $iteration_count, $timing_fn, $use_browser_prefixes:true) {
+
+	 /*  We're interpolating the inputs here in case they're wrapped
+	  *  in strings from use in the mixins.
+	  */
+	 @if $use_browser_prefixes == true {
+		  -webkit-animation-name: #{$name};
+		  -webkit-animation-duration: #{$duration};
+		  -webkit-animation-iteration-count: #{$iteration_count};
+		  -webkit-animation-timing-function: #{$timing_fn};
+
+		  -moz-animation-name: #{$name};
+		  -moz-animation-duration: #{$duration};
+		  -moz-animation-iteration-count: #{$iteration_count};
+		  -moz-animation-timing-function: #{$timing_fn};
+
+		  -o-animation-name: #{$name};
+		  -o-animation-duration: #{$duration};
+		  -o-animation-iteration-count: #{$iteration_count};
+		  -o-animation-timing-function: #{$timing_fn};
+	 }
+
+	 animation-name: #{$name};
+	 animation-duration: #{$duration};
+	 animation-iteration-count: #{$iteration_count};
+	 animation-timing-function: #{$timing_fn};
+}
+
+@mixin transition($prop, $duration:0, $timing_fn:'', $use_browser_prefixes:true) {
+
+	 /*  We're interpolating the inputs here in case they're wrapped
+	  *  in strings from use in the mixins.
+	  */
+
+	 @if $use_browser_prefixes {
+		  -webkit-transition: #{$prop} #{$duration} #{$timing_fn};
+		  -moz-transition: #{$prop} #{$duration} #{$timing_fn};
+		  -o-transition: #{$prop} #{$duration} #{$timing_fn};
+	 }
+
+	 transition: #{$prop} #{$duration} #{$timing_fn};
+}
+
+/*  @mixin loop_keyframe_list
+ *
+ *  Loops a keyframe list. Pretty much only used here, but a bunch.
+ *  Depends on `@mixin loop_prop_list`.
+ */
+@mixin loop_keyframe_list($keyframe_list, $with_prefix:false) {
+	 @each $frame in $keyframe_list {
+		  $stop: nth($frame, 1);
+		  $frame_prop_list: nth($frame, 2);
+
+		  #{$stop} {
+				@include loop_prop_list($frame_prop_list, $with_prefix);
+		  }
+	 }
+}
+
+
+
+/*  @mixin keyframe
+ *
+ *  Outputs a completed @keyframe statement that can be
+ *  used with CSS animations.
+ */
+@mixin keyframe($name, $keyframe_list, $use_browser_prefixes:true) {
+
+	 @if $use_browser_prefixes {
+		  /*  we can't interpolate into an @keyframes statement, which is
+			*  why we're doing it this way, instead of with an @each
+			*/
+		  @-webkit-keyframes #{$name} {
+				@include loop_keyframe_list($keyframe_list, '-webkit');
+		  }
+		  @-moz-keyframes #{$name} {
+				@include loop_keyframe_list($keyframe_list, '-moz');
+		  }
+		  @-o-keyframes #{$name} {
+				@include loop_keyframe_list($keyframe_list, '-o');
+		  }
+	 }
+
+
+	 /*  Official CSS3 Spec.
+	  *
+	  *  Used a few places, like high-version FF and
+	  *  IE10. (Maybe others, too!)
+	  */
+	 @keyframes #{$name} {
+		  @include loop_keyframe_list($keyframe_list);
+	 }
+}
+/* }}} */
+
+
+$ani-duration: 300ms;  // this could be moved to _variables, but should really only be used here
+
+/*
+transition-all
+--------------
+
+many of our transitions use a blunt "transition: all" target.
+
+@mixin create-transition-all() is just a helper for creating a bunch of placeholder
+selectors for the various timing functions we might want to use. Because
+it's based on placeholders, any timing functions that are not used will
+not
+
+*/
+@mixin create-transition-all() {
+	$timing-functions: ease-in ease-out ease-in-out;
+
+	@each $timing-function in $timing-functions {
+		%transition-all-#{$timing-function} {
+			-webkit-transition: all $ani-duration $timing-function;
+			-moz-transition: all $ani-duration $timing-function;
+			transition: all $ani-duration $timing-function;
+		}
+	}
+}
+@include create-transition-all();
+
+@mixin transition-all($timing-function: ease-in-out) {
+	@extend %transition-all-#{$timing-function};
+}
+
+
+/*
+perspective
+-----------
+
+When divs flip, they'll be isometric unless you give the wrapping container
+a perspective value
+*/
+.has-perspective {
+	-webkit-perspective: 800px;
+	perspective: 800px;
+}
+
+/*
+flips
+
+*/
+
+%flipped {
+	@include transition-all(ease-out);
+	-webkit-transform-origin: 0 0 0;
+	-moz-transform-origin: 0 0 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+}
+%flipped-back {
+	@extend %flipped;
+	-webkit-transform: rotateX(-75deg);
+	-moz-transform: rotateX(-75deg);
+	transform: rotateX(-75deg);
+}
+%flipped-forward {
+	@extend %flipped;
+	-webkit-transform: rotateX(75deg);
+	-moz-transform: rotateX(75deg);
+	transform: rotateX(75deg);
+}
+
+
+// WARNING: you have to initialize mobile-specific vars outside of the @if so they have global scope
+$ease_in: null;
+$ease_out: null;
+@if $platform == "mobile" {
+	/*  ANIMATION LIBRARY
+	 *
+	 *  @author     John Cockrell
+	 *  @date       2013-3-20
+	 *  @requires   SASS 3.2 or greater
+	 *  
+	 *  @description
+	 *  For now, these are just in use by the Spinner on mobile web.
+	 *
+	 *  The $keyframe_list uses a `list of lists` design pattern for SASS,
+	 *  which basically means there are shitloads of nested lists.
+	 *
+	 *  Animation CSS classes currentliy use the `.ani-*` prefix.
+	 *
+	 */
+
+
+	/*  ANIMATIONS
+	 *
+	 *  Due to the potential overrides in the styles above, animations should
+	 *  stay down here at the bottom, unless we want to up the stakes with 
+	 *  a bunch of selector overrides.
+	 *
+	 *  Why are we using `cubic-bezier` easing instead of `ease-in/out`? 
+	 *  Apparently these non-bezier timing functions case noticeable hiccups and 
+	 *  bugs in Safari at the moment. 
+	 *  This will need to be verified, but this is just a hack around it. -j
+	 *
+	 *
+	 *  TODO: Bad design pattern. Any non-animations style properties in these
+	 *  animation classes currently require `!important` since this file comes
+	 *  earlier in the load order than many other pieces.
+	 *
+	 *  Booo `!important`. -j
+	 */
+	$ease_in: cubic-bezier(0.42, 0, 1.0, 1.0);
+	$ease_out: cubic-bezier(0, 0, 0.58, 1.0);
+
+
+	@include keyframe('rotate360', (
+		 ('0%', ('transform', 'rotate(0deg)')),
+		 ('100%', ('transform', 'rotate(360deg)'))
+	));
+
+	@include keyframe('boing_in', (
+		 ('0%', ('transform', 'scale(0.0, 0.0)')),
+		 ('60%', ('transform', 'scale(1.4, 1.4)')),
+		 ('100%', ('transform', 'scale(1.0, 1.0)'))
+	));
+
+	@include keyframe('boing_out', (
+		 ('0%', ('transform', 'scale(1.0, 1.0)')),
+		 ('32%', ('transform', 'scale(1.3, 1.3)')),
+		 ('100%', ('transform', 'scale(0.0, 0.0)'))
+	));
+
+	.ani-enter { 
+		 opacity: 1.0 !important;
+		 @include transition(opacity, 0.4s, $ease_in);
+		 @include animate('boing_in', 0.3s, 1, $ease_in);
+	}
+
+	.ani-exit { 
+		 opacity: 0.0 !important;
+		 @include transition(opacity, 0.4s, $ease_out);
+		 @include animate('boing_out', 0.3s, 1, $ease_out);
+	}
+
+	.ani-spin {
+		 opacity: 1.0 !important;
+		 @include animate('rotate360', 0.8s, infinite, linear);
+	}
+
+	/* 
+	 * fades/opacity animation
+	*/
+
+	@include keyframe('fadein', (
+		 ('0%', ('opacity', '0')),
+		 ('100%', ('opacity', '1'))
+	));
+
+	@include keyframe('fadeout', (
+		 ('0%', ('opacity', '1')),
+		 ('100%', ('opacity', '0'))
+	));
+
+	.ani-fadein {
+		@include animate('fadein', 0.4s, 1, ease-out);
+	}
+
+	.ani-fadeout {
+		@include animate('fadeout', 0.4s, 1, ease-out);
+	}
+}

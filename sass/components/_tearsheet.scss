@@ -1,0 +1,111 @@
+/* Tearsheets
+
+
+The styles here provide a few different sizes (see the @includes at the bottom),
+as well as a few different states/types:
+	- .tearsheet-disabled: greyed-out state
+	- .tearsheet-add: tearsheet designed as a button prompting user to
+		click and enter their own date
+	- .tearsheet-expandable: instead of the fixed-height default, an
+		expandable tearsheet has height: auto;
+
+*/
+
+/*doc
+---
+title: Tearsheet
+name: tearsheet
+category: Content Patterns
+---
+
+Tearsheets act as a universal companion icon to upcoming Meetups. 
+They contain the date of the event, but should never be relied on 
+as the only conveyance of the event date.
+
+```html_example
+	<time class="tearsheet">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+
+	<time class="tearsheet--big">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+
+	<time class="tearsheet--small">
+		<span class="month">Oct</span>
+		<span class="day">15</span>
+	</time>
+```
+
+*/
+
+/**
+* Tearsheet utils
+* extends and mixins for creating a
+* tearsheet class for a given px size
+*/
+
+%tearsheet {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;  // remove link decoration, if any
+	margin-bottom: $spacing;
+	font-weight: $W_bold;
+	.month {
+		text-transform: uppercase;
+		background-color: $C_red;
+		color: $C_textPrimaryInverted;
+		display: block;
+	}
+	.day {
+		@extend %numerialFont;
+		display: block;
+		border: 2px solid $C_line;
+		color: $C_text !important; // ignore link colors, theme
+		background-color: #fff;
+		border-top-width: 0;
+	}
+}
+
+@mixin tearsheet($size: $media-m){
+	@extend %tearsheet;
+	width: $size;
+	height: $size;
+	.month{
+		border-top-right-radius: $defaultRadius;
+		border-top-left-radius: $defaultRadius;
+		font-size: round( $size * 1.2/5 );
+		height: $size * 2/5;
+		line-height: $size * 0.45;
+	}
+	.day {
+		// might want to do something fancy here to go to 1px
+		// borders when $size < (some threshold)
+		line-height: $size * 3/5;
+		font-size: $size * 2/5;
+	}
+}
+
+@if $platform == "desktop" {
+
+	// Deault Tearsheet (medium)
+	// --------------------------
+	.tearsheet {
+		@include tearsheet($media-m);
+	}
+
+	// Small Tearsheet
+	// --------------------------
+	.tearsheet--small {
+		@include tearsheet($media-s);
+	}
+
+	// Big Tearsheet
+	// --------------------------
+	.tearsheet--big {
+		@include tearsheet($media-xl);
+	}
+
+}

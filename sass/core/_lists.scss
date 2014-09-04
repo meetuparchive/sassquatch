@@ -1,0 +1,375 @@
+/*doc
+---
+title: Standard List
+name: list
+category: Lists
+---
+
+```html_example
+	<ul>
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+
+
+/*doc
+---
+title: Reset List
+name: resetList
+parent: list
+---
+
+```html_example
+	<ul class="resetList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.resetList {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/*doc
+---
+title: Inline List
+name: inlineList
+parent: list
+---
+
+```html_example
+	<ul class="inlineList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.inlineList, .inlineblockList, .pipeList, .crumbList, .commaList {
+	padding-left: 0;
+	> li {
+		display: inline;
+		list-style: none;
+	}
+}
+
+/*doc
+---
+title: Inline-block List
+name: inlineBlockList
+parent: list
+---
+
+```html_example
+	<ul class="inlineblockList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.inlineblockList > li {
+    display: inline-block;
+}
+
+/*doc
+---
+title: Pipe List
+name: pipeList
+parent: list
+---
+
+```html_example
+	<ul class="pipeList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.pipeList > li {
+	margin-right: 0.5em;
+	padding-right: 0.5em;
+	border-right: 1px solid;
+	&:last-child, &.last {
+		border-right-width: 0;
+	}
+}
+
+/*doc
+---
+title: Breadcrumb List
+name: crumbList
+parent: list
+---
+
+```html_example
+	<ul class="crumbList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.crumbList > li {
+	margin-right: 0.75em;
+	&:after {
+		content: '>';
+		margin-left: 0.75em;
+	}
+	&:last-child:after, &.last:after {
+		margin-left: 0;
+		content: '';
+	}
+}
+
+/*doc
+---
+title: Comma List
+name: commaList
+parent: list
+---
+
+```html_example
+	<ul class="commaList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.commaList > li {
+	&:after {
+		content: ', ';
+	}
+	&:last-child:after, &.last:after {
+		content: '';
+	}
+}
+
+/*doc
+---
+title: Divided List
+name: dividedList
+category: Lists
+---
+
+List items in `dividedList` expect block-level elements, like `p` or `img`.
+`dividedList` and `paddedList` usually live inside a `docSection` wrapper.
+
+```html_example
+	<div class="docBox">
+		<div class="docSection">
+			<ul class="dividedList">
+				<li><p>Eggs</p></li>
+				<li><p>Milk</p></li>
+				<li><p>Beer</p></li>
+			</ul>
+		</div>
+	</div>
+```
+*/
+.paddedList, .dividedList, .sectionList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	> li {
+		margin: 0;
+	}
+}
+
+/*doc
+---
+title: Padded List
+name: paddedList
+parent: dividedList
+---
+
+The `paddedList` pattern is the same as `dividedList`, but without borders.
+
+```html_example
+	<div class="docBox">
+		<div class="docSection">
+			<ul class="paddedList">
+				<li><p>Eggs</p></li>
+				<li><p>Milk</p></li>
+				<li><p>Beer</p></li>
+			</ul>
+		</div>
+	</div>
+```
+*/
+.paddedList > li {
+	padding: $spacing/2 0 0 0;
+	&:first-child {
+		padding: 0;
+	}
+}
+
+.dividedList > li{
+	padding: $spacing 0 0;
+	border-top: 1px solid $C_line_less;
+}
+
+/*doc
+---
+title: Secion List
+name: secitonList
+parent: dividedList
+---
+
+A type of `dividedList` pattern that directly divides a `docBox` without a `docSection` element.
+
+```html_example
+	<div class="docBox">
+		<ul class="dividedList">
+			<li><p>Eggs</p></li>
+			<li><p>Milk</p></li>
+			<li><p>Beer</p></li>
+		</ul>
+	</div>
+```
+*/
+.sectionList > li{
+	padding: $baseline $baseline ($baseline - $spacing);
+	border-top: 1px solid $C_line_less;
+}
+/* }}} */
+
+@if $platform == "mobile" {
+	/* lists additions and overrides {{{ */
+
+/*doc
+---
+title: Clearing list style
+name: noneList
+parent: list
+---
+
+```html_example
+	<ul class="noneList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+	.noneList {
+		list-style-type: none;
+		> li {
+			list-style: none;
+		}
+	}
+
+	//TODO: this basically breaks normal list behavior
+	.dividedList, .paddedList {
+		> li {
+			padding: $spacing*1.5 $spacing*1.5 0;
+			&:first-child, &.first {
+				border-top: 0;
+			}
+		}
+	}
+
+/*doc
+---
+title: Linked list
+name: linkedList
+parent: list
+---
+
+```html_example
+	<ul class="linkedList">
+		<li><a href="#">Eggs</a></li>
+		<li><a href="#">Milk</a></li>
+		<li><a href="#">Beer</a></li>
+	</ul>
+```
+*/
+	.linkedList {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		> li {
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid $C_line_less;
+			&:first-child, &.first {
+				border-top: 0;
+			}
+			> a {
+				display:block;
+				padding: $spacing $spacing;
+				color:$C_text;
+				&:visited, &:active {
+					color:$C_text;
+				}
+			}
+		}
+	}
+
+	// TODO: deprecate this or move to modifiers?
+	.linkedBlock {
+		display:block;
+		padding: $spacing $spacing ;
+		color:$C_text;
+	}
+
+	a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
+		color:$C_text;
+	}
+
+	.figureset-figure .linkedBlock {
+		padding: $spacing*.75 $spacing*.75;
+	}
+	.figureset-figure.linkedBlock {
+		padding-left: 0;
+	}
+	.figureset-description .linkedBlock {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	/* another list */
+	.shadedList {
+		list-style: none;
+		&.last-child,  &:last-child{
+			border:0;
+			margin-bottom:$baseline;
+		}
+
+		> li {
+			padding:$spacing;
+			@include shaded(darken($C_gray_lighter, 4%));
+			margin-bottom:1px;
+		}
+	}
+
+	.shadedList.inline {
+		> li {
+			display: inline;
+			list-style: none;
+			margin-bottom: 0;
+			margin-right:1px;
+			padding: 2px 5px;
+			&:first-child {
+				border-radius: $defaultRadius 0 0 $defaultRadius;
+			}
+			&:last-child {
+				border-radius: 0 $defaultRadius $defaultRadius 0;
+			}
+		}
+
+		&.last-child,  &:last-child {
+			margin-right: 0;
+		}
+	}
+
+	/* }}} */
+}

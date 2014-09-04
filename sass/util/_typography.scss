@@ -1,0 +1,31 @@
+%nice-type {
+	text-rendering: optimizeLegibility;
+	// -webkit-font-smoothing: subpixel-antialiased;  // this is the default value for webkit
+	//-webkit-text-stroke: .5px;  // bad for scrolling performance on lots of text
+}
+@mixin nice-type {
+	@extend %nice-type;
+}
+
+@mixin font-face($font-family, $url, $weight: $W_normal, $style: normal) {
+	@font-face {
+		font-family: '#{$font-family}';
+		font-weight: $weight;
+		font-style: $style;
+		src: url('#{$url}.eot?') format('eot'), url('#{$url}.woff') format('woff'), url('#{$url}.ttf') format('truetype');
+	}
+}
+
+/*  truncate()
+ *
+ *  Makes a line of `display:box` text truncate to an
+ *  ellipsis using CSS3 `text-overflow` if available.
+ *
+ *  TODO This is better served by an extend in the new lists layout.
+ *  Kill on cleanup.
+ */
+@mixin truncate() {
+	 white-space: nowrap;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+}

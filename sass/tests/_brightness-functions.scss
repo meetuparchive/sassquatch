@@ -1,0 +1,128 @@
+/**
+* TEST
+* brightness functions
+*/
+
+$red: $C_red;
+$black: #000;
+$gray: #ddd;
+$blue: $C_blue;
+$lightblue: #13a1ff;
+$green: $C_green;
+
+%output {
+	position: absolute;
+	bottom: -24px;
+	left: 1px;
+	font-size: 11px;
+	color: #333 !important;
+	font-family: monaco, consolas, monospace;
+}
+
+@mixin showValue( $color ) {
+	position: relative;
+	&:after {
+		@extend %output;
+		content: "#{getPerceivedBrightness( $color )}"
+	}
+}
+
+@mixin isDark( $color ) {
+	position: relative;
+	&:after {
+		@extend %output;
+		content: "#{isDark( $color )}"
+	}
+}
+
+.testSwatches {
+	margin-top: 16px;
+	li {
+		width: 188px;
+		height: 32px;
+		margin-right: 20px;
+		margin-bottom: 48px;
+		padding: 12px;
+		text-align: center;
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+
+/* Output basic brightness values */
+#valRed {
+	@include showValue( $C_red );
+	background: $C_red;
+}
+#valBlack {
+	@include showValue( $black );
+	background: $black;
+}
+#valGray {
+	@include showValue( $gray );
+	background: $gray;
+}
+#valBlue {
+	@include showValue( $blue );
+	background: $blue;
+}
+#valLightblue {
+	@include showValue( $lightblue );
+	background: $lightblue;
+}
+#valGreen {
+	@include showValue( $green );
+	background: $green;
+}
+
+/* is dark? */
+#darkRed {
+	@include isDark( $C_red );
+	background: $C_red;
+}
+#darkBlack {
+	@include isDark( $black );
+	background: $black;
+}
+#darkGray {
+	@include isDark( $gray );
+	background: $gray;
+}
+#darkBlue {
+	@include isDark( $blue );
+	background: $blue;
+}
+#darkLightblue {
+	@include isDark( $lightblue );
+	background: $lightblue;
+}
+#darkGreen {
+	@include isDark( $green );
+	background: $green;
+}
+
+/* set contrast text */
+#textRed {
+	background: $C_red;
+	color: getPrimaryTextColor( $C_red );
+}
+#textBlack {
+	background: $black;
+	color: getPrimaryTextColor( $black );
+}
+#textGray {
+	background: $gray;
+	color: getPrimaryTextColor( $gray );
+}
+#textBlue {
+	background: $blue;
+	color: getPrimaryTextColor( $blue );
+}
+#textLightblue {
+	background: $lightblue;
+	color: getPrimaryTextColor( $lightblue );
+}
+#textGreen {
+	background: $green;
+	color: getPrimaryTextColor( $green );
+}

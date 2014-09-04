@@ -1,0 +1,139 @@
+@mixin triangle($direction: 'n', $color: black, $size: 6px){
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+}
+
+@mixin circle($color: black, $size: 12px){
+	width: $size;
+	height: $size;
+	border-radius: $size/2;
+	background: $color;
+}
+
+
+//--------- UI INDICATOR
+
+// TODO add to documentation under "Sass" category for utils
+@mixin get-indicator-borders($arrow_pointing_toward, $size, $color) {
+	border: $size solid $color;
+	@if $arrow_pointing_toward == top or $arrow_pointing_toward == bottom {
+		border-left-color: transparent;
+		border-right-color: transparent;
+	} @else {
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+	}
+	border-#{$arrow_pointing_toward}-width: 0;
+}
+@mixin get-indicator-position(
+	$side,
+	$arrow_pointing_toward,
+	$size,
+	$offset-type,
+	$offset-size,
+	$border-width: 0) {
+
+	#{$side}: if($arrow_pointing_toward == $side, -($size), -$border_width);
+	#{$offset-type}: $offset-size;
+	margin-#{$offset-type}: -$size;
+}
+
+/* Indicators
+	Author: MikeM, Nov 2012
+	-------------------------------------------------------------
+	the little arrow thingies that stick out of containers to point to something
+	else, or point to themselves (e.g. active nav item)
+
+	@params
+	---
+	$direction
+	- which direction the indicator points
+	- default 'up'
+	$size
+	- in px, this will be half the width of the indicator's base
+	- default '10px'
+	$offset-type (required - no default)
+	- top, bottom, left, right
+	$offset-size
+	- distance
+	$border-width
+	$border-color
+*/
+@mixin ui-indicator(
+		$offset-type,
+		$offset-size,
+		$direction: up, // up, right, down, left
+		$size: 10px,
+		$color: black,
+		$side: top, // top, right, bottom, left
+		$border-width: 0,
+		$border-color: false
+		) {
+	// convert $direction to something that can be used
+	// as CSS property placeholder (top, bottom, left, right)
+	$arrow_pointing_toward: $direction;
+	@if $direction == up {
+		$arrow_pointing_toward: top;
+	} @else if $direction == down {
+		$arrow_pointing_toward: bottom;
+	}
+
+	position: relative;  // must set parent element to relative positioning to ensure indicator is placed correctly
+
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		border-style: solid;
+	}
+	&:after {
+		@include get-indicator-borders(
+			$arrow_pointing_toward: $arrow_pointing_toward,
+			$size: $size,
+			$color: $color);
+		@include get-indicator-position(
+			$arrow_pointing_toward: $arrow_pointing_toward,
+			$size: $size,
+			$border-width: $border-width,
+			$side: $side,
+			$offset-type: $offset-type,
+			$offset-size: $offset-size);
+	}
+
+	@if $border-width {
+		$border_size: $size + ($border-width * 2);  // border sticks out on both sides
+		&:before {
+			@include get-indicator-borders(
+				$arrow_pointing_toward: $arrow_pointing_toward,
+				$size: $border_size,
+				$color: $border-color);
+			@include get-indicator-position(
+				$arrow_pointing_toward: $arrow_pointing_toward,
+				$size: $border_size,
+				$border-width: $border-width,
+				$side: $side,
+				$offset-type: $offset-type,
+				$offset-size: $offset-size);
+		}
+	}
+}

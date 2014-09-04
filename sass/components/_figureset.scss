@@ -1,0 +1,131 @@
+/*doc
+---
+title: Figureset
+name: figureset
+category: Layout
+---
+
+Figure with description. Similar to OOCSS "media block".
+
+```html_example
+	<div class="figureset">
+		<div class="figureset-figure">
+			<img src="http://placekitten.com/60/80/" />
+		</div>
+		<div class="figureset-description">
+			<h4>This is a fluffy kitten</h4>
+			<p>Maybe not the fluffiest, but he'll do.</p>
+		</div>
+	</div>
+```
+*/
+
+$figuresetGutter: $baseline * 0.75;
+
+.figureset, .figureset-right {
+    *zoom: 1;
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: ".";
+      clear: both;
+      height: 0; 
+    }
+}
+
+/* {{{ Standard figureset - adaptable width for figure and description */
+.figureset-figure, .figureset-description {
+    display: table-cell;
+    vertical-align: top;
+}
+.figureset-figure {
+    width: 1%; /* ensure "shrink wrap" effect */
+    line-height: 0;
+	 img {
+		margin-bottom: $baseline; /* if the description is shorter than the figure */
+ 	}
+}
+.figureset-description {
+    width: auto;
+    padding-left: $figuresetGutter;
+
+    /**
+    * magical content expander
+    * pushes figureset-description to fill as much width of the figureset as possible
+    */
+    &:after {
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+        height: 0 !important;
+        line-height: 0;
+        font-size: 50px;
+        content: "M M M M M M M M M M M M M M M M M M M M ";
+        speak: none; /* STFU, screen readers. Don't read this. */
+    }
+}
+/* }}} */
+
+/* {{{ Right figureset (media on the right; adaptable width) */
+.figureset-right {
+    .figureset-description {
+    	padding: 0 10px 0 0;
+    }
+}
+/* }}} */
+
+
+/*doc
+---
+title: Figureset (right hand figure)
+name: figuresetRight
+parent: figureset
+---
+
+Figureset with figure on the right.
+
+```html_example
+	<div class="figureset-right">
+		<div class="figureset-description">
+			<h4>This is a fluffy kitten</h4>
+			<p>Maybe not the fluffiest, but he'll do.</p>
+		</div>
+		<div class="figureset-figure">
+			<img src="http://placekitten.com/60/80/" />
+		</div>
+	</div>
+```
+*/
+/* {{{ Right side figure */
+.figureset-right {
+    .figureset-description {
+        padding-right: $figuresetGutter;
+        padding-left: 0;
+    }
+}
+/* }}} */
+
+/* {{{ Figuresets in NON-adaptable width for stupid browsers */
+.ie6 .figureset, .ie7 .figureset {
+		.figureset-figure, 
+    .figureset-description {
+			float: left;
+		}
+    .figureset-description {
+        min-width: 67%;
+        width: 67%;
+    } 
+}
+.ie6 .figureset-right, .ie7 .figureset-right {
+		.figureset-figure, 
+    .figureset-description {
+		float: right;
+	}
+    .figureset-description {
+		float: left;
+        min-width: 70%;
+        width: 70%;
+    } 
+}
+/* }}} */

@@ -1,0 +1,104 @@
+/**
+ *	touchlist placeholer classes
+ */
+
+%layout_touchList {
+	// RESETS {
+	font-size: 16px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	// }
+}
+
+%dividerBottom {
+	// A divider applied to the top of every list-item-like element in a
+	// touchlist. Applying it to <li> results in nesting clusterpuck, so it's
+	// applied to special hook classes for granularity:
+	//
+	//	`.touchList-item`
+	//	`.touchList-load-more-link`
+	//	`.touchList-jump-link`
+	border-bottom: 1px solid $C_line_less;
+	.inverted & { @include color_borderInverted('border-color'); }
+}
+
+%dividerLeft {
+	border-left: 1px solid $C_line_less;
+	// NOTE A border applied ONLY to `touchList-items` in a
+	// `touchList--withInlineChildren` list. Right now, this gets applied to 2n
+	// cells, but we may want to change that.
+}
+
+
+/*  ======================================================================= */
+/*  TEXT MANIPULATION  */
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+%textTruncate {
+	@include box-sizing('border');
+	white-space: nowrap;
+	overflow: hidden;
+	// NOTE: overflow-x causes a bug in some webkits where a scrollbar appears
+	// for the y-axis (Chrome on Linux, Android Chrome, among others.)
+
+	-o-text-overflow: ellipsis; // Opera Mini/Mobile
+	text-overflow: ellipsis;
+	// NOTE: cleanup: this should be used instead of the `truncate` mixin
+	// for efficiency now that we have extends.
+}
+
+%textDisableSelection {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	// NOTE: This will disable the ability to select/copy/paste text on iOS,
+	// some versions of Android, IE10. It should ONLY be applied to UI
+	// elements, like label and buttons that have no business being high-
+	// lighted, and can be highlighted accidentally.
+}
+
+
+
+/*  ======================================================================= */
+/*  UI SPECIFIC EXTENDS AND MIXINS  */
+
+@mixin UIPlaceholder($color: lighten($C_textTertiary, 40%)) {
+	// Why isn't this an @extend instead? Because when you cluster together
+	// uninterpretable CSS rules (like vendor-specific placeholder attributes)
+	// it will invalidate all of the ones it doesn't understand, including
+	// our pseudo-placeholder styles.
+
+	// Use this instead of the `_defaults_m.scss` pholder() mixin. That
+	// should be removed.
+
+	color: $color !important;
+	// NOTE: apparently this !important is necessary to override browser
+	// defaults, or contextually change color, like the error state does.
+
+	font-style: normal;
+	font-size: $FS_base;
+	line-height: $LH_standard;
+	// NOTE: iOS needs expanded line height property to avoid clipping letter
+	// descenders.
+
+	// padding-left: $W_mobileCursor;  // good idea, but it misaligns placeholders with text in nearby inputs
+	// It might be worth adding this padding ONLY for &:focus {}
+	// NOTE: Android < 2.3 (all browsers) will NOT respond to padding styles
+	// on placeholder and neither does Android Browser (Samsung) on 4.0+.
+
+	opacity: 1.0;
+	// NOTE: For reasons unknown to me, default styles in Firefox render the
+	// placeholder pseudo-element with non-1.0 opacity, which makes color
+	// matching a pain in the tukus.
+
+	// NOTE: Firefox, and only Firefox, will not vertical align the place-
+	// holder text to the middle if the <input> has a height of 100%.
+	// For now, my solution is to call it a bug with FF and ignore since its
+	// 0.5% of our total browser traffic (data: 2013-05-30)
+}
+

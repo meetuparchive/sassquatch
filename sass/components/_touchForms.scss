@@ -1,0 +1,1045 @@
+@import "../vars/touchList";
+@import "../util/touchList";
+
+@if $platform == "mobile" {
+/*doc
+---
+title: Touch Forms
+name: touchForms
+category: Forms
+---
+
+A collection of form resets and styles currently scoped to the
+touchList list type. In the future, these styles should be used
+site-wide, and this file should become `_forms_m.scss`, and serve
+as a drop-in replacement for `_forms.scss` in Mobile Sassquatch.
+
+### HTML5 form elements
+```html_example
+<div class="docBox">
+	<ul class="touchList">
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			 <div class="ffbox ffbox--touchList-input">
+				  <label class="ffbox-fix" for="">
+						<h4 class="touchList-label touchList-label--input">No Type</h4>
+				  </label>
+				  <div class="ffbox-flex">
+
+						<input name="f1_text_omitted" type="text" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="Regular Text">
+
+						<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">Regular Text</label>
+				  </div>
+			 </div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Text</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_text" type="text" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="Regular Text">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Regular Text
+					</label>
+				</div>
+			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="" for="" class="touchList-helperText">This is helper text.</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Name</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_name" type="text" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="John Appleseed" autocapitalize="words">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						John Appleseed
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Email</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_email" type="email" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="john@meetup.com" autocorrect="off">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						john@meetup.com
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Password</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_pw" type="password" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="••••••••">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						••••••••
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Number</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_number" type="number" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="0-20" pattern="[0-9]*">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						0-20
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Date</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_date" type="date" id="" value="" tabindex="0" class="j-input-date j-has-pseudoplaceholder" placeholder="Date">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Date
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Time</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_time" type="time" id="" value="" tabindex="0" class="j-input-time j-has-pseudoplaceholder" placeholder="Time">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Time
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">DateTime</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_datetime" type="datetime-local" id="" value="" tabindex="0" class="j-input-datetime j-has-pseudoplaceholder" placeholder="D&amp;T">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						D&amp;T
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input " id="">
+			<div class="ffbox">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Date And Time</h4>
+				</label>
+				<div class="ffbox-flex">
+					<div class="ffbox ffbox--fixed-layout ffbox--touchList-input ">
+						<div class="ffbox-fix">
+							<input name="f1_datetime_date" type="date" id="" value="" tabindex="0" class="j-input-date j-has-pseudoplaceholder" placeholder="Date">
+							<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+								Date
+							</label>
+						</div>
+						<div class="ffbox-fix">
+							<input name="f1_datetime_time" type="time" id="" value="" tabindex="0" class="j-input-time j-has-pseudoplaceholder" placeholder="Time">
+							<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+								Time
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Phone</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_tel" type="tel" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="888 888 8888">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						888 888 8888
+					</label>
+				</div>
+			</div>
+		</li>
+
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Url</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_url" type="url" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="http://npr.org">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						http://npr.org
+					</label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Text with Value</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_text_value" type="text" id="" value="I can't go for that." tabindex="0" class="">
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input disabled j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<h4 class="touchList-label touchList-label--input">Disabled</h4>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f1_text_disabled" type="text" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="No can do." disabled="disabled">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						No can do.
+					</label>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+```
+
+### Search
+```html_example
+<div class="docBox">
+	<ul class="touchList">
+		<li class="touchList-item touchList-item--input j-has-pseudoplaceholder" id="">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="">
+					<i class="icon-s icon-search icon-search--searchInput"></i>
+				</label>
+				<div class="ffbox-flex">
+					<input name="f2_search_ph" type="search" id="" value="" tabindex="0" class=" j-has-pseudoplaceholder" placeholder="Search">
+					<label for="" class="touchList-pseudoplaceholder j-pseudoplaceholder">Search</label>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+```
+
+### Radio buttons
+```html_example
+<div class="docBox">
+	<ul class="touchList">
+		<li class="touchList-item touchList-item--input-radio " id="">
+			<label class="ffbox ffbox--touchList-input">
+				<div class="ffbox-flex">
+					<h4 class="touchList-label touchList-label--input">Cats</h4>
+				</div>
+				<div class="ffbox-fix">
+					<input type="radio" name="payment_method_type" value="cash" id="" tabindex="0" checked="checked">
+					<i class="icon-s icon-radio pseudocheckbox"></i>
+				</div>
+			</label>
+		</li>
+		<li class="touchList-item touchList-item--input-radio " id="">
+			<label class="ffbox ffbox--touchList-input">
+				<div class="ffbox-flex">
+					<h4 class="touchList-label touchList-label--input">Dogs</h4>
+				</div>
+				<div class="ffbox-fix">
+					<input type="radio" name="payment_method_type" value="credit">
+					<i class="icon-s icon-radio pseudocheckbox"></i>
+				</div>
+			</label>
+		</li>
+	</ul>
+</div>
+```
+
+### Checkboxes
+```html_example
+<div class="docBox">
+	<ul class="touchList">
+		<li id="check_name_item" class="touchList-item touchList-item--input-checkbox">
+			<label class="ffbox ffbox--touchList-input">
+				<div class="ffbox-flex">
+					<h4 class="touchList-label touchList-label--input">Require photo</h4>
+				</div>
+				<div class="ffbox-fix">
+					<input type="checkbox" name="check_name" id="check_name" class="" value="1" tabindex="0">
+					<i class="icon-s icon-checkbox pseudocheckbox"></i>
+				</div>
+			</label>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="check_name_helper" for="check_name" class="touchList-helperText"></label>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+```
+
+### Select
+```html_example
+<div class="doc-box">
+	<ul class="touchList">
+		<li class="touchList-item touchList-item--select " id="">
+			<label class="ffbox" for="">
+				<div class="ffbox-fix">
+					<h4 class="touchList-label touchList-label--select no-wrap">
+						Fave Caffeine?
+					</h4>
+				</div>
+				<div class="ffbox-flex">
+					<div class="touchList-item--select-wrapper">
+						<select id="" name="f5_1" tabindex="0">
+							<option>Coffee</option>
+							<option>Espresso</option>
+							<option>Red Bull</option>
+							<option>Yerba Mate</option>
+							<option>5 Hour Energy</option>
+							<option>A Big Handful of Cat Hair</option>
+						</select>
+						<div class="touchList-item--select-mask">
+							<span class="touchList-item--select-mask-arrow">
+								<i class="icon-s icon-drop-down"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</label>
+		</li>
+	</ul>
+</div>
+```
+
+### Textareas
+```html_example
+<div class="docBox">
+	<ul class="touchList">
+		<li class="touchList-item touchList-item--textarea " id="tx">
+			<label for="tx_textarea">
+				<h4 class="touchList-label touchList-label--textarea">What's happening?</h4>
+			</label>
+			<div class="ffbox ffbox--textareaWrapper">
+				<div class="ffbox-flex">
+					<textarea name="f6_1" id="tx_textarea" placeholder="For example, 'Fighting a grease fire'" maxlength="200"></textarea>
+					<label for="" class="touchList-pseudoplaceholder touchList-pseudoplaceholder--textarea j-pseudoplaceholder">For example, 'Fighting a grease fire'</label>
+				</div>
+			</div>
+			<h6 id="tx_textarea_counter" class="touchList-item--textarea-counter">200</h6>
+		</li>
+	</ul>
+</div>
+```
+
+### Expander
+```html_example
+<div class="docBox">
+	<ul class="touchList">
+		<li id="tx_expander_item" class="touchList-item surveyQuestion touchList-item--expander touchList-item--input">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="tx_expander">
+					<h4 class="touchList-label touchList-label--input">1.</h4>
+				</label>
+				<div class="ffbox-flex">
+					<textarea id="tx_expander" name="tx_expander" placeholder="Ask a question" class="touchList-item--input  touchList-input--expander" tabindex="0" data-index="1"></textarea>
+					<label for="tx_expander" id="tx_expander_placeholder" class="touchList-pseudoplaceholder j-pseudoplaceholder">The cake is a lie. The cake is a lie. The cake is a lie. The cake is a lie. The cake is a lie. </label>
+				</div>
+			<a href="#" class="ffbox-fix touchList-item-actionIcon"><i class="icon icon-x"></i></a></div>
+				<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="" for="tx_expander_input" class="touchList-helperText"></label>
+				</div>
+			</div>
+		</li>
+		<li class="touchList-item touchList-item--input touchList-item--expander">
+			<div class="ffbox ffbox--touchList-input">
+				<label class="ffbox-fix" for="the_input_name">
+					<h4 class="touchList-label touchList-label--input">1.</h4>
+				</label>
+				<div class="ffbox-flex">
+					<textarea id="the_input_name" name="the_input_name" placeholder="Ask a question" class="touchList-input  touchList-input--expander"></textarea>
+					<label for="the_input_name" id="the_input_name_placeholder" class="touchList-pseudoplaceholder j-pseudoplaceholder">
+						Ask a question
+					</label>
+				</div>
+			</div>
+			<div class="ffbox">
+				<div class="ffbox-flex touchList-helperTextWrap">
+					<label id="the_input_name_helper" for="the_input_name" class="touchList-helperText"></label>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+```
+
+*/
+
+	/*  ======================================================================= */
+	/*  SCOPED RESETS TO FORM ELEMENTS  */
+	/*  NOTE: We can get rid of most of these resets once we switch over to using
+	 *  this file as a _forms_m.scss instead of the normal Sq _forms.scss
+	 */
+	.touchList,
+	.touchList--rounded,
+	.touchList--withInlineChildren {
+
+		// Generic Resets
+		h4,
+		label {
+			font-weight: normal;
+			// This needs to be reset on top of the .touchList, because label
+			// is sized using PX, not ems.
+
+			margin: 0;
+			// NOTE: In addition to <label>, the actual text which serves as a
+			// label for input elements may also be enclosed in an <h4> el.
+			// Until we have a baseline reset in place, <h4> should be overridden
+			// as well :(
+		}
+
+		input,
+		textarea,
+		select {
+			@include box-shadow(none);
+			// The full, non-diet-mobile mixin has to be used to erase the full
+			// SQ statements
+			@include transition(none);
+			@include box-sizing('border');
+			border-radius: 0;
+			margin: 0;
+			padding: 0;
+			border: none;
+			line-height: 1;
+
+			background-color: transparent;
+			// NOTE: I have no idea why this bg is here, or what it's doing. It
+			// was introduced in the merge of Chapstick => Sassquatch Github.
+			// -john
+		}
+
+		// Text Input Specific Resets
+		textarea {
+			width: 100%;
+			line-height: $LH_standard;
+			resize: none;
+		}
+
+
+		// Select Specific Resets
+		select {
+			background: transparent;
+			line-height: $LH_tall;
+			// NOTE: In the <select> element, line-height doesn't behave like you
+			// would expect. Instead of increasing the height of the <select> el,
+			// it instead moves all the text INSIDE the <select> element down, so
+			// that it's partially or entirely cut off.
+			//
+			// This behavior has been observed in IE9-10, Safari, Chrome...
+			//
+			// ... but apparently for iOS, it has to be slightly more than 1,
+			// otherwise the text gets clipped anyway.
+
+			outline: none;
+			// TODO : bad for accessibility, potentially, but normalization on
+			// Android versions for now.
+		}
+
+		// Disabled states
+		// Should be consolidated with standard Sassquatch.
+		// NOTE: Also, selectors like `[disabled]` are extremely inefficient, and
+		// should be removed as soon as Sassq doesn't use them.
+		[disabled],
+		[disabled="disabled"],
+		.disabled {
+			@include color_backgroundNav('background-color');
+		}
+
+		// Placeholders
+		::-webkit-input-placeholder {
+			@include UIPlaceholder();
+		}
+
+		::-moz-placeholder {
+			@include UIPlaceholder();
+		}
+
+		:-ms-input-placeholder {
+			@include UIPlaceholder();
+			padding-left: $P_secondary;
+			// NOTE: Placeholder pseudo elements in IE10 (Windows Phone 8) do not
+			// inherit padding assigned to their associated <input> or <textarea>
+			// element. Here, we're just assigning the left padding to be equal
+			// to that added other <input>/<textarea>
+		}
+
+
+
+
+		/*  Browser Specific Overrides  */
+		input,
+		textarea,
+		select {
+			-webkit-appearance: none !important;
+			// Needed for iOS Safari to not auto-format `<input type="date">` to
+			// look like a dropdown menu of inconsistent widths.
+			//
+			// In older versions of Safari (like 4.3), this needs to be applied
+			// globally to all inputs to remove box shadow.
+		}
+
+
+		// NOTE: seems worthwhile keeping these statements separate, because each
+		// statement relates to browser-specific bugs that may get cleaned up
+		// individually.
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		input[type="date"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="url"] {
+			background: transparent;
+			//  NOTE: for Android Firefox, the browser will add a dippy background
+			//  shadow that should be overridden above, but isn't. I can't tell
+			//  whether it's us, from a bad override chain or the default browser
+			//  styles.
+
+			//  TODO: Remove once this file becomes `_forms_m.scss` and we no longer
+			//  have to have as crazy a system of overrides from  `_forms.scss` in
+			//  Sassquatch.
+		}
+
+
+		input[type="email"],
+		input[type="datetime"] {
+			background: transparent;
+			// NOTE: Webkit builds. By default, the browser will attempt to
+			// validate an email input as soon as you start typing it, helpfully
+			// changing the background color of the field for you. This really
+			// rustles my jimmies, and this rule disables it for the email input
+			// which is the most notable offender.
+			// This also goes for `datetime`, apparently.
+		}
+
+		input[type="date"],
+		input[type="time"] {
+			background: transparent;
+			// NOTE: On Android Browser 4.2.2, Date and Time will not display the
+			// correct entry interface. This means that you can type whatever
+			// you want in there, resulting in the same validation problems as
+			// above.
+		}
+
+		textarea {
+			background: transparent;
+			// NOTE: Needed to get rid of a default inner shadow on Firefox Android.
+		}
+
+		select {
+			-ms-touch-action: none;
+			// NOTE: IE10 when you touch a <select> element, it stays highlighted
+			// with the MS tap highlight color after selecting an <option>,
+			// kind of like a :hover-induced bug.
+			//
+			// In order for that NOT to happen you have to specify this rule.
+		}
+
+		::-webkit-search-cancel-button {
+			-webkit-appearance: none !important;
+			appearance: none !important;
+			// Webkit builds now employ an (X) button in search inputs, and only
+			// search inputs. This pseudo-element selector will allow us to
+			// not display them, instead of having them half cut off and weird
+			// looking.
+		}
+	}
+
+	/*  ======================================================================= */
+	/*  TEXT INPUT STYLES  */
+
+	/**
+	 * Inputs inside TL-input <li> items.
+	 * Notes:
+	 * 1.	These are for when a multi-line label (for example, a checkbox or
+	 *		radio item) wraps--this prevents the text of the label from hitting
+	 *		the edges of the cell.
+	 */
+	.touchList-label--input {
+		padding-top: ($P_secondary / 2); // *1
+		padding-bottom: ($P_secondary / 2); // *1
+		padding-left: $P_secondary;
+		font-weight: normal;
+	}
+
+	/**
+	 * Custom TL input-and-label interactions
+	 * Settings for the combination of text <input> and <label> els next
+	 * to each other in fix-flex boxes.
+	 *
+	 * Notes:
+	 * 1.	These need to have a no-wrap property on the label. The reason is
+	 *		that these are typically in a `ffbox-fix` cell, and multi-word labels
+	 *		to the left of a flex cell will collapse without a &nbsp; manually
+	 *		inserted into the label.
+	 *
+	 *		The nowrap here prevents the collapse, but has to be factored out of
+	 *		a more generic selector to make sure labels can wrap on things like
+	 *		radio and checkbox items.
+	 *
+	 * 2.	Half the normal <input> padding on the left side.
+	 */
+	.touchList-item--input {
+
+		.touchList-label--input {
+			white-space: nowrap; // *1
+		}
+
+		.touchList-input--isSearchInput {
+			padding-left: ($P_secondary / 2); // *2
+		}
+	}
+
+	.touchList-item--input {
+		input {
+			line-height: $LH_standard;
+			// NOTE: a slightly taller than standard line height is needed to prevent
+			// letter descenders from getting clipped off on Windows Phone 8.
+
+			width: 100%;
+			height: $H_touchTargetDefault;
+			padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_secondary;
+			// TL;DR Don't touch height or top/bottom padding, please.
+			//
+			// NOTE: These height and padding values are pretty sensitive. Here's why:
+			// On Firefox (all versions) and IE (all versions), specifying a `height`
+			// value on an <input> does jack all.
+			//
+			// In FF <22, it causes some bugs, where a placeholder will float, pinned to
+			// the top of the invisible "full height input", while the actual inputted value
+			// of the element remains centered in height.
+			//
+			// So for FF and IE, in order to simulate the input taking up the full height
+			// for touch target purposes, padding is added to the top and bottom of 50%
+			// height, less value of the line height.
+			//
+			// In desktop WebKit browsers (Chrome, Safar, Opera 15+), the fixed-value
+			// the `height` value is needed to prevent browser-inserted UI on date, time,
+			// datetime, datetime-local, and number elements from bumping the total height
+			// of the input from $H_touchTargetDefault (~48pt) to a larger value (~52pt),
+			// because the browser-inserted UI components take up more vertical space than
+			// specified by the line-height.
+
+			// NOTE: Caveat for Windows Phone 7.5 and 8 RE: padding -- they allow the
+			// text value of an <input>, when wrapping, to overlap with space taken
+			// up by the padding.
+			//
+			// A visual example:
+			//
+			// | |__________| | ... Starting condition (all)
+			// | |e wrapping| | .... Webkit
+			// |type wrapping | .... IE
+		}
+
+		.touchList-input--expander {
+			// this is an input that looks like a normal one-line <input>,
+			// but expands on focus so that you can see longer values
+			// used in MUG settings profile questions
+			height: $LH_standard * 1em;
+			padding: 0 $P_secondary;
+			margin-bottom: $P_secondary;  // top margin provided by ffbox-flex wrapper
+			overflow: hidden;
+			&:focus {
+				height: $LH_standard * 3em;
+				overflow-y: scroll;
+				// NOTE: Without a shim, this does not work in older Android
+				// and iOS. Check out out touchScroll (//= ../mobile/libs/touchscroll)
+			}
+		}
+	}
+
+	.touchList-item--rightInput {
+		.ffbox--touchList-avatar,
+		.ffbox--touchList-item.has-right-action {
+			padding-right: 0;
+			label.ffbox-fix.ffbox--shaded {
+				height: $H_touchTargetDefault;
+			}
+			input[type="checkbox"] {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.touchList-item--expander label.ffbox-fix {
+		// we're top-aligning things, so we need to simulate the middle-aligned top offset.
+		// topOffset =  (full height) - (height of one line of text) / 2 (to get just top space, not top and bottom)
+		$topOffset: ($H_touchTargetDefault - $LH_standard*1em) / 2;
+		// override the middle vertical alignment for expander labels - they should
+		// remain aligned to the first line of text in the input
+		vertical-align: top;
+		padding-top: $topOffset;
+		+ .ffbox-flex {
+			vertical-align: top;
+			padding-top: $topOffset;
+		}
+		.touchList-label--input {
+			padding-top: 0;  // top padding taken care of by label.ffbox-fix
+		}
+	}
+
+
+
+	label.touchList-pseudoplaceholder {
+		// NOTE: Extra `label` element selector here is because all these styles
+		// are scoped to the touchList item.
+		//
+		// Once we get the resets unscoped, this selector can be reduced in
+		// complexity (remove the `label`.
+
+		@include UIPlaceholder();
+		position: absolute;
+		z-index: 10;
+		margin-left: $P_secondary;
+		margin-right: $P_secondary;
+		margin-top: ($H_touchTargetDefault - $FS_base + 0.18) * -1;
+		// NOTE: (item height (ems) - font size (ems) + optical adjust) */
+
+		display: none;
+		// NOTE: Hidden by default, until JS loads */
+	}
+
+	.icon-search--searchInput {
+		padding-left: 0.5em;
+		/* NOTE: arbitrary optical value */
+
+		@include color_textSecondary;
+		/* NOTE: Same color as placeholder, see:
+		 * _tl_extends.scss : @mixin UIPlaceholder
+		 */
+	}
+
+
+
+	/*  ======================================================================= */
+	/*  SELECT STYLES  */
+
+	.touchList-label--select {
+		padding-left: $P_secondary;
+		padding-right: $P_secondary;
+		// <select> items don't really respond to internal padding, so we can't
+		// reliably put it on the <select> element directly. Instead, we want
+		// the <select> to fill the space of the row, UNLESS there's an inline
+		// label in the mix.
+		//
+		// If that's the case, then we want the label not to be directly abutting
+		// the <select>, so we throw a margin on the label.
+	}
+
+	.touchList-item--select .ffbox-flex,
+	.touchList-item--select .ffbox-fix {
+		height: $H_touchTargetDefault;
+		// NOTE: There is no `min-height` on tables. Use `height` instead
+
+		&.touchList-helperTextWrap {
+			height: auto;
+			// NOTE: Not sure what this is doing, or why it would be needed.
+			// Comes from the merge of Chapstick touchList => Sassquatch.
+			// -john
+		}
+	}
+
+	.touchList-item--select-wrapper {
+		position: relative;
+	}
+
+	.touchList-item--select-mask {
+		position: absolute;
+		height: 100%;
+		@include color_backgroundContent('background-color');
+		top: 0;
+		right: 0;
+		padding: 0 $P_secondary;
+	}
+
+	// NOTE: Also, selectors like `[disabled]` are extremely inefficient, and
+	// should be removed as soon as Sassq doesn't use them.
+	[disabled] .touchList-item--select-mask,
+	[disabled="disabled"] .touchList-item--select-mask,
+	.disabled .touchList-item--select-mask {
+		@include color_backgroundNav('background-color');
+	}
+
+
+	.touchList-item--select.error .touchList-item--select-mask {
+		background-color: $C_warnBg;
+	}
+
+	.touchList-item--select-mask-arrow {
+		@extend %textDisableSelection;
+		display: block;
+		@include color_textSecondary;
+		// NOTE: Same as border of radio/checkbox.
+
+		margin-top: ($H_touchTargetDefault - 1) / 2;
+		// NOTE: (height of row - height of small icon) / 2
+	}
+
+	/* Bottom line: <select> elements are REAAALLY messed up and difficult
+	 * to style.
+	 */
+	.touchList-item--select select {
+		font-size: $FS_base;
+		line-height: $LH_standard;
+		// NOTE: a slightly taller than standard line height is needed to prevent
+		// letter descenders from getting clipped off on Windows Phone 8.
+		width: 100%;
+		height: $H_touchTargetDefault;
+		padding: (($H_touchTargetDefault - $LH_standard) / 2) $P_secondary;
+		// NOTE: this code is the same as for <input> elements, and potentially
+		// can be factored together once this is more stable.
+
+	}
+
+
+	/*  ======================================================================= */
+	/*  TEXTAREA STYLES  */
+
+	.touchList .touchList-label--textarea {
+		// using `.touchList` parent for font-size override
+		@extend %tl-blockLabel;
+	}
+
+	.ffbox--textareaWrapper {
+		position: relative;
+		// NOTE: Needed for positioning the pseudoplaceholder correctly in the event
+		// that the <li:textarea> eschews a label.
+	}
+
+	%touchListItemTextarea {
+		line-height: $LH_standard;
+
+		padding: $P_secondary $P_secondary 0;
+		margin-bottom: ($LH_standard / 2) * 1em;
+		// NOTE: setting the margin on the bottom instead of padding causes the
+		// textarea to ratchet evenly on the bottom when typing more than the
+		// present 4 lines in height.
+		// However, using a margin on bottom instead of padding would mean that
+		// the coloration of a disabled textarea does not extend all the way to
+		// the "visual bottom" of its cell--which looks weird. That's why I'm
+		// not using margin here, even though it would be better for interaction.
+
+		height: (5 * $LH_standard) * 1em;
+		// NOTE: Because the textarea is set up with border-box layout, we need
+		// to set it to '4 lines' + '1 line internal padding' = '5 lines' tall.
+	}
+
+	.touchList-item--textarea textarea{
+		@extend %touchListItemTextarea;
+		&:focus {
+			height: (12 * $LH_standard) * 1em
+			// NOTE: This behavior seems potentially disorienting (expanding
+			// textarea volume on focus) because it could screw with the browser
+			// trying to scroll the viewport.
+			// This probably should be tested on a phone to make sure it's
+			// actually a good experience.
+			// -john
+		}
+	}
+
+	.touchList-item--twoLineTextarea textarea{
+		@extend %touchListItemTextarea;
+		height: (3 * $LH_standard) * 1em;
+	}
+
+	.touchList-item--input-counter {
+		padding: 0 $P_secondary 0;
+		text-align: right;
+	}
+
+	.touchList-item--textarea-counter {
+		padding: 0 $P_secondary $P_secondary;
+		text-align: right;
+	}
+
+	label.touchList-pseudoplaceholder--textarea {
+		// NOTE: Extra `label` element selector here is because all these styles
+		// are scoped to the touchList item.
+		//
+		// Once we get the resets unscoped, this selector can be reduced in
+		// complexity (remove the `label`.)
+
+		top: ($LH_standard - $FS_base + 0.05) * 2;
+		// NOTE: (item height (ems) + font size (ems) + optical adjust) */
+
+		margin-top: 0; // Override
+	}
+
+
+
+	/*  ======================================================================= */
+	/*  RADIO/CHECKBOX STYLES  */
+
+	.touchList-item--input-radio,
+	.touchList-item--input-checkbox {
+		input {
+			display: none;
+			margin: 0 $P_secondary;
+			// NOTE: radio boxes and checkboxes need to use margin, not padding for
+			// layout--since they don't really have insides or anything.
+		}
+	}
+
+	/**
+	 * pseudocheckbox, pseudoradio
+	 * Icon-based radio and checkboxes mimicking native behavior. This normalizes
+	 * the appearance across all browsers, notably on iOS, where native
+	 * checkboxes and radios are hard to see, and Android, where they're tiny.
+	 *
+	 * Notes:
+	 * 1.	We're using tertiaryGray here in the case where checkbox is placed
+	 *		directly on a non-white background (e.g. $C_backgroundCollection).
+	 *		$C_tertiaryGray is the closest to the existing mobile $C_line value.
+	 *
+	 * 2.	The magic of sibling selectors means that we don't have to add
+	 *		classes to make an active state appear in the UI in modern browser.
+	 *		All the code below does is essentially toggle the contents of our
+	 *		`.icon-radio` and `.icon-checkbox` so that they behave like
+	 *		`.icon-radio-selected` and `.icon-checkbox-selected`, so we don't
+	 *		have to rely on JS to update the classes and change the contents.
+	 *
+	 * 3.	IE8 doesn't support the `:checked` pseudoclass reliably, so we need
+	 *		to provide a fallback `input.checked` class state that can be applied
+	 *		with JS so we can use this on the desktop site.
+	 */
+	.pseudocheckbox,
+	.pseudoradio {
+		@extend %textDisableSelection;
+		margin: 0 $P_secondary;
+		text-align: center;
+		@include color_border; // *1
+	}
+
+	input:checked + .icon-radio,	// *2
+	input.checked + .icon-radio {	// *3
+		@include color_link;
+		&:before {
+			content: "\E0D1";
+		}
+		&:after {
+			content: "Selected Radio Button";
+		}
+	}
+
+	input:checked + .icon-checkbox,		// *2
+	input.checked + .icon-checkbox {	// *3
+		@include color_link;
+		&:before {
+			content: "\E0D3";
+		}
+		&:after {
+			content: "Selected Checkbox";
+		}
+	}
+
+	input:checked + .icon-checkbox-filled,		// *2
+	input.checked + .icon-checkbox-filled {	// *3
+		@include color_link;
+		&:before {
+			content: "\E0D5";
+		}
+		&:after {
+			content: "Selected Checkbox";
+		}
+	}
+
+	// Could potentially be replaced by a modifier, but $C_gray_* do no
+	// use meetup-swatches right now
+	.ffbox--shaded {
+		@include color_backgroundNav('background-color');
+		&.selected {
+			background-color: transparent;
+		}
+	}
+
+
+	/*  ======================================================================= */
+	/*  ERROR AND HELPER TEXT STYLES  */
+
+	// Currently, the way that this is built is that it's used in tandem with the
+	// `.error` class detailed above.
+	// The sum of this validation message and the height of the input above it
+	// will always be $H_touchTargetDefault.
+	// Adding or removing the `.error` class to the outermost <li> (the wrap
+	// of a <li:input>, basically) will cause the validation message to be
+	// displayed or not.
+
+	// On a related note, I think switching from `.error` to `.has-error` for
+	// designating that an input has an error could be a solid move. The `.error`
+	// class could then be used for structures like a block error message
+	// summary, etc.
+
+	/* Error States */
+	.error {
+		background-color: $C_warnBg;
+		border-bottom: 1px solid $C_warnText;
+	}
+
+
+	/**
+	 * Helper Text
+	 * Text applied below an input that provides contextual information
+	 * (like "Your email will never be shared" below an email <input>) or
+	 * validation information.
+	 *
+	 * Can also have an "error state" when enclosude in an element with an
+	 * `.error` class.
+	 *
+	 * Notes:
+	 * 1.	Extra <label> in selector is from the global font size overrides
+	 *		scoped to <label> and <h4> els on mobile web. When that's cleaned,
+	 *		this selector can be simplified.
+	 * 2.	Helper text should have bottom padding when populated, but not
+	 *		affect layout when empty. Hence, the :empty selector.
+	 * 3.	IE > 8, make sure there's no whitespace.
+	 */
+	label.touchList-helperText {     // *1
+		@include color_textTertiary;
+		.inverted & { @include color_textTertiaryInverted; }
+		font-size: $FS_small;
+		line-height: $LH_standard;
+
+		margin-top: -$P_secondary;                              // *2
+		padding: 0 ($P_secondary/$FS_small * 1em) $P_primary;   // *2
+
+		&:empty {     // *2
+			padding-bottom: 0; // *3
+			margin: 0;         // *3
+		}
+
+		.error & {
+			color: $C_warnText;
+		}
+		.ffbox--touchList-item & {
+			padding-bottom: 0;  // padding provided by ffbox
+		}
+	}
+}

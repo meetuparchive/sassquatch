@@ -1,0 +1,128 @@
+/*doc
+---
+title: Tabs
+name: tabs
+category: Navigation
+---
+
+Rounded tab navigation. Used mostly as secondary navigation on Meetup.
+
+```html_example
+	<ul class="navTabs">
+		<li><a href="#">Upcoming Meetups</a></li>
+		<li><a href="#">Past Meetups</a></li>
+		<li class="selected"><a href="#">Selected tab</a></li>
+	</ul>
+
+	<div class="docBox">
+		<div class="docSection">
+			<ul class="navTabs">
+				<li><a href="#">Upcoming Meetups</a></li>
+				<li><a href="#">Past Meetups</a></li>
+				<li class="selected"><a href="#">Selected tab</a></li>
+			</ul>
+			<h4>Look at this tab content</h4>
+			<p>Just look at it</p>
+		</div>
+	</div>
+```
+
+*/
+
+$tabSpacing: $spacing/2;
+
+.navTabs,
+.nav-tabs {
+	@extend %clearfix;
+	padding-top: $tabSpacing;
+	padding-left: $tabSpacing;
+	border-bottom: 1px solid;
+	@include color_border('border-color');
+	list-style: none;
+	margin-bottom: 0;
+	li {
+		float: left;
+		padding: 0;
+		margin-right: $tabSpacing;
+		margin-bottom: -1px;
+	}
+	a {
+		@extend %niceFocus;
+		border-top-left-radius: $defaultRadius;
+		border-top-right-radius: $defaultRadius;
+		display: block;
+		text-decoration: none;
+		@include color_textSecondary;
+		background-color: $C_backgroundNav;
+		border: 1px solid;
+		@include color_border('border-color');
+		padding: $tabSpacing/1.5 $tabSpacing*1.5;
+		img { /*calendar icon*/
+			margin-top: -5px;
+		}
+	}
+	.selected {
+		a {
+			@include color_textPrimary;
+			background-color: $C_primaryGrayInverted;
+			@include color_border('border-color');
+			border-bottom-color: $C_primaryGrayInverted;
+		}
+	}
+	.tabcount {
+		@include color_textTertiary;
+	}
+}
+
+/**
+* override for ghome
+* tabs sit on border of ajax-contaner
+* allows border to span the whole D_box
+*/
+#lma .tabsNav {
+	border-bottom: 0px;
+	background-color: #E9EBE5;
+}
+
+@if $platform == "mobile" {
+	.navTabs,
+	.nav-tabs {
+		li {
+			margin-right: 0;
+			&:first-child a {
+				border-left-width: 1px;
+				border-top-left-radius: $defaultRadius;
+			}
+			&:last-child a {
+				border-top-right-radius: $defaultRadius;
+			}
+			&.selected + li a {
+				border-left-width: 1px;
+			}
+		}
+		a {
+			border-radius: 0;
+			// needs to be a little taller to make bigger touch target
+			padding: $tabSpacing*1.5;
+			border-left-width: 0;
+		}
+		&:first-child {
+			padding-top: $tabSpacing;
+		}
+		&.nav-tabs--subtle {
+			a {
+				@include color_backgroundCollection('background-color');
+				@include color_textTertiary;
+				font-weight: bold;
+			}
+			.selected {
+				a {
+					@include color_backgroundNav('background-color');
+					@include color_backgroundNav('border-bottom-color');
+					@include color_textSecondary;
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,56 @@
+/**
+* Pill Label factory mixins
+* ------------------------------------------
+*/
+$pillBaseSize: 11px;
+
+%_pill_text_base {
+	font-size: $pillBaseSize;
+	text-transform: uppercase;
+	font-variant: small-caps;
+}
+
+%_pill_label_base {
+	@extend %_pill_text_base;
+	border-radius: $defaultRadius;
+	padding: $pillBaseSize/4 $pillBaseSize/2;
+	margin-right: $pillBaseSize/4;
+	white-space: nowrap;
+}
+
+
+/**
+* Solid Pill
+*
+* @param $color - base color
+* @param $bgColor - background color
+* @param $textColor - text color (calculated from bgColor if unspecified)
+* -----------------------------------------------
+*/
+@mixin solid_pill( $color: $C_secondaryGray, $bgColor: lighten($color, 40%), $textColor: false ) {
+
+	@extend %_pill_label_base;
+
+	@if not($textColor) {
+		$textColor: getPrimaryTextColor($bgColor);
+	}
+
+	background-color: $bgColor;
+	color: $color;
+	border: 1px solid;
+}
+
+
+/**
+* Hollow Pill
+*
+* @param $color - base color
+* -----------------------------------------------
+*/
+@mixin hollow_pill( $color: $C_secondaryGray ) {
+
+	@extend %_pill_label_base;
+
+	color: $color;
+	border: 1px solid;
+}

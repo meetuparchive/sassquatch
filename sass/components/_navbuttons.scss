@@ -1,0 +1,224 @@
+/*doc
+---
+title: Toggle Buttons
+name: navButtons
+category: Navigation
+---
+
+Using a list of `<a>` elements; for toggling/filtering controls.
+
+DEPRECATED: you should probably use segmented control instead
+
+```html_example
+	<ul class="nav-buttons">
+		<li><a href="#">Date Joined</a></li>
+		<li><a href="#" class="selected">Size</a></li>
+		<li><a href="#">Name</a></li>
+		<li><a href="#">Role</a></li>
+	</ul>
+```
+
+*/
+
+
+.nav-buttons {
+	@include inlineblock;
+	border-radius: $defaultRadius;
+	@include experimental(box-sizing, border-box);
+	@include experimental(background-clip, padding-box);
+	@extend %clearfix;
+	list-style-type: none;
+	margin-bottom: $spacing;
+	padding-left: 0;
+	line-height: 1.5;
+	border: 1px solid $C_line;
+
+
+	/*****************************
+	 * STRUCTURE
+	 ****************************/
+	li, label {
+		padding-top: 0;
+		float: left;
+		text-align: center;
+	}
+
+	label,
+	li > a,
+	li > span {
+		@include button_personality;
+		font-family: $uiControlFontStack;
+		font-size: $baseFontSize;
+		font-weight: $W_normal;
+		padding: 0.5em 1.2em 0.4em;
+		display: block;
+	}
+
+	label:first-of-type,
+	li:first-child > a,
+	li:first-child > span {
+		border-top-left-radius: $defaultRadius - 1px;
+		border-bottom-left-radius: $defaultRadius - 1px;
+	}
+
+	label:last-of-type,
+	li:last-child > a,
+	li:last-child > span {
+		border-top-right-radius: $defaultRadius - 1px;
+		border-bottom-right-radius: $defaultRadius - 1px;
+	}
+
+	&.vertical{
+		display: block;
+
+		li, label {
+			display: block;
+			float: none;
+			text-align: left;
+		}
+	}
+
+
+	/*****************************
+	 * COLOR NORMAL
+	 ****************************/
+	$highlight: rgba(255,255,255,.2) 1px 1px 0 0 inset;
+	$shadow_e: rgba(0,0,0,.1) -1px 0 0 0 inset;
+	$shadow_s: rgba(0,0,0,.1) 0 -1px 0 0 inset;
+
+	label,
+	li > a,
+	li > span {
+		@extend %button_personality;
+		@include button_color(#fff, true);
+		border: none;
+		color: $C_text;
+		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
+	}
+
+	input[type=radio]:checked + label, input[attr="checked"] + label,
+	li > a:active, li > a.selected, li > a.push,
+	li > span.selected, li > span.push {
+		 @include punched_in_box_shadow;
+	}
+
+	label:last-of-type,
+	li:last-child > a,
+	li:last-child > span {
+		@include experimental(box-shadow, '#{$highlight}');
+	}
+	&.vertical{
+		label,
+		li > a,
+		li > span{
+			@include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
+		}
+
+		label:last-of-type,
+		li:last-child > a,
+		li:last-child > span {
+			@include experimental(box-shadow, '#{$highlight}');
+		}
+	}
+
+	/*****************************
+	 * COLOR INVERTED
+	 ****************************/
+
+/*
+ *    .inverted &{
+ *        border-color: $C_darkgray;
+ *      label,
+ *      li > a,
+ *      li > span {
+ *         @include button_color($C_darkgray_lighter, false);
+ *         border: none;
+ *         color: $C_text;
+ *      }
+ *
+ *      input[type=radio]:checked + label, input[attr="checked"] + label {
+ *         @include button_color_active($C_darkgray_lighter, true);
+ *      }
+ *
+ *      input[type=radio]:checked + label, input[attr="checked"] + label,
+ *      li > a:active, li > a.selected, li > a.push,
+ *      li > span.selected, li > span.push {
+ *         color: $C_gray_lightest;
+ *      }
+ *
+ *        &.vertical{
+ *         label,
+ *         li > a,
+ *         li > span{
+ *            @include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
+ *         }
+ *
+ *         label:last-of-type,
+ *         li:last-child > a,
+ *         li:last-child > span {
+ *            @include experimental(box-shadow, '#{$highlight}');
+ *         }
+ *        }
+ *    }
+ */
+
+
+	/*****************************
+	 * COLOR SELECTED ITEM
+	 ****************************/
+
+	li, li:first-child, li:last-child{
+		> a,
+		> span {
+			&:active, &.selected, &.push {
+				@include punched_in_box_shadow;
+			}
+		}
+	}
+
+	input[type=radio]:checked + label, input[attr="checked"] + label {
+		@include button_color_active(#fff, true);
+	}
+
+
+	/*******************************
+	 * RADIO-BUTTON-ONLY SELECTORS *
+	 *******************************/
+
+	input[type=radio] {
+		display: none;
+	}
+
+	label {
+		margin: 0;
+	}
+
+	&.equal-width {
+		display: table;
+		table-layout: fixed;
+		width: 99.8%;
+
+		&:after {
+			display: none;
+		}
+
+		> label, > a, > li {
+			float: none;
+			display: table-cell;
+		}
+	}
+}
+
+
+
+// DEPRECATED
+// .selected on LI is deprecated -- use .selected on SPAN or A instead
+.nav-buttons {
+	li {
+		&.selected > a,
+		&.selected > span {
+			@include punched_in_box_shadow;
+			border: none;
+		}
+	}
+}

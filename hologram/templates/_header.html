@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Sassquatch <%= (title.empty? ? "" : ": #{title}") %></title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css" />
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="<%= title.empty? ? 'home' : '' %>">
+
+	<header>
+		<h1>Sassquatch</h1>
+	</header>
+
+	<div id="pageWrap" class="clearfix">
+
+		<%# {{{ INDEX %>
+		<% if title.empty? %>
+			<h1>woooo lol index page yeah</h1>
+			<section id="content">
+		<%# }}} %>
+
+		<%# {{{ API DOC PAGES %>
+		<% else %>
+			<nav id="mainNav">
+				<div class="doc-box">
+					<ul class="resetList">
+						<% @categories.each do |category, file_name| %>
+							<li class="<%= title == category ? 'selected' : '' %>">
+								<a href="<%= file_name %>"><%= category %></a>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+
+				<h4><%= title %></h4>
+				<ul id="categoryList" class="resetList small">
+					<% @blocks.each do |b| %>
+						<li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+					<% end %>
+				</ul>
+			</nav>
+
+			<section id="content">
+		<% end %>
+		<%# }}} %>
+

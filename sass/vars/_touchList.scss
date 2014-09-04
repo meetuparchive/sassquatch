@@ -1,0 +1,67 @@
+/**
+ * @file   vars/_touchList.scss
+ * @author John Cockrell <john@meetup.com>
+ * @since  2013-06-27
+ *
+ * @description
+ *  New variables for touchList layouts on mobile.
+ */
+
+
+/*  ======================================================================= */
+/*  PARAMETERS  */
+
+/* $Z_ : Z Indices */
+/* ... */
+
+
+/* $P_ : Padding */
+$P_primary:				px-to-em(16px);		/* In the new dimension schema, this
+											* is primarily used for internal padding on
+											* cards and boxes.
+											*/
+$P_secondary:			px-to-em(12px);		/* In the new dimension schema, this
+											* is value and its multiples (2x, 3x) are
+											* primarily used for external margins around
+											* cards, and separating content from the
+											* mobile footer.
+											*/
+
+
+/* $W_, $H_ : Height and Width */
+$W_mobileCursor:		4px;				/* For iOS/Samsung: Hard coded because fixed width */
+$W_pseudoradio:			px-to-em(22px);
+$W_gem:					px-to-em(24px);		/* icon gems are 16px with 0.5em padding */
+$W_inlineBlockConstant:	4px;
+
+$H_pseudoradio:			$W_pseudoradio;
+$H_touchTargetDefault:	px-to-em(48px);
+$H_touchTargetMinimum:	px-to-em(32px);
+$H_gem:					px-to-em(24px);		/* icon gems are square inside ffbox-fix */
+
+
+/* $FS_ : Font Size */
+/* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
+ * be used with scoped resets in order to work properly. For touchList, this
+ * hasn't been an issue, but it may be in the future.
+ * NOTE: For running text, we probably shouldn't go smaller than 12px for
+ * font sizes, since type smaller than that becomes difficult to read on
+ * LDPI/@1x displays.
+ */
+
+$FS_hero:				px-to-em(36px);		/* for use in large banners */
+$FS_base:				px-to-em(17px);		/* replaces $FS_label as a std size */
+$FS_small:				px-to-em(14px);		/* replaces $FS_text as std text size */
+$FS_micro:				px-to-em(9px);		/* use in superscript values (am/pm),
+											*	currency, tab titles.
+											*	NOTE: this size should only be used
+											*	with small caps, which provide good-
+											*	enough legibility on low resolution
+											*	displays.
+											*/
+
+
+/* $LH_ : Line heights */
+$LH_condensed:			1.125;  /* 16/18.0 */
+$LH_standard:			1.3;    /* 16/20.8 */
+$LH_tall:				1.5;    /* 16/24.0 */

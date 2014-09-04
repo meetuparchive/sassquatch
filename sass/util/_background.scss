@@ -1,0 +1,68 @@
+@mixin gradient($first, $second, $simpleIE: false) {
+	// TODO: revise style rules to fit standard `linear-gradient` syntax with fallback
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+	background: $second;
+	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
+	background: -moz-linear-gradient(top,  $first,  $second);
+	@if $simpleIE != true {
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";  // IE 8+
+	}
+}
+
+@mixin background-centering() {
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+@mixin background-clip($value:padding){
+	-moz-background-clip: $value;
+	-webkit-background-clip: $value;
+	-o-background-clip: #{$value}-box;
+	-ms-background-clip: #{$value}-box;
+	-khtml-background-clip: #{$value}-box;
+	background-clip: #{$value}-box;
+}
+
+@mixin background-size( $size) {
+	@include experimental(background-size, $size);
+}
+
+/*  shaded()
+ *
+ *  Not sure what this really does; used once, and appeared
+ *  naked in _sassquatch_m.scss     -j
+ */
+@mixin shaded($color: $C_shade) {
+	background:$color;
+}
+
+
+/*  m-gradient()
+ *
+ *  A variant of the main SQ mixin found in `_mixins.scss`. This CSS3 feature
+ *  isn't particularly well supported unprefixed, even in "newer" browsers, so
+ *  we'll need to have a prefixed version into the future.
+ *
+ *  BB OS 6 + ...... -webkit
+ *  Android 2.3 + .. -webkit
+ *  iOS 4.3 + ...... -webkit
+ *  WP 7.5 / IE9 ... progid
+ *
+ *  As our support profile changes, we can phase these vendor prefixes out
+ *  of this mixin.
+ */
+
+@mixin m-gradient($first, $second) {
+
+	 /* IE9, Windows Phone 7.5 */
+	 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}')";
+
+	 /* IE10, Windows Phone 8, Based on Working Draft Syntax */
+	 background-image: -ms-linear-gradient(top, $first 0%, $second 100%);
+
+	 /* Mobile Webkit (BB OS 6-10, Android 2.3-4.2, iOS 4.3-6.1) */
+	 background-image: -webkit-linear-gradient(top, $first 0%, $second 100%);
+
+	 /* Standards */
+	 background-image: linear-gradient(top, $first 0%, $second 100%);
+}

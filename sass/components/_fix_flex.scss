@@ -1,0 +1,65 @@
+/*doc
+---
+title: Fix-flex
+name: fixFlex
+category: Layout
+---
+
+A collection of styles that allow us to do tabular internal layouts
+on list items, etc. It's particularly useful on responsive layouts,
+like we use for mobile.
+
+#### Note
+
+* There should be only one `.flex` per row.
+
+* If you want to set minimum heights on fix, flex or ffbox,
+you'll need to use `height` rather than `min-height` because of the
+way table layouts are used in CSS.
+
+* In the future, we'll probably want to swap out tabular layouts
+with flexbox.
+
+* If you want to use CSS text truncation with `ffbox`, you need to
+use the `ffbox--fixed` class on the `ffbox`, then set a class with a
+width value on the nested `ffbox-fix`, like so:
+
+```html_example
+	<div class="ffbox">
+		<div class="ffbox-fix shaded-red"> fix </div>
+		<div class="ffbox-flex guide-shade"> flex </div>
+	</div>
+```
+
+*/
+
+/*  ======================================================================= */
+/*  FF BOX  */
+
+.ffbox {
+	@include box-sizing('border');
+	display: table;
+	table-layout: auto;
+	width: 100%;
+}
+
+.ffbox-fix,
+.ffbox-flex {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.ffbox-flex {
+	width: 100%;
+}
+
+/*  ======================================================================= */
+/*  FF BOX - MODIFIERS  */
+
+.ffbox--fixed {
+	table-layout: fixed;
+}
+
+.ffbox--shaded {
+	background-color: $C_backgroundNav;
+}

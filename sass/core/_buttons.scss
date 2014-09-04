@@ -1,0 +1,259 @@
+/**
+* ==============================================
+* BOXY BUTTONS
+*/
+
+// Default button (secondary)
+//
+// this one doesn't use the button mixin
+// because it's transparent in order to visually
+// mix with any background color
+// ---------------------------
+
+@import "../util/buttonFactory";
+
+
+/*doc
+---
+title: Secondary Buttons
+name: secondaryButton
+category: Buttons
+---
+
+Button styles can be applied to any element. Typically you'll want
+to use either a `<button>` or an `<a>` element:
+
+Secondary buttons are slightly transparent so they appear to take on
+a little bit of the background color behind them.
+
+```html_example
+	<button class="button">Button</button>
+	<a class="button" href="#">Anchor</a>
+```
+
+*/
+%button,
+.button,
+button,
+input[type="submit"] {
+	@extend %_button_base;
+	margin-bottom: $baseline + 2;
+	@if $platform == "desktop" {
+		@extend %_chrome_button_fix;
+	}
+
+	color: $C_secondaryGray !important; // need this for chapstick
+	background: $C_lineGray;
+	@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+
+	&:hover {
+		background: opacify($C_lineGray, 0.06);
+	}
+
+	&.button--active,
+	&:active {
+		@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
+		@include transform(translate(0px, 2px));
+	}
+
+	&.disabled,
+	&:disabled {
+		opacity: 0.4;
+		cursor: normal;
+		&:active {
+			@include transform(translate(0px, 0px));
+			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+		}
+		&:hover {
+			background: $C_lineGray;
+		}
+	}
+
+	.inverted & {
+		color: $C_secondaryGrayInverted !important; // need this for chapstick
+		background: $C_lineGrayInverted;
+		@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+
+		&:hover {
+			background: transparentize($C_lineGrayInverted, 0.06);
+		}
+
+		&:active {
+			@include box-shadow($C_tertiaryGray, 0px, 0px, 0px, 0px);
+			@include transform(translate(0px, 2px));
+		}
+
+		&.disabled,
+		&:disabled {
+			&:hover {
+				background: $C_lineGrayInverted;
+			}
+		}
+	}
+}
+
+/*doc
+---
+title: Primary Buttons
+name: primaryButton
+category: Buttons
+---
+
+Button styles can be applied to any element. Typically you'll want
+to use either a `<button>` or an `<a>` element:
+
+Use primary buttons for primary actions.
+
+```html_example
+	<button class="button--primary">Button</button>
+	<button class="button--black">Button</button>
+	<button class="button--white">Button</button>
+	<button class="button--green">Button</button>
+	<button class="button--blue">Button</button>
+```
+
+ */
+
+// Primary button
+//
+// this gets a bit lengthy to support
+// the legacy class "primary" on the higher
+// specificity 'input[type="submit"]'
+// ---------------------------
+%button--primary,
+.primary,
+.button.primary,
+.button--primary,
+input[type="submit"].D_submit,
+input[type="submit"].primary,
+input[type="submit"].button--primary {
+	@include button( $C_red, #fff );
+}
+
+// Black button
+// ---------------------------
+%button--black,
+.button--black,
+input[type="submit"].button--black {
+	@include button( #000, #fff );
+}
+
+// Black button
+// ---------------------------
+%button--white,
+.button--white,
+input[type="submit"].button--black {
+	@include button( #fff, $C_red );
+}
+
+// Blue button
+// ---------------------------
+%button--blue,
+.button--blue,
+input[type="submit"].button--blue {
+	@include button( #13a1ff );
+}
+
+// Green button (money-related)
+// ---------------------------
+%button--green,
+.button--green,
+input[type="submit"].button--green {
+	@include button( $C_green );
+}
+
+
+// input translation fix
+//
+// we can't fix the chrome double click issue
+// without pseudo elements, which don't work on input els
+input[type="submit"]:active {
+	-moz-transform: translate(0px, 0px) !important;
+	-ms-transform: translate(0px, 0px) !important;
+	-o-transform: translate(0px, 0px) !important;
+	-webkit-transform: translate(0px, 0px) !important;
+	transform: translate(0px, 0px) !important;
+}
+
+
+/*doc
+---
+title: Flat Buttons
+name: flatButton
+category: Buttons
+---
+
+Flat buttons should almost always be used for `<a>` elements.
+
+```html_example
+	<a href="#" class="button-flat">Button</a>
+	<a href="#" class="button-flat--white">Button</a>
+	<a href="#" class="button-flat--black">Button</a>
+	<a href="#" class="button-flat--red">Button</a>
+	<a href="#" class="button-flat--green">Button</a>
+```
+
+*/
+
+// Flat button (gray) [DEFAULT]
+// --------------------------- 
+%button-flat,
+%button-flat--gray,
+.button-flat,
+.button-flat--gray {
+	@include button-flat( #777 );
+}
+
+// Flat button (white)
+// ---------------------------
+%button-flat--white,
+.button-flat--white {
+	@include button-flat( #fff );
+}
+
+// Flat button (black)
+// ---------------------------
+%button-flat--black,
+.button-flat--black {
+	@include button-flat( #000 );
+}
+
+// Flat button (red)
+// ---------------------------
+%button-flat--red,
+.button-flat--red {
+	@include button-flat( $C_red );
+}
+
+// Flat button (green/money)
+// ---------------------------
+%button-flat--green,
+.button-flat--green {
+	@include button-flat( $C_green );
+}
+
+
+/*doc
+---
+title: Photo Overlay Buttons
+name: photoButton
+category: Buttons
+---
+
+Use the photo overlay buttons on `<a>` elements that sit on
+top of a background photo.
+
+```html_example
+	<a href="#" class="button-photo">Button</a>
+```
+
+*/
+
+// Flat button (use over most photo bgs)
+// ---------------------------
+%button-photo,
+%button-photo--white,
+.button-photo,
+.button-photo--white {
+	@include button-photo( #fff );
+}

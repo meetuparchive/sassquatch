@@ -1,0 +1,44 @@
+// Perceived Brightness
+//
+// get "brightness" of a color on a scale of 0-255
+// based on yiq color space
+// -------------------------------------------------------------
+
+@function getPerceivedBrightness( $color ) {
+	$R: red($color);
+	$G: green($color);
+	$B: blue($color);
+
+	@return floor( ( ($R * 299) + ($G * 587) + ($B * 114) )/1000 );
+}
+
+
+
+// isDark/isLight
+//
+// is this color what we would call "dark" or "light"?
+// -------------------------------------------------------------
+$brightness_threshold: 160;
+
+@function isDark( $color, $threshold: $brightness_threshold ) {
+	@return ( getPerceivedBrightness($color) <= $threshold );
+}
+
+@function isLight( $color, $threshold: $brightness_threshold ) {
+	@return not(isDark( $color, $threshold ));
+}
+
+
+
+// getPrimaryTextColor
+//
+// returns dark or light text rgba that has sufficient contrast
+// -------------------------------------------------------------
+@function getPrimaryTextColor( $color ) {
+	@if isDark($color) { // very threshold darkness
+		@return $C_textPrimaryInverted;
+	} @else { // much light
+		@return $C_textPrimary;
+	}
+	// wow
+}

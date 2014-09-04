@@ -1,0 +1,39 @@
+/*doc
+---
+title: Append Pager
+name: appender
+category: Navigation
+---
+
+For "see more" type append paging.
+
+```html_example
+	<a href="#" class="nav-appendPager">See more</a>
+```
+
+*/
+
+.nav-appendPager {
+	@extend %button_personality;
+	@extend %niceFocus;
+	border-radius: $defaultRadius;
+	border: 1px solid $C_line;
+	display: block;
+	text-align: center;
+	font-family: $headingFontStack;
+	font-weight: $W_bold;
+	font-weight: $W_normal;
+	letter-spacing: 0.04em;
+	color: $C_link;
+	padding: 0.33em 0;
+	margin-bottom: $spacing;
+	&:focus,
+	&:hover {
+		background-color: $C_line_less;
+		text-decoration: none !important;
+	}
+	&:active {
+		@include punched_in_box_shadow;
+		@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+	}
+}
