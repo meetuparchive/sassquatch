@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sassquatch : Layout</title>
+<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
+<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
+<link rel="stylesheet" href="sassquatch/sassquatch.css">
+<link rel="stylesheet" href="style/doc.css">
+<link rel="stylesheet" href="style/github.css">
+</head>
+<body class="">
+
+	
+
+	
+		<header class="inverted"><h1>Sassquatch <span class="version">1.13.10</span>
+</h1>
+		</header><div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav"><div class="doc-box">
+					<ul class="resetList">
+<li class="">
+								<a href="navigation.html">Navigation</a>
+							</li>
+						
+							<li class="">
+								<a href="content_patterns.html">Content Patterns</a>
+							</li>
+						
+							<li class="">
+								<a href="sass_utilities.html">Sass Utilities</a>
+							</li>
+						
+							<li class="selected">
+								<a href="layout.html">Layout</a>
+							</li>
+						
+							<li class="">
+								<a href="base_css.html">Base CSS</a>
+							</li>
+						
+							<li class="">
+								<a href="modifiers.html">Modifiers</a>
+							</li>
+						
+							<li class="">
+								<a href="lists.html">Lists</a>
+							</li>
+						
+							<li class="">
+								<a href="buttons.html">Buttons</a>
+							</li>
+						
+							<li class="">
+								<a href="forms.html">Forms</a>
+							</li>
+						
+					</ul>
+</div>
+
+				<h4>Layout</h4>
+				<ul id="categoryList" class="resetList small">
+<li><a href="#clearfix">Float Clearing</a></li>
+					
+						<li><a href="#docBox">Doc Box</a></li>
+					
+						<li><a href="#docLists">Full width lists and docSection</a></li>
+					
+						<li><a href="#docSection">Doc Section (formerly doc content)</a></li>
+					
+						<li><a href="#docstar">Stripe Layout</a></li>
+					
+						<li><a href="#docStripe">Stripe variants</a></li>
+					
+						<li><a href="#figureset">Figureset</a></li>
+					
+						<li><a href="#figuresetRight">Figureset (right hand figure)</a></li>
+					
+						<li><a href="#fixFlex">Fix-flex</a></li>
+					
+						<li><a href="#pinLayout">Pin layout</a></li>
+					
+						<li><a href="#grids">OOCSS Grids</a></li>
+					
+						<li><a href="#rounding">Rounding Corners</a></li>
+					
+						<li><a href="#widthModifiers">Width Modifiers</a></li>
+					
+				</ul></nav><section id="content"><h1 id="clearfix">Float Clearing</h1>
+
+<p>Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/</p>
+<div class="codeExample">
+<div class="exampleOutput">
+    <!-- preferred method -->
+    <div class="clearfix">
+        <div style="float: left;" class="shaded-red">Floated div</div>
+        <div style="float: right;" class="shaded-red">Floated div</div>
+    </div>
+
+    <hr>
+<!-- optional method --><div>
+        <div style="float: left;" class="shaded-red">Floated div</div>
+        <div style="float: right;" class="shaded-red">Floated div</div>
+        <br class="clear-both">
+</div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="c">&lt;!-- preferred method --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"float: left;"</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>Floated div<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"float: right;"</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>Floated div<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- optional method --&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"float: left;"</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>Floated div<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"float: right;"</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>Floated div<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;br</span> <span class="na">class=</span><span class="s">"clear-both"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="docBox">Doc Box</h1>
+
+<p>Draw rounded corner white box with default block content <code>margin-bottom</code>.</p>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="docBox">
+        <p>I'm a box</p>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>I'm a box<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h2 id="docLists">Full width lists and docSection</h2>
+
+<p>You can add a <code>sectionList</code> directly inside the <code>docBox</code> in order to
+to span the full width of the box, and use <code>docSection</code> for padded content:</p>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="docBox">
+        <div class="docSection">
+            <h3>Cat name ideas</h3>
+        </div>
+        <ul class="sectionList">
+<li><p>Jennifer</p></li>
+            <li><p>Sergei</p></li>
+            <li><p>Bruce Springsteen</p></li>
+            <li><p>Mittens</p></li>
+        </ul>
+</div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>Cat name ideas<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sectionList"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Jennifer<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Sergei<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Bruce Springsteen<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;p&gt;</span>Mittens<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h2 id="docSection">Doc Section (formerly doc content)</h2>
+
+<p>Vertical content divider.
+<strong>Note:</strong> This replaces the deprecated <code>doc-content</code> class</p>
+<div class="codeExample">
+<div class="exampleOutput">
+    <h5>Sections in a docBox</h5>
+    <div class="docBox">
+        <div class="docSection">
+            <p>first content container</p>
+        </div>
+        <div class="docSection">
+            <p>second content container</p>
+        </div>
+    </div>
+
+    <h5>Sections in a docStripe layout</h5>
+    <div class="docStripe--red inverted">
+        <div class="docBounds">
+            <div class="docSection">
+                <p>I'm a section in a docStripe</p>
+            </div>
+            <div class="docSection">
+                <p>I'm another section in a docStripe</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;h5&gt;</span>Sections in a docBox<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>first content container<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>second content container<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;h5&gt;</span>Sections in a docStripe layout<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--red inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>I'm a section in a docStripe<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>I'm another section in a docStripe<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="docstar">Stripe Layout</h1>
+
+<p>Used for newer and more responsive layouts, where content lives on top of
+a full-width background instead of <code>docBox</code> modules. The <code>docStripe</code> container
+sets a full width background. The <code>docBounds</code> class is used as a padding helper
+and content wrapper.</p>
+<div class="codeExample">
+<div class="exampleOutput">
+    <!-- default stripe and color stripe -->
+    <div class="docStripe">
+        <div class="docBounds">
+            <h3>I'm in a stripe</h3>
+            <p>Any arbitrary content can go here</p>
+        </div>
+    </div>
+    <div class="docStripe--red inverted">
+        <div class="docBounds">
+            <h3>I'm in a red stripe</h3>
+            <p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+        </div>
+    </div>
+
+    <!-- "collections" -->
+    <div class="docStripe--collection">
+        <div class="docBounds">
+            <h3>I contain a collection (of docBoxes)</h3>
+            <div class="docBox">
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+            </div>
+            <div class="docBox">
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="c">&lt;!-- default stripe and color stripe --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>I'm in a stripe<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Any arbitrary content can go here<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--red inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>I'm in a red stripe<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This <span class="nt">&lt;code&gt;</span>docStripe<span class="nt">&lt;/code&gt;</span> also has a class of <span class="nt">&lt;code&gt;</span>inverted<span class="nt">&lt;/code&gt;</span> to style these child element text colors correctly<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="c">&lt;!-- "collections" --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--collection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>I contain a collection (of docBoxes)<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h2 id="docStripe">Stripe variants</h2>
+
+<p><code>docStripe</code> has a white background and slight border top by default,
+but there are a number of other variants:</p>
+
+<table>
+<thead><tr>
+<th>Class</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>docStripe--collection</code></td>
+<td>For a stripe containing a collection of cards or boxes</td>
+</tr>
+<tr>
+<td><code>docStripe--nav</code></td>
+<td>A stripe with navingation (see rick, elaboration TK)</td>
+</tr>
+<tr>
+<td><code>docStripe--inverted</code></td>
+<td>Dark stripe color - use with <code>inverted</code> class to style children</td>
+</tr>
+<tr>
+<td><code>docStripe--red</code></td>
+<td>A Meetupy red stripe</td>
+</tr>
+</tbody>
+</table>
+<h1 id="figureset">Figureset</h1>
+
+<p>Figure with description. Similar to OOCSS "media block".</p>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="figureset">
+        <div class="figureset-figure">
+            <img src="http://placekitten.com/60/80/">
+</div>
+        <div class="figureset-description">
+            <h4>This is a fluffy kitten</h4>
+            <p>Maybe not the fluffiest, but he'll do.</p>
+        </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-figure"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/60/80/"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-description"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4&gt;</span>This is a fluffy kitten<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Maybe not the fluffiest, but he'll do.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h2 id="figuresetRight">Figureset (right hand figure)</h2>
+
+<p>Figureset with figure on the right.</p>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="figureset-right">
+        <div class="figureset-description">
+            <h4>This is a fluffy kitten</h4>
+            <p>Maybe not the fluffiest, but he'll do.</p>
+        </div>
+        <div class="figureset-figure">
+            <img src="http://placekitten.com/60/80/">
+</div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-description"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4&gt;</span>This is a fluffy kitten<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Maybe not the fluffiest, but he'll do.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-figure"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/60/80/"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="fixFlex">Fix-flex</h1>
+
+<p>A collection of styles that allow us to do tabular internal layouts
+on list items, etc. It's particularly useful on responsive layouts,
+like we use for mobile.</p>
+
+<h4>Note</h4>
+
+<ul>
+<li><p>There should be only one <code>.flex</code> per row.</p></li>
+<li><p>If you want to set minimum heights on fix, flex or ffbox,
+you'll need to use <code>height</code> rather than <code>min-height</code> because of the
+way table layouts are used in CSS.</p></li>
+<li><p>In the future, we'll probably want to swap out tabular layouts
+with flexbox.</p></li>
+<li><p>If you want to use CSS text truncation with <code>ffbox</code>, you need to
+use the <code>ffbox--fixed</code> class on the <code>ffbox</code>, then set a class with a
+width value on the nested <code>ffbox-fix</code>, like so:</p></li>
+</ul>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="ffbox">
+        <div class="ffbox-fix shaded-red"> fix </div>
+        <div class="ffbox-flex guide-shade"> flex </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox-fix shaded-red"</span><span class="nt">&gt;</span> fix <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox-flex guide-shade"</span><span class="nt">&gt;</span> flex <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h2 id="pinLayout">Pin layout</h2>
+
+<p>By default, both Mobile's <code>_figureset-m.scss</code> and <code>_fix-flex.scss</code> are
+middle aligned. The pinning system allows you to append to either the 
+"table" components of a figureset or ffbox OR the "table cell" 
+components to adjust that alignment to the top or bottom.</p>
+
+<table>
+<thead><tr>
+<th>Class</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>pintop</code></td>
+<td>sets vertical alignment to <code>display: tabel-cell;</code> elements to top</td>
+</tr>
+<tr>
+<td><code>pinbottom</code></td>
+<td>sets vertical alignment to <code>display: tabel-cell;</code> elements to bottom</td>
+</tr>
+</tbody>
+</table>
+<div class="codeExample">
+<div class="exampleOutput">    <!-- Pinning cells -->
+    <div class="ffbox" style="min-height: 40px;">
+        <div class="pintop ffbox-fix shaded-red"> fix </div>
+        <div class="ffbox-flex guide-shade"> flex </div>
+    </div>
+
+    <hr>
+<!-- Pinning whole ffbox units--><div class="ffbox pintop" style="min-height:40px;">
+        <div class="ffbox-fix shaded-red"> fix </div>
+        <div class="ffbox-flex guide-shade"> flex </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="c">&lt;!-- Pinning cells --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox"</span> <span class="na">style=</span><span class="s">"min-height: 40px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pintop ffbox-fix shaded-red"</span><span class="nt">&gt;</span> fix <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox-flex guide-shade"</span><span class="nt">&gt;</span> flex <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Pinning whole ffbox units--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox pintop"</span> <span class="na">style=</span><span class="s">"min-height:40px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox-fix shaded-red"</span><span class="nt">&gt;</span> fix <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ffbox-flex guide-shade"</span><span class="nt">&gt;</span> flex <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="grids">OOCSS Grids</h1>
+
+<p>OOCSS Grids are used to break any space into fractions, they can be nested and stacked.
+A unit can contain another line or it can contain other objects directly. Grids control
+width, content controls height.</p>
+
+<p>A <code>.line</code> or <code>.line-gutters</code> is a row, and a <code>.unit</code> is a column.</p>
+
+<p><code>lastUnit</code> flexes to fit the remaining space in the row.</p>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="line">
+        <div class="unit size1of3">
+            <p class="shaded">...first column...</p>
+        </div>
+        <div class="unit size1of3">
+            <p class="highlighted">...second column...</p>
+        </div>
+        <div class="lastUnit">
+            <p class="shaded-red">...third column...</p>
+        </div>
+    </div>
+
+    <div class="line-gutters">
+        <div class="unit size1of3">
+            <p class="shaded">...first column...</p>
+        </div>
+        <div class="unit size1of3">
+            <p class="highlighted">...second column...</p>
+        </div>
+        <div class="lastUnit">
+            <p class="shaded-red">...third column...</p>
+        </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"unit size1of3"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"shaded"</span><span class="nt">&gt;</span>...first column...<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"unit size1of3"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"highlighted"</span><span class="nt">&gt;</span>...second column...<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lastUnit"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>...third column...<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"line-gutters"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"unit size1of3"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"shaded"</span><span class="nt">&gt;</span>...first column...<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"unit size1of3"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"highlighted"</span><span class="nt">&gt;</span>...second column...<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lastUnit"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>...third column...<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<p>A number of size classes are available:</p>
+
+<ul>
+<li><code>size1of1</code></li>
+<li><code>size1of2</code></li>
+<li>
+<code>size1of3</code>, <code>size2of3</code>,</li>
+<li>
+<code>size1of4</code>, <code>size3of4</code>
+</li>
+<li>
+<code>size1of5</code>, <code>size2of5</code>, <code>size3of5</code>, <code>size4of5</code>
+</li>
+<li>
+<code>size1of7</code>, <code>size2of7</code>, <code>size3of7</code>, <code>size4of7</code>, <code>size5of7</code>, <code>size6of7</code>
+</li>
+</ul>
+<h1 id="rounding">Rounding Corners</h1>
+<div class="codeExample">
+<div class="exampleOutput">    <div class="rounded-top shaded-red align-center"><p>rounded-top</p></div>
+    <div class="rounded-bottom shaded-red align-center"><p>rounded-bottom</p></div>
+    <div class="rounded-left shaded-red align-center"><p>rounded-left</p></div>
+    <div class="rounded-right shaded-red align-center"><p>rounded-right</p></div>
+    <div class="rounded-all shaded-red align-center"><p>rounded-all</p></div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rounded-top shaded-red align-center"</span><span class="nt">&gt;&lt;p&gt;</span>rounded-top<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rounded-bottom shaded-red align-center"</span><span class="nt">&gt;&lt;p&gt;</span>rounded-bottom<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rounded-left shaded-red align-center"</span><span class="nt">&gt;&lt;p&gt;</span>rounded-left<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rounded-right shaded-red align-center"</span><span class="nt">&gt;&lt;p&gt;</span>rounded-right<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rounded-all shaded-red align-center"</span><span class="nt">&gt;&lt;p&gt;</span>rounded-all<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="widthModifiers">Width Modifiers</h1>
+
+<p>Useful classes for setting percentage widths on arbitary elements.</p>
+<div class="codeExample">
+<div class="exampleOutput">    <p class="span-25 shaded-red">span-25</p>
+    <p class="span-30 shaded-red">span-30</p>
+    <p class="span-50 shaded-red">span-50</p>
+    <p class="span-60 shaded-red">span-60</p>
+    <p class="span-75 shaded-red">span-75</p>
+    <p class="span-100 shaded-red">span-100</p>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"span-25 shaded-red"</span><span class="nt">&gt;</span>span-25<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"span-30 shaded-red"</span><span class="nt">&gt;</span>span-30<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"span-50 shaded-red"</span><span class="nt">&gt;</span>span-50<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"span-60 shaded-red"</span><span class="nt">&gt;</span>span-60<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"span-75 shaded-red"</span><span class="nt">&gt;</span>span-75<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"span-100 shaded-red"</span><span class="nt">&gt;</span>span-100<span class="nt">&lt;/p&gt;</span>
+</pre></div></div>
+</div>
+
+	
+
+	
+			</section>
+</div>
+	
+
+	<script type="text/javascript">
+		// links in code examples shouldn't be followable
+		window.onload = function() {
+			var links = document.querySelectorAll('.codeExample a');
+			for ( i=0; i<links.length; i++ ) {
+				links[i].onclick = function() {
+					return false;
+				};
+			}
+		};
+	</script>
+</body>
+</html>
