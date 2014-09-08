@@ -1,0 +1,63 @@
+$listspacing: $baseline/1.5;
+
+.chunkList {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.chunkList-row {
+	margin: 0;
+	border-top: 1px solid $C_border;
+
+	&:first-child{
+		border-top: none;
+	};
+
+	/*
+	 * any direct anchor children are either...
+	 * 1) a.chunkList-chunk
+	 * 2) a (with chunkList-chunk) children
+	 */
+	& > a {
+		@extend .unlink
+	}
+}
+
+.chunkList-chunk {
+	padding: $listspacing 0 0 $listspacing;
+
+	&:last-child {
+		padding-right: $listspacing;
+	}
+
+	/*
+	 * When a heading is the only element in a chunk,
+	 * give it a total bottom spacing equal to $baseline
+	 */
+	h1:only-child,
+	h2:only-child,
+	h3:only-child,
+	h4:only-child,
+	h5:only-child,
+	h6:only-child {
+		padding-bottom: 0;
+		margin-bottom: $listspacing;
+	}
+
+	/*
+	 * reset block element spacing for block els
+	 */
+	p, dl, dd, ul, ol, article, aside, details, figure, hgroup, section {
+		margin-bottom: $listspacing;
+	}
+
+	/*
+	 * half-spacing for images ensures equal whitespace around images & avatars
+	 * within a ffbox-fix chunk
+	 */
+	.avatar, img {
+		margin-bottom: $listspacing/2;
+	}
+
+}
