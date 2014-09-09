@@ -1,3 +1,92 @@
+/*doc
+---
+title: Chunk List
+name: chunkList
+category: Layout
+---
+
+_The `chunkList` component replaces `touchlist`._
+
+You can optionally add a `docBox` class to `chunkList` or
+next it inside a `docBox`, but it isn't necessary; `chunkList`
+should work regardless of context.
+
+#### Classes:
+`.chunkList`, `.chunkList-row`, `.chunkList-chunk`
+
+#### Usage:
+Each `li` within `chunkList` can be seen as a "row", and
+each `chunkList-chunk` is a padded chunk for content within the row.
+
+There are no restrictions on how many or how few chunks you can put in
+a row. You can even apply the `chunkList-chunk` directly 
+to the `li` element if you only need one chunk per row.
+
+In the spirit of using small, sharp tools, chunk list classes handle only 
+basic element spacing, so use [fix-flex](#fixFlex) to set the layout of 
+multiple chunks within a row.
+
+```html_example
+	<h5 class="muted">Chunk List with two chunks per row</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row ffbox">
+			<a href="#">
+				<div class="chunkList-chunk ffbox-fix pintop">
+					<span href="#" class=" avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+						Person
+					</span>
+				</div>
+				<div class="chunkList-chunk ffbox-flex">
+					<h5>Member Name</h5>
+				</div>
+			</a>
+		</li>
+		<li class="chunkList-row ffbox">
+			<a href="#">
+				<div class="chunkList-chunk ffbox-fix pintop">
+					<span href="#" class="chunk--fix avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+						Person
+					</span>
+				</div>
+				<div class="chunkList-chunk ffbox-flex">
+					<h5>Member Name</h5>
+					<p class="small">You're both members of <strong>The Super Cool Dio 2016 Meetup Group</strong> and 6 others</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+```
+
+```html_example
+	<h5 class="muted">Just one chunk in one row, no links</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row chunkList-chunk">
+			<h5 class="muted small">Member Since</h5>
+			<p>June 2010</p>
+		</li>
+	</ul>
+```
+
+```html_example
+	<h5 class="muted">Three chunks in a row!</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row ffbox">
+			<div class="chunkList-chunk ffbox-fix">
+				<span href="#" class="avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+					Person
+				</span>
+			</div>
+			<div class="chunkList-chunk ffbox-flex">
+				<p>This is not a test of the cheese ball alert system</p>
+			</div>
+			<a class="chunkList-chunk ffbox-fix shaded">
+				<h4>chunky anchor</h4>
+			</a>
+		</li>
+	</ul>
+```
+
+*/
 $listspacing: $baseline/1.5;
 
 .chunkList {
@@ -48,7 +137,8 @@ $listspacing: $baseline/1.5;
 	/*
 	 * reset block element spacing for block els
 	 */
-	p, dl, dd, ul, ol, article, aside, details, figure, hgroup, section {
+	p, dl, dd, ul, ol, article, aside, details, figure, hgroup, section,
+	.avatar, img {
 		margin-bottom: $listspacing;
 	}
 
@@ -56,8 +146,10 @@ $listspacing: $baseline/1.5;
 	 * half-spacing for images ensures equal whitespace around images & avatars
 	 * within a ffbox-fix chunk
 	 */
-	.avatar, img {
-		margin-bottom: $listspacing/2;
-	}
+	/*
+	 *.avatar, img {
+	 *   margin-bottom: $listspacing/2;
+	 *}
+	 */
 
 }
