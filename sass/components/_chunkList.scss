@@ -28,8 +28,8 @@ multiple chunks within a row.
 ```html_example
 	<h5 class="muted">Chunk List with two chunks per row</h5>
 	<ul class="chunkList docBox">
-		<li class="chunkList-row ffbox">
-			<a href="#">
+		<li class="chunkList-row">
+			<a class="ffbox" href="#">
 				<div class="chunkList-chunk ffbox-fix pintop">
 					<span href="#" class=" avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
 						Person
@@ -40,8 +40,8 @@ multiple chunks within a row.
 				</div>
 			</a>
 		</li>
-		<li class="chunkList-row ffbox">
-			<a href="#">
+		<li class="chunkList-row">
+			<a class="ffbox" href="#">
 				<div class="chunkList-chunk ffbox-fix pintop">
 					<span href="#" class="chunk--fix avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
 						Person
@@ -113,6 +113,11 @@ $listspacing: $baseline/1.5;
 	& > a {
 		@extend .unlink
 	}
+
+	/* touch/click highlight for all links */
+	a:active {
+		background-color: $C_overlayPressed;
+	}
 }
 
 .chunkList-chunk {
@@ -149,15 +154,5 @@ $listspacing: $baseline/1.5;
 	.avatar, img {
 		margin-bottom: $listspacing;
 	}
-
-	/*
-	 * half-spacing for images ensures equal whitespace around images & avatars
-	 * within a ffbox-fix chunk
-	 */
-	/*
-	 *.avatar, img {
-	 *   margin-bottom: $listspacing/2;
-	 *}
-	 */
 
 }
