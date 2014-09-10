@@ -99,6 +99,7 @@ $listspacing: $baseline/1.5;
 .chunkList-row {
 	margin: 0;
 	border-top: 1px solid $C_border;
+	overflow: hidden;
 
 	&:first-child{
 		border-top: none;
@@ -115,10 +116,16 @@ $listspacing: $baseline/1.5;
 }
 
 .chunkList-chunk {
+	@include uncollapse();
 	padding: $listspacing 0 0 $listspacing;
 
 	&:last-child {
 		padding-right: $listspacing;
+	}
+
+	/* single chunks within a row should just be block */
+	&:only-child {
+		display: block;
 	}
 
 	/*
