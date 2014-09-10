@@ -8,11 +8,10 @@ code, pre {
 }
 
 code {
-  padding: 2px 4px;
-  color: #d14;
+  padding: 3px 6px;
+  color: #04AF7F;
   white-space: nowrap;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
   border-radius: 4px;
 }
 

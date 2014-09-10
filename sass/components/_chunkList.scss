@@ -8,19 +8,18 @@ category: Layout
 _The `chunkList` component replaces `touchlist`._
 
 You can optionally add a `docBox` class to `chunkList` or
-next it inside a `docBox`, but it isn't necessary; `chunkList`
+nest it inside a `docBox`, but it isn't necessary; `chunkList`
 should work regardless of context.
 
 #### Classes:
-`.chunkList`, `.chunkList-row`, `.chunkList-chunk`
+`.chunkList` &gt; `.chunkList-row` &gt; `.chunkList-chunk`
 
 #### Usage:
 Each `li` within `chunkList` can be seen as a "row", and
 each `chunkList-chunk` is a padded chunk for content within the row.
 
 There are no restrictions on how many or how few chunks you can put in
-a row. You can even apply the `chunkList-chunk` directly 
-to the `li` element if you only need one chunk per row.
+a row.
 
 In the spirit of using small, sharp tools, chunk list classes handle only 
 basic element spacing, so use [fix-flex](#fixFlex) to set the layout of 
@@ -60,9 +59,11 @@ multiple chunks within a row.
 ```html_example
 	<h5 class="muted">Just one chunk in one row, no links</h5>
 	<ul class="chunkList docBox">
-		<li class="chunkList-row chunkList-chunk">
-			<h5 class="muted small">Member Since</h5>
-			<p>June 2010</p>
+		<li class="chunkList-row">
+			<a href="#" class="chunkList-chunk">
+				<h5 class="muted small">Member Since</h5>
+				<p>June 2010</p>
+			</a>
 		</li>
 	</ul>
 ```
