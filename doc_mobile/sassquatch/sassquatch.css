@@ -883,7 +883,6 @@ flips
   0% {
     -webkit-transform: rotate(0deg);
   }
-
   100% {
     -webkit-transform: rotate(360deg);
   }
@@ -892,7 +891,6 @@ flips
   0% {
     -moz-transform: rotate(0deg);
   }
-
   100% {
     -moz-transform: rotate(360deg);
   }
@@ -901,7 +899,6 @@ flips
   0% {
     -o-transform: rotate(0deg);
   }
-
   100% {
     -o-transform: rotate(360deg);
   }
@@ -915,7 +912,6 @@ flips
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -927,11 +923,9 @@ flips
   0% {
     -webkit-transform: scale(0.0, 0.0);
   }
-
   60% {
     -webkit-transform: scale(1.4, 1.4);
   }
-
   100% {
     -webkit-transform: scale(1.0, 1.0);
   }
@@ -940,11 +934,9 @@ flips
   0% {
     -moz-transform: scale(0.0, 0.0);
   }
-
   60% {
     -moz-transform: scale(1.4, 1.4);
   }
-
   100% {
     -moz-transform: scale(1.0, 1.0);
   }
@@ -953,11 +945,9 @@ flips
   0% {
     -o-transform: scale(0.0, 0.0);
   }
-
   60% {
     -o-transform: scale(1.4, 1.4);
   }
-
   100% {
     -o-transform: scale(1.0, 1.0);
   }
@@ -971,11 +961,9 @@ flips
   0% {
     transform: scale(0.0, 0.0);
   }
-
   60% {
     transform: scale(1.4, 1.4);
   }
-
   100% {
     transform: scale(1.0, 1.0);
   }
@@ -987,11 +975,9 @@ flips
   0% {
     -webkit-transform: scale(1.0, 1.0);
   }
-
   32% {
     -webkit-transform: scale(1.3, 1.3);
   }
-
   100% {
     -webkit-transform: scale(0.0, 0.0);
   }
@@ -1000,11 +986,9 @@ flips
   0% {
     -moz-transform: scale(1.0, 1.0);
   }
-
   32% {
     -moz-transform: scale(1.3, 1.3);
   }
-
   100% {
     -moz-transform: scale(0.0, 0.0);
   }
@@ -1013,11 +997,9 @@ flips
   0% {
     -o-transform: scale(1.0, 1.0);
   }
-
   32% {
     -o-transform: scale(1.3, 1.3);
   }
-
   100% {
     -o-transform: scale(0.0, 0.0);
   }
@@ -1031,11 +1013,9 @@ flips
   0% {
     transform: scale(1.0, 1.0);
   }
-
   32% {
     transform: scale(1.3, 1.3);
   }
-
   100% {
     transform: scale(0.0, 0.0);
   }
@@ -1133,7 +1113,6 @@ flips
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1142,7 +1121,6 @@ flips
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1151,7 +1129,6 @@ flips
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1165,7 +1142,6 @@ flips
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1177,7 +1153,6 @@ flips
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -1186,7 +1161,6 @@ flips
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -1195,7 +1169,6 @@ flips
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -1209,7 +1182,6 @@ flips
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -1398,7 +1370,7 @@ table, dl, dd,
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   margin: 0;
   padding: 0;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 form, legend {
@@ -1435,11 +1407,11 @@ a:link, a:visited, a:hover, a:active {
 h1, h2, h3, h4, h5, h6 {
   color: #0d0d0d;
   color: rgba(0, 0, 0, 0.95);
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 700;
   margin: 0;
   padding: 0;
-  padding-bottom: 8px;
+  padding-bottom: 9px;
   line-height: 1.2;
 }
 .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
@@ -1447,12 +1419,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 38px;
   letter-spacing: -0.75px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   letter-spacing: -0.5px;
 }
 
@@ -1591,7 +1563,7 @@ table {
 }
 
 caption, td, th {
-  padding: 8px;
+  padding: 9px;
   text-align: left;
 }
 
@@ -1829,14 +1801,14 @@ The `paddedList` pattern is the same as `dividedList`, but without borders.
 ```
 */
 .paddedList > li {
-  padding: 4px 0 0 0;
+  padding: 9px 0 0 0;
 }
 .paddedList > li:first-child {
   padding: 0;
 }
 
 .dividedList > li {
-  padding: 8px 0 0;
+  padding: 18px 0 0;
   border-top: 1px solid #eeeeee;
 }
 
@@ -1860,7 +1832,7 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 ```
 */
 .sectionList > li {
-  padding: 16px 16px 8px;
+  padding: 18px 18px 0px;
   border-top: 1px solid #eeeeee;
 }
 
@@ -1889,7 +1861,7 @@ parent: list
 }
 
 .dividedList > li, .paddedList > li {
-  padding: 12px 12px 0;
+  padding: 27px 27px 0;
 }
 .dividedList > li:first-child, .dividedList > li.first, .paddedList > li:first-child, .paddedList > li.first {
   border-top: 0;
@@ -1925,7 +1897,7 @@ parent: list
 }
 .linkedList > li > a {
   display: block;
-  padding: 8px 8px;
+  padding: 18px 18px;
   color: #555555;
 }
 .linkedList > li > a:visited, .linkedList > li > a:active {
@@ -1934,7 +1906,7 @@ parent: list
 
 .linkedBlock {
   display: block;
-  padding: 8px 8px;
+  padding: 18px 18px;
   color: #555555;
 }
 
@@ -1943,7 +1915,7 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
 }
 
 .figureset-figure .linkedBlock {
-  padding: 6px 6px;
+  padding: 13.5px 13.5px;
 }
 
 .figureset-figure.linkedBlock {
@@ -1961,10 +1933,10 @@ a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
 }
 .shadedList.last-child, .shadedList:last-child {
   border: 0;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .shadedList > li {
-  padding: 8px;
+  padding: 18px;
   background: #e4e4e4;
   margin-bottom: 1px;
 }
@@ -2068,7 +2040,7 @@ widths of form fields.
 */
 /* {{{ first, some normalization */
 button, input, select, textarea {
-  margin: 0 0 16px 0;
+  margin: 0 0 18px 0;
   vertical-align: baseline;
   *vertical-align: middle;
   -webkit-box-sizing: border-box;
@@ -2095,6 +2067,7 @@ button, input[type=button], input[type=reset], input[type=submit] {
 textarea {
   overflow: auto;
   vertical-align: top;
+  resize: vertical;
 }
 
 /* }}} */
@@ -2102,7 +2075,7 @@ fieldset {
   /* group like-fields together under headings (legends) with this! */
   border-width: 0;
   background: transparent;
-  padding: 3.2px 0 0;
+  padding: 7.2px 0 0;
   position: relative;
   margin-top: 2.25em;
 }
@@ -2129,13 +2102,13 @@ fieldset legend {
   }
 }
 input, select, textarea {
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   display: block;
   line-height: 1.4;
-  padding: 4px;
+  padding: 4.5px;
   font-size: 16px;
   width: auto;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   color: #555555;
   border: 1px solid #dddddd;
   border-radius: 1.5px;
@@ -2168,9 +2141,9 @@ input[type=checkbox], input[type=radio] {
 }
 
 select {
-  height: 28px;
+  height: 31.5px;
   *height: auto;
-  line-height: 32px;
+  line-height: 36px;
   *margin-top: 4px;
   /* IE7 - helps alignment with inline-style labels */
 }
@@ -2182,7 +2155,7 @@ select[multiple] {
 
 input[type=file] {
   background-color: #fff;
-  padding: 2.66667px;
+  padding: 6px;
   max-width: 100%;
   *height: auto;
   *margin-top: 4px;
@@ -2238,7 +2211,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #2a9bc7;
+  border-color: #2A9BC7;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.333), 0 0 6px rgba(42, 155, 199, 0.5);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.333), 0 0 6px rgba(42, 155, 199, 0.5);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.333), 0 0 6px rgba(42, 155, 199, 0.5);
@@ -2305,12 +2278,12 @@ Error states are applied with an `error` class on the input element.
 label.required:after {
   margin-left: 0.15em;
   content: "*";
-  color: #e0393e;
+  color: #E0393E;
 }
 
 input.error, select.error, textarea.error {
-  background-color: #fbe1e3;
-  border-color: #e0393e;
+  background-color: #FBE1E3;
+  border-color: #E0393E;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 0;
@@ -2344,7 +2317,7 @@ input.error, select.error, textarea.error {
 }
 
 input.hasMaxLen, textarea.hasMaxLen {
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 /* {{{ Form Modifiers */
@@ -2359,7 +2332,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 18px;
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
 }
 
 select.big {
@@ -2544,8 +2517,8 @@ input[type="submit"].button--green {
   -moz-box-sizing: border-box;
   border-radius: 3px;
   padding: 14px 18px 12px 18px;
-  margin-bottom: 16px;
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  margin-bottom: 18px;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1 !important;
@@ -2663,7 +2636,7 @@ a little bit of the background color behind them.
 .button,
 button,
 input[type="submit"] {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   color: rgba(0, 0, 0, 0.67) !important;
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
@@ -2779,8 +2752,8 @@ input[type="submit"].primary,
 input[type="submit"].button--primary {
   -webkit-box-shadow: #851518 0px 2px 0px 0px;
   box-shadow: #851518 0px 2px 0px 0px;
-  color: white !important;
-  background: #e0393e;
+  color: #fff !important;
+  background: #E0393E;
 }
 .primary.button--active,
 .primary:active,
@@ -2859,15 +2832,15 @@ input[type="submit"].primary.disabled:hover,
 input[type="submit"].primary:disabled:hover,
 input[type="submit"].button--primary.disabled:hover,
 input[type="submit"].button--primary:disabled:hover {
-  background: #e0393e !important;
+  background: #E0393E !important;
 }
 
 .button--black,
 input[type="submit"].button--black {
   -webkit-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
-  color: white !important;
-  background: black;
+  color: #fff !important;
+  background: #000;
 }
 .button--black.button--active,
 .button--black:active,
@@ -2906,15 +2879,15 @@ input[type="submit"].button--black:disabled:active {
 .button--black:disabled:hover,
 input[type="submit"].button--black.disabled:hover,
 input[type="submit"].button--black:disabled:hover {
-  background: black !important;
+  background: #000 !important;
 }
 
 .button--white,
 input[type="submit"].button--black {
   -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
   box-shadow: #bfbfbf 0px 2px 0px 0px;
-  color: #e0393e !important;
-  background: white;
+  color: #E0393E !important;
+  background: #fff;
 }
 .button--white.button--active,
 .button--white:active,
@@ -2953,7 +2926,7 @@ input[type="submit"].button--black:disabled:active {
 .button--white:disabled:hover,
 input[type="submit"].button--black.disabled:hover,
 input[type="submit"].button--black:disabled:hover {
-  background: white !important;
+  background: #fff !important;
 }
 
 .button--blue,
@@ -3008,7 +2981,7 @@ input[type="submit"].button--green {
   -webkit-box-shadow: #315d3d 0px 2px 0px 0px;
   box-shadow: #315d3d 0px 2px 0px 0px;
   color: white !important;
-  background: #62ac75;
+  background: #62AC75;
 }
 .button--green.button--active,
 .button--green:active,
@@ -3047,7 +3020,7 @@ input[type="submit"].button--green:disabled:active {
 .button--green:disabled:hover,
 input[type="submit"].button--green.disabled:hover,
 input[type="submit"].button--green:disabled:hover {
-  background: #62ac75 !important;
+  background: #62AC75 !important;
 }
 
 input[type="submit"]:active {
@@ -3078,59 +3051,59 @@ Flat buttons should almost always be used for `<a>` elements.
 */
 .button-flat,
 .button-flat--gray {
-  color: #777777 !important;
+  color: #777 !important;
   background: transparent;
-  border: 2px solid #777777;
+  border: 2px solid #777;
 }
 .button-flat:focus,
 .button-flat:hover,
 .button-flat--gray:focus,
 .button-flat--gray:hover {
-  background: #777777;
+  background: #777;
   color: white !important;
 }
 
 .button-flat--white {
-  color: white !important;
+  color: #fff !important;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
 .button-flat--white:focus,
 .button-flat--white:hover {
-  background: white;
+  background: #fff;
   color: rgba(0, 0, 0, 0.95) !important;
 }
 
 .button-flat--black {
-  color: black !important;
+  color: #000 !important;
   background: transparent;
-  border: 2px solid black;
+  border: 2px solid #000;
 }
 .button-flat--black:focus,
 .button-flat--black:hover {
-  background: black;
+  background: #000;
   color: white !important;
 }
 
 .button-flat--red {
-  color: #e0393e !important;
+  color: #E0393E !important;
   background: transparent;
-  border: 2px solid #e0393e;
+  border: 2px solid #E0393E;
 }
 .button-flat--red:focus,
 .button-flat--red:hover {
-  background: #e0393e;
+  background: #E0393E;
   color: white !important;
 }
 
 .button-flat--green {
-  color: #62ac75 !important;
+  color: #62AC75 !important;
   background: transparent;
-  border: 2px solid #62ac75;
+  border: 2px solid #62AC75;
 }
 .button-flat--green:focus,
 .button-flat--green:hover {
-  background: #62ac75;
+  background: #62AC75;
   color: white !important;
 }
 
@@ -3151,13 +3124,13 @@ top of a background photo.
 */
 .button-photo,
 .button-photo--white {
-  color: white !important;
+  color: #fff !important;
   background: rgba(0, 0, 0, 0.25);
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
 .button-photo:hover,
 .button-photo--white:hover {
-  background: white;
+  background: #fff;
   color: rgba(0, 0, 0, 0.95) !important;
 }
 
@@ -3318,22 +3291,22 @@ A number of size classes are available:
 /* }}} */
 /* {{{ ---DEPRECATED--- gutter modifiers */
 .gutter-left {
-  margin-left: 16px;
+  margin-left: 18px;
 }
 
 .gutter-right {
-  margin-right: 16px;
+  margin-right: 18px;
 }
 
 /* }}} */
 /* {{{ Grid line with auto-gutters units (.line-gutters shares .line rules as defined above) */
 .line-gutters {
-  margin-bottom: 16px;
-  margin-right: -16px;
+  margin-bottom: 18px;
+  margin-right: -18px;
   /* pull last child to the right to meet the right edge of the page */
 }
 .line-gutters > .unit, .line-gutters > .lastUnit {
-  padding-right: 16px;
+  padding-right: 18px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -3397,16 +3370,19 @@ category: Layout
 
 Used for newer and more responsive layouts, where content lives on top of
 a full-width background instead of `docBox` modules. The `docStripe` container
-sets a full width background. The `docBounds` class is used as a padding helper
-and content wrapper.
+sets a full width background. 
+
+The `docBounds` class is used as a padding helper and content wrapper; it uses
+a max-width and min-width, but will otherwise flex to fit the width of the parent
+container.
 
 ```html_example
 
 	<!-- default stripe and color stripe -->
 	<div class="docStripe">
 		<div class="docBounds">
-			<h3>I'm in a stripe</h3>
-			<p>Any arbitrary content can go here</p>
+			<h3>I'm in a docBounds within a stripe</h3>
+			<p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
 		</div>
 	</div>
 	<div class="docStripe--red inverted">
@@ -3488,7 +3464,7 @@ Class                   | Description
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
-  padding: 16px 16px 8px 16px;
+  padding: 36px 36px 18px 36px;
 }
 
 /* }}} */
@@ -3538,7 +3514,7 @@ to span the full width of the box, and use `docSection` for padded content:
 .doc-box {
   border-radius: 3px;
   background-color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   border: 1px solid #dddddd !important;
   /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
@@ -3666,7 +3642,7 @@ to span the full width of the box, and use `docSection` for padded content:
 .doc-content,
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
-  padding: 16px;
+  padding: 18px;
   padding-bottom: 0;
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
@@ -3693,8 +3669,10 @@ __Note:__ This replaces the deprecated `doc-content` class
 			<p>second content container</p>
 		</div>
 	</div>
+```
 
-	<h5>Sections in a docStripe layout</h5>
+```html_example
+	<h5>Sections in a <a data-follow="true" href="#docstar">docStripe layout</a></h5>
 	<div class="docStripe--red inverted">
 		<div class="docBounds">
 			<div class="docSection">
@@ -3712,7 +3690,7 @@ __Note:__ This replaces the deprecated `doc-content` class
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
-  padding: 16px 16px 0 16px;
+  padding: 18px 18px 0 18px;
 }
 .docSection:first-child {
   border-top: none;
@@ -3721,7 +3699,7 @@ __Note:__ This replaces the deprecated `doc-content` class
   border-top-color: rgba(255, 255, 255, 0.2);
 }
 .docBounds > .docSection {
-  padding: 16px 0 0 0;
+  padding: 18px 0 0 0;
 }
 
 .suppress-hover-underline:hover {
@@ -3730,7 +3708,7 @@ __Note:__ This replaces the deprecated `doc-content` class
 
 .doc-controls {
   background: #dddddd;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 /**
@@ -3866,22 +3844,22 @@ category: Layout
   border-style: solid;
 }
 .doc-content-outof:after {
-  border: 8px solid white;
+  border: 9px solid white;
   border-left-color: transparent;
   border-right-color: transparent;
   border-top-width: 0;
-  top: -8px;
-  left: 24px;
-  margin-left: -8px;
+  top: -9px;
+  left: 27px;
+  margin-left: -9px;
 }
 .doc-content-outof:before {
-  border: 10px solid #dddddd;
+  border: 11px solid #dddddd;
   border-left-color: transparent;
   border-right-color: transparent;
   border-top-width: 0;
-  top: -10px;
-  left: 24px;
-  margin-left: -10px;
+  top: -11px;
+  left: 27px;
+  margin-left: -11px;
 }
 
 .doc-content-into {
@@ -3894,22 +3872,22 @@ category: Layout
   border-style: solid;
 }
 .doc-content-into:after {
-  border: 8px solid white;
+  border: 9px solid white;
   border-left-color: transparent;
   border-right-color: transparent;
   border-bottom-width: 0;
   top: -1px;
-  left: 24px;
-  margin-left: -8px;
+  left: 27px;
+  margin-left: -9px;
 }
 .doc-content-into:before {
-  border: 10px solid #dddddd;
+  border: 11px solid #dddddd;
   border-left-color: transparent;
   border-right-color: transparent;
   border-bottom-width: 0;
   top: -1px;
-  left: 24px;
-  margin-left: -10px;
+  left: 27px;
+  margin-left: -11px;
 }
 
 /**
@@ -3965,15 +3943,15 @@ hr.double-line {
 }
 
 .doc-box {
-  margin: 12px;
+  margin: 13.5px;
   margin-bottom: 0;
 }
 .doc-box:last-child {
-  margin-bottom: 12px;
+  margin-bottom: 13.5px;
 }
 
 .doc-content {
-  padding: 12px;
+  padding: 13.5px;
   padding-bottom: 0px;
 }
 
@@ -3982,7 +3960,7 @@ hr.double-line {
 }
 
 .doc-box-notice {
-  padding: 12px;
+  padding: 13.5px;
 }
 
 .doc-content-into.right:before, .doc-content-into.right:after, .doc-content-outof.right:before, .doc-content-outof.right:after {
@@ -4044,13 +4022,13 @@ Figure with description. Similar to OOCSS "media block".
   line-height: 0;
 }
 .figureset-figure img {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   /* if the description is shorter than the figure */
 }
 
 .figureset-description {
   width: auto;
-  padding-left: 12px;
+  padding-left: 13.5px;
   /**
   * magical content expander
   * pushes figureset-description to fill as much width of the figureset as possible
@@ -4098,7 +4076,7 @@ Figureset with figure on the right.
 */
 /* {{{ Right side figure */
 .figureset-right .figureset-description {
-  padding-right: 12px;
+  padding-right: 13.5px;
   padding-left: 0;
 }
 
@@ -4259,7 +4237,7 @@ Class            | Description
   padding: 0;
   list-style: none;
   vertical-align: top;
-  margin: 0 -16px 0 0;
+  margin: 0 -18px 0 0;
   font-size: 0;
 }
 .cardList > li {
@@ -4270,7 +4248,7 @@ Class            | Description
   border: 1px solid #dddddd;
   background: #fff;
   font-size: 16px;
-  margin: 0 8px 8px 0;
+  margin: 0 18px 18px 0;
   padding: 0;
   display: inline-block;
   zoom: 1;
@@ -4280,7 +4258,7 @@ Class            | Description
 }
 .cardList > li .doc-content {
   border-top: 1px solid #eeeeee;
-  padding: 8px 8px 0;
+  padding: 18px 18px 0;
 }
 .cardList > li .doc-content:first-child {
   border-top: 0;
@@ -4482,7 +4460,7 @@ You can represent multiple people or chapters with the `avatar--stack` class.
 .avatarBadge--leadTeam:before {
   border-color: white;
   color: white;
-  background-color: #e0393e;
+  background-color: #E0393E;
   border-radius: 80px;
   font-size: 14px;
   position: absolute;
@@ -4593,17 +4571,17 @@ Class                  | Example
 
 .pill-label--leader {
   background-color: #fce9ea;
-  color: #e0393e;
+  color: #E0393E;
   border: 1px solid;
 }
 
 .pill-label--paid {
-  color: #62ac75;
+  color: #62AC75;
   border: 1px solid;
 }
 
 .pill-label--unpaid {
-  color: #e0393e;
+  color: #E0393E;
   border: 1px solid;
 }
 
@@ -4639,20 +4617,20 @@ dark gradient for text overlay.
 }
 
 .nametag-photo-name {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(22, 24, 27, 0)), color-stop(32px, rgba(22, 24, 27, 0.7)), color-stop(100%, rgba(22, 24, 27, 0.9)));
-  background: -webkit-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
-  background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
-  background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
-  background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
-  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(22, 24, 27, 0)), color-stop(72px, rgba(22, 24, 27, 0.7)), color-stop(100%, rgba(22, 24, 27, 0.9)));
+  background: -webkit-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  line-height: 12px;
+  line-height: 27px;
   display: block;
   color: #fff;
-  padding: 36px 8px 0;
+  padding: 81px 18px 0;
   orphans: 2;
   vertical-align: bottom;
   width: 100%;
@@ -4703,8 +4681,8 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 */
 .navTabs,
 .nav-tabs {
-  padding-top: 4px;
-  padding-left: 4px;
+  padding-top: 9px;
+  padding-left: 9px;
   border-bottom: 1px solid;
   border-color: #e6e6e6;
   border-color: rgba(0, 0, 0, 0.1);
@@ -4715,7 +4693,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 .nav-tabs li {
   float: left;
   padding: 0;
-  margin-right: 4px;
+  margin-right: 9px;
   margin-bottom: -1px;
 }
 .navTabs a,
@@ -4730,7 +4708,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   border: 1px solid;
   border-color: #e6e6e6;
   border-color: rgba(0, 0, 0, 0.1);
-  padding: 2.66667px 6px;
+  padding: 6px 13.5px;
 }
 .navTabs a img,
 .nav-tabs a img {
@@ -4782,12 +4760,12 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 .navTabs a,
 .nav-tabs a {
   border-radius: 0;
-  padding: 6px;
+  padding: 13.5px;
   border-left-width: 0;
 }
 .navTabs:first-child,
 .nav-tabs:first-child {
-  padding-top: 4px;
+  padding-top: 9px;
 }
 .navTabs.nav-tabs--subtle a,
 .nav-tabs.nav-tabs--subtle a {
@@ -4846,7 +4824,7 @@ category: Navigation
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border-bottom: #e0393e;
+  border-bottom: #E0393E;
 }
 
 .tabControl-tab {
@@ -4854,7 +4832,7 @@ category: Navigation
 }
 
 .tabControl-link {
-  padding: 5.33333px 8px;
+  padding: 6px 9px;
   display: block;
   text-decoration: none;
 }
@@ -4863,7 +4841,7 @@ category: Navigation
   color: rgba(0, 0, 0, 0.67);
 }
 .tabControl-link:hover, .tabControl-link:active {
-  color: #e0393e;
+  color: #E0393E;
 }
 .inverted .tabControl-link:link, .inverted .tabControl-link:visited {
   color: #ababab;
@@ -4874,7 +4852,7 @@ category: Navigation
 }
 
 .tabControl-tab--selected .tabControl-link {
-  color: #e0393e;
+  color: #E0393E;
   border: solid 0;
   border-bottom-width: 4px;
 }
@@ -4938,7 +4916,7 @@ category: Navigation
 .nav-pagination {
   font-size: 15px;
   list-style-type: none;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   padding: 0;
 }
 .nav-pagination a, .nav-pagination .nav-button {
@@ -5009,13 +4987,13 @@ For "see more" type append paging.
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 700;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: #2a9bc7;
+  color: #2A9BC7;
   padding: 0.33em 0;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 .nav-appendPager:focus, .nav-appendPager:hover {
   background-color: #eeeeee;
@@ -5070,7 +5048,7 @@ DEPRECATED: you should probably use segmented control instead
   -ms-background-clip: padding-box;
   background-clip: padding-box;
   list-style-type: none;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   padding-left: 0;
   line-height: 1.5;
   border: 1px solid #dddddd;
@@ -5134,7 +5112,7 @@ DEPRECATED: you should probably use segmented control instead
 .nav-buttons label,
 .nav-buttons li > a,
 .nav-buttons li > span {
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding: 0.5em 1.2em 0.4em;
@@ -5167,8 +5145,8 @@ DEPRECATED: you should probably use segmented control instead
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
-  background: -moz-linear-gradient(top, white, #f2f2f2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fff, #f2f2f2);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   border: none;
   color: #555555;
@@ -5431,7 +5409,7 @@ Element type       | Use
   border-left: 1px solid #dddddd;
   border-radius: 3px 0 0 3px;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .segmented-control-segment {
@@ -5445,8 +5423,8 @@ Element type       | Use
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
-  background: -moz-linear-gradient(top, white, #f2f2f2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fff, #f2f2f2);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -5460,7 +5438,7 @@ Element type       | Use
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Whitney", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -6061,7 +6039,7 @@ form-oriented disclosure items */
   background-color: #f7f7f7;
 }
 .touchList-item--alert .touchList-label {
-  color: #e0393e;
+  color: #E0393E;
   font-weight: bold;
   padding-bottom: 0;
 }
@@ -7164,7 +7142,7 @@ label.touchList-pseudoplaceholder {
 }
 
 .touchList-item--select.error .touchList-item--select-mask {
-  background-color: #fbe1e3;
+  background-color: #FBE1E3;
 }
 
 .touchList-item--select-mask-arrow {
@@ -7261,7 +7239,7 @@ label.touchList-pseudoplaceholder--textarea {
 
 input:checked + .icon-radio,
 input.checked + .icon-radio {
-  color: #2a9bc7;
+  color: #2A9BC7;
 }
 input:checked + .icon-radio:before,
 input.checked + .icon-radio:before {
@@ -7274,7 +7252,7 @@ input.checked + .icon-radio:after {
 
 input:checked + .icon-checkbox,
 input.checked + .icon-checkbox {
-  color: #2a9bc7;
+  color: #2A9BC7;
 }
 input:checked + .icon-checkbox:before,
 input.checked + .icon-checkbox:before {
@@ -7287,7 +7265,7 @@ input.checked + .icon-checkbox:after {
 
 input:checked + .icon-checkbox-filled,
 input.checked + .icon-checkbox-filled {
-  color: #2a9bc7;
+  color: #2A9BC7;
 }
 input:checked + .icon-checkbox-filled:before,
 input.checked + .icon-checkbox-filled:before {
@@ -7309,8 +7287,8 @@ input.checked + .icon-checkbox-filled:after {
 /*  ERROR AND HELPER TEXT STYLES  */
 /* Error States */
 .error {
-  background-color: #fbe1e3;
-  border-bottom: 1px solid #e0393e;
+  background-color: #FBE1E3;
+  border-bottom: 1px solid #E0393E;
 }
 
 /**
@@ -7347,7 +7325,7 @@ label.touchList-helperText:empty {
   margin: 0;
 }
 .error label.touchList-helperText {
-  color: #e0393e;
+  color: #E0393E;
 }
 .ffbox--touchList-item label.touchList-helperText {
   padding-bottom: 0;
@@ -7447,7 +7425,7 @@ Example                                                                  | Descr
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   font-size: 0;
-  margin: 0 -8px 0 0;
+  margin: 0 -18px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -7461,7 +7439,7 @@ Example                                                                  | Descr
   vertical-align: top;
   display: inline-block;
   width: 50%;
-  padding: 0 8px 0 0;
+  padding: 0 18px 0 0;
   margin: 0;
 }
 
@@ -7561,7 +7539,7 @@ Class               | Example
   background: pink;
   color: #555;
   font-family: Consolas, Monaco, monospace;
-  padding: 4px;
+  padding: 9px;
 }
 .debug:before {
   color: blue;
@@ -7569,7 +7547,7 @@ Class               | Example
 }
 
 .highlighted {
-  background: #fdf77b;
+  background: #FDF77B;
 }
 
 .shaded {
@@ -7581,7 +7559,7 @@ Class               | Example
 }
 
 .shaded-red {
-  background-color: #e0393e;
+  background-color: #E0393E;
   color: white;
 }
 
@@ -7624,22 +7602,22 @@ Class            | Example
 */
 .padding-top,
 .leading-top {
-  padding-top: 8px;
+  padding-top: 18px;
 }
 
 .padding-bottom,
 .leading-bottom {
-  padding-bottom: 8px;
+  padding-bottom: 18px;
 }
 
 .leading-left,
 .padding-left {
-  padding-left: 8px;
+  padding-left: 18px;
 }
 
 .leading-right,
 .padding-right {
-  padding-right: 8px;
+  padding-right: 18px;
 }
 
 .leading-none,
@@ -7649,7 +7627,7 @@ Class            | Example
 
 .leading-all,
 .padding-all {
-  padding: 8px;
+  padding: 18px;
 }
 
 /*doc
@@ -7671,19 +7649,19 @@ Class               | Example
 
 */
 .margin-top {
-  margin-top: 8px;
+  margin-top: 18px;
 }
 
 .margin-bottom {
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 .margin-left {
-  margin-left: 8px;
+  margin-left: 18px;
 }
 
 .margin-right {
-  margin-right: 8px;
+  margin-right: 18px;
 }
 
 .margin-none {
@@ -7691,7 +7669,7 @@ Class               | Example
 }
 
 .margin-all {
-  margin: 8px;
+  margin: 18px;
 }
 
 .margin-centered {
@@ -7994,15 +7972,85 @@ Styles a link as body text color.
 	<a class="unlink">It's a link, but it doesn't look like one</a>
 ```
 
+```html_example
+	<div class="docBox docSection span-25">
+		<a class="unlink">
+			<h3>Block level anchors...</h3>
+			<p>How do they work?</p>
+		</a>
+	</div>
+```
+
 */
-.unlink {
-  color: #545454 !important;
+.unlink,
+.unlink:link,
+.unlink:visited,
+.unlink:hover,
+.unlink:active {
   color: rgba(0, 0, 0, 0.67) !important;
   text-decoration: none !important;
 }
-.inverted .unlink {
+.unlink h1, .unlink h2, .unlink h3, .unlink h4, .unlink h5, .unlink h6,
+.unlink:link h1,
+.unlink:link h2,
+.unlink:link h3,
+.unlink:link h4,
+.unlink:link h5,
+.unlink:link h6,
+.unlink:visited h1,
+.unlink:visited h2,
+.unlink:visited h3,
+.unlink:visited h4,
+.unlink:visited h5,
+.unlink:visited h6,
+.unlink:hover h1,
+.unlink:hover h2,
+.unlink:hover h3,
+.unlink:hover h4,
+.unlink:hover h5,
+.unlink:hover h6,
+.unlink:active h1,
+.unlink:active h2,
+.unlink:active h3,
+.unlink:active h4,
+.unlink:active h5,
+.unlink:active h6 {
+  color: rgba(0, 0, 0, 0.95) !important;
+}
+.inverted .unlink, .inverted
+.unlink:link, .inverted
+.unlink:visited, .inverted
+.unlink:hover, .inverted
+.unlink:active {
   color: #ababab !important;
   color: rgba(255, 255, 255, 0.67) !important;
+}
+.inverted .unlink h1, .inverted .unlink h2, .inverted .unlink h3, .inverted .unlink h4, .inverted .unlink h5, .inverted .unlink h6, .inverted
+.unlink:link h1, .inverted
+.unlink:link h2, .inverted
+.unlink:link h3, .inverted
+.unlink:link h4, .inverted
+.unlink:link h5, .inverted
+.unlink:link h6, .inverted
+.unlink:visited h1, .inverted
+.unlink:visited h2, .inverted
+.unlink:visited h3, .inverted
+.unlink:visited h4, .inverted
+.unlink:visited h5, .inverted
+.unlink:visited h6, .inverted
+.unlink:hover h1, .inverted
+.unlink:hover h2, .inverted
+.unlink:hover h3, .inverted
+.unlink:hover h4, .inverted
+.unlink:hover h5, .inverted
+.unlink:hover h6, .inverted
+.unlink:active h1, .inverted
+.unlink:active h2, .inverted
+.unlink:active h3, .inverted
+.unlink:active h4, .inverted
+.unlink:active h5, .inverted
+.unlink:active h6 {
+  color: white !important;
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
@@ -8068,7 +8116,7 @@ Mobile Sassquatch includes these classes for floating elements.
 }
 
 .spaced-right {
-  margin-right: 8px;
+  margin-right: 18px;
 }
 
 .spaced-right-slight {
@@ -8076,7 +8124,7 @@ Mobile Sassquatch includes these classes for floating elements.
 }
 
 .spaced-left {
-  margin-left: 8px;
+  margin-left: 18px;
 }
 
 .flush-bottom {
@@ -8146,7 +8194,7 @@ Mobile Sassquatch provides a gutter helper that uses `margin-right`:
 
 */
 .gutter-right {
-  margin-right: 2px;
+  margin-right: 4.5px;
 }
 
 /*doc
@@ -8202,3 +8250,5 @@ Class            | Description
 }
 
 /* }}} */
+
+/*# sourceMappingURL=sassquatch.css.map */

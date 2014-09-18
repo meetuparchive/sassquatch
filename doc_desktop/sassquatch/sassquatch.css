@@ -351,6 +351,7 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 html, body {
@@ -363,16 +364,6 @@ html, body {
   background-color: #e7e7e7;
   margin: 0;
   padding: 0;
-}
-
-::-moz-selection {
-  background: #e0393e;
-  color: #fff;
-}
-
-::selection {
-  background: #e0393e;
-  color: #fff;
 }
 
 /*doc
@@ -402,14 +393,6 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 .inverted {
   color: #ababab;
   color: rgba(255, 255, 255, 0.67);
-}
-.inverted ::-moz-selection {
-  background: white;
-  color: #e0393e;
-}
-.inverted ::selection {
-  background: white;
-  color: #e0393e;
 }
 
 /*doc
@@ -1083,6 +1066,7 @@ button, input[type=button], input[type=reset], input[type=submit] {
 textarea {
   overflow: auto;
   vertical-align: top;
+  resize: vertical;
 }
 
 /* }}} */
@@ -1226,7 +1210,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #2a9bc7;
+  border-color: #2A9BC7;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.333), 0 0 6px rgba(42, 155, 199, 0.5);
   -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.333), 0 0 6px rgba(42, 155, 199, 0.5);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.333), 0 0 6px rgba(42, 155, 199, 0.5);
@@ -1293,12 +1277,12 @@ Error states are applied with an `error` class on the input element.
 label.required:after {
   margin-left: 0.15em;
   content: "*";
-  color: #e0393e;
+  color: #E0393E;
 }
 
 input.error, select.error, textarea.error {
-  background-color: #fbe1e3;
-  border-color: #e0393e;
+  background-color: #FBE1E3;
+  border-color: #E0393E;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 0;
@@ -1710,8 +1694,8 @@ input[type="submit"].primary,
 input[type="submit"].button--primary {
   -webkit-box-shadow: #851518 0px 2px 0px 0px;
   box-shadow: #851518 0px 2px 0px 0px;
-  color: white !important;
-  background: #e0393e;
+  color: #fff !important;
+  background: #E0393E;
 }
 .primary.button--active,
 .primary:active,
@@ -1790,15 +1774,15 @@ input[type="submit"].primary.disabled:hover,
 input[type="submit"].primary:disabled:hover,
 input[type="submit"].button--primary.disabled:hover,
 input[type="submit"].button--primary:disabled:hover {
-  background: #e0393e !important;
+  background: #E0393E !important;
 }
 
 .button--black,
 input[type="submit"].button--black {
   -webkit-box-shadow: black 0px 2px 0px 0px;
   box-shadow: black 0px 2px 0px 0px;
-  color: white !important;
-  background: black;
+  color: #fff !important;
+  background: #000;
 }
 .button--black.button--active,
 .button--black:active,
@@ -1837,15 +1821,15 @@ input[type="submit"].button--black:disabled:active {
 .button--black:disabled:hover,
 input[type="submit"].button--black.disabled:hover,
 input[type="submit"].button--black:disabled:hover {
-  background: black !important;
+  background: #000 !important;
 }
 
 .button--white,
 input[type="submit"].button--black {
   -webkit-box-shadow: #bfbfbf 0px 2px 0px 0px;
   box-shadow: #bfbfbf 0px 2px 0px 0px;
-  color: #e0393e !important;
-  background: white;
+  color: #E0393E !important;
+  background: #fff;
 }
 .button--white.button--active,
 .button--white:active,
@@ -1884,7 +1868,7 @@ input[type="submit"].button--black:disabled:active {
 .button--white:disabled:hover,
 input[type="submit"].button--black.disabled:hover,
 input[type="submit"].button--black:disabled:hover {
-  background: white !important;
+  background: #fff !important;
 }
 
 .button--blue,
@@ -1939,7 +1923,7 @@ input[type="submit"].button--green {
   -webkit-box-shadow: #315d3d 0px 2px 0px 0px;
   box-shadow: #315d3d 0px 2px 0px 0px;
   color: white !important;
-  background: #62ac75;
+  background: #62AC75;
 }
 .button--green.button--active,
 .button--green:active,
@@ -1978,7 +1962,7 @@ input[type="submit"].button--green:disabled:active {
 .button--green:disabled:hover,
 input[type="submit"].button--green.disabled:hover,
 input[type="submit"].button--green:disabled:hover {
-  background: #62ac75 !important;
+  background: #62AC75 !important;
 }
 
 input[type="submit"]:active {
@@ -2009,59 +1993,59 @@ Flat buttons should almost always be used for `<a>` elements.
 */
 .button-flat,
 .button-flat--gray {
-  color: #777777 !important;
+  color: #777 !important;
   background: transparent;
-  border: 2px solid #777777;
+  border: 2px solid #777;
 }
 .button-flat:focus,
 .button-flat:hover,
 .button-flat--gray:focus,
 .button-flat--gray:hover {
-  background: #777777;
+  background: #777;
   color: white !important;
 }
 
 .button-flat--white {
-  color: white !important;
+  color: #fff !important;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
 .button-flat--white:focus,
 .button-flat--white:hover {
-  background: white;
+  background: #fff;
   color: rgba(0, 0, 0, 0.95) !important;
 }
 
 .button-flat--black {
-  color: black !important;
+  color: #000 !important;
   background: transparent;
-  border: 2px solid black;
+  border: 2px solid #000;
 }
 .button-flat--black:focus,
 .button-flat--black:hover {
-  background: black;
+  background: #000;
   color: white !important;
 }
 
 .button-flat--red {
-  color: #e0393e !important;
+  color: #E0393E !important;
   background: transparent;
-  border: 2px solid #e0393e;
+  border: 2px solid #E0393E;
 }
 .button-flat--red:focus,
 .button-flat--red:hover {
-  background: #e0393e;
+  background: #E0393E;
   color: white !important;
 }
 
 .button-flat--green {
-  color: #62ac75 !important;
+  color: #62AC75 !important;
   background: transparent;
-  border: 2px solid #62ac75;
+  border: 2px solid #62AC75;
 }
 .button-flat--green:focus,
 .button-flat--green:hover {
-  background: #62ac75;
+  background: #62AC75;
   color: white !important;
 }
 
@@ -2082,13 +2066,13 @@ top of a background photo.
 */
 .button-photo,
 .button-photo--white {
-  color: white !important;
+  color: #fff !important;
   background: rgba(0, 0, 0, 0.25);
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
 .button-photo:hover,
 .button-photo--white:hover {
-  background: white;
+  background: #fff;
   color: rgba(0, 0, 0, 0.95) !important;
 }
 
@@ -2328,16 +2312,19 @@ category: Layout
 
 Used for newer and more responsive layouts, where content lives on top of
 a full-width background instead of `docBox` modules. The `docStripe` container
-sets a full width background. The `docBounds` class is used as a padding helper
-and content wrapper.
+sets a full width background. 
+
+The `docBounds` class is used as a padding helper and content wrapper; it uses
+a max-width and min-width, but will otherwise flex to fit the width of the parent
+container.
 
 ```html_example
 
 	<!-- default stripe and color stripe -->
 	<div class="docStripe">
 		<div class="docBounds">
-			<h3>I'm in a stripe</h3>
-			<p>Any arbitrary content can go here</p>
+			<h3>I'm in a docBounds within a stripe</h3>
+			<p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
 		</div>
 	</div>
 	<div class="docStripe--red inverted">
@@ -2624,8 +2611,10 @@ __Note:__ This replaces the deprecated `doc-content` class
 			<p>second content container</p>
 		</div>
 	</div>
+```
 
-	<h5>Sections in a docStripe layout</h5>
+```html_example
+	<h5>Sections in a <a data-follow="true" href="#docstar">docStripe layout</a></h5>
 	<div class="docStripe--red inverted">
 		<div class="docBounds">
 			<div class="docSection">
@@ -3237,7 +3226,7 @@ as the only conveyance of the event date.
 }
 .tearsheet .month, .tearsheet--small .month, .tearsheet--big .month {
   text-transform: uppercase;
-  background-color: #e0393e;
+  background-color: #E0393E;
   color: white;
   display: block;
 }
@@ -3447,7 +3436,7 @@ You can represent multiple people or chapters with the `avatar--stack` class.
 .avatarBadge--leadTeam:before {
   border-color: white;
   color: white;
-  background-color: #e0393e;
+  background-color: #E0393E;
   border-radius: 80px;
   font-size: 14px;
   position: absolute;
@@ -3558,17 +3547,17 @@ Class                  | Example
 
 .pill-label--leader {
   background-color: #fce9ea;
-  color: #e0393e;
+  color: #E0393E;
   border: 1px solid;
 }
 
 .pill-label--paid {
-  color: #62ac75;
+  color: #62AC75;
   border: 1px solid;
 }
 
 .pill-label--unpaid {
-  color: #e0393e;
+  color: #E0393E;
   border: 1px solid;
 }
 
@@ -3769,7 +3758,7 @@ category: Navigation
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border-bottom: #e0393e;
+  border-bottom: #E0393E;
 }
 
 .tabControl-tab {
@@ -3786,7 +3775,7 @@ category: Navigation
   color: rgba(0, 0, 0, 0.67);
 }
 .tabControl-link:hover, .tabControl-link:active {
-  color: #e0393e;
+  color: #E0393E;
 }
 .inverted .tabControl-link:link, .inverted .tabControl-link:visited {
   color: #ababab;
@@ -3797,7 +3786,7 @@ category: Navigation
 }
 
 .tabControl-tab--selected .tabControl-link {
-  color: #e0393e;
+  color: #E0393E;
   border: solid 0;
   border-bottom-width: 4px;
 }
@@ -3936,7 +3925,7 @@ For "see more" type append paging.
   font-weight: 700;
   font-weight: 400;
   letter-spacing: 0.04em;
-  color: #2a9bc7;
+  color: #2A9BC7;
   padding: 0.33em 0;
   margin-bottom: 18px;
 }
@@ -4090,8 +4079,8 @@ DEPRECATED: you should probably use segmented control instead
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
-  background: -moz-linear-gradient(top, white, #f2f2f2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fff, #f2f2f2);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   border: none;
   color: #555555;
@@ -4368,8 +4357,8 @@ Element type       | Use
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: #f2f2f2;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f2f2f2));
-  background: -moz-linear-gradient(top, white, #f2f2f2);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f2f2));
+  background: -moz-linear-gradient(top, #fff, #f2f2f2);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -4791,7 +4780,7 @@ Class               | Example
 }
 
 .highlighted {
-  background: #fdf77b;
+  background: #FDF77B;
 }
 
 .shaded {
@@ -4803,7 +4792,7 @@ Class               | Example
 }
 
 .shaded-red {
-  background-color: #e0393e;
+  background-color: #E0393E;
   color: white;
 }
 
@@ -5216,15 +5205,85 @@ Styles a link as body text color.
 	<a class="unlink">It's a link, but it doesn't look like one</a>
 ```
 
+```html_example
+	<div class="docBox docSection span-25">
+		<a class="unlink">
+			<h3>Block level anchors...</h3>
+			<p>How do they work?</p>
+		</a>
+	</div>
+```
+
 */
-.unlink {
-  color: #545454 !important;
+.unlink,
+.unlink:link,
+.unlink:visited,
+.unlink:hover,
+.unlink:active {
   color: rgba(0, 0, 0, 0.67) !important;
   text-decoration: none !important;
 }
-.inverted .unlink {
+.unlink h1, .unlink h2, .unlink h3, .unlink h4, .unlink h5, .unlink h6,
+.unlink:link h1,
+.unlink:link h2,
+.unlink:link h3,
+.unlink:link h4,
+.unlink:link h5,
+.unlink:link h6,
+.unlink:visited h1,
+.unlink:visited h2,
+.unlink:visited h3,
+.unlink:visited h4,
+.unlink:visited h5,
+.unlink:visited h6,
+.unlink:hover h1,
+.unlink:hover h2,
+.unlink:hover h3,
+.unlink:hover h4,
+.unlink:hover h5,
+.unlink:hover h6,
+.unlink:active h1,
+.unlink:active h2,
+.unlink:active h3,
+.unlink:active h4,
+.unlink:active h5,
+.unlink:active h6 {
+  color: rgba(0, 0, 0, 0.95) !important;
+}
+.inverted .unlink, .inverted
+.unlink:link, .inverted
+.unlink:visited, .inverted
+.unlink:hover, .inverted
+.unlink:active {
   color: #ababab !important;
   color: rgba(255, 255, 255, 0.67) !important;
+}
+.inverted .unlink h1, .inverted .unlink h2, .inverted .unlink h3, .inverted .unlink h4, .inverted .unlink h5, .inverted .unlink h6, .inverted
+.unlink:link h1, .inverted
+.unlink:link h2, .inverted
+.unlink:link h3, .inverted
+.unlink:link h4, .inverted
+.unlink:link h5, .inverted
+.unlink:link h6, .inverted
+.unlink:visited h1, .inverted
+.unlink:visited h2, .inverted
+.unlink:visited h3, .inverted
+.unlink:visited h4, .inverted
+.unlink:visited h5, .inverted
+.unlink:visited h6, .inverted
+.unlink:hover h1, .inverted
+.unlink:hover h2, .inverted
+.unlink:hover h3, .inverted
+.unlink:hover h4, .inverted
+.unlink:hover h5, .inverted
+.unlink:hover h6, .inverted
+.unlink:active h1, .inverted
+.unlink:active h2, .inverted
+.unlink:active h3, .inverted
+.unlink:active h4, .inverted
+.unlink:active h5, .inverted
+.unlink:active h6 {
+  color: white !important;
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
@@ -5263,3 +5322,5 @@ Class                | Description
 }
 
 /* }}} */
+
+/*# sourceMappingURL=sassquatch.css.map */

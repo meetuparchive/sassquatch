@@ -4,6 +4,7 @@
 		font-size: 100%;
 		-webkit-text-size-adjust: 100%;
 		-ms-text-size-adjust: 100%;
+		text-rendering: optimizeLegibility;
 	}
 	html, body {
 		@include color_textSecondary();
@@ -14,15 +15,6 @@
 		background-color: $C_backgroundCollection;
 		margin: 0;
 		padding: 0;
-	}
-
-	::-moz-selection {
-		background: $C_red;
-		color: #fff;
-	}
-	::selection {
-		background: $C_red;
-		color: #fff;
 	}
 
 /*doc
@@ -51,15 +43,6 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 */
 	.inverted {
 		@include color_textSecondaryInverted();
-
-		::-moz-selection {
-			background: opacify(#fff, 1);
-			color: $C_red;
-		}
-		::selection {
-			background: opacify(#fff, 1);
-			color: $C_red;
-		}
 	}
 
 /*doc

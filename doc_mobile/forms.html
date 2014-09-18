@@ -923,9 +923,11 @@ as a drop-in replacement for <code>_forms.scss</code> in Mobile Sassquatch.</p>
 		window.onload = function() {
 			var links = document.querySelectorAll('.codeExample a');
 			for ( i=0; i<links.length; i++ ) {
-				links[i].onclick = function() {
-					return false;
-				};
+				if ( !links[i].dataset.follow ) {
+					links[i].onclick = function() {
+						return false;
+					};
+				}
 			}
 		};
 	</script>
