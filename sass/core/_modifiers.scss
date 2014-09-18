@@ -7,13 +7,13 @@ name: highlightModifiers
 category: Modifiers
 ---
 
-Class               | Example
---------------------| -----------------------------------------------
-`debug`             | <p class="debug">Example paragraph</p>
-`highlighted`       | <p class="highlighted">Example paragraph</p>
-`shaded`            | <p class="shaded">Example paragraph</p>
-`shaded-lighter`    | <p class="shaded-lighter">Example paragraph</p>
-`shaded-red`        | <p class="shaded-red">Example paragraph</p>
+Class                | Example
+---------------------| -----------------------------------------------
+`debug`              | <p class="debug">Example paragraph</p>
+`highlighted`        | <p class="highlighted">Example paragraph</p>
+`shaded`             | <p class="shaded">Example paragraph</p>
+`shaded--lighter`    | <p class="shaded-lighter">Example paragraph</p>
+`shaded--red`        | <p class="shaded-red">Example paragraph</p>
 
 */
 .debug {
@@ -33,16 +33,19 @@ Class               | Example
 .shaded {
 	background-color: $C_gray;
 }
-.shaded-lighter {
+.shaded-lighter,
+.shaded--lighter {
 	background-color:$C_gray_lightest;
 }
-.shaded-red {
+.shaded-red,
+.shaded--red {
 	background-color: $C_red;
 	color: white;
 }
 
 // TODO: we probably shouldn't keep this in sassquatch; we only use it once in chapstick
-.shaded-pixelate {
+.shaded-pixelate,
+.shaded--pixelate {
 	// this is a translucent 128x128 overlay that darkens squares of the underlying color
 	// to make it appear blocky/giant-pixelated. It's a cool effect, show your friends!
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWxDQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8KAAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6bAwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
