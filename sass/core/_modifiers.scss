@@ -512,6 +512,67 @@ Class                | Description
 /* }}} */
 
 
+/* {{{ Media Query helpers */
+
+/*doc
+---
+title: Media Query Helpers
+name: mediaModifiers
+category: Modifiers
+---
+
+Media query modifiers allow you to declare that a modification be applied
+at a specific breakpoint.
+
+### Usage
+The grammer for these modifiers is as follows:
+
+```
+._at[Size (ie. "Small", "Medium", "Large", "Huge"]--[modification]
+```
+
+### Supported modifications
+**NOTE:** Only "small" breakpoint shown below example
+
+Class                      | Description
+---------------------------| ---------------------------------------------
+`._atSmall--displayNone`   | Hides element when viewport is 'small' or below
+`._atSmall--displayBlock`  | Sets display to block when viewport 'small' or below
+`._atSmall--center`        | Centers element when viewport 'small' or below
+
+*/
+
+/* }}} */
+@mixin mediaModifier( $size, $modification ) {
+	@include atMedia( $size ) {
+		._at#{capitalizeFirstLetter($size)}--#{$modification} {
+			@content;
+		}
+	}
+}
+
+@each $size in ( "small" "medium" "large" "huge" ) {
+
+	// displayNone
+	@include mediaModifier( $size, 'displayNone' ) {
+		display: none;
+	}
+
+	// displayBlock (linearize)
+	@include mediaModifier( $size, 'displayBlock' ) {
+		display: block;
+	}
+
+	// center
+	@include mediaModifier( $size, 'center' ) {
+		text-align: center;
+		margin: inherit auto;
+	}
+}
+
+
+
+
 @if $platform == "mobile" {
 	/* typographic + layout additions {{{ */
 
