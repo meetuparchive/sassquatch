@@ -1,12 +1,31 @@
 // outputs legacy prop-direction and PCV-compliant classes;
 // outputs "half" variants for PCV classes
 @mixin spacingModifier( $property, $direction ) {
-	.#{property}-#{$direction}, // ie. margin-bottom
-	.#{property}#{capitalizeFirstLetter($direction)} { // ie. marginBottom
-		#{property}-#{$direction}: $baseline;
+
+	$styleProp: #{$property}-#{$direction};
+	$styleValue: $baseline;
+
+	@if $direction == 'all' {
+		$styleProp: #{$property};
+		$styleValue: $baseline;
+
+	} @else if $direction == 'none' {
+		$styleProp: #{$property};
+		$styleValue: 0 !important;
+
 	}
-	.#{property}#{capitalizeFirstLetter($direction)}--half {
-		#{property}-#{$direction}: $baseline * 0.5;
+
+	// directional modifier
+	.#{$property}-#{$direction}, // legacy support
+	.#{$property}#{capitalizeFirstLetter($direction)} { // PCV class
+		#{$styleProp}: #{$styleValue};
+	}
+
+	// half variant for direction in PCV class
+	@if $direction != 'none' {
+		.#{$property}#{capitalizeFirstLetter($direction)}--half {
+			#{$styleProp}: $styleValue/2;
+		}
 	}
 }
 
@@ -112,19 +131,14 @@ Class                 | Example
 `paddingAll--half`    | <div class="inline-block guide-shade paddingAll--half">Example div</div>
 
 */
-@each $direction in ( "top" "right" "bottom" "left" ) {
+@each $direction in ( "top" "right" "bottom" "left" "all" "none" ) {
 	@include spacingModifier( 'padding', #{$direction} );
 }
-.padding-none,
-.paddingNone {
-	padding: 0 !important;
+.leading-top { // legacy support
+	padding-top: $baseline;
 }
-.padding-all,
-.paddingAll {
-	padding: $spacing;
-}
-.paddingAll--half {
-	padding: $spacing/2;
+.leading-bottom { // legacy support
+	padding-bottom: $baseline;
 }
 
 
@@ -158,20 +172,10 @@ Class                    | Example
 `marginBottom--half`     | <div class="inline-block guide-shade marginBottom--half">Example div</div>
 `marginAll--half`        | <div class="inline-block guide-shade marginAll--half">Example div</div>
 */
-@each $direction in ( "top" "right" "bottom" "left" ) {
+@each $direction in ( "top" "right" "bottom" "left" "all" "none" ) {
 	@include spacingModifier( 'margin', #{$direction} );
 }
-.margin-none {
-	margin: 0 !important;
-}
-.margin-all,
-.marginAll {
-	margin: $spacing;
-}
-.marginAll--half {
-	margin: $spacing;
-}
-.margin-centered,
+.margin-centered, // legacy support
 .marginCentered {
 	margin-left: auto;
 	margin-right: auto;
