@@ -266,10 +266,10 @@
 				<tspan x="1022" dy="1.2em">rgb(64, 197, 255) opacity(0.2)</tspan>
 			</text>
 		
-			<circle cx="981" cy="165" r="25" fill="rgb(98, 172, 117)" opacity="1" />
+			<circle cx="981" cy="165" r="25" fill="rgb(46, 177, 53)" opacity="1" />
 			<text x="1022" y="140" font-size="12" >
 				<tspan x="1022" dy="1.2em" font-weight="bold">money</tspan>
-				<tspan x="1022" dy="1.2em">rgb(98, 172, 117) opacity(1)</tspan>
+				<tspan x="1022" dy="1.2em">rgb(46, 177, 53) opacity(1)</tspan>
 			</text>
 		
 		

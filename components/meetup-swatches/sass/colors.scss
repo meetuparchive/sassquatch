@@ -89,10 +89,10 @@ $C_buttonTertiaryBorder: rgba(255,255,255,0.47);
 // MISC ()
 $C_overlayPressed: rgba(64,197,255,0.2);
 @mixin color_overlayPressed($style: 'color') { #{$style}: lighten( rgb(64,197,255), 80%); #{$style}: $C_overlayPressed; }
-$C_money: rgb(98,172,117);
+$C_money: rgb(46,177,53);
 @mixin color_money($style: 'color') { #{$style}: $C_money; }
  
-// SOCIAL (third party colors)
+// EXTERNAL (third party colors)
 $C_facebook: rgb(59,89,152);
 @mixin color_facebook($style: 'color') { #{$style}: $C_facebook; }
 $C_twitter: rgb(51,204,255);
@@ -111,4 +111,6 @@ $C_instagram: rgb(78,67,60);
 @mixin color_instagram($style: 'color') { #{$style}: $C_instagram; }
 $C_reddit: rgb(206,227,248);
 @mixin color_reddit($style: 'color') { #{$style}: $C_reddit; }
+$C_wepay: rgb(72,145,220);
+@mixin color_wepay($style: 'color') { #{$style}: $C_wepay; }
  
