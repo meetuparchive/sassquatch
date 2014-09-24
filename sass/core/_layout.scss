@@ -400,9 +400,9 @@ to span the full width of the box, and use `docSection` for padded content:
 .doc-padding,	/* generic padding helper (does nothing else) */
 .doc-content,	/* content sectioning element (padds and divides, depending on nesting...) */
 .doc-controls {	/* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
+	@include uncollapse();
 	padding: $baseline;
 	padding-bottom: 0;
-	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
 
 /*doc
