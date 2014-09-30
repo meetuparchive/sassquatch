@@ -1,3 +1,35 @@
+// outputs legacy prop-direction and PCV-compliant classes;
+// outputs "half" variants for PCV classes
+@mixin spacingModifier( $property, $direction ) {
+
+	$styleProp: #{$property}-#{$direction};
+	$styleValue: $baseline;
+
+	@if $direction == 'all' {
+		$styleProp: #{$property};
+		$styleValue: $baseline;
+
+	} @else if $direction == 'none' {
+		$styleProp: #{$property};
+		$styleValue: 0 !important;
+
+	}
+
+	// directional modifier
+	.#{$property}-#{$direction}, // legacy support
+	.#{$property}#{capitalizeFirstLetter($direction)} { // PCV class
+		#{$styleProp}: #{$styleValue};
+	}
+
+	// half variant for direction in PCV class
+	@if $direction != 'none' {
+		.#{$property}#{capitalizeFirstLetter($direction)}--half {
+			#{$styleProp}: $styleValue/2;
+		}
+	}
+}
+
+
 /* {{{ Typography modifiers */
 
 /*doc
@@ -7,13 +39,13 @@ name: highlightModifiers
 category: Modifiers
 ---
 
-Class               | Example
---------------------| -----------------------------------------------
-`debug`             | <p class="debug">Example paragraph</p>
-`highlighted`       | <p class="highlighted">Example paragraph</p>
-`shaded`            | <p class="shaded">Example paragraph</p>
-`shaded-lighter`    | <p class="shaded-lighter">Example paragraph</p>
-`shaded-red`        | <p class="shaded-red">Example paragraph</p>
+Class                | Example
+---------------------| -----------------------------------------------
+`debug`              | <p class="debug">Example paragraph</p>
+`highlighted`        | <p class="highlighted">Example paragraph</p>
+`shaded`             | <p class="shaded">Example paragraph</p>
+`shaded--lighter`    | <p class="shaded-lighter">Example paragraph</p>
+`shaded--red`        | <p class="shaded-red">Example paragraph</p>
 
 */
 .debug {
@@ -33,16 +65,19 @@ Class               | Example
 .shaded {
 	background-color: $C_gray;
 }
-.shaded-lighter {
+.shaded-lighter,
+.shaded--lighter {
 	background-color:$C_gray_lightest;
 }
-.shaded-red {
+.shaded-red,
+.shaded--red {
 	background-color: $C_red;
 	color: white;
 }
 
 // TODO: we probably shouldn't keep this in sassquatch; we only use it once in chapstick
-.shaded-pixelate {
+.shaded-pixelate,
+.shaded--pixelate {
 	// this is a translucent 128x128 overlay that darkens squares of the underlying color
 	// to make it appear blocky/giant-pixelated. It's a cool effect, show your friends!
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWxDQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8KAAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6bAwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=');
@@ -73,39 +108,37 @@ name: paddingModifiers
 category: Modifiers
 ---
 
-Class            | Example
------------------| -------------------------------------------------------------------------
-`padding-left`   | <div class="inline-block guide-shade padding-left">Example div</div>
-`padding-right`  | <div class="inline-block guide-shade padding-right">Example div</div>
-`padding-top`    | <div class="inline-block guide-shade padding-top">Example div</div>
-`padding-bottom` | <div class="inline-block guide-shade padding-bottom">Example div</div>
-`padding-all`   | <div class="inline-block guide-shade padding-all">Example div</div>
-`papdding-none`  | <div class="inline-block guide-shade padding-none">Example div</div>
+#### Full padding
+
+Class           | Example
+----------------| -------------------------------------------------------------------------
+`paddingLeft`   | <div class="inline-block guide-shade paddingLeft">Example div</div>
+`paddingRight`  | <div class="inline-block guide-shade paddingRight">Example div</div>
+`paddingTop`    | <div class="inline-block guide-shade paddingTop">Example div</div>
+`paddingBottom` | <div class="inline-block guide-shade paddingBottom">Example div</div>
+`paddingAll`    | <div class="inline-block guide-shade paddingAll">Example div</div>
+`papddingNone`  | <div class="inline-block guide-shade paddingNone">Example div</div>
+
+
+#### Half padding
+
+Class                 | Example
+----------------------| -------------------------------------------------------------------------
+`paddingLeft--half`   | <div class="inline-block guide-shade paddingLeft--half">Example div</div>
+`paddingRight--half`  | <div class="inline-block guide-shade paddingRight--half">Example div</div>
+`paddingTop--half`    | <div class="inline-block guide-shade paddingTop--half">Example div</div>
+`paddingBottom--half` | <div class="inline-block guide-shade paddingBottom--half">Example div</div>
+`paddingAll--half`    | <div class="inline-block guide-shade paddingAll--half">Example div</div>
 
 */
-.padding-top,
-.leading-top {
-	padding-top: $spacing;
+@each $direction in ( "top" "right" "bottom" "left" "all" "none" ) {
+	@include spacingModifier( 'padding', #{$direction} );
 }
-.padding-bottom,
-.leading-bottom {
-	padding-bottom: $spacing;
+.leading-top { // legacy support
+	padding-top: $baseline;
 }
-.leading-left,
-.padding-left {
-	padding-left: $spacing;
-}
-.leading-right,
-.padding-right {
-	padding-right: $spacing;
-}
-.leading-none,
-.padding-none {
-	padding: 0 !important;
-}
-.leading-all,
-.padding-all {
-	padding: $spacing;
+.leading-bottom { // legacy support
+	padding-bottom: $baseline;
 }
 
 
@@ -116,36 +149,34 @@ name: marginModifiers
 category: Modifiers
 ---
 
-Class               | Example
---------------------| ---------------------------------------------------------------------
-`margin-left`       | <div class="inline-block guide-shade margin-left">Example dif</div>
-`margin-right`      | <div class="inline-block guide-shade margin-right">Example dif</div>
-`margin-top`        | <div class="inline-block guide-shade margin-top">Example dif</div>
-`margin-bottom`     | <div class="inline-block guide-shade margin-bottom">Example div</div>
-`margin-all`        | <div class="inline-block guide-shade margin-all">Example div</div>
-`margin-none`       | <div class="inline-block guide-shade margin-none">Example div</div>
-`margin-centered`   | <div class="span-50 guide-shade margin-centered">Example div</div>
+#### Full margin
 
+Class              | Example
+-------------------| ---------------------------------------------------------------------
+`marginLeft`       | <div class="inline-block guide-shade marginLeft">Example dif</div>
+`marginRight`      | <div class="inline-block guide-shade marginRight">Example dif</div>
+`marginTop`        | <div class="inline-block guide-shade marginTop">Example dif</div>
+`marginBottom`     | <div class="inline-block guide-shade marginBottom">Example div</div>
+`marginAll`        | <div class="inline-block guide-shade marginAll">Example div</div>
+`marginNone`       | <div class="inline-block guide-shade marginNone">Example div</div>
+`marginCentered`   | <div class="span-50 guide-shade marginCentered">Example div</div>
+
+
+#### Half margin
+
+Class                    | Example
+-------------------------| ---------------------------------------------------------------------
+`marginLeft--half`       | <div class="inline-block guide-shade marginLeft--half">Example dif</div>
+`marginRight--half`      | <div class="inline-block guide-shade marginRight--half">Example dif</div>
+`marginTop--half`        | <div class="inline-block guide-shade marginTop--half">Example dif</div>
+`marginBottom--half`     | <div class="inline-block guide-shade marginBottom--half">Example div</div>
+`marginAll--half`        | <div class="inline-block guide-shade marginAll--half">Example div</div>
 */
-.margin-top {
-	margin-top: $spacing;
+@each $direction in ( "top" "right" "bottom" "left" "all" "none" ) {
+	@include spacingModifier( 'margin', #{$direction} );
 }
-.margin-bottom {
-	margin-bottom: $spacing;
-}
-.margin-left {
-	margin-left: $spacing;
-}
-.margin-right {
-	margin-right: $spacing;
-}
-.margin-none {
-	margin: 0 !important;
-}
-.margin-all{
-	margin:$spacing;
-}
-.margin-centered {
+.margin-centered, // legacy support
+.marginCentered {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -175,10 +206,9 @@ Class          | Description
 		padding-#{$direction}: 0 !important;
 	}
 }
-@include flush('top');
-@include flush('right');
-@include flush('bottom');
-@include flush('left');
+@each $direction in ( "top" "right" "bottom" "left" ) {
+	@include flush( $direction );
+}
 .flush--all {
 	margin: 0 !important;
 	padding: 0 !important;
@@ -194,19 +224,16 @@ category: Modifiers
 
 Class          | Example
 ---------------| ----------------------------------------------------
-`align-right`  | <p class="align-right">Example paragraph</p>
-`align-center` | <p class="align-center">Example paragraph</p>
-`align-left`   | <p class="align-left">Example paragraph</p>
+`align--right`  | <p class="align--right">Example paragraph</p>
+`align--center` | <p class="align--center">Example paragraph</p>
+`align--left`   | <p class="align--left">Example paragraph</p>
 
 */
-.align-right {
-	text-align: right;
-}
-.align-left {
-	text-align: left;
-}
-.align-center {
-	text-align: center;
+@each $direction in ( "right" "left" "center" ) {
+	.align-#{$direction},
+	.align--#{$direction} {
+		text-align: #{$direction};
+	}
 }
 
 
@@ -217,25 +244,25 @@ name: valignModifiers
 category: Modifiers
 ---
 
-Class           | Example
-----------------| ----------------------------------------------------
-`valign-top`    | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-top">inline-block span</span></p>
-`valign-middle` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-middle">inline-block span</span></p>
-`valign-bottom` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-bottom">inline-block span</span></p>
+Class                | Example
+---------------------| ----------------------------------------------------
+`valign--top`        | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--top">inline-block span</span></p>
+`valign--middle`     | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--middle">inline-block span</span></p>
+`valign--bottom`     | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--bottom">inline-block span</span></p>
+`valign--textBottom` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--textBottom">inline-block span</span></p>
 
 */
-.valign-top {
-	vertical-align: top;
+@each $direction in ( "top" "middle" "bottom" ) {
+	.valign-#{$direction},
+	.valign--#{$direction} {
+		vertical-align: #{$direction};
+	}
 }
-.valign-middle {
-	vertical-align: middle;
-}
-.valign-bottom {
-	vertical-align: bottom;
-}
-.valign-text-bottom {
+.valign-text-bottom,
+.valign--textBottom {
 	vertical-align: text-bottom;
 }
+
 /* {{{ TODO: deprecate this */
 .center-able,
 .centered {
@@ -244,6 +271,7 @@ Class           | Example
 	margin-right: auto;
 }
 /* }}} */
+
 /* {{{ TODO: deprecate this */
 .img-align-middle{
 	vertical-align:middle;
@@ -258,15 +286,16 @@ name: displayModifiers
 category: Modifiers
 ---
 
-Class          | Description
----------------| ----------------------------------------------------
-`display-none` | Sets `display` property of eleement to `none`
-`inline`       | Sets `display` property of element to `inline`
-`inline-block` | Sets `display` property of element to `inline-block`
-`hidden`       | Sets `visibility` property of element to `hidden`
+Class           | Description
+----------------| ----------------------------------------------------
+`display--none` | Sets `display` property of eleement to `none`
+`inline`        | Sets `display` property of element to `inline`
+`inlineBlock`   | Sets `display` property of element to `inline-block`
+`hidden`        | Sets `visibility` property of element to `hidden`
 
 */
-.display-none {
+.display-none,
+.display--none {
 	display: none;
 }
 .hidden {
@@ -278,7 +307,7 @@ Class          | Description
 .inline {
 	display: inline;
 }
-.inline-block {
+.inlineBlock {
     @include inlineblock();
 }
 
@@ -307,7 +336,7 @@ Class          | Example
 		@include color_textTertiaryInverted();
 	}
 }
-.muted-opacity{
+.muted-opacity{ // DEPRECATED
     // when over something that isn't just a white background
     @include opacity(.8);
 }
@@ -328,7 +357,7 @@ Class          | Example
     font-size: $bigFontSize;
 	 line-height: $bigLineHeight;
 }
-.opacity-quarter {
+.opacity-quarter { // DEPRECATED
     // what is this used for?
 	@include opacity(.25);
 }
@@ -485,6 +514,66 @@ Class                | Description
 .hasJS .inline-if-js		{ display: inline; }
 .hasJS .inline-block-if-js	{ display: inline-block; }
 /* }}} */
+
+
+/* {{{ Media Query helpers */
+
+/*doc
+---
+title: Media Query Helpers
+name: mediaModifiers
+category: Modifiers
+---
+
+Media query modifiers allow you to declare
+a given modification at a given screen size.
+
+### Usage
+Media query modifiers follow this signature:
+
+```
+._at[Size (ie. "Small", "Medium", "Large", "Huge"]--[modification]
+```
+
+### Supported modifications, 'medium' size as an example:
+
+Class                       | Description
+----------------------------| ---------------------------------------------
+`._atMedium--displayNone`   | Hides element when viewport is 'mediumm' or below
+`._atMedium--displayBlock`  | Sets display to block when viewport 'medium' or below
+`._atMedium--center`        | Centers element when viewport 'medium' or below
+
+*/
+
+/* }}} */
+@mixin mediaModifier( $size, $modification ) {
+	@include atMedia( $size ) {
+		._at#{capitalizeFirstLetter($size)}--#{$modification} {
+			@content;
+		}
+	}
+}
+
+@each $size in ( "small" "medium" "large" "huge" ) {
+
+	// displayNone
+	@include mediaModifier( $size, 'displayNone' ) {
+		display: none;
+	}
+
+	// displayBlock (linearize)
+	@include mediaModifier( $size, 'displayBlock' ) {
+		display: block;
+	}
+
+	// center
+	@include mediaModifier( $size, 'center' ) {
+		text-align: center;
+		margin: inherit auto;
+	}
+}
+
+
 
 
 @if $platform == "mobile" {
