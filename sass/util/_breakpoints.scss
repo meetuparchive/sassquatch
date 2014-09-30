@@ -1,3 +1,18 @@
+// used in media query helper mixins.
+//
+// wraps content in a media query corresponding
+// with the given breakpoint
+@mixin _wrapMediaQuery( $breakpoint, $mqList ) {
+	@each $query in $mqList {
+		@if $breakpoint == nth($query, 1) {
+			@media #{nth($query, 2)} {
+				@content;
+			}
+		}
+	}
+}
+
+
 /*doc
 ---
 title: Media Query Breakpoints
@@ -12,27 +27,62 @@ Building elastic layouts is encouraged, as most
 Sassquatch components are designed to fit 100%
 width of their parent container.
 
-Use breakpoints only when stretching and squeezing
-a component starts to look broken.
+### Mobile First mixin
+This breakpoint system uses a **mobile first**
+strategy, meaning the `medium` breakpoint, for
+example, applies to _medium screens and larger_.
 
 ```scss
-	@include atMedia(small) {
+	@include atMediaUp(medium) {
 		body::after {
-			content: "only small screens can read me";
+			content: "medium screens and larger can see me";
 		}
 	}
 ```
 
-Breakpoint name    | Description
--------------------| ---------------------------------------------
-`small`            | Small screens and under; portrait on most mobile devices
-`medium`           | Landscape on most phones and under; portrait on some phablets
-`large`            | Landscape on phabelts and under; portrait on most tablets or old desktops
-`huge`             | Modern desktop viewports and under or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
+Breakpoint name      | Description
+---------------------| ---------------------------------------------
+`atMediaUp(small)`   | Small screens and up; portrait on most mobile devices
+`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
+`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
+`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
 
+
+### Breaking for smaller sizes and under
+In the event you need to target a **specific screen size and under**,
+use the `atMediaOnly` mixin.
+
+```scss
+	@include atMediaDown(medium) {
+		body::after {
+			content: "medium screens and smaller can see me";
+		}
+	}
+```
+
+Breakpoint name        | Description
+-----------------------| ---------------------------------------------
+`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
+`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
+`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
+`atMediaDown(huge)`    | All screen sizes (huge and under)
 */
+$breakpoints_inclusive:
+	(
+		small "only screen and (min-width: #{$breakpoint-s})"
+	),
+	(
+		medium "only screen and (min-width: #{$breakpoint-m})"
+	),
+	(
+		large "only screen and (min-width: #{$breakpoint-l})"
+	),
+	(
+		huge "only screen and (min-width: #{$breakpoint-xl})"
+	)
+;
 
-$breakpoints:
+$breakpoints_exclusive:
 	(
 		small "only screen and (max-width: #{$breakpoint-s})"
 	),
@@ -47,12 +97,17 @@ $breakpoints:
 	)
 ;
 
-@mixin atMedia($breakpoint: "") {
-	@each $query in $breakpoints {
-		@if $breakpoint == nth($query, 1) {
-			@media #{nth($query, 2)} {
-				@content;
-			}
-		}
+// Inclusive breakpoint ('small' == small screens and up)
+@mixin atMediaUp($breakpoint: "") {
+	@include _wrapMediaQuery( $breakpoint, $breakpoints_inclusive ) {
+		@content;
 	}
 }
+
+// Exclusive breakpoint ('small' == small screens only)
+@mixin atMediaDown($breakpoint: "") {
+	@include _wrapMediaQuery( $breakpoint, $breakpoints_exclusive ) {
+		@content;
+	}
+}
+

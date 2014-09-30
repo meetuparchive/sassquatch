@@ -122,7 +122,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 }
 
 // at-media variants (medium)
-@include atMedia(medium) {
+@include atMediaDown(medium) {
 	@each $n in $columns {
 		.tileGrid_atMedium--#{$n}col .tileGrid-tile {
 			width: percentageForColumns($n);
@@ -131,7 +131,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 }
 
 // at-media variants (small)
-@include atMedia(small) {
+@include atMediaDown(small) {
 	@each $n in $columns {
 		.tileGrid_atSmall--#{$n}col .tileGrid-tile {
 			width: percentageForColumns($n);
