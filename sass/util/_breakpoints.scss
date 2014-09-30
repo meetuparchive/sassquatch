@@ -35,7 +35,7 @@ example, applies to _medium screens and larger_.
 
 Breakpoint name      | Description
 ---------------------| ---------------------------------------------
-`atMediaUp(small)`   | All screen sizes (small and up)
+`atMediaUp(small)`   | Small sreens and up
 `atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
 `atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
 `atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
@@ -58,9 +58,9 @@ Breakpoint name        | Description
 `atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
 `atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
 `atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
-`atMediaDown(huge)`    | All screen sizes (huge and under)
+`atMediaDown(huge)`    | Huge screens and under
 */
-$breakpoints_inclusive:
+$breakpoints_minWidth:
 	(
 		small "only screen and (min-width: #{$breakpoint-s})"
 	),
@@ -75,7 +75,7 @@ $breakpoints_inclusive:
 	)
 ;
 
-$breakpoints_exclusive:
+$breakpoints_maxWidth:
 	(
 		small "only screen and (max-width: #{$breakpoint-s})"
 	),
@@ -90,16 +90,14 @@ $breakpoints_exclusive:
 	)
 ;
 
-// Inclusive breakpoint ('small' == small screens and up)
 @mixin atMediaUp($breakpoint: "") {
-	@include _wrapMediaQuery( $breakpoint, $breakpoints_inclusive ) {
+	@include _wrapMediaQuery( $breakpoint, $breakpoints_minWidth ) {
 		@content;
 	}
 }
 
-// Exclusive breakpoint ('small' == small screens only)
 @mixin atMediaDown($breakpoint: "") {
-	@include _wrapMediaQuery( $breakpoint, $breakpoints_exclusive ) {
+	@include _wrapMediaQuery( $breakpoint, $breakpoints_maxWidth ) {
 		@content;
 	}
 }
