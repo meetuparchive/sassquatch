@@ -3,7 +3,7 @@
 .bundle
 *.swp
 *.swo
-*.map
+*.css.map
 !README*
 bower_components/
 hologram/desktop/sassquatch/sassquatch.css
