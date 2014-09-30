@@ -547,7 +547,7 @@ Class                       | Description
 
 /* }}} */
 @mixin mediaModifier( $size, $modification ) {
-	@include atMedia( $size ) {
+	@include atMediaDown( $size ) {
 		._at#{capitalizeFirstLetter($size)}--#{$modification} {
 			@content;
 		}
