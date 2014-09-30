@@ -525,24 +525,23 @@ name: mediaModifiers
 category: Modifiers
 ---
 
-Media query modifiers allow you to declare that a modification be applied
-at a specific breakpoint.
+Media query modifiers allow you to declare
+a given modification at a given screen size.
 
 ### Usage
-The grammer for these modifiers is as follows:
+Media query modifiers follow this signature:
 
 ```
 ._at[Size (ie. "Small", "Medium", "Large", "Huge"]--[modification]
 ```
 
-### Supported modifications
-**NOTE:** Only "small" breakpoint shown below example
+### Supported modifications, 'medium' size as an example:
 
-Class                      | Description
----------------------------| ---------------------------------------------
-`._atSmall--displayNone`   | Hides element when viewport is 'small' or below
-`._atSmall--displayBlock`  | Sets display to block when viewport 'small' or below
-`._atSmall--center`        | Centers element when viewport 'small' or below
+Class                       | Description
+----------------------------| ---------------------------------------------
+`._atMedium--displayNone`   | Hides element when viewport is 'mediumm' or below
+`._atMedium--displayBlock`  | Sets display to block when viewport 'medium' or below
+`._atMedium--center`        | Centers element when viewport 'medium' or below
 
 */
 
