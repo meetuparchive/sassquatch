@@ -60,7 +60,7 @@ $selectedStripeWidth: 4px;
 // -------------------
 .tabControl-link {
 	@extend %button_personality;
-	padding: $baseline/3 $baseline/2;
+	padding: $baseline/2 $baseline/2;
 	display: block;
 	text-decoration: none;
 
@@ -113,7 +113,11 @@ $selectedStripeWidth: 4px;
 		display: block;
 		text-align: right;
 	}
+	.tabControl-link {
+		padding-right: ($baseline/2) + $selectedStripeWidth;
+	}
 	.tabControl-tab--selected .tabControl-link {
+		padding-right: $baseline/2;
 		border-width: 0 $selectedStripeWidth 0 0;
 	}
 }
@@ -126,7 +130,11 @@ $selectedStripeWidth: 4px;
 		display: block;
 		text-align: left;
 	}
+	.tabControl-link {
+		padding-left: ($baseline/2) + $selectedStripeWidth;
+	}
 	.tabControl-tab--selected .tabControl-link {
+		padding-left: $baseline/2;
 		border-width: 0 0 0 $selectedStripeWidth;
 	}
 }
