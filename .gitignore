@@ -4,6 +4,7 @@
 *.swp
 *.swo
 *.css.map
+*.map
 !README*
 bower_components/
 hologram/desktop/sassquatch/sassquatch.css
