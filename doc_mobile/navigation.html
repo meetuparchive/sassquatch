@@ -13,7 +13,7 @@
 	
 
 	
-		<header class="inverted margin-none"><h1>Sassquatch Mobile <span class="version margin-left">1.13.10</span>
+		<header class="inverted margin-none"><h1>Sassquatch Mobile <span class="version margin-left">1.13.14</span>
 </h1>
 		</header><nav id="mainNav" class="inverted margin-none"><ul class="inlineblockList margin-none">
 <li class="selected">
@@ -208,4 +208,105 @@ together and interrelated.</p>
 </div>
 <div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabControl"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab tabControl-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span> <span class="na">style=</span><span class="s">"min-height: 180px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Look at this tab conent. Just look at it.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+<h3>Left side tabs</h3>
+<div class="codeExample">
+<div class="exampleOutput">    <ul class="tabControl tabControl--left">
+<li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+        <li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
+    </ul>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabControl tabControl--left"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab tabControl-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div>
+</div>
+<h3>Right side tabs</h3>
+<div class="codeExample">
+<div class="exampleOutput">    <ul class="tabControl tabControl--right">
+<li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+        <li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
+    </ul>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabControl tabControl--right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab tabControl-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="tabs">Tabs</h1>
+
+<p>Rounded tab navigation. Used mostly as secondary navigation on Meetup.</p>
+<div class="codeExample">
+<div class="exampleOutput">    <ul class="navTabs">
+<li><a href="#">Upcoming Meetups</a></li>
+        <li><a href="#">Past Meetups</a></li>
+        <li class="selected"><a href="#">Selected tab</a></li>
+    </ul>
+<div class="docBox">
+        <div class="docSection">
+            <ul class="navTabs">
+<li><a href="#">Upcoming Meetups</a></li>
+                <li><a href="#">Past Meetups</a></li>
+                <li class="selected"><a href="#">Selected tab</a></li>
+            </ul>
+<h4>Look at this tab content</h4>
+            <p>Just look at it</p>
+        </div>
+    </div>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navTabs"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navTabs"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;h4&gt;</span>Look at this tab content<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Just look at it<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div>
+</div>
+
+	
+
+
+	
+			</section>
+</div>
+	
+
+	<script type="text/javascript">
+		// links in code examples shouldn't be followable
+		window.onload = function() {
+			var links = document.querySelectorAll('.codeExample a');
+			for ( i=0; i<links.length; i++ ) {
+				if ( !links[i].dataset.follow ) {
+					links[i].onclick = function() {
+						return false;
+					};
+				}
+			}
+		};
+	</script>
+</body>
+</html>

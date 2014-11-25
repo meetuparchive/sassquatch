@@ -3598,7 +3598,7 @@ dark gradient for text overlay.
   background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
   background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
   background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: linear, top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9);
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
