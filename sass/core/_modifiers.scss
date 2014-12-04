@@ -307,6 +307,7 @@ Class           | Description
 .inline {
 	display: inline;
 }
+.inline-block,
 .inlineBlock {
     @include inlineblock();
 }
