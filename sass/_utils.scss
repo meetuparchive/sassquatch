@@ -8,18 +8,17 @@
 
 
 // VARS
-@import "vars/core";
+@import "vars";
 
 
 // FUNCTIONS
 @import "util/functions/brightness";
-@import "util/functions/cssUnitUtils";
 @import "util/functions/stringUtils";
 
 
 // UTIL
-@import "util/deprecated";
 @import "util/propertyValue";
+@import "util/unitUtils";
 @import "util/layout";
 @import "util/typography";
 @import "util/forms";

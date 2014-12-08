@@ -2,8 +2,10 @@
 ---
 title: Toggle Buttons
 name: navButtons
-category: Navigation
+category: __deprecated__
 ---
+
+__DEPRECATED__
 
 Using a list of `<a>` elements; for toggling/filtering controls.
 
@@ -19,6 +21,31 @@ DEPRECATED: you should probably use segmented control instead
 ```
 
 */
+
+@mixin button_color($base_color, $isLight: false){
+	@include button_color_base($base_color, $isLight);
+
+	&:hover {
+		@include button_color_hover($base_color, $isLight);
+	}
+
+	&:active, &.selected, &.active {
+		@include button_color_active($base_color, $isLight);
+	}
+}
+
+@mixin button_color_base($base_color, $isLight: false){
+	@include box-shadow( rgba(255,255,255,.2), 1px, 1px, 0, 0, true);
+	border: 1px solid rgba(0,0,0,.15);
+	@include gradient($base_color, darken($base_color, if($isLight, 5%, 10%)));
+}
+@mixin button_color_hover($base_color, $isLight: false){
+	@include gradient(lighten($base_color, 5%), darken($base_color, if($isLight, 7%, 10%)));
+}
+@mixin button_color_active($base_color, $isLight: false){
+	background: darken($base_color, if($isLight, 10%, 15%));
+	@include punched_in_box_shadow;
+}
 
 
 .nav-buttons {

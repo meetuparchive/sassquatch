@@ -71,13 +71,6 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 * {{{
 */
 /* }}} */
-/**
- * MIXINS
- * Sass mixins (including compass mixin shims)
- * 
- * TODO: organize these into concern-specific individual files in ./mixins/
- */
-/* TODO: check usage */
 /*  loop_prop_list()
  *
  *  This function is an awesome utility helper for more complex
@@ -121,6 +114,11 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 /**
 * overflow-y becomes scrollable,
 * fixes OSX vanishing scrollbar
+*/
+/**
+* override margin collapse
+*
+* ensures parent element evelops child padding and margin
 */
 /*  truncate()
  *
@@ -320,31 +318,45 @@ name: breakpoints
 category: Sass Utilities
 ---
 
-You can use the `atMedia` mixin to write styles
-specific to a given viewport size.
-
-Building elastic layouts is encouraged, as most
-Sassquatch components are designed to fit 100%
-width of their parent container.
-
-Use breakpoints only when stretching and squeezing
-a component starts to look broken.
+### Mobile first mixin
+This breakpoint mixin uses a **mobile first**
+strategy, meaning the `medium` breakpoint, for
+example, applies to _medium screens and larger_.
 
 ```scss
-	@include atMedia(small) {
+	@include atMediaUp(medium) {
 		body::after {
-			content: "only small screens can read me";
+			content: "medium screens and larger can see me";
 		}
 	}
 ```
 
-Breakpoint name    | Description
--------------------| ---------------------------------------------
-`small`            | Small screens and under; portrait on most mobile devices
-`medium`           | Landscape on most phones and under; portrait on some phablets
-`large`            | Landscape on phabelts and under; portrait on most tablets or old desktops
-`huge`             | Modern desktop viewports and under or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
+Breakpoint name      | Description
+---------------------| ---------------------------------------------
+`atMediaUp(small)`   | Small sreens and up
+`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
+`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
+`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
 
+
+### Breaking for smaller sizes and under
+In the event you need to target a **specific screen size and under**,
+use the `atMediaDown` mixin.
+
+```scss
+	@include atMediaDown(medium) {
+		body::after {
+			content: "medium screens and smaller can see me";
+		}
+	}
+```
+
+Breakpoint name        | Description
+-----------------------| ---------------------------------------------
+`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
+`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
+`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
+`atMediaDown(huge)`    | Huge screens and under
 */
 html {
   overflow-y: scroll;
@@ -552,16 +564,19 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 38px;
+  font-size: 2.375rem;
   letter-spacing: -0.75px;
 }
 
 h2 {
   font-size: 28px;
+  font-size: 1.75rem;
   letter-spacing: -0.5px;
 }
 
 h3 {
   font-size: 20px;
+  font-size: 1.25rem;
   padding-bottom: 6px;
   line-height: 1.2;
   letter-spacing: -0.25px;
@@ -569,6 +584,7 @@ h3 {
 
 h4 {
   font-size: 16px;
+  font-size: 1rem;
   padding-bottom: 0;
   line-height: 1.4;
   letter-spacing: -0.05px;
@@ -576,6 +592,7 @@ h4 {
 
 h5 {
   font-size: 16px;
+  font-size: 1rem;
   padding-bottom: 0;
   line-height: 1.4;
   font-weight: 400;
@@ -583,6 +600,7 @@ h5 {
 
 h6 {
   font-size: 16px;
+  font-size: 1rem;
   padding-bottom: 0;
   line-height: 1.4;
   text-transform: uppercase;
@@ -935,7 +953,7 @@ The `paddedList` pattern is the same as `dividedList`, but without borders.
 
 /*doc
 ---
-title: Secion List
+title: Section List
 name: secitonList
 parent: dividedList
 ---
@@ -1374,7 +1392,7 @@ input[type="submit"].button--blue,
 .button--green,
 input[type="submit"].button--green, .tabControl-link, .nav-appendPager, .nav-buttons label,
 .nav-buttons li > a,
-.nav-buttons li > span, .segmented-control-button {
+.nav-buttons li > span, .segmented-control-button, .chunkList-row a:active {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -2584,10 +2602,9 @@ to span the full width of the box, and use `docSection` for padded content:
 .doc-content,
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
+  border-bottom: 1px solid transparent;
   padding: 18px;
   padding-bottom: 0;
-  border-bottom: 1px solid transparent;
-  /* avoids margin collapse, hence this border... (takashi is a genius) */
 }
 
 /*doc
@@ -3138,37 +3155,6 @@ Class            | Description
 .pinbottom > .ffbox-flex,
 .pinbottom > .ffbox-fix {
   vertical-align: bottom;
-}
-
-.cardList {
-  padding: 0;
-  list-style: none;
-  vertical-align: top;
-  margin: 0 -18px 0 0;
-  font-size: 0;
-}
-.cardList > li {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #dddddd;
-  background: #fff;
-  font-size: 16px;
-  margin: 0 18px 18px 0;
-  padding: 0;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  vertical-align: top;
-  width: 223px;
-}
-.cardList > li .doc-content {
-  border-top: 1px solid #eeeeee;
-  padding: 18px 18px 0;
-}
-.cardList > li .doc-content:first-child {
-  border-top: 0;
 }
 
 /* Tearsheets
@@ -3766,7 +3752,7 @@ category: Navigation
 }
 
 .tabControl-link {
-  padding: 6px 9px;
+  padding: 9px 9px;
   display: block;
   text-decoration: none;
 }
@@ -3801,7 +3787,11 @@ category: Navigation
   display: block;
   text-align: right;
 }
+.tabControl--left .tabControl-link {
+  padding-right: 13px;
+}
 .tabControl--left .tabControl-tab--selected .tabControl-link {
+  padding-right: 9px;
   border-width: 0 4px 0 0;
 }
 
@@ -3809,7 +3799,11 @@ category: Navigation
   display: block;
   text-align: left;
 }
+.tabControl--right .tabControl-link {
+  padding-left: 13px;
+}
 .tabControl--right .tabControl-tab--selected .tabControl-link {
+  padding-left: 9px;
   border-width: 0 0 0 4px;
 }
 
@@ -3951,8 +3945,10 @@ For "see more" type append paging.
 ---
 title: Toggle Buttons
 name: navButtons
-category: Navigation
+category: __deprecated__
 ---
+
+__DEPRECATED__
 
 Using a list of `<a>` elements; for toggling/filtering controls.
 
@@ -4444,126 +4440,153 @@ Element type       | Use
   color: #888888 !important;
 }
 
-/**
- * @file   vars/_touchList.scss
- * @author John Cockrell <john@meetup.com>
- * @since  2013-06-27
- *
- * @description
- *  New variables for touchList layouts on mobile.
- */
-/*  ======================================================================= */
-/*  PARAMETERS  */
-/* $Z_ : Z Indices */
-/* ... */
-/* $P_ : Padding */
-           				               		/* In the new dimension schema, this
-											* is primarily used for internal padding on
-											* cards and boxes.
-											*/
-             			               		/* In the new dimension schema, this
-											* is value and its multiples (2x, 3x) are
-											* primarily used for external margins around
-											* cards, and separating content from the
-											* mobile footer.
-											*/
-/* $W_, $H_ : Height and Width */
-/* For iOS/Samsung: Hard coded because fixed width */
-/* icon gems are 16px with 0.5em padding */
-/* icon gems are square inside ffbox-fix */
-/* $FS_ : Font Size */
-/* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
- * be used with scoped resets in order to work properly. For touchList, this
- * hasn't been an issue, but it may be in the future.
- * NOTE: For running text, we probably shouldn't go smaller than 12px for
- * font sizes, since type smaller than that becomes difficult to read on
- * LDPI/@1x displays.
- */
-/* for use in large banners */
-/* replaces $FS_label as a std size */
-/* replaces $FS_text as std text size */
-          				              		/* use in superscript values (am/pm),
-											*	currency, tab titles.
-											*	NOTE: this size should only be used
-											*	with small caps, which provide good-
-											*	enough legibility on low resolution
-											*	displays.
-											*/
-/* $LH_ : Line heights */
-/* 16/18.0 */
-/* 16/20.8 */
-/* 16/24.0 */
-/**
- *	touchlist placeholer classes
- */
-/*  ======================================================================= */
-/*  TEXT MANIPULATION  */
-.no-wrap {
-  white-space: nowrap;
+/*doc
+---
+title: Chunk List
+name: chunkList
+category: Layout
+---
+
+_The `chunkList` component replaces `touchlist`._
+
+You can optionally add a `docBox` class to `chunkList` or
+nest it inside a `docBox`, but it isn't necessary; `chunkList`
+should work regardless of context.
+
+#### Classes:
+`.chunkList` &gt; `.chunkList-row` &gt; `.chunkList-chunk`
+
+#### Usage:
+Each `li` within `chunkList` can be seen as a "row", and
+each `chunkList-chunk` is a padded chunk for content within the row.
+
+There are no restrictions on how many or how few chunks you can put in
+a row.
+
+In the spirit of using small, sharp tools, chunk list classes handle only 
+basic element spacing, so use [fix-flex](#fixFlex) to set the layout of 
+multiple chunks within a row.
+
+```html_example
+	<h5 class="muted">Chunk List with two chunks per row</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row">
+			<a class="ffbox" href="#">
+				<div class="chunkList-chunk ffbox-fix pintop">
+					<span href="#" class=" avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+						Person
+					</span>
+				</div>
+				<div class="chunkList-chunk ffbox-flex">
+					<h5>Member Name</h5>
+				</div>
+			</a>
+		</li>
+		<li class="chunkList-row">
+			<a class="ffbox" href="#">
+				<div class="chunkList-chunk ffbox-fix pintop">
+					<span href="#" class="chunk--fix avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+						Person
+					</span>
+				</div>
+				<div class="chunkList-chunk ffbox-flex">
+					<h5>Member Name</h5>
+					<p class="small">You're both members of <strong>The Super Cool Dio 2016 Meetup Group</strong> and 6 others</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+```
+
+```html_example
+	<h5 class="muted">Just one chunk in one row</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row">
+			<a href="#" class="chunkList-chunk">
+				<h5 class="muted small">Member Since</h5>
+				<p>June 2010</p>
+			</a>
+		</li>
+	</ul>
+```
+
+```html_example
+	<h5 class="muted">Three chunks in a row!</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row ffbox">
+			<div class="chunkList-chunk ffbox-fix">
+				<span href="#" class="avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+					Person
+				</span>
+			</div>
+			<div class="chunkList-chunk ffbox-flex">
+				<p>This is not a test of the cheese ball alert system</p>
+			</div>
+			<a class="chunkList-chunk ffbox-fix shaded">
+				<h4>chunky anchor</h4>
+			</a>
+		</li>
+	</ul>
+```
+
+*/
+.chunkList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-/*  ======================================================================= */
-/*  UI SPECIFIC EXTENDS AND MIXINS  */
-/**
- * @file   vars/_touchList.scss
- * @author John Cockrell <john@meetup.com>
- * @since  2013-06-27
- *
- * @description
- *  New variables for touchList layouts on mobile.
- */
-/*  ======================================================================= */
-/*  PARAMETERS  */
-/* $Z_ : Z Indices */
-/* ... */
-/* $P_ : Padding */
-           				               		/* In the new dimension schema, this
-											* is primarily used for internal padding on
-											* cards and boxes.
-											*/
-             			               		/* In the new dimension schema, this
-											* is value and its multiples (2x, 3x) are
-											* primarily used for external margins around
-											* cards, and separating content from the
-											* mobile footer.
-											*/
-/* $W_, $H_ : Height and Width */
-/* For iOS/Samsung: Hard coded because fixed width */
-/* icon gems are 16px with 0.5em padding */
-/* icon gems are square inside ffbox-fix */
-/* $FS_ : Font Size */
-/* NOTE: Assumes 1em = 16px browser baseline. These values, for now, need to
- * be used with scoped resets in order to work properly. For touchList, this
- * hasn't been an issue, but it may be in the future.
- * NOTE: For running text, we probably shouldn't go smaller than 12px for
- * font sizes, since type smaller than that becomes difficult to read on
- * LDPI/@1x displays.
- */
-/* for use in large banners */
-/* replaces $FS_label as a std size */
-/* replaces $FS_text as std text size */
-          				              		/* use in superscript values (am/pm),
-											*	currency, tab titles.
-											*	NOTE: this size should only be used
-											*	with small caps, which provide good-
-											*	enough legibility on low resolution
-											*	displays.
-											*/
-/* $LH_ : Line heights */
-/* 16/18.0 */
-/* 16/20.8 */
-/* 16/24.0 */
-/**
- *	touchlist placeholer classes
- */
-/*  ======================================================================= */
-/*  TEXT MANIPULATION  */
-.no-wrap {
-  white-space: nowrap;
+.chunkList-row {
+  margin: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /*
+   * any direct anchor children are either...
+   * 1) a.chunkList-chunk
+   * 2) a (with chunkList-chunk) children
+   */
+  /* touch/click highlight for all links */
+}
+.chunkList-row:first-child {
+  border-top: none;
+}
+.chunkList-row a:active {
+  background-color: rgba(64, 197, 255, 0.2);
+  -webkit-tap-highlight-color: rgba(64, 197, 255, 0.2);
 }
 
-/*  ======================================================================= */
-/*  UI SPECIFIC EXTENDS AND MIXINS  */
+.chunkList-chunk {
+  border-bottom: 1px solid transparent;
+  padding: 12px 0 0 12px;
+  /* single chunks within a row should just be block */
+  /*
+   * When a heading is the only element in a chunk,
+   * give it a total bottom spacing equal to $baseline
+   */
+  /*
+   * reset block element spacing for block els
+   */
+}
+.chunkList-chunk:last-child {
+  padding-right: 12px;
+}
+.chunkList-chunk:only-child {
+  display: block;
+}
+.chunkList-chunk h1:only-child,
+.chunkList-chunk h2:only-child,
+.chunkList-chunk h3:only-child,
+.chunkList-chunk h4:only-child,
+.chunkList-chunk h5:only-child,
+.chunkList-chunk h6:only-child {
+  padding-bottom: 0;
+  margin-bottom: 12px;
+}
+.chunkList-chunk p, .chunkList-chunk dl, .chunkList-chunk dd, .chunkList-chunk ul, .chunkList-chunk ol, .chunkList-chunk article, .chunkList-chunk aside, .chunkList-chunk details, .chunkList-chunk figure, .chunkList-chunk hgroup, .chunkList-chunk section,
+.chunkList-chunk .avatar, .chunkList-chunk img {
+  margin-bottom: 12px;
+}
+
 /*doc
 ---
 title: Tile Grid
@@ -4677,23 +4700,23 @@ Example                                                                  | Descr
 }
 
 .tileGrid--6col .tileGrid-tile {
-  width: 16%;
+  width: 600%;
 }
 
 .tileGrid--5col .tileGrid-tile {
-  width: 20%;
+  width: 500%;
 }
 
 .tileGrid--4col .tileGrid-tile {
-  width: 25%;
+  width: 400%;
 }
 
 .tileGrid--3col .tileGrid-tile {
-  width: 33%;
+  width: 300%;
 }
 
 .tileGrid--2col .tileGrid-tile {
-  width: 50%;
+  width: 200%;
 }
 
 .tileGrid--1col .tileGrid-tile {
@@ -4702,23 +4725,23 @@ Example                                                                  | Descr
 
 @media only screen and (max-width: 640px) {
   .tileGrid_atMedium--6col .tileGrid-tile {
-    width: 16%;
+    width: 600%;
   }
 
   .tileGrid_atMedium--5col .tileGrid-tile {
-    width: 20%;
+    width: 500%;
   }
 
   .tileGrid_atMedium--4col .tileGrid-tile {
-    width: 25%;
+    width: 400%;
   }
 
   .tileGrid_atMedium--3col .tileGrid-tile {
-    width: 33%;
+    width: 300%;
   }
 
   .tileGrid_atMedium--2col .tileGrid-tile {
-    width: 50%;
+    width: 200%;
   }
 
   .tileGrid_atMedium--1col .tileGrid-tile {
@@ -4727,23 +4750,23 @@ Example                                                                  | Descr
 }
 @media only screen and (max-width: 440px) {
   .tileGrid_atSmall--6col .tileGrid-tile {
-    width: 16%;
+    width: 600%;
   }
 
   .tileGrid_atSmall--5col .tileGrid-tile {
-    width: 20%;
+    width: 500%;
   }
 
   .tileGrid_atSmall--4col .tileGrid-tile {
-    width: 25%;
+    width: 400%;
   }
 
   .tileGrid_atSmall--3col .tileGrid-tile {
-    width: 33%;
+    width: 300%;
   }
 
   .tileGrid_atSmall--2col .tileGrid-tile {
-    width: 50%;
+    width: 200%;
   }
 
   .tileGrid_atSmall--1col .tileGrid-tile {
@@ -4758,13 +4781,13 @@ name: highlightModifiers
 category: Modifiers
 ---
 
-Class               | Example
---------------------| -----------------------------------------------
-`debug`             | <p class="debug">Example paragraph</p>
-`highlighted`       | <p class="highlighted">Example paragraph</p>
-`shaded`            | <p class="shaded">Example paragraph</p>
-`shaded-lighter`    | <p class="shaded-lighter">Example paragraph</p>
-`shaded-red`        | <p class="shaded-red">Example paragraph</p>
+Class                | Example
+---------------------| -----------------------------------------------
+`debug`              | <p class="debug">Example paragraph</p>
+`highlighted`        | <p class="highlighted">Example paragraph</p>
+`shaded`             | <p class="shaded">Example paragraph</p>
+`shaded--lighter`    | <p class="shaded-lighter">Example paragraph</p>
+`shaded--red`        | <p class="shaded-red">Example paragraph</p>
 
 */
 .debug {
@@ -4787,16 +4810,19 @@ Class               | Example
   background-color: #dddddd;
 }
 
-.shaded-lighter {
+.shaded-lighter,
+.shaded--lighter {
   background-color: #f4f4f4;
 }
 
-.shaded-red {
+.shaded-red,
+.shaded--red {
   background-color: #E0393E;
   color: white;
 }
 
-.shaded-pixelate {
+.shaded-pixelate,
+.shaded--pixelate {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAIVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt0UjBAAAAC3RSTlMTJjIeKDUJLRIkGx47F8wAAACZSURBVHhe7dWxDQJBDETRC0lpgRZogRa2BbdwLbgFWrgqIZhJRkKHRIKs/zPL65futtRdlTrUVXleqrsv/e4XoP8KAAAA2FUetvL+oQx5ngMAAABYfEZnsOc5AAAAQKlNJZgHBr2fAwAAAOQ/4PlbaA4AAABwdmjYQL6bAwAAACyVD0t5/gTPAQAAACwe0U0ZTqjUGAAAAOAFZgxFcV00Xf4AAAAASUVORK5CYII=");
 }
 
@@ -4823,44 +4849,85 @@ name: paddingModifiers
 category: Modifiers
 ---
 
-Class            | Example
------------------| -------------------------------------------------------------------------
-`padding-left`   | <div class="inline-block guide-shade padding-left">Example div</div>
-`padding-right`  | <div class="inline-block guide-shade padding-right">Example div</div>
-`padding-top`    | <div class="inline-block guide-shade padding-top">Example div</div>
-`padding-bottom` | <div class="inline-block guide-shade padding-bottom">Example div</div>
-`padding-all`   | <div class="inline-block guide-shade padding-all">Example div</div>
-`papdding-none`  | <div class="inline-block guide-shade padding-none">Example div</div>
+#### Full padding
+
+Class           | Example
+----------------| -------------------------------------------------------------------------
+`paddingLeft`   | <div class="inline-block guide-shade paddingLeft">Example div</div>
+`paddingRight`  | <div class="inline-block guide-shade paddingRight">Example div</div>
+`paddingTop`    | <div class="inline-block guide-shade paddingTop">Example div</div>
+`paddingBottom` | <div class="inline-block guide-shade paddingBottom">Example div</div>
+`paddingAll`    | <div class="inline-block guide-shade paddingAll">Example div</div>
+`papddingNone`  | <div class="inline-block guide-shade paddingNone">Example div</div>
+
+
+#### Half padding
+
+Class                 | Example
+----------------------| -------------------------------------------------------------------------
+`paddingLeft--half`   | <div class="inline-block guide-shade paddingLeft--half">Example div</div>
+`paddingRight--half`  | <div class="inline-block guide-shade paddingRight--half">Example div</div>
+`paddingTop--half`    | <div class="inline-block guide-shade paddingTop--half">Example div</div>
+`paddingBottom--half` | <div class="inline-block guide-shade paddingBottom--half">Example div</div>
+`paddingAll--half`    | <div class="inline-block guide-shade paddingAll--half">Example div</div>
 
 */
 .padding-top,
+.paddingTop {
+  padding-top: 18px;
+}
+
+.paddingTop--half {
+  padding-top: 9px;
+}
+
+.padding-right,
+.paddingRight {
+  padding-right: 18px;
+}
+
+.paddingRight--half {
+  padding-right: 9px;
+}
+
+.padding-bottom,
+.paddingBottom {
+  padding-bottom: 18px;
+}
+
+.paddingBottom--half {
+  padding-bottom: 9px;
+}
+
+.padding-left,
+.paddingLeft {
+  padding-left: 18px;
+}
+
+.paddingLeft--half {
+  padding-left: 9px;
+}
+
+.padding-all,
+.paddingAll {
+  padding: 18px;
+}
+
+.paddingAll--half {
+  padding: 9px;
+}
+
+.padding-none,
+.paddingNone {
+  padding: 0 !important;
+}
+
 .leading-top {
   padding-top: 18px;
 }
 
-.padding-bottom,
 .leading-bottom {
   padding-bottom: 18px;
-}
-
-.leading-left,
-.padding-left {
-  padding-left: 18px;
-}
-
-.leading-right,
-.padding-right {
-  padding-right: 18px;
-}
-
-.leading-none,
-.padding-none {
-  padding: 0 !important;
-}
-
-.leading-all,
-.padding-all {
-  padding: 18px;
 }
 
 /*doc
@@ -4870,42 +4937,81 @@ name: marginModifiers
 category: Modifiers
 ---
 
-Class               | Example
---------------------| ---------------------------------------------------------------------
-`margin-left`       | <div class="inline-block guide-shade margin-left">Example dif</div>
-`margin-right`      | <div class="inline-block guide-shade margin-right">Example dif</div>
-`margin-top`        | <div class="inline-block guide-shade margin-top">Example dif</div>
-`margin-bottom`     | <div class="inline-block guide-shade margin-bottom">Example div</div>
-`margin-all`        | <div class="inline-block guide-shade margin-all">Example div</div>
-`margin-none`       | <div class="inline-block guide-shade margin-none">Example div</div>
-`margin-centered`   | <div class="span-50 guide-shade margin-centered">Example div</div>
+#### Full margin
 
+Class              | Example
+-------------------| ---------------------------------------------------------------------
+`marginLeft`       | <div class="inline-block guide-shade marginLeft">Example dif</div>
+`marginRight`      | <div class="inline-block guide-shade marginRight">Example dif</div>
+`marginTop`        | <div class="inline-block guide-shade marginTop">Example dif</div>
+`marginBottom`     | <div class="inline-block guide-shade marginBottom">Example div</div>
+`marginAll`        | <div class="inline-block guide-shade marginAll">Example div</div>
+`marginNone`       | <div class="inline-block guide-shade marginNone">Example div</div>
+`marginCentered`   | <div class="span-50 guide-shade marginCentered">Example div</div>
+
+
+#### Half margin
+
+Class                    | Example
+-------------------------| ---------------------------------------------------------------------
+`marginLeft--half`       | <div class="inline-block guide-shade marginLeft--half">Example dif</div>
+`marginRight--half`      | <div class="inline-block guide-shade marginRight--half">Example dif</div>
+`marginTop--half`        | <div class="inline-block guide-shade marginTop--half">Example dif</div>
+`marginBottom--half`     | <div class="inline-block guide-shade marginBottom--half">Example div</div>
+`marginAll--half`        | <div class="inline-block guide-shade marginAll--half">Example div</div>
 */
-.margin-top {
+.margin-top,
+.marginTop {
   margin-top: 18px;
 }
 
-.margin-bottom {
-  margin-bottom: 18px;
+.marginTop--half {
+  margin-top: 9px;
 }
 
-.margin-left {
-  margin-left: 18px;
-}
-
-.margin-right {
+.margin-right,
+.marginRight {
   margin-right: 18px;
 }
 
-.margin-none {
-  margin: 0 !important;
+.marginRight--half {
+  margin-right: 9px;
 }
 
-.margin-all {
+.margin-bottom,
+.marginBottom {
+  margin-bottom: 18px;
+}
+
+.marginBottom--half {
+  margin-bottom: 9px;
+}
+
+.margin-left,
+.marginLeft {
+  margin-left: 18px;
+}
+
+.marginLeft--half {
+  margin-left: 9px;
+}
+
+.margin-all,
+.marginAll {
   margin: 18px;
 }
 
-.margin-centered {
+.marginAll--half {
+  margin: 9px;
+}
+
+.margin-none,
+.marginNone {
+  margin: 0 !important;
+}
+
+.margin-centered,
+.marginCentered {
   margin-left: auto;
   margin-right: auto;
 }
@@ -4962,20 +5068,23 @@ category: Modifiers
 
 Class          | Example
 ---------------| ----------------------------------------------------
-`align-right`  | <p class="align-right">Example paragraph</p>
-`align-center` | <p class="align-center">Example paragraph</p>
-`align-left`   | <p class="align-left">Example paragraph</p>
+`align--right`  | <p class="align--right">Example paragraph</p>
+`align--center` | <p class="align--center">Example paragraph</p>
+`align--left`   | <p class="align--left">Example paragraph</p>
 
 */
-.align-right {
+.align-right,
+.align--right {
   text-align: right;
 }
 
-.align-left {
+.align-left,
+.align--left {
   text-align: left;
 }
 
-.align-center {
+.align-center,
+.align--center {
   text-align: center;
 }
 
@@ -4986,26 +5095,31 @@ name: valignModifiers
 category: Modifiers
 ---
 
-Class           | Example
-----------------| ----------------------------------------------------
-`valign-top`    | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-top">inline-block span</span></p>
-`valign-middle` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-middle">inline-block span</span></p>
-`valign-bottom` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-bottom">inline-block span</span></p>
+Class                | Example
+---------------------| ----------------------------------------------------
+`valign--top`        | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--top">inline-block span</span></p>
+`valign--middle`     | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--middle">inline-block span</span></p>
+`valign--bottom`     | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--bottom">inline-block span</span></p>
+`valign--textBottom` | <p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--textBottom">inline-block span</span></p>
 
 */
-.valign-top {
+.valign-top,
+.valign--top {
   vertical-align: top;
 }
 
-.valign-middle {
+.valign-middle,
+.valign--middle {
   vertical-align: middle;
 }
 
-.valign-bottom {
+.valign-bottom,
+.valign--bottom {
   vertical-align: bottom;
 }
 
-.valign-text-bottom {
+.valign-text-bottom,
+.valign--textBottom {
   vertical-align: text-bottom;
 }
 
@@ -5031,15 +5145,16 @@ name: displayModifiers
 category: Modifiers
 ---
 
-Class          | Description
----------------| ----------------------------------------------------
-`display-none` | Sets `display` property of eleement to `none`
-`inline`       | Sets `display` property of element to `inline`
-`inline-block` | Sets `display` property of element to `inline-block`
-`hidden`       | Sets `visibility` property of element to `hidden`
+Class           | Description
+----------------| ----------------------------------------------------
+`display--none` | Sets `display` property of eleement to `none`
+`inline`        | Sets `display` property of element to `inline`
+`inlineBlock`   | Sets `display` property of element to `inline-block`
+`hidden`        | Sets `visibility` property of element to `hidden`
 
 */
-.display-none {
+.display-none,
+.display--none {
   display: none;
 }
 
@@ -5055,7 +5170,8 @@ Class          | Description
   display: inline;
 }
 
-.inline-block {
+.inline-block,
+.inlineBlock {
   display: inline-block;
   zoom: 1;
   *display: inline;
@@ -5215,74 +5331,18 @@ Styles a link as body text color.
 ```
 
 */
-.unlink,
-.unlink:link,
-.unlink:visited,
-.unlink:hover,
-.unlink:active {
+.unlink, .chunkList-row > a, .unlink:link, .chunkList-row > a:link, .unlink:visited, .chunkList-row > a:visited, .unlink:hover, .chunkList-row > a:hover, .unlink:active, .chunkList-row > a:active {
   color: rgba(0, 0, 0, 0.67) !important;
   text-decoration: none !important;
 }
-.unlink h1, .unlink h2, .unlink h3, .unlink h4, .unlink h5, .unlink h6,
-.unlink:link h1,
-.unlink:link h2,
-.unlink:link h3,
-.unlink:link h4,
-.unlink:link h5,
-.unlink:link h6,
-.unlink:visited h1,
-.unlink:visited h2,
-.unlink:visited h3,
-.unlink:visited h4,
-.unlink:visited h5,
-.unlink:visited h6,
-.unlink:hover h1,
-.unlink:hover h2,
-.unlink:hover h3,
-.unlink:hover h4,
-.unlink:hover h5,
-.unlink:hover h6,
-.unlink:active h1,
-.unlink:active h2,
-.unlink:active h3,
-.unlink:active h4,
-.unlink:active h5,
-.unlink:active h6 {
+.unlink h1, .chunkList-row > a h1, .unlink h2, .chunkList-row > a h2, .unlink h3, .chunkList-row > a h3, .unlink h4, .chunkList-row > a h4, .unlink h5, .chunkList-row > a h5, .unlink h6, .chunkList-row > a h6, .unlink:link h1, .chunkList-row > a:link h1, .unlink:link h2, .chunkList-row > a:link h2, .unlink:link h3, .chunkList-row > a:link h3, .unlink:link h4, .chunkList-row > a:link h4, .unlink:link h5, .chunkList-row > a:link h5, .unlink:link h6, .chunkList-row > a:link h6, .unlink:visited h1, .chunkList-row > a:visited h1, .unlink:visited h2, .chunkList-row > a:visited h2, .unlink:visited h3, .chunkList-row > a:visited h3, .unlink:visited h4, .chunkList-row > a:visited h4, .unlink:visited h5, .chunkList-row > a:visited h5, .unlink:visited h6, .chunkList-row > a:visited h6, .unlink:hover h1, .chunkList-row > a:hover h1, .unlink:hover h2, .chunkList-row > a:hover h2, .unlink:hover h3, .chunkList-row > a:hover h3, .unlink:hover h4, .chunkList-row > a:hover h4, .unlink:hover h5, .chunkList-row > a:hover h5, .unlink:hover h6, .chunkList-row > a:hover h6, .unlink:active h1, .chunkList-row > a:active h1, .unlink:active h2, .chunkList-row > a:active h2, .unlink:active h3, .chunkList-row > a:active h3, .unlink:active h4, .chunkList-row > a:active h4, .unlink:active h5, .chunkList-row > a:active h5, .unlink:active h6, .chunkList-row > a:active h6 {
   color: rgba(0, 0, 0, 0.95) !important;
 }
-.inverted .unlink, .inverted
-.unlink:link, .inverted
-.unlink:visited, .inverted
-.unlink:hover, .inverted
-.unlink:active {
+.inverted .unlink, .inverted .chunkList-row > a, .inverted .unlink:link, .inverted .chunkList-row > a:link, .inverted .unlink:visited, .inverted .chunkList-row > a:visited, .inverted .unlink:hover, .inverted .chunkList-row > a:hover, .inverted .unlink:active, .inverted .chunkList-row > a:active {
   color: #ababab !important;
   color: rgba(255, 255, 255, 0.67) !important;
 }
-.inverted .unlink h1, .inverted .unlink h2, .inverted .unlink h3, .inverted .unlink h4, .inverted .unlink h5, .inverted .unlink h6, .inverted
-.unlink:link h1, .inverted
-.unlink:link h2, .inverted
-.unlink:link h3, .inverted
-.unlink:link h4, .inverted
-.unlink:link h5, .inverted
-.unlink:link h6, .inverted
-.unlink:visited h1, .inverted
-.unlink:visited h2, .inverted
-.unlink:visited h3, .inverted
-.unlink:visited h4, .inverted
-.unlink:visited h5, .inverted
-.unlink:visited h6, .inverted
-.unlink:hover h1, .inverted
-.unlink:hover h2, .inverted
-.unlink:hover h3, .inverted
-.unlink:hover h4, .inverted
-.unlink:hover h5, .inverted
-.unlink:hover h6, .inverted
-.unlink:active h1, .inverted
-.unlink:active h2, .inverted
-.unlink:active h3, .inverted
-.unlink:active h4, .inverted
-.unlink:active h5, .inverted
-.unlink:active h6 {
+.inverted .unlink h1, .inverted .chunkList-row > a h1, .inverted .unlink h2, .inverted .chunkList-row > a h2, .inverted .unlink h3, .inverted .chunkList-row > a h3, .inverted .unlink h4, .inverted .chunkList-row > a h4, .inverted .unlink h5, .inverted .chunkList-row > a h5, .inverted .unlink h6, .inverted .chunkList-row > a h6, .inverted .unlink:link h1, .inverted .chunkList-row > a:link h1, .inverted .unlink:link h2, .inverted .chunkList-row > a:link h2, .inverted .unlink:link h3, .inverted .chunkList-row > a:link h3, .inverted .unlink:link h4, .inverted .chunkList-row > a:link h4, .inverted .unlink:link h5, .inverted .chunkList-row > a:link h5, .inverted .unlink:link h6, .inverted .chunkList-row > a:link h6, .inverted .unlink:visited h1, .inverted .chunkList-row > a:visited h1, .inverted .unlink:visited h2, .inverted .chunkList-row > a:visited h2, .inverted .unlink:visited h3, .inverted .chunkList-row > a:visited h3, .inverted .unlink:visited h4, .inverted .chunkList-row > a:visited h4, .inverted .unlink:visited h5, .inverted .chunkList-row > a:visited h5, .inverted .unlink:visited h6, .inverted .chunkList-row > a:visited h6, .inverted .unlink:hover h1, .inverted .chunkList-row > a:hover h1, .inverted .unlink:hover h2, .inverted .chunkList-row > a:hover h2, .inverted .unlink:hover h3, .inverted .chunkList-row > a:hover h3, .inverted .unlink:hover h4, .inverted .chunkList-row > a:hover h4, .inverted .unlink:hover h5, .inverted .chunkList-row > a:hover h5, .inverted .unlink:hover h6, .inverted .chunkList-row > a:hover h6, .inverted .unlink:active h1, .inverted .chunkList-row > a:active h1, .inverted .unlink:active h2, .inverted .chunkList-row > a:active h2, .inverted .unlink:active h3, .inverted .chunkList-row > a:active h3, .inverted .unlink:active h4, .inverted .chunkList-row > a:active h4, .inverted .unlink:active h5, .inverted .chunkList-row > a:active h5, .inverted .unlink:active h6, .inverted .chunkList-row > a:active h6 {
   color: white !important;
 }
 
@@ -5322,5 +5382,97 @@ Class                | Description
 }
 
 /* }}} */
+/* {{{ Media Query helpers */
+/*doc
+---
+title: Media Query Helpers
+name: mediaModifiers
+category: Modifiers
+---
+
+Media query modifiers allow you to declare
+a given modification at a given screen size.
+
+### Usage
+Media query modifiers follow this signature:
+
+```
+._at[Size (ie. "Small", "Medium", "Large", "Huge"]--[modification]
+```
+
+### Supported modifications, 'medium' size as an example:
+
+Class                       | Description
+----------------------------| ---------------------------------------------
+`._atMedium--displayNone`   | Hides element when viewport is 'mediumm' or below
+`._atMedium--displayBlock`  | Sets display to block when viewport 'medium' or below
+`._atMedium--center`        | Centers element when viewport 'medium' or below
+
+*/
+/* }}} */
+@media only screen and (max-width: 440px) {
+  ._atSmall--displayNone {
+    display: none;
+  }
+}
+@media only screen and (max-width: 440px) {
+  ._atSmall--displayBlock {
+    display: block;
+  }
+}
+@media only screen and (max-width: 440px) {
+  ._atSmall--center {
+    text-align: center;
+    margin: inherit auto;
+  }
+}
+@media only screen and (max-width: 640px) {
+  ._atMedium--displayNone {
+    display: none;
+  }
+}
+@media only screen and (max-width: 640px) {
+  ._atMedium--displayBlock {
+    display: block;
+  }
+}
+@media only screen and (max-width: 640px) {
+  ._atMedium--center {
+    text-align: center;
+    margin: inherit auto;
+  }
+}
+@media only screen and (max-width: 960px) {
+  ._atLarge--displayNone {
+    display: none;
+  }
+}
+@media only screen and (max-width: 960px) {
+  ._atLarge--displayBlock {
+    display: block;
+  }
+}
+@media only screen and (max-width: 960px) {
+  ._atLarge--center {
+    text-align: center;
+    margin: inherit auto;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  ._atHuge--displayNone {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  ._atHuge--displayBlock {
+    display: block;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  ._atHuge--center {
+    text-align: center;
+    margin: inherit auto;
+  }
+}
 
 /*# sourceMappingURL=sassquatch.css.map */

@@ -1,0 +1,160 @@
+/*doc
+---
+title: Chunk List
+name: chunkList
+category: Layout
+---
+
+_The `chunkList` component replaces `touchlist`._
+
+You can optionally add a `docBox` class to `chunkList` or
+nest it inside a `docBox`, but it isn't necessary; `chunkList`
+should work regardless of context.
+
+#### Classes:
+`.chunkList` &gt; `.chunkList-row` &gt; `.chunkList-chunk`
+
+#### Usage:
+Each `li` within `chunkList` can be seen as a "row", and
+each `chunkList-chunk` is a padded chunk for content within the row.
+
+There are no restrictions on how many or how few chunks you can put in
+a row.
+
+In the spirit of using small, sharp tools, chunk list classes handle only 
+basic element spacing, so use [fix-flex](#fixFlex) to set the layout of 
+multiple chunks within a row.
+
+```html_example
+	<h5 class="muted">Chunk List with two chunks per row</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row">
+			<a class="ffbox" href="#">
+				<div class="chunkList-chunk ffbox-fix pintop">
+					<span href="#" class=" avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+						Person
+					</span>
+				</div>
+				<div class="chunkList-chunk ffbox-flex">
+					<h5>Member Name</h5>
+				</div>
+			</a>
+		</li>
+		<li class="chunkList-row">
+			<a class="ffbox" href="#">
+				<div class="chunkList-chunk ffbox-fix pintop">
+					<span href="#" class="chunk--fix avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+						Person
+					</span>
+				</div>
+				<div class="chunkList-chunk ffbox-flex">
+					<h5>Member Name</h5>
+					<p class="small">You're both members of <strong>The Super Cool Dio 2016 Meetup Group</strong> and 6 others</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+```
+
+```html_example
+	<h5 class="muted">Just one chunk in one row</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row">
+			<a href="#" class="chunkList-chunk">
+				<h5 class="muted small">Member Since</h5>
+				<p>June 2010</p>
+			</a>
+		</li>
+	</ul>
+```
+
+```html_example
+	<h5 class="muted">Three chunks in a row!</h5>
+	<ul class="chunkList docBox">
+		<li class="chunkList-row ffbox">
+			<div class="chunkList-chunk ffbox-fix">
+				<span href="#" class="avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+					Person
+				</span>
+			</div>
+			<div class="chunkList-chunk ffbox-flex">
+				<p>This is not a test of the cheese ball alert system</p>
+			</div>
+			<a class="chunkList-chunk ffbox-fix shaded">
+				<h4>chunky anchor</h4>
+			</a>
+		</li>
+	</ul>
+```
+
+*/
+$listspacing: $baseline/1.5;
+
+.chunkList {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.chunkList-row {
+	margin: 0;
+	border-top: 1px solid $C_border;
+	overflow: hidden;
+
+	&:first-child{
+		border-top: none;
+	};
+
+	/*
+	 * any direct anchor children are either...
+	 * 1) a.chunkList-chunk
+	 * 2) a (with chunkList-chunk) children
+	 */
+	& > a {
+		@extend .unlink
+	}
+
+	/* touch/click highlight for all links */
+	a:active {
+		@extend %button_personality;
+		background-color: $C_overlayPressed;
+		-webkit-tap-highlight-color: $C_overlayPressed;
+	}
+}
+
+.chunkList-chunk {
+	@include uncollapse();
+	padding: $listspacing 0 0 $listspacing;
+
+	&:last-child {
+		padding-right: $listspacing;
+	}
+
+	/* single chunks within a row should just be block */
+	&:only-child {
+		display: block;
+	}
+
+	/*
+	 * When a heading is the only element in a chunk,
+	 * give it a total bottom spacing equal to $baseline
+	 */
+	h1:only-child,
+	h2:only-child,
+	h3:only-child,
+	h4:only-child,
+	h5:only-child,
+	h6:only-child {
+		padding-bottom: 0;
+		margin-bottom: $listspacing;
+	}
+
+	/*
+	 * reset block element spacing for block els
+	 */
+	p, dl, dd, ul, ol, article, aside, details, figure, hgroup, section,
+	.avatar, img {
+		margin-bottom: $listspacing;
+	}
+
+}

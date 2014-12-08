@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Sassquatch Mobile : Sass Utilities</title>
-<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
-<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
-<link rel="stylesheet" href="sassquatch/sassquatch.css">
-<link rel="stylesheet" href="style/doc.css">
-<link rel="stylesheet" href="style/github.css">
-</head>
-<body class="">
+	<head>
+		<title>Sassquatch Mobile : Sass Utilities</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+	<body class="">
 
 	
 
 	
-		<header class="inverted margin-none"><h1>Sassquatch Mobile <span class="version margin-left">1.13.14</span>
+		<header class="inverted margin-none">
+			<h1>Sassquatch Mobile <span class="version margin-left">1.15.1</span>
 </h1>
-		</header><nav id="mainNav" class="inverted margin-none"><ul class="inlineblockList margin-none">
-<li class="">
+		</header>
+
+		<nav id="mainNav" class="inverted margin-none">
+			<ul class="inlineblockList margin-none">
+				
+					<li class="">
 						<a href="navigation.html">Navigation</a>
 					</li>
 				
@@ -52,54 +58,111 @@
 						<a href="forms.html">Forms</a>
 					</li>
 				
-			</ul></nav><nav id="secondaryNav" class="margin-top"><h4>Sass Utilities components:</h4>
-			<ul id="categoryList" class="pipeList inlineblockList">
-<li><a href="#breakpoints">Media Query Breakpoints</a></li>
+					<li class="">
+						<a href="__deprecated__.html">__deprecated__</a>
+					</li>
 				
-			</ul></nav><div id="pageWrap" class="clearfix">
-			<section id="content"><h1 id="breakpoints">Media Query Breakpoints</h1>
+			</ul>
+		</nav>
 
-<p>You can use the <code>atMedia</code> mixin to write styles
-specific to a given viewport size.</p>
+		<nav id="secondaryNav" class="margin-top">
+			<h4>Sass Utilities components:</h4>
+			<ul id="categoryList" class="pipeList inlineblockList">
+				
+					<li><a href="#breakpoints">Media Query Breakpoints</a></li>
+				
+			</ul>
+		</nav>
 
-<p>Building elastic layouts is encouraged, as most
-Sassquatch components are designed to fit 100%
-width of their parent container.</p>
+		<div id="pageWrap" class="clearfix">
+			<section id="content">
+	
 
-<p>Use breakpoints only when stretching and squeezing
-a component starts to look broken.</p>
-<div class="codeBlock"><div class="highlight"><pre>    <span class="err">@</span><span class="n">include</span> <span class="n">atMedia</span><span class="p">(</span><span class="n">small</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">body</span><span class="o">::</span><span class="n">after</span> <span class="p">{</span>
-            <span class="nl">content:</span> <span class="s">"only small screens can read me"</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<h1 id="breakpoints">Media Query Breakpoints</h1>
+
+<h3>Mobile first mixin</h3>
+
+<p>This breakpoint mixin uses a <strong>mobile first</strong>
+strategy, meaning the <code>medium</code> breakpoint, for
+example, applies to <em>medium screens and larger</em>.</p>
+<div class="codeBlock"><div class="highlight"><pre>    @include atMediaUp(medium) {
+        body::after {
+            content: "medium screens and larger can see me";
+        }
+    }
 </pre></div></div>
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Breakpoint name</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td><code>small</code></td>
-<td>Small screens and under; portrait on most mobile devices</td>
+<td><code>atMediaUp(small)</code></td>
+<td>Small sreens and up</td>
 </tr>
 <tr>
-<td><code>medium</code></td>
-<td>Landscape on most phones and under; portrait on some phablets</td>
+<td><code>atMediaUp(medium)</code></td>
+<td>Landscape on most phones and up; portrait on some phablets</td>
 </tr>
 <tr>
-<td><code>large</code></td>
-<td>Landscape on phabelts and under; portrait on most tablets or old desktops</td>
+<td><code>atMediaUp(large)</code></td>
+<td>Landscape on phabelts and up; portrait on most tablets or old desktops</td>
 </tr>
 <tr>
-<td><code>huge</code></td>
-<td>Modern desktop viewports and under or <a href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a>
+<td><code>atMediaUp(huge)</code></td>
+<td>Modern desktop viewports and up or <a href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a>
 </td>
 </tr>
 </tbody>
-</table></section>
-</div>
+</table>
+
+<h3>Breaking for smaller sizes and under</h3>
+
+<p>In the event you need to target a <strong>specific screen size and under</strong>,
+use the <code>atMediaDown</code> mixin.</p>
+<div class="codeBlock"><div class="highlight"><pre>    @include atMediaDown(medium) {
+        body::after {
+            content: "medium screens and smaller can see me";
+        }
+    }
+</pre></div></div>
+<table>
+<thead>
+<tr>
+<th>Breakpoint name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>atMediaDown(small)</code></td>
+<td>Small screens and under; portrait on most mobile devices</td>
+</tr>
+<tr>
+<td><code>atMediaDown(medium)</code></td>
+<td>Landscape on most phones and under; portrait on some phablets</td>
+</tr>
+<tr>
+<td><code>atMediaDown(large)</code></td>
+<td>Landscape on phabelts and under; portrait on most tablets or old desktops</td>
+</tr>
+<tr>
+<td><code>atMediaDown(huge)</code></td>
+<td>Huge screens and under</td>
+</tr>
+</tbody>
+</table>
+
+
+	
+
+
+	
+			</section>
+		</div>
 	
 
 	<script type="text/javascript">
@@ -115,5 +178,6 @@ a component starts to look broken.</p>
 			}
 		};
 	</script>
-</body>
+
+	</body>
 </html>

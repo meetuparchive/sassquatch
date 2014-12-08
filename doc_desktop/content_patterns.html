@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Sassquatch : Content Patterns</title>
-<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
-<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
-<link rel="stylesheet" href="sassquatch/sassquatch.css">
-<link rel="stylesheet" href="style/doc.css">
-<link rel="stylesheet" href="style/github.css">
-</head>
-<body class="">
+	<head>
+		<title>Sassquatch : Content Patterns</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="">
 
 	
 
 	
-		<header class="inverted"><h1>Sassquatch <span class="version">1.13.14</span>
+		<header class="inverted">
+			<h1>Sassquatch <span class="version">1.15.1</span>
 </h1>
-		</header><div id="pageWrap" class="clearfix">
+		</header>
 
-			<nav id="mainNav"><div class="doc-box">
+		<div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav">
+				<div class="doc-box">
 					<ul class="resetList">
-<li class="">
+						
+							<li class="">
 								<a href="navigation.html">Navigation</a>
 							</li>
 						
@@ -55,12 +60,17 @@
 								<a href="forms.html">Forms</a>
 							</li>
 						
+							<li class="">
+								<a href="__deprecated__.html">__deprecated__</a>
+							</li>
+						
 					</ul>
-</div>
+				</div>
 
 				<h4>Content Patterns</h4>
 				<ul id="categoryList" class="resetList small">
-<li><a href="#avatar">Avatar</a></li>
+					
+						<li><a href="#avatar">Avatar</a></li>
 					
 						<li><a href="#avatarStack">Avatar Stacks</a></li>
 					
@@ -74,12 +84,17 @@
 					
 						<li><a href="#tileGrid">Tile Grid</a></li>
 					
-				</ul></nav><section id="content"><h1 id="avatar">Avatar</h1>
+				</ul>
+			</nav>
+
+			<section id="content">
+	
+<h1 id="avatar">Avatar</h1>
 
 <p>You know, for people.</p>
 <div class="codeExample">
 <div class="exampleOutput">    <ul class="inlineblockList">
-<li>
+        <li>
             <a href="#" class="avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
                 Chris
             </a>
@@ -127,7 +142,7 @@
 <p>You can represent multiple people or chapters with the <code>avatar--stack</code> class.</p>
 <div class="codeExample">
 <div class="exampleOutput">    <ul class="inlineblockList">
-<li>
+        <li>
             <a href="#" class="avatar avatar--person avatar--stack" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
                 Chris and friends
             </a>
@@ -162,7 +177,7 @@
 <p>Sometimes you want to represent a chapter, not a member. For that, there's <code>avatar--chapter</code>.</p>
 <div class="codeExample">
 <div class="exampleOutput">    <ul class="inlineblockList">
-<li>
+        <li>
             <a href="#" class="avatar avatar--chapter" style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
                 Awesome group
             </a>
@@ -213,7 +228,8 @@ dark gradient for text overlay.</p>
 <div class="exampleOutput">
 <div class="nametag-photo" style="background-image: url(http://photos2.dev.meetupstatic.com/photos/member/3/f/f/9/member_5596377.jpeg);">
     <div class="nametag-photo-name">
-        <strong>Takashi</strong> <br><small>Has a square photo</small>
+        <strong>Takashi</strong> <br>
+        <small>Has a square photo</small>
     </div>
 </div> 
 </div>
@@ -237,10 +253,12 @@ dark gradient for text overlay.</p>
 <h3>Label Types</h3>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>pill-label</code></td>
@@ -268,17 +286,25 @@ dark gradient for text overlay.</p>
 </tr>
 </tbody>
 </table>
+
 <h1 id="tearsheet">Tearsheet</h1>
 
 <p>Tearsheets act as a universal companion icon to upcoming Meetups. 
 They contain the date of the event, but should never be relied on 
 as the only conveyance of the event date.</p>
 <div class="codeExample">
-<div class="exampleOutput">    <time class="tearsheet"><span class="month">Oct</span>
+<div class="exampleOutput">    <time class="tearsheet">
+        <span class="month">Oct</span>
         <span class="day">15</span>
-    </time><time class="tearsheet--big"><span class="month">Oct</span>
+    </time>
+
+    <time class="tearsheet--big">
+        <span class="month">Oct</span>
         <span class="day">15</span>
-    </time><time class="tearsheet--small"><span class="month">Oct</span>
+    </time>
+
+    <time class="tearsheet--small">
+        <span class="month">Oct</span>
         <span class="day">15</span>
     </time>
 </div>
@@ -307,7 +333,7 @@ equal height tiles, you must set a min-height in page-specific CSS.</p>
 <p>This type of collection view is best placed over a background of <code>$C_backgroundCollection</code>.</p>
 <div class="codeExample">
 <div class="exampleOutput">    <ul class="tileGrid tileGrid--2col tileGrid_atMedium--1col">
-<li class="tileGrid-tile">
+        <li class="tileGrid-tile">
             <div class="docBox">
                 <div class="docSection">
                     <h4>I'm a tile with a doxBox</h4>
@@ -320,10 +346,11 @@ equal height tiles, you must set a min-height in page-specific CSS.</p>
                 <div class="docSection">
                     <div class="figureset">
                         <div class="figureset-figure">
-                            <time class="tearsheet--big"><span class="month">Oct</span>
+                            <time class="tearsheet--big">
+                                <span class="month">Oct</span>
                                 <span class="day">15</span>
                             </time>
-</div>
+                        </div>
                         <div class="figureset-description">
                             <h4>Here's something else</h4>
                             <p>This tile has a tearsheet</p>
@@ -337,14 +364,15 @@ equal height tiles, you must set a min-height in page-specific CSS.</p>
                 <div class="docSection">
                     <p>This one has an image</p>
                 </div>
-                <img class="display-block" src="http://placekitten.com/200/60" style="width: 100%; display: block;"><div class="docSection">
+                <img class="display-block" src="http://placekitten.com/200/60" style="width: 100%; display: block;">
+                <div class="docSection">
                     <p class="muted small">It also contains multiple docSection elements</p>
                 </div>
             </div>
         </li>
         <li class="tileGrid-tile">
             <img src="http://placekitten.com/200/100" style="width: 100%; display: block;">
-</li>
+        </li>
     </ul>
 </div>
 <div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tileGrid tileGrid--2col tileGrid_atMedium--1col"</span><span class="nt">&gt;</span>
@@ -397,10 +425,12 @@ equal height tiles, you must set a min-height in page-specific CSS.</p>
 6 with a variant class:</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>tileGrid tileGrid--1col</code></td>
@@ -420,6 +450,7 @@ equal height tiles, you must set a min-height in page-specific CSS.</p>
 </tr>
 </tbody>
 </table>
+
 <h3>Media Query Modifiers</h3>
 
 <p>tileGrid also supports media query column modifiers. You can declare
@@ -429,13 +460,16 @@ a specific number of columns for:</p>
 <li>1-6 columns at the "medium" breakpoint</li>
 <li>1-6 columns at the "small" breakpoint</li>
 </ul>
+
 <h4>Examples:</h4>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Example</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>tileGrid tileGrid_atSmall--1col</code></td>
@@ -450,8 +484,14 @@ a specific number of columns for:</p>
 <td>6 columns by default, 3 columns at medium, 1 column at small</td>
 </tr>
 </tbody>
-</table></section>
-</div>
+</table>
+
+
+	
+
+	
+			</section>
+		</div>
 	
 
 	<script type="text/javascript">
@@ -467,5 +507,6 @@ a specific number of columns for:</p>
 			}
 		};
 	</script>
-</body>
+
+	</body>
 </html>

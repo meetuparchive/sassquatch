@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Sassquatch : Modifiers</title>
-<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
-<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
-<link rel="stylesheet" href="sassquatch/sassquatch.css">
-<link rel="stylesheet" href="style/doc.css">
-<link rel="stylesheet" href="style/github.css">
-</head>
-<body class="">
+	<head>
+		<title>Sassquatch : Modifiers</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="">
 
 	
 
 	
-		<header class="inverted"><h1>Sassquatch <span class="version">1.13.14</span>
+		<header class="inverted">
+			<h1>Sassquatch <span class="version">1.15.1</span>
 </h1>
-		</header><div id="pageWrap" class="clearfix">
+		</header>
 
-			<nav id="mainNav"><div class="doc-box">
+		<div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav">
+				<div class="doc-box">
 					<ul class="resetList">
-<li class="">
+						
+							<li class="">
 								<a href="navigation.html">Navigation</a>
 							</li>
 						
@@ -55,12 +60,17 @@
 								<a href="forms.html">Forms</a>
 							</li>
 						
+							<li class="">
+								<a href="__deprecated__.html">__deprecated__</a>
+							</li>
+						
 					</ul>
-</div>
+				</div>
 
 				<h4>Modifiers</h4>
 				<ul id="categoryList" class="resetList small">
-<li><a href="#displayModifiers">Display</a></li>
+					
+						<li><a href="#displayModifiers">Display</a></li>
 					
 						<li><a href="#flushModifiers">Flushing Elements</a></li>
 					
@@ -74,6 +84,8 @@
 					
 						<li><a href="#marginModifiers">Margin</a></li>
 					
+						<li><a href="#mediaModifiers">Media Query Helpers</a></li>
+					
 						<li><a href="#paddingModifiers">Padding</a></li>
 					
 						<li><a href="#talignModifiers">Text alignment</a></li>
@@ -84,16 +96,23 @@
 					
 						<li><a href="#valignModifiers">Vertical alignment</a></li>
 					
-				</ul></nav><section id="content"><h1 id="displayModifiers">Display</h1>
+				</ul>
+			</nav>
+
+			<section id="content">
+	
+<h1 id="displayModifiers">Display</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td><code>display-none</code></td>
+<td><code>display--none</code></td>
 <td>Sets <code>display</code> property of eleement to <code>none</code>
 </td>
 </tr>
@@ -103,7 +122,7 @@
 </td>
 </tr>
 <tr>
-<td><code>inline-block</code></td>
+<td><code>inlineBlock</code></td>
 <td>Sets <code>display</code> property of element to <code>inline-block</code>
 </td>
 </tr>
@@ -114,15 +133,18 @@
 </tr>
 </tbody>
 </table>
+
 <h1 id="flushModifiers">Flushing Elements</h1>
 
 <p>Removes all margin and padding on an element for a given direction.</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>flush--top</code></td>
@@ -146,25 +168,33 @@
 </tr>
 </tbody>
 </table>
+
 <h1 id="focusModifiers">Focus</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
-<tbody><tr>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td><code>noFocus</code></td>
 <td><a href="#" class="button--primary noFocus">No focus style</a></td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
+
 <h1 id="highlightModifiers">Highlighting</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>debug</code></td>
@@ -179,22 +209,25 @@
 <td><p class="shaded">Example paragraph</p></td>
 </tr>
 <tr>
-<td><code>shaded-lighter</code></td>
+<td><code>shaded--lighter</code></td>
 <td><p class="shaded-lighter">Example paragraph</p></td>
 </tr>
 <tr>
-<td><code>shaded-red</code></td>
+<td><code>shaded--red</code></td>
 <td><p class="shaded-red">Example paragraph</p></td>
 </tr>
 </tbody>
 </table>
+
 <h1 id="jsModifiers">JS Helpers</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>block-if-js</code></td>
@@ -214,6 +247,7 @@
 </tr>
 </tbody>
 </table>
+
 <h1 id="linkModifiers">Links</h1>
 
 <p>Styles a link as body text color.</p>
@@ -241,98 +275,212 @@
 </div>
 <h1 id="marginModifiers">Margin</h1>
 
-<table>
-<thead><tr>
-<th>Class</th>
-<th>Example</th>
-</tr></thead>
-<tbody>
-<tr>
-<td><code>margin-left</code></td>
-<td><div class="inline-block guide-shade margin-left">Example dif</div></td>
-</tr>
-<tr>
-<td><code>margin-right</code></td>
-<td><div class="inline-block guide-shade margin-right">Example dif</div></td>
-</tr>
-<tr>
-<td><code>margin-top</code></td>
-<td><div class="inline-block guide-shade margin-top">Example dif</div></td>
-</tr>
-<tr>
-<td><code>margin-bottom</code></td>
-<td><div class="inline-block guide-shade margin-bottom">Example div</div></td>
-</tr>
-<tr>
-<td><code>margin-all</code></td>
-<td><div class="inline-block guide-shade margin-all">Example div</div></td>
-</tr>
-<tr>
-<td><code>margin-none</code></td>
-<td><div class="inline-block guide-shade margin-none">Example div</div></td>
-</tr>
-<tr>
-<td><code>margin-centered</code></td>
-<td><div class="span-50 guide-shade margin-centered">Example div</div></td>
-</tr>
-</tbody>
-</table>
-<h1 id="paddingModifiers">Padding</h1>
+<h4>Full margin</h4>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td><code>padding-left</code></td>
-<td><div class="inline-block guide-shade padding-left">Example div</div></td>
+<td><code>marginLeft</code></td>
+<td><div class="inline-block guide-shade marginLeft">Example dif</div></td>
 </tr>
 <tr>
-<td><code>padding-right</code></td>
-<td><div class="inline-block guide-shade padding-right">Example div</div></td>
+<td><code>marginRight</code></td>
+<td><div class="inline-block guide-shade marginRight">Example dif</div></td>
 </tr>
 <tr>
-<td><code>padding-top</code></td>
-<td><div class="inline-block guide-shade padding-top">Example div</div></td>
+<td><code>marginTop</code></td>
+<td><div class="inline-block guide-shade marginTop">Example dif</div></td>
 </tr>
 <tr>
-<td><code>padding-bottom</code></td>
-<td><div class="inline-block guide-shade padding-bottom">Example div</div></td>
+<td><code>marginBottom</code></td>
+<td><div class="inline-block guide-shade marginBottom">Example div</div></td>
 </tr>
 <tr>
-<td><code>padding-all</code></td>
-<td><div class="inline-block guide-shade padding-all">Example div</div></td>
+<td><code>marginAll</code></td>
+<td><div class="inline-block guide-shade marginAll">Example div</div></td>
 </tr>
 <tr>
-<td><code>papdding-none</code></td>
-<td><div class="inline-block guide-shade padding-none">Example div</div></td>
+<td><code>marginNone</code></td>
+<td><div class="inline-block guide-shade marginNone">Example div</div></td>
+</tr>
+<tr>
+<td><code>marginCentered</code></td>
+<td><div class="span-50 guide-shade marginCentered">Example div</div></td>
 </tr>
 </tbody>
 </table>
+
+<h4>Half margin</h4>
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marginLeft--half</code></td>
+<td><div class="inline-block guide-shade marginLeft--half">Example dif</div></td>
+</tr>
+<tr>
+<td><code>marginRight--half</code></td>
+<td><div class="inline-block guide-shade marginRight--half">Example dif</div></td>
+</tr>
+<tr>
+<td><code>marginTop--half</code></td>
+<td><div class="inline-block guide-shade marginTop--half">Example dif</div></td>
+</tr>
+<tr>
+<td><code>marginBottom--half</code></td>
+<td><div class="inline-block guide-shade marginBottom--half">Example div</div></td>
+</tr>
+<tr>
+<td><code>marginAll--half</code></td>
+<td><div class="inline-block guide-shade marginAll--half">Example div</div></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="mediaModifiers">Media Query Helpers</h1>
+
+<p>Media query modifiers allow you to declare
+a given modification at a given screen size.</p>
+
+<h3>Usage</h3>
+
+<p>Media query modifiers follow this signature:</p>
+<div class="codeBlock"><div class="highlight"><pre>._at[Size (ie. "Small", "Medium", "Large", "Huge"]--[modification]
+</pre></div></div>
+<h3>Supported modifications, 'medium' size as an example:</h3>
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>._atMedium--displayNone</code></td>
+<td>Hides element when viewport is 'mediumm' or below</td>
+</tr>
+<tr>
+<td><code>._atMedium--displayBlock</code></td>
+<td>Sets display to block when viewport 'medium' or below</td>
+</tr>
+<tr>
+<td><code>._atMedium--center</code></td>
+<td>Centers element when viewport 'medium' or below</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="paddingModifiers">Padding</h1>
+
+<h4>Full padding</h4>
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>paddingLeft</code></td>
+<td><div class="inline-block guide-shade paddingLeft">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingRight</code></td>
+<td><div class="inline-block guide-shade paddingRight">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingTop</code></td>
+<td><div class="inline-block guide-shade paddingTop">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingBottom</code></td>
+<td><div class="inline-block guide-shade paddingBottom">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingAll</code></td>
+<td><div class="inline-block guide-shade paddingAll">Example div</div></td>
+</tr>
+<tr>
+<td><code>papddingNone</code></td>
+<td><div class="inline-block guide-shade paddingNone">Example div</div></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Half padding</h4>
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>paddingLeft--half</code></td>
+<td><div class="inline-block guide-shade paddingLeft--half">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingRight--half</code></td>
+<td><div class="inline-block guide-shade paddingRight--half">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingTop--half</code></td>
+<td><div class="inline-block guide-shade paddingTop--half">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingBottom--half</code></td>
+<td><div class="inline-block guide-shade paddingBottom--half">Example div</div></td>
+</tr>
+<tr>
+<td><code>paddingAll--half</code></td>
+<td><div class="inline-block guide-shade paddingAll--half">Example div</div></td>
+</tr>
+</tbody>
+</table>
+
 <h1 id="talignModifiers">Text alignment</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td><code>align-right</code></td>
-<td><p class="align-right">Example paragraph</p></td>
+<td><code>align--right</code></td>
+<td><p class="align--right">Example paragraph</p></td>
 </tr>
 <tr>
-<td><code>align-center</code></td>
-<td><p class="align-center">Example paragraph</p></td>
+<td><code>align--center</code></td>
+<td><p class="align--center">Example paragraph</p></td>
 </tr>
 <tr>
-<td><code>align-left</code></td>
-<td><p class="align-left">Example paragraph</p></td>
+<td><code>align--left</code></td>
+<td><p class="align--left">Example paragraph</p></td>
 </tr>
 </tbody>
 </table>
+
 <h1 id="textwrapModifiers">Text Wrap</h1>
 
 <h3>Wrap Nice</h3>
@@ -389,10 +537,12 @@ Sassquatch also provieds a <code>.wrap</code> class for overriding elements that
 <h1 id="typographyModifiers">Typography</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>muted</code></td>
@@ -420,29 +570,42 @@ Sassquatch also provieds a <code>.wrap</code> class for overriding elements that
 </tr>
 </tbody>
 </table>
+
 <h1 id="valignModifiers">Vertical alignment</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Example</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td><code>valign-top</code></td>
-<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-top">inline-block span</span></p></td>
+<td><code>valign--top</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--top">inline-block span</span></p></td>
 </tr>
 <tr>
-<td><code>valign-middle</code></td>
-<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-middle">inline-block span</span></p></td>
+<td><code>valign--middle</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--middle">inline-block span</span></p></td>
 </tr>
 <tr>
-<td><code>valign-bottom</code></td>
-<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign-bottom">inline-block span</span></p></td>
+<td><code>valign--bottom</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--bottom">inline-block span</span></p></td>
+</tr>
+<tr>
+<td><code>valign--textBottom</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--textBottom">inline-block span</span></p></td>
 </tr>
 </tbody>
-</table></section>
-</div>
+</table>
+
+
+	
+
+	
+			</section>
+		</div>
 	
 
 	<script type="text/javascript">
@@ -458,5 +621,6 @@ Sassquatch also provieds a <code>.wrap</code> class for overriding elements that
 			}
 		};
 	</script>
-</body>
+
+	</body>
 </html>

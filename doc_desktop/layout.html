@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Sassquatch : Layout</title>
-<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
-<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
-<link rel="stylesheet" href="sassquatch/sassquatch.css">
-<link rel="stylesheet" href="style/doc.css">
-<link rel="stylesheet" href="style/github.css">
-</head>
-<body class="">
+	<head>
+		<title>Sassquatch : Layout</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css">
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css">
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="">
 
 	
 
 	
-		<header class="inverted"><h1>Sassquatch <span class="version">1.13.14</span>
+		<header class="inverted">
+			<h1>Sassquatch <span class="version">1.15.1</span>
 </h1>
-		</header><div id="pageWrap" class="clearfix">
+		</header>
 
-			<nav id="mainNav"><div class="doc-box">
+		<div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav">
+				<div class="doc-box">
 					<ul class="resetList">
-<li class="">
+						
+							<li class="">
 								<a href="navigation.html">Navigation</a>
 							</li>
 						
@@ -55,12 +60,19 @@
 								<a href="forms.html">Forms</a>
 							</li>
 						
+							<li class="">
+								<a href="__deprecated__.html">__deprecated__</a>
+							</li>
+						
 					</ul>
-</div>
+				</div>
 
 				<h4>Layout</h4>
 				<ul id="categoryList" class="resetList small">
-<li><a href="#clearfix">Float Clearing</a></li>
+					
+						<li><a href="#chunkList">Chunk List</a></li>
+					
+						<li><a href="#clearfix">Float Clearing</a></li>
 					
 						<li><a href="#docBox">Doc Box</a></li>
 					
@@ -86,7 +98,153 @@
 					
 						<li><a href="#widthModifiers">Width Modifiers</a></li>
 					
-				</ul></nav><section id="content"><h1 id="clearfix">Float Clearing</h1>
+				</ul>
+			</nav>
+
+			<section id="content">
+	
+<h1 id="chunkList">Chunk List</h1>
+
+<p><em>The <code>chunkList</code> component replaces <code>touchlist</code>.</em></p>
+
+<p>You can optionally add a <code>docBox</code> class to <code>chunkList</code> or
+nest it inside a <code>docBox</code>, but it isn't necessary; <code>chunkList</code>
+should work regardless of context.</p>
+
+<h4>Classes:</h4>
+
+<p><code>.chunkList</code> &gt; <code>.chunkList-row</code> &gt; <code>.chunkList-chunk</code></p>
+
+<h4>Usage:</h4>
+
+<p>Each <code>li</code> within <code>chunkList</code> can be seen as a "row", and
+each <code>chunkList-chunk</code> is a padded chunk for content within the row.</p>
+
+<p>There are no restrictions on how many or how few chunks you can put in
+a row.</p>
+
+<p>In the spirit of using small, sharp tools, chunk list classes handle only 
+basic element spacing, so use <a href="#fixFlex">fix-flex</a> to set the layout of 
+multiple chunks within a row.</p>
+<div class="codeExample">
+<div class="exampleOutput">    <h5 class="muted">Chunk List with two chunks per row</h5>
+    <ul class="chunkList docBox">
+        <li class="chunkList-row">
+            <a class="ffbox" href="#">
+                <div class="chunkList-chunk ffbox-fix pintop">
+                    <span href="#" class=" avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+                        Person
+                    </span>
+                </div>
+                <div class="chunkList-chunk ffbox-flex">
+                    <h5>Member Name</h5>
+                </div>
+            </a>
+        </li>
+        <li class="chunkList-row">
+            <a class="ffbox" href="#">
+                <div class="chunkList-chunk ffbox-fix pintop">
+                    <span href="#" class="chunk--fix avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+                        Person
+                    </span>
+                </div>
+                <div class="chunkList-chunk ffbox-flex">
+                    <h5>Member Name</h5>
+                    <p class="small">You're both members of <strong>The Super Cool Dio 2016 Meetup Group</strong> and 6 others</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"muted"</span><span class="nt">&gt;</span>Chunk List with two chunks per row<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"chunkList docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"chunkList-row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"ffbox"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-fix pintop"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">" avatar avatar--person"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"</span><span class="nt">&gt;</span>
+                        Person
+                    <span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-flex"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h5&gt;</span>Member Name<span class="nt">&lt;/h5&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"chunkList-row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"ffbox"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-fix pintop"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunk--fix avatar avatar--person"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);"</span><span class="nt">&gt;</span>
+                        Person
+                    <span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-flex"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h5&gt;</span>Member Name<span class="nt">&lt;/h5&gt;</span>
+                    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>You're both members of <span class="nt">&lt;strong&gt;</span>The Super Cool Dio 2016 Meetup Group<span class="nt">&lt;/strong&gt;</span> and 6 others<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div>
+</div>
+<div class="codeExample">
+<div class="exampleOutput">    <h5 class="muted">Just one chunk in one row</h5>
+    <ul class="chunkList docBox">
+        <li class="chunkList-row">
+            <a href="#" class="chunkList-chunk">
+                <h5 class="muted small">Member Since</h5>
+                <p>June 2010</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"muted"</span><span class="nt">&gt;</span>Just one chunk in one row<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"chunkList docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"chunkList-row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunkList-chunk"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"muted small"</span><span class="nt">&gt;</span>Member Since<span class="nt">&lt;/h5&gt;</span>
+                <span class="nt">&lt;p&gt;</span>June 2010<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div>
+</div>
+<div class="codeExample">
+<div class="exampleOutput">    <h5 class="muted">Three chunks in a row!</h5>
+    <ul class="chunkList docBox">
+        <li class="chunkList-row ffbox">
+            <div class="chunkList-chunk ffbox-fix">
+                <span href="#" class="avatar avatar--person" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+                    Person
+                </span>
+            </div>
+            <div class="chunkList-chunk ffbox-flex">
+                <p>This is not a test of the cheese ball alert system</p>
+            </div>
+            <a class="chunkList-chunk ffbox-fix shaded">
+                <h4>chunky anchor</h4>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"muted"</span><span class="nt">&gt;</span>Three chunks in a row!<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"chunkList docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"chunkList-row ffbox"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-fix"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"</span><span class="nt">&gt;</span>
+                    Person
+                <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-flex"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>This is not a test of the cheese ball alert system<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"chunkList-chunk ffbox-fix shaded"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h4&gt;</span>chunky anchor<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+</pre></div></div>
+</div>
+<h1 id="clearfix">Float Clearing</h1>
 
 <p>Clearfix method see: http://perishablepress.com/press/2009/12/06/new-clearfix-hack/</p>
 <div class="codeExample">
@@ -98,13 +256,16 @@
     </div>
 
     <hr>
-<!-- optional method --><div>
+
+    <!-- optional method -->
+    <div>
         <div style="float: left;" class="shaded-red">Floated div</div>
         <div style="float: right;" class="shaded-red">Floated div</div>
         <br class="clear-both">
+    </div>
 </div>
-</div>
-<div class="codeBlock"><div class="highlight"><pre>    <span class="c">&lt;!-- preferred method --&gt;</span>
+<div class="codeBlock"><div class="highlight"><pre>
+    <span class="c">&lt;!-- preferred method --&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"float: left;"</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>Floated div<span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"float: right;"</span> <span class="na">class=</span><span class="s">"shaded-red"</span><span class="nt">&gt;</span>Floated div<span class="nt">&lt;/div&gt;</span>
@@ -143,12 +304,12 @@ to span the full width of the box, and use <code>docSection</code> for padded co
             <h3>Cat name ideas</h3>
         </div>
         <ul class="sectionList">
-<li><p>Jennifer</p></li>
+            <li><p>Jennifer</p></li>
             <li><p>Sergei</p></li>
             <li><p>Bruce Springsteen</p></li>
             <li><p>Mittens</p></li>
         </ul>
-</div>
+    </div>
 </div>
 <div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
@@ -179,7 +340,8 @@ to span the full width of the box, and use <code>docSection</code> for padded co
         </div>
     </div>
 </div>
-<div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;h5&gt;</span>Sections in a docBox<span class="nt">&lt;/h5&gt;</span>
+<div class="codeBlock"><div class="highlight"><pre>
+    <span class="nt">&lt;h5&gt;</span>Sections in a docBox<span class="nt">&lt;/h5&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;p&gt;</span>first content container<span class="nt">&lt;/p&gt;</span>
@@ -265,7 +427,8 @@ container.</p>
         </div>
     </div>
 </div>
-<div class="codeBlock"><div class="highlight"><pre>    <span class="c">&lt;!-- default stripe and color stripe --&gt;</span>
+<div class="codeBlock"><div class="highlight"><pre>
+    <span class="c">&lt;!-- default stripe and color stripe --&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;h3&gt;</span>I'm in a docBounds within a stripe<span class="nt">&lt;/h3&gt;</span>
@@ -309,10 +472,12 @@ container.</p>
 but there are a number of other variants:</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>docStripe--collection</code></td>
@@ -332,6 +497,7 @@ but there are a number of other variants:</p>
 </tr>
 </tbody>
 </table>
+
 <h1 id="figureset">Figureset</h1>
 
 <p>Figure with description. Similar to OOCSS "media block".</p>
@@ -339,7 +505,7 @@ but there are a number of other variants:</p>
 <div class="exampleOutput">    <div class="figureset">
         <div class="figureset-figure">
             <img src="http://placekitten.com/60/80/">
-</div>
+        </div>
         <div class="figureset-description">
             <h4>This is a fluffy kitten</h4>
             <p>Maybe not the fluffiest, but he'll do.</p>
@@ -368,7 +534,7 @@ but there are a number of other variants:</p>
         </div>
         <div class="figureset-figure">
             <img src="http://placekitten.com/60/80/">
-</div>
+        </div>
     </div>
 </div>
 <div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-right"</span><span class="nt">&gt;</span>
@@ -421,10 +587,12 @@ middle aligned. The pinning system allows you to append to either the
 components to adjust that alignment to the top or bottom.</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Class</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td><code>pintop</code></td>
@@ -444,7 +612,9 @@ components to adjust that alignment to the top or bottom.</p>
     </div>
 
     <hr>
-<!-- Pinning whole ffbox units--><div class="ffbox pintop" style="min-height:40px;">
+
+    <!-- Pinning whole ffbox units-->
+    <div class="ffbox pintop" style="min-height:40px;">
         <div class="ffbox-fix shaded-red"> fix </div>
         <div class="ffbox-flex guide-shade"> flex </div>
     </div>
@@ -540,6 +710,7 @@ width, content controls height.</p>
 <code>size1of7</code>, <code>size2of7</code>, <code>size3of7</code>, <code>size4of7</code>, <code>size5of7</code>, <code>size6of7</code>
 </li>
 </ul>
+
 <h1 id="rounding">Rounding Corners</h1>
 <div class="codeExample">
 <div class="exampleOutput">    <div class="rounded-top shaded-red align-center"><p>rounded-top</p></div>
@@ -579,7 +750,7 @@ width, content controls height.</p>
 
 	
 			</section>
-</div>
+		</div>
 	
 
 	<script type="text/javascript">
@@ -595,5 +766,6 @@ width, content controls height.</p>
 			}
 		};
 	</script>
-</body>
+
+	</body>
 </html>
