@@ -89,6 +89,10 @@ Example                                                                  | Descr
 
 $columns: 6, 5, 4, 3, 2, 1;
 
+@function getWidth( $divideBy: 1 ) {
+	@return percentage(1/$divideBy);
+}
+
 .tileGrid {
 	@include box-sizing();
 	font-size: 0; //whitespace hack
@@ -110,7 +114,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 // explicit column variants
 @each $n in $columns {
 	.tileGrid--#{$n}col .tileGrid-tile {
-		width: percentage($n);
+		width: getWidth($n);
 	}
 }
 
@@ -118,7 +122,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 @include atMediaDown(medium) {
 	@each $n in $columns {
 		.tileGrid_atMedium--#{$n}col .tileGrid-tile {
-			width: percentage($n);
+			width: getWidth($n);
 		}
 	}
 }
@@ -127,7 +131,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 @include atMediaDown(small) {
 	@each $n in $columns {
 		.tileGrid_atSmall--#{$n}col .tileGrid-tile {
-			width: percentage($n);
+			width: getWidth($n);
 		}
 	}
 }

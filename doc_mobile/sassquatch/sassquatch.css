@@ -5760,23 +5760,23 @@ Example                                                                  | Descr
 }
 
 .tileGrid--6col .tileGrid-tile {
-  width: 600%;
+  width: 16.66667%;
 }
 
 .tileGrid--5col .tileGrid-tile {
-  width: 500%;
+  width: 20%;
 }
 
 .tileGrid--4col .tileGrid-tile {
-  width: 400%;
+  width: 25%;
 }
 
 .tileGrid--3col .tileGrid-tile {
-  width: 300%;
+  width: 33.33333%;
 }
 
 .tileGrid--2col .tileGrid-tile {
-  width: 200%;
+  width: 50%;
 }
 
 .tileGrid--1col .tileGrid-tile {
@@ -5785,23 +5785,23 @@ Example                                                                  | Descr
 
 @media only screen and (max-width: 640px) {
   .tileGrid_atMedium--6col .tileGrid-tile {
-    width: 600%;
+    width: 16.66667%;
   }
 
   .tileGrid_atMedium--5col .tileGrid-tile {
-    width: 500%;
+    width: 20%;
   }
 
   .tileGrid_atMedium--4col .tileGrid-tile {
-    width: 400%;
+    width: 25%;
   }
 
   .tileGrid_atMedium--3col .tileGrid-tile {
-    width: 300%;
+    width: 33.33333%;
   }
 
   .tileGrid_atMedium--2col .tileGrid-tile {
-    width: 200%;
+    width: 50%;
   }
 
   .tileGrid_atMedium--1col .tileGrid-tile {
@@ -5810,23 +5810,23 @@ Example                                                                  | Descr
 }
 @media only screen and (max-width: 440px) {
   .tileGrid_atSmall--6col .tileGrid-tile {
-    width: 600%;
+    width: 16.66667%;
   }
 
   .tileGrid_atSmall--5col .tileGrid-tile {
-    width: 500%;
+    width: 20%;
   }
 
   .tileGrid_atSmall--4col .tileGrid-tile {
-    width: 400%;
+    width: 25%;
   }
 
   .tileGrid_atSmall--3col .tileGrid-tile {
-    width: 300%;
+    width: 33.33333%;
   }
 
   .tileGrid_atSmall--2col .tileGrid-tile {
-    width: 200%;
+    width: 50%;
   }
 
   .tileGrid_atSmall--1col .tileGrid-tile {
