@@ -85,6 +85,12 @@ name: pipeList
 parent: list
 ---
 
+Adds "pipes" to separate inline list items via 
+right borders, padding, and margin.
+
+_Optional `.last` class available for browsers that
+do not support `:last-child`_
+
 ```html_example
 	<ul class="pipeList">
 		<li>Eggs</li>
@@ -98,6 +104,8 @@ parent: list
 	padding-right: 0.5em;
 	border-right: 1px solid;
 	&:last-child, &.last {
+		margin-right: 0;
+		padding-right: 0;
 		border-right-width: 0;
 	}
 }
