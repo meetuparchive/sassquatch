@@ -132,6 +132,7 @@ parent: list
 		margin-left: 0.75em;
 	}
 	&:last-child:after, &.last:after {
+		margin-right: 0;
 		margin-left: 0;
 		content: '';
 	}
