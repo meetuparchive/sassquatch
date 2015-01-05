@@ -99,7 +99,6 @@ $listspacing: $baseline/1.5;
 .chunkList-row {
 	margin: 0;
 	border-top: 1px solid $C_border;
-	overflow: hidden;
 
 	&:first-child{
 		border-top: none;

@@ -89,11 +89,8 @@ Example                                                                  | Descr
 
 $columns: 6, 5, 4, 3, 2, 1;
 
-// using this helper instead of percentage()
-// because this one will round down to the nearest int
-// (helps android 2.3 browsers deal with widths)
-@function percentageForColumns( $cols ) {
-	@return floor(1/$cols*100) * 1%;
+@function getWidth( $divideBy: 1 ) {
+	@return percentage(1/$divideBy);
 }
 
 .tileGrid {
@@ -117,7 +114,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 // explicit column variants
 @each $n in $columns {
 	.tileGrid--#{$n}col .tileGrid-tile {
-		width: percentageForColumns($n);
+		width: getWidth($n);
 	}
 }
 
@@ -125,7 +122,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 @include atMediaDown(medium) {
 	@each $n in $columns {
 		.tileGrid_atMedium--#{$n}col .tileGrid-tile {
-			width: percentageForColumns($n);
+			width: getWidth($n);
 		}
 	}
 }
@@ -134,7 +131,7 @@ $columns: 6, 5, 4, 3, 2, 1;
 @include atMediaDown(small) {
 	@each $n in $columns {
 		.tileGrid_atSmall--#{$n}col .tileGrid-tile {
-			width: percentageForColumns($n);
+			width: getWidth($n);
 		}
 	}
 }
