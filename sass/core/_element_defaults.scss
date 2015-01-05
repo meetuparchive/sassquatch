@@ -83,7 +83,7 @@ the whitespace on the bottom).
 */
 
 	/* {{{ Inline tag defaults */
-	abbr, strong, acronym, span, small, time, strike, sub, sup, a {
+	abbr, strong, acronym, span, small, time, strike, sub, sup, a, code, pre {
 		display: inline;
 	}
 	abbr, acronym {
@@ -98,6 +98,9 @@ the whitespace on the bottom).
 	}
 	sup { top: -0.5em; }
 	sub { bottom: -0.25em; }
+	code, pre {
+		font-family: $monoFontStack;
+	}
 	/* }}} */
 
 	/* {{{ Block tag defaults */
