@@ -83,7 +83,7 @@ the whitespace on the bottom).
 */
 
 	/* {{{ Inline tag defaults */
-	abbr, strong, acronym, span, small, time, strike, sub, sup, a, code, pre {
+	abbr, strong, acronym, span, small, time, strike, sub, sup, a, code {
 		display: inline;
 	}
 	abbr, acronym {
@@ -107,7 +107,7 @@ the whitespace on the bottom).
 	p, ul, ol, blockquote,
 	form, fieldset, legend,
 	table, dl,dd,
-	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, pre {
 		margin: 0;
 		padding: 0;
 		margin-bottom: $spacing;
