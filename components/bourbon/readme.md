@@ -15,10 +15,12 @@ The mixins contain vendor specific prefixes for all CSS3 properties for support 
 - **[Changelog](https://github.com/thoughtbot/bourbon/releases)**
 - **[Issues & Bugs](https://github.com/thoughtbot/bourbon/issues)**
 
+Follow the [@bourbonsass](https://twitter.com/bourbonsass) Twitter account
+for updates.
+
 ## Requirements
 
-- [Sass](https://github.com/sass/sass) 3.3+
-- :warning: If you are using Bourbon with **LibSass**, **sass-rails**, **Compass** (pre 1.0.0), **Foundation** or need **Sass 3.2 support**, you should [use Bourbon 3.2.x](#installing-older-versions-of-bourbon).
+- [Sass](https://github.com/sass/sass) 3.4+ or [LibSass](https://github.com/sass/libsass) 3.1+
 
 ## Installation
 
@@ -66,19 +68,15 @@ For command line help, visit our wiki page on Bourbon’s [command line interfac
   bundle install
   ```
 
-3. Restart your server and rename `application.css` to `application.css.scss`:
+3. Restart your server and rename `application.css` to `application.scss`:
 
   ```bash
-  mv app/assets/stylesheets/application.css app/assets/stylesheets/application.css.scss
+  mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
   ```
 
-4. Delete the sprocket directive in `application.css.scss` ([why?](https://github.com/thoughtbot/bourbon/wiki/Rails-Sprockets)):
+4. Delete _all_ Sprockets directives in `application.scss` (`require`, `require_tree` and `require_self`) and use Sass’s native `@import` instead.
 
-  ```scss
-  *= require_tree .
-  ```
-
-5. Import Bourbon at the beginning of `application.css.scss`. All additional stylesheets should be imported below Bourbon:
+5. Import Bourbon at the beginning of `application.scss`. All additional stylesheets should be imported below Bourbon:
 
   ```scss
   @import "bourbon";
@@ -99,18 +97,18 @@ For command line help, visit our wiki page on Bourbon’s [command line interfac
 2. Reinstall the Bourbon gem, using the `-v` flag to specify the version you need:
 
   ```bash
-  gem install bourbon -v 3.2.3
+  gem install bourbon -v 3.2.4
   ```
 
 3. Follow the [instructions above](#installation) to install Bourbon into your project.
 
 ## Browser support
 
-- Chrome 10.0+
-- Firefox 3.6+
+- Chrome 26+
+- Firefox 29+
 - Internet Explorer 9+
-- Opera 12+
-- Safari 5.1+
+- Opera 15+
+- Safari 6.1+
 
 ## The Bourbon family
 
@@ -119,12 +117,24 @@ For command line help, visit our wiki page on Bourbon’s [command line interfac
 - [Bitters](https://github.com/thoughtbot/bitters): Scaffold styles, variables and structure for Bourbon projects
 - [Refills](https://github.com/thoughtbot/refills): Prepackaged patterns and components built with Bourbon, Neat and Bitters
 
-## Credits
-
-[![thoughtbot](http://images.thoughtbot.com/bourbon/thoughtbot-logo.svg)](http://thoughtbot.com)
-
-Bourbon is maintained and funded by [thoughtbot, inc](http://thoughtbot.com). Tweet your questions or suggestions to [@bourbonsass](https://twitter.com/bourbonsass) and while you’re at it follow us too.
+Also check out [Proteus](https://github.com/thoughtbot/proteus), a collection of useful starter kits to help you prototype faster. Each kit comes with Bourbon, Neat and Bitters out-of-the-box.
 
 ## License
 
-Copyright © 2011–2014 [thoughtbot, inc](http://thoughtbot.com). Bourbon is free software, and may be redistributed under the terms specified in the [license](LICENSE.md).
+Copyright © 2011–2015 [thoughtbot, inc](http://thoughtbot.com).
+Bourbon is free software,
+and may be redistributed under the terms specified in the [license](LICENSE.md).
+
+## About thoughtbot
+
+[![thoughtbot](http://thoughtbot.github.io/images/signature.svg)][hire]
+
+Bourbon is maintained and funded by thoughtbot, inc.
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+We love open source software!
+See [our other projects][community] or
+[hire us][hire] to design, develop, and grow your product.
+
+[community]: https://thoughtbot.com/community?utm_source=github
+[hire]: https://thoughtbot.com/hire-us?utm_source=github
