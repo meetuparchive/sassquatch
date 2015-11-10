@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-wiredep');
+	//grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	var FILE_NAME_HOLOGRAM_CONFIG = 'hologram_config.yml';
@@ -41,27 +41,10 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		/*
-		 *'gh-pages': {
-		 *   options: {
-		 *      base: DIR_BUILD
-		 *   },
-		 *   src: ['**']
-		 *}
-		 */
-		/*
-		 *'clean': {
-		 *   docs: [DIR_BUILD],
-		 *   css: [DIR_DOC_SRC + 'templates/css/sassquatch.css']
-		 *}
-		 */
-		/*
-		 *'wiredep': {
-		 *   'sass': {
-		 *      src: ["sass/_util.scss"]
-		 *   }
-		 *}
-		 */
+		'clean': {
+			desktop: [path.destHologramDweb],
+			mobile: [path.destHologramMweb]
+		},
 		'preprocess': {
 			desktop: {
 				src: [ path.destHologramDweb + '*.html' ],
@@ -84,9 +67,24 @@ module.exports = function(grunt) {
 				}
 			}
 		}
+		/*
+		 *'gh-pages': {
+		 *   options: {
+		 *      base: DIR_BUILD
+		 *   },
+		 *   src: ['**']
+		 *}
+		 */
+		/*
+		 *'wiredep': {
+		 *   'sass': {
+		 *      src: ["sass/_util.scss"]
+		 *   }
+		 *}
+		 */
 	});
 
 	grunt.registerTask('docs', ['hologram:desktop', 'preprocess:desktop', 'hologram:mobile', 'preprocess:mobile']);
-	grunt.registerTask('default', ['sass', 'docs']);
+	grunt.registerTask('default', ['clean', 'sass', 'docs']);
 	//grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
