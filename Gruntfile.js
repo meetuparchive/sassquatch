@@ -7,31 +7,33 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-preprocess');
 
+	var FILE_NAME_HOLOGRAM_CONFIG = 'hologram_config.yml';
+
 	var path = {};
-	path.srcHologramDweb = 'hologram/desktop';
-	path.srcHologramMweb = 'hologram/mobile';
+	path.srcHologramDweb = 'hologram/desktop/';
+	path.srcHologramMweb = 'hologram/mobile/';
+	path.srcSassDweb = 'sass/sassquatch.scss';
+	path.srcSassMweb = 'sass/sassquatch_mobile.scss';
 
 	grunt.initConfig({
 		bower: grunt.file.readJSON('bower.json'),
 		'sass': {
 			dist: {
 				files: [
-					{ "doc_desktop/sassquatch/sassquatch.css": "sass/sassquatch.scss" },
-					{ "doc_mobile/sassquatch/sassquatch.css": "sass/sassquatch_mobile.scss" },
+					{ "doc_desktop/sassquatch/sassquatch.css": path.srcSassDweb },
+					{ "doc_mobile/sassquatch/sassquatch.css": path.srcSassMweb },
 				]
 			}
 		},
-		'hologram-desktop': {
-			generate: {
+		'hologram': {
+			desktop: {
 				options: {
-					config: path.srcHologramDweb + 'hologram_config.yaml'
+					config: path.srcHologramDweb + FILE_NAME_HOLOGRAM_CONFIG
 				}
-			}
-		},
-		'hologram-mobile': {
-			generate: {
+			},
+			mobile: {
 				options: {
-					config: path.srcHologramMweb + 'hologram_config.yaml'
+					config: path.srcHologramMweb + FILE_NAME_HOLOGRAM_CONFIG
 				}
 			}
 		}
@@ -72,6 +74,6 @@ module.exports = function(grunt) {
 		 */
 	});
 
-	grunt.registerTask('default', ['sass', 'hologram']);
+	grunt.registerTask('default', ['sass', 'hologram:desktop', 'hologram:mobile']);
 	//grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
