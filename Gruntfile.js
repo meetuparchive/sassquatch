@@ -10,8 +10,12 @@ module.exports = function(grunt) {
 	var FILE_NAME_HOLOGRAM_CONFIG = 'hologram_config.yml';
 
 	var path = {};
+
 	path.srcHologramDweb = 'hologram/desktop/';
 	path.srcHologramMweb = 'hologram/mobile/';
+	path.destHologramDweb = 'doc_desktop/';
+	path.destHologramMweb = 'doc_mobile/';
+
 	path.srcSassDweb = 'sass/sassquatch.scss';
 	path.srcSassMweb = 'sass/sassquatch_mobile.scss';
 
@@ -36,7 +40,7 @@ module.exports = function(grunt) {
 					config: path.srcHologramMweb + FILE_NAME_HOLOGRAM_CONFIG
 				}
 			}
-		}
+		},
 		/*
 		 *'gh-pages': {
 		 *   options: {
@@ -58,22 +62,31 @@ module.exports = function(grunt) {
 		 *   }
 		 *}
 		 */
-		/*
-		 *'preprocess': {
-		 *   inline: {
-		 *      src: [ 'docs/build/*.html' ],
-		 *      options: {
-		 *         inline: true,
-		 *         context: {
-		 *            DEBUG: false,
-		 *            'VERSION': '<%= bower.version %>'
-		 *         }
-		 *      }
-		 *   }
-		 *}
-		 */
+		'preprocess': {
+			desktop: {
+				src: [ path.destHologramDweb + '*.html' ],
+				options: {
+					inline: true,
+					context: {
+						DEBUG: false,
+						'VERSION': '<%= bower.version %>'
+					}
+				}
+			},
+			mobile: {
+				src: [ path.destHologramMweb + '*.html' ],
+				options: {
+					inline: true,
+					context: {
+						DEBUG: false,
+						'VERSION': '<%= bower.version %>'
+					}
+				}
+			}
+		}
 	});
 
-	grunt.registerTask('default', ['sass', 'hologram:desktop', 'hologram:mobile']);
+	grunt.registerTask('docs', ['hologram:desktop', 'preprocess:desktop', 'hologram:mobile', 'preprocess:mobile']);
+	grunt.registerTask('default', ['sass', 'docs']);
 	//grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
