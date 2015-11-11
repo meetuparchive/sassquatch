@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	//grunt.loadNpmTasks('grunt-wiredep');
+	grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-exec');
 
@@ -72,17 +72,15 @@ module.exports = function(grunt) {
 				base: path.build
 			},
 			src: ['**']
+		},
+		'wiredep': {
+			'sass': {
+				src: ["sass/_utils.scss"]
+			}
 		}
-		/*
-		 *'wiredep': {
-		 *   'sass': {
-		 *      src: ["sass/_util.scss"]
-		 *   }
-		 *}
-		 */
 	});
 
 	grunt.registerTask('docs', ['hologram:desktop', 'hologram:mobile', 'exec:copy_index', 'preprocess']);
-	grunt.registerTask('default', ['clean', 'sass', 'docs']);
+	grunt.registerTask('default', ['wiredep', 'clean', 'sass', 'docs']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };

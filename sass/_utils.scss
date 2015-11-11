@@ -8,7 +8,9 @@
 
 // LIB
 @import "util/colors"; // meetup-swatches; frozen at 0.6.0
-@import "../components/bourbon/app/assets/stylesheets/bourbon";
+// bower:scss
+@import "../components/bourbon/app/assets/stylesheets/_bourbon.scss";
+// endbower
 
 // VARS
 @import "vars";
