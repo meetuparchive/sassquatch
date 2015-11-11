@@ -26,8 +26,8 @@ module.exports = function(grunt) {
 		'sass': {
 			dist: {
 				files: [
-					{ "doc_desktop/sassquatch/sassquatch.css": path.srcSassDweb },
-					{ "doc_mobile/sassquatch/sassquatch.css": path.srcSassMweb },
+					{ "build/doc_desktop/sassquatch/sassquatch.css": path.srcSassDweb },
+					{ "build/doc_mobile/sassquatch/sassquatch.css": path.srcSassMweb },
 				]
 			}
 		},
@@ -44,8 +44,7 @@ module.exports = function(grunt) {
 			}
 		},
 		'clean': {
-			desktop: [path.destHologramDweb],
-			mobile: [path.destHologramMweb]
+			all: [path.build]
 		},
 		'preprocess': {
 			desktop: {
