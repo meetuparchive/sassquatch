@@ -76,6 +76,8 @@ To modify sassquatch, edit scss source files in `sass/`. We document our Sass co
 
 ```
 	(compile sass and rebuild docs) $ grunt
+	(rebuild docs) $ grunt docs
+	(recompile sass) $ grunt sass
 ```
 
 Hologram builds static documentation to `doc_mobile/` and `doc_desktop/`; open these in your favorite browser locally to test during development.

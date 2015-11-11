@@ -11,10 +11,12 @@ module.exports = function(grunt) {
 
 	var path = {};
 
+	path.build = 'build/';
+
 	path.srcHologramDweb = 'hologram/desktop/';
 	path.srcHologramMweb = 'hologram/mobile/';
-	path.destHologramDweb = 'doc_desktop/';
-	path.destHologramMweb = 'doc_mobile/';
+	path.destHologramDweb = path.build + 'doc_desktop/';
+	path.destHologramMweb = path.build + 'doc_mobile/';
 
 	path.srcSassDweb = 'sass/sassquatch.scss';
 	path.srcSassMweb = 'sass/sassquatch_mobile.scss';
@@ -66,15 +68,13 @@ module.exports = function(grunt) {
 					}
 				}
 			}
+		},
+		'gh-pages': {
+			options: {
+				base: path.build
+			},
+			src: ['**']
 		}
-		/*
-		 *'gh-pages': {
-		 *   options: {
-		 *      base: DIR_BUILD
-		 *   },
-		 *   src: ['**']
-		 *}
-		 */
 		/*
 		 *'wiredep': {
 		 *   'sass': {
@@ -86,5 +86,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('docs', ['hologram:desktop', 'preprocess:desktop', 'hologram:mobile', 'preprocess:mobile']);
 	grunt.registerTask('default', ['clean', 'sass', 'docs']);
-	//grunt.registerTask('ghpages', ['default', 'gh-pages']);
+	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
