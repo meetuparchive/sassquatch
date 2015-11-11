@@ -1,0 +1,79 @@
+/*
+Error: File to import not found or unreadable: ../components/bourbon/app/assets/stylesheets/bourbon.
+       Load path: /Users/adamd/dev/sassquatch
+        on line 11 of sass/_utils.scss
+        from line 11 of sass/_base.scss
+        from line 6 of sass//sassquatch.scss
+
+6: @import "base";
+
+Backtrace:
+sass/_utils.scss:11
+sass/_base.scss:11
+sass//sassquatch.scss:6
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:45:in `import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:88:in `block in with_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:88:in `with_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:88:in `block in with_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:88:in `with_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/engine.rb:286:in `block in render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/util.rb:492:in `silence_sass_warnings'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/engine.rb:286:in `render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/sass_scss.rb:375:in `run'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/base.rb:40:in `parse'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/base.rb:19:in `parse!'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/bin/sass:13:in `<top (required)>'
+/Users/adamd/.rbenv/versions/2.0.0-p247/bin/sass:23:in `load'
+/Users/adamd/.rbenv/versions/2.0.0-p247/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../components/bourbon/app/assets/stylesheets/bourbon.\A        Load path: /Users/adamd/dev/sassquatch\A         on line 11 of sass/_utils.scss\A         from line 11 of sass/_base.scss\A         from line 6 of sass//sassquatch.scss\A \A 6: @import \"base\";"; }
