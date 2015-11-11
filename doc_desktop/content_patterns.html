@@ -1,0 +1,513 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Sassquatch : Content Patterns</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css" />
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="">
+
+	
+
+	
+		<header class="inverted">
+			<h1>Sassquatch <span class="version"> </span></h1>
+		</header>
+
+		<div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav">
+				<div class="doc-box">
+					<ul class="resetList">
+						
+							<li class="">
+								<a href="navigation.html">Navigation</a>
+							</li>
+						
+							<li class="selected">
+								<a href="content_patterns.html">Content Patterns</a>
+							</li>
+						
+							<li class="">
+								<a href="sass_utilities.html">Sass Utilities</a>
+							</li>
+						
+							<li class="">
+								<a href="layout.html">Layout</a>
+							</li>
+						
+							<li class="">
+								<a href="base_css.html">Base CSS</a>
+							</li>
+						
+							<li class="">
+								<a href="modifiers.html">Modifiers</a>
+							</li>
+						
+							<li class="">
+								<a href="lists.html">Lists</a>
+							</li>
+						
+							<li class="">
+								<a href="buttons.html">Buttons</a>
+							</li>
+						
+							<li class="">
+								<a href="forms.html">Forms</a>
+							</li>
+						
+					</ul>
+				</div>
+
+				<h4>Content Patterns</h4>
+				<ul id="categoryList" class="resetList small">
+					
+						<li><a href="#avatar">Avatar</a></li>
+					
+						<li><a href="#avatarStack">Avatar Stacks</a></li>
+					
+						<li><a href="#chapterAvatar">Chapter avatar</a></li>
+					
+						<li><a href="#nametagPhoto">Nametag Photo</a></li>
+					
+						<li><a href="#pillLabels">Pill Labels</a></li>
+					
+						<li><a href="#tearsheet">Tearsheet</a></li>
+					
+						<li><a href="#tileGrid">Tile Grid</a></li>
+					
+				</ul>
+			</nav>
+
+			<section id="content">
+	
+<h1 id="avatar" class="styleguide">Avatar</h1>
+<p class="styleguide">You know, for people.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="inlineblockList">
+        <li>
+            <a href="#" class="avatar avatar--person"
+                style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+                Chris
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="avatar avatar--person avatar--small"
+                style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">
+                Samantha
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="avatar avatar--person avatar--big"
+                style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">
+                Larry
+            </a>
+        </li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"</span><span class="nt">&gt;</span>
+                Chris
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"</span><span class="nt">&gt;</span>
+                Samantha
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--big"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);"</span><span class="nt">&gt;</span>
+                Larry
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="avatarStack" class="styleguide">Avatar Stacks</h2>
+<p class="styleguide">You can represent multiple people or chapters with the <code class="styleguide">avatar--stack</code> class.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="inlineblockList">
+        <li>
+            <a href="#" class="avatar avatar--person avatar--stack"
+                style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">
+                Chris and friends
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="avatar avatar--chapter avatar--stack"
+                style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+                Cool groups
+            </a>
+        </li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--stack"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"</span><span class="nt">&gt;</span>
+                Chris and friends
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--chapter avatar--stack"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);"</span><span class="nt">&gt;</span>
+                Cool groups
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="chapterAvatar" class="styleguide">Chapter avatar</h2>
+<p class="styleguide">Sometimes you want to represent a chapter, not a member. For that, there&#39;s <code class="styleguide">avatar--chapter</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="inlineblockList">
+        <li>
+            <a href="#" class="avatar avatar--chapter"
+                style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+                Awesome group
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="avatar avatar--chapter avatar--small"
+                style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+                Some group
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="avatar avatar--chapter avatar--big"
+                style="background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);">
+                Some other group
+            </a>
+        </li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--chapter"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);"</span><span class="nt">&gt;</span>
+                Awesome group
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--chapter avatar--small"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);"</span><span class="nt">&gt;</span>
+                Some group
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--chapter avatar--big"</span>
+                <span class="na">style=</span><span class="s">"background-image: url(http://photos3.meetupstatic.com/photos/event/4/a/b/2/global_335119122.jpeg);"</span><span class="nt">&gt;</span>
+                Some other group
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="nametagPhoto" class="styleguide">Nametag Photo</h1>
+<p class="styleguide">An element with a member or chapter background photo and bottom 
+dark gradient for text overlay.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="nametag-photo" style="background-image: url(http://photos2.dev.meetupstatic.com/photos/member/3/f/f/9/member_5596377.jpeg);">
+    <div class="nametag-photo-name">
+        <strong>Takashi</strong> <br />
+        <small>Has a square photo</small>
+    </div>
+</div> 
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nametag-photo"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos2.dev.meetupstatic.com/photos/member/3/f/f/9/member_5596377.jpeg);"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nametag-photo-name"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>Takashi<span class="nt">&lt;/strong&gt;</span> <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;small&gt;</span>Has a square photo<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="pillLabels" class="styleguide">Pill Labels</h1>
+<p class="styleguide">Standard labels for member titles and/or status. Using an inline tag like <code class="styleguide">&lt;span&gt;</code> is recommended.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <span class="pill-label--leader">Organizer</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"pill-label--leader"</span><span class="nt">&gt;</span>Organizer<span class="nt">&lt;/span&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Label Types</h3>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">pill-label</code></td>
+<td><span class="pill-label">Generic label</span></td>
+</tr>
+<tr>
+<td><code class="styleguide">pill-label--hollow</code></td>
+<td><span class="pill-label--hollow">Generic hollow label</span></td>
+</tr>
+<tr>
+<td><code class="styleguide">pill-label--friend</code></td>
+<td><span class="pill-label--friend">Friend indicator</span></td>
+</tr>
+<tr>
+<td><code class="styleguide">pill-label--leader</code></td>
+<td><span class="pill-label--leader">Role indicator</span></td>
+</tr>
+<tr>
+<td><code class="styleguide">pill-label--paid</code></td>
+<td><span class="pill-label--paid">Dues paid indicator</span></td>
+</tr>
+<tr>
+<td><code class="styleguide">pill-label--unpaid</code></td>
+<td><span class="pill-label--unpaid">Dues unpaid indicator</span></td>
+</tr>
+ </table>
+<h1 id="tearsheet" class="styleguide">Tearsheet</h1>
+<p class="styleguide">Tearsheets act as a universal companion icon to upcoming Meetups. 
+They contain the date of the event, but should never be relied on 
+as the only conveyance of the event date.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <time class="tearsheet">
+        <span class="month">Oct</span>
+        <span class="day">15</span>
+    </time>
+
+    <time class="tearsheet--big">
+        <span class="month">Oct</span>
+        <span class="day">15</span>
+    </time>
+
+    <time class="tearsheet--small">
+        <span class="month">Oct</span>
+        <span class="day">15</span>
+    </time>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"month"</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"day"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/time&gt;</span>
+
+    <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet--big"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"month"</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"day"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/time&gt;</span>
+
+    <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet--small"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"month"</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"day"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/time&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tileGrid" class="styleguide">Tile Grid</h1>
+<p class="styleguide">For a grid-like collection of items. You can control the number of columns 
+with class modifiers. By default, tile content is vertical aligned top. For
+equal height tiles, you must set a min-height in page-specific CSS.</p><p class="styleguide">This type of collection view is best placed over a background of <code class="styleguide">$C_backgroundCollection</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="tileGrid tileGrid--2col tileGrid_atMedium--1col">
+        <li class="tileGrid-tile">
+            <div class="docBox">
+                <div class="docSection">
+                    <h4>I'm a tile with a doxBox</h4>
+                    <p>Doner boudin meatloaf biltong, landjaeger sausage short ribs. Pig brisket ham hock, frankfurter pastrami ribeye short loin leberkas hamburger. Boudin bacon brisket, beef ribs short loin pork venison.</p>
+                </div>
+            </div>
+        </li>
+        <li class="tileGrid-tile">
+            <div class="docBox">
+                <div class="docSection">
+                    <div class="figureset">
+                        <div class="figureset-figure">
+                            <time class="tearsheet--big">
+                                <span class="month">Oct</span>
+                                <span class="day">15</span>
+                            </time>
+                        </div>
+                        <div class="figureset-description">
+                            <h4>Here's something else</h4>
+                            <p>This tile has a tearsheet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="tileGrid-tile">
+            <div class="docBox">
+                <div class="docSection">
+                    <p>This one has an image</p>
+                </div>
+                <img class="display-block" src="http://placekitten.com/200/60" style="width: 100%; display: block;" />
+                <div class="docSection">
+                    <p class="muted small">It also contains multiple docSection elements</p>
+                </div>
+            </div>
+        </li>
+        <li class="tileGrid-tile">
+            <img src="http://placekitten.com/200/100" style="width: 100%; display: block;" />
+        </li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tileGrid tileGrid--2col tileGrid_atMedium--1col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tileGrid-tile"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4&gt;</span>I'm a tile with a doxBox<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Doner boudin meatloaf biltong, landjaeger sausage short ribs. Pig brisket ham hock, frankfurter pastrami ribeye short loin leberkas hamburger. Boudin bacon brisket, beef ribs short loin pork venison.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tileGrid-tile"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-figure"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet--big"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"month"</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/span&gt;</span>
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"day"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/span&gt;</span>
+                            <span class="nt">&lt;/time&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"figureset-description"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;h4&gt;</span>Here's something else<span class="nt">&lt;/h4&gt;</span>
+                            <span class="nt">&lt;p&gt;</span>This tile has a tearsheet<span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tileGrid-tile"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>This one has an image<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"display-block"</span> <span class="na">src=</span><span class="s">"http://placekitten.com/200/60"</span> <span class="na">style=</span><span class="s">"width: 100%; display: block;"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"muted small"</span><span class="nt">&gt;</span>It also contains multiple docSection elements<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tileGrid-tile"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placekitten.com/200/100"</span> <span class="na">style=</span><span class="s">"width: 100%; display: block;"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Column Modifiers</h3>
+<p class="styleguide">You can set the default number of columns from 1 to
+6 with a variant class:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">tileGrid tileGrid--1col</code></td>
+<td>single column of cards</td>
+</tr>
+<tr>
+<td><code class="styleguide">tileGrid tileGrid--2col</code></td>
+<td>two columns of cards</td>
+</tr>
+<tr>
+<td><code class="styleguide">tileGrid tileGrid--3col</code></td>
+<td>three columns of cards</td>
+</tr>
+<tr>
+<td><code class="styleguide">tileGrid tileGrid--4col</code></td>
+<td>you get the idea</td>
+</tr>
+ </table>
+<h3>Media Query Modifiers</h3>
+<p class="styleguide">tileGrid also supports media query column modifiers. You can declare
+a specific number of columns for:</p><ul class="styleguide"><li>1-6 columns at the &quot;medium&quot; breakpoint</li>
+<li>1-6 columns at the &quot;small&quot; breakpoint</li>
+</ul>
+<h4>Examples:</h4>
+<table class="styleguide"> <tr>
+<th>Example</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">tileGrid tileGrid_atSmall--1col</code></td>
+<td>snap to 1 column at &quot;small&quot; breakpoint</td>
+</tr>
+<tr>
+<td><code class="styleguide">tileGrid tileGrid_atMedium--3col</code></td>
+<td>snap to 3 columns at &quot;medium&quot; breakpoint</td>
+</tr>
+<tr>
+<td><code class="styleguide">tileGrid tileGrid--6col tileGrid_atMedium--3col tilegrid_atSmall--1col</code></td>
+<td>6 columns by default, 3 columns at medium, 1 column at small</td>
+</tr>
+ </table>
+
+	
+
+	
+			</section>
+		</div>
+	
+
+	<script type="text/javascript">
+		// links in code examples shouldn't be followable
+		window.onload = function() {
+			var links = document.querySelectorAll('.codeExample a');
+			for ( i=0; i<links.length; i++ ) {
+				if ( !links[i].dataset.follow ) {
+					links[i].onclick = function() {
+						return false;
+					};
+				}
+			}
+		};
+	</script>
+
+	</body>
+</html>

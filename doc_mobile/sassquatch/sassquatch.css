@@ -1,6 +1,438 @@
+@charset "UTF-8";
 /**
-* SASSQUATCH (desktop)
+* SASSQUATCH (mobile)
 */
+/*
+ * HTML5 ✰ Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]) {
+  display: none; }
+
+[hidden] {
+  display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-size: 16px; }
+
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+/*  Removing this for now. Not absolutely sure there are any 
+ *  adverse effects, but it seems like the kind of thing that 
+ *  we shouldn't spend time modifying?  -j
+ *
+::-moz-selection { text-shadow: none; }
+::selection { text-shadow: none; }
+*/
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {
+  color: #00e; }
+
+a:visited {
+  color: #551a8b; }
+
+a:hover {
+  color: #06e; }
+
+a:focus {
+  outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active {
+  outline: 0; }
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+dfn {
+  font-style: italic; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+small {
+  font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+ul, ol {
+  margin: 1em 0;
+  padding: 0px; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+figure {
+  margin: 0; }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+form {
+  margin: 0; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer; }
+
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+button, input {
+  line-height: normal;
+  *overflow: visible; }
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+table button, table input {
+  *overflow: auto; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+button, input[type="button"], input[type="reset"], input[type="submit"], [role="button"] {
+  cursor: pointer;
+  -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd; }
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td {
+  vertical-align: top; }
+
+/* ==|== primary styles =====================================================
+   Author:
+   ========================================================================== */
+/*
+ * Media queries for responsive design https://github.com/shichuan/mobile-html5-boilerplate/wiki/The-Style
+ */
+/* Styles for desktop and large screen ----------- */
+/*styles for 800px and up!*/
+@media only screen and (min-width: 800px) {
+  /* Styles */ }
+/*/mediaquery*/
+/* iPhone 4, Opera Mobile 11 and other high pixel ratio devices ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */ }
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/* prevent callout */
+.nocallout {
+  -webkit-touch-callout: none; }
+
+/* Text overflow with ellipsis */
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+textarea[contenteditable] {
+  -webkit-appearance: none; }
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if they have been set as display: none */
+.gifhidden {
+  position: absolute;
+  left: -100%; }
+
+/* For image replacement */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr; }
+
+.ir br {
+  display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  /* Black prints faster: h5bp.com/s */
+  a, a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+
+  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  /* h5bp.com/t */
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2, h3 {
+    page-break-after: avoid; } }
 /**
 * BASE PARTIAL
 * imports all framework includes
@@ -32,7 +464,7 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 
 */
 /* {{{ Type */
-.tearsheet .day, .tearsheet--small .day, .tearsheet--big .day, .nav-pagination {
+.nav-pagination {
   font-family: "Whitney", helvetica, arial, sans-serif;
   font-weight: 750; }
 
@@ -69,6 +501,27 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 *
 * {{{
 */
+/*  OVERRIDES {
+ *
+ *  Generic overrides for the mobile site of variables in
+ *  config/_variables.scss
+ *
+ */
+/*  @note
+ *  Devices from the major manufacturers (iOS, Android, WinPhone) all
+ *  include typefaces that have multiple weights supported. This means
+ *  we can do fancy things with headers.
+ */
+/*  used, but has a lot of conditional overrides/modifications */
+/* horizontal offset of label/field */
+/*  }  */
+/*  ADDITIONS {
+ *
+ *  Additional UI Variables, mostly colors, used throughout MWeb.
+ *  Maybe some of these should be localized to where they're used, like
+ *  the topbar colors?
+ */
+/*  }  */
 /* }}} */
 /*  loop_prop_list()
  *
@@ -304,6 +757,320 @@ a perspective value
 flips
 
 */
+/*  ANIMATION LIBRARY
+ *
+ *  @author     John Cockrell
+ *  @date       2013-3-20
+ *  @requires   SASS 3.2 or greater
+ *  
+ *  @description
+ *  For now, these are just in use by the Spinner on mobile web.
+ *
+ *  The $keyframe_list uses a `list of lists` design pattern for SASS,
+ *  which basically means there are shitloads of nested lists.
+ *
+ *  Animation CSS classes currentliy use the `.ani-*` prefix.
+ *
+ */
+/*  ANIMATIONS
+ *
+ *  Due to the potential overrides in the styles above, animations should
+ *  stay down here at the bottom, unless we want to up the stakes with 
+ *  a bunch of selector overrides.
+ *
+ *  Why are we using `cubic-bezier` easing instead of `ease-in/out`? 
+ *  Apparently these non-bezier timing functions case noticeable hiccups and 
+ *  bugs in Safari at the moment. 
+ *  This will need to be verified, but this is just a hack around it. -j
+ *
+ *
+ *  TODO: Bad design pattern. Any non-animations style properties in these
+ *  animation classes currently require `!important` since this file comes
+ *  earlier in the load order than many other pieces.
+ *
+ *  Booo `!important`. -j
+ */
+  /*  we can't interpolate into an @keyframes statement, which is
+	*  why we're doing it this way, instead of with an @each
+	*/
+@-webkit-keyframes rotate360 {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@-moz-keyframes rotate360 {
+  0% {
+    -moz-transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(360deg); } }
+@-o-keyframes rotate360 {
+  0% {
+    -o-transform: rotate(0deg); }
+  100% {
+    -o-transform: rotate(360deg); } }
+/*  Official CSS3 Spec.
+ *
+ *  Used a few places, like high-version FF and
+ *  IE10. (Maybe others, too!)
+ */
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+  /*  we can't interpolate into an @keyframes statement, which is
+	*  why we're doing it this way, instead of with an @each
+	*/
+@-webkit-keyframes boing_in {
+  0% {
+    -webkit-transform: scale(0.0, 0.0); }
+  60% {
+    -webkit-transform: scale(1.4, 1.4); }
+  100% {
+    -webkit-transform: scale(1.0, 1.0); } }
+@-moz-keyframes boing_in {
+  0% {
+    -moz-transform: scale(0.0, 0.0); }
+  60% {
+    -moz-transform: scale(1.4, 1.4); }
+  100% {
+    -moz-transform: scale(1.0, 1.0); } }
+@-o-keyframes boing_in {
+  0% {
+    -o-transform: scale(0.0, 0.0); }
+  60% {
+    -o-transform: scale(1.4, 1.4); }
+  100% {
+    -o-transform: scale(1.0, 1.0); } }
+/*  Official CSS3 Spec.
+ *
+ *  Used a few places, like high-version FF and
+ *  IE10. (Maybe others, too!)
+ */
+@keyframes boing_in {
+  0% {
+    transform: scale(0.0, 0.0); }
+  60% {
+    transform: scale(1.4, 1.4); }
+  100% {
+    transform: scale(1.0, 1.0); } }
+  /*  we can't interpolate into an @keyframes statement, which is
+	*  why we're doing it this way, instead of with an @each
+	*/
+@-webkit-keyframes boing_out {
+  0% {
+    -webkit-transform: scale(1.0, 1.0); }
+  32% {
+    -webkit-transform: scale(1.3, 1.3); }
+  100% {
+    -webkit-transform: scale(0.0, 0.0); } }
+@-moz-keyframes boing_out {
+  0% {
+    -moz-transform: scale(1.0, 1.0); }
+  32% {
+    -moz-transform: scale(1.3, 1.3); }
+  100% {
+    -moz-transform: scale(0.0, 0.0); } }
+@-o-keyframes boing_out {
+  0% {
+    -o-transform: scale(1.0, 1.0); }
+  32% {
+    -o-transform: scale(1.3, 1.3); }
+  100% {
+    -o-transform: scale(0.0, 0.0); } }
+/*  Official CSS3 Spec.
+ *
+ *  Used a few places, like high-version FF and
+ *  IE10. (Maybe others, too!)
+ */
+@keyframes boing_out {
+  0% {
+    transform: scale(1.0, 1.0); }
+  32% {
+    transform: scale(1.3, 1.3); }
+  100% {
+    transform: scale(0.0, 0.0); } }
+.ani-enter {
+  opacity: 1.0 !important;
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: opacity 0.4s cubic-bezier(0.42, 0, 1, 1);
+  -moz-transition: opacity 0.4s cubic-bezier(0.42, 0, 1, 1);
+  -o-transition: opacity 0.4s cubic-bezier(0.42, 0, 1, 1);
+  transition: opacity 0.4s cubic-bezier(0.42, 0, 1, 1);
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-animation-name: boing_in;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  -moz-animation-name: boing_in;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  -o-animation-name: boing_in;
+  -o-animation-duration: 0.3s;
+  -o-animation-iteration-count: 1;
+  -o-animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  animation-name: boing_in;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.42, 0, 1, 1); }
+
+.ani-exit {
+  opacity: 0.0 !important;
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-transition: opacity 0.4s cubic-bezier(0, 0, 0.58, 1);
+  -moz-transition: opacity 0.4s cubic-bezier(0, 0, 0.58, 1);
+  -o-transition: opacity 0.4s cubic-bezier(0, 0, 0.58, 1);
+  transition: opacity 0.4s cubic-bezier(0, 0, 0.58, 1);
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-animation-name: boing_out;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+  -moz-animation-name: boing_out;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+  -o-animation-name: boing_out;
+  -o-animation-duration: 0.3s;
+  -o-animation-iteration-count: 1;
+  -o-animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+  animation-name: boing_out;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0, 0, 0.58, 1); }
+
+.ani-spin {
+  opacity: 1.0 !important;
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-animation-name: rotate360;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: rotate360;
+  -moz-animation-duration: 0.8s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -o-animation-name: rotate360;
+  -o-animation-duration: 0.8s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+  animation-name: rotate360;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+/* 
+ * fades/opacity animation
+*/
+  /*  we can't interpolate into an @keyframes statement, which is
+	*  why we're doing it this way, instead of with an @each
+	*/
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/*  Official CSS3 Spec.
+ *
+ *  Used a few places, like high-version FF and
+ *  IE10. (Maybe others, too!)
+ */
+@keyframes fadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  /*  we can't interpolate into an @keyframes statement, which is
+	*  why we're doing it this way, instead of with an @each
+	*/
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-o-keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+/*  Official CSS3 Spec.
+ *
+ *  Used a few places, like high-version FF and
+ *  IE10. (Maybe others, too!)
+ */
+@keyframes fadeout {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.ani-fadein {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-name: fadein;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-name: fadein;
+  -o-animation-duration: 0.4s;
+  -o-animation-iteration-count: 1;
+  -o-animation-timing-function: ease-out;
+  animation-name: fadein;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out; }
+
+.ani-fadeout {
+  /*  We're interpolating the inputs here in case they're wrapped
+   *  in strings from use in the mixins.
+   */
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-name: fadeout;
+  -o-animation-duration: 0.4s;
+  -o-animation-iteration-count: 1;
+  -o-animation-timing-function: ease-out;
+  animation-name: fadeout;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out; }
+
 /*doc
 ---
 title: Media Query Breakpoints
@@ -351,52 +1118,53 @@ Breakpoint name        | Description
 `atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
 `atMediaDown(huge)`    | Huge screens and under
 */
-html {
-  overflow-y: scroll;
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility; }
+/**
+ *	  @author John Cockrell <john@meetup.com>
+ *	  @since  2013-05-14
+ *
+ *	  @description
+ *	  Solely squared off figures that work in conjunction with an image 
+ *	  loaded using background-sizing. 
+ *
+ *	  This style also separates the mechanical style attributes from each
+ *	  photo's relation to other sizes, so that the names won't be misleading
+ *	  in the future (unlike, say, a `.photo45` that changes to a different
+ *	  number and we have to update all the classes everywhere).
+ *
+ *	  <div class="avatar-small">
+ *		  <img src="...">
+ *	  </div>
+ */
+.avatar-s, .avatar-m, .avatar-l {
+  font-size: 16px; }
+  .avatar-s img, .avatar-m img, .avatar-l img {
+    background-color: #eeeeee;
+    width: 100%;
+    max-height: 100%;
+    display: block;
+    line-height: 1;
+    overflow: hidden; }
 
-html, body {
-  color: #545454;
-  color: rgba(0, 0, 0, 0.67);
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: "Whitney", helvetica, arial, sans-serif;
-  font-weight: 400;
-  background-color: #e7e7e7;
-  margin: 0;
-  padding: 0; }
+/*  32pt */
+.avatar-s {
+  height: 2em;
+  width: 2em; }
 
-/*doc
----
-title: Inverted Context
-name: inverted
-category: Base CSS
----
+/*  48pt */
+.avatar-m {
+  height: 3em;
+  width: 3em; }
 
-The `inverted` class creates a context in which text colors and secondary
-buttons are inverted to light colors to work on dark backgrounds or photos.
+/*  64pt */
+.avatar-l {
+  height: 4em;
+  width: 4em; }
 
-```html_example
-	<div class="docBox">
-		<div class="docSection inverted" style="background-color: #5D87B0;">
-			<h3>Yay, I'm inverted</h3>
-			<p>
-				All the text flips to light colors<br />
-				<span class="muted">We handle different shades of gray using opacity</span>
-			</p>
-			<button>Default (secondary) button</button>
-		</div>
-	</div>
-```
-
-*/
-.inverted {
-  color: #ababab;
-  color: rgba(255, 255, 255, 0.67); }
-
+/*  TODO Please kill this. -j */
+/*  NOTE
+ *  This is a terrible, hacky mixin, but I can't tell 
+ *  why it's being overridden elsewhere ATM. -j
+ */
 /*doc
 ---
 title: Element defaults
@@ -422,7 +1190,7 @@ the whitespace on the bottom).
 	<h3>Heading 3</h3>
 	<h4>Heading 4</h4>
 	<h5>Heading 5</h5>
-	<h6>Heading 6</h6>
+	<h6>Heading 5</h6>
 	<img src="http://placekitten.com/80/80" />
 	<p>I'm a paragraph with <strong>strong</strong> things to say with <em>emphasis</em></p>
 	<ul>
@@ -433,154 +1201,116 @@ the whitespace on the bottom).
 ```
 
 */
-/* {{{ Inline tag defaults */
-abbr, strong, acronym, span, small, time, strike, sub, sup, a, code {
-  display: inline; }
+/* {{{ RESETS, 	NOTE: this is most likely diff from full site sassquatch, 
+				we are using boilerplate that comes with mobile resets */
+html, body {
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.67); }
 
-abbr, acronym {
-  border-width: 0; }
+.inverted {
+  color: rgba(255, 255, 255, 0.67); }
 
-b, strong {
-  font-weight: 700; }
-
-sup, sub {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-code, pre {
-  font-family: Monaco, "Andale Mono", "Courier New", monospace; }
-
-/* }}} */
 /* {{{ Block tag defaults */
-p, ul, ol, blockquote,
-form, fieldset, legend,
+p, ul, ol, li
+blockquote, form, fieldset, legend,
 table, dl, dd,
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, pre {
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   margin: 0;
   padding: 0;
-  margin-bottom: 18px; }
+  margin-bottom: 8px; }
 
-form, legend, footer {
+form, legend {
   margin-bottom: 0; }
 
 img {
   margin: 0;
   padding: 0;
-  border: 0;
-  line-height: 0; }
+  border: 0; }
   img.resample {
-    /* assuming we're sizing an img down on the client */
     -ms-interpolation-mode: bicubic;
     image-rendering: optimizeQuality; }
 
 ul, ol {
-  list-style-position: outside;
-  padding-left: 1.33em;
-  /* indent by default */ }
-
-li {
-  margin: 0;
-  padding: 0; }
-
-/* }}} */
-/* {{{ HTML5 element defaults (for when the time comes) */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-  display: block; }
-
-audio, canvas, video {
-  display: inline-block;
-  display: inline-block;
-  zoom: 1;
-  *display: inline; }
+  list-style-position: inside; }
 
 /* }}} */
 /* {{{ Link defaults */
-a,
-a:link, a:visited,
-a:hover, a:active {
-  cursor: hand;
-  cursor: pointer;
-  color: #3987cb;
-  text-decoration: none; }
-
-a:visited {
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
   color: #3987cb; }
 
-a:hover, a:active {
-  text-decoration: underline;
-  color: #3987cb; }
-
-a:active {
-  color: #2b6da6; }
+.linked {
+  color: #3987cb !important; }
 
 /* }}} */
 /* {{{ Headings */
 h1, h2, h3, h4, h5, h6 {
   color: #0d0d0d;
   color: rgba(0, 0, 0, 0.95);
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   margin: 0;
   padding: 0;
-  padding-bottom: 9px;
-  line-height: 1.1;
-  font-weight: 700; }
+  padding-bottom: 8px;
+  line-height: 1.2; }
   .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
 
 h1 {
-  font-size: 38px;
-  font-size: 2.375rem;
+  font-size: 26px;
+  font-size: 1.625rem;
   letter-spacing: -0.75px; }
 
 h2 {
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 24px;
+  font-size: 1.5rem;
   letter-spacing: -0.5px; }
 
 h3 {
   font-size: 20px;
-  font-size: 1.25rem;
-  padding-bottom: 6px;
-  line-height: 1.2;
-  letter-spacing: -0.25px; }
+  font-size: 1.25rem; }
 
 h4 {
   font-size: 16px;
-  font-size: 1rem;
-  padding-bottom: 0;
-  line-height: 1.4;
-  letter-spacing: -0.05px; }
+  font-size: 1rem; }
 
 h5 {
   font-size: 16px;
   font-size: 1rem;
-  padding-bottom: 0;
-  line-height: 1.4;
   font-weight: 400; }
 
 h6 {
   font-size: 16px;
   font-size: 1rem;
-  padding-bottom: 0;
-  line-height: 1.4;
-  text-transform: uppercase;
-  font-variant: small-caps;
-  font-weight: 400; }
+  font-weight: 400;
+  text-transform: uppercase; }
+
+/* probably won't use it, but it's in the html spec, so worth defining a default */
+/* }}} */
+/*  {{{ Override input styles */
+/**
+* Placeholder styles
+*/
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+  color: #b3b3b3 !important;
+  /* == $C_gray70 in `_tl_parameters.scss` */
+  font-style: normal !important; }
+
+textarea:-moz-placeholder,
+input:-moz-placeholder {
+  color: #b3b3b3 !important;
+  /* == $C_gray70 in `_tl_parameters.scss` */
+  font-style: normal !important; }
+
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+  color: #b3b3b3 !important;
+  /* == $C_gray70 in `_tl_parameters.scss` */
+  font-style: normal !important; }
 
 /* }}} */
-/*  TODO Please kill this. -j */
-/*  NOTE
- *  This is a terrible, hacky mixin, but I can't tell 
- *  why it's being overridden elsewhere ATM. -j
- */
 /* {{{ Tables */
 /*doc
 ---
@@ -703,7 +1433,7 @@ table {
   border-collapse: collapse; }
 
 caption, td, th {
-  padding: 9px;
+  padding: 8px;
   text-align: left; }
 
 caption {
@@ -937,12 +1667,12 @@ The `paddedList` pattern is the same as `dividedList`, but without borders.
 ```
 */
 .paddedList > li {
-  padding: 9px 0 0 0; }
+  padding: 4px 0 0 0; }
   .paddedList > li:first-child {
     padding: 0; }
 
 .dividedList > li {
-  padding: 18px 0 0;
+  padding: 8px 0 0;
   border-top: 1px solid #eeeeee; }
 
 /*doc
@@ -965,8 +1695,109 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 ```
 */
 .sectionList > li {
-  padding: 18px 18px 0px;
+  padding: 16px 16px 8px;
   border-top: 1px solid #eeeeee; }
+
+/* }}} */
+/* lists additions and overrides {{{ */
+/*doc
+---
+title: Clearing list style
+name: noneList
+parent: list
+---
+
+```html_example
+	<ul class="noneList">
+		<li>Eggs</li>
+		<li>Milk</li>
+		<li>Beer</li>
+	</ul>
+```
+*/
+.noneList {
+  list-style-type: none; }
+  .noneList > li {
+    list-style: none; }
+
+.dividedList > li, .paddedList > li {
+  padding: 12px 12px 0; }
+  .dividedList > li:first-child, .dividedList > li.first, .paddedList > li:first-child, .paddedList > li.first {
+    border-top: 0; }
+
+/*doc
+---
+title: Linked list
+name: linkedList
+parent: list
+---
+
+```html_example
+	<ul class="linkedList">
+		<li><a href="#">Eggs</a></li>
+		<li><a href="#">Milk</a></li>
+		<li><a href="#">Beer</a></li>
+	</ul>
+```
+*/
+.linkedList {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .linkedList > li {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #eeeeee; }
+    .linkedList > li:first-child, .linkedList > li.first {
+      border-top: 0; }
+    .linkedList > li > a {
+      display: block;
+      padding: 8px 8px;
+      color: #555555; }
+      .linkedList > li > a:visited, .linkedList > li > a:active {
+        color: #555555; }
+
+.linkedBlock {
+  display: block;
+  padding: 8px 8px;
+  color: #555555; }
+
+a.linkedBlock, a:visited.linkedBlock, a:active.linkedBlock {
+  color: #555555; }
+
+.figureset-figure .linkedBlock {
+  padding: 6px 6px; }
+
+.figureset-figure.linkedBlock {
+  padding-left: 0; }
+
+.figureset-description .linkedBlock {
+  padding-left: 0;
+  padding-right: 0; }
+
+/* another list */
+.shadedList {
+  list-style: none; }
+  .shadedList.last-child, .shadedList:last-child {
+    border: 0;
+    margin-bottom: 16px; }
+  .shadedList > li {
+    padding: 8px;
+    background: #e4e4e4;
+    margin-bottom: 1px; }
+
+.shadedList.inline > li {
+  display: inline;
+  list-style: none;
+  margin-bottom: 0;
+  margin-right: 1px;
+  padding: 2px 5px; }
+  .shadedList.inline > li:first-child {
+    border-radius: 3px 0 0 3px; }
+  .shadedList.inline > li:last-child {
+    border-radius: 0 3px 3px 0; }
+.shadedList.inline.last-child, .shadedList.inline:last-child {
+  margin-right: 0; }
 
 /* }}} */
 /**
@@ -1050,7 +1881,7 @@ widths of form fields.
 */
 /* {{{ first, some normalization */
 button, input, select, textarea {
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
   vertical-align: baseline;
   *vertical-align: middle;
   -webkit-box-sizing: border-box;
@@ -1080,7 +1911,7 @@ fieldset {
   /* group like-fields together under headings (legends) with this! */
   border-width: 0;
   background: transparent;
-  padding: 7.2px 0 0;
+  padding: 3.2px 0 0;
   position: relative;
   margin-top: 2.25em; }
   fieldset legend {
@@ -1102,13 +1933,13 @@ fieldset {
   body input {
     border-radius: 0; } }
 input, select, textarea {
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   display: block;
   line-height: 1.4;
-  padding: 4.5px;
+  padding: 4px;
   font-size: 16px;
   width: auto;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
   color: #555555;
   border: 1px solid #dddddd;
   border-radius: 1.5px; }
@@ -1137,9 +1968,9 @@ input[type=checkbox], input[type=radio] {
   border: none; }
 
 select {
-  height: 31.5px;
+  height: 28px;
   *height: auto;
-  line-height: 36px;
+  line-height: 32px;
   *margin-top: 4px;
   /* IE7 - helps alignment with inline-style labels */ }
 
@@ -1149,7 +1980,7 @@ select[multiple] {
 
 input[type=file] {
   background-color: #fff;
-  padding: 6px;
+  padding: 2.66667px;
   max-width: 100%;
   *height: auto;
   *margin-top: 4px;
@@ -1292,7 +2123,7 @@ input.error, select.error, textarea.error {
   margin-bottom: 0.5em; }
 
 input.hasMaxLen, textarea.hasMaxLen {
-  margin-bottom: 18px; }
+  margin-bottom: 8px; }
 
 /* {{{ Form Modifiers */
 input.big,
@@ -1305,7 +2136,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 18px;
-  font-family: "Whitney", helvetica, arial, sans-serif; }
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif; }
 
 select.big {
   height: 38px;
@@ -1313,6 +2144,102 @@ select.big {
   line-height: 40px -2; }
 
 /* }}} */
+/**
+ *	@author John Cockrell <john@meetup.com>
+ *	@since  2013-06-24
+ *
+ *	@description
+ *	Extension of standard styles; this treatment has to do with button
+ *	sizing on mobile, in particular.
+ */
+/* ======================================================================== */
+/* BUTTON SIZING
+ * Working with a 16pt grid, we can make small buttons 24pt (1.5x)
+ * normal buttons 32pt (2x), and big buttons 48pt (3x). This is in keeping
+ * with our 16pt media grid draft that icons and avatars also use (at
+ * least on mobile).
+ */
+/* Medium/Normal == 32pt */
+button,
+.button {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 14px;
+  /* TODO Cleanup font-size and replace with ems */
+  color: #555555 !important;
+  /* TODO: This is due to some overrides in mobile CSS that need cleaning up.
+   *
+   * See: lib/m/_defaults_m.scss : Line 57
+   */
+  /* Formula : desired height - font size - combined top and bottom border
+   * widths / font size to convert to ems, then halved to get top and bottom
+   */
+  padding: 0.57143em 0.75em;
+  /* NOTE: `0.75em` value comes from the original button layout dimensions in
+   * sassquatch/lib/_forms.scss
+   */
+  margin: 0;
+  /* OVERRIDE */
+  /* NOTE: For mobile buttons in general, they're probably going to be in a
+   * section of something like a ff-box, or a `docSection` (for padding)
+   * when placed directly on the background.
+   *
+   * The bottom margin isn't as useful here, and can lead to some cascade
+   * issues and overrides--so it's set to zero here.
+   */ }
+
+/*doc
+---
+title: Small button
+name: smallButton
+parent: secondaryButton
+---
+
+Small == 24pt
+
+```html_example
+	<button class="small">cute lil' small button</button>
+```
+
+*/
+button.small,
+.button.small {
+  font-size: 12px;
+  padding-top: 0.41667em;
+  padding-bottom: 0.41667em; }
+
+button.big,
+.button.big {
+  font-size: 16px !important;
+  /* TODO this !important is necessary due to class scoping in the
+   * full sassquatch buttons, where !important is originally used.
+   *
+   * See: lib/_forms.scss : Line 297
+   */
+  padding-top: 0.9375em;
+  padding-bottom: 0.9375em; }
+
+/*doc
+---
+title: Full-width buttons
+name: fullWidthButton
+parent: secondaryButton
+---
+
+Mobile Sassquatch includes a special class for full-width buttons:
+
+```html_example
+	<button class="full-width">Wide load</button>
+```
+
+*/
+button.full-width,
+.button.full-width,
+.segmented-control.full-width {
+  width: 100%; }
+
 /**
 * ==============================================
 * BOXY BUTTONS
@@ -1386,9 +2313,9 @@ input[type="submit"].button--green {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   border-radius: 3px;
-  padding: 9px 18px 7px 18px;
-  margin-bottom: 18px;
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  padding: 14px 18px 12px 18px;
+  margin-bottom: 16px;
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1 !important;
@@ -1462,47 +2389,6 @@ input[type="submit"].button--green {
     -ms-box-shadow: none;
     box-shadow: none; }
 
-.button,
-button,
-input[type="submit"],
-.primary,
-.button.primary,
-.button--primary,
-input[type="submit"].D_submit,
-input[type="submit"].primary,
-input[type="submit"].button--primary,
-.button--black,
-input[type="submit"].button--black,
-.button--white,
-.button--blue,
-input[type="submit"].button--blue,
-.button--green,
-input[type="submit"].button--green {
-  position: relative; }
-  .button:after,
-  button:after,
-  input[type="submit"]:after,
-  .primary:after,
-  .button.primary:after,
-  .button--primary:after,
-  input[type="submit"].D_submit:after,
-  input[type="submit"].primary:after,
-  input[type="submit"].button--primary:after,
-  .button--black:after,
-  input[type="submit"].button--black:after,
-  .button--white:after,
-  .button--blue:after,
-  input[type="submit"].button--blue:after,
-  .button--green:after,
-  input[type="submit"].button--green:after {
-    content: '';
-    background: transparent;
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-
 /**
 * Default button
 *
@@ -1543,7 +2429,7 @@ a little bit of the background color behind them.
 .button,
 button,
 input[type="submit"] {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   color: rgba(0, 0, 0, 0.67) !important;
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: rgba(0, 0, 0, 0.47) 0px 2px 0px 0px;
@@ -2210,19 +3096,19 @@ A number of size classes are available:
 /* }}} */
 /* {{{ ---DEPRECATED--- gutter modifiers */
 .gutter-left {
-  margin-left: 18px; }
+  margin-left: 16px; }
 
 .gutter-right {
-  margin-right: 18px; }
+  margin-right: 16px; }
 
 /* }}} */
 /* {{{ Grid line with auto-gutters units (.line-gutters shares .line rules as defined above) */
 .line-gutters {
-  margin-bottom: 18px;
-  margin-right: -18px;
+  margin-bottom: 16px;
+  margin-right: -16px;
   /* pull last child to the right to meet the right edge of the page */ }
   .line-gutters > .unit, .line-gutters > .lastUnit {
-    padding-right: 18px;
+    padding-right: 16px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -2368,7 +3254,7 @@ Class                   | Description
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
-  padding: 36px 36px 18px 36px; }
+  padding: 16px 16px 8px 16px; }
 
 /* }}} */
 /* {{{ Box Styles */
@@ -2417,7 +3303,7 @@ to span the full width of the box, and use `docSection` for padded content:
 .doc-box {
   border-radius: 3px;
   background-color: #fff;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   border: 1px solid #dddddd !important;
   /* !important to support .doc-box.doc-content multiple classes */
   -moz-background-clip: padding;
@@ -2531,7 +3417,7 @@ to span the full width of the box, and use `docSection` for padded content:
 .doc-controls {
   /* holds nav elements, filtering controls, etc. (usually above a list of stuff) */
   border-bottom: 1px solid transparent;
-  padding: 18px;
+  padding: 16px;
   padding-bottom: 0; }
 
 /*doc
@@ -2576,20 +3462,20 @@ __Note:__ This replaces the deprecated `doc-content` class
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid transparent;
   /* avoids margin collapse, hence this border... (takashi is a genius) */
-  padding: 18px 18px 0 18px; }
+  padding: 16px 16px 0 16px; }
   .docSection:first-child {
     border-top: none; }
   .inverted .docSection {
     border-top-color: rgba(255, 255, 255, 0.2); }
   .docBounds > .docSection {
-    padding: 18px 0 0 0; }
+    padding: 16px 0 0 0; }
 
 .suppress-hover-underline:hover {
   text-decoration: none !important; }
 
 .doc-controls {
   background: #dddddd;
-  margin-bottom: 18px; }
+  margin-bottom: 8px; }
 
 /**
 * footer used for dialogs, but could potentially be used elsewhere
@@ -2710,21 +3596,21 @@ category: Layout
     position: absolute;
     border-style: solid; }
   .doc-content-outof:after {
-    border: 9px solid white;
+    border: 8px solid white;
     border-left-color: transparent;
     border-right-color: transparent;
     border-top-width: 0;
-    top: -9px;
-    left: 27px;
-    margin-left: -9px; }
+    top: -8px;
+    left: 24px;
+    margin-left: -8px; }
   .doc-content-outof:before {
-    border: 11px solid #dddddd;
+    border: 10px solid #dddddd;
     border-left-color: transparent;
     border-right-color: transparent;
     border-top-width: 0;
-    top: -11px;
-    left: 27px;
-    margin-left: -11px; }
+    top: -10px;
+    left: 24px;
+    margin-left: -10px; }
 
 .doc-content-into {
   position: relative; }
@@ -2734,21 +3620,21 @@ category: Layout
     position: absolute;
     border-style: solid; }
   .doc-content-into:after {
-    border: 9px solid white;
+    border: 8px solid white;
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-width: 0;
     top: -1px;
-    left: 27px;
-    margin-left: -9px; }
+    left: 24px;
+    margin-left: -8px; }
   .doc-content-into:before {
-    border: 11px solid #dddddd;
+    border: 10px solid #dddddd;
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-width: 0;
     top: -1px;
-    left: 27px;
-    margin-left: -11px; }
+    left: 24px;
+    margin-left: -10px; }
 
 /**
 * doc-content-big
@@ -2793,6 +3679,33 @@ hr.double-line {
   margin: 0 0 1px;
   border-width: 3px 0 0; }
 
+.doc-box {
+  margin: 12px;
+  margin-bottom: 0; }
+  .doc-box:last-child {
+    margin-bottom: 12px; }
+
+.doc-content {
+  padding: 12px;
+  padding-bottom: 0px; }
+
+.doc-content.bordered {
+  border-top: 1px solid #dddddd; }
+
+.doc-box-notice {
+  padding: 12px; }
+
+.doc-content-into.right:before, .doc-content-into.right:after, .doc-content-outof.right:before, .doc-content-outof.right:after {
+  left: auto;
+  right: 10px; }
+
+.doc-content-into.fromRight:before, .doc-content-into.fromRight:after, .doc-content-outof.fromRight:before, .doc-content-outof.fromRight:after {
+  left: auto;
+  right: 10px; }
+
+.doc-content-into.shaded:after, .doc-content-outof.shaded:after {
+  border-bottom: 6px solid #eeeeee; }
+
 /*doc
 ---
 title: Figureset
@@ -2834,12 +3747,12 @@ Figure with description. Similar to OOCSS "media block".
   /* ensure "shrink wrap" effect */
   line-height: 0; }
   .figureset-figure img {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     /* if the description is shorter than the figure */ }
 
 .figureset-description {
   width: auto;
-  padding-left: 13.5px;
+  padding-left: 12px;
   /**
   * magical content expander
   * pushes figureset-description to fill as much width of the figureset as possible
@@ -2884,7 +3797,7 @@ Figureset with figure on the right.
 */
 /* {{{ Right side figure */
 .figureset-right .figureset-description {
-  padding-right: 13.5px;
+  padding-right: 12px;
   padding-left: 0; }
 
 /* }}} */
@@ -3073,63 +3986,6 @@ as the only conveyance of the event date.
 * extends and mixins for creating a
 * tearsheet class for a given px size
 */
-.tearsheet, .tearsheet--small, .tearsheet--big {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  margin-bottom: 18px;
-  font-weight: 700; }
-  .tearsheet .month, .tearsheet--small .month, .tearsheet--big .month {
-    text-transform: uppercase;
-    background-color: #E0393E;
-    color: white;
-    display: block; }
-  .tearsheet .day, .tearsheet--small .day, .tearsheet--big .day {
-    display: block;
-    border: 2px solid #dddddd;
-    color: #555555 !important;
-    background-color: #fff;
-    border-top-width: 0; }
-
-.tearsheet {
-  width: 48px;
-  height: 48px; }
-  .tearsheet .month {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    font-size: 12px;
-    height: 19.2px;
-    line-height: 21.6px; }
-  .tearsheet .day {
-    line-height: 28.8px;
-    font-size: 19.2px; }
-
-.tearsheet--small {
-  width: 32px;
-  height: 32px; }
-  .tearsheet--small .month {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    font-size: 8px;
-    height: 12.8px;
-    line-height: 14.4px; }
-  .tearsheet--small .day {
-    line-height: 19.2px;
-    font-size: 12.8px; }
-
-.tearsheet--big {
-  width: 80px;
-  height: 80px; }
-  .tearsheet--big .month {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    font-size: 19px;
-    height: 32px;
-    line-height: 36px; }
-  .tearsheet--big .day {
-    line-height: 48px;
-    font-size: 32px; }
-
 /*doc
 ---
 title: Avatar
@@ -3379,20 +4235,20 @@ dark gradient for text overlay.
   background-color: #333; }
 
 .nametag-photo-name {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(22, 24, 27, 0)), color-stop(72px, rgba(22, 24, 27, 0.7)), color-stop(100%, rgba(22, 24, 27, 0.9)));
-  background: -webkit-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
-  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 72px, rgba(22, 24, 27, 0.9));
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(22, 24, 27, 0)), color-stop(32px, rgba(22, 24, 27, 0.7)), color-stop(100%, rgba(22, 24, 27, 0.9)));
+  background: -webkit-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
+  background: -moz-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
+  background: -o-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
+  background: -ms-linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
+  background: linear-gradient(top, rgba(22, 24, 27, 0), rgba(22, 24, 27, 0.7) 32px, rgba(22, 24, 27, 0.9));
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  line-height: 27px;
+  line-height: 12px;
   display: block;
   color: #fff;
-  padding: 81px 18px 0;
+  padding: 36px 8px 0;
   orphans: 2;
   vertical-align: bottom;
   width: 100%;
@@ -3440,8 +4296,8 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 */
 .navTabs,
 .nav-tabs {
-  padding-top: 9px;
-  padding-left: 9px;
+  padding-top: 4px;
+  padding-left: 4px;
   border-bottom: 1px solid;
   border-color: #e6e6e6;
   border-color: rgba(0, 0, 0, 0.1);
@@ -3451,7 +4307,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
   .nav-tabs li {
     float: left;
     padding: 0;
-    margin-right: 9px;
+    margin-right: 4px;
     margin-bottom: -1px; }
   .navTabs a,
   .nav-tabs a {
@@ -3465,7 +4321,7 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
     border: 1px solid;
     border-color: #e6e6e6;
     border-color: rgba(0, 0, 0, 0.1);
-    padding: 6px 13.5px; }
+    padding: 2.66667px 6px; }
     .navTabs a img,
     .nav-tabs a img {
       /*calendar icon*/
@@ -3491,6 +4347,40 @@ Rounded tab navigation. Used mostly as secondary navigation on Meetup.
 #lma .tabsNav {
   border-bottom: 0px;
   background-color: #E9EBE5; }
+
+.navTabs li,
+.nav-tabs li {
+  margin-right: 0; }
+  .navTabs li:first-child a,
+  .nav-tabs li:first-child a {
+    border-left-width: 1px;
+    border-top-left-radius: 3px; }
+  .navTabs li:last-child a,
+  .nav-tabs li:last-child a {
+    border-top-right-radius: 3px; }
+  .navTabs li.selected + li a,
+  .nav-tabs li.selected + li a {
+    border-left-width: 1px; }
+.navTabs a,
+.nav-tabs a {
+  border-radius: 0;
+  padding: 6px;
+  border-left-width: 0; }
+.navTabs:first-child,
+.nav-tabs:first-child {
+  padding-top: 4px; }
+.navTabs.nav-tabs--subtle a,
+.nav-tabs.nav-tabs--subtle a {
+  background-color: #e7e7e7;
+  color: #878787;
+  color: rgba(0, 0, 0, 0.47);
+  font-weight: bold; }
+.navTabs.nav-tabs--subtle .selected a,
+.nav-tabs.nav-tabs--subtle .selected a {
+  background-color: #f7f7f7;
+  border-bottom-color: #f7f7f7;
+  color: #545454;
+  color: rgba(0, 0, 0, 0.67); }
 
 /*doc
 ---
@@ -3540,7 +4430,7 @@ category: Navigation
   display: inline-block; }
 
 .tabControl-link {
-  padding: 9px 9px;
+  padding: 8px 8px;
   display: block;
   text-decoration: none; }
   .tabControl-link:link, .tabControl-link:visited {
@@ -3567,18 +4457,18 @@ category: Navigation
   display: block;
   text-align: right; }
 .tabControl--left .tabControl-link {
-  padding-right: 13px; }
+  padding-right: 12px; }
 .tabControl--left .tabControl-tab--selected .tabControl-link {
-  padding-right: 9px;
+  padding-right: 8px;
   border-width: 0 4px 0 0; }
 
 .tabControl--right .tabControl-tab {
   display: block;
   text-align: left; }
 .tabControl--right .tabControl-link {
-  padding-left: 13px; }
+  padding-left: 12px; }
 .tabControl--right .tabControl-tab--selected .tabControl-link {
-  padding-left: 9px;
+  padding-left: 8px;
   border-width: 0 0 0 4px; }
 
 /*doc
@@ -3618,7 +4508,7 @@ category: Navigation
 .nav-pagination {
   font-size: 15px;
   list-style-type: none;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
   padding: 0; }
   .nav-pagination a, .nav-pagination .nav-button {
     border: 1px solid #dddddd;
@@ -3679,13 +4569,13 @@ For "see more" type append paging.
   border: 1px solid #dddddd;
   display: block;
   text-align: center;
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-weight: 400;
   letter-spacing: 0.04em;
   color: #2A9BC7;
   padding: 0.33em 0;
-  margin-bottom: 18px; }
+  margin-bottom: 8px; }
   .nav-appendPager:focus, .nav-appendPager:hover {
     background-color: #eeeeee;
     text-decoration: none !important; }
@@ -3732,7 +4622,7 @@ DEPRECATED: you should probably use segmented control instead
   -ms-background-clip: padding-box;
   background-clip: padding-box;
   list-style-type: none;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
   padding-left: 0;
   line-height: 1.5;
   border: 1px solid #dddddd;
@@ -3794,7 +4684,7 @@ DEPRECATED: you should probably use segmented control instead
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
-    font-family: "Whitney", helvetica, arial, sans-serif;
+    font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     padding: 0.5em 1.2em 0.4em;
@@ -4066,7 +4956,7 @@ Element type       | Use
   border-left: 1px solid #dddddd;
   border-radius: 3px 0 0 3px;
   width: 100%;
-  margin-bottom: 18px; }
+  margin-bottom: 16px; }
 
 .segmented-control-segment {
   display: table-cell;
@@ -4093,7 +4983,7 @@ Element type       | Use
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-family: "Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -4266,7 +5156,7 @@ multiple chunks within a row.
 
 .chunkList-chunk {
   border-bottom: 1px solid transparent;
-  padding: 12px 0 0 12px;
+  padding: 10.66667px 0 0 10.66667px;
   /* single chunks within a row should just be block */
   /*
    * When a heading is the only element in a chunk,
@@ -4276,7 +5166,7 @@ multiple chunks within a row.
    * reset block element spacing for block els
    */ }
   .chunkList-chunk:last-child {
-    padding-right: 12px; }
+    padding-right: 10.66667px; }
   .chunkList-chunk:only-child {
     display: block; }
   .chunkList-chunk h1:only-child,
@@ -4286,10 +5176,10 @@ multiple chunks within a row.
   .chunkList-chunk h5:only-child,
   .chunkList-chunk h6:only-child {
     padding-bottom: 0;
-    margin-bottom: 12px; }
+    margin-bottom: 10.66667px; }
   .chunkList-chunk p, .chunkList-chunk dl, .chunkList-chunk dd, .chunkList-chunk ul, .chunkList-chunk ol, .chunkList-chunk article, .chunkList-chunk aside, .chunkList-chunk details, .chunkList-chunk figure, .chunkList-chunk hgroup, .chunkList-chunk section,
   .chunkList-chunk .avatar, .chunkList-chunk img {
-    margin-bottom: 12px; }
+    margin-bottom: 10.66667px; }
 
 /*doc
 ---
@@ -4385,7 +5275,7 @@ Example                                                                  | Descr
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   font-size: 0;
-  margin: 0 -18px 0 0;
+  margin: 0 -8px 0 0;
   padding: 0;
   list-style: none; }
 
@@ -4398,7 +5288,7 @@ Example                                                                  | Descr
   vertical-align: top;
   display: inline-block;
   width: 50%;
-  padding: 0 18px 0 0;
+  padding: 0 8px 0 0;
   margin: 0; }
 
 .tileGrid--6col .tileGrid-tile {
@@ -4477,7 +5367,7 @@ Class                | Example
   background: pink;
   color: #555;
   font-family: Consolas, Monaco, monospace;
-  padding: 9px; }
+  padding: 4px; }
   .debug:before {
     color: blue;
     content: "DEBUG: "; }
@@ -4548,48 +5438,48 @@ Class                 | Example
 */
 .padding-top,
 .paddingTop {
-  padding-top: 18px; }
+  padding-top: 16px; }
 
 .paddingTop--half {
-  padding-top: 9px; }
+  padding-top: 8px; }
 
 .padding-right,
 .paddingRight {
-  padding-right: 18px; }
+  padding-right: 16px; }
 
 .paddingRight--half {
-  padding-right: 9px; }
+  padding-right: 8px; }
 
 .padding-bottom,
 .paddingBottom {
-  padding-bottom: 18px; }
+  padding-bottom: 16px; }
 
 .paddingBottom--half {
-  padding-bottom: 9px; }
+  padding-bottom: 8px; }
 
 .padding-left,
 .paddingLeft {
-  padding-left: 18px; }
+  padding-left: 16px; }
 
 .paddingLeft--half {
-  padding-left: 9px; }
+  padding-left: 8px; }
 
 .padding-all,
 .paddingAll {
-  padding: 18px; }
+  padding: 16px; }
 
 .paddingAll--half {
-  padding: 9px; }
+  padding: 8px; }
 
 .padding-none,
 .paddingNone {
   padding: 0 !important; }
 
 .leading-top {
-  padding-top: 18px; }
+  padding-top: 16px; }
 
 .leading-bottom {
-  padding-bottom: 18px; }
+  padding-bottom: 16px; }
 
 /*doc
 ---
@@ -4623,38 +5513,38 @@ Class                    | Example
 */
 .margin-top,
 .marginTop {
-  margin-top: 18px; }
+  margin-top: 16px; }
 
 .marginTop--half {
-  margin-top: 9px; }
+  margin-top: 8px; }
 
 .margin-right,
 .marginRight {
-  margin-right: 18px; }
+  margin-right: 16px; }
 
 .marginRight--half {
-  margin-right: 9px; }
+  margin-right: 8px; }
 
 .margin-bottom,
 .marginBottom {
-  margin-bottom: 18px; }
+  margin-bottom: 16px; }
 
 .marginBottom--half {
-  margin-bottom: 9px; }
+  margin-bottom: 8px; }
 
 .margin-left,
 .marginLeft {
-  margin-left: 18px; }
+  margin-left: 16px; }
 
 .marginLeft--half {
-  margin-left: 9px; }
+  margin-left: 8px; }
 
 .margin-all,
 .marginAll {
-  margin: 18px; }
+  margin: 16px; }
 
 .marginAll--half {
-  margin: 9px; }
+  margin: 8px; }
 
 .margin-none,
 .marginNone {
@@ -5058,5 +5948,150 @@ Class                       | Description
   ._atHuge--center {
     text-align: center;
     margin: inherit auto; } }
+/* typographic + layout additions {{{ */
+/*doc
+---
+title: Floating
+name: floatMobile
+category: Layout
+---
+
+Mobile Sassquatch includes these classes for floating elements.
+
+```html_example
+	<div class="clearfix">
+		<div class="left shaded-red">floated left</div>
+		<div class="right shaded-red">floated right</div>
+	</div>
+```
+
+*/
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.spaced-right {
+  margin-right: 8px; }
+
+.spaced-right-slight {
+  margin-right: 8px; }
+
+.spaced-left {
+  margin-left: 8px; }
+
+.flush-bottom {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important; }
+
+/*doc
+---
+title: Darkening text
+name: darkenModifer
+parent: typographyModifiers
+---
+
+Darkens text color to match heading color (primary text color)
+
+```html_example
+	<h3>I'm a heading, using primary text color</h3>
+	<p class="darken">I'm a paragraph, darkened to match the primary text color</p>
+```
+
+*/
+.darker {
+  color: rgba(0, 0, 0, 0.95); }
+  .inverted .darker {
+    color: white; }
+
+.light {
+  color: #444; }
+
+/*doc
+---
+title: Extra small text
+name: tinyModifier
+parent: typographyModifiers
+---
+
+```html_example
+	<p class="smaller">I'm extra small, for mobile</p>
+```
+
+*/
+.smaller {
+  font-size: .75rem; }
+
+/*doc
+---
+title: Margin gutters
+name: gutterModifiers
+parent: marginModifiers
+---
+
+Mobile Sassquatch provides a gutter helper that uses `margin-right`:
+
+```html_example
+	<ul class="inlineblockList">
+		<li class="gutter-right guide-shade">Guttered el</li>
+		<li class="gutter-right guide-shade">Guttered el</li>
+		<li class="gutter-right guide-shade">Guttered el</li>
+		<li class="gutter-right guide-shade">Guttered el</li>
+	</ul>
+```
+
+*/
+.gutter-right {
+  margin-right: 2px; }
+
+/*doc
+---
+title: Natural text color
+name: neaturalTextModifier
+parent: typographyModifiers
+---
+
+Sets text color to body text color
+
+```html_example
+	<h3 class="natural-text">I'm a heading getting overriden to natural (body) text color</h3>
+	<p>I'm a normal paragraph</p>
+```
+
+*/
+.natural-text {
+  color: #555555 !important; }
+  .natural-text .natural-text.light {
+    opacity: .7; }
+
+/* aliases */
+.lighter {
+  color: #888888; }
+
+/*doc
+---
+title: Line Spacing
+name: lineSpacing
+cateogry: Modifiers
+---
+
+It's best to rely on default typography line heights, but
+if you absolutely need to set an explicit line height, these
+classes will help:
+
+Class            | Description
+-----------------| ------------------------
+`double-spaced`  | sets line-height to 1.8
+`triple-spaced`  | sets line-height to 2.8
+
+*/
+.double-spaced {
+  line-height: 1.8; }
+
+.triple-spaced {
+  line-height: 2.8; }
+
+/* }}} */
 
 /*# sourceMappingURL=sassquatch.css.map */

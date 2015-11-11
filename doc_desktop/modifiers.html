@@ -1,0 +1,545 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Sassquatch : Modifiers</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css" />
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="">
+
+	
+
+	
+		<header class="inverted">
+			<h1>Sassquatch <span class="version"> </span></h1>
+		</header>
+
+		<div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav">
+				<div class="doc-box">
+					<ul class="resetList">
+						
+							<li class="">
+								<a href="navigation.html">Navigation</a>
+							</li>
+						
+							<li class="">
+								<a href="content_patterns.html">Content Patterns</a>
+							</li>
+						
+							<li class="">
+								<a href="sass_utilities.html">Sass Utilities</a>
+							</li>
+						
+							<li class="">
+								<a href="layout.html">Layout</a>
+							</li>
+						
+							<li class="">
+								<a href="base_css.html">Base CSS</a>
+							</li>
+						
+							<li class="selected">
+								<a href="modifiers.html">Modifiers</a>
+							</li>
+						
+							<li class="">
+								<a href="lists.html">Lists</a>
+							</li>
+						
+							<li class="">
+								<a href="buttons.html">Buttons</a>
+							</li>
+						
+							<li class="">
+								<a href="forms.html">Forms</a>
+							</li>
+						
+					</ul>
+				</div>
+
+				<h4>Modifiers</h4>
+				<ul id="categoryList" class="resetList small">
+					
+						<li><a href="#displayModifiers">Display</a></li>
+					
+						<li><a href="#flushModifiers">Flushing Elements</a></li>
+					
+						<li><a href="#focusModifiers">Focus</a></li>
+					
+						<li><a href="#highlightModifiers">Highlighting</a></li>
+					
+						<li><a href="#jsModifiers">JS Helpers</a></li>
+					
+						<li><a href="#linkModifiers">Links</a></li>
+					
+						<li><a href="#marginModifiers">Margin</a></li>
+					
+						<li><a href="#mediaModifiers">Media Query Helpers</a></li>
+					
+						<li><a href="#paddingModifiers">Padding</a></li>
+					
+						<li><a href="#talignModifiers">Text alignment</a></li>
+					
+						<li><a href="#textwrapModifiers">Text Wrap</a></li>
+					
+						<li><a href="#typographyModifiers">Typography</a></li>
+					
+						<li><a href="#valignModifiers">Vertical alignment</a></li>
+					
+				</ul>
+			</nav>
+
+			<section id="content">
+	
+<h1 id="displayModifiers" class="styleguide">Display</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">display--none</code></td>
+<td>Sets <code class="styleguide">display</code> property of eleement to <code class="styleguide">none</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">inline</code></td>
+<td>Sets <code class="styleguide">display</code> property of element to <code class="styleguide">inline</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">inlineBlock</code></td>
+<td>Sets <code class="styleguide">display</code> property of element to <code class="styleguide">inline-block</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">hidden</code></td>
+<td>Sets <code class="styleguide">visibility</code> property of element to <code class="styleguide">hidden</code></td>
+</tr>
+ </table>
+<h1 id="flushModifiers" class="styleguide">Flushing Elements</h1>
+<p class="styleguide">Removes all margin and padding on an element for a given direction.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">flush--top</code></td>
+<td>Sets <code class="styleguide">margin</code> and <code class="styleguide">padding</code> to <code class="styleguide">0</code> for element top</td>
+</tr>
+<tr>
+<td><code class="styleguide">flush--right</code></td>
+<td>Sets <code class="styleguide">margin</code> and <code class="styleguide">padding</code> to <code class="styleguide">0</code> for element right</td>
+</tr>
+<tr>
+<td><code class="styleguide">flush--bottom</code></td>
+<td>Sets <code class="styleguide">margin</code> and <code class="styleguide">padding</code> to <code class="styleguide">0</code> for element bottom</td>
+</tr>
+<tr>
+<td><code class="styleguide">flush--left</code></td>
+<td>Sets <code class="styleguide">margin</code> and <code class="styleguide">padding</code> to <code class="styleguide">0</code> for element left</td>
+</tr>
+<tr>
+<td><code class="styleguide">flush--all</code></td>
+<td>Sets <code class="styleguide">margin</code> and <code class="styleguide">padding</code> to <code class="styleguide">0</code> for all sides</td>
+</tr>
+ </table>
+<h1 id="focusModifiers" class="styleguide">Focus</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">noFocus</code></td>
+<td><a href="#" class="button--primary noFocus">No focus style</a></td>
+</tr>
+ </table>
+<h1 id="highlightModifiers" class="styleguide">Highlighting</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">debug</code></td>
+<td><p class="debug">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">highlighted</code></td>
+<td><p class="highlighted">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">shaded</code></td>
+<td><p class="shaded">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">shaded--lighter</code></td>
+<td><p class="shaded-lighter">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">shaded--red</code></td>
+<td><p class="shaded-red">Example paragraph</p></td>
+</tr>
+ </table>
+<h1 id="jsModifiers" class="styleguide">JS Helpers</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">block-if-js</code></td>
+<td>Sets <code class="styleguide">display</code> property to <code class="styleguide">block</code> if user has JS</td>
+</tr>
+<tr>
+<td><code class="styleguide">inline-if-js</code></td>
+<td>Sets <code class="styleguide">display</code> property to <code class="styleguide">inline</code> if user has JS</td>
+</tr>
+<tr>
+<td><code class="styleguide">inline-block-if-js</code></td>
+<td>Sets <code class="styleguide">display</code> property to <code class="styleguide">inline-block</code> if user has JS</td>
+</tr>
+<tr>
+<td><code class="styleguide">hide-if-js</code></td>
+<td>Sets <code class="styleguide">display</code> property to <code class="styleguide">none</code> if user has JS</td>
+</tr>
+ </table>
+<h1 id="linkModifiers" class="styleguide">Links</h1>
+<p class="styleguide">Styles a link as body text color.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <a class="unlink">It's a link, but it doesn't look like one</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"unlink"</span><span class="nt">&gt;</span>It's a link, but it doesn't look like one<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+        <div class="docBox docSection span-25">
+        <a class="unlink">
+            <h3>Block level anchors...</h3>
+            <p>How do they work?</p>
+        </a>
+    </div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox docSection span-25"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"unlink"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>Block level anchors...<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p&gt;</span>How do they work?<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="marginModifiers" class="styleguide">Margin</h1>
+
+<h4>Full margin</h4>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">marginLeft</code></td>
+<td><div class="inline-block guide-shade marginLeft">Example dif</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginRight</code></td>
+<td><div class="inline-block guide-shade marginRight">Example dif</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginTop</code></td>
+<td><div class="inline-block guide-shade marginTop">Example dif</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginBottom</code></td>
+<td><div class="inline-block guide-shade marginBottom">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginAll</code></td>
+<td><div class="inline-block guide-shade marginAll">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginNone</code></td>
+<td><div class="inline-block guide-shade marginNone">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginCentered</code></td>
+<td><div class="span-50 guide-shade marginCentered">Example div</div></td>
+</tr>
+ </table>
+<h4>Half margin</h4>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">marginLeft--half</code></td>
+<td><div class="inline-block guide-shade marginLeft--half">Example dif</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginRight--half</code></td>
+<td><div class="inline-block guide-shade marginRight--half">Example dif</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginTop--half</code></td>
+<td><div class="inline-block guide-shade marginTop--half">Example dif</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginBottom--half</code></td>
+<td><div class="inline-block guide-shade marginBottom--half">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">marginAll--half</code></td>
+<td><div class="inline-block guide-shade marginAll--half">Example div</div></td>
+</tr>
+ </table>
+<h1 id="mediaModifiers" class="styleguide">Media Query Helpers</h1>
+<p class="styleguide">Media query modifiers allow you to declare
+a given modification at a given screen size.</p>
+<h3>Usage</h3>
+<p class="styleguide">Media query modifiers follow this signature:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>._at[Size (ie. "Small", "Medium", "Large", "Huge"]--[modification]</pre>
+  </div>
+</div>
+<h3>Supported modifications, &#39;medium&#39; size as an example:</h3>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">._atMedium--displayNone</code></td>
+<td>Hides element when viewport is &#39;mediumm&#39; or below</td>
+</tr>
+<tr>
+<td><code class="styleguide">._atMedium--displayBlock</code></td>
+<td>Sets display to block when viewport &#39;medium&#39; or below</td>
+</tr>
+<tr>
+<td><code class="styleguide">._atMedium--center</code></td>
+<td>Centers element when viewport &#39;medium&#39; or below</td>
+</tr>
+ </table>
+<h1 id="paddingModifiers" class="styleguide">Padding</h1>
+
+<h4>Full padding</h4>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">paddingLeft</code></td>
+<td><div class="inline-block guide-shade paddingLeft">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingRight</code></td>
+<td><div class="inline-block guide-shade paddingRight">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingTop</code></td>
+<td><div class="inline-block guide-shade paddingTop">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingBottom</code></td>
+<td><div class="inline-block guide-shade paddingBottom">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingAll</code></td>
+<td><div class="inline-block guide-shade paddingAll">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">papddingNone</code></td>
+<td><div class="inline-block guide-shade paddingNone">Example div</div></td>
+</tr>
+ </table>
+<h4>Half padding</h4>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">paddingLeft--half</code></td>
+<td><div class="inline-block guide-shade paddingLeft--half">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingRight--half</code></td>
+<td><div class="inline-block guide-shade paddingRight--half">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingTop--half</code></td>
+<td><div class="inline-block guide-shade paddingTop--half">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingBottom--half</code></td>
+<td><div class="inline-block guide-shade paddingBottom--half">Example div</div></td>
+</tr>
+<tr>
+<td><code class="styleguide">paddingAll--half</code></td>
+<td><div class="inline-block guide-shade paddingAll--half">Example div</div></td>
+</tr>
+ </table>
+<h1 id="talignModifiers" class="styleguide">Text alignment</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">align--right</code></td>
+<td><p class="align--right">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">align--center</code></td>
+<td><p class="align--center">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">align--left</code></td>
+<td><p class="align--left">Example paragraph</p></td>
+</tr>
+ </table>
+<h1 id="textwrapModifiers" class="styleguide">Text Wrap</h1>
+
+<h3>Wrap Nice</h3>
+<p class="styleguide">Removed the <code class="styleguide">word-break: break-all</code> because it breaks ALL the words, not just
+the long ones.
+(http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)</p><div class="codeExample">
+  <div class="exampleOutput">
+        <p class="wrapNice" style="width: 460px;">
+        Beef ribs voluptate kevin pork chop pastrami dolore est.
+        Spare ribs leberkas cow dolore pork loin reallyLongWordThatWeWantToWrapWhenUsingTheWrapNiceClass
+        exercitation dolore shoulder. T-bone capicola corned beef, aliqua quis tri-tip exercitation tenderloin.
+    </p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"wrapNice"</span> <span class="na">style=</span><span class="s">"width: 460px;"</span><span class="nt">&gt;</span>
+        Beef ribs voluptate kevin pork chop pastrami dolore est.
+        Spare ribs leberkas cow dolore pork loin reallyLongWordThatWeWantToWrapWhenUsingTheWrapNiceClass
+        exercitation dolore shoulder. T-bone capicola corned beef, aliqua quis tri-tip exercitation tenderloin.
+    <span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Ellipsize</h3>
+<p class="styleguide">Useful for truncating text in fixed or variable-width elements with only enough room
+for one line of text.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <p class="ellipsize" style="width: 340px;">
+        Beef ribs voluptate kevin pork chop pastrami dolore est.
+        Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+    </p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"ellipsize"</span> <span class="na">style=</span><span class="s">"width: 340px;"</span><span class="nt">&gt;</span>
+        Beef ribs voluptate kevin pork chop pastrami dolore est.
+        Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+    <span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>No wrap</h3>
+<p class="styleguide">Use <code class="styleguide">.noWrap</code> to prevent text from wrapping (can be useful for buttons, tabs, etc.).
+Sassquatch also provieds a <code class="styleguide">.wrap</code> class for overriding elements that are <code class="styleguide">no-wrap</code> by default.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <p class="noWrap" style="width: 340px; outline: 1px solid pink;">
+        Beef ribs voluptate kevin pork chop pastrami dolore est.
+        Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+    </p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"noWrap"</span> <span class="na">style=</span><span class="s">"width: 340px; outline: 1px solid pink;"</span><span class="nt">&gt;</span>
+        Beef ribs voluptate kevin pork chop pastrami dolore est.
+        Jerky boudin pork loin fatback, corned beef ground round pig shankle pork belly.
+    <span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="typographyModifiers" class="styleguide">Typography</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">muted</code></td>
+<td><p class="muted">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">bold</code></td>
+<td><p class="bold">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">italic</code></td>
+<td><p class="italic">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">caps</code></td>
+<td><p class="caps">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">small</code></td>
+<td><p class="small">Example paragraph</p></td>
+</tr>
+<tr>
+<td><code class="styleguide">big</code></td>
+<td><p class="big">Example paragraph</p></td>
+</tr>
+ </table>
+<h1 id="valignModifiers" class="styleguide">Vertical alignment</h1>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Example</th>
+</tr>
+ <tr>
+<td><code class="styleguide">valign--top</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--top">inline-block span</span></p></td>
+</tr>
+<tr>
+<td><code class="styleguide">valign--middle</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--middle">inline-block span</span></p></td>
+</tr>
+<tr>
+<td><code class="styleguide">valign--bottom</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--bottom">inline-block span</span></p></td>
+</tr>
+<tr>
+<td><code class="styleguide">valign--textBottom</code></td>
+<td><p>example paragraph with an <span class="padding-all small inline-block guide-shade valign--textBottom">inline-block span</span></p></td>
+</tr>
+ </table>
+
+	
+
+	
+			</section>
+		</div>
+	
+
+	<script type="text/javascript">
+		// links in code examples shouldn't be followable
+		window.onload = function() {
+			var links = document.querySelectorAll('.codeExample a');
+			for ( i=0; i<links.length; i++ ) {
+				if ( !links[i].dataset.follow ) {
+					links[i].onclick = function() {
+						return false;
+					};
+				}
+			}
+		};
+	</script>
+
+	</body>
+</html>

@@ -1,0 +1,340 @@
+
+<!doctype html>
+<html>
+	<head>
+		<title>Sassquatch : Navigation</title>
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css" />
+		<link rel="stylesheet" href="sassquatch/sassquatch.css">
+		<link rel="stylesheet" href="style/doc.css">
+		<link rel="stylesheet" href="style/github.css">
+	</head>
+	<body class="">
+
+	
+
+	
+		<header class="inverted">
+			<h1>Sassquatch <span class="version"> </span></h1>
+		</header>
+
+		<div id="pageWrap" class="clearfix">
+
+			<nav id="mainNav">
+				<div class="doc-box">
+					<ul class="resetList">
+						
+							<li class="selected">
+								<a href="navigation.html">Navigation</a>
+							</li>
+						
+							<li class="">
+								<a href="content_patterns.html">Content Patterns</a>
+							</li>
+						
+							<li class="">
+								<a href="sass_utilities.html">Sass Utilities</a>
+							</li>
+						
+							<li class="">
+								<a href="layout.html">Layout</a>
+							</li>
+						
+							<li class="">
+								<a href="base_css.html">Base CSS</a>
+							</li>
+						
+							<li class="">
+								<a href="modifiers.html">Modifiers</a>
+							</li>
+						
+							<li class="">
+								<a href="lists.html">Lists</a>
+							</li>
+						
+							<li class="">
+								<a href="buttons.html">Buttons</a>
+							</li>
+						
+							<li class="">
+								<a href="forms.html">Forms</a>
+							</li>
+						
+					</ul>
+				</div>
+
+				<h4>Navigation</h4>
+				<ul id="categoryList" class="resetList small">
+					
+						<li><a href="#appender">Append Pager</a></li>
+					
+						<li><a href="#pagination">Pagination</a></li>
+					
+						<li><a href="#segmentedControl">Segmented Control</a></li>
+					
+						<li><a href="#tabControl">Tab Control</a></li>
+					
+						<li><a href="#tabs">Tabs</a></li>
+					
+				</ul>
+			</nav>
+
+			<section id="content">
+	
+<h1 id="appender" class="styleguide">Append Pager</h1>
+<p class="styleguide">For &quot;see more&quot; type append paging.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <a href="#" class="nav-appendPager">See more</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"nav-appendPager"</span><span class="nt">&gt;</span>See more<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="pagination" class="styleguide">Pagination</h1>
+<div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="nav-pagination">
+        <!-- ideally, you'd use an icon font for the arrows -->
+        <li class="nav-pageitem">
+            <a rel="prev" class="nav-prev" href="#">&larr;</a>
+        </li>
+        <li class="nav-pageitem">
+            <a href="#">1</a>
+        </li>
+        <li class="nav-pageitem selected">
+            <a href="#">2</a>
+        </li>
+        <!-- snip -->
+        <li class="nav-pageitem">
+            <a href="#">8</a>
+        </li>
+        <li class="nav-pageitem">
+            <a href="#">9</a>
+        </li>
+        <li class="nav-pageitem">
+            <a rel="next" class="nav-next" href="#">&rarr;</a>
+        </li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav-pagination"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- ideally, you'd use an icon font for the arrows --&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-pageitem"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">rel=</span><span class="s">"prev"</span> <span class="na">class=</span><span class="s">"nav-prev"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span><span class="ni">&amp;larr;</span><span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-pageitem"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-pageitem selected"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="c">&lt;!-- snip --&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-pageitem"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>8<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-pageitem"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>9<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-pageitem"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">rel=</span><span class="s">"next"</span> <span class="na">class=</span><span class="s">"nav-next"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span><span class="ni">&amp;rarr;</span><span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="segmentedControl" class="styleguide">Segmented Control</h1>
+<p class="styleguide">This is a design pattern that should be used for elements that appear as
+buttons in the UI and have button-like functionality, appearing grouped
+together and interrelated.</p><table class="styleguide"> <tr>
+<th>Element type</th>
+<th>Use</th>
+</tr>
+ <tr>
+<td><code class="styleguide">&lt;a&gt;</code></td>
+<td>Hash modification; changing contents of view below</td>
+</tr>
+<tr>
+<td><code class="styleguide">&lt;input radio&gt;</code></td>
+<td>Making a mutually-exclusive form choice</td>
+</tr>
+<tr>
+<td><code class="styleguide">&lt;input checkbox&gt;</code></td>
+<td>Toggling a particular feature</td>
+</tr>
+ </table><div class="codeExample">
+  <div class="exampleOutput">
+        <div class='segmented-control'>
+        <div class="segmented-control-segment">
+            <input type='radio' name='guestsRadio' value='0' id='guestsRadio0' class='segmented-control-input' checked />
+            <label for='guestsRadio0' id='guestsRadio0label' class='segmented-control-button'>Just me</label>
+        </div>
+        <div class="segmented-control-segment">
+            <input type='radio' name='guestsRadio' value='1' id='guestsRadio1' class='segmented-control-input' />
+            <label for='guestsRadio1' id='guestsRadio1label' class='segmented-control-button'>+1</label>
+        </div>
+    </div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'segmented-control'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"segmented-control-segment"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'radio'</span> <span class="na">name=</span><span class="s">'guestsRadio'</span> <span class="na">value=</span><span class="s">'0'</span> <span class="na">id=</span><span class="s">'guestsRadio0'</span> <span class="na">class=</span><span class="s">'segmented-control-input'</span> <span class="na">checked</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">'guestsRadio0'</span> <span class="na">id=</span><span class="s">'guestsRadio0label'</span> <span class="na">class=</span><span class="s">'segmented-control-button'</span><span class="nt">&gt;</span>Just me<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"segmented-control-segment"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'radio'</span> <span class="na">name=</span><span class="s">'guestsRadio'</span> <span class="na">value=</span><span class="s">'1'</span> <span class="na">id=</span><span class="s">'guestsRadio1'</span> <span class="na">class=</span><span class="s">'segmented-control-input'</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">'guestsRadio1'</span> <span class="na">id=</span><span class="s">'guestsRadio1label'</span> <span class="na">class=</span><span class="s">'segmented-control-button'</span><span class="nt">&gt;</span>+1<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tabControl" class="styleguide">Tab Control</h1>
+
+<h3>Horizontal tabs</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="tabControl">
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+        <li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
+    </ul>
+    <div class="docSection" style="min-height: 180px;">
+        <p>Look at this tab conent. Just look at it.</p>
+    </div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabControl"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab tabControl-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span> <span class="na">style=</span><span class="s">"min-height: 180px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Look at this tab conent. Just look at it.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Left side tabs</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="tabControl tabControl--left">
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+        <li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabControl tabControl--left"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab tabControl-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Right side tabs</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="tabControl tabControl--right">
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Upcoming Meetups</a></li>
+        <li class="tabControl-tab"><a class="tabControl-link" href="#">Past Meetups</a></li>
+        <li class="tabControl-tab tabControl-tab--selected"><a class="tabControl-link" href="#">Selected tab</a></li>
+    </ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabControl tabControl--right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabControl-tab tabControl-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"tabControl-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tabs" class="styleguide">Tabs</h1>
+<p class="styleguide">Rounded tab navigation. Used mostly as secondary navigation on Meetup.</p><div class="codeExample">
+  <div class="exampleOutput">
+        <ul class="navTabs">
+        <li><a href="#">Upcoming Meetups</a></li>
+        <li><a href="#">Past Meetups</a></li>
+        <li class="selected"><a href="#">Selected tab</a></li>
+    </ul>
+
+    <div class="docBox">
+        <div class="docSection">
+            <ul class="navTabs">
+                <li><a href="#">Upcoming Meetups</a></li>
+                <li><a href="#">Past Meetups</a></li>
+                <li class="selected"><a href="#">Selected tab</a></li>
+            </ul>
+            <h4>Look at this tab content</h4>
+            <p>Just look at it</p>
+        </div>
+    </div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navTabs"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navTabs"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Upcoming Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Past Meetups<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Selected tab<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;h4&gt;</span>Look at this tab content<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Just look at it<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+
+	
+
+	
+			</section>
+		</div>
+	
+
+	<script type="text/javascript">
+		// links in code examples shouldn't be followable
+		window.onload = function() {
+			var links = document.querySelectorAll('.codeExample a');
+			for ( i=0; i<links.length; i++ ) {
+				if ( !links[i].dataset.follow ) {
+					links[i].onclick = function() {
+						return false;
+					};
+				}
+			}
+		};
+	</script>
+
+	</body>
+</html>
