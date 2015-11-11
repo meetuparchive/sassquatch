@@ -5,7 +5,7 @@
 source: ./sassquatch
 
 # The directory that hologram will build to
-destination: ../../doc_desktop
+destination: ../../build/doc_desktop
 
 # The assets needed to build the docs (includes header.html,
 # footer.html, etc)

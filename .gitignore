@@ -9,5 +9,6 @@ bower_components/
 node_modules/
 hologram/desktop/sassquatch/sassquatch.css
 hologram/mobile/sassquatch/sassquatch.css
+build/
 doc_desktop/
 doc_mobile/
