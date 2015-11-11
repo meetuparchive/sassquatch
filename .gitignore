@@ -1,0 +1,15 @@
+.DS_Store
+.sass-cache
+.grunt
+.bundle
+*.swp
+*.swo
+*.css.map
+!README*
+bower_components/
+node_modules/
+hologram/desktop/sassquatch/sassquatch.css
+hologram/mobile/sassquatch/sassquatch.css
+build/
+doc_desktop/
+doc_mobile/
