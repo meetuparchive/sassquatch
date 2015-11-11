@@ -1,6 +1,7 @@
 .DS_Store
 .sass-cache
 .bundle
+.grunt
 *.swp
 *.swo
 *.css.map
