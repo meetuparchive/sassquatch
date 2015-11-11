@@ -6,6 +6,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	//grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-preprocess');
+	grunt.loadNpmTasks('grunt-exec');
 
 	var FILE_NAME_HOLOGRAM_CONFIG = 'hologram_config.yml';
 
@@ -13,8 +14,9 @@ module.exports = function(grunt) {
 
 	path.build = 'build/';
 
-	path.srcHologramDweb = 'hologram/desktop/';
-	path.srcHologramMweb = 'hologram/mobile/';
+	path.hologram = 'hologram/'
+	path.srcHologramDweb = path.hologram + 'desktop/';
+	path.srcHologramMweb = path.hologram + 'mobile/';
 	path.destHologramDweb = path.build + 'doc_desktop/';
 	path.destHologramMweb = path.build + 'doc_mobile/';
 
@@ -47,8 +49,8 @@ module.exports = function(grunt) {
 			all: [path.build]
 		},
 		'preprocess': {
-			desktop: {
-				src: [ path.destHologramDweb + '*.html' ],
+			all: {
+				src: [ path.build + '*.html' ],
 				options: {
 					inline: true,
 					context: {
@@ -56,16 +58,13 @@ module.exports = function(grunt) {
 						'VERSION': '<%= bower.version %>'
 					}
 				}
-			},
-			mobile: {
-				src: [ path.destHologramMweb + '*.html' ],
-				options: {
-					inline: true,
-					context: {
-						DEBUG: false,
-						'VERSION': '<%= bower.version %>'
-					}
-				}
+			}
+		},
+		'exec': {
+			copy_index: {
+				command: 'cp ' + path.hologram + 'index.html ' + path.build + 'index.html',
+				stdout: false,
+				stderr: false
 			}
 		},
 		'gh-pages': {
@@ -83,7 +82,7 @@ module.exports = function(grunt) {
 		 */
 	});
 
-	grunt.registerTask('docs', ['hologram:desktop', 'preprocess:desktop', 'hologram:mobile', 'preprocess:mobile']);
+	grunt.registerTask('docs', ['hologram:desktop', 'hologram:mobile', 'exec:copy_index', 'preprocess']);
 	grunt.registerTask('default', ['clean', 'sass', 'docs']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
