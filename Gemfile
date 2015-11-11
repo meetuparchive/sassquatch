@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem "sass", "=3.4.4"
-
 group :development do
+	gem "sass", "=3.4.4"
 	gem 'hologram'
 end
