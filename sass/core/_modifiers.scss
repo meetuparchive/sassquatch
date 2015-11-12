@@ -63,11 +63,11 @@ Class                | Example
 	background: $C_yellow;
 }
 .shaded {
-	background-color: $C_gray;
+	background-color: $C_mediumGray;
 }
 .shaded-lighter,
 .shaded--lighter {
-	background-color:$C_gray_lightest;
+	background-color:$C_mediumGray;
 }
 .shaded-red,
 .shaded--red {
@@ -639,10 +639,10 @@ Darkens text color to match heading color (primary text color)
 
 */
 	.darker {
-		color: $C_primaryGray;
+		color: $C_textPrimary;
 
 		.inverted & {
-			color: $C_primaryGrayInverted;
+			color: $C_textPrimaryInverted;
 		}
 	}
 
@@ -709,7 +709,7 @@ Sets text color to body text color
 	// we should deprecate this or document &
 	// move it to both platforms
 	.natural-text {
-		color: $C_text !important;
+		color: $C_textPrimary !important;
 
 		.natural-text.light {
 			opacity:.7;
@@ -721,7 +721,7 @@ Sets text color to body text color
 	// move them to both platforms
     /* aliases */
     .lighter { //muted
-        color: $C_text_less;
+        color: $C_textSecondary;
     }
 
 

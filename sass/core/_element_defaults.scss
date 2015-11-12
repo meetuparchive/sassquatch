@@ -12,7 +12,7 @@
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
 		font-weight: $W_normal;
-		background-color: $C_backgroundCollection;
+		background-color: $C_collectionBGDark;
 		margin: 0;
 		padding: 0;
 	}
@@ -176,7 +176,7 @@ the whitespace on the bottom).
 		line-height: 1.1;
 		font-weight: $W_bold;
 		.inverted & {
-			@include color_textPrimaryInverted();
+			color: $C_textPrimaryInverted;
 		}
 	}
 	h1 {
@@ -275,13 +275,13 @@ the whitespace on the bottom).
 	html, body {
 		font-size: $baseFontSize;
 		line-height:$baseLineHeight;
-		color: $C_secondaryGray;
+		color: $C_textSecondary;
 	} 
 
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
-		color: $C_secondaryGrayInverted;
+		color: $C_textSecondaryInverted;
 	}
 
 	/* {{{ Block tag defaults */
@@ -339,7 +339,7 @@ the whitespace on the bottom).
 		padding-bottom: $baseline/2;
 		line-height: 1.2;
 		.inverted & {
-			@include color_textPrimaryInverted();
+			color: $C_textPrimaryInverted;
 		}
 	}
 	h1 { 
