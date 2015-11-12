@@ -27,7 +27,7 @@ $pillBaseSize: 11px;
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin solid_pill( $color: $C_secondaryGray, $bgColor: lighten($color, 40%), $textColor: false ) {
+@mixin solid_pill( $color: $C_textSecondary, $bgColor: lighten($color, 40%), $textColor: false ) {
 
 	@extend %_pill_label_base;
 
@@ -47,7 +47,7 @@ $pillBaseSize: 11px;
 * @param $color - base color
 * -----------------------------------------------
 */
-@mixin hollow_pill( $color: $C_secondaryGray ) {
+@mixin hollow_pill( $color: $C_textSecondary ) {
 
 	@extend %_pill_label_base;
 

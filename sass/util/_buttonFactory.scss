@@ -87,7 +87,7 @@ $buttonFontSize: 16px;
 * @param $textColor - text color (calculated from bgColor if unspecified)
 * -----------------------------------------------
 */
-@mixin button( $bgColor: $C_tertiaryGray, $textColor: "" ) {
+@mixin button( $bgColor: $C_textTertiary, $textColor: "" ) {
 	$borderOffset: 25%;
 
 	@if $textColor == "" {
@@ -119,7 +119,7 @@ $buttonFontSize: 16px;
 		cursor: normal;
 		&:active {
 			@include transform(translate(0px, 0px));
-			@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+			@include box-shadow($C_textTertiary, 0px, 2px, 0px, 0px);
 		}
 		&:hover {
 			background: $bgColor !important;

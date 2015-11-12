@@ -176,7 +176,7 @@ the whitespace on the bottom).
 		line-height: 1.1;
 		font-weight: $W_bold;
 		.inverted & {
-			@include color_textPrimaryInverted();
+			color: $C_textPrimary;
 		}
 	}
 	h1 {
@@ -339,7 +339,7 @@ the whitespace on the bottom).
 		padding-bottom: $baseline/2;
 		line-height: 1.2;
 		.inverted & {
-			@include color_textPrimaryInverted();
+			color: $C_textPrimaryInverted;
 		}
 	}
 	h1 { 
