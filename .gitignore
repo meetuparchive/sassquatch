@@ -2,6 +2,7 @@
 .sass-cache
 .grunt
 .bundle
+.grunt
 *.swp
 *.swo
 *.css.map
