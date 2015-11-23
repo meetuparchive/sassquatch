@@ -66,7 +66,7 @@ $selectedStripeWidth: 4px;
 
 	&:link,
 	&:visited {
-		@include color_textSecondary();
+		color: $C_textSecondary;
 	}
 
 	&:hover,
@@ -77,7 +77,7 @@ $selectedStripeWidth: 4px;
 	.inverted & {
 		&:link,
 		&:visited {
-			@include color_textSecondaryInverted();
+			color: $C_textSecondaryInverted;
 		}
 		&:hover,
 		&:visited {

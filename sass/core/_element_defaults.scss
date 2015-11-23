@@ -7,7 +7,7 @@
 		text-rendering: optimizeLegibility;
 	}
 	html, body {
-		@include color_textSecondary();
+		color: $C_textSecondary;
 		font-size: $baseFontSize;
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
@@ -42,7 +42,7 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 
 */
 	.inverted {
-		@include color_textSecondaryInverted();
+		color: $C_textSecondaryInverted;
 	}
 
 /*doc
@@ -168,7 +168,7 @@ the whitespace on the bottom).
 
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
-		@include color_textPrimary();
+		color: $C_textPrimary;
 		font-family: $headingFontStack;
 		margin: 0;
 		padding: 0;
@@ -331,7 +331,7 @@ the whitespace on the bottom).
 	/* {{{ Headings */
 
 	h1,h2,h3,h4,h5,h6 {
-		@include color_textPrimary();
+		color: $C_textPrimary;
 		font-family: $headingFontStack;
 		font-weight: $W_bold;
 		margin: 0;

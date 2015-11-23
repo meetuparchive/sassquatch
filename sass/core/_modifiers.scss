@@ -331,10 +331,10 @@ Class          | Example
 
 */
 .muted {
-	@include color_textTertiary();
+	color: $C_textTertiary;
 
 	.inverted & {
-		@include color_textTertiaryInverted();
+		color: $C_textTertiaryInverted;
 	}
 }
 .muted-opacity{ // DEPRECATED
