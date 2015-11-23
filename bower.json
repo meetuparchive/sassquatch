@@ -18,7 +18,7 @@
 		"_site"
 	],
 	"dependencies": {
-		"meetup-swatches": "2.0.0",
+		"meetup-swatches": "git@github.com:meetup/meetup-swatches.git#iodine",
 		"bourbon": "4.2.3"
 	},
 	"license": "MIT"
