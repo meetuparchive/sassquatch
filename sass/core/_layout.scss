@@ -193,8 +193,7 @@ container.
 
 // default
 .docStripe {
-	@include color_lineGray('border-color');
-	border: 1px solid top;
+	border-top: 1px solid $C_border;
 	background-color: #fff;
 }
 
@@ -219,22 +218,22 @@ Class                   | Description
 
 // for collections (cards, panels, etc)
 .docStripe--collection {
-	background-color: $C_backgroundCollection;
+	background-color: $C_collectionBGDark;
 }
 
 // TODO: what is this for?
 .docStripe--nav {
-	background-color: $C_backgroundNav;
+	background-color: $C_collectionBGLight;
 }
 
 // near-black stripe
 .docStripe--inverted {
-	background-color: $C_backgroundContentInverted;
+	background-color: $C_contentBGInverted;
 }
 
 // red accent stripe
 .docStripe--red {
-	background-color: $C_backgroundContentAccent;
+	background-color: $C_red;
 }
 
 /* }}} */
@@ -301,7 +300,7 @@ to span the full width of the box, and use `docSection` for padded content:
 	border-radius: $defaultRadius;
 	background-color: #fff;
 	margin-bottom: $baseline;
-	border: 1px solid $C_line !important; /* !important to support .doc-box.doc-content multiple classes */
+	border: 1px solid $C_border !important; /* !important to support .doc-box.doc-content multiple classes */
  	@include background-clip(padding);
 
 
@@ -326,7 +325,7 @@ to span the full width of the box, and use `docSection` for padded content:
 	* (override with .border-none if you need to)
 	*/
 	& .doc-content {
-		border-top: 1px solid $C_line;
+		border-top: 1px solid $C_border;
 		&:first-child{
 			border-top: none;
 		}
@@ -337,7 +336,7 @@ to span the full width of the box, and use `docSection` for padded content:
 	 */
 
 	& .doc-content.doc-content-border {
-		border-top: 1px solid $C_line;
+		border-top: 1px solid $C_border;
 	}
 
 	/**
@@ -444,14 +443,14 @@ __Note:__ This replaces the deprecated `doc-content` class
 
 */
 .docSection {
-	border-top: 1px solid $C_lineGray;
+	border-top: 1px solid $C_border;
 	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
 	padding: $baseline $baseline 0 $baseline;
 	&:first-child{
 		border-top: none;
 	}
 	.inverted & {
-		border-top-color: $C_lineGrayInverted;
+		border-top-color: $C_borderInverted;
 	}
 	.docBounds > & { // don't pad sides when directly inside a docBounds
 		padding: $baseline 0 0 0;
@@ -463,7 +462,7 @@ __Note:__ This replaces the deprecated `doc-content` class
 }
 
 .doc-controls {
-	background: $C_gray;
+	background: $C_mediumGray;
 	margin-bottom: $spacing;
 }
 
@@ -471,7 +470,7 @@ __Note:__ This replaces the deprecated `doc-content` class
 * footer used for dialogs, but could potentially be used elsewhere
 */
 .doc-content.footer {
-	background: $C_gray_lighter;
+	background: $C_lightGray;
 	border-radius: 0 0 $defaultRadius $defaultRadius;
 }
 
@@ -596,7 +595,7 @@ $arrow-width: $baseline/2;
 		$offset-type: left,
 		$offset-size: $baseline + $arrow-width,
 		$border-width: 1px,
-		$border-color: $C_line
+		$border-color: $C_border
 	)
 }
 .doc-content-into {
@@ -608,7 +607,7 @@ $arrow-width: $baseline/2;
 		$offset-type: left,
 		$offset-size: $baseline + $arrow-width,
 		$border-width: 1px,
-		$border-color: $C_line
+		$border-color: $C_border
 	)
 }
 
@@ -617,7 +616,7 @@ $arrow-width: $baseline/2;
 * for forms and content that have the main focus on a page (registration flow, for example)
 */
 .doc-content-big {
-	border-top: 1px solid $C_line;
+	border-top: 1px solid $C_border;
 	&:first-child{
 		border-top: none;
 	}
@@ -691,7 +690,7 @@ hr.double-line {
 	}
 
 	.doc-content.bordered {
-		border-top: 1px solid $C_line;
+		border-top: 1px solid $C_border;
 	}
 
 	//* warnings & messages
@@ -711,6 +710,6 @@ hr.double-line {
 	}
 
 	.doc-content-into.shaded:after, .doc-content-outof.shaded:after {
-		border-bottom: 6px solid  $C_gray_lighter;
+		border-bottom: 6px solid  $C_lightGray;
 	}
 }

@@ -75,7 +75,9 @@ $ git clone git@github.com:meetup/sassquatch.git; ./setup.sh
 To modify sassquatch, edit scss source files in `sass/`. We document our Sass components using [hologram](http://trulia.github.io/hologram/).
 
 ```
-	(compile sass and rebuild docs) $ rake
+	(compile sass and rebuild docs) $ grunt
+	(rebuild docs) $ grunt docs
+	(recompile sass) $ grunt sass
 ```
 
 Hologram builds static documentation to `doc_mobile/` and `doc_desktop/`; open these in your favorite browser locally to test during development.
@@ -98,7 +100,7 @@ If you have push access, `{sourceGitHubAccount}` is usually `Meetup`.
 #### Updating live docs
 If you have push access, there's a separate task for sending new changes to the live github pages branch:
 
-	$ rake push_docs
+	$ grunt ghpages
 
 _NOTE_: Currently, you must be in `master` to push updates to live documentation.
 - - -

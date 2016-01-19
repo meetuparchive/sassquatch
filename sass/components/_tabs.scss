@@ -53,7 +53,7 @@ $tabSpacing: $spacing/2;
 		display: block;
 		text-decoration: none;
 		@include color_textSecondary;
-		background-color: $C_backgroundNav;
+		background-color: $C_collectionBGLight;
 		border: 1px solid;
 		@include color_border('border-color');
 		padding: $tabSpacing/1.5 $tabSpacing*1.5;
@@ -64,9 +64,9 @@ $tabSpacing: $spacing/2;
 	.selected {
 		a {
 			@include color_textPrimary;
-			background-color: $C_primaryGrayInverted;
+			background-color: $C_textPrimaryInverted;
 			@include color_border('border-color');
-			border-bottom-color: $C_primaryGrayInverted;
+			border-bottom-color: $C_textPrimaryInverted;
 		}
 	}
 	.tabcount {
@@ -111,15 +111,15 @@ $tabSpacing: $spacing/2;
 		}
 		&.nav-tabs--subtle {
 			a {
-				@include color_backgroundCollection('background-color');
-				@include color_textTertiary;
+				@include color_textPrimary;
+				background-color: $C_collectionBGDark;
 				font-weight: bold;
 			}
 			.selected {
 				a {
-					@include color_backgroundNav('background-color');
-					@include color_backgroundNav('border-bottom-color');
 					@include color_textSecondary;
+					background-color: $C_collectionBGDark;
+					border-bottom-color: $C_collectionBGDark;
 				}
 			}
 		}

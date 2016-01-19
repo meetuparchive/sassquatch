@@ -17,7 +17,7 @@ For "see more" type append paging.
 	@extend %button_personality;
 	@extend %niceFocus;
 	border-radius: $defaultRadius;
-	border: 1px solid $C_line;
+	border: 1px solid $C_border;
 	display: block;
 	text-align: center;
 	font-family: $headingFontStack;
@@ -29,11 +29,11 @@ For "see more" type append paging.
 	margin-bottom: $spacing;
 	&:focus,
 	&:hover {
-		background-color: $C_line_less;
+		background-color: $C_shade;
 		text-decoration: none !important;
 	}
 	&:active {
 		@include punched_in_box_shadow;
-		@include box-shadow($C_tertiaryGray, 0px, 2px, 0px, 0px);
+		@include box-shadow($C_textTertiary, 0px, 2px, 0px, 0px);
 	}
 }
