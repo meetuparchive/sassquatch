@@ -12,7 +12,7 @@
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
 		font-weight: $W_normal;
-		background-color: $C_collectionBGDark;
+		background-color: $C_collectionBG;
 		margin: 0;
 		padding: 0;
 	}
@@ -151,18 +151,18 @@ the whitespace on the bottom).
 	a:hover, a:active {
 		 cursor: hand;
 		 cursor: pointer;
-		color: $C_blue;
+		color: $C_link;
 		text-decoration: none;
 	}
 	a:visited {
-		color: $C_blue;
+		color: $C_link;
 	}
 	a:hover, a:active {
 		text-decoration: underline;
-		color: $C_blue;
+		color: $C_link;
 	}
 	a:active {
-		 color: darken($C_blue, 10%);
+		 color: darken($C_link, 10%);
 	}
 	/* }}} */
 
@@ -319,11 +319,11 @@ the whitespace on the bottom).
 
 	a:link, a:visited, a:hover, a:active {
 		text-decoration: none;	
-		color: $C_blue;
+		color: $C_link;
 	}
 
 	.linked {
-		color: $C_blue !important;
+		color: $C_link !important;
 	}
 
 	/* }}} */

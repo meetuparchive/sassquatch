@@ -46,7 +46,7 @@ $selectedStripeWidth: 4px;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	border-bottom: $C_red;
+	border-bottom: $C_link;
 }
 
 
@@ -71,7 +71,7 @@ $selectedStripeWidth: 4px;
 
 	&:hover,
 	&:active {
-		color: $C_red;
+		color: $C_link;
 	}
 
 	.inverted & {
@@ -91,7 +91,7 @@ $selectedStripeWidth: 4px;
 .tabControl-tab--selected {
 
 	.tabControl-link {
-		color: $C_red;
+		color: $C_link;
 		border: solid 0;
 		border-bottom-width: $selectedStripeWidth;
 	}

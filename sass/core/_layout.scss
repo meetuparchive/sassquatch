@@ -218,12 +218,12 @@ Class                   | Description
 
 // for collections (cards, panels, etc)
 .docStripe--collection {
-	background-color: $C_collectionBGDark;
+	background-color: $C_collectionBG;
 }
 
 // TODO: what is this for?
 .docStripe--nav {
-	background-color: $C_collectionBGLight;
+	background-color: $C_collectionBG;
 }
 
 // near-black stripe
