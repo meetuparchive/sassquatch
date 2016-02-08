@@ -81,12 +81,11 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 	$C_darkgray: 				#333333;
 
 	// red - interface red, not the red *in* the logo
-	$C_red: 						#E0393E;
 	$C_red_darker: 			#CC1C32;
 
 	// blues
-	$C_darkblue: 				#2A9BC7;	// darkblue - links and linked things
-	$C_lightblue: 				#a5c8e7; 	// brightblue - highlight borders, light blue bg
+	$C_darkblue: 				$C_lightPurple;	// darkblue - links and linked things
+	$C_lightblue: 				$C_lightPurple; 	// brightblue - highlight borders, light blue bg
 
 	// green - success and yes
 	$C_green: 					#62AC75;
@@ -103,8 +102,8 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 	/* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
 	// interface (bg)
-	$C_line: 				$C_gray;
-	$C_line_less: 			$C_gray_lighter;
+	$C_line: 				$C_border;
+	$C_line_less: 			$C_border;
 	$C_shade: 				$C_gray_lightest;
 	$C_accent: 				$C_red;
 
@@ -115,8 +114,8 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 	$C_link: 				$C_darkblue;
 
 	// RSVP status colors
-	$C_rsvpGoing: 			$C_green;
-	$C_rsvpWating: 		$C_blue;
+	$C_rsvpGoing: 			rgb(98,172,117);
+	$C_rsvpWating: 		rgb(57,135,203);
 	$C_rsvpNotGoing: 		$C_darkgray_lightest;
 
 	// Errors
