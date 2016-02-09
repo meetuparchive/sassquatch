@@ -66,22 +66,17 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 /* {{{ Colors (legacy - try to use the bower swatches component) */
 
 	/* {{{ Hex definitions ( define new ones sparingly ) */
+	// UPDATE: mapping these custom colors to the closest color in swatches
 
 	// gray - typically used for interface shading
-	$C_gray_lightest: 		#f4f4f4;
-	$C_gray_lighter: 			#eeeeee;
-	$C_gray: 					#dddddd;
-
-	// midgray - it's right in the middle
-	$C_midgray: 				#aaa;
+	$C_gray_lightest: 		$C_lightGray;
+	$C_gray_lighter: 			$C_lightGray;
+	$C_gray: 					$C_mediumGray;
 
 	// darkgray - typically used for text
-	$C_darkgray_lightest: 	#888888;
-	$C_darkgray_lighter: 	#555555;
-	$C_darkgray: 				#333333;
-
-	// red - interface red, not the red *in* the logo
-	$C_red_darker: 			#CC1C32;
+	$C_darkgray_lightest: 	$C_mediumGray;
+	$C_darkgray_lighter: 	$C_mediumGray;
+	$C_darkgray: 				$C_darkGray;
 
 	// blues
 	$C_darkblue: 				$C_lightPurple;	// darkblue - links and linked things
@@ -99,30 +94,26 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 	/* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
 	// interface (bg)
-	$C_shade: 				$C_gray_lightest;
+	$C_shade: 				$C_lightGray;
 	$C_accent: 				$C_red;
 
+	// borders
+	$C_line: $C_border;
+	$C_line_less: $C_border;
+
 	// text
-	$C_text_headline: 	$C_darkgray;
-	$C_text: 				$C_darkgray_lighter;
-	$C_text_less: 			$C_darkgray_lightest;
+	$C_text_headline: 	$C_textPrimary;
+	$C_text: 				$C_textSecondary;
+	$C_text_less: 			$C_textTertiary;
 
 	// RSVP status colors
 	$C_rsvpGoing: 			rgb(98,172,117);
 	$C_rsvpWating: 		rgb(57,135,203);
-	$C_rsvpNotGoing: 		$C_darkgray_lightest;
+	$C_rsvpNotGoing: 		$C_mediumGray;
 
 	// Errors
 	$C_warnBg: 				$C_pink;
 	$C_warnText: 			$C_red;
-
-	// interface (nav)
-	$C_buttonBg: 			#fff;
-	$C_buttonTint: 		#fff;
-	$C_buttonShade: 		darken($C_buttonBg, 10%);
-	$C_selectedBg: 		$C_link;
-	$C_selectedTint: 		lighten($C_selectedBg, 5%);
-	$C_selectedShade: 	#2264A0;
 
 	/* }}} */
 
