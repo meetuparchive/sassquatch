@@ -51,7 +51,7 @@ Class                | Example
 .debug {
 	outline: 1px dotted red;
 	background: pink;
-	color: #555;
+	color: $C_textPrimary;
 	font-family: Consolas, Monaco, monospace;
     padding: $spacing/2;
     &:before {
@@ -331,10 +331,10 @@ Class          | Example
 
 */
 .muted {
-	@include color_textTertiary();
+	color: $C_textTertiary;
 
 	.inverted & {
-		@include color_textTertiaryInverted();
+		color: $C_textTertiaryInverted;
 	}
 }
 .muted-opacity{ // DEPRECATED
@@ -474,7 +474,6 @@ Styles a link as body text color.
 		}
 
 		.inverted & {
-			color: darken( rgb(255,255,255), 33%) !important;
 			color: $C_textSecondaryInverted !important;
 
 			h1,h2,h3,h4,h5,h6 {
@@ -647,7 +646,7 @@ Darkens text color to match heading color (primary text color)
 	}
 
 	.light { // TODO: kill this
-		color: #444;
+		color: $C_darkGray;
 	}
 
 /*doc
