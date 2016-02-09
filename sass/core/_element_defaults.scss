@@ -7,7 +7,7 @@
 		text-rendering: optimizeLegibility;
 	}
 	html, body {
-		@include color_textSecondary();
+		color: $C_textSecondary;
 		font-size: $baseFontSize;
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
@@ -41,9 +41,9 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 ```
 
 */
-	.inverted {
-		@include color_textSecondaryInverted();
-	}
+.inverted {
+	color: $C_textSecondaryInverted;
+}
 
 /*doc
 ---
@@ -168,7 +168,7 @@ the whitespace on the bottom).
 
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
-		@include color_textPrimary();
+		color: $C_textPrimary;
 		font-family: $headingFontStack;
 		margin: 0;
 		padding: 0;
@@ -218,16 +218,6 @@ the whitespace on the bottom).
 	/* }}} */
 }
 
-
-/*  TODO Please kill this. -j */
-/*  NOTE
- *  This is a terrible, hacky mixin, but I can't tell 
- *  why it's being overridden elsewhere ATM. -j
- */
-@mixin pholder() {
-	 color: #b3b3b3 !important; /* == $C_gray70 in `_tl_parameters.scss` */
-	 font-style: normal !important;
-}
 
 @if $platform == "mobile" {
 
@@ -331,7 +321,7 @@ the whitespace on the bottom).
 	/* {{{ Headings */
 
 	h1,h2,h3,h4,h5,h6 {
-		@include color_textPrimary();
+		color: $C_textPrimary();
 		font-family: $headingFontStack;
 		font-weight: $W_bold;
 		margin: 0;
@@ -371,17 +361,14 @@ the whitespace on the bottom).
 	/**
 	* Placeholder styles
 	*/
-	textarea::-webkit-input-placeholder, 
-	input::-webkit-input-placeholder { 
-		 @include pholder();
-	}
+	textarea::-webkit-input-placeholder,
+	input::-webkit-input-placeholder,
 	textarea:-moz-placeholder,
-	input:-moz-placeholder { 
-		 @include pholder();
-	}
-	textarea:-ms-input-placeholder, 
+	input:-moz-placeholder,
+	textarea:-ms-input-placeholder,
 	input:-ms-input-placeholder {
-		 @include pholder();
+		font-style: normal;
+		color: $C_textTertiary;
 	}
 	/* }}} */
 
