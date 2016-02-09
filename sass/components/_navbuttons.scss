@@ -52,7 +52,7 @@ DEPRECATED: you should probably use segmented control instead
 	margin-bottom: $spacing;
 	padding-left: 0;
 	line-height: 1.5;
-	border: 1px solid $C_line;
+	border: 1px solid $C_borderDark;
 
 
 	/*****************************
@@ -113,7 +113,7 @@ DEPRECATED: you should probably use segmented control instead
 		@extend %button_personality;
 		@include button_color(#fff, true);
 		border: none;
-		color: $C_text;
+		color: $C_textPrimary;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
 	}
 
@@ -141,48 +141,6 @@ DEPRECATED: you should probably use segmented control instead
 			@include experimental(box-shadow, '#{$highlight}');
 		}
 	}
-
-	/*****************************
-	 * COLOR INVERTED
-	 ****************************/
-
-/*
- *    .inverted &{
- *        border-color: $C_darkgray;
- *      label,
- *      li > a,
- *      li > span {
- *         @include button_color($C_darkgray_lighter, false);
- *         border: none;
- *         color: $C_text;
- *      }
- *
- *      input[type=radio]:checked + label, input[attr="checked"] + label {
- *         @include button_color_active($C_darkgray_lighter, true);
- *      }
- *
- *      input[type=radio]:checked + label, input[attr="checked"] + label,
- *      li > a:active, li > a.selected, li > a.push,
- *      li > span.selected, li > span.push {
- *         color: $C_gray_lightest;
- *      }
- *
- *        &.vertical{
- *         label,
- *         li > a,
- *         li > span{
- *            @include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
- *         }
- *
- *         label:last-of-type,
- *         li:last-child > a,
- *         li:last-child > span {
- *            @include experimental(box-shadow, '#{$highlight}');
- *         }
- *        }
- *    }
- */
-
 
 	/*****************************
 	 * COLOR SELECTED ITEM
