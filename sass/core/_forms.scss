@@ -110,9 +110,6 @@ textarea {
 /* }}} */
 
 fieldset { /* group like-fields together under headings (legends) with this! */
-	//background: $C_shade;
-	//border-bottom: 1px solid $C_line;
-	//border-top: 1px solid $C_line;
 	border-width: 0;
 	background: transparent;
 	padding: $spacing/2.5 0 0;
@@ -151,7 +148,7 @@ input, select, textarea {
 	width: auto;
 	margin-bottom: $spacing;
 	color: $C_text;
-	border: 1px solid $C_line;
+	border: 1px solid $C_border;
 	border-radius: $defaultRadius/2;
 }
 
@@ -262,18 +259,13 @@ input, textarea {
 [disabled="disabled"],
 .disabled {
 	opacity: 0.7;
-	color: $C_text_less;
+	color: $C_textDisabled;
+	background-color: $C_border;
 	cursor: auto !important;
-	&:focus {
-		border-color: $C_line;
-		-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-		box-shadow: none;
-	}
-}
-[disabled],
-[disabled="disabled"] {
-    background-color: $C_line_less;
+	border-color: $C_border;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 /* {{{ Feedback/Error states */

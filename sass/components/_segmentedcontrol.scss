@@ -54,7 +54,7 @@ Element type       | Use
     @include box-sizing('border');
     display: table;
     table-layout: fixed;
-    border-left: 1px solid $C_line;
+    border-left: 1px solid $C_border;
     border-radius: $defaultRadius 0 0 $defaultRadius;
     width: 100%;
     margin-bottom: $baseline;
@@ -73,7 +73,7 @@ Element type       | Use
     display: inline-block;
     width: 100%;
     padding: 0.5em 0.75em 0.4em;
-    border: 1px solid $C_line;
+    border: 1px solid $C_border;
     border-left: none;
     margin: 0;	/* OVERRIDE */
     vertical-align: middle;

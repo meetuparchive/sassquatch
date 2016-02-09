@@ -62,7 +62,7 @@ as the only conveyance of the event date.
 	.day {
 		@extend %numerialFont;
 		display: block;
-		border: 2px solid $C_line;
+		border: 2px solid $C_border;
 		color: $C_text !important; // ignore link colors, theme
 		background-color: #fff;
 		border-top-width: 0;

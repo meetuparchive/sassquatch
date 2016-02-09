@@ -99,8 +99,6 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 	/* {{{ Color aliases ( shouldn't be any hex codes here ) */
 
 	// interface (bg)
-	$C_line: 				$C_border;
-	$C_line_less: 			$C_border;
 	$C_shade: 				$C_gray_lightest;
 	$C_accent: 				$C_red;
 
@@ -108,7 +106,6 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 	$C_text_headline: 	$C_darkgray;
 	$C_text: 				$C_darkgray_lighter;
 	$C_text_less: 			$C_darkgray_lightest;
-	$C_link: 				$C_darkblue;
 
 	// RSVP status colors
 	$C_rsvpGoing: 			rgb(98,172,117);

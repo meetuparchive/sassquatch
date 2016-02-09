@@ -19,12 +19,12 @@
 	//	`.touchList-item`
 	//	`.touchList-load-more-link`
 	//	`.touchList-jump-link`
-	border-bottom: 1px solid $C_line_less;
+	border-bottom: 1px solid $C_border;
 	.inverted & { @include color_borderInverted('border-color'); }
 }
 
 %dividerLeft {
-	border-left: 1px solid $C_line_less;
+	border-left: 1px solid $C_border;
 	// NOTE A border applied ONLY to `touchList-items` in a
 	// `touchList--withInlineChildren` list. Right now, this gets applied to 2n
 	// cells, but we may want to change that.
