@@ -103,8 +103,8 @@ Color variables are provided via the [meetup-swatches](https://github.com/meetup
 
 	// text
 	$C_text_headline: 	$C_textPrimary;
-	$C_text: 				$C_textSecondary;
-	$C_text_less: 			$C_textTertiary;
+	$C_text: 				$C_textPrimary;
+	$C_text_less: 			$C_textSecondary;
 
 	// RSVP status colors
 	$C_rsvpGoing: 			rgb(98,172,117);
