@@ -5,9 +5,9 @@
 		-webkit-text-size-adjust: 100%;
 		-ms-text-size-adjust: 100%;
 		text-rendering: optimizeLegibility;
+		color: $C_textPrimary;
 	}
 	html, body {
-		color: $C_textSecondary;
 		font-size: $baseFontSize;
 		line-height: $baseLineHeight;
 		font-family: $baseFontStack;
