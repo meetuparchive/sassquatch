@@ -202,7 +202,7 @@ $condensedLineHeight:	null;
 	 *  include typefaces that have multiple weights supported. This means
 	 *  we can do fancy things with headers.
 	 */
-	$baseFontStack:			"Helvetica Neue", "Roboto", "Droid Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+	$baseFontStack:			$F_sans;
 	$headingFontStack:		$baseFontStack;
 	$uiControlFontStack:	$baseFontStack;
 
