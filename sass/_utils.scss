@@ -27,11 +27,13 @@
 
 
 // UTIL
+@import "util/color";
+@import "util/breakpoints";
 @import "util/propertyValue";
 @import "util/unitUtils";
 @import "util/layout";
+@import "util/type";
 @import "util/legacy-type-helpers";
-/*@import "util/type";*/
 @import "util/forms";
 @import "util/focus";
 @import "util/border";
@@ -42,5 +44,4 @@
 @import "util/shadow";
 @import "util/transform";
 @import "util/animation";
-@import "util/breakpoints";
 @import "util/avatar";

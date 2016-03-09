@@ -1,22 +1,24 @@
-@if $platform == "desktop" {
-	html {
-		overflow-y: scroll;
-		font-size: 100%;
-		-webkit-text-size-adjust: 100%;
-		-ms-text-size-adjust: 100%;
-		text-rendering: optimizeLegibility;
-		color: $C_textPrimary;
-	}
-	html, body {
-		font-size: $baseFontSize;
-		line-height: $baseLineHeight;
-		font-family: $baseFontStack;
-		font-weight: $W_normal;
-		background-color: $C_collectionBG;
-		margin: 0;
-		padding: 0;
-	}
+/** {{{ shared between desktop/mobile **/
+html {
+	overflow-y: scroll;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	color: $C_textPrimary;
+}
+html, body {
+	font-size: $font-size;
+	line-height: $line-height;
+	font-family: $font;
+	font-weight: $W_normal;
+	background-color: $C_collectionBG;
+	margin: 0;
+	padding: 0;
+}
+/* }}} */
 
+@if $platform == "desktop" {
 /*doc
 ---
 title: Inverted Context
@@ -168,52 +170,24 @@ the whitespace on the bottom).
 
 	/* {{{ Headings */
 	h1,h2,h3,h4,h5,h6 {
-		color: $C_textPrimary;
-		font-family: $headingFontStack;
+		@extend %text--heavy;
 		margin: 0;
 		padding: 0;
 		padding-bottom: $baseline/2;
-		line-height: 1.1;
-		font-weight: $W_bold;
+
+		color: $C_textPrimary;
 		.inverted & {
 			color: $C_textPrimaryInverted;
 		}
 	}
 	h1 {
-		@include remProp('font-size', $h1FontSize);
-		letter-spacing: -0.75px;
+		@extend %text--display1;
 	}
 	h2 {
-		@include remProp('font-size', $h2FontSize);
-		letter-spacing: -0.5px;
+		@extend %text--display2;
 	}
 	h3 {
-		@include remProp('font-size', $h3FontSize);
-		padding-bottom: $baseline/3;
-		line-height: 1.2;
-		letter-spacing: -0.25px;
-	}
-	h4{
-		@include remProp('font-size', $h4FontSize);
-		padding-bottom: 0;
-		line-height: $baseLineHeight;
-		letter-spacing: -0.05px;
-	}
-	h5 {
-		@include remProp('font-size', $h5FontSize);
-		padding-bottom: 0;
-		line-height: $baseLineHeight;
-
-		font-weight: $W_normal;
-	}
-	h6 {
-		@include remProp('font-size', $h6FontSize);
-		padding-bottom: 0;
-		line-height: $baseLineHeight;
-
-		text-transform: uppercase;
-		font-variant: small-caps;
-		font-weight: $W_normal;
+		@extend %text--display3;
 	}
 	/* }}} */
 }
@@ -263,15 +237,15 @@ the whitespace on the bottom).
 					we are using boilerplate that comes with mobile resets */
 
 	html, body {
-		font-size: $baseFontSize;
-		line-height:$baseLineHeight;
-		color: $C_textSecondary;
-	} 
+		font-size: $font-size;
+		line-height: $line-height;
+		color: $C_textPrimary;
+	}
 
 	// Override default text color for "inverted" contexts
 	// (over deark backgrounds, photos, etc.)
 	.inverted {
-		color: $C_textSecondaryInverted;
+		color: $C_textPrimaryInverted;
 	}
 
 	/* {{{ Block tag defaults */
@@ -317,45 +291,6 @@ the whitespace on the bottom).
 	}
 
 	/* }}} */
-
-	/* {{{ Headings */
-
-	h1,h2,h3,h4,h5,h6 {
-		color: $C_textPrimary();
-		font-family: $headingFontStack;
-		font-weight: $W_bold;
-		margin: 0;
-		padding: 0;
-		padding-bottom: $baseline/2;
-		line-height: 1.2;
-		.inverted & {
-			color: $C_textPrimaryInverted;
-		}
-	}
-	h1 { 
-		@include remProp('font-size', $h1FontSize);
-		letter-spacing: -0.75px;
-	}
-	h2 { 
-		@include remProp('font-size', $h2FontSize);
-		letter-spacing: -0.5px;
-	}
-	h3 { 
-		@include remProp('font-size', $h3FontSize);
-	}
-	h4 { @include remProp('font-size', $h4FontSize) }
-	h5 { 
-		@include remProp('font-size', $h5FontSize);
-		font-weight: $W_normal;
-	}
-	h6 { 
-		@include remProp('font-size', $h6FontSize);
-		font-weight: $W_normal;
-		text-transform:uppercase;
-	}  /* probably won't use it, but it's in the html spec, so worth defining a default */
-
-	/* }}} */
-
 
 	/*  {{{ Override input styles */
 	/**
