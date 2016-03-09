@@ -5,6 +5,7 @@
 * the $platform variable is used within each import to determine
 * if any given css rule is compiled to desktop or mobile css files
 */
+$platform: "desktop" !default; // define default platform var
 
 
 // UTILS

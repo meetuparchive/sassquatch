@@ -13,7 +13,11 @@
 // endbower
 
 // VARS
-@import "vars";
+@import "globals/breakpoints";
+@import "globals/type";
+@import "globals/layout";
+@import "globals/colors";
+@import "globals/mobile";
 
 
 // FUNCTIONS
@@ -26,7 +30,7 @@
 @import "util/unitUtils";
 @import "util/layout";
 @import "util/legacy-type-helpers";
-@import "util/type";
+/*@import "util/type";*/
 @import "util/forms";
 @import "util/focus";
 @import "util/border";
