@@ -1,40 +1,47 @@
-$baseline: 			18px; // not actually used as line-height, we should rename
+/**
+* Legacy typography vars
+* -----------------------------------
+*
+* In order to maintain support for legacy vars,
+* this file maps our old type vars to new vars
+* copied from sq2 (`sass/globals/_type.scss`)
+*/
 
 // base font sizes
-$baseFontSize: 	16px;
-$baseLineHeight: 	1.45;
+$baseFontSize: 	$font-size;
+$baseLineHeight: 	$line-height;
+
+// not actually used as line-height, we should rename
+$baseline: $font-size * $line-height-smallText;
 
 // small font sizes
-$smallFontSize: 	13px;
-$smallLineHeight: 1.6;
+$smallFontSize: 	$font-size-small;
+$smallLineHeight: $line-height-smallText;
 
 // big font sizes
-$bigFontSize: 		20px;
-$bigLineHeight: 	1.25;
-$bigBaseline: 		18px; // not actually used as line-height, we should rename
+$bigFontSize: 		$font-size-big;
+$bigLineHeight: 	$line-height-largeText;
+$bigBaseline: 		$baseline;
 
 // heading sizes
-$h1FontSize: 	42px;
-$h2FontSize: 	34px;
-$h3FontSize: 	20px;
-$h4FontSize: 	$baseFontSize;
-$h5FontSize: 	$baseFontSize;
-$h6FontSize: 	$baseFontSize;
+$h1FontSize: 	$font-size-display1;
+$h2FontSize: 	$font-size-display2;
+$h3FontSize: 	$font-size-display3;
+$h4FontSize: 	$font-size;
+$h5FontSize: 	$font-size;
+$h6FontSize: 	$font-size;
 
 // font stacks
-$F_sans: 					'Graphik', helvetica, arial, sans-serif;
-$F_num: 						'Graphik', helvetica, arial, sans-serif ;
-$F_mono: 					Monaco, "Andale Mono", "Courier New", monospace;
+$F_sans: $font;
+$F_num: $font;
+$F_mono: $font--mono;
 $baseFontStack: 			$F_sans;
 $headingFontStack: 		$F_sans;
 $uiControlFontStack: 	$F_sans;
 $monoFontStack: 			$F_mono;
 
 // weights
-$W_normal: 400;
-$W_medium: 600;
-$W_bold: 800;
-$W_numeral: 800;
+$W_numeral: $W_bold;
 
 // numeral placeholder
 %numerialFont {
