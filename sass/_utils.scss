@@ -25,7 +25,8 @@
 @import "util/propertyValue";
 @import "util/unitUtils";
 @import "util/layout";
-@import "util/typography";
+@import "util/legacy-type-helpers";
+@import "util/type";
 @import "util/forms";
 @import "util/focus";
 @import "util/border";
