@@ -1,42 +1,21 @@
-$baseline: 			18px; // not actually used as line-height, we should rename
+$font : "Graphik", helvetica, arial, sans-serif;
+$font--mono : Monaco, "Andale Mono", "Courier New", monospace;
 
-// base font sizes
-$baseFontSize: 	16px;
-$baseLineHeight: 	1.4;
+// Sizes
+$font-size-small     : 13px;
+$font-size-big       : 20px;
+$font-size           : 16px;
+$font-size-tearsheet : 24px;
+$font-size-display3  : 28px;
+$font-size-display2  : 34px;
+$font-size-display1  : 42px;
 
-// small font sizes
-$smallFontSize: 	13px;
-$smallLineHeight: 1.6;
+// Weights
+$W_normal : 400;
+$W_medium : 600;
+$W_bold   : 800;
 
-// big font sizes
-$bigFontSize: 		20px;
-$bigLineHeight: 	1.33;
-$bigBaseline: 		18px; // not actually used as line-height, we should rename
-
-// heading sizes
-$h1FontSize: 	38px;
-$h2FontSize: 	28px;
-$h3FontSize: 	20px;
-$h4FontSize: 	$baseFontSize;
-$h5FontSize: 	$baseFontSize;
-$h6FontSize: 	$baseFontSize;
-
-// font stacks
-$F_sans: 					'Graphik', helvetica, arial, sans-serif;
-$F_num: 						'Graphik', helvetica, arial, sans-serif ;
-$F_mono: 					Monaco, "Andale Mono", "Courier New", monospace;
-$baseFontStack: 			$F_sans;
-$headingFontStack: 		$F_sans;
-$uiControlFontStack: 	$F_sans;
-$monoFontStack: 			$F_mono;
-
-// weights
-$W_normal: 400;
-$W_bold: 800;
-$W_numeral: 800;
-
-// numeral placeholder
-%numerialFont {
-	font-family: $F_num;
-	font-weight: $W_numeral;
-}
+// Leading
+$line-height-largeText : 1.25;
+$line-height           : 1.45;
+$line-height-smallText : 1.6;
