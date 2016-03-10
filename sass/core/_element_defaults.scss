@@ -1,21 +1,46 @@
 /** {{{ shared between desktop/mobile **/
-html {
-	overflow-y: scroll;
-	font-size: 100%;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility;
-	color: $C_textPrimary;
-}
-html, body {
-	font-size: $font-size;
-	line-height: $line-height;
-	font-family: $font;
-	font-weight: $W_normal;
-	background-color: $C_collectionBG;
-	margin: 0;
-	padding: 0;
-}
+	html {
+		overflow-y: scroll;
+		font-size: 100%;
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		text-rendering: optimizeLegibility;
+		color: $C_textPrimary;
+	}
+	html, body {
+		font-size: $font-size;
+		line-height: $line-height;
+		font-family: $font;
+		font-weight: $W_normal;
+		background-color: $C_collectionBG;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* {{{ Headings */
+	h1,h2,h3,h4,h5,h6 {
+		@extend %text--heavy;
+		font-size: $font-size;
+		margin: 0;
+		padding: 0;
+		padding-bottom: $baseline/2;
+
+		color: $C_textPrimary;
+		.inverted & {
+			color: $C_textPrimaryInverted;
+		}
+	}
+	h1 {
+		@extend %text--display1;
+	}
+	h2 {
+		@extend %text--display2;
+	}
+	h3 {
+		@extend %text--display3;
+	}
+	/* }}} */
+
 /* }}} */
 
 @if $platform == "desktop" {
@@ -168,28 +193,6 @@ the whitespace on the bottom).
 	}
 	/* }}} */
 
-	/* {{{ Headings */
-	h1,h2,h3,h4,h5,h6 {
-		@extend %text--heavy;
-		margin: 0;
-		padding: 0;
-		padding-bottom: $baseline/2;
-
-		color: $C_textPrimary;
-		.inverted & {
-			color: $C_textPrimaryInverted;
-		}
-	}
-	h1 {
-		@extend %text--display1;
-	}
-	h2 {
-		@extend %text--display2;
-	}
-	h3 {
-		@extend %text--display3;
-	}
-	/* }}} */
 }
 
 
@@ -277,7 +280,6 @@ the whitespace on the bottom).
 	}
 
 	/* }}} */
-
 
 	/* {{{ Link defaults */
 
