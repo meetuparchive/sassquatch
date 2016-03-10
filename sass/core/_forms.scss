@@ -116,11 +116,8 @@ fieldset { /* group like-fields together under headings (legends) with this! */
 	position: relative;
 	margin-top: 2.25em;
 	legend {
+		@extend %text--big;
 		display: block;
-		font-size: $baseFontSize;
-		line-height: 1;
-		color: $C_text;
-		*line-height: 1.5; /* IE7 */
 		margin-bottom: 0;
 		position: absolute;
 		top: -1em;
@@ -149,18 +146,28 @@ input, select, textarea {
 	margin-bottom: $spacing;
 	color: $C_text;
 	border: 1px solid $C_border;
-	border-radius: $defaultRadius/2;
+	border-radius: $defaultRadius;
+	background-color: $C_lightGray;
 }
 
 
 /* start with horizontal, inline type 	s as default */
 label {
-	font-size: $baseFontSize;
-	color: $C_text;
+	font-size: $font-size-small;
+	font-weight: $W_bold;
 	display: block;
-	margin-right: 1em; /* a smart default for inline style forms | move this to forms include in sassquatch when the forms bug happens */
+
+	&.required:after {
+		content: "*";
+		color: $C_attention;
+		font-size: $font-size-big;
+		line-height: 0;
+		margin-left: $font-size/4;
+		position: relative;
+		top: 3px;
+	}
 	&.small {
-		font-size: $smallFontSize;
+		@extend %text--small;
 	}
 }
 
@@ -220,27 +227,12 @@ input, textarea {
 * declares transition for any border & box shadow changes (set below in focus)
 */
 input, textarea {
-	// transition-all() is too blunt - should only transition border
-	/*transition*/
-	-webkit-transition: border linear 0.1s, box-shadow linear 0.2s;
-	-moz-transition: border linear 0.1s, box-shadow linear 0.2s;
-	-ms-transition: border linear 0.1s, box-shadow linear 0.2s;
-	-o-transition: border linear 0.1s, box-shadow linear 0.2s;
-	transition: border linear 0.1s, box-shadow linear 0.2s;
-
-
-	/*default state*/
-	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-
 	/*focus border & outline*/
 	&:focus {
-		outline: 0;
-		border-color: $C_darkblue;
-		-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
-		-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
-		box-shadow: inset 0 1px 3px rgba(0,0,0,0.333), 0 0 6px transparentize( $C_darkblue, 0.5);
+		background: $C_contentBG;
+		border-color: $C_lightPurple;
+		box-shadow: none;
+		outline: none;
 	}
 }
 
@@ -287,7 +279,7 @@ Error states are applied with an `error` class on the input element.
 
 	<label class="required" for="name">Name</label>
 	<input class="error" id="name" value="Keith Hernandez" type="text" />
-	<p class="italic">You are not Keith Hernandez.</p>
+	<p class="italic small">You are not Keith Hernandez.</p>
 
 	<label for="address">Profession</label>
 	<input id="address" value="Blimp Captain" type="text" />
@@ -298,14 +290,12 @@ Error states are applied with an `error` class on the input element.
 label.required:after {
 	margin-left: 0.15em;
 	content: "*";
-	color: $C_red;
+	color: $C_attention;
 }
 
 input.error, select.error, textarea.error {
-	background-color: $C_warnBg;
-	border-color: $C_warnText;
+	border-color: $C_attention;
 	font-style: normal;
-	font-weight: $W_bold;
 	margin-bottom: 0;
 }
 
