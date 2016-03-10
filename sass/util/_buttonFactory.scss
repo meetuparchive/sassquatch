@@ -54,7 +54,8 @@ $_buttonHeight: 36px;
 	}
 }
 
-@mixin buttonColor($bgColor: $C_button) {
+// second argument exists only to support legacy use of mixin
+@mixin buttonColor($bgColor: $C_button, $lol: None) {
 	@include color-all(getPrimaryTextColor($bgColor), true);
 	background: $bgColor;
 	border-color: $bgColor;
