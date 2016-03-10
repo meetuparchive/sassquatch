@@ -32,62 +32,25 @@ a little bit of the background color behind them.
 ```
 
 */
+
 %button,
 .button,
 button,
 input[type="submit"] {
-	@extend %_button_base;
-	margin-bottom: $baseline + 2;
-	@if $platform == "desktop" {
-		@extend %_chrome_button_fix;
-	}
-
-	color: $C_textSecondary !important; // need this for chapstick
-	background: $C_border;
-	@include box-shadow($C_textTertiary, 0px, 2px, 0px, 0px);
-
-	&:hover {
-		background: opacify($C_border, 0.06);
-	}
-
-	&.button--active,
-	&:active {
-		@include box-shadow($C_textTertiary, 0px, 0px, 0px, 0px);
-		@include transform(translate(0px, 2px));
-	}
+	@extend %buttonBase;
+	@include buttonHover();
+	@include color-all($C_textPrimary);
+	background: $C_contentBG;
 
 	&.disabled,
 	&:disabled {
-		opacity: 0.4;
-		cursor: normal;
-		&:active {
-			@include transform(translate(0px, 0px));
-			@include box-shadow($C_textTertiary, 0px, 2px, 0px, 0px);
-		}
-		&:hover {
-			background: $C_border;
-		}
-	}
-
-	.inverted & {
-		color: $C_textSecondaryInverted !important; // need this for chapstick
-		background: $C_borderInverted;
-		@include box-shadow($C_textTertiary, 0px, 2px, 0px, 0px);
-
-		&:hover {
-			background: transparentize($C_borderInverted, 0.06);
-		}
-
-		&:active {
-			@include box-shadow($C_textTertiary, 0px, 0px, 0px, 0px);
-			@include transform(translate(0px, 2px));
-		}
-
-		&.disabled,
-		&:disabled {
-			&:hover {
-				background: $C_borderInverted;
-			}
+		@include color-all($C_textSecondary, true);
+		outline: none;
+		background: transparentize($C_mediumGray, .88) !important;
+		cursor: default;
+		border: 1px solid $C_border;
+		.inverted & {
+			border-color: $C_borderInverted;
 		}
 	}
 }
@@ -127,7 +90,8 @@ Use primary buttons for primary actions.
 input[type="submit"].D_submit,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
-	@include button( $C_red, #fff );
+	@extend %buttonBase;
+	@include buttonColor();
 }
 
 // Black button
@@ -135,7 +99,8 @@ input[type="submit"].button--primary {
 %button--black,
 .button--black,
 input[type="submit"].button--black {
-	@include button( #000, #fff );
+	@extend %buttonBase;
+	@include buttonColor( #000 );
 }
 
 // Black button
@@ -143,7 +108,8 @@ input[type="submit"].button--black {
 %button--white,
 .button--white,
 input[type="submit"].button--black {
-	@include button( #fff, $C_red );
+	@extend %buttonBase;
+	@include buttonColor( #fff );
 }
 
 // Blue button
@@ -151,7 +117,8 @@ input[type="submit"].button--black {
 %button--blue,
 .button--blue,
 input[type="submit"].button--blue {
-	@include button( #13a1ff );
+	@extend %buttonBase;
+	@include buttonColor( #13a1ff );
 }
 
 // Green button (money-related)
@@ -159,21 +126,10 @@ input[type="submit"].button--blue {
 %button--green,
 .button--green,
 input[type="submit"].button--green {
-	@include button( $C_green );
+	@extend %buttonBase;
+	@include buttonColor( $C_green );
 }
 
-
-// input translation fix
-//
-// we can't fix the chrome double click issue
-// without pseudo elements, which don't work on input els
-input[type="submit"]:active {
-	-moz-transform: translate(0px, 0px) !important;
-	-ms-transform: translate(0px, 0px) !important;
-	-o-transform: translate(0px, 0px) !important;
-	-webkit-transform: translate(0px, 0px) !important;
-	transform: translate(0px, 0px) !important;
-}
 
 
 /*doc
@@ -198,38 +154,42 @@ Flat buttons should almost always be used for `<a>` elements.
 // Flat button (gray) [DEFAULT]
 // --------------------------- 
 %button-flat,
+.button-flat {
+	@extend %buttonBase;
+	@include buttonColor( #fff );
+}
 %button-flat--gray,
-.button-flat,
 .button-flat--gray {
-	@include button-flat( #777 );
+	@extend %buttonBase;
+	@include buttonColor( #777 );
 }
 
 // Flat button (white)
 // ---------------------------
 %button-flat--white,
 .button-flat--white {
-	@include button-flat( #fff );
+	@extend %button--white;
 }
 
 // Flat button (black)
 // ---------------------------
 %button-flat--black,
 .button-flat--black {
-	@include button-flat( #000 );
+	@extend %button--black;
 }
 
 // Flat button (red)
 // ---------------------------
 %button-flat--red,
 .button-flat--red {
-	@include button-flat( $C_red );
+	@extend %button--primary;
 }
 
 // Flat button (green/money)
 // ---------------------------
 %button-flat--green,
 .button-flat--green {
-	@include button-flat( $C_green );
+	@extend %button--green;
 }
 
 
