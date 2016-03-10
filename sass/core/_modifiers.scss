@@ -354,7 +354,7 @@ Class          | Example
 	font-size: $smallFontSize;
 	line-height: $smallLineHeight;
 }
-.big {
+.big, big {
     font-size: $bigFontSize;
 	 line-height: $bigLineHeight;
 }
@@ -662,7 +662,7 @@ parent: typographyModifiers
 
 */
 	.smaller {
-		 font-size:.75rem;
+		 font-size: $font-size-small;
 	}
 
 /*doc
@@ -711,7 +711,7 @@ Sets text color to body text color
 		color: $C_textPrimary !important;
 
 		.natural-text.light {
-			opacity:.7;
+			color: $C_textSecondary !important;
 		}
 	}
 
@@ -743,11 +743,11 @@ Class            | Description
 
 */
 	.double-spaced {
-		line-height:1.8;
+		line-height: $line-height-smallText;
 	}
 
 	.triple-spaced {
-		line-height:2.8;
+		line-height: $line-height-smallText * 2;
 	}
 	/* }}} */
 }
