@@ -238,7 +238,6 @@ the whitespace on the bottom).
 
 	/* {{{ RESETS, 	NOTE: this is most likely diff from full site sassquatch, 
 					we are using boilerplate that comes with mobile resets */
-
 	html, body {
 		font-size: $font-size;
 		line-height: $line-height;
@@ -250,6 +249,17 @@ the whitespace on the bottom).
 	.inverted {
 		color: $C_textPrimaryInverted;
 	}
+
+	h1 {
+		@extend %text--display2;
+	}
+	h2 {
+		@extend %text--display3;
+	}
+	h3 {
+		@extend %text--display3;
+	}
+
 
 	/* {{{ Block tag defaults */
 
