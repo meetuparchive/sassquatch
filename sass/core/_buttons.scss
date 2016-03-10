@@ -91,7 +91,7 @@ input[type="submit"].D_submit,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
 	@extend %buttonBase;
-	@include buttonColor();
+	@include buttonColor( $C_button );
 }
 
 // Black button
