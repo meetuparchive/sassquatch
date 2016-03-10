@@ -6,8 +6,7 @@ $_buttonHeight: 36px;
 	text-decoration: none !important;
 }
 
-%_button_base,
-%buttonBase {
+@mixin buttonBase() {
 	@extend %buttonPersonality;
 	@include display(inline-flex);
 	@include flex-direction(column);
@@ -39,6 +38,11 @@ $_buttonHeight: 36px;
 	.inverted & {
 		border: 1px solid $C_borderInverted;
 	}
+}
+
+%_button_base,
+%buttonBase {
+	@include buttonBase();
 }
 
 @mixin buttonHover($bgColor: $C_textPrimary) {

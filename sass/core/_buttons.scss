@@ -37,7 +37,7 @@ a little bit of the background color behind them.
 .button,
 button,
 input[type="submit"] {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonHover();
 	@include color-all($C_textPrimary);
 	background: $C_contentBG;
@@ -90,7 +90,7 @@ Use primary buttons for primary actions.
 input[type="submit"].D_submit,
 input[type="submit"].primary,
 input[type="submit"].button--primary {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( $C_button );
 }
 
@@ -99,7 +99,7 @@ input[type="submit"].button--primary {
 %button--black,
 .button--black,
 input[type="submit"].button--black {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( #000 );
 }
 
@@ -108,7 +108,7 @@ input[type="submit"].button--black {
 %button--white,
 .button--white,
 input[type="submit"].button--black {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( #fff );
 }
 
@@ -117,7 +117,7 @@ input[type="submit"].button--black {
 %button--blue,
 .button--blue,
 input[type="submit"].button--blue {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( #13a1ff );
 }
 
@@ -126,7 +126,7 @@ input[type="submit"].button--blue {
 %button--green,
 .button--green,
 input[type="submit"].button--green {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( $C_green );
 }
 
@@ -155,12 +155,12 @@ Flat buttons should almost always be used for `<a>` elements.
 // --------------------------- 
 %button-flat,
 .button-flat {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( #fff );
 }
 %button-flat--gray,
 .button-flat--gray {
-	@extend %buttonBase;
+	@include buttonBase();
 	@include buttonColor( #777 );
 }
 
