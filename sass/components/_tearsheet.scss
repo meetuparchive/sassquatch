@@ -20,6 +20,7 @@ as the only conveyance of the event date.
 .tearsheet,
 .tearsheet--small,
 .tearsheet--big {
+	@include color-all($C_textPrimary);
 	display: inline-block;
 	text-align: center;
 
@@ -36,5 +37,9 @@ as the only conveyance of the event date.
 		font-size: $font-size-tearsheet;
 		font-weight: $W_bold;
 		line-height: 1;
+	}
+
+	.inverted & {
+		@include color-all($C_textPrimaryInverted);
 	}
 }
