@@ -9,7 +9,7 @@ $_buttonHeight: 36px;
 @mixin buttonBase() {
 	@extend %buttonPersonality;
 	@include display(inline-flex);
-	@include flex-direction(column);
+	@include flex-direction(row);
 	@include justify-content(center);
 	@include align-items(center);
 	@include transition(background .15s);
