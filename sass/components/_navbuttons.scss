@@ -201,3 +201,42 @@ DEPRECATED: you should probably use segmented control instead
 		}
 	}
 }
+
+
+//
+// OVERRIDES for release/2.0.0
+// this is a bit of a hack...
+// introduces some color changes without creating breaking changes
+.nav-buttons {
+	border: 1px solid $C_border;
+
+	.selected {
+		background: $C_highlight;
+	}
+
+	li:first-child>a.selected,
+	li>a.selected,
+	li:first-child>span.selected,
+	li>span.selected,
+	li.selected>a,
+	li.selected>span {
+		background-color: $C_highlight !important;
+		color: $C_link !important;
+		font-weight: $W_bold;
+		border: initial;
+		box-shadow: initial;
+	}
+}
+
+.nav-buttons label, .nav-buttons li>a, .nav-buttons li>span, .segmented-control-button {
+		background: initial;
+		color: $C_textPrimary;
+	&:hover {
+		background: $C_highlight;
+	}
+}
+
+.nav-buttons li>a:active,
+#simple-event-filter span:active {
+	 background: $C_highlight !important;
+}
