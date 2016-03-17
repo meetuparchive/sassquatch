@@ -470,19 +470,11 @@ Styles a link as body text color.
 	&:visited,
 	&:hover,
 	&:active {
-		color: $C_textSecondary !important;
+		color: $C_textPrimary !important;
 		text-decoration: none !important;
 
-		h1,h2,h3,h4,h5,h6 {
-			color: $C_textPrimary !important;
-		}
-
 		.inverted & {
-			color: $C_textSecondaryInverted !important;
-
-			h1,h2,h3,h4,h5,h6 {
-				color: $C_textPrimaryInverted !important;
-			}
+			color: $C_textPrimaryInverted !important;
 		}
 	}
 }
