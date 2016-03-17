@@ -57,7 +57,7 @@ category: Navigation
 			text-decoration: none;
 		}
 		&.disabled {
-			color: $C_lightGray;
+			color: $C_lightGray !important;
 			&:hover {
 				background-color: white;
 			}
@@ -77,7 +77,7 @@ category: Navigation
 		}
 		&.selected a {
 			background: $C_purple;
-			color: $C_textPrimaryInverted;
+			color: $C_textPrimaryInverted !important;
 		}
 	}
 }
