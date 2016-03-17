@@ -12,7 +12,7 @@ $baseFontSize: 	$font-size;
 $baseLineHeight: 	$line-height;
 
 // not actually used as line-height, we should rename
-$baseline: $font-size * $line-height-smallText;
+$baseline: $font-size;
 
 // small font sizes
 $smallFontSize: 	$font-size-small;
