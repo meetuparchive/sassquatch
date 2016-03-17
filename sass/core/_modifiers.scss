@@ -328,8 +328,12 @@ Class          | Example
 `caps`         | <p class="caps">Example paragraph</p>
 `small`        | <p class="small">Example paragraph</p>
 `big`          | <p class="big">Example paragraph</p>
+`text--reset`  | <p class="text--reset">Example paragraph</p>
 
 */
+.text--reset {
+	@extend %text--reset;
+}
 .muted {
 	color: $C_textTertiary;
 
