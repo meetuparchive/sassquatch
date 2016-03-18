@@ -124,12 +124,12 @@ Useful classes for setting percentage widths on arbitary elements.
 ```
 
 */
-.span-25 { width: 25%; }
-.span-30 { width: 30%; }
-.span-50 { width: 50%; }
-.span-60 { width: 60%; }
-.span-75 { width: 75%; }
-.span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
+.span-25 { width: 25% !important; }
+.span-30 { width: 30% !important; }
+.span-50 { width: 50% !important; }
+.span-60 { width: 60% !important; }
+.span-75 { width: 75% !important; }
+.span-100 { width: 99.8% !important; } /*ya rly (thanks, IE)*/
 /* }}} */
 
 /* {{{ Doc Stripe */
