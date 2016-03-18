@@ -98,7 +98,7 @@ $_tabBorder: 4px;
 	.tabControl-link {
 		color: $C_link;
 		font-weight: $W_medium;
-		border-bottom: $_tabBorder solid $C_link;
+		border-bottom: $_tabBorder solid;
 	}
 }
 
