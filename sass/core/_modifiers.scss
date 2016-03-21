@@ -320,20 +320,28 @@ name: typographyModifiers
 category: Modifiers
 ---
 
-Class          | Example
----------------| ----------------------------------------------------
-`muted`        | <p class="muted">Example paragraph</p>
-`bold`         | <p class="bold">Example paragraph</p>
-`italic`       | <p class="italic">Example paragraph</p>
-`caps`         | <p class="caps">Example paragraph</p>
-`small`        | <p class="small">Example paragraph</p>
-`big`          | <p class="big">Example paragraph</p>
-`text--reset`  | <p class="text--reset">Example paragraph</p>
+Class             | Example
+----------------- | ----------------------------------------------------
+`muted`           | <p class="muted">Example paragraph</p>
+`bold`            | <p class="bold">Example paragraph</p>
+`italic`          | <p class="italic">Example paragraph</p>
+`caps`            | <p class="caps">Example paragraph</p>
+`small`           | <p class="small">Example paragraph</p>
+`big`             | <p class="big">Example paragraph</p>
+`text--reset`     | <p class="text--reset">Example paragraph</p>
+`text--display1`  | <p class="text--display1">Display text</p>
+`text--display2`  | <p class="text--display2">Display texg</p>
+`text--display3`  | <p class="text--display3">Display texg</p>
 
 */
+
 .text--reset {
 	@extend %text--reset;
 }
+.text--display1 { @extend %text--display1; }
+.text--display2 { @extend %text--display2; }
+.text--display3 { @extend %text--display3; }
+
 .muted {
 	color: $C_textTertiary;
 
