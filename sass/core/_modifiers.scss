@@ -330,8 +330,9 @@ Class             | Example
 `big`             | <p class="big">Example paragraph</p>
 `text--reset`     | <p class="text--reset">Example paragraph</p>
 `text--display1`  | <p class="text--display1">Display text</p>
-`text--display2`  | <p class="text--display2">Display texg</p>
-`text--display3`  | <p class="text--display3">Display texg</p>
+`text--display2`  | <p class="text--display2">Display text</p>
+`text--display3`  | <p class="text--display3">Display text</p>
+`text--secondary` | <p class="text--secondary">Secondary text</p>
 
 */
 
@@ -341,6 +342,7 @@ Class             | Example
 .text--display1 { @extend %text--display1; }
 .text--display2 { @extend %text--display2; }
 .text--display3 { @extend %text--display3; }
+.text--secondary { @extend %text--secondary; }
 
 .muted {
 	color: $C_textTertiary;
