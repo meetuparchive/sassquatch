@@ -18,6 +18,24 @@ category: Sass Utils | Mixins & Placeholders
 	}
 }
 
+/*doc
+---
+title: Reset placeholder
+name: resetPlaceholder
+parent: textUtil
+---
+
+(Sassquatch1 only)
+
+Placeholder             | Description
+----------------------- | --------------------------------
+`%text--reset`          | resets weight and size to body text
+*/
+%text--reset {
+	font-size: $font-size;
+	font-weight: $W-normal;
+}
+
 
 /*doc
 ---
@@ -54,7 +72,7 @@ Placeholder             | Description
 }
 %text--display2 {
 	font-size: $font-size-display2;
-	line-height: $line-height;
+	line-height: $line-height-largeText;
 }
 %text--display3 {
 	font-size: $font-size-display3;
@@ -261,20 +279,3 @@ $C_scrimGradient: $C_black;
 	}
 }
 
-/*doc
----
-title: Reset placeholder
-name: resetPlaceholder
-parent: textUtil
----
-
-(Sassquatch1 only)
-
-Placeholder             | Description
------------------------ | --------------------------------
-`%text--reset`          | resets weight and size to body text
-*/
-%text--reset {
-	font-size: $font-size;
-	font-weight: $W-normal;
-}
