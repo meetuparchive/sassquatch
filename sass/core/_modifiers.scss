@@ -345,7 +345,7 @@ Class             | Example
 .text--secondary { @extend %text--secondary; }
 
 .muted {
-	color: $C_textTertiary;
+	color: $C_textSecondary;
 
 	.inverted & {
 		color: $C_textTertiaryInverted;
