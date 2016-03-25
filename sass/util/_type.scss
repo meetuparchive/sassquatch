@@ -181,6 +181,7 @@ Placeholder           | Description
 `%text--caption`      | Small secondary text for captions
 `%text--attention`    | Small text to draw attention (ie. error text)
 `%text--mono`         | Monospaced text
+`%text--disabled`     | Disabled text
 */
 %text--big {
 	font-size: $font-size-big;
@@ -221,6 +222,21 @@ Placeholder           | Description
 }
 %text--mono {
 	font-family: $font--mono;
+}
+%text--disabled {
+	&,
+	&:hover,
+	&:visited,
+	&:hover,
+	&:active {
+		@include color-all($C_textTertiary);
+		cursor: not-allowed;
+		text-decoration: none;
+	}
+
+	.inverted & {
+		@include color-all($C_textTertiaryInverted);
+	}
 }
 
 
