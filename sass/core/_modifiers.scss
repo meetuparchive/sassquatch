@@ -500,6 +500,13 @@ Class           | Description
 			color: $C_textPrimaryInverted;
 		}
 	}
+
+	&:hover {
+		color: $C_link !important;
+		.inverted & {
+			color: $C_linkInverted !important;
+		}
+	}
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
