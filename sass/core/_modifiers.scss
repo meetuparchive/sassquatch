@@ -458,21 +458,19 @@ name: linkModifiers
 category: Modifiers
 ---
 
-Styles a link as body text color.
+The `unlink` class styles a link as body text color.
+
+Use the `hoverLink` class to force a link to body color, bu
+
+Class           | Description
+--------------- | --------------------------
+`hoverLink`     | primary text color by default; link color on hover
+`unlink`        | forces a link to primary text color for all states
 
 ```html_example
-	<a class="unlink">It's a link, but it doesn't look like one</a>
+<p><a class="unlink">This link always looks like normal text</a></p>
+<p><a class="hoverLink">This looks like normal text until you hover</a></p>
 ```
-
-```html_example
-	<div class="docBox docSection span-25">
-		<a class="unlink">
-			<h3>Block level anchors...</h3>
-			<p>How do they work?</p>
-		</a>
-	</div>
-```
-
 */
 @mixin unlinker() {
 	&,
@@ -490,6 +488,18 @@ Styles a link as body text color.
 }
 .unlink {
 	@include unlinker();
+}
+.hoverLink {
+	&,
+	&:link,
+	&:visited {
+		color: $C_textPrimary;
+		text-decoration: none;
+
+		.inverted & {
+			color: $C_textPrimaryInverted;
+		}
+	}
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
