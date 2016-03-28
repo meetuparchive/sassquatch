@@ -493,11 +493,11 @@ Class           | Description
 	&,
 	&:link,
 	&:visited {
-		color: $C_textPrimary;
-		text-decoration: none;
+		color: $C_textPrimary !important;
+		text-decoration: none !important;
 
 		.inverted & {
-			color: $C_textPrimaryInverted;
+			color: $C_textPrimaryInverted !important;
 		}
 	}
 
