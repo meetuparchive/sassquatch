@@ -52,7 +52,6 @@ DEPRECATED: you should probably use segmented control instead
 	margin-bottom: $spacing;
 	padding-left: 0;
 	line-height: 1.5;
-	font-size: $font-size-small;
 	border: 1px solid $C_border;
 
 
@@ -70,7 +69,7 @@ DEPRECATED: you should probably use segmented control instead
 	li > span {
 		@include button_personality;
 		font-family: $uiControlFontStack;
-		font-size: $baseFontSize;
+		font-size: $font-size-small;
 		font-weight: $W_normal;
 		padding: 0.5em 1.2em 0.4em;
 		display: block;
