@@ -53,11 +53,11 @@ category: Forms
 <form>
 	<fieldset>
 		<legend>I'm interested in...</legend>
-		<label><input type="checkbox" /> Cats</label>
-		<label><input type="checkbox" checked="checked" /> Honey Badgers</label>
-		<label><input type="checkbox" /> Quails</label>
-		<label><input type="checkbox" checked="checked" /> Goats</label>
-		<label><input type="checkbox"  checked="checked" /> Red Pandas</label>
+		<label class="text--reset small"><input type="checkbox" /> Cats</label>
+		<label class="text--reset small"><input type="checkbox" checked="checked" /> Honey Badgers</label>
+		<label class="text--reset small"><input type="checkbox" /> Quails</label>
+		<label class="text--reset small"><input type="checkbox" checked="checked" /> Goats</label>
+		<label class="text--reset small"><input type="checkbox"  checked="checked" /> Red Pandas</label>
 	</fieldset>
 </form>
 ```
@@ -168,6 +168,13 @@ label {
 	}
 	&.small {
 		@extend %text--small;
+	}
+
+	input[type=checkbox] &,
+	input[type=radio] &,
+	input[type=checkbox] + &,
+	input[type=radio] + & {
+		font-weight: $W_normal;
 	}
 }
 
