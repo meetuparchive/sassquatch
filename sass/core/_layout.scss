@@ -684,7 +684,7 @@ hr.double-line {
 	// ah well, doc-box margin should = doc-content padding
 	// so have to redefine
 	.doc-content {
-		padding:$baseline * .75;
+		padding: $baseline;
 		padding-bottom:0px;
 	}
 
