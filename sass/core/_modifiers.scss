@@ -333,16 +333,18 @@ Class             | Example
 `text--display2`  | <p class="text--display2">Display text</p>
 `text--display3`  | <p class="text--display3">Display text</p>
 `text--secondary` | <p class="text--secondary">Secondary text</p>
+`text--label`     | <p class="text--label">Label text</p>
 
 */
 
 .text--reset {
 	@extend %text--reset;
 }
-.text--display1 { @extend %text--display1; }
-.text--display2 { @extend %text--display2; }
-.text--display3 { @extend %text--display3; }
+.text--display1  { @extend %text--display1; }
+.text--display2  { @extend %text--display2; }
+.text--display3  { @extend %text--display3; }
 .text--secondary { @extend %text--secondary; }
+.text--label     { @extend %text--label; }
 
 .muted {
 	color: $C_textSecondary;
