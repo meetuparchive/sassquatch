@@ -358,7 +358,7 @@ Class             | Example
     @include opacity(.8);
 }
 .bold {
-	font-weight: $W_bold !important;
+	@extend %text--bold;
 }
 .italic {
     font-style: oblique;
@@ -367,12 +367,10 @@ Class             | Example
 	text-transform: uppercase;
 }
 .small, small {
-	font-size: $smallFontSize !important;
-	line-height: $smallLineHeight !important;
+	@extend %text--small;
 }
 .big, big {
-    font-size: $bigFontSize !important;
-	 line-height: $bigLineHeight !important;
+	@extend %text--big;
 }
 .opacity-quarter { // DEPRECATED
     // what is this used for?
