@@ -23,7 +23,7 @@ DEPRECATED: you should probably use segmented control instead
 		@include button_color_hover($base_color, $isLight);
 	}
 
-	&:active, &.selected, &.active {
+	&:active, &.active {
 		@include button_color_active($base_color, $isLight);
 	}
 }
@@ -118,8 +118,7 @@ DEPRECATED: you should probably use segmented control instead
 	}
 
 	input[type=radio]:checked + label, input[attr="checked"] + label,
-	li > a:active, li > a.selected, li > a.push,
-	li > span.selected, li > span.push {
+	li > a:active, li > a.push, li > span.push {
 		 @include punched_in_box_shadow;
 	}
 
@@ -149,7 +148,7 @@ DEPRECATED: you should probably use segmented control instead
 	li, li:first-child, li:last-child{
 		> a,
 		> span {
-			&:active, &.selected, &.push {
+			&:active, &.push {
 				@include punched_in_box_shadow;
 			}
 		}
@@ -184,20 +183,6 @@ DEPRECATED: you should probably use segmented control instead
 		> label, > a, > li {
 			float: none;
 			display: table-cell;
-		}
-	}
-}
-
-
-
-// DEPRECATED
-// .selected on LI is deprecated -- use .selected on SPAN or A instead
-.nav-buttons {
-	li {
-		&.selected > a,
-		&.selected > span {
-			@include punched_in_box_shadow;
-			border: none;
 		}
 	}
 }
