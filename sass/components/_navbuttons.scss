@@ -38,7 +38,6 @@ DEPRECATED: you should probably use segmented control instead
 }
 @mixin button_color_active($base_color, $isLight: false){
 	background: darken($base_color, if($isLight, 10%, 15%));
-	@include punched_in_box_shadow;
 }
 
 
