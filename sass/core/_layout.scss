@@ -301,6 +301,7 @@ to span the full width of the box, and use `docSection` for padded content:
 	background-color: #fff;
 	margin-bottom: $baseline;
 	border: 1px solid $C_border !important; /* !important to support .doc-box.doc-content multiple classes */
+	border-bottom: 1px solid $C_textHint !important;
  	@include background-clip(padding);
 
 
