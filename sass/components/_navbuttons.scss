@@ -1,10 +1,13 @@
-/*
-__DEPRECATED__
+/*doc
+---
+title: Nav Buttons
+name: navButtons
+category: Navigation
+---
 
 Using a list of `<a>` elements; for toggling/filtering controls.
 
-DEPRECATED: you should probably use segmented control instead
-
+#### Default display
 ```html_example
 	<ul class="nav-buttons">
 		<li><a href="#">Date Joined</a></li>
@@ -14,6 +17,16 @@ DEPRECATED: you should probably use segmented control instead
 	</ul>
 ```
 
+#### Vertical variant
+With `nav-buttons--column` variant class:
+```html_example
+	<ul class="nav-buttons nav-buttons--column">
+		<li><a href="#">Date Joined</a></li>
+		<li><a href="#" class="selected">Size</a></li>
+		<li><a href="#">Name</a></li>
+		<li><a href="#">Role</a></li>
+	</ul>
+```
 */
 
 @mixin button_color($base_color, $isLight: false){
@@ -52,6 +65,7 @@ DEPRECATED: you should probably use segmented control instead
 	padding-left: 0;
 	line-height: 1.5;
 	border: 1px solid $C_border;
+	text-align: left;
 
 
 	/*****************************
@@ -59,7 +73,7 @@ DEPRECATED: you should probably use segmented control instead
 	 ****************************/
 	li, label {
 		padding-top: 0;
-		float: left;
+		display: inline-block;
 		text-align: center;
 	}
 
@@ -223,4 +237,14 @@ DEPRECATED: you should probably use segmented control instead
 .nav-buttons li>a:active,
 #simple-event-filter span:active {
 	 background: $C_highlight !important;
+}
+
+.nav-buttons--column {
+	li, label {
+		display: block;
+		border-bottom: 1px solid $C_border;
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
 }
