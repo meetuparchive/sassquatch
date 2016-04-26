@@ -7,7 +7,8 @@
 }
 
 @mixin button( $bgColor: transparent, $textColor: "" ) {
-	@extend %buttonBase;
+	@include buttonBase();
+	@include buttonColor($bgColor);
 }
 
 @mixin button-flat( $color: $C_contentBG ) {
