@@ -26,6 +26,12 @@ $_buttonHeight: 36px;
 	line-height: 1; // :sq1 convention:
 	margin-bottom: $font-size; // :sq1 convention:
 
+	@include browser-ie11() {
+		min-height: 0;
+		padding-top: 0.33em;
+		padding-bottom: 0.5em;
+	}
+
 	&,
 	&:link,
 	&:active,
