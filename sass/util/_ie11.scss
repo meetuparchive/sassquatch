@@ -1,0 +1,29 @@
+/*doc
+---
+title: IE11 Filter
+name: ie11mixin
+category: Sass Utils | Mixins & Placeholders
+---
+Applies styles to IE10 and IE11 using a vendor-specific
+media query. Because we currently only support IE11, this
+can be treated as an IE11-only filter.
+
+```
+// default styles
+.someClass {
+	padding: 0;
+}
+
+// IE11 overrides
+@include browser-ie11() {
+	.someClass {
+		padding-top: $space;
+	}
+}
+```
+*/
+@mixin browser-ie11() {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
