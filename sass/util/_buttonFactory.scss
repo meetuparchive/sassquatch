@@ -81,3 +81,12 @@ $_buttonHeight: 36px;
 		border-color: darken($bgColor, 12%);
 	}
 }
+
+
+// Fix for full width buttons (flexbox override for the sake of safari 9)
+@mixin fullWidthButton() {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: ($baseline/2 + 1)px;
+}

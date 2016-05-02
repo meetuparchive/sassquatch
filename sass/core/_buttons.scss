@@ -256,9 +256,7 @@ expand to the width of its parent container
 ```
 */
 .button--fullWidth,
-.button.span-100 {
-	display: block;
-	width: 100%;
-	text-align: center;
-	padding: ($baseline/2 + 1)px;
+.button.span-100,
+.button.full-width {
+	@include fullWidthButton();
 }

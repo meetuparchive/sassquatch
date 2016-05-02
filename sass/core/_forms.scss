@@ -457,6 +457,6 @@ Mobile Sassquatch includes a special class for full-width buttons:
 	button.full-width,
 	.button.full-width,
 	.segmented-control.full-width {
-		width: 100%;
+		@include fullWidthButton();
 	}
 }
