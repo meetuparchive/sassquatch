@@ -217,3 +217,24 @@ top of a background photo.
 .button-photo--white {
 	@include button-photo( #fff );
 }
+
+
+/*doc
+---
+title: Small Buttons
+name: smallButtons
+category: Buttons
+---
+
+Small buttons are small.
+
+```html_example
+	<a href="#" class="button button--small">Button</a>
+	<a href="#" class="button button--primary button--small">Button</a>
+```
+*/
+.button--small {
+	font-size: $font-size-small;
+	min-height: 24px;
+	padding: 0 $baseline/2;
+}
