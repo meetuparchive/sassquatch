@@ -238,3 +238,27 @@ Small buttons are small.
 	min-height: 24px;
 	padding: 0 $baseline/2;
 }
+
+/*doc
+---
+title: Full width buttons
+name: fullWidthButtons
+category: Buttons
+---
+
+Add the `button--fullWidth` variant class to make the button
+expand to the width of its parent container
+
+```html_example
+	<a href="#" class="button button--fullWidth">Button</a>
+	<a href="#" class="button button--primary button--fullWidth">Button</a>
+	<a href="#" class="button button--primary button--small button--fullWidth">Button</a>
+```
+*/
+.button--fullWidth,
+.button.span-100 {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: ($baseline/2 + 1)px;
+}
