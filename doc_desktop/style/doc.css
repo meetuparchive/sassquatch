@@ -188,6 +188,9 @@ header .version {
 }
 
 #content > h1 {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.25;
 	margin-top: 48px;
 	padding-top: 5px;
 	/*
@@ -197,6 +200,9 @@ header .version {
 }
 
 #content > h2 {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.25;
 	padding-top: 16px;
 	font-weight: normal;
 }

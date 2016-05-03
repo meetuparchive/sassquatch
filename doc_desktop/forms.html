@@ -60,6 +60,10 @@
 								<a href="forms.html">Forms</a>
 							</li>
 						
+							<li class="">
+								<a href="sass_utils_|_mixins_&_placeholders.html">Sass Utils | Mixins & Placeholders</a>
+							</li>
+						
 					</ul>
 				</div>
 
@@ -160,11 +164,11 @@
     <form>
     <fieldset>
         <legend>I'm interested in...</legend>
-        <label><input type="checkbox" /> Cats</label>
-        <label><input type="checkbox" checked="checked" /> Honey Badgers</label>
-        <label><input type="checkbox" /> Quails</label>
-        <label><input type="checkbox" checked="checked" /> Goats</label>
-        <label><input type="checkbox"  checked="checked" /> Red Pandas</label>
+        <label class="text--reset small"><input type="checkbox" /> Cats</label>
+        <label class="text--reset small"><input type="checkbox" checked="checked" /> Honey Badgers</label>
+        <label class="text--reset small"><input type="checkbox" /> Quails</label>
+        <label class="text--reset small"><input type="checkbox" checked="checked" /> Goats</label>
+        <label class="text--reset small"><input type="checkbox"  checked="checked" /> Red Pandas</label>
     </fieldset>
 </form>
 
@@ -174,11 +178,11 @@
       <pre><span class="nt">&lt;form&gt;</span>
     <span class="nt">&lt;fieldset&gt;</span>
         <span class="nt">&lt;legend&gt;</span>I'm interested in...<span class="nt">&lt;/legend&gt;</span>
-        <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span> Cats<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span> <span class="nt">/&gt;</span> Honey Badgers<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span> Quails<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span> <span class="nt">/&gt;</span> Goats<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>  <span class="na">checked=</span><span class="s">"checked"</span> <span class="nt">/&gt;</span> Red Pandas<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"text--reset small"</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span> Cats<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"text--reset small"</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span> <span class="nt">/&gt;</span> Honey Badgers<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"text--reset small"</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span> Quails<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"text--reset small"</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">checked=</span><span class="s">"checked"</span> <span class="nt">/&gt;</span> Goats<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"text--reset small"</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>  <span class="na">checked=</span><span class="s">"checked"</span> <span class="nt">/&gt;</span> Red Pandas<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span></pre>
     </div>
@@ -221,7 +225,7 @@ Error states are applied with an <code class="styleguide">error</code> class on 
 
     <label class="required" for="name">Name</label>
     <input class="error" id="name" value="Keith Hernandez" type="text" />
-    <p class="italic">You are not Keith Hernandez.</p>
+    <p class="italic small">You are not Keith Hernandez.</p>
 
     <label for="address">Profession</label>
     <input id="address" value="Blimp Captain" type="text" />
@@ -236,7 +240,7 @@ Error states are applied with an <code class="styleguide">error</code> class on 
 
     <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"required"</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"error"</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">value=</span><span class="s">"Keith Hernandez"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"italic"</span><span class="nt">&gt;</span>You are not Keith Hernandez.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"italic small"</span><span class="nt">&gt;</span>You are not Keith Hernandez.<span class="nt">&lt;/p&gt;</span>
 
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"address"</span><span class="nt">&gt;</span>Profession<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"address"</span> <span class="na">value=</span><span class="s">"Blimp Captain"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;</span>
