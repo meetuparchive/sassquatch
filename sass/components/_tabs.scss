@@ -53,7 +53,7 @@ $tabSpacing: $spacing/2;
 		display: block;
 		text-decoration: none;
 		@include color_textSecondary;
-		background-color: $C_collectionBGLight;
+		background-color: $C_lightGray;
 		border: 1px solid;
 		@include color_border('border-color');
 		padding: $tabSpacing/1.5 $tabSpacing*1.5;
@@ -112,14 +112,14 @@ $tabSpacing: $spacing/2;
 		&.nav-tabs--subtle {
 			a {
 				@include color_textPrimary;
-				background-color: $C_collectionBGDark;
+				background-color: $C_lightGray;
 				font-weight: bold;
 			}
 			.selected {
 				a {
 					@include color_textSecondary;
-					background-color: $C_collectionBGDark;
-					border-bottom-color: $C_collectionBGDark;
+					background-color: $C_lightGray;
+					border-bottom-color: $C_lightGray;
 				}
 			}
 		}

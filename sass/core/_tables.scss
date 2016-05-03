@@ -135,14 +135,23 @@ th {
 }
 td, tbody th {
 	vertical-align: top;
-	border-top: 1px solid $C_line;
+	border-top: 1px solid $C_border;
+
+	.inverted & {
+		border-color: $C_borderInverted;
+	}
 }
 
 /* bordered */
 .borderedTable {
-	border: 1px solid $C_line;
+	border-color: $C_border;
+	border: 1px solid;
 	th + th, td + td, th + td {
-		border-left: 1px solid $C_line; 
+		border-left: 1px solid;
+	}
+	
+	.inverted & {
+		border-color: $C_borderInverted !important; // override adjacent selectors
 	}
 }
 

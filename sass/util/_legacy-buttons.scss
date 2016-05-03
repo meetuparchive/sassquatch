@@ -1,0 +1,35 @@
+%button_personality {
+	@extend %buttonPersonality;
+}
+@mixin button_personality() {
+	// mixin for legacy support of @include button_personality
+	@extend %button_personality;
+}
+
+@mixin button( $bgColor: transparent, $textColor: "" ) {
+	@include buttonBase();
+	@include buttonColor($bgColor);
+}
+
+@mixin button-flat( $color: $C_contentBG ) {
+	@extend %buttonBase;
+	@include buttonColor($color);
+}
+
+@mixin button-photo( $color ) {
+	@extend %buttonBase;
+	@include color-all( $C_textPrimary );
+	@include buttonColor(transparent);
+	border-color: $C_borderInverted;
+
+	.inverted & {
+		@include color-all( $C_textPrimaryInverted );
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-color: $C_borderDarkInverted;
+		background: $C_borderDarkInverted;
+	}
+}

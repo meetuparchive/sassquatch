@@ -41,7 +41,7 @@ category: Navigation
 	margin-bottom: $spacing;
 	padding: 0;
 	a, .nav-button {  // should deprecate the class-free a styling and enforce a.nav-pagelink. cleanup
-		border: 1px solid $C_line;
+		border: 1px solid $C_border;
 		border-left-width: 0;
 		padding: 0.4em 0;
 		width: 2.6em;
@@ -53,11 +53,11 @@ category: Navigation
 		-ms-box-shadow: none;
 		box-shadow: none;
 		&:hover {
-			background-color: $C_line_less;
+			background-color: $C_lightGray;
 			text-decoration: none;
 		}
 		&.disabled {
-			color: $C_darkgray_lightest;
+			color: $C_lightGray !important;
 			&:hover {
 				background-color: white;
 			}
@@ -76,8 +76,8 @@ category: Navigation
 			border-bottom-right-radius: $defaultRadius;
 		}
 		&.selected a {
-			@include punched_in_box_shadow;
-			color: $C_text_less;
+			background: $C_purple;
+			color: $C_textPrimaryInverted !important;
 		}
 	}
 }

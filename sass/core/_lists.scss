@@ -223,7 +223,7 @@ The `paddedList` pattern is the same as `dividedList`, but without borders.
 
 .dividedList > li{
 	padding: $spacing 0 0;
-	border-top: 1px solid $C_line_less;
+	border-top: 1px solid $C_border;
 }
 
 /*doc
@@ -247,7 +247,7 @@ A type of `dividedList` pattern that directly divides a `docBox` without a `docS
 */
 .sectionList > li{
 	padding: $baseline $baseline ($baseline - $spacing);
-	border-top: 1px solid $C_line_less;
+	border-top: 1px solid $C_border;
 }
 /* }}} */
 
@@ -308,7 +308,7 @@ parent: list
 		> li {
 			margin: 0;
 			padding: 0;
-			border-top: 1px solid $C_line_less;
+			border-top: 1px solid $C_border;
 			&:first-child, &.first {
 				border-top: 0;
 			}
@@ -354,8 +354,7 @@ parent: list
 		}
 
 		> li {
-			padding:$spacing;
-			@include shaded(darken($C_gray_lighter, 4%));
+			padding: $spacing/2 0;
 			margin-bottom:1px;
 		}
 	}

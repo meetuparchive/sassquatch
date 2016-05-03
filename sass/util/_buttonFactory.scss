@@ -1,180 +1,92 @@
-/**
-* Button factory mixins
-* ------------------------------------------
-*/
+$_buttonHeight: 36px;
 
-$buttonFontSize: 16px;
-
-%button_personality {
-	@include experimental('user-select', 'none');
+%buttonPersonality {
+	@include user-select(none);
 	cursor: pointer;
-	text-decoration: none!important;
-}
-@mixin button_personality() {
-	// mixin for legacy support of @include button_personality
-	@extend %button_personality;
-}
-
-%_button_base {
-	@include button_personality();
-	@include inlineblock();
-	@include box-sizing("border");
-	@extend %niceFocus;
-	border-radius: $defaultRadius;
-	@if $platform == "desktop" {
-		padding: 9px 18px 7px 18px;
-	} @else {
-		padding: 14px 18px 12px 18px;
-	}
-	margin-bottom: $baseline;
-	font-family: $uiControlFontStack;
-	font-weight: $W_bold;
-	font-size: $buttonFontSize;
-	line-height: 1 !important;
 	text-decoration: none !important;
-	border-width: 0;
-	text-align: center;
-	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
-	transition: none;
-	-moz-text-shadow: none;
-	-webkit-text-shadow: none;
-	-ms-text-shadow: none;
-	-o-text-shadow: none;
-	text-shadow: none;
-	&.small {
-		font-size: 12px;
-		padding: 5px 14px;
-	}
-
 }
 
-%_button_base_flat {
-	@extend %_button_base;
-	@include transition(all .1s ease-in-out);
-	&, &:active {
-		-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		-o-box-shadow: none;
-		-ms-box-shadow: none;
-		box-shadow: none;
-	}
-}
-
-// Adds a transparent pseudo element
-// that bleeds about 3px from the top of the button
-// to intercept clicks when the button itself
-// is translated down 2px
-%_chrome_button_fix {
-	position: relative;
-	&:after {
-		content: '';
-		background: transparent;
-		position: absolute;
-		top: -4px;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-}
-
-/**
-* Default button
-*
-* @param $bgColor - background color
-* @param $textColor - text color (calculated from bgColor if unspecified)
-* -----------------------------------------------
-*/
-@mixin button( $bgColor: $C_textTertiary, $textColor: "" ) {
-	$borderOffset: 25%;
-
-	@if $textColor == "" {
-		$textColor: getPrimaryTextColor($bgColor);
-	}
-
-	@extend %_button_base;
-	@if $platform == "desktop" {
-		@extend %_chrome_button_fix;
-	}
-	@include box-shadow(darken($bgColor, $borderOffset), 0px, 2px, 0px, 0px);
-	color: $textColor !important; // need this for chapstick
-	background: $bgColor;
-
-	&.button--active,
-	&:active {
-		@include box-shadow(darken($bgColor, $borderOffset), 0px, 0px, 0px, 0px);
-		@include transform(translate(0px, 2px));
-	}
-
-	&.button--active,
-	&:hover {
-		background:  darken($bgColor, 8%);
-	}
-
-	&.disabled,
-	&:disabled {
-		opacity: 0.4;
-		cursor: normal;
-		&:active {
-			@include transform(translate(0px, 0px));
-			@include box-shadow($C_textTertiary, 0px, 2px, 0px, 0px);
-		}
-		&:hover {
-			background: $bgColor !important;
-		}
-	}
-}
-
-
-
-/**
-* Flat button
-* @param $color - single border/text/hover color
-* -----------------------------------------------
-*/
-@mixin button-flat( $color ) {
-	@extend %_button_base_flat;
-	color: $color !important;
+@mixin buttonBase() {
+	@extend %buttonPersonality;
+	@include display(inline-flex);
+	@include flex-direction(row);
+	@include justify-content(center);
+	@include align-items(center);
+	@include transition(background .15s);
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	border-radius: $defaultRadius;
 	background: transparent;
-	border: 2px solid $color;
+	font-size: $font-size;
+	font-weight: $W_bold;
+	min-height: $_buttonHeight;
+	outline: 0;
+	padding: 0 $font-size;
+	vertical-align: middle;
+	line-height: 1; // :sq1 convention:
+	margin-bottom: $font-size; // :sq1 convention:
 
-	&:focus,
-	&:hover {
-		background: $color;
-		color: getPrimaryTextColor($color) !important;
+	@include browser-ie11() {
+		min-height: 0;
+		padding-top: 0.33em;
+		padding-bottom: 0.5em;
 	}
 
-	&.disabled,
-	&:disabled {
-		cursor: default !important;
-		&:active,
-		&:visited,
-		&:focus,
-		&:hover {
-			border-color: $color !important;
-			opacity: 0.7;
-			color: $color !important;
-			background: transparent;
-		}
+	&,
+	&:link,
+	&:active,
+	&:hover,
+	&:visited {
+		color: $C_textPrimary;
+	}
+
+	border: 1px solid $C_border;
+	.inverted & {
+		border: 1px solid $C_borderInverted;
 	}
 }
 
-/**
-* Photo button
-* for overlaying photos
-* @param $color - single border/text/hover color
-* -----------------------------------------------
-*/
-@mixin button-photo( $color ) {
-	@extend %_button_base_flat;
-	color: $color !important;
-	background: rgba(0,0,0,0.25);
-	border: 2px solid $color;
+%_button_base,
+%buttonBase {
+	@include buttonBase();
+}
 
-	&:hover {
-		background: $color;
-		color: getPrimaryTextColor($color) !important;
+@mixin buttonHover($bgColor: $C_textPrimary) {
+	&:hover,
+	&:focus {
+		background: transparentize($bgColor, .8);
+		border-color: transparent;
 	}
+
+	&:active {
+		background: transparentize($bgColor, .75);
+		border-color: transparent;
+	}
+}
+
+// second argument exists only to support legacy use of mixin
+@mixin buttonColor($bgColor: $C_button, $lol: None) {
+	@include color-all(getPrimaryTextColor($bgColor), true);
+	background: $bgColor;
+	border-color: $bgColor;
+
+	&:hover,
+	&:focus {
+		background: darken($bgColor, 8%);
+		border-color: darken($bgColor, 8%);
+	}
+
+	&:active {
+		background: darken($bgColor, 12%);
+		border-color: darken($bgColor, 12%);
+	}
+}
+
+
+// Fix for full width buttons (flexbox override for the sake of safari 9)
+@mixin fullWidthButton() {
+	display: block !important;
+	width: 100% !important;
+	text-align: center !important;
+	padding: ($baseline/2 + 1)px !important;
 }

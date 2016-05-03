@@ -13,7 +13,11 @@
 // endbower
 
 // VARS
-@import "vars";
+@import "globals/breakpoints";
+@import "globals/type";
+@import "globals/legacy-type";
+@import "globals/layout";
+@import "globals/colors";
 
 
 // FUNCTIONS
@@ -22,10 +26,16 @@
 
 
 // UTIL
+@import "util/ie11";
+@import "util/color";
+@import "util/breakpoints";
+@import "util/buttonFactory";
+@import "util/legacy-buttons";
 @import "util/propertyValue";
 @import "util/unitUtils";
 @import "util/layout";
-@import "util/typography";
+@import "util/type";
+@import "util/legacy-type-helpers";
 @import "util/forms";
 @import "util/focus";
 @import "util/border";
@@ -36,5 +46,4 @@
 @import "util/shadow";
 @import "util/transform";
 @import "util/animation";
-@import "util/breakpoints";
 @import "util/avatar";

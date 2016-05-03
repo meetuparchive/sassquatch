@@ -51,7 +51,7 @@ Class                | Example
 .debug {
 	outline: 1px dotted red;
 	background: pink;
-	color: #555;
+	color: $C_textPrimary;
 	font-family: Consolas, Monaco, monospace;
     padding: $spacing/2;
     &:before {
@@ -60,14 +60,14 @@ Class                | Example
     }
 }
 .highlighted {
-	background: $C_yellow;
+	background: $C_orange;
 }
 .shaded {
-	background-color: $C_mediumGray;
+	background-color: $C_lightGray;
 }
 .shaded-lighter,
 .shaded--lighter {
-	background-color:$C_mediumGray;
+	background-color:$C_lightGray;
 }
 .shaded-red,
 .shaded--red {
@@ -320,21 +320,39 @@ name: typographyModifiers
 category: Modifiers
 ---
 
-Class          | Example
----------------| ----------------------------------------------------
-`muted`        | <p class="muted">Example paragraph</p>
-`bold`         | <p class="bold">Example paragraph</p>
-`italic`       | <p class="italic">Example paragraph</p>
-`caps`         | <p class="caps">Example paragraph</p>
-`small`        | <p class="small">Example paragraph</p>
-`big`          | <p class="big">Example paragraph</p>
+Class             | Example
+----------------- | ----------------------------------------------------
+`muted`           | <p class="muted">Example paragraph</p>
+`bold`            | <p class="bold">Example paragraph</p>
+`italic`          | <p class="italic">Example paragraph</p>
+`caps`            | <p class="caps">Example paragraph</p>
+`small`           | <p class="small">Example paragraph</p>
+`big`             | <p class="big">Example paragraph</p>
+`text--reset`     | <p class="text--reset">Example paragraph</p>
+`text--display1`  | <p class="text--display1">Display text</p>
+`text--display2`  | <p class="text--display2">Display text</p>
+`text--display3`  | <p class="text--display3">Display text</p>
+`text--secondary` | <p class="text--secondary">Secondary text</p>
+`text--attention` | <p class="text--attention">Secondary text</p>
+`text--label`     | <p class="text--label">Label text</p>
 
 */
+
+.text--reset {
+	@extend %text--reset;
+}
+.text--display1  { @extend %text--display1; }
+.text--display2  { @extend %text--display2; }
+.text--display3  { @extend %text--display3; }
+.text--secondary { @extend %text--secondary; }
+.text--attention { @extend %text--attention; }
+.text--label     { @extend %text--label; }
+
 .muted {
-	@include color_textTertiary();
+	color: $C_textSecondary;
 
 	.inverted & {
-		@include color_textTertiaryInverted();
+		color: $C_textTertiaryInverted;
 	}
 }
 .muted-opacity{ // DEPRECATED
@@ -342,7 +360,7 @@ Class          | Example
     @include opacity(.8);
 }
 .bold {
-	font-weight: $W_bold;
+	@extend %text--bold;
 }
 .italic {
     font-style: oblique;
@@ -351,12 +369,10 @@ Class          | Example
 	text-transform: uppercase;
 }
 .small, small {
-	font-size: $smallFontSize;
-	line-height: $smallLineHeight;
+	@extend %text--small;
 }
-.big {
-    font-size: $bigFontSize;
-	 line-height: $bigLineHeight;
+.big, big {
+	@extend %text--big;
 }
 .opacity-quarter { // DEPRECATED
     // what is this used for?
@@ -444,21 +460,19 @@ name: linkModifiers
 category: Modifiers
 ---
 
-Styles a link as body text color.
+The `unlink` class styles a link as body text color.
+
+Use the `hoverLink` class to force a link to body color, bu
+
+Class           | Description
+--------------- | --------------------------
+`hoverLink`     | primary text color by default; link color on hover
+`unlink`        | forces a link to primary text color for all states
 
 ```html_example
-	<a class="unlink">It's a link, but it doesn't look like one</a>
+<p><a class="unlink">This link always looks like normal text</a></p>
+<p><a class="hoverLink">This looks like normal text until you hover</a></p>
 ```
-
-```html_example
-	<div class="docBox docSection span-25">
-		<a class="unlink">
-			<h3>Block level anchors...</h3>
-			<p>How do they work?</p>
-		</a>
-	</div>
-```
-
 */
 @mixin unlinker() {
 	&,
@@ -466,25 +480,35 @@ Styles a link as body text color.
 	&:visited,
 	&:hover,
 	&:active {
-		color: $C_textSecondary !important;
+		color: $C_textPrimary !important;
 		text-decoration: none !important;
 
-		h1,h2,h3,h4,h5,h6 {
-			color: $C_textPrimary !important;
-		}
-
 		.inverted & {
-			color: darken( rgb(255,255,255), 33%) !important;
-			color: $C_textSecondaryInverted !important;
-
-			h1,h2,h3,h4,h5,h6 {
-				color: $C_textPrimaryInverted !important;
-			}
+			color: $C_textPrimaryInverted !important;
 		}
 	}
 }
 .unlink {
 	@include unlinker();
+}
+.hoverLink {
+	&,
+	&:link,
+	&:visited {
+		color: $C_textPrimary !important;
+		text-decoration: none !important;
+
+		.inverted & {
+			color: $C_textPrimaryInverted !important;
+		}
+	}
+
+	&:hover {
+		color: $C_link !important;
+		.inverted & {
+			color: $C_linkInverted !important;
+		}
+	}
 }
 
 /* {{{ Widget helpers (graceful degradation for JS features) */
@@ -647,7 +671,7 @@ Darkens text color to match heading color (primary text color)
 	}
 
 	.light { // TODO: kill this
-		color: #444;
+		color: $C_darkGray;
 	}
 
 /*doc
@@ -663,7 +687,7 @@ parent: typographyModifiers
 
 */
 	.smaller {
-		 font-size:.75rem;
+		 font-size: $font-size-small;
 	}
 
 /*doc
@@ -712,7 +736,7 @@ Sets text color to body text color
 		color: $C_textPrimary !important;
 
 		.natural-text.light {
-			opacity:.7;
+			color: $C_textSecondary !important;
 		}
 	}
 
@@ -744,11 +768,11 @@ Class            | Description
 
 */
 	.double-spaced {
-		line-height:1.8;
+		line-height: $line-height-smallText;
 	}
 
 	.triple-spaced {
-		line-height:2.8;
+		line-height: $line-height-smallText * 2;
 	}
 	/* }}} */
 }

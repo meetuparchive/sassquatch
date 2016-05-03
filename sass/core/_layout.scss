@@ -124,12 +124,12 @@ Useful classes for setting percentage widths on arbitary elements.
 ```
 
 */
-.span-25 { width: 25%; }
-.span-30 { width: 30%; }
-.span-50 { width: 50%; }
-.span-60 { width: 60%; }
-.span-75 { width: 75%; }
-.span-100 { width: 99.8%; } /*ya rly (thanks, IE)*/
+.span-25 { width: 25% !important; }
+.span-30 { width: 30% !important; }
+.span-50 { width: 50% !important; }
+.span-60 { width: 60% !important; }
+.span-75 { width: 75% !important; }
+.span-100 { width: 99.8% !important; } /*ya rly (thanks, IE)*/
 /* }}} */
 
 /* {{{ Doc Stripe */
@@ -218,12 +218,12 @@ Class                   | Description
 
 // for collections (cards, panels, etc)
 .docStripe--collection {
-	background-color: $C_collectionBGDark;
+	background-color: $C_collectionBG;
 }
 
 // TODO: what is this for?
 .docStripe--nav {
-	background-color: $C_collectionBGLight;
+	background-color: $C_collectionBG;
 }
 
 // near-black stripe
@@ -301,6 +301,7 @@ to span the full width of the box, and use `docSection` for padded content:
 	background-color: #fff;
 	margin-bottom: $baseline;
 	border: 1px solid $C_border !important; /* !important to support .doc-box.doc-content multiple classes */
+	border-bottom: 1px solid $C_textHint !important;
  	@include background-clip(padding);
 
 
@@ -462,7 +463,6 @@ __Note:__ This replaces the deprecated `doc-content` class
 }
 
 .doc-controls {
-	background: $C_mediumGray;
 	margin-bottom: $spacing;
 }
 
@@ -685,7 +685,7 @@ hr.double-line {
 	// ah well, doc-box margin should = doc-content padding
 	// so have to redefine
 	.doc-content {
-		padding:$baseline * .75;
+		padding: $baseline;
 		padding-bottom:0px;
 	}
 

@@ -1,10 +1,13 @@
-/*
-__DEPRECATED__
+/*doc
+---
+title: Nav Buttons
+name: navButtons
+category: Navigation
+---
 
 Using a list of `<a>` elements; for toggling/filtering controls.
 
-DEPRECATED: you should probably use segmented control instead
-
+#### Default display
 ```html_example
 	<ul class="nav-buttons">
 		<li><a href="#">Date Joined</a></li>
@@ -14,6 +17,16 @@ DEPRECATED: you should probably use segmented control instead
 	</ul>
 ```
 
+#### Vertical variant
+With `nav-buttons--column` variant class:
+```html_example
+	<ul class="nav-buttons nav-buttons--column">
+		<li><a href="#">Date Joined</a></li>
+		<li><a href="#" class="selected">Size</a></li>
+		<li><a href="#">Name</a></li>
+		<li><a href="#">Role</a></li>
+	</ul>
+```
 */
 
 @mixin button_color($base_color, $isLight: false){
@@ -23,7 +36,7 @@ DEPRECATED: you should probably use segmented control instead
 		@include button_color_hover($base_color, $isLight);
 	}
 
-	&:active, &.selected, &.active {
+	&:active, &.active {
 		@include button_color_active($base_color, $isLight);
 	}
 }
@@ -38,7 +51,6 @@ DEPRECATED: you should probably use segmented control instead
 }
 @mixin button_color_active($base_color, $isLight: false){
 	background: darken($base_color, if($isLight, 10%, 15%));
-	@include punched_in_box_shadow;
 }
 
 
@@ -52,7 +64,8 @@ DEPRECATED: you should probably use segmented control instead
 	margin-bottom: $spacing;
 	padding-left: 0;
 	line-height: 1.5;
-	border: 1px solid $C_line;
+	border: 1px solid $C_border;
+	text-align: left;
 
 
 	/*****************************
@@ -60,7 +73,7 @@ DEPRECATED: you should probably use segmented control instead
 	 ****************************/
 	li, label {
 		padding-top: 0;
-		float: left;
+		display: inline-block;
 		text-align: center;
 	}
 
@@ -69,7 +82,7 @@ DEPRECATED: you should probably use segmented control instead
 	li > span {
 		@include button_personality;
 		font-family: $uiControlFontStack;
-		font-size: $baseFontSize;
+		font-size: $font-size-small;
 		font-weight: $W_normal;
 		padding: 0.5em 1.2em 0.4em;
 		display: block;
@@ -113,13 +126,12 @@ DEPRECATED: you should probably use segmented control instead
 		@extend %button_personality;
 		@include button_color(#fff, true);
 		border: none;
-		color: $C_text;
+		color: $C_textPrimary;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
 	}
 
 	input[type=radio]:checked + label, input[attr="checked"] + label,
-	li > a:active, li > a.selected, li > a.push,
-	li > span.selected, li > span.push {
+	li > a:active, li > a.push, li > span.push {
 		 @include punched_in_box_shadow;
 	}
 
@@ -143,55 +155,13 @@ DEPRECATED: you should probably use segmented control instead
 	}
 
 	/*****************************
-	 * COLOR INVERTED
-	 ****************************/
-
-/*
- *    .inverted &{
- *        border-color: $C_darkgray;
- *      label,
- *      li > a,
- *      li > span {
- *         @include button_color($C_darkgray_lighter, false);
- *         border: none;
- *         color: $C_text;
- *      }
- *
- *      input[type=radio]:checked + label, input[attr="checked"] + label {
- *         @include button_color_active($C_darkgray_lighter, true);
- *      }
- *
- *      input[type=radio]:checked + label, input[attr="checked"] + label,
- *      li > a:active, li > a.selected, li > a.push,
- *      li > span.selected, li > span.push {
- *         color: $C_gray_lightest;
- *      }
- *
- *        &.vertical{
- *         label,
- *         li > a,
- *         li > span{
- *            @include experimental(box-shadow, '#{$highlight}, #{$shadow_s}');
- *         }
- *
- *         label:last-of-type,
- *         li:last-child > a,
- *         li:last-child > span {
- *            @include experimental(box-shadow, '#{$highlight}');
- *         }
- *        }
- *    }
- */
-
-
-	/*****************************
 	 * COLOR SELECTED ITEM
 	 ****************************/
 
 	li, li:first-child, li:last-child{
 		> a,
 		> span {
-			&:active, &.selected, &.push {
+			&:active, &.push {
 				@include punched_in_box_shadow;
 			}
 		}
@@ -231,15 +201,50 @@ DEPRECATED: you should probably use segmented control instead
 }
 
 
-
-// DEPRECATED
-// .selected on LI is deprecated -- use .selected on SPAN or A instead
+//
+// OVERRIDES for release/2.0.0
+// this is a bit of a hack...
+// introduces some color changes without creating breaking changes
 .nav-buttons {
-	li {
-		&.selected > a,
-		&.selected > span {
-			@include punched_in_box_shadow;
-			border: none;
+	border: 1px solid $C_border;
+
+	.selected {
+		background: $C_highlight;
+	}
+
+	li:first-child>a.selected,
+	li>a.selected,
+	li:first-child>span.selected,
+	li>span.selected,
+	li.selected>a,
+	li.selected>span {
+		background-color: $C_highlight !important;
+		color: $C_link !important;
+		font-weight: $W_bold;
+		border: initial;
+		box-shadow: initial;
+	}
+}
+
+.nav-buttons label, .nav-buttons li>a, .nav-buttons li>span, .segmented-control-button {
+		background: initial;
+		color: $C_textPrimary;
+	&:hover {
+		background: $C_highlight;
+	}
+}
+
+.nav-buttons li>a:active,
+#simple-event-filter span:active {
+	 background: $C_highlight !important;
+}
+
+.nav-buttons--column {
+	li, label {
+		display: block;
+		border-bottom: 1px solid $C_border;
+		&:last-child {
+			border-bottom: 0;
 		}
 	}
 }

@@ -116,8 +116,8 @@ $listspacing: $baseline/1.5;
 	/* touch/click highlight for all links */
 	a:active {
 		@extend %button_personality;
-		background-color: $C_overlayPressed;
-		-webkit-tap-highlight-color: $C_overlayPressed;
+		background-color: $C_highlight;
+		-webkit-tap-highlight-color: $C_highlight;
 	}
 }
 

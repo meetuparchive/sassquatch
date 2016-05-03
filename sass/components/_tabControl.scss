@@ -37,7 +37,7 @@ category: Navigation
 
 */
 
-$selectedStripeWidth: 4px;
+$_tabBorder: 4px;
 
 
 // base UL class
@@ -46,7 +46,7 @@ $selectedStripeWidth: 4px;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	border-bottom: $C_red;
+	display: block;
 }
 
 
@@ -54,34 +54,39 @@ $selectedStripeWidth: 4px;
 // -------------------
 .tabControl-tab {
 	display: inline-block;
+	margin: 0 0 0 $font-size;
+
+	&:first-child {
+		margin-left: 0;
+	}
 }
 
 // base A class
 // -------------------
 .tabControl-link {
 	@extend %button_personality;
-	padding: $baseline/2 $baseline/2;
 	display: block;
-	text-decoration: none;
+	padding: 0;
 
+	&,
 	&:link,
 	&:visited {
-		@include color_textSecondary();
+		color: $C_textSecondary;
 	}
 
 	&:hover,
 	&:active {
-		color: $C_red;
+		color: $C_link;
 	}
 
 	.inverted & {
 		&:link,
 		&:visited {
-			@include color_textSecondaryInverted();
+			color: $C_textSecondaryInverted;
 		}
 		&:hover,
 		&:visited {
-			color: #fff;
+			color: $C_linkInverted;
 		}
 	}
 }
@@ -91,16 +96,9 @@ $selectedStripeWidth: 4px;
 .tabControl-tab--selected {
 
 	.tabControl-link {
-		color: $C_red;
-		border: solid 0;
-		border-bottom-width: $selectedStripeWidth;
-	}
-
-	.inverted & {
-		border-color: #fff;
-		.tabControl-link {
-			color: #fff;
-		}
+		color: $C_link;
+		font-weight: $W_medium;
+		border-bottom: $_tabBorder solid;
 	}
 }
 
@@ -113,12 +111,17 @@ $selectedStripeWidth: 4px;
 		display: block;
 		text-align: right;
 	}
+	.tabControl-tab {
+		margin-bottom: $font-size;
+		padding-right: 0;
+		margin-right: 0;
+	}
 	.tabControl-link {
-		padding-right: ($baseline/2) + $selectedStripeWidth;
+		border-bottom-width: 0;
 	}
 	.tabControl-tab--selected .tabControl-link {
 		padding-right: $baseline/2;
-		border-width: 0 $selectedStripeWidth 0 0;
+		border-right: $_tabBorder solid $C_link;
 	}
 }
 
@@ -130,11 +133,16 @@ $selectedStripeWidth: 4px;
 		display: block;
 		text-align: left;
 	}
+	.tabControl-tab {
+		margin-bottom: $font-size;
+		padding-left: 0;
+		margin-left: 0;
+	}
 	.tabControl-link {
-		padding-left: ($baseline/2) + $selectedStripeWidth;
+		border-bottom-width: 0;
 	}
 	.tabControl-tab--selected .tabControl-link {
 		padding-left: $baseline/2;
-		border-width: 0 0 0 $selectedStripeWidth;
+		border-left: $_tabBorder solid $C_link;
 	}
 }

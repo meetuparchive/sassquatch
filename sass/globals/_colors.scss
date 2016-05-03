@@ -1,0 +1,83 @@
+/*doc
+---
+title: Color Variables
+name: colorVars
+category: Base CSS
+---
+
+Color variables are provided via the [meetup-swatches](https://github.com/meetup/meetup-swatches) cross-platform colors project.
+
+<iframe src="http://meetup.github.io/meetup-swatches/" width="100%" height="724" style="border: 1px solid #999;"></iframe>
+
+*/
+
+
+/* {{{ Hex definitions ( define new ones sparingly ) */
+// UPDATE: mapping these custom colors to the closest color in swatches
+
+// gray - typically used for interface shading
+$C_gray_lightest: 		$C_lightGray;
+$C_gray_lighter: 			$C_lightGray;
+$C_gray: 					$C_mediumGray;
+
+// darkgray - typically used for text
+$C_darkgray_lightest: 	$C_mediumGray;
+$C_darkgray_lighter: 	$C_mediumGray;
+$C_darkgray: 				$C_darkGray;
+
+// blues
+$C_darkblue: 				$C_lightPurple;	// darkblue - links and linked things
+$C_lightblue: 				$C_blue; 	// brightblue - highlight borders, light blue bg
+
+// green - success and yes
+$C_green: 					#62AC75;
+
+// pink - error shading for now
+$C_pink: 					#FBE1E3;
+
+/* }}} */
+
+
+/* {{{ Color aliases ( shouldn't be any hex codes here ) */
+
+// interface (bg)
+$C_shade: 				$C_lightGray;
+$C_accent: 				$C_red;
+
+// borders
+$C_line: $C_border;
+$C_line_less: $C_border;
+
+// text
+$C_text_headline: 	$C_textPrimary;
+$C_text: 				$C_textPrimary;
+$C_text_less: 			$C_textSecondary;
+
+// RSVP status colors
+$C_rsvpGoing: 			rgb(98,172,117);
+$C_rsvpWating: 		rgb(57,135,203);
+$C_rsvpNotGoing: 		$C_mediumGray;
+
+// Errors
+$C_warnBg: 				$C_pink;
+$C_warnText: 			$C_red;
+
+/* }}} */
+
+/* {{{ legacy - TODO: these in no way belong in sassquatch - move back to crustybase in r1.6.0 */
+$actionColor: 			#F1F3F1;
+$redTextColor: 		#E51937;
+$buttonColor: 			#F10044;
+$linkColor: 			$C_link;
+$basePadding : 		8px;
+
+$urgent-color: 	#B53336;
+$BG_STATUS: 		#F1F2ED;
+$BG_BOLD: 			#2b6892;
+$BG_META: 			#F0F2EC;
+$BG_LIGHT: 			#F8F9F5;
+$COLOR_XLIGHT: 	#EEEEEE;
+$COLOR_LIGHT: 		#CCCCCC;
+$COLOR_MEDIUM: 	#666666;
+/* }}} */
+
