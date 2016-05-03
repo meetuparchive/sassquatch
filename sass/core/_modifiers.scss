@@ -335,18 +335,20 @@ Class             | Example
 `text--secondary` | <p class="text--secondary">Secondary text</p>
 `text--attention` | <p class="text--attention">Secondary text</p>
 `text--label`     | <p class="text--label">Label text</p>
+`text--labelSecondary`     | <p class="text--label">Label text</p>
 
 */
 
 .text--reset {
 	@extend %text--reset;
 }
-.text--display1  { @extend %text--display1; }
-.text--display2  { @extend %text--display2; }
-.text--display3  { @extend %text--display3; }
-.text--secondary { @extend %text--secondary; }
-.text--attention { @extend %text--attention; }
-.text--label     { @extend %text--label; }
+.text--display1       { @extend %text--display1; }
+.text--display2       { @extend %text--display2; }
+.text--display3       { @extend %text--display3; }
+.text--secondary      { @extend %text--secondary; }
+.text--attention      { @extend %text--attention; }
+.text--label          { @extend %text--label; }
+.text--labelSecondary { @extend %text--labelSecondary; }
 
 .muted {
 	color: $C_textSecondary;

@@ -102,6 +102,10 @@ Placeholder          | Description
 	.inverted & {
 		@include color-all($C_textPrimaryInverted);
 	}
+
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
 }
 %text--labelSecondary {
 	@extend %text--label;

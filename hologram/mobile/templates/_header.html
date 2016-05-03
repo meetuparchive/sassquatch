@@ -1,6 +1,6 @@
 <% isIndex = title.empty? %>
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<title>Sassquatch Mobile <%= (isIndex ? "" : ": #{title}") %></title>
 		<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="style/github.css">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 	</head>
-	<body class="<%= isIndex ? 'home inverted' : '' %>">
+	<body class="lang_en <%= isIndex ? 'home inverted' : '' %>">
 
 	<% if isIndex %>
 		<p id="indexVersion" class="version muted"><!-- @echo VERSION --></p>
