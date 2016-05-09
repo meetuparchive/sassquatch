@@ -24,7 +24,7 @@
 * copied from sq2 (`sass/globals/_type.scss`)
 */
 .tearsheet .day, .tearsheet--small .day, .tearsheet--big .day, .nav-pagination {
-  font-family: "Graphik", helvetica, arial, sans-serif;
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif;
   font-weight: 600; }
 
 /* horizontal offset of label/field */
@@ -353,7 +353,7 @@ Placeholder          | Description
 -------------------- | --------------------------------
 `%text--label`       | Styles for list headers and form field labels
 */
-.text--label {
+.text--labelSecondary, .text--label {
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
@@ -362,10 +362,21 @@ Placeholder          | Description
   line-height: 1.6;
   letter-spacing: -0.02em;
   word-spacing: 0.1em; }
-  .inverted .text--label {
+  .inverted .text--labelSecondary, .inverted .text--label {
     stroke: transparent;
     fill: white;
     color: white; }
+  .lang_en .text--labelSecondary, .lang_en .text--label {
+    text-transform: uppercase; }
+
+.text--labelSecondary {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54); }
+  .inverted .text--labelSecondary {
+    stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); }
 
 /*doc
 ---
@@ -659,7 +670,7 @@ html {
 html, body {
   font-size: 16px;
   line-height: 1.45;
-  font-family: "Graphik", helvetica, arial, sans-serif;
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif;
   font-weight: 400;
   background-color: #fafafa;
   margin: 0;
@@ -1357,7 +1368,7 @@ fieldset {
   body input {
     border-radius: 0; } }
 input, select, textarea {
-  font-family: "Graphik", helvetica, arial, sans-serif;
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif;
   display: block;
   line-height: 1.45;
   padding: 4px;
@@ -1540,7 +1551,7 @@ input[type=submit].big {
 label.big,
 legend.big {
   font-size: 18px;
-  font-family: "Graphik", helvetica, arial, sans-serif; }
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif; }
 
 select.big {
   height: 38px;
@@ -2658,7 +2669,7 @@ expand to the width of its parent container
   display: block !important;
   width: 100% !important;
   text-align: center !important;
-  padding: 9px px !important; }
+  padding: 9px !important; }
 
 /**
 * LAYOUT
@@ -4261,7 +4272,7 @@ For "see more" type append paging.
   border: 1px solid rgba(0, 0, 0, 0.12);
   display: block;
   text-align: center;
-  font-family: "Graphik", helvetica, arial, sans-serif;
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif;
   font-weight: 600;
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -4351,7 +4362,7 @@ With `nav-buttons--column` variant class:
   .nav-buttons label,
   .nav-buttons li > a,
   .nav-buttons li > span {
-    font-family: "Graphik", helvetica, arial, sans-serif;
+    font-family: "Graphik Meetup", helvetica, arial, sans-serif;
     font-size: 13px;
     font-weight: 400;
     padding: 0.5em 1.2em 0.4em;
@@ -4609,7 +4620,7 @@ Element type       | Use
   margin: 0;
   /* OVERRIDE */
   vertical-align: middle;
-  font-family: "Graphik", helvetica, arial, sans-serif;
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -5337,6 +5348,7 @@ Class             | Example
 `text--secondary` | <p class="text--secondary">Secondary text</p>
 `text--attention` | <p class="text--attention">Secondary text</p>
 `text--label`     | <p class="text--label">Label text</p>
+`text--labelSecondary`     | <p class="text--label">Label text</p>
 
 */
 .muted {
