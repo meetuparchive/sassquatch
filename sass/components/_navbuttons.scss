@@ -29,31 +29,6 @@ With `nav-buttons--column` variant class:
 ```
 */
 
-@mixin button_color($base_color, $isLight: false){
-	@include button_color_base($base_color, $isLight);
-
-	&:hover {
-		@include button_color_hover($base_color, $isLight);
-	}
-
-	&:active, &.active {
-		@include button_color_active($base_color, $isLight);
-	}
-}
-
-@mixin button_color_base($base_color, $isLight: false){
-	@include box-shadow( rgba(255,255,255,.2), 1px, 1px, 0, 0, true);
-	border: 1px solid rgba(0,0,0,.15);
-	@include gradient($base_color, darken($base_color, if($isLight, 5%, 10%)));
-}
-@mixin button_color_hover($base_color, $isLight: false){
-	@include gradient(lighten($base_color, 5%), darken($base_color, if($isLight, 7%, 10%)));
-}
-@mixin button_color_active($base_color, $isLight: false){
-	background: darken($base_color, if($isLight, 10%, 15%));
-}
-
-
 .nav-buttons {
 	@include inlineblock;
 	border-radius: $defaultRadius;
@@ -66,6 +41,7 @@ With `nav-buttons--column` variant class:
 	line-height: 1.5;
 	border: 1px solid $C_border;
 	text-align: left;
+	font-size: 0; // reset whitespace for inline-block list items
 
 
 	/*****************************
@@ -125,14 +101,9 @@ With `nav-buttons--column` variant class:
 	li > span {
 		@extend %button_personality;
 		@include button_color(#fff, true);
-		border: none;
-		color: $C_textPrimary;
 		@include experimental(box-shadow, '#{$highlight}, #{$shadow_e}');
-	}
-
-	input[type=radio]:checked + label, input[attr="checked"] + label,
-	li > a:active, li > a.push, li > span.push {
-		 @include punched_in_box_shadow;
+		color: $C_textPrimary;
+		border: none;
 	}
 
 	label:last-of-type,
@@ -157,15 +128,6 @@ With `nav-buttons--column` variant class:
 	/*****************************
 	 * COLOR SELECTED ITEM
 	 ****************************/
-
-	li, li:first-child, li:last-child{
-		> a,
-		> span {
-			&:active, &.push {
-				@include punched_in_box_shadow;
-			}
-		}
-	}
 
 	input[type=radio]:checked + label, input[attr="checked"] + label {
 		@include button_color_active(#fff, true);
@@ -221,8 +183,6 @@ With `nav-buttons--column` variant class:
 		background-color: $C_highlight !important;
 		color: $C_link !important;
 		font-weight: $W_bold;
-		border: initial;
-		box-shadow: initial;
 	}
 }
 

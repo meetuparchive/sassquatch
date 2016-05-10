@@ -51,42 +51,38 @@ Element type       | Use
 
 /* Wrapping element */
 .segmented-control {
-    @include box-sizing('border');
-    display: table;
-    table-layout: fixed;
-    border-left: 1px solid $C_border;
-    border-radius: $defaultRadius 0 0 $defaultRadius;
-    width: 100%;
-    margin-bottom: $baseline;
+	@include experimental(box-sizing, border-box);
+	@include experimental(background-clip, padding-box);
+	@extend %clearfix;
+	display: inline-block;
+	border-radius: $defaultRadius;
+	list-style-type: none;
+	margin-bottom: $spacing;
+	padding-left: 0;
+	line-height: 1.5;
+	border: 1px solid $C_border;
+	text-align: left;
+	font-size: 0; // reset whitespace for inline-block list items
 }
 
 .segmented-control-segment {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+	padding-top: 0;
+	display: inline-block;
+	text-align: center;
 }
 
 .segmented-control-button {
-    @extend %button_personality;
-    @include button_color(#fff, true);
-    @include box-sizing('border');
-    display: inline-block;
-    width: 100%;
-    padding: 0.5em 0.75em 0.4em;
-    border: 1px solid $C_border;
-    border-left: none;
-    margin: 0;	/* OVERRIDE */
-    vertical-align: middle;
+	@include button_personality;
+	font-family: $uiControlFontStack;
+	font-size: $font-size-small;
+	font-weight: $W_normal;
+	padding: 0.5em 1.2em 0.4em;
+	display: block;
+	border-right: 1px solid $C_border;
 
-    font-family: $uiControlFontStack;
-    font-size: $baseFontSize;
-    font-weight: $W_normal;
-    line-height: 1.5;
-    white-space: nowrap;
-    text-align: center;
-    text-decoration: none;
-    color: $C_text !important;
-    /* NOTE: Needed because of cascade overrides post-sassquatch in mobile. */
+	.segmented-control-segment:last-child & {
+		border-width: 0;
+	}
 }
 
 
@@ -94,11 +90,13 @@ Element type       | Use
  * in IE8 anyway (border radius not supported), do we care? -j
  */
 .segmented-control-segment:first-child .segmented-control-button {
-    border-radius: $defaultRadius 0 0 $defaultRadius;
+	border-top-left-radius: $defaultRadius - 1px;
+	border-bottom-left-radius: $defaultRadius - 1px;
 }
 
 .segmented-control-segment:last-child .segmented-control-button {
-    border-radius: 0 $defaultRadius $defaultRadius 0;
+	border-top-right-radius: $defaultRadius - 1px;
+	border-bottom-right-radius: $defaultRadius - 1px;
 }
 
 .segmented-control-input {
@@ -108,12 +106,7 @@ Element type       | Use
 
 /* Checked States: Natural, and with class (via JS, for IE8) */
 .segmented-control-input:checked + .segmented-control-button {
-    @include punched_in_box_shadow;
-    /* Here comes the !important train, due to !important up above. Choo Choo! */
+	background-color: $C_highlight !important;
+	color: $C_link !important;
+	font-weight: $W_bold;
 }
-
-/* Apparently this rule might need to be split out from :checked selector for IE8 */
-.segmented-control-segment.checked .segmented-control-button {
-    @include punched_in_box_shadow;
-}
-
