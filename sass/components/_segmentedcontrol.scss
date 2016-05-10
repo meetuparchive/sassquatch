@@ -100,8 +100,7 @@ Element type       | Use
 }
 
 .segmented-control-input {
-    position: absolute;
-    z-index: -1;
+	visibility: hidden;
 }
 
 /* Checked States: Natural, and with class (via JS, for IE8) */
