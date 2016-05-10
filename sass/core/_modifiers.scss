@@ -328,6 +328,8 @@ Class             | Example
 `caps`            | <p class="caps">Example paragraph</p>
 `small`           | <p class="small">Example paragraph</p>
 `big`             | <p class="big">Example paragraph</p>
+`text--big`       | <p class="text--big">Example paragraph</p>
+`text--small`     | <p class="text--small">Example paragraph</p>
 `text--reset`     | <p class="text--reset">Example paragraph</p>
 `text--display1`  | <p class="text--display1">Display text</p>
 `text--display2`  | <p class="text--display2">Display text</p>
@@ -370,9 +372,11 @@ Class             | Example
 .caps {
 	text-transform: uppercase;
 }
+.text--small,
 .small, small {
 	@extend %text--small;
 }
+.text--big,
 .big, big {
 	@extend %text--big;
 }
