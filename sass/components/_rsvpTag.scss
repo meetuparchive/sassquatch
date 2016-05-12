@@ -1,0 +1,104 @@
+/*doc
+---
+title: RSVP Tags
+name: tag
+category: Content Patterns
+---
+Status tags for RSVP.
+
+_&#x26a0; The icons below are placeholders &#x26a0;_<br />
+Pleas use the appropriate SVG icon for each rsvpTag variant.
+
+```html_example
+<div class="chunk">
+	<div class="rsvpTag rsvpTag--yes">
+		<span class="rsvpTag-label">Yes</span>
+		<span class="rsvpTag-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpTag rsvpTag--no">
+		<span class="rsvpTag-label">No</span>
+		<span class="rsvpTag-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpTag rsvpTag--waiting">
+		<span class="rsvpTag-label">Waiting</span>
+		<span class="rsvpTag-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+```
+
+
+## Variants
+A class of `rsvpTag` is __required__.
+Variant classes:
+
+Class                | Description
+-------------------- | --------------------------
+`rsvpTag--yes`       | indicates "yes" RSVP status
+`rsvpTag--no`        | indicates "no" RSVP status
+`rsvpTag--waiting`   | indicates waitlist RSVP status
+*/
+
+.rsvpTag {
+	display: block;
+	text-align: right;
+}
+
+.rsvpTag--yes {
+	color: $C_success;
+	.rsvpTag-icon {
+		background-color: $C_success;
+	}
+}
+
+.rsvpTag--no {
+	color: $C_textTertiary;
+	.rsvpTag-icon {
+		background-color: $C_textTertiary;
+	}
+}
+
+.rsvpTag--waiting {
+	color: $C_success;
+	.rsvpTag-icon {
+		background-color: $C_success;
+	}
+}
+
+.rsvpTag-label,
+.rsvpTag-icon {
+	vertical-align: middle;
+}
+
+.rsvpTag-label {
+	@include transform(translateY(0.1em));
+	font-weight: $W_medium;
+	font-size: $font-size-small;
+	padding-right: $baseline/4;
+	display: inline-block;
+}
+
+.rsvpTag-icon {
+	@include color-all($C_textPrimaryInverted);
+	height: 24px;
+	width: 24px;
+	border-radius: 100px;
+}
+
+.rsvpTag .rsvpTag-icon { // override any default `display` property with specificity
+	@include display(inline-flex);
+	@include justify-content(center);
+	@include align-items(center);
+}
+
