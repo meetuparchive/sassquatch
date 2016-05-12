@@ -666,21 +666,21 @@ input[type="submit"].button--green,
  *  Total time saver, and should be used elsewhere.
  */
 .docBounds, .navTabs,
-.nav-tabs, .nav-pagination, .nav-buttons {
+.nav-tabs, .nav-pagination, .nav-buttons, .segmented-control {
   /**
    * For IE 6/7 only
    * Include this rule to trigger hasLayout and contain floats.
    */
   *zoom: 1; }
   .docBounds:before, .navTabs:before,
-  .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .docBounds:after, .navTabs:after,
-  .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+  .nav-tabs:before, .nav-pagination:before, .nav-buttons:before, .segmented-control:before, .docBounds:after, .navTabs:after,
+  .nav-tabs:after, .nav-pagination:after, .nav-buttons:after, .segmented-control:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
   .docBounds:after, .navTabs:after,
-  .nav-tabs:after, .nav-pagination:after, .nav-buttons:after {
+  .nav-tabs:after, .nav-pagination:after, .nav-buttons:after, .segmented-control:after {
     clear: both; }
 
 /*  border-box()
@@ -877,13 +877,15 @@ Placeholder           | Description
 `%text--mono`         | Monospaced text
 `%text--disabled`     | Disabled text
 */
-fieldset legend, .big, big {
+fieldset legend, .text--big,
+.big, big {
   font-size: 20px;
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: -0.02em; }
 
-label.small, .small, small {
+label.small, .text--small,
+.small, small {
   font-size: 13px;
   line-height: 1.6; }
 
@@ -5279,6 +5281,7 @@ With `nav-buttons--column` variant class:
   line-height: 1.5;
   border: 1px solid rgba(0, 0, 0, 0.12);
   text-align: left;
+  font-size: 0;
   /*****************************
    * STRUCTURE
    ****************************/
@@ -5329,12 +5332,12 @@ With `nav-buttons--column` variant class:
     background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f2f2));
     background: -moz-linear-gradient(top, #fff, #f2f2f2);
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
-    border: none;
-    color: rgba(0, 0, 0, 0.87);
     -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
     -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
-    box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset; }
+    box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset, rgba(0, 0, 0, 0.1) -1px 0 0 0 inset;
+    color: rgba(0, 0, 0, 0.87);
+    border: none; }
     .nav-buttons label:hover,
     .nav-buttons li > a:hover,
     .nav-buttons li > span:hover {
@@ -5348,20 +5351,6 @@ With `nav-buttons--column` variant class:
     .nav-buttons li > span:active,
     .nav-buttons li > span.active {
       background: #e6e6e6; }
-  .nav-buttons input[type=radio]:checked + label, .nav-buttons input[attr="checked"] + label,
-  .nav-buttons li > a:active, .nav-buttons li > a.push, .nav-buttons li > span.push {
-    background-color: #fafafa !important;
-    background-image: none !important;
-    color: rgba(0, 0, 0, 0.87) !important;
-    filter: none;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset;
-    box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset; }
-    .nav-buttons input[type=radio]:checked + label:link, .nav-buttons input[type=radio]:checked + label:hover, .nav-buttons input[type=radio]:checked + label:vistied, .nav-buttons input[type=radio]:checked + label:active, .nav-buttons input[attr="checked"] + label:link, .nav-buttons input[attr="checked"] + label:hover, .nav-buttons input[attr="checked"] + label:vistied, .nav-buttons input[attr="checked"] + label:active,
-    .nav-buttons li > a:active:link,
-    .nav-buttons li > a:active:hover,
-    .nav-buttons li > a:active:vistied,
-    .nav-buttons li > a:active:active, .nav-buttons li > a.push:link, .nav-buttons li > a.push:hover, .nav-buttons li > a.push:vistied, .nav-buttons li > a.push:active, .nav-buttons li > span.push:link, .nav-buttons li > span.push:hover, .nav-buttons li > span.push:vistied, .nav-buttons li > span.push:active {
-      color: rgba(0, 0, 0, 0.87) !important; }
   .nav-buttons label:last-of-type,
   .nav-buttons li:last-child > a,
   .nav-buttons li:last-child > span {
@@ -5383,45 +5372,6 @@ With `nav-buttons--column` variant class:
     -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     -ms-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
     box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset; }
-  .nav-buttons li > a:active, .nav-buttons li > a.push,
-  .nav-buttons li > span:active,
-  .nav-buttons li > span.push, .nav-buttons li:first-child > a:active, .nav-buttons li:first-child > a.push,
-  .nav-buttons li:first-child > span:active,
-  .nav-buttons li:first-child > span.push, .nav-buttons li:last-child > a:active, .nav-buttons li:last-child > a.push,
-  .nav-buttons li:last-child > span:active,
-  .nav-buttons li:last-child > span.push {
-    background-color: #fafafa !important;
-    background-image: none !important;
-    color: rgba(0, 0, 0, 0.87) !important;
-    filter: none;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset;
-    box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset; }
-    .nav-buttons li > a:active:link, .nav-buttons li > a:active:hover, .nav-buttons li > a:active:vistied, .nav-buttons li > a:active:active, .nav-buttons li > a.push:link, .nav-buttons li > a.push:hover, .nav-buttons li > a.push:vistied, .nav-buttons li > a.push:active,
-    .nav-buttons li > span:active:link,
-    .nav-buttons li > span:active:hover,
-    .nav-buttons li > span:active:vistied,
-    .nav-buttons li > span:active:active,
-    .nav-buttons li > span.push:link,
-    .nav-buttons li > span.push:hover,
-    .nav-buttons li > span.push:vistied,
-    .nav-buttons li > span.push:active, .nav-buttons li:first-child > a:active:link, .nav-buttons li:first-child > a:active:hover, .nav-buttons li:first-child > a:active:vistied, .nav-buttons li:first-child > a:active:active, .nav-buttons li:first-child > a.push:link, .nav-buttons li:first-child > a.push:hover, .nav-buttons li:first-child > a.push:vistied, .nav-buttons li:first-child > a.push:active,
-    .nav-buttons li:first-child > span:active:link,
-    .nav-buttons li:first-child > span:active:hover,
-    .nav-buttons li:first-child > span:active:vistied,
-    .nav-buttons li:first-child > span:active:active,
-    .nav-buttons li:first-child > span.push:link,
-    .nav-buttons li:first-child > span.push:hover,
-    .nav-buttons li:first-child > span.push:vistied,
-    .nav-buttons li:first-child > span.push:active, .nav-buttons li:last-child > a:active:link, .nav-buttons li:last-child > a:active:hover, .nav-buttons li:last-child > a:active:vistied, .nav-buttons li:last-child > a:active:active, .nav-buttons li:last-child > a.push:link, .nav-buttons li:last-child > a.push:hover, .nav-buttons li:last-child > a.push:vistied, .nav-buttons li:last-child > a.push:active,
-    .nav-buttons li:last-child > span:active:link,
-    .nav-buttons li:last-child > span:active:hover,
-    .nav-buttons li:last-child > span:active:vistied,
-    .nav-buttons li:last-child > span:active:active,
-    .nav-buttons li:last-child > span.push:link,
-    .nav-buttons li:last-child > span.push:hover,
-    .nav-buttons li:last-child > span.push:vistied,
-    .nav-buttons li:last-child > span.push:active {
-      color: rgba(0, 0, 0, 0.87) !important; }
   .nav-buttons input[type=radio]:checked + label, .nav-buttons input[attr="checked"] + label {
     background: #e6e6e6; }
   .nav-buttons input[type=radio] {
@@ -5450,9 +5400,7 @@ With `nav-buttons--column` variant class:
   .nav-buttons li.selected > span {
     background-color: rgba(0, 0, 255, 0.05) !important;
     color: #1f24cc !important;
-    font-weight: 600;
-    border: initial;
-    box-shadow: initial; }
+    font-weight: 600; }
 
 .nav-buttons label, .nav-buttons li > a, .nav-buttons li > span, .segmented-control-button {
   background: initial;
@@ -5520,94 +5468,59 @@ Element type       | Use
  */
 /* Wrapping element */
 .segmented-control {
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  display: table;
-  table-layout: fixed;
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 3px 0 0 3px;
-  width: 100%;
-  margin-bottom: 16px; }
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  background-clip: padding-box;
+  display: inline-block;
+  border-radius: 3px;
+  list-style-type: none;
+  margin-bottom: 16px;
+  padding-left: 0;
+  line-height: 1.5;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: left;
+  font-size: 0; }
 
 .segmented-control-segment {
-  display: table-cell;
-  vertical-align: middle;
+  padding-top: 0;
+  display: inline-block;
   text-align: center; }
 
 .segmented-control-button {
-  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-  box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 0 0 inset;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: #f2f2f2;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f2f2));
-  background: -moz-linear-gradient(top, #fff, #f2f2f2);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2')";
-  /* Acceptable values are border, content, and padding - content is the default W3C model */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
-  padding: 0.5em 0.75em 0.4em;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-left: none;
-  margin: 0;
-  /* OVERRIDE */
-  vertical-align: middle;
   font-family: "Graphik Meetup", helvetica, arial, sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.5;
-  white-space: nowrap;
-  text-align: center;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.87) !important;
-  /* NOTE: Needed because of cascade overrides post-sassquatch in mobile. */ }
-  .segmented-control-button:hover {
-    background: #ededed;
-    background: -webkit-gradient(linear, left top, left bottom, from(white), to(#ededed));
-    background: -moz-linear-gradient(top, white, #ededed);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEDEDED')"; }
-  .segmented-control-button:active, .segmented-control-button.active {
-    background: #e6e6e6; }
+  padding: 0.5em 1.2em 0.4em;
+  display: block;
+  border-right: 1px solid rgba(0, 0, 0, 0.12); }
+  .segmented-control-segment:last-child .segmented-control-button {
+    border-width: 0; }
 
 /* These next two are sort of nasty selectors--but since this doesn't work
  * in IE8 anyway (border radius not supported), do we care? -j
  */
 .segmented-control-segment:first-child .segmented-control-button {
-  border-radius: 3px 0 0 3px; }
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px; }
 
 .segmented-control-segment:last-child .segmented-control-button {
-  border-radius: 0 3px 3px 0; }
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; }
 
 .segmented-control-input {
   position: absolute;
-  z-index: -1; }
+  visibility: hidden; }
 
 /* Checked States: Natural, and with class (via JS, for IE8) */
 .segmented-control-input:checked + .segmented-control-button {
-  background-color: #fafafa !important;
-  background-image: none !important;
-  color: rgba(0, 0, 0, 0.87) !important;
-  filter: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset;
-  box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset;
-  /* Here comes the !important train, due to !important up above. Choo Choo! */ }
-  .segmented-control-input:checked + .segmented-control-button:link, .segmented-control-input:checked + .segmented-control-button:hover, .segmented-control-input:checked + .segmented-control-button:vistied, .segmented-control-input:checked + .segmented-control-button:active {
-    color: rgba(0, 0, 0, 0.87) !important; }
-
-/* Apparently this rule might need to be split out from :checked selector for IE8 */
-.segmented-control-segment.checked .segmented-control-button {
-  background-color: #fafafa !important;
-  background-image: none !important;
-  color: rgba(0, 0, 0, 0.87) !important;
-  filter: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset;
-  box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px -1px inset; }
-  .segmented-control-segment.checked .segmented-control-button:link, .segmented-control-segment.checked .segmented-control-button:hover, .segmented-control-segment.checked .segmented-control-button:vistied, .segmented-control-segment.checked .segmented-control-button:active {
-    color: rgba(0, 0, 0, 0.87) !important; }
+  background-color: rgba(0, 0, 255, 0.05) !important;
+  color: #1f24cc !important;
+  font-weight: 600; }
 
 /*doc
 ---
@@ -6277,6 +6190,8 @@ Class             | Example
 `caps`            | <p class="caps">Example paragraph</p>
 `small`           | <p class="small">Example paragraph</p>
 `big`             | <p class="big">Example paragraph</p>
+`text--big`       | <p class="text--big">Example paragraph</p>
+`text--small`     | <p class="text--small">Example paragraph</p>
 `text--reset`     | <p class="text--reset">Example paragraph</p>
 `text--display1`  | <p class="text--display1">Display text</p>
 `text--display2`  | <p class="text--display2">Display text</p>
@@ -6284,7 +6199,7 @@ Class             | Example
 `text--secondary` | <p class="text--secondary">Secondary text</p>
 `text--attention` | <p class="text--attention">Secondary text</p>
 `text--label`     | <p class="text--label">Label text</p>
-`text--labelSecondary`     | <p class="text--label">Label text</p>
+`text--labelSecondary`     | <p class="text--labelSecondary">Label text</p>
 
 */
 .muted {
