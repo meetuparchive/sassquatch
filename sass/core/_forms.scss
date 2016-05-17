@@ -258,6 +258,7 @@ input, textarea {
 [disabled="disabled"],
 .disabled {
 	@extend %text--disabled;
+	border-color: transparent !important;
 }
 [disabled],
 [disabled="disabled"] {

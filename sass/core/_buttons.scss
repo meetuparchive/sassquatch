@@ -48,10 +48,7 @@ input[type="submit"] {
 		outline: none;
 		background: transparentize($C_mediumGray, .88) !important;
 		cursor: default;
-		border: 1px solid $C_border;
-		.inverted & {
-			border-color: $C_borderInverted;
-		}
+		border-color: transparent !important;
 	}
 }
 
