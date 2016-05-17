@@ -54,7 +54,10 @@ Element type       | Use
 	@include experimental(box-sizing, border-box);
 	@include experimental(background-clip, padding-box);
 	@extend %clearfix;
-	display: inline-block;
+	@include display(flex);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+	@include flex-direction(row);
 	border-radius: $defaultRadius;
 	list-style-type: none;
 	margin-bottom: $spacing;
@@ -66,8 +69,10 @@ Element type       | Use
 }
 
 .segmented-control-segment {
+	@include flex-grow(1);
+	@include flex-basis(0);
+	width: auto;
 	padding-top: 0;
-	display: inline-block;
 	text-align: center;
 }
 
