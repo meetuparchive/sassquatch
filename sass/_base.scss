@@ -37,7 +37,7 @@ $platform: "desktop" !default; // define default platform var
 @import "components/segmentedcontrol";
 @import 'components/chunkList';
 @import 'components/tileGrid';
-@import 'components/rsvpTag';
+@import 'components/rsvpStatus';
 
 
 // MODIFIERS (last in cascade to allow component overrides)

@@ -7,31 +7,31 @@ category: Content Patterns
 Status tags for RSVP.
 
 _&#x26a0; The icons below are placeholders &#x26a0;_<br />
-Pleas use the appropriate SVG icon for each rsvpTag variant.
+Pleas use the appropriate SVG icon for each rsvpStatus variant.
 
 ```html_example
 <div class="chunk">
-	<div class="rsvpTag rsvpTag--yes">
-		<span class="rsvpTag-label">Yes</span>
-		<span class="rsvpTag-icon">
+	<div class="rsvpStatus rsvpStatus--yes">
+		<span class="rsvpStatus-label">Yes</span>
+		<span class="rsvpStatus-icon">
 			&#x2713;
 		</span>
 	</div>
 </div>
 
 <div class="chunk">
-	<div class="rsvpTag rsvpTag--no">
-		<span class="rsvpTag-label">No</span>
-		<span class="rsvpTag-icon">
+	<div class="rsvpStatus rsvpStatus--no">
+		<span class="rsvpStatus-label">No</span>
+		<span class="rsvpStatus-icon">
 			&#x2713;
 		</span>
 	</div>
 </div>
 
 <div class="chunk">
-	<div class="rsvpTag rsvpTag--waiting">
-		<span class="rsvpTag-label">Waiting</span>
-		<span class="rsvpTag-icon">
+	<div class="rsvpStatus rsvpStatus--waiting">
+		<span class="rsvpStatus-label">Waiting</span>
+		<span class="rsvpStatus-icon">
 			&#x2713;
 		</span>
 	</div>
@@ -39,48 +39,48 @@ Pleas use the appropriate SVG icon for each rsvpTag variant.
 ```
 
 ## Variants
-A class of `rsvpTag` is __required__.
+A class of `rsvpStatus` is __required__.
 Variant classes:
 
 Class                | Description
 -------------------- | --------------------------
-`rsvpTag--yes`       | indicates "yes" RSVP status
-`rsvpTag--no`        | indicates "no" RSVP status
-`rsvpTag--waiting`   | indicates waitlist RSVP status
+`rsvpStatus--yes`       | indicates "yes" RSVP status
+`rsvpStatus--no`        | indicates "no" RSVP status
+`rsvpStatus--waiting`   | indicates waitlist RSVP status
 */
 
-.rsvpTag {
+.rsvpStatus {
 	display: block;
 	text-align: right;
 }
 
-.rsvpTag--yes {
+.rsvpStatus--yes {
 	color: $C_success;
-	.rsvpTag-icon {
+	.rsvpStatus-icon {
 		background-color: $C_success;
 	}
 }
 
-.rsvpTag--no {
+.rsvpStatus--no {
 	color: $C_textTertiary;
-	.rsvpTag-icon {
+	.rsvpStatus-icon {
 		background-color: $C_textTertiary;
 	}
 }
 
-.rsvpTag--waiting {
+.rsvpStatus--waiting {
 	color: $C_success;
-	.rsvpTag-icon {
+	.rsvpStatus-icon {
 		background-color: $C_success;
 	}
 }
 
-.rsvpTag-label,
-.rsvpTag-icon {
+.rsvpStatus-label,
+.rsvpStatus-icon {
 	vertical-align: middle;
 }
 
-.rsvpTag-label {
+.rsvpStatus-label {
 	@include transform(translateY(0.1em));
 	font-weight: $W_medium;
 	font-size: $font-size-small;
@@ -88,14 +88,14 @@ Class                | Description
 	display: inline-block;
 }
 
-.rsvpTag-icon {
+.rsvpStatus-icon {
 	@include color-all($C_textPrimaryInverted);
 	height: 24px;
 	width: 24px;
 	border-radius: 100px;
 }
 
-.rsvpTag .rsvpTag-icon { // override any default `display` property with specificity
+.rsvpStatus .rsvpStatus-icon { // override any default `display` property with specificity
 	@include display(inline-flex);
 	@include justify-content(center);
 	@include align-items(center);
