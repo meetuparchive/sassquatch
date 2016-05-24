@@ -4540,7 +4540,41 @@ Element type       | Use
   -webkit-background-clip: padding-box;
   -ms-background-clip: padding-box;
   background-clip: padding-box;
-  display: inline-block;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  -moz-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -moz-align-items: flex;
+  -ms-align-items: flex;
+  -o-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
   border-radius: 3px;
   list-style-type: none;
   margin-bottom: 16px;
@@ -4551,8 +4585,16 @@ Element type       | Use
   font-size: 0; }
 
 .segmented-control-segment {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  -moz-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  width: auto;
   padding-top: 0;
-  display: inline-block;
   text-align: center; }
 
 .segmented-control-button {
