@@ -335,9 +335,11 @@ Class             | Example
 `text--display2`  | <p class="text--display2">Display text</p>
 `text--display3`  | <p class="text--display3">Display text</p>
 `text--secondary` | <p class="text--secondary">Secondary text</p>
-`text--attention` | <p class="text--attention">Secondary text</p>
+`text--attention` | <p class="text--attention">Attention text</p>
 `text--label`     | <p class="text--label">Label text</p>
 `text--labelSecondary`     | <p class="text--labelSecondary">Label text</p>
+`text--middotRight`     | <p class="text--middotRight">Right mid dot</p>
+`text--midddotLeft`     | <p class="text--middotLeft">Left mid dot</p>
 
 */
 
@@ -351,6 +353,14 @@ Class             | Example
 .text--attention      { @extend %text--attention; }
 .text--label          { @extend %text--label; }
 .text--labelSecondary { @extend %text--labelSecondary; }
+
+.text--middotRight:after,
+.text--middotLeft:before {
+	display: inline-block;
+	content: "\00b7";
+	margin: auto 0.5em;
+	font-weight: $W_bold;
+}
 
 .muted {
 	color: $C_textSecondary;
