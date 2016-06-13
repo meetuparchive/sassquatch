@@ -304,10 +304,18 @@ the whitespace on the bottom).
 	a:link, a:visited, a:hover, a:active {
 		text-decoration: none;	
 		color: $C_link;
+
+		.inverted & {
+			color: $C_linkInverted;
+		}
 	}
 
 	.linked {
 		color: $C_link !important;
+
+		.inverted & {
+			color: $C_linkInverted;
+		}
 	}
 
 	/* }}} */
