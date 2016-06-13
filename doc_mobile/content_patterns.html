@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 		<title>Sassquatch Mobile : Content Patterns</title>
-		<link rel="stylesheet" href="http://static2.meetupstatic.com/s/fonts/518642215741793673538/graphik.css">
+		<link rel="stylesheet" href="http://static2.meetupstatic.com/fonts/graphik.css">
 		<link rel="stylesheet" href="http://static1.meetupstatic.com/style/red-label.css" type="text/css" />
 		<link rel="stylesheet" href="sassquatch/sassquatch.css">
 		<link rel="stylesheet" href="style/doc.css">
@@ -78,6 +78,8 @@
 					<li><a href="#nametagPhoto">Nametag Photo</a></li>
 				
 					<li><a href="#pillLabels">Pill Labels</a></li>
+				
+					<li><a href="#tag">RSVP Tags</a></li>
 				
 					<li><a href="#tearsheet">Tearsheet</a></li>
 				
@@ -306,6 +308,89 @@ dark gradient for text overlay.</p><div class="codeExample">
 <tr>
 <td><code class="styleguide">pill-label--unpaid</code></td>
 <td><span class="pill-label--unpaid">Dues unpaid indicator</span></td>
+</tr>
+ </table>
+<h1 id="tag" class="styleguide">RSVP Tags</h1>
+<p class="styleguide">Status tags for RSVP.</p><p class="styleguide"><em>&#x26a0; The icons below are placeholders &#x26a0;</em><br />
+Please use the appropriate SVG icon for each rsvpStatus variant.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="chunk">
+    <div class="rsvpStatus rsvpStatus--yes">
+        <span class="rsvpStatus-label">Yes</span>
+        <span class="rsvpStatus-icon">
+            &#x2713;
+        </span>
+    </div>
+</div>
+
+<div class="chunk">
+    <div class="rsvpStatus rsvpStatus--no">
+        <span class="rsvpStatus-label">No</span>
+        <span class="rsvpStatus-icon">
+            &#x2713;
+        </span>
+    </div>
+</div>
+
+<div class="chunk">
+    <div class="rsvpStatus rsvpStatus--waiting">
+        <span class="rsvpStatus-label">Waiting</span>
+        <span class="rsvpStatus-icon">
+            &#x2713;
+        </span>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rsvpStatus rsvpStatus--yes"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rsvpStatus-label"</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rsvpStatus-icon"</span><span class="nt">&gt;</span>
+            <span class="ni">&amp;#x2713;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rsvpStatus rsvpStatus--no"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rsvpStatus-label"</span><span class="nt">&gt;</span>No<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rsvpStatus-icon"</span><span class="nt">&gt;</span>
+            <span class="ni">&amp;#x2713;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rsvpStatus rsvpStatus--waiting"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rsvpStatus-label"</span><span class="nt">&gt;</span>Waiting<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rsvpStatus-icon"</span><span class="nt">&gt;</span>
+            <span class="ni">&amp;#x2713;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Variants</h2>
+<p class="styleguide">A class of <code class="styleguide">rsvpStatus</code> is <strong>required</strong>.
+Variant classes:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">rsvpStatus--yes</code></td>
+<td>indicates &quot;yes&quot; RSVP status</td>
+</tr>
+<tr>
+<td><code class="styleguide">rsvpStatus--no</code></td>
+<td>indicates &quot;no&quot; RSVP status</td>
+</tr>
+<tr>
+<td><code class="styleguide">rsvpStatus--waiting</code></td>
+<td>indicates waitlist RSVP status</td>
 </tr>
  </table>
 <h1 id="tearsheet" class="styleguide">Tearsheet</h1>

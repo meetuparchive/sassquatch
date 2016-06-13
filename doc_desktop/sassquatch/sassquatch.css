@@ -768,7 +768,7 @@ abbr, acronym {
   border-width: 0; }
 
 b, strong {
-  font-weight: 600; }
+  font-weight: 500; }
 
 sup, sub {
   font-size: 75%;
@@ -1478,6 +1478,11 @@ input, textarea {
 * disabled state
 */
 [disabled],
+[disabled="disabled"],
+.disabled {
+  border-color: transparent !important; }
+
+[disabled],
 [disabled="disabled"] {
   opacity: 0.7; }
 
@@ -1810,15 +1815,7 @@ input[type="submit"] {
     outline: none;
     background: rgba(117, 117, 117, 0.12) !important;
     cursor: default;
-    border: 1px solid rgba(0, 0, 0, 0.12); }
-    .inverted
-    .button.disabled, .inverted
-    .button:disabled, .inverted
-    button.disabled, .inverted
-    button:disabled, .inverted
-    input[type="submit"].disabled, .inverted
-    input[type="submit"]:disabled {
-      border-color: rgba(255, 255, 255, 0.2); }
+    border-color: transparent !important; }
 
 /*doc
 ---
@@ -4929,6 +4926,124 @@ Example                                                                  | Descr
 
   .tileGrid_atSmall--1col .tileGrid-tile {
     width: 100%; } }
+/*doc
+---
+title: RSVP Tags
+name: tag
+category: Content Patterns
+---
+Status tags for RSVP.
+
+_&#x26a0; The icons below are placeholders &#x26a0;_<br />
+Please use the appropriate SVG icon for each rsvpStatus variant.
+
+```html_example
+<div class="chunk">
+	<div class="rsvpStatus rsvpStatus--yes">
+		<span class="rsvpStatus-label">Yes</span>
+		<span class="rsvpStatus-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpStatus rsvpStatus--no">
+		<span class="rsvpStatus-label">No</span>
+		<span class="rsvpStatus-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpStatus rsvpStatus--waiting">
+		<span class="rsvpStatus-label">Waiting</span>
+		<span class="rsvpStatus-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+```
+
+## Variants
+A class of `rsvpStatus` is __required__.
+Variant classes:
+
+Class                | Description
+-------------------- | --------------------------
+`rsvpStatus--yes`       | indicates "yes" RSVP status
+`rsvpStatus--no`        | indicates "no" RSVP status
+`rsvpStatus--waiting`   | indicates waitlist RSVP status
+*/
+.rsvpStatus {
+  display: block;
+  text-align: right; }
+
+.rsvpStatus--yes {
+  color: #21e8b2; }
+  .rsvpStatus--yes .rsvpStatus-icon {
+    background-color: #21e8b2; }
+
+.rsvpStatus--no {
+  color: rgba(0, 0, 0, 0.26); }
+  .rsvpStatus--no .rsvpStatus-icon {
+    background-color: rgba(0, 0, 0, 0.26); }
+
+.rsvpStatus--waiting {
+  color: #21e8b2; }
+  .rsvpStatus--waiting .rsvpStatus-icon {
+    background-color: #21e8b2; }
+
+.rsvpStatus-label,
+.rsvpStatus-icon {
+  vertical-align: middle; }
+
+.rsvpStatus-label {
+  -moz-transform: translateY(0.1em);
+  -webkit-transform: translateY(0.1em);
+  transform: translateY(0.1em);
+  font-weight: 500;
+  font-size: 13px;
+  padding-right: 4px;
+  display: inline-block;
+  max-width: 6em; }
+
+.rsvpStatus-icon {
+  stroke: transparent;
+  fill: white;
+  color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px; }
+
+.rsvpStatus .rsvpStatus-icon {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center; }
+
 /* {{{ Typography modifiers */
 /*doc
 ---
@@ -5303,11 +5418,20 @@ Class             | Example
 `text--display2`  | <p class="text--display2">Display text</p>
 `text--display3`  | <p class="text--display3">Display text</p>
 `text--secondary` | <p class="text--secondary">Secondary text</p>
-`text--attention` | <p class="text--attention">Secondary text</p>
+`text--attention` | <p class="text--attention">Attention text</p>
 `text--label`     | <p class="text--label">Label text</p>
 `text--labelSecondary`     | <p class="text--labelSecondary">Label text</p>
+`text--middotRight`     | <p class="text--middotRight">Right mid dot</p>
+`text--midddotLeft`     | <p class="text--middotLeft">Left mid dot</p>
 
 */
+.text--middotRight:after,
+.text--middotLeft:before {
+  display: inline-block;
+  content: "\00b7";
+  margin: auto 0.5em;
+  font-weight: 600; }
+
 .muted {
   color: rgba(0, 0, 0, 0.54); }
   .inverted .muted {
