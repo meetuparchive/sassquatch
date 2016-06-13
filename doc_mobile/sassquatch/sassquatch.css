@@ -1563,9 +1563,13 @@ ul, ol {
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: #1f24cc; }
+  .inverted a:link, .inverted a:visited, .inverted a:hover, .inverted a:active {
+    color: #4dd1ed; }
 
 .linked {
   color: #1f24cc !important; }
+  .inverted .linked {
+    color: #4dd1ed; }
 
 /* }}} */
 /*  {{{ Override input styles */
