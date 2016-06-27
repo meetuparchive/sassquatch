@@ -215,6 +215,33 @@ top of a background photo.
 	@include button-photo( #fff );
 }
 
+/*doc
+---
+title: Contrast Buttons
+name: contrastButtons
+category: Buttons
+---
+```html_example
+	<a href="#" class="button button--contrast">Button</a>
+	<div style="background-color: rgb(53,62,72); padding: 16px;" class="inverted">
+		<a href="#" class="button button--contrast">Button in inverted context</a>
+	</div>
+```
+*/
+.button--contrast {
+	@include color-all( $C_textPrimary );
+	.inverted & {
+		@include color-all( $C_textPrimaryInverted );
+	}
+	background: $C_textHint;
+	border-color: $C_borderInverted;
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-color: $C_borderDarkInverted;
+	}
+}
 
 /*doc
 ---
