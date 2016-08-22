@@ -2629,6 +2629,32 @@ top of a background photo.
 
 /*doc
 ---
+title: Contrast Buttons
+name: contrastButtons
+category: Buttons
+---
+```html_example
+	<a href="#" class="button button--contrast">Button</a>
+	<div style="background-color: rgb(53,62,72); padding: 16px;" class="inverted">
+		<a href="#" class="button button--contrast">Button in inverted context</a>
+	</div>
+```
+*/
+.button--contrast {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
+  background: rgba(0, 0, 0, 0.26);
+  border-color: rgba(255, 255, 255, 0.2); }
+  .inverted .button--contrast {
+    stroke: transparent;
+    fill: white;
+    color: white; }
+  .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
+    border-color: rgba(255, 255, 255, 0.7); }
+
+/*doc
+---
 title: Small Buttons
 name: smallButtons
 category: Buttons
