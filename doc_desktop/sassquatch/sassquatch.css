@@ -5007,9 +5007,9 @@ Class                | Description
   text-align: right; }
 
 .rsvpStatus--yes {
-  color: #21e8b2; }
+  color: #0fd9a3; }
   .rsvpStatus--yes .rsvpStatus-icon {
-    background-color: #21e8b2; }
+    background-color: #0fd9a3; }
 
 .rsvpStatus--no {
   color: rgba(0, 0, 0, 0.26); }
@@ -5017,9 +5017,9 @@ Class                | Description
     background-color: rgba(0, 0, 0, 0.26); }
 
 .rsvpStatus--waiting {
-  color: #21e8b2; }
+  color: #0fd9a3; }
   .rsvpStatus--waiting .rsvpStatus-icon {
-    background-color: #21e8b2; }
+    background-color: #0fd9a3; }
 
 .rsvpStatus-label,
 .rsvpStatus-icon {
@@ -5479,6 +5479,49 @@ Class             | Example
 
 .border-none {
   border-width: 0 !important; }
+
+/*doc
+---
+title: Text colors
+name: coloredText
+category: Modifiers
+---
+Applies standard text colors. The variant
+is the color name: `text--[color]`. All supported
+variants are listed below.
+
+These classes set both the `color` and `fill` properties
+in order to also set the color of icons inline with text.
+
+**This style is set as `!important`**
+
+```html_example
+<div class="bounds">
+	<ul class="pipeList">
+		<li>Normal text</li>
+		<li class="text--red">Colorful text</li>
+		<li class="text--pink">Colorful text</li>
+		<li class="text--yellow">Colorful text</li>
+		<li class="text--teal">Colorful text</li>
+	</ul>
+</div>
+```
+*/
+.text--red {
+  color: #ed1c40 !important;
+  fill: #ed1c40 !important; }
+
+.text--pink {
+  color: #FBE1E3 !important;
+  fill: #FBE1E3 !important; }
+
+.text--teal {
+  color: #0fd9a3 !important;
+  fill: #0fd9a3 !important; }
+
+.text--yellow {
+  color: #ffe600 !important;
+  fill: #ffe600 !important; }
 
 /*doc
 ---
