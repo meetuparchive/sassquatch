@@ -399,6 +399,45 @@ Class             | Example
 	border-width: 0 !important;
 }
 
+/*doc
+---
+title: Text colors
+name: coloredText
+category: Modifiers
+---
+Applies standard text colors. The variant
+is the color name: `text--[color]`. All supported
+variants are listed below.
+
+These classes set both the `color` and `fill` properties
+in order to also set the color of icons inline with text.
+
+**This style is set as `!important`**
+
+```html_example
+<div class="bounds">
+	<ul class="pipeList">
+		<li>Normal text</li>
+		<li class="text--red">Colorful text</li>
+		<li class="text--pink">Colorful text</li>
+		<li class="text--yellow">Colorful text</li>
+		<li class="text--teal">Colorful text</li>
+	</ul>
+</div>
+```
+*/
+@each $colorName, $color in (
+	'red': $C_red,
+	'pink': $C_pink,
+	'teal': $C_teal,
+	'yellow': $C_yellow
+) {
+	.text--#{$colorName} {
+		color: $color !important;
+		fill: $color !important;
+	}
+}
+
 
 /*doc
 ---
